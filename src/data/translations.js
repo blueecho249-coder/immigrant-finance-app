@@ -539,7 +539,7 @@ export const translations = {
         },
       },
     },
-    lessons,
+    // lessons property is populated by the expansion loop below
   },
   hi: {
     nav: {
@@ -739,7 +739,7 @@ export const translations = {
         },
       },
     },
-    lessons,
+    // lessons property is populated by the expansion loop below
   },
   tl: {
     nav: {
@@ -940,7 +940,7 @@ export const translations = {
         },
       },
     },
-    lessons,
+    // lessons property is populated by the expansion loop below
   },
   zh: {
     nav: {
@@ -1135,15 +1135,16 @@ export const translations = {
         },
       },
     },
-    lessons,
+    // lessons property is populated by the expansion loop below
   },
 };
 
 // Expand lesson translations into each language so code can simply read:
 // translations[lang].lessons[lessonId].title/subtitle/content/quiz/options
-for (const [lessonId, lesson] of Object.entries(lessons)) {
-  for (const lang of Object.keys(translations)) {
-    translations[lang].lessons = translations[lang].lessons || {};
+// IMPORTANT: Create a NEW lessons object for each language to avoid shared references
+for (const lang of Object.keys(translations)) {
+  translations[lang].lessons = {}; // Create fresh object per language
+  for (const [lessonId, lesson] of Object.entries(lessons)) {
     translations[lang].lessons[lessonId] = {
       title: lesson.title[lang],
       subtitle: lesson.subtitle[lang],
