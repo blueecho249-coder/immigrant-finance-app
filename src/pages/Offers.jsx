@@ -48,12 +48,14 @@ export default function Offers() {
       <ul className="space-y-5">
         {partners.map((p, index) => {
           const localizedPartner = tr.offers.partners?.[p.id];
+          const partnerName = tr.offers.partnerNames?.[p.id] ?? p.partnerName;
+          const productName = tr.offers.productNames?.[p.id] ?? p.productName;
           const bestForLabel = localizedPartner?.bestFor ?? "";
           const bestForText = interpolate(tr.offers.bestFor, {
             label: bestForLabel,
           });
           return (
-            <li key={p.partnerName}>
+            <li key={p.id}>
               <article className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-card">
                 <div
                   className="h-1.5 bg-gradient-to-r from-brand-purple-500 to-brand-teal-500"
@@ -66,10 +68,10 @@ export default function Offers() {
                     </span>
                   )}
                   <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                    {p.partnerName}
+                    {partnerName}
                   </p>
                   <h2 className="mt-1 text-lg font-bold text-slate-900">
-                    {p.productName}
+                    {productName}
                   </h2>
                   <p className="mt-3 text-sm leading-relaxed text-slate-600">
                     {localizedPartner?.description ?? ""}
@@ -82,11 +84,12 @@ export default function Offers() {
                     onClick={(e) => {
                       if (p.href === "#") e.preventDefault();
                     }}
-                    className="animate-pulse-soft pressable mt-5 flex min-h-[48px] w-full items-center justify-center rounded-xl bg-brand-teal-600 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-teal-600/20 transition hover:bg-brand-teal-700"
+                    className="animate-pulse-soft pressable mt-5 flex min-h-[48px] w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-teal-600 to-brand-teal-700 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-teal-600/30 transition hover:shadow-lg hover:from-brand-teal-700 hover:to-brand-teal-800"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     {tr.offers.applyNow}
+                    <span aria-hidden>→</span>
                   </a>
                 </div>
               </article>

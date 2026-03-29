@@ -30,6 +30,8 @@ export default function Tools() {
         <BudgetCalculator />
       </section>
 
+      <div className="my-8 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent" />
+
       <section
         className="space-y-4"
         aria-labelledby="payoff-calculator-title"

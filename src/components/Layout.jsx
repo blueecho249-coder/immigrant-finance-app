@@ -16,7 +16,7 @@ export default function Layout() {
             <div
               className="relative flex min-h-dvh flex-col overflow-hidden bg-white shadow-[0_0_0_1px_rgba(15,23,42,0.06),0_12px_48px_-16px_rgba(91,33,182,0.18),0_8px_32px_-12px_rgba(15,23,42,0.12)] sm:min-h-[min(100dvh,920px)] sm:rounded-2xl sm:shadow-[0_0_0_1px_rgba(15,23,42,0.06),0_16px_56px_-20px_rgba(91,33,182,0.2),0_10px_40px_-16px_rgba(15,23,42,0.14)]"
             >
-              <div className="sticky top-0 z-40 border-b border-slate-200/90 bg-white/70 backdrop-blur-md">
+              <div className="sticky top-0 z-40">
                 <LanguageSelector />
               </div>
 

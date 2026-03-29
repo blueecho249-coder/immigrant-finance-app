@@ -63,7 +63,7 @@ export default function LessonDetail() {
       <header className="overflow-hidden rounded-2xl border border-brand-purple-100 bg-gradient-to-r from-brand-purple-600 to-brand-teal-600 p-5 text-white shadow-card">
         <div className="flex flex-wrap items-center gap-2">
           <span className="rounded-full bg-white/20 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide">
-            {lesson.category}
+            {tr.learn.categories?.[lesson.category] ?? lesson.category}
           </span>
           {alreadyDone && (
             <span className="rounded-full bg-emerald-400/30 px-2.5 py-0.5 text-xs font-semibold">

@@ -368,6 +368,13 @@ export const translations = {
       detailNextLesson: "Next lesson",
       detailBackToAllLessons:
         "Back to all lessons — you finished all {lessonCount}!",
+      categories: {
+        Credit: "Credit",
+        Banking: "Banking",
+        Housing: "Housing",
+        Taxes: "Taxes",
+        Saving: "Saving",
+      },
     },
     score: {
       title: "Score",
@@ -497,6 +504,18 @@ export const translations = {
       mostPopular: "Most Popular",
       bestFor: "Best for: {label}",
       applyNow: "Apply Now",
+      partnerNames: {
+        neo: "Neo Financial",
+        eq: "EQ Bank",
+        borrowell: "Borrowell",
+        wealthsimple: "Wealthsimple",
+      },
+      productNames: {
+        neo: "Secured Credit Card",
+        eq: "Savings Plus Account",
+        borrowell: "Free credit score & report",
+        wealthsimple: "Invest (RRSP, TFSA & more)",
+      },
       partners: {
         neo: {
           description:
@@ -550,6 +569,13 @@ export const translations = {
       detailNextLesson: "अगला लेसन",
       detailBackToAllLessons:
         "सभी लेसन पर वापस — आपने सभी {lessonCount} पूरे कर लिए!",
+      categories: {
+        Credit: "क्रेडिट",
+        Banking: "बैंकिंग",
+        Housing: "आवास",
+        Taxes: "टैक्स",
+        Saving: "बचत",
+      },
     },
     score: {
       title: "स्कोर",
@@ -678,6 +704,18 @@ export const translations = {
       mostPopular: "सबसे लोकप्रिय",
       bestFor: "सबसे अच्छा: {label}",
       applyNow: "अभी आवेदन करें",
+      partnerNames: {
+        neo: "Neo Financial",
+        eq: "EQ Bank",
+        borrowell: "Borrowell",
+        wealthsimple: "Wealthsimple",
+      },
+      productNames: {
+        neo: "सिक्योरड क्रेडिट कार्ड",
+        eq: "सेविंग्स प्लस अकाउंट",
+        borrowell: "मुफ्त क्रेडिट स्कोर और रिपोर्ट",
+        wealthsimple: "निवेश करें (RRSP, TFSA और अधिक)",
+      },
       partners: {
         neo: {
           description:
@@ -731,6 +769,13 @@ export const translations = {
       detailNextLesson: "Susunod na lesson",
       detailBackToAllLessons:
         "Bumalik sa lahat ng lessons — tapos mo na ang lahat ng {lessonCount}!",
+      categories: {
+        Credit: "Credit",
+        Banking: "Banking",
+        Housing: "Pag-aari ng Bahay",
+        Taxes: "Taxes",
+        Saving: "Pag-ipon",
+      },
     },
     score: {
       title: "Score",
@@ -860,6 +905,18 @@ export const translations = {
       mostPopular: "Pinaka-Popular",
       bestFor: "Angkop para sa: {label}",
       applyNow: "Mag-apply na",
+      partnerNames: {
+        neo: "Neo Financial",
+        eq: "EQ Bank",
+        borrowell: "Borrowell",
+        wealthsimple: "Wealthsimple",
+      },
+      productNames: {
+        neo: "Secured Credit Card",
+        eq: "Savings Plus Account",
+        borrowell: "Libreng credit score & report",
+        wealthsimple: "Mag-invest (RRSP, TFSA at iba pa)",
+      },
       partners: {
         neo: {
           description:
@@ -912,6 +969,13 @@ export const translations = {
       detailQuickCheck: "快速测验",
       detailNextLesson: "下一课",
       detailBackToAllLessons: "返回所有课程——你已完成全部 {lessonCount} 课！",
+      categories: {
+        Credit: "信用",
+        Banking: "银行业务",
+        Housing: "住房",
+        Taxes: "税务",
+        Saving: "储蓄",
+      },
     },
     score: {
       title: "分数",
@@ -1036,6 +1100,18 @@ export const translations = {
       mostPopular: "最受欢迎",
       bestFor: "适合：{label}",
       applyNow: "立即申请",
+      partnerNames: {
+        neo: "Neo Financial",
+        eq: "EQ Bank",
+        borrowell: "Borrowell",
+        wealthsimple: "Wealthsimple",
+      },
+      productNames: {
+        neo: "有担保信用卡",
+        eq: "储蓄加账户",
+        borrowell: "免费信用分数和报告",
+        wealthsimple: "投资（RRSP、TFSA 等）",
+      },
       partners: {
         neo: {
           description:

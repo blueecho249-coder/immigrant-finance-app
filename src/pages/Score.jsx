@@ -9,6 +9,24 @@ import {
 
 const TIP_EMOJI = ["💡", "🎯", "✨"];
 
+function getCircleColor(ui) {
+  if (ui.fillClass.includes("bg-slate-500")) return "#94a3b8";
+  if (ui.fillClass.includes("bg-red-500")) return "#ef4444";
+  if (ui.fillClass.includes("bg-amber-500")) return "#f59e0b";
+  if (ui.fillClass.includes("bg-blue-500")) return "#3b82f6";
+  if (ui.fillClass.includes("bg-emerald-500")) return "#10b981";
+  return "#0d9488";
+}
+
+function getTrackColor(ui) {
+  if (ui.trackClass.includes("bg-slate-200")) return "#e2e8f0";
+  if (ui.trackClass.includes("bg-red-100")) return "#fee2e2";
+  if (ui.trackClass.includes("bg-amber-100")) return "#fef3c7";
+  if (ui.trackClass.includes("bg-blue-100")) return "#dbeafe";
+  if (ui.trackClass.includes("bg-emerald-100")) return "#d1fae5";
+  return "#ccf2f1";
+}
+
 export default function Score() {
   const { score, setScore } = useCreditScore();
   const { tr } = useLanguage();
@@ -72,45 +90,54 @@ export default function Score() {
         </p>
       </header>
 
-      <div className="rounded-2xl border border-brand-purple-100/90 bg-white p-6 shadow-card">
-        <p className="text-xs font-semibold uppercase tracking-wide text-brand-teal-700">
+      <div className="rounded-2xl border border-brand-purple-100/90 bg-white p-8 shadow-card">
+        <p className="text-center text-xs font-semibold uppercase tracking-wide text-brand-teal-700">
           {tr.score.cardLabel}
         </p>
-        <div className="mt-4 flex items-end justify-between gap-4">
-          <div>
-            <p
-              className={`mt-1 text-5xl font-bold tabular-nums leading-none tracking-tight sm:text-6xl ${
-                ui.scoreDisplay === 0 ? "text-slate-400" : "text-brand-purple-900"
-              }`}
-            >
-              {ui.scoreDisplay === 0 ? "0" : displayScore}
-            </p>
-            <p className="mt-4 text-lg font-semibold text-slate-800">
-              {ui.label}
-            </p>
-            <p className="mt-1.5 text-sm leading-relaxed text-slate-600">
-              {ui.subtitle}
-            </p>
+
+        <div className="mt-8 flex justify-center">
+          <div className="relative h-56 w-56">
+            <svg className="absolute inset-0 h-full w-full" viewBox="0 0 200 200">
+              <circle
+                cx="100"
+                cy="100"
+                r="88"
+                fill="none"
+                stroke={getTrackColor(ui)}
+                strokeWidth="16"
+              />
+              <circle
+                cx="100"
+                cy="100"
+                r="88"
+                fill="none"
+                stroke={getCircleColor(ui)}
+                strokeWidth="16"
+                strokeDasharray={`${(ui.barPercent / 100) * 552.92} 552.92`}
+                strokeLinecap="round"
+                className="transition-all duration-700 ease-out"
+                style={{ transform: "rotate(-90deg)", transformOrigin: "100px 100px" }}
+              />
+            </svg>
+            <div className="absolute inset-0 flex flex-col items-center justify-center">
+              <p
+                className={`text-6xl font-bold tabular-nums leading-none tracking-tight ${
+                  ui.scoreDisplay === 0 ? "text-slate-400" : "text-brand-purple-900"
+                }`}
+              >
+                {ui.scoreDisplay === 0 ? "—" : displayScore}
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="mt-7">
-          <div
-            className={`h-3.5 overflow-hidden rounded-full ${ui.trackClass}`}
-            role="presentation"
-          >
-            <div
-              className={`h-full rounded-full transition-all duration-500 ease-out ${ui.fillClass}`}
-              style={{
-                width: `${ui.barPercent}%`,
-                minWidth: ui.barPercent > 0 ? "4px" : undefined,
-              }}
-            />
-          </div>
-          <div className="mt-2.5 flex justify-between text-[10px] font-medium uppercase tracking-wide text-slate-400">
-            <span>300</span>
-            <span>850</span>
-          </div>
+        <div className="mt-8 space-y-2 text-center">
+          <p className="text-xl font-semibold text-slate-800">
+            {ui.label}
+          </p>
+          <p className="text-sm leading-relaxed text-slate-600">
+            {ui.subtitle}
+          </p>
         </div>
       </div>
 
@@ -125,10 +152,10 @@ export default function Score() {
           {ui.tips.map((tip, i) => (
             <li
               key={tip}
-              className="flex gap-3 rounded-xl border border-slate-200/80 border-l-4 border-l-brand-teal-500 bg-white py-4 pl-4 pr-3 shadow-sm"
+              className="flex gap-4 rounded-xl border border-slate-200/80 bg-white p-4 shadow-sm hover:shadow-md transition"
             >
               <span
-                className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-teal-50 text-lg"
+                className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-brand-teal-50 to-brand-teal-100 text-lg"
                 aria-hidden
               >
                 {TIP_EMOJI[i % TIP_EMOJI.length]}
@@ -142,7 +169,7 @@ export default function Score() {
       </section>
 
       <section
-        className="rounded-2xl border border-slate-200/90 bg-white p-5 shadow-sm"
+        className="rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm"
         aria-labelledby="score-adjust-heading"
       >
         <h2
@@ -156,11 +183,11 @@ export default function Score() {
         </p>
         <div className="mt-5">
           <label
-            className="block text-sm font-medium text-slate-700"
+            className="block text-sm font-semibold text-slate-800"
             htmlFor="credit-score-slider"
           >
             {tr.score.scoreInputLabel}{" "}
-            <span className="tabular-nums text-brand-purple-700">{score}</span>
+            <span className="tabular-nums text-brand-purple-700 font-bold">{score}</span>
           </label>
           <input
             id="credit-score-slider"
@@ -170,7 +197,7 @@ export default function Score() {
             step={1}
             value={score}
             onChange={(e) => setScore(Number(e.target.value))}
-            className="mt-3 h-2.5 w-full cursor-pointer accent-brand-purple-600"
+            className="mt-3 h-3 w-full cursor-pointer rounded-full accent-brand-purple-600"
           />
         </div>
         <div className="mt-5 flex items-center gap-2">

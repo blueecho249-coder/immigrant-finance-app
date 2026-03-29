@@ -5,29 +5,34 @@ export default function LanguageSelector() {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <div className="flex items-center justify-between gap-3 px-2">
-      <div className="flex items-center gap-2">
-        {SUPPORTED_LANGUAGES.map((l) => {
-          const active = l.code === language;
-          return (
-            <button
-              key={l.code}
-              type="button"
-              onClick={() => setLanguage(l.code)}
-              className={[
-                "pressable-subtle min-h-[38px] min-w-[46px] rounded-xl border px-3 text-sm font-bold transition",
-                active
-                  ? "border-brand-purple-200 bg-brand-purple-50 text-brand-purple-700 ring-2 ring-brand-purple-200/70"
-                  : "border-slate-200 bg-white/70 text-slate-600 hover:bg-white",
-              ].join(" ")}
-              aria-pressed={active}
-              aria-label={l.label}
-              title={l.label}
-            >
-              {l.buttonText}
-            </button>
-          );
-        })}
+    <div className="bg-gradient-to-r from-brand-purple-600 to-brand-teal-600 px-4 py-3 shadow-md">
+      <div className="flex items-center justify-between gap-3 mx-auto max-w-phone">
+        <div className="text-white font-bold text-lg tracking-tight">
+          NewStart Finance
+        </div>
+        <div className="flex items-center gap-2">
+          {SUPPORTED_LANGUAGES.map((l) => {
+            const active = l.code === language;
+            return (
+              <button
+                key={l.code}
+                type="button"
+                onClick={() => setLanguage(l.code)}
+                className={[
+                  "pressable-subtle min-h-[36px] min-w-[44px] rounded-full px-3 text-xs font-bold transition",
+                  active
+                    ? "bg-white/95 text-brand-purple-700 shadow-md"
+                    : "bg-white/20 text-white hover:bg-white/30",
+                ].join(" ")}
+                aria-pressed={active}
+                aria-label={l.label}
+                title={l.label}
+              >
+                {l.buttonText}
+              </button>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

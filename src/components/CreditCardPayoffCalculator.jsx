@@ -100,11 +100,11 @@ export default function CreditCardPayoffCalculator() {
   const balanceNum = parseMoneyInput(balanceRaw);
 
   return (
-    <article className="rounded-2xl border border-brand-teal-500/25 bg-white p-5 shadow-card">
+    <article className="rounded-2xl border border-brand-teal-500/25 bg-white p-6 shadow-card">
       <div className="grid gap-5">
         <div>
           <label
-            className="block text-sm font-semibold text-slate-800"
+            className="block text-sm font-semibold text-slate-800 mb-1"
             htmlFor="payoff-balance"
           >
             {tr.tools.payoff.fields.balance}
@@ -123,7 +123,7 @@ export default function CreditCardPayoffCalculator() {
         </div>
         <div>
           <label
-            className="block text-sm font-semibold text-slate-800"
+            className="block text-sm font-semibold text-slate-800 mb-1"
             htmlFor="payoff-apr"
           >
             {tr.tools.payoff.fields.apr}
@@ -142,7 +142,7 @@ export default function CreditCardPayoffCalculator() {
         </div>
         <div>
           <label
-            className="block text-sm font-semibold text-slate-800"
+            className="block text-sm font-semibold text-slate-800 mb-1"
             htmlFor="payoff-payment"
           >
             {tr.tools.payoff.fields.payment}
@@ -171,7 +171,7 @@ export default function CreditCardPayoffCalculator() {
         </p>
       )}
 
-      <div className="mt-5 space-y-3 rounded-xl border border-slate-100 bg-slate-50/80 p-4">
+      <div className="mt-7 space-y-3 rounded-xl border border-emerald-100 bg-gradient-to-br from-emerald-50 to-emerald-50/50 p-5 shadow-sm">
         <h3 className="text-sm font-semibold text-slate-800">
           {tr.tools.payoff.results.heading}
         </h3>

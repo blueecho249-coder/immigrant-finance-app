@@ -100,12 +100,12 @@ export default function BudgetCalculator() {
     });
 
   return (
-    <article className="rounded-2xl border border-brand-purple-100 bg-white p-5 shadow-card">
+    <article className="rounded-2xl border border-brand-purple-100 bg-white p-6 shadow-card">
       <div className="grid gap-5">
         {fieldConfig.map(({ key }) => (
           <div key={key}>
             <label
-              className="block text-sm font-semibold text-slate-800"
+              className="block text-sm font-semibold text-slate-800 mb-1"
               htmlFor={`budget-${key}`}
             >
               {tr.tools.budget.fields[key]}
@@ -125,7 +125,7 @@ export default function BudgetCalculator() {
         ))}
       </div>
 
-      <div className="mt-6 space-y-3 rounded-xl border border-slate-100 bg-slate-50/80 p-4">
+      <div className="mt-7 space-y-3 rounded-xl border border-brand-teal-100 bg-gradient-to-br from-brand-teal-50 to-brand-teal-50/50 p-5 shadow-sm">
         <div className="flex items-center justify-between text-sm">
           <span className="font-medium text-slate-600">
             {tr.tools.budget.results.totalExpenses}
@@ -149,11 +149,11 @@ export default function BudgetCalculator() {
         </div>
       </div>
 
-      <div className="mt-6">
+      <div className="mt-7">
         <h3 className="text-sm font-semibold text-slate-800">
           {tr.tools.budget.breakdown.title}
         </h3>
-        <p className="mt-1 text-xs text-slate-500">
+        <p className="mt-1 text-xs text-slate-600">
           {tr.tools.budget.breakdown.description}
         </p>
         {income <= 0 ? (
@@ -163,7 +163,7 @@ export default function BudgetCalculator() {
         ) : (
           <>
             <div
-              className="mt-3 h-4 w-full overflow-hidden rounded-full bg-slate-200 shadow-inner"
+              className="mt-4 h-5 w-full overflow-hidden rounded-full bg-slate-200 shadow-inner"
               style={
                 barBackground
                   ? { backgroundImage: barBackground }

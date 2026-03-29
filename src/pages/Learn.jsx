@@ -12,11 +12,11 @@ const categoryStyles = {
 };
 
 const categoryBorder = {
-  Credit: "border-l-[5px] border-l-violet-500",
-  Banking: "border-l-[5px] border-l-sky-500",
-  Housing: "border-l-[5px] border-l-amber-500",
-  Taxes: "border-l-[5px] border-l-emerald-500",
-  Saving: "border-l-[5px] border-l-teal-500",
+  Credit: "border-l-[6px] border-l-violet-500",
+  Banking: "border-l-[6px] border-l-sky-500",
+  Housing: "border-l-[6px] border-l-amber-500",
+  Taxes: "border-l-[6px] border-l-emerald-500",
+  Saving: "border-l-[6px] border-l-teal-500",
 };
 
 function categoryClass(category) {
@@ -34,7 +34,7 @@ export default function Learn() {
 
   return (
     <div className="space-y-8">
-      <header className="space-y-2">
+      <header className="space-y-3">
         <h1 className="text-2xl font-bold tracking-tight text-brand-purple-900">
           {tr.learn.title}
         </h1>
@@ -44,7 +44,7 @@ export default function Learn() {
       </header>
 
       <section
-        className="rounded-2xl border border-brand-purple-100/80 bg-white p-5 shadow-card"
+        className="rounded-2xl border border-brand-purple-100/80 bg-gradient-to-br from-brand-purple-50 to-brand-teal-50/40 p-6 shadow-card"
         aria-labelledby="progress-heading"
       >
         <h2
@@ -59,19 +59,26 @@ export default function Learn() {
             lessonCount: LESSON_COUNT,
           })}
         </p>
-        <div
-          className="mt-4 h-3.5 overflow-hidden rounded-full bg-slate-100 shadow-inner"
-          role="progressbar"
-          aria-valuenow={completedCount}
-          aria-valuemin={0}
-          aria-valuemax={LESSON_COUNT}
-          aria-label={`${completedCount} of ${LESSON_COUNT} lessons completed`}
-        >
+        <div className="mt-5 space-y-2">
           <div
-            key={completedCount}
-            className="animate-progress-shine h-full rounded-full bg-gradient-to-r from-brand-purple-500 to-brand-teal-500 transition-[width] duration-700 ease-out"
-            style={{ width: `${pct}%` }}
-          />
+            className="h-4 overflow-hidden rounded-full bg-slate-200 shadow-inner"
+            role="progressbar"
+            aria-valuenow={completedCount}
+            aria-valuemin={0}
+            aria-valuemax={LESSON_COUNT}
+            aria-label={`${completedCount} of ${LESSON_COUNT} lessons completed`}
+          >
+            <div
+              key={completedCount}
+              className="animate-progress-shine h-full rounded-full bg-gradient-to-r from-brand-purple-500 via-brand-teal-500 to-brand-teal-600 transition-[width] duration-700 ease-out"
+              style={{ width: `${pct}%` }}
+            />
+          </div>
+          <div className="flex items-center justify-between text-xs font-semibold text-slate-600">
+            <span>0%</span>
+            <span className="text-brand-purple-700">{pct}%</span>
+            <span>100%</span>
+          </div>
         </div>
       </section>
 
@@ -82,7 +89,7 @@ export default function Learn() {
         >
           {tr.learn.allLessonsTitle}
         </h2>
-        <ul className="space-y-4">
+        <ul className="space-y-3">
           {lessons.map((lesson) => {
             const done = isComplete(lesson.id);
             const localized = tr.lessons?.[lesson.id];
@@ -90,18 +97,18 @@ export default function Learn() {
               <li key={lesson.id}>
                 <Link
                   to={`/learn/${lesson.id}`}
-                  className={`pressable-subtle block rounded-2xl border border-y border-r border-slate-200/90 bg-white py-4 pl-5 pr-4 shadow-sm transition hover:border-brand-purple-200 hover:shadow-md ${categoryBorderClass(lesson.category)}`}
+                  className={`pressable-subtle group block rounded-xl border-2 border-slate-200/80 bg-white p-5 shadow-sm transition hover:border-brand-purple-300 hover:shadow-md hover:bg-brand-purple-50/30 ${categoryBorderClass(lesson.category)}`}
                 >
-                  <div className="flex gap-3">
+                  <div className="flex gap-4">
                     <div className="min-w-0 flex-1">
                       <div className="flex flex-wrap items-center gap-2">
                         <span
                           className={`inline-flex rounded-full px-2.5 py-0.5 text-xs font-semibold ring-1 ring-inset ${categoryClass(lesson.category)}`}
                         >
-                          {lesson.category}
+                          {tr.learn.categories?.[lesson.category] ?? lesson.category}
                         </span>
                       </div>
-                      <h3 className="mt-2.5 font-semibold leading-snug text-slate-900">
+                      <h3 className="mt-2.5 font-semibold leading-snug text-slate-900 group-hover:text-brand-purple-700 transition">
                         {localized?.title ?? lesson.title}
                       </h3>
                       <p className="mt-2 text-sm leading-relaxed text-slate-600">
@@ -112,7 +119,7 @@ export default function Learn() {
                       {done ? (
                         <span
                           key={`${lesson.id}-done`}
-                          className="animate-check-pop flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500 text-white shadow-md shadow-emerald-500/25"
+                          className="animate-check-pop flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 to-emerald-500 text-white shadow-md shadow-emerald-500/25"
                           aria-label={tr.common.completed}
                           title={tr.common.completed}
                         >
@@ -134,7 +141,7 @@ export default function Learn() {
                         </span>
                       ) : (
                         <span
-                          className="mt-1 text-lg text-slate-300"
+                          className="mt-1 text-xl text-slate-300 group-hover:text-brand-purple-400 transition"
                           aria-hidden
                         >
                           →
