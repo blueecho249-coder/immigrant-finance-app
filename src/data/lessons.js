@@ -66,7 +66,7 @@ export const lessons = [
     ],
     quiz: {
       question:
-        "What does “net pay” usually mean on a pay stub?",
+        "What does "net pay" usually mean on a pay stub?",
       options: [
         "Pay before any taxes or deductions",
         "Pay after deductions—the amount you actually receive",
@@ -108,6 +108,121 @@ export const lessons = [
       options: [
         "Your employer may match some of your contributions",
         "The government guarantees your investments will double every year",
+      ],
+      correctIndex: 0,
+    },
+  },
+  // NEW LESSONS
+  {
+    id: "send-money-home",
+    title: "How to send money back home",
+    subtitle: "Wire transfers, apps, fees, and exchange rates",
+    category: "Banking",
+    content: [
+      "Many newcomers send money to family abroad using wire transfers, online services like Wise or Remitly, or bank transfers. Each option has different fees, exchange rates, and delivery times—some arrive in minutes, others take several days.",
+      "Always compare the total cost including hidden fees in the exchange rate. Services often show a 'fee' plus give you a worse exchange rate than the real mid-market rate. Track your transfers and keep receipts in case something goes wrong.",
+    ],
+    quiz: {
+      question:
+        "What should you check besides the fee when sending money abroad?",
+      options: [
+        "The exchange rate they give you compared to the real market rate",
+        "The color of the app icon",
+      ],
+      correctIndex: 0,
+    },
+  },
+  {
+    id: "health-insurance",
+    title: "Understanding health insurance",
+    subtitle: "Deductibles, copays, and what to do without coverage",
+    category: "Benefits",
+    content: [
+      "Health insurance helps pay for doctor visits, hospital stays, and prescriptions. In Canada, provincial health plans cover most basics but you may need private insurance for dental, vision, and prescriptions. In the US, insurance often comes through your employer or the marketplace.",
+      "A deductible is what you pay before insurance starts helping; a copay is a fixed amount per visit. If you have no coverage yet, look for community health centers, sliding-scale clinics, or provincial/state programs for newcomers.",
+    ],
+    quiz: {
+      question:
+        "What is a deductible in health insurance?",
+      options: [
+        "The amount you pay out of pocket before insurance starts covering costs",
+        "The monthly premium you pay for insurance",
+      ],
+      correctIndex: 0,
+    },
+  },
+  {
+    id: "drivers-license",
+    title: "How to get a driver's license",
+    subtitle: "Exchanging foreign licenses, tests, and costs",
+    category: "Life Admin",
+    content: [
+      "Most provinces and states let you exchange a valid foreign license if your home country has an agreement with them. Otherwise, you may need to take a written knowledge test, a vision test, and a road driving test.",
+      "Costs vary but typically include application fees, test fees, and the license itself. Some places require you to hold a learner permit for a certain time before the full license. Check your local DMV or licensing office website for exact requirements.",
+    ],
+    quiz: {
+      question:
+        "Can you always exchange a foreign license without any tests?",
+      options: [
+        "No—it depends on agreements between your home country and the province or state",
+        "Yes—all foreign licenses are automatically valid",
+      ],
+      correctIndex: 0,
+    },
+  },
+  {
+    id: "avoiding-scams",
+    title: "Protecting yourself from scams",
+    subtitle: "CRA/IRS scam calls, fake jobs, and immigration fraud",
+    category: "Safety",
+    content: [
+      "Scammers often target newcomers with fake calls claiming to be from the CRA, IRS, or immigration. Real government agencies will never threaten arrest over the phone or demand immediate payment via gift cards or wire transfers.",
+      "Watch out for job offers that ask you to pay upfront, immigration 'helpers' who guarantee results, and emails asking for your SIN, SSN, or banking info. When in doubt, hang up and call the official number yourself to verify.",
+    ],
+    quiz: {
+      question:
+        "Will the CRA or IRS ever call and demand immediate payment via gift cards?",
+      options: [
+        "No—that is always a scam",
+        "Yes—they do this for urgent tax debts",
+      ],
+      correctIndex: 0,
+    },
+  },
+  {
+    id: "emergency-fund",
+    title: "How to build an emergency fund",
+    subtitle: "Why you need one, how much to save, and where to keep it",
+    category: "Saving",
+    content: [
+      "An emergency fund is savings set aside for unexpected expenses like job loss, medical bills, or urgent repairs. Financial experts often recommend saving three to six months of essential expenses, but even a few hundred dollars helps in a pinch.",
+      "Keep your emergency fund in a savings account where it is easy to access but separate from daily spending. Start small—even $20 per paycheck adds up. Automate transfers so you save without thinking about it.",
+    ],
+    quiz: {
+      question:
+        "How much emergency fund do experts often recommend as a starting goal?",
+      options: [
+        "Three to six months of essential expenses",
+        "One week of spending money",
+      ],
+      correctIndex: 0,
+    },
+  },
+  {
+    id: "employment-rights",
+    title: "Understanding employment rights",
+    subtitle: "Minimum wage, overtime, pay stubs, and where to get help",
+    category: "Work",
+    content: [
+      "Every worker has basic rights including minimum wage, overtime pay in most cases, and the right to receive a pay stub showing hours, deductions, and net pay. Your employer cannot legally withhold pay you have earned or force you to work unpaid hours.",
+      "If your employer does not pay you properly, you can file a complaint with your provincial or state labor board. Keep copies of your pay stubs, schedules, and any written communication. Community legal clinics can also help newcomers understand their rights.",
+    ],
+    quiz: {
+      question:
+        "What should you do if your employer refuses to pay wages you earned?",
+      options: [
+        "File a complaint with the labor board and keep records of your work",
+        "Accept it because newcomers have no rights",
       ],
       correctIndex: 0,
     },
