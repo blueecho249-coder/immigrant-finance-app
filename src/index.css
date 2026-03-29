@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased text-slate-800;
+  }
+  body {
+    @apply min-h-dvh bg-slate-200 text-[15px] leading-relaxed sm:text-base;
+  }
+}
+
+@layer components {
+  .pressable {
+    @apply transition-transform duration-150 active:scale-[0.97];
+  }
+
+  .pressable-subtle {
+    @apply transition-transform duration-150 active:scale-[0.99];
+  }
+}
+
+@layer utilities {
+  .animate-page-in {
+    animation: page-fade-in 0.4s ease-out both;
+  }
+
+  .animate-check-pop {
+    animation: check-pop 0.5s cubic-bezier(0.34, 1.4, 0.64, 1) both;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 2.4s ease-in-out infinite;
+  }
+
+  .animate-progress-shine {
+    animation: progress-shine 1.2s ease-out both;
+  }
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes check-pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  55% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(20, 184, 166, 0);
+  }
+}
+
+@keyframes progress-shine {
+  from {
+    opacity: 0.35;
+    transform: scaleX(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
