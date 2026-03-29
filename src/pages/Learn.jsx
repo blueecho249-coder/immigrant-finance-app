@@ -33,8 +33,11 @@ export default function Learn() {
   const pct = Math.round((completedCount / LESSON_COUNT) * 100);
 
   return (
-    <div className="space-y-8">
-      <header className="space-y-3">
+    <div className="space-y-6">
+      <header className="space-y-2">
+        <p className="text-sm font-medium text-brand-teal-600">
+          {tr.learn.welcomeMessage ?? "Welcome — build your financial future"}
+        </p>
         <h1 className="text-2xl font-bold tracking-tight text-brand-purple-900">
           {tr.learn.title}
         </h1>
@@ -59,9 +62,9 @@ export default function Learn() {
             lessonCount: LESSON_COUNT,
           })}
         </p>
-        <div className="mt-5 space-y-2">
+        <div className="mt-5 space-y-3">
           <div
-            className="h-4 overflow-hidden rounded-full bg-slate-200 shadow-inner"
+            className="h-5 overflow-hidden rounded-full bg-slate-200/80 shadow-inner"
             role="progressbar"
             aria-valuenow={completedCount}
             aria-valuemin={0}
@@ -70,14 +73,16 @@ export default function Learn() {
           >
             <div
               key={completedCount}
-              className="animate-progress-shine h-full rounded-full bg-gradient-to-r from-brand-purple-500 via-brand-teal-500 to-brand-teal-600 transition-[width] duration-700 ease-out"
-              style={{ width: `${pct}%` }}
+              className="animate-progress-shine h-full rounded-full bg-gradient-to-r from-brand-purple-500 via-brand-purple-400 to-brand-teal-500 transition-[width] duration-700 ease-out shadow-sm"
+              style={{ width: `${Math.max(pct, 2)}%` }}
             />
           </div>
-          <div className="flex items-center justify-between text-xs font-semibold text-slate-600">
-            <span>0%</span>
-            <span className="text-brand-purple-700">{pct}%</span>
-            <span>100%</span>
+          <div className="flex items-center justify-between">
+            <span className="text-xs text-slate-500">0%</span>
+            <span className="rounded-full bg-brand-purple-100 px-3 py-1 text-sm font-bold text-brand-purple-700">
+              {pct}% {tr.learn.completeLabel ?? "complete"}
+            </span>
+            <span className="text-xs text-slate-500">100%</span>
           </div>
         </div>
       </section>
@@ -97,9 +102,9 @@ export default function Learn() {
               <li key={lesson.id}>
                 <Link
                   to={`/learn/${lesson.id}`}
-                  className={`pressable-subtle group block rounded-xl border-2 border-slate-200/80 bg-white p-5 shadow-sm transition hover:border-brand-purple-300 hover:shadow-md hover:bg-brand-purple-50/30 ${categoryBorderClass(lesson.category)}`}
+                  className={`pressable-subtle group block overflow-hidden rounded-xl bg-gradient-to-r from-slate-50 to-white shadow-sm ring-1 ring-slate-200/80 transition-all duration-200 hover:shadow-lg hover:ring-brand-purple-300 hover:scale-[1.01] ${categoryBorderClass(lesson.category)}`}
                 >
-                  <div className="flex gap-4">
+                  <div className="flex items-center gap-4 p-5">
                     <div className="min-w-0 flex-1">
                       <div className="flex flex-wrap items-center gap-2">
                         <span
@@ -108,14 +113,14 @@ export default function Learn() {
                           {tr.learn.categories?.[lesson.category] ?? lesson.category}
                         </span>
                       </div>
-                      <h3 className="mt-2.5 font-semibold leading-snug text-slate-900 group-hover:text-brand-purple-700 transition">
+                      <h3 className="mt-2.5 font-semibold leading-snug text-slate-900 group-hover:text-brand-purple-700 transition-colors">
                         {localized?.title ?? lesson.title}
                       </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                      <p className="mt-1.5 text-sm leading-relaxed text-slate-500">
                         {localized?.subtitle ?? lesson.subtitle}
                       </p>
                     </div>
-                    <div className="flex shrink-0 flex-col items-end justify-start pt-0.5">
+                    <div className="flex shrink-0 items-center justify-center">
                       {done ? (
                         <span
                           key={`${lesson.id}-done`}
@@ -141,10 +146,12 @@ export default function Learn() {
                         </span>
                       ) : (
                         <span
-                          className="mt-1 text-xl text-slate-300 group-hover:text-brand-purple-400 transition"
+                          className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-400 transition-all group-hover:bg-brand-purple-100 group-hover:text-brand-purple-600"
                           aria-hidden
                         >
-                          →
+                          <svg width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
+                            <path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
                         </span>
                       )}
                     </div>

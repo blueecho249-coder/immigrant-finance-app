@@ -23,7 +23,7 @@ const barHex = {
 };
 
 const inputClass =
-  "mt-2 block w-full min-h-[48px] rounded-xl border border-slate-200 bg-white px-4 py-3 text-base text-slate-900 outline-none ring-brand-purple-500 placeholder:text-slate-400 focus:border-brand-purple-300 focus:ring-2";
+  "mt-2 block w-full min-h-[52px] rounded-xl border-2 border-slate-200 bg-slate-50/50 px-4 py-3.5 text-base text-slate-900 outline-none placeholder:text-slate-400 transition-all focus:border-brand-purple-400 focus:bg-white focus:ring-2 focus:ring-brand-purple-500/20";
 
 function buildIncomeBarGradient(segments, barTotalPct) {
   const positive = segments.filter((s) => s.amount > 0);
@@ -125,27 +125,33 @@ export default function BudgetCalculator() {
         ))}
       </div>
 
-      <div className="mt-7 space-y-3 rounded-xl border border-brand-teal-100 bg-gradient-to-br from-brand-teal-50 to-brand-teal-50/50 p-5 shadow-sm">
-        <div className="flex items-center justify-between text-sm">
-          <span className="font-medium text-slate-600">
-            {tr.tools.budget.results.totalExpenses}
-          </span>
-          <span className="tabular-nums text-base font-semibold text-slate-900">
-            ${fmt(totalExpenses)}
-          </span>
-        </div>
-        <div className="flex items-center justify-between text-sm">
-          <span className="font-medium text-slate-600">
-            {tr.tools.budget.results.leftOver}
-          </span>
-          <span
-            className={[
-              "tabular-nums text-base font-bold",
-              leftOver >= 0 ? "text-emerald-600" : "text-red-600",
-            ].join(" ")}
-          >
-            ${fmt(leftOver)}
-          </span>
+      <div className="mt-7 overflow-hidden rounded-xl bg-gradient-to-br from-brand-teal-500 to-brand-teal-600 p-5 text-white shadow-lg shadow-brand-teal-500/25">
+        <p className="text-xs font-semibold uppercase tracking-wide text-teal-100 mb-4">
+          {tr.tools.budget.results.heading ?? "Results"}
+        </p>
+        <div className="space-y-3">
+          <div className="flex items-center justify-between">
+            <span className="text-sm text-teal-100">
+              {tr.tools.budget.results.totalExpenses}
+            </span>
+            <span className="tabular-nums text-lg font-bold">
+              ${fmt(totalExpenses)}
+            </span>
+          </div>
+          <div className="h-px bg-white/20" />
+          <div className="flex items-center justify-between">
+            <span className="text-sm text-teal-100">
+              {tr.tools.budget.results.leftOver}
+            </span>
+            <span
+              className={[
+                "tabular-nums text-xl font-bold",
+                leftOver >= 0 ? "text-white" : "text-red-200",
+              ].join(" ")}
+            >
+              ${fmt(leftOver)}
+            </span>
+          </div>
         </div>
       </div>
 

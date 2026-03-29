@@ -6,24 +6,28 @@ const partners = [
     partnerName: "Neo Financial",
     productName: "Secured Credit Card",
     href: "#",
+    borderColor: "from-violet-500 to-violet-600",
   },
   {
     id: "eq",
     partnerName: "EQ Bank",
     productName: "Savings Plus Account",
     href: "#",
+    borderColor: "from-sky-500 to-sky-600",
   },
   {
     id: "borrowell",
     partnerName: "Borrowell",
     productName: "Free credit score & report",
     href: "#",
+    borderColor: "from-emerald-500 to-emerald-600",
   },
   {
     id: "wealthsimple",
     partnerName: "Wealthsimple",
     productName: "Invest (RRSP, TFSA & more)",
     href: "#",
+    borderColor: "from-amber-500 to-amber-600",
   },
 ];
 
@@ -56,15 +60,18 @@ export default function Offers() {
           });
           return (
             <li key={p.id}>
-              <article className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-card">
+              <article className="overflow-hidden rounded-xl bg-white shadow-md ring-1 ring-slate-200/80 transition-all hover:shadow-lg">
                 <div
-                  className="h-1.5 bg-gradient-to-r from-brand-purple-500 to-brand-teal-500"
+                  className={`h-1.5 bg-gradient-to-r ${p.borderColor}`}
                   aria-hidden
                 />
                 <div className="p-5">
                   {index === 0 && (
-                    <span className="mb-3 inline-block rounded-full bg-brand-purple-600 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white shadow-sm">
-                      {tr.offers.mostPopular}
+                    <span className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-brand-purple-600 to-brand-purple-700 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white shadow-sm">
+                      <svg width={12} height={12} viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" />
+                      </svg>
+                      {tr.offers.recommended ?? "Recommended"}
                     </span>
                   )}
                   <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
@@ -84,12 +91,14 @@ export default function Offers() {
                     onClick={(e) => {
                       if (p.href === "#") e.preventDefault();
                     }}
-                    className="animate-pulse-soft pressable mt-5 flex min-h-[48px] w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-teal-600 to-brand-teal-700 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-teal-600/30 transition hover:shadow-lg hover:from-brand-teal-700 hover:to-brand-teal-800"
+                    className="pressable mt-5 flex min-h-[52px] w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-teal-500 to-brand-teal-600 py-3.5 text-sm font-bold text-white shadow-lg shadow-brand-teal-500/30 transition-all hover:shadow-xl hover:from-brand-teal-600 hover:to-brand-teal-700"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     {tr.offers.applyNow}
-                    <span aria-hidden>→</span>
+                    <svg width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
+                      <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
                   </a>
                 </div>
               </article>

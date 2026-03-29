@@ -355,13 +355,15 @@ export const translations = {
       correctSuffix: "Nice work—you have finished this lesson.",
       wrongTryOther: "Not quite—try the other option.",
     },
-    learn: {
-      title: "Learn",
-      subtitle:
-        "Short lessons for newcomers to Canada and the United States. Tap a lesson to read and take the quick check.",
-      progressTitle: "Your progress",
-      progressText: "{completedCount} of {lessonCount} lessons complete",
-      allLessonsTitle: "All lessons",
+learn: {
+  title: "Learn",
+  subtitle:
+  "Short lessons for newcomers to Canada and the United States. Tap a lesson to read and take the quick check.",
+  welcomeMessage: "Welcome — build your financial future",
+  progressTitle: "Your progress",
+  progressText: "{completedCount} of {lessonCount} lessons complete",
+  completeLabel: "complete",
+  allLessonsTitle: "All lessons",
       detailLinkAllLessons: "All lessons",
       detailInPlainEnglish: "In plain English",
       detailQuickCheck: "Quick check",
@@ -459,10 +461,11 @@ export const translations = {
           phone: "Phone bill",
           other: "Other expenses",
         },
-        results: {
-          totalExpenses: "Total expenses",
-          leftOver: "Money left over",
-        },
+results: {
+  heading: "Results",
+  totalExpenses: "Total expenses",
+  leftOver: "Money left over",
+  },
         breakdown: {
           title: "Breakdown by category (% of income)",
           description:
@@ -501,9 +504,10 @@ export const translations = {
       note: "We may earn a referral fee — this helps keep the app free.",
       subtitle:
         "Partners we think newcomers may find useful. Always read terms before you apply.",
-      mostPopular: "Most Popular",
-      bestFor: "Best for: {label}",
-      applyNow: "Apply Now",
+mostPopular: "Most Popular",
+  recommended: "Recommended",
+  bestFor: "Best for: {label}",
+  applyNow: "Apply Now",
       partnerNames: {
         neo: "Neo Financial",
         eq: "EQ Bank",
@@ -556,13 +560,15 @@ export const translations = {
       correctSuffix: "बहुत बढ़िया! आपने यह लेसन पूरा कर लिया है।",
       wrongTryOther: "अभी नहीं—दूसरा विकल्प आज़माएँ।",
     },
-    learn: {
-      title: "सीखें",
-      subtitle:
-        "कनाडा और अमेरिका आए नए लोगों के लिए छोटी-छोटी सीख। किसी लेसन पर टैप करें, पढ़ें और क्विक चेक करें।",
-      progressTitle: "आपकी प्रगति",
-      progressText: "{completedCount} में से {lessonCount} लेसन पूरे हुए",
-      allLessonsTitle: "सभी लेसन",
+learn: {
+  title: "सीखें",
+  subtitle:
+  "कनाडा और अमेरिका आए नए लोगों के लिए छोटी-छोटी सीख। किसी लेसन पर टैप करें, पढ़ें और क्विक चेक करें।",
+  welcomeMessage: "स्वागत है — अपना वित्तीय भविष्य बनाएं",
+  progressTitle: "आपकी प्रगति",
+  progressText: "{completedCount} में से {lessonCount} लेसन पूरे हुए",
+  completeLabel: "पूरा",
+  allLessonsTitle: "सभी लेसन",
       detailLinkAllLessons: "सभी लेसन",
       detailInPlainEnglish: "सरल भाषा में",
       detailQuickCheck: "क्विक चेक",
@@ -660,10 +666,11 @@ export const translations = {
           phone: "फ़ोन बिल",
           other: "अन्य खर्च",
         },
-        results: {
-          totalExpenses: "कुल खर्च",
-          leftOver: "बचत/बचा हुआ पैसा",
-        },
+results: {
+  heading: "परिणाम",
+  totalExpenses: "कुल खर्च",
+  leftOver: "बचत/बचा हुआ पैसा",
+  },
         breakdown: {
           title: "कैटेगरी के अनुसार ब्रेकडाउन (% of income)",
           description: "बार दिखाता है कि आपकी आय के हर डॉलर का कितना हिस्सा किस खर्च में जाता है।",
@@ -701,9 +708,10 @@ export const translations = {
       note: "हम रेफ़रल फ़ीस कमा सकते हैं — इससे ऐप मुफ्त रखने में मदद मिलती है।",
       subtitle:
         "हमारे हिसाब से नए लोगों के लिए उपयोगी पार्टनर। आवेदन करने से पहले हमेशा शर्तें पढ़ें।",
-      mostPopular: "सबसे लोकप्रिय",
-      bestFor: "सबसे अच्छा: {label}",
-      applyNow: "अभी आवेदन करें",
+mostPopular: "सबसे लोकप्रिय",
+  recommended: "अनुशंसित",
+  bestFor: "सबसे अच्छा: {label}",
+  applyNow: "अभी आवेदन करें",
       partnerNames: {
         neo: "Neo Financial",
         eq: "EQ Bank",
@@ -719,7 +727,7 @@ export const translations = {
       partners: {
         neo: {
           description:
-            "एक सिक्योरड/डिपॉज़िट वाला कार्ड जो आपको पेमेंट हिस्ट्री बनाने में मदद कर सकता है, और आप अपना खर्च-सीमा नियंत्रित कर सकते हैं।",
+            "एक सिक्योरड/डिपॉज़िट वाला कार्ड जो आपको पेमेंट हिस्ट्री बनाने में मदद कर सकता है, और आप अपना खर्च-सीमा नियंत्रित ���र सकते हैं।",
           bestFor: "कोई क्रेडिट हिस्ट्री नहीं",
         },
         eq: {
@@ -756,13 +764,15 @@ export const translations = {
       correctSuffix: "Magaling! Natapos mo na ang lesson na ito.",
       wrongTryOther: "Hindi pa—subukan ang ibang opsyon.",
     },
-    learn: {
-      title: "Matuto",
-      subtitle:
-        "Mga maiikling aral para sa mga bagong dating sa Canada at US. Pindutin ang isang lesson para basahin at sagutan ang quick check.",
-      progressTitle: "Ang iyong progress",
-      progressText: "{completedCount} sa {lessonCount} lessons ay kumpleto",
-      allLessonsTitle: "Lahat ng lessons",
+learn: {
+  title: "Matuto",
+  subtitle:
+  "Mga maiikling aral para sa mga bagong dating sa Canada at US. Pindutin ang isang lesson para basahin at sagutan ang quick check.",
+  welcomeMessage: "Maligayang pagdating — buuin ang iyong kinabukasang pinansyal",
+  progressTitle: "Ang iyong progress",
+  progressText: "{completedCount} sa {lessonCount} lessons ay kumpleto",
+  completeLabel: "kumpleto",
+  allLessonsTitle: "Lahat ng lessons",
       detailLinkAllLessons: "Lahat ng lessons",
       detailInPlainEnglish: "Sa simpleng salita",
       detailQuickCheck: "Quick check",
@@ -860,10 +870,11 @@ export const translations = {
           phone: "Phone bill",
           other: "Iba pang expenses",
         },
-        results: {
-          totalExpenses: "Kabuuang gastos",
-          leftOver: "Natirang pera",
-        },
+results: {
+  heading: "Resulta",
+  totalExpenses: "Kabuuang gastos",
+  leftOver: "Natirang pera",
+  },
         breakdown: {
           title: "Hatiin ayon sa kategorya (% ng income)",
           description:
@@ -902,9 +913,10 @@ export const translations = {
       note: "Maaaring magkaroon kami ng referral fee — nakakatulong ito para manatiling libre ang app.",
       subtitle:
         "Mga partner na sa tingin namin ay kapaki-pakinabang sa mga bagong dating. Basahin palagi ang terms bago mag-apply.",
-      mostPopular: "Pinaka-Popular",
-      bestFor: "Angkop para sa: {label}",
-      applyNow: "Mag-apply na",
+mostPopular: "Pinaka-Popular",
+  recommended: "Inirerekomenda",
+  bestFor: "Angkop para sa: {label}",
+  applyNow: "Mag-apply na",
       partnerNames: {
         neo: "Neo Financial",
         eq: "EQ Bank",
@@ -957,13 +969,15 @@ export const translations = {
       correctSuffix: "太棒了！你已经完成了本节课。",
       wrongTryOther: "还不对——请选另一个选项。",
     },
-    learn: {
-      title: "学习",
-      subtitle:
-        "为加拿大和美国新移民准备的简短课程。点开某个课程阅读并完成快速测验。",
-      progressTitle: "你的进度",
-      progressText: "已完成 {completedCount} / {lessonCount} 课",
-      allLessonsTitle: "所有课程",
+learn: {
+  title: "学习",
+  subtitle:
+  "为加拿大和美国新移民准备的简短课程。点开某个课程阅读并完成快速测验。",
+  welcomeMessage: "欢迎 — 建立您的财务未来",
+  progressTitle: "你的进度",
+  progressText: "已完成 {completedCount} / {lessonCount} 课",
+  completeLabel: "已完成",
+  allLessonsTitle: "所有课程",
       detailLinkAllLessons: "所有课程",
       detailInPlainEnglish: "用简单的话说明",
       detailQuickCheck: "快速测验",
@@ -1060,10 +1074,11 @@ export const translations = {
           phone: "手机账单",
           other: "其他开支",
         },
-        results: {
-          totalExpenses: "总开支",
-          leftOver: "剩余金额",
-        },
+results: {
+  heading: "结果",
+  totalExpenses: "总开支",
+  leftOver: "剩余金额",
+  },
         breakdown: {
           title: "按类别拆分（占收入百分比）",
           description: "这条条形图显示：你收入中的每一块钱，分别流向哪些开支。",
@@ -1095,11 +1110,12 @@ export const translations = {
     },
     offers: {
       title: "优惠",
-      note: "我们可能会收到推荐佣金——这有助于让应用保持免费。",
+      note: "我们可能会收到推荐佣金——这有助于让应用���持免费。",
       subtitle: "我们觉得可能对新移民有用的合作伙伴。申请前请务必阅读条款。",
-      mostPopular: "最受欢迎",
-      bestFor: "适合：{label}",
-      applyNow: "立即申请",
+mostPopular: "最受欢迎",
+  recommended: "推荐",
+  bestFor: "适合：{label}",
+  applyNow: "立即申请",
       partnerNames: {
         neo: "Neo Financial",
         eq: "EQ Bank",

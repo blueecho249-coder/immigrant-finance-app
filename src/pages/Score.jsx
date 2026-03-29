@@ -7,24 +7,37 @@ import {
   SCORE_SLIDER_MIN,
 } from "../utils/creditScoreRanges.js";
 
-const TIP_EMOJI = ["💡", "🎯", "✨"];
+const TIP_ICONS = [
+  // Lightbulb
+  <svg key="bulb" width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+    <path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.75V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.25A7 7 0 0 0 12 2z" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>,
+  // Target
+  <svg key="target" width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+    <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" />
+  </svg>,
+  // Star
+  <svg key="star" width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>,
+];
 
-function getCircleColor(ui) {
-  if (ui.fillClass.includes("bg-slate-500")) return "#94a3b8";
-  if (ui.fillClass.includes("bg-red-500")) return "#ef4444";
-  if (ui.fillClass.includes("bg-amber-500")) return "#f59e0b";
-  if (ui.fillClass.includes("bg-blue-500")) return "#3b82f6";
-  if (ui.fillClass.includes("bg-emerald-500")) return "#10b981";
-  return "#0d9488";
+// Score-based color mapping per requirements
+function getScoreColors(score) {
+  if (score <= 0) return { ring: "#94a3b8", track: "#e2e8f0", icon: "bg-slate-100 text-slate-500" }; // gray
+  if (score < 580) return { ring: "#ef4444", track: "#fee2e2", icon: "bg-red-100 text-red-600" }; // red
+  if (score < 670) return { ring: "#f97316", track: "#ffedd5", icon: "bg-orange-100 text-orange-600" }; // orange  
+  if (score < 740) return { ring: "#eab308", track: "#fef9c3", icon: "bg-yellow-100 text-yellow-600" }; // yellow
+  if (score < 800) return { ring: "#7c3aed", track: "#ede9fe", icon: "bg-violet-100 text-violet-600" }; // purple
+  return { ring: "#14b8a6", track: "#ccfbf1", icon: "bg-teal-100 text-teal-600" }; // teal
 }
 
-function getTrackColor(ui) {
-  if (ui.trackClass.includes("bg-slate-200")) return "#e2e8f0";
-  if (ui.trackClass.includes("bg-red-100")) return "#fee2e2";
-  if (ui.trackClass.includes("bg-amber-100")) return "#fef3c7";
-  if (ui.trackClass.includes("bg-blue-100")) return "#dbeafe";
-  if (ui.trackClass.includes("bg-emerald-100")) return "#d1fae5";
-  return "#ccf2f1";
+function getCircleColor(ui, score) {
+  return getScoreColors(score).ring;
+}
+
+function getTrackColor(ui, score) {
+  return getScoreColors(score).track;
 }
 
 export default function Score() {
@@ -90,55 +103,51 @@ export default function Score() {
         </p>
       </header>
 
-      <div className="rounded-2xl border border-brand-purple-100/90 bg-white p-8 shadow-card">
-        <p className="text-center text-xs font-semibold uppercase tracking-wide text-brand-teal-700">
+      <div className="flex flex-col items-center">
+        <p className="text-center text-xs font-semibold uppercase tracking-wide text-brand-teal-700 mb-6">
           {tr.score.cardLabel}
         </p>
 
-        <div className="mt-8 flex justify-center">
-          <div className="relative h-56 w-56">
-            <svg className="absolute inset-0 h-full w-full" viewBox="0 0 200 200">
-              <circle
-                cx="100"
-                cy="100"
-                r="88"
-                fill="none"
-                stroke={getTrackColor(ui)}
-                strokeWidth="16"
-              />
-              <circle
-                cx="100"
-                cy="100"
-                r="88"
-                fill="none"
-                stroke={getCircleColor(ui)}
-                strokeWidth="16"
-                strokeDasharray={`${(ui.barPercent / 100) * 552.92} 552.92`}
-                strokeLinecap="round"
-                className="transition-all duration-700 ease-out"
-                style={{ transform: "rotate(-90deg)", transformOrigin: "100px 100px" }}
-              />
-            </svg>
-            <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <p
-                className={`text-6xl font-bold tabular-nums leading-none tracking-tight ${
-                  ui.scoreDisplay === 0 ? "text-slate-400" : "text-brand-purple-900"
-                }`}
-              >
-                {ui.scoreDisplay === 0 ? "—" : displayScore}
-              </p>
-            </div>
+        <div className="relative h-64 w-64">
+          <svg className="absolute inset-0 h-full w-full drop-shadow-lg" viewBox="0 0 200 200">
+            <circle
+              cx="100"
+              cy="100"
+              r="85"
+              fill="none"
+              stroke={getTrackColor(ui, score)}
+              strokeWidth="18"
+            />
+            <circle
+              cx="100"
+              cy="100"
+              r="85"
+              fill="none"
+              stroke={getCircleColor(ui, score)}
+              strokeWidth="18"
+              strokeDasharray={`${(ui.barPercent / 100) * 534.07} 534.07`}
+              strokeLinecap="round"
+              className="transition-all duration-700 ease-out"
+              style={{ transform: "rotate(-90deg)", transformOrigin: "100px 100px" }}
+            />
+          </svg>
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <p
+              className={`text-7xl font-bold tabular-nums leading-none tracking-tight ${
+                ui.scoreDisplay === 0 ? "text-slate-400" : "text-brand-purple-900"
+              }`}
+            >
+              {ui.scoreDisplay === 0 ? "—" : displayScore}
+            </p>
+            <p className="mt-2 text-sm font-medium text-slate-500">
+              {ui.label}
+            </p>
           </div>
         </div>
 
-        <div className="mt-8 space-y-2 text-center">
-          <p className="text-xl font-semibold text-slate-800">
-            {ui.label}
-          </p>
-          <p className="text-sm leading-relaxed text-slate-600">
-            {ui.subtitle}
-          </p>
-        </div>
+        <p className="mt-6 text-center text-sm leading-relaxed text-slate-600 max-w-[280px]">
+          {ui.subtitle}
+        </p>
       </div>
 
       <section aria-labelledby="personalized-tips-heading" className="space-y-4">
@@ -149,22 +158,25 @@ export default function Score() {
           {tr.score.tipsHeading}
         </h2>
         <ul className="space-y-3">
-          {ui.tips.map((tip, i) => (
-            <li
-              key={tip}
-              className="flex gap-4 rounded-xl border border-slate-200/80 bg-white p-4 shadow-sm hover:shadow-md transition"
-            >
-              <span
-                className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-brand-teal-50 to-brand-teal-100 text-lg"
-                aria-hidden
+          {ui.tips.map((tip, i) => {
+            const colors = getScoreColors(score);
+            return (
+              <li
+                key={tip}
+                className="flex gap-4 rounded-xl bg-white p-4 shadow-sm ring-1 ring-slate-200/80 transition-all hover:shadow-md hover:ring-slate-300"
               >
-                {TIP_EMOJI[i % TIP_EMOJI.length]}
-              </span>
-              <span className="text-sm leading-relaxed text-slate-700">
-                {tip}
-              </span>
-            </li>
-          ))}
+                <span
+                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${colors.icon}`}
+                  aria-hidden
+                >
+                  {TIP_ICONS[i % TIP_ICONS.length]}
+                </span>
+                <span className="text-sm leading-relaxed text-slate-700 pt-2">
+                  {tip}
+                </span>
+              </li>
+            );
+          })}
         </ul>
       </section>
 
