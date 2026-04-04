@@ -1,22 +1,31 @@
-import { Navigate, Route, Routes } from "react-router-dom";
-import Layout from "./components/Layout.jsx";
-import Learn from "./pages/Learn.jsx";
-import LessonDetail from "./pages/LessonDetail.jsx";
-import Score from "./pages/Score.jsx";
-import Tools from "./pages/Tools.jsx";
-import Offers from "./pages/Offers.jsx";
+import { useState } from 'react'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import Layout from './components/Layout.jsx'
+import LandingPage from './pages/LandingPage.jsx'
+import Learn from './pages/Learn.jsx'
+import Score from './pages/Score.jsx'
+import Tools from './pages/Tools.jsx'
+import Offers from './pages/Offers.jsx'
+import Account from './pages/Account.jsx'
 
 export default function App() {
+  const [language, setLanguage] = useState('en')
+
+  const handleLanguageChange = (lang) => {
+    setLanguage(lang)
+    localStorage.setItem('language', lang)
+  }
+
   return (
-    <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<Navigate to="/learn" replace />} />
-        <Route path="/learn" element={<Learn />} />
-        <Route path="/learn/:lessonId" element={<LessonDetail />} />
-        <Route path="/score" element={<Score />} />
-        <Route path="/tools" element={<Tools />} />
-        <Route path="/offers" element={<Offers />} />
-      </Route>
-    </Routes>
-  );
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage language={language} onLanguageChange={handleLanguageChange} />} />
+        <Route path="/learn" element={<Learn language={language} />} />
+        <Route path="/score" element={<Score language={language} />} />
+        <Route path="/tools" element={<Tools language={language} />} />
+        <Route path="/offers" element={<Offers language={language} />} />
+        <Route path="/account" element={<Account language={language} />} />
+      </Routes>
+    </BrowserRouter>
+  )
 }

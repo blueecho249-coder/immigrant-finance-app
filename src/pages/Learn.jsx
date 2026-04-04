@@ -1,160 +1,84 @@
-import { Link } from "react-router-dom";
-import { lessons, LESSON_COUNT } from "../data/lessons.js";
-import { useLessonProgress } from "../context/LessonProgressContext.jsx";
-import { useLanguage } from "../context/LanguageContext.jsx";
+import { useState } from 'react'
+import { lessons } from '../data/lessons.js'
 
-const categoryStyles = {
-  Credit: "bg-violet-100 text-violet-800 ring-violet-200",
-  Banking: "bg-sky-100 text-sky-800 ring-sky-200",
-  Housing: "bg-amber-100 text-amber-900 ring-amber-200",
-  Taxes: "bg-emerald-100 text-emerald-900 ring-emerald-200",
-  Saving: "bg-teal-100 text-teal-900 ring-teal-200",
-};
+export default function Learn({ language = 'en' }) {
+  const [selectedCategory, setSelectedCategory] = useState('All')
+  
+  const categories = ['All', 'Credit', 'Banking', 'Housing']
+  
+  const filteredLessons = selectedCategory === 'All' 
+    ? lessons 
+    : lessons.filter(lesson => lesson.category === selectedCategory)
 
-const categoryBorder = {
-  Credit: "border-l-[6px] border-l-violet-500",
-  Banking: "border-l-[6px] border-l-sky-500",
-  Housing: "border-l-[6px] border-l-amber-500",
-  Taxes: "border-l-[6px] border-l-emerald-500",
-  Saving: "border-l-[6px] border-l-teal-500",
-};
+  const content = {
+    en: {
+      title: "Financial Lessons",
+      subtitle: "Learn at your own pace in your language",
+      startLesson: "Start Lesson",
+      categories: "Categories"
+    },
+    es: {
+      title: "Lecciones Financieras",
+      subtitle: "Aprende a tu propio ritmo en tu idioma",
+      startLesson: "Comenzar Lección",
+      categories: "Categorías"
+    },
+    hi: {
+      title: "वित्तीय पाठ",
+      subtitle: "अपनी भाषा में अपनी गति से सीखें",
+      startLesson: "पाठ शुरू करें",
+      categories: "श्रेणियां"
+    }
+  }
 
-function categoryClass(category) {
-  return categoryStyles[category] ?? "bg-slate-100 text-slate-700 ring-slate-200";
-}
-
-function categoryBorderClass(category) {
-  return categoryBorder[category] ?? "border-l-slate-400";
-}
-
-export default function Learn() {
-  const { completedCount, isComplete } = useLessonProgress();
-  const { tr, interpolate } = useLanguage();
-  const pct = Math.round((completedCount / LESSON_COUNT) * 100);
+  const t = content[language] || content.en
 
   return (
-    <div className="space-y-8">
-      <header className="space-y-3">
-        <h1 className="text-2xl font-bold tracking-tight text-brand-purple-900">
-          {tr.learn.title}
-        </h1>
-        <p className="text-sm leading-relaxed text-slate-600 sm:text-[15px]">
-          {tr.learn.subtitle}
-        </p>
-      </header>
+    <div className="px-4 py-6">
+      <div className="mb-6">
+        <h1 className="mb-2 text-2xl font-bold text-gray-900">{t.title}</h1>
+        <p className="text-gray-600">{t.subtitle}</p>
+      </div>
 
-      <section
-        className="rounded-2xl border border-brand-purple-100/80 bg-gradient-to-br from-brand-purple-50 to-brand-teal-50/40 p-6 shadow-card"
-        aria-labelledby="progress-heading"
-      >
-        <h2
-          id="progress-heading"
-          className="text-base font-semibold text-slate-900"
-        >
-          {tr.learn.progressTitle}
-        </h2>
-        <p className="mt-2 text-sm font-medium text-slate-700">
-          {interpolate(tr.learn.progressText, {
-            completedCount,
-            lessonCount: LESSON_COUNT,
-          })}
-        </p>
-        <div className="mt-5 space-y-2">
-          <div
-            className="h-4 overflow-hidden rounded-full bg-slate-200 shadow-inner"
-            role="progressbar"
-            aria-valuenow={completedCount}
-            aria-valuemin={0}
-            aria-valuemax={LESSON_COUNT}
-            aria-label={`${completedCount} of ${LESSON_COUNT} lessons completed`}
-          >
-            <div
-              key={completedCount}
-              className="animate-progress-shine h-full rounded-full bg-gradient-to-r from-brand-purple-500 via-brand-teal-500 to-brand-teal-600 transition-[width] duration-700 ease-out"
-              style={{ width: `${pct}%` }}
-            />
-          </div>
-          <div className="flex items-center justify-between text-xs font-semibold text-slate-600">
-            <span>0%</span>
-            <span className="text-brand-purple-700">{pct}%</span>
-            <span>100%</span>
-          </div>
+      <div className="mb-6">
+        <h2 className="mb-3 text-sm font-semibold text-gray-700">{t.categories}</h2>
+        <div className="flex gap-2 overflow-x-auto pb-2">
+          {categories.map(category => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                selectedCategory === category
+                  ? 'gradient-header text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              {category}
+            </button>
+          ))}
         </div>
-      </section>
+      </div>
 
-      <section aria-labelledby="lessons-list-heading" className="space-y-4">
-        <h2
-          id="lessons-list-heading"
-          className="text-xs font-semibold uppercase tracking-wider text-slate-500"
-        >
-          {tr.learn.allLessonsTitle}
-        </h2>
-        <ul className="space-y-3">
-          {lessons.map((lesson) => {
-            const done = isComplete(lesson.id);
-            const localized = tr.lessons?.[lesson.id];
-            return (
-              <li key={lesson.id}>
-                <Link
-                  to={`/learn/${lesson.id}`}
-                  className={`pressable-subtle group block rounded-xl border-2 border-slate-200/80 bg-white p-5 shadow-sm transition hover:border-brand-purple-300 hover:shadow-md hover:bg-brand-purple-50/30 ${categoryBorderClass(lesson.category)}`}
-                >
-                  <div className="flex gap-4">
-                    <div className="min-w-0 flex-1">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <span
-                          className={`inline-flex rounded-full px-2.5 py-0.5 text-xs font-semibold ring-1 ring-inset ${categoryClass(lesson.category)}`}
-                        >
-                          {tr.learn.categories?.[lesson.category] ?? lesson.category}
-                        </span>
-                      </div>
-                      <h3 className="mt-2.5 font-semibold leading-snug text-slate-900 group-hover:text-brand-purple-700 transition">
-                        {localized?.title ?? lesson.title}
-                      </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                        {localized?.subtitle ?? lesson.subtitle}
-                      </p>
-                    </div>
-                    <div className="flex shrink-0 flex-col items-end justify-start pt-0.5">
-                      {done ? (
-                        <span
-                          key={`${lesson.id}-done`}
-                          className="animate-check-pop flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 to-emerald-500 text-white shadow-md shadow-emerald-500/25"
-                          aria-label={tr.common.completed}
-                          title={tr.common.completed}
-                        >
-                          <svg
-                            width={22}
-                            height={22}
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth={2.5}
-                            aria-hidden
-                          >
-                            <path
-                              d="M20 6L9 17l-5-5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </span>
-                      ) : (
-                        <span
-                          className="mt-1 text-xl text-slate-300 group-hover:text-brand-purple-400 transition"
-                          aria-hidden
-                        >
-                          →
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </section>
+      <div className="space-y-4">
+        {filteredLessons.map(lesson => (
+          <div key={lesson.id} className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
+            <div className="mb-2">
+              <span className="inline-block rounded-full bg-purple-100 px-3 py-1 text-xs font-medium text-purple-700">
+                {lesson.category}
+              </span>
+            </div>
+            <h3 className="mb-2 text-lg font-semibold text-gray-900">
+              {lesson.title[language] || lesson.title.en}
+            </h3>
+            <p className="mb-4 text-sm text-gray-600">
+              {lesson.subtitle[language] || lesson.subtitle.en}
+            </p>
+            <button className="rounded-lg gradient-header px-4 py-2 text-sm font-medium text-white transition-transform hover:scale-105">
+              {t.startLesson}
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
-  );
+  )
 }
