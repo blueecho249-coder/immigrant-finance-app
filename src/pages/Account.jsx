@@ -1,194 +1,243 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
-export default function Account({ language = 'en' }) {
+export default function Account() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isSignUp, setIsSignUp] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('userEmail'))
-  const [isSignUp, setIsSignUp] = useState(false)
+  const [confirmPassword, setConfirmPassword] = useState('')
+  const [error, setError] = useState('')
+  const [userEmail, setUserEmail] = useState('')
+  const [isPremium, setIsPremium] = useState(false)
 
-  const handleSignIn = () => {
-    if (email && password) {
-      localStorage.setItem('userEmail', email)
+  useEffect(() => {
+    // Check if user is logged in on component mount
+    const savedEmail = localStorage.getItem('userEmail')
+    const savedPremium = localStorage.getItem('isPremium') === 'true'
+    
+    if (savedEmail) {
       setIsLoggedIn(true)
+      setUserEmail(savedEmail)
+      setIsPremium(savedPremium)
+    }
+  }, [])
+
+  const validateEmail = (email) => {
+    return email.trim() !== ''
+  }
+
+  const validatePassword = (password) => {
+    return password.length >= 6
+  }
+
+  const handleSignIn = (e) => {
+    e.preventDefault()
+    setError('')
+
+    if (!validateEmail(email)) {
+      setError('Email is required')
+      return
+    }
+
+    if (!validatePassword(password)) {
+      setError('Password must be at least 6 characters')
+      return
+    }
+
+    // Check if user exists in localStorage
+    const savedEmail = localStorage.getItem('userEmail')
+    const savedPassword = localStorage.getItem('userPassword')
+
+    if (savedEmail === email && savedPassword === password) {
+      setIsLoggedIn(true)
+      setUserEmail(email)
+      localStorage.setItem('userEmail', email)
+      localStorage.setItem('userPassword', password)
+    } else {
+      setError('Invalid email or password')
     }
   }
 
-  const handleSignUp = () => {
-    if (email && password) {
-      localStorage.setItem('userEmail', email)
-      setIsLoggedIn(true)
+  const handleSignUp = (e) => {
+    e.preventDefault()
+    setError('')
+
+    if (!validateEmail(email)) {
+      setError('Email is required')
+      return
     }
+
+    if (!validatePassword(password)) {
+      setError('Password must be at least 6 characters')
+      return
+    }
+
+    if (password !== confirmPassword) {
+      setError('Passwords do not match')
+      return
+    }
+
+    // Save new user to localStorage
+    localStorage.setItem('userEmail', email)
+    localStorage.setItem('userPassword', password)
+    localStorage.setItem('isPremium', 'false')
+    
+    setIsLoggedIn(true)
+    setUserEmail(email)
+    setIsPremium(false)
   }
 
   const handleSignOut = () => {
-    localStorage.removeItem('userEmail')
     setIsLoggedIn(false)
+    setUserEmail('')
     setEmail('')
     setPassword('')
+    setConfirmPassword('')
+    setError('')
+    // Keep localStorage data for future sign in
   }
 
-  const content = {
-    en: {
-      title: "Account",
-      subtitle: "Manage your profile and settings",
-      signIn: "Sign In",
-      signUp: "Sign Up",
-      email: "Email",
-      password: "Password",
-      welcome: "Welcome",
-      getPremium: "Get Premium",
-      signOut: "Sign Out",
-      noAccount: "Don't have an account?",
-      haveAccount: "Already have an account?",
-      signUpLink: "Sign up",
-      signInLink: "Sign in"
-    },
-    es: {
-      title: "Cuenta",
-      subtitle: "Gestiona tu perfil y configuración",
-      signIn: "Iniciar Sesión",
-      signUp: "Registrarse",
-      email: "Correo Electrónico",
-      password: "Contraseña",
-      welcome: "Bienvenido",
-      getPremium: "Obtener Premium",
-      signOut: "Cerrar Sesión",
-      noAccount: "¿No tienes una cuenta?",
-      haveAccount: "¿Ya tienes una cuenta?",
-      signUpLink: "Registrarse",
-      signInLink: "Iniciar Sesión"
-    },
-    hi: {
-      title: "खाता",
-      subtitle: "अपनी प्रोफ़ाइल और सेटिंग्स प्रबंधित करें",
-      signIn: "साइन इन करें",
-      signUp: "साइन अप करें",
-      email: "ईमेल",
-      password: "पासवर्ड",
-      welcome: "स्वागत है",
-      getPremium: "प्रीमियम प्राप्त करें",
-      signOut: "साइन आउट करें",
-      noAccount: "क्या आपके पास खाता नहीं है?",
-      haveAccount: "क्या आपके पास पहले से खाता है?",
-      signUpLink: "साइन अप करें",
-      signInLink: "साइन इन करें"
-    }
+  const getInitial = (email) => {
+    return email.charAt(0).toUpperCase()
   }
-
-  const t = content[language] || content.en
 
   if (isLoggedIn) {
-    const savedEmail = localStorage.getItem('userEmail')
     return (
       <div className="px-4 py-6">
-        <div className="mb-6">
-          <h1 className="mb-2 text-2xl font-bold text-gray-900">{t.title}</h1>
-          <p className="text-gray-600">{t.subtitle}</p>
+        {/* User Profile Section */}
+        <div className="text-center mb-8">
+          <div className="mx-auto h-20 w-20 rounded-full gradient-header flex items-center justify-center mb-4 shadow-lg">
+            <span className="text-2xl font-bold text-white">
+              {getInitial(userEmail)}
+            </span>
+          </div>
+          <h2 className="text-xl font-bold text-gray-900 mb-1">{userEmail}</h2>
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-700">
+            Free Plan
+          </span>
         </div>
 
-        <div className="space-y-6">
-          <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-            <div className="text-center">
-              <div className="mb-4">
-                <div className="mx-auto h-16 w-16 rounded-full gradient-header flex items-center justify-center">
-                  <span className="text-2xl font-bold text-white">
-                    {savedEmail[0].toUpperCase()}
-                  </span>
-                </div>
-              </div>
-              <h2 className="mb-2 text-xl font-semibold text-gray-900">
-                {t.welcome}, {savedEmail}
-              </h2>
-              <p className="text-gray-600">{savedEmail}</p>
-            </div>
-          </div>
-
-          <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-            <h3 className="mb-4 text-lg font-semibold text-gray-900">
-              {t.getPremium}
-            </h3>
-            <p className="mb-4 text-gray-600">
-              Unlock all lessons and features with premium access
-            </p>
+        {/* Upgrade Card */}
+        <div className="mb-8">
+          <div className="bg-gradient-to-r from-indigo-600 to-cyan-600 rounded-2xl p-6 text-white shadow-xl">
+            <h3 className="text-xl font-bold mb-2">Unlock all 20 lessons</h3>
+            <p className="mb-4 opacity-90">Get premium access to exclusive content and advanced features</p>
             <a
               href="https://blueecho3.gumroad.com/l/btyknk"
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full rounded-lg gradient-header px-4 py-3 text-center font-medium text-white transition-transform hover:scale-105"
+              className="inline-block w-full bg-white text-indigo-600 font-bold py-3 px-6 rounded-xl text-center hover:bg-gray-50 transition-all"
             >
-              {t.getPremium} — $9.99/month
+              Get Premium — $9.99/month
             </a>
           </div>
-
-          <button
-            onClick={handleSignOut}
-            className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 font-medium text-gray-700 transition-colors hover:bg-gray-50"
-          >
-            {t.signOut}
-          </button>
         </div>
+
+        {/* Progress Section */}
+        <div className="mb-8">
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">Your Progress</h3>
+          <div className="bg-gray-50 rounded-xl p-4">
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-gray-700">Lessons Completed</span>
+              <span className="font-semibold text-gray-900">3 / 20</span>
+            </div>
+            <div className="w-full bg-gray-200 rounded-full h-2">
+              <div className="gradient-header h-2 rounded-full" style={{ width: '15%' }}></div>
+            </div>
+            <p className="text-sm text-gray-600 mt-3">Keep learning to unlock more lessons!</p>
+          </div>
+        </div>
+
+        {/* Sign Out Button */}
+        <button
+          onClick={handleSignOut}
+          className="w-full py-3 px-6 rounded-xl font-medium border border-gray-300 text-gray-700 hover:bg-gray-50 transition-all"
+        >
+          Sign Out
+        </button>
       </div>
     )
   }
 
   return (
     <div className="px-4 py-6">
-      <div className="mb-6">
-        <h1 className="mb-2 text-2xl font-bold text-gray-900">{t.title}</h1>
-        <p className="text-gray-600">{t.subtitle}</p>
+      {/* Logo */}
+      <div className="text-center mb-8">
+        <div className="mx-auto h-16 w-16 rounded-full gradient-header flex items-center justify-center mb-4 shadow-lg">
+          <span className="text-xl font-bold text-white">NF</span>
+        </div>
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">
+          {isSignUp ? 'Create your account' : 'Sign in to save your progress'}
+        </h2>
+        <p className="text-gray-600">
+          {isSignUp ? 'Join thousands learning financial literacy' : 'Your lessons sync across all your devices'}
+        </p>
       </div>
 
-      <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-        <h2 className="mb-6 text-xl font-semibold text-center text-gray-900">
-          {isSignUp ? t.signUp : t.signIn}
-        </h2>
+      {/* Error Message */}
+      {error && (
+        <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-xl">
+          <p className="text-red-600 text-sm font-medium">{error}</p>
+        </div>
+      )}
 
-        <div className="space-y-4">
-          <div>
-            <label className="mb-2 block text-sm font-medium text-gray-700">
-              {t.email}
-            </label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full rounded-lg border border-gray-300 px-3 py-2"
-              placeholder={t.email}
-            />
-          </div>
+      {/* Form */}
+      <form onSubmit={isSignUp ? handleSignUp : handleSignIn} className="space-y-4">
+        <div>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="input-field"
+            required
+          />
+        </div>
 
+        <div>
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="input-field"
+            required
+          />
+        </div>
+
+        {isSignUp && (
           <div>
-            <label className="mb-2 block text-sm font-medium text-gray-700">
-              {t.password}
-            </label>
             <input
               type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full rounded-lg border border-gray-300 px-3 py-2"
-              placeholder={t.password}
+              placeholder="Confirm password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              className="input-field"
+              required
             />
           </div>
+        )}
 
-          <button
-            onClick={isSignUp ? handleSignUp : handleSignIn}
-            className="w-full rounded-lg gradient-header px-4 py-3 font-medium text-white transition-transform hover:scale-105"
-          >
-            {isSignUp ? t.signUp : t.signIn}
-          </button>
+        <button
+          type="submit"
+          className="w-full btn-primary"
+        >
+          {isSignUp ? 'Create account' : 'Sign in'}
+        </button>
+      </form>
 
-          <div className="text-center">
-            <span className="text-sm text-gray-600">
-              {isSignUp ? t.haveAccount : t.noAccount}{' '}
-              <button
-                onClick={() => setIsSignUp(!isSignUp)}
-                className="font-medium text-purple-600 hover:text-purple-700"
-              >
-                {isSignUp ? t.signInLink : t.signUpLink}
-              </button>
-            </span>
-          </div>
-        </div>
+      {/* Toggle Sign In/Sign Up */}
+      <div className="text-center mt-6">
+        <button
+          onClick={() => {
+            setIsSignUp(!isSignUp)
+            setError('')
+          }}
+          className="text-indigo-600 font-medium hover:text-indigo-700 transition-colors"
+        >
+          {isSignUp ? 'Already have an account? Sign in' : "Don't have an account? Sign up"}
+        </button>
       </div>
     </div>
   )

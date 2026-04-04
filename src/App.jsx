@@ -25,7 +25,7 @@ export default function App() {
           <Route path="/score" element={<Score language={language} />} />
           <Route path="/tools" element={<Tools language={language} />} />
           <Route path="/offers" element={<Offers language={language} />} />
-          <Route path="/account" element={<Account language={language} />} />
+          <Route path="/account" element={<Account />} />
         </Route>
       </Routes>
     </BrowserRouter>
