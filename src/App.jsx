@@ -20,11 +20,13 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage language={language} onLanguageChange={handleLanguageChange} />} />
-        <Route path="/learn" element={<Learn language={language} />} />
-        <Route path="/score" element={<Score language={language} />} />
-        <Route path="/tools" element={<Tools language={language} />} />
-        <Route path="/offers" element={<Offers language={language} />} />
-        <Route path="/account" element={<Account language={language} />} />
+        <Route element={<Layout />}>
+          <Route path="/learn" element={<Learn language={language} />} />
+          <Route path="/score" element={<Score language={language} />} />
+          <Route path="/tools" element={<Tools language={language} />} />
+          <Route path="/offers" element={<Offers language={language} />} />
+          <Route path="/account" element={<Account language={language} />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   )

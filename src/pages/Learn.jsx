@@ -4,7 +4,7 @@ import { lessons } from '../data/lessons.js'
 export default function Learn({ language = 'en' }) {
   const [selectedCategory, setSelectedCategory] = useState('All')
   
-  const categories = ['All', 'Credit', 'Banking', 'Housing']
+  const categories = ['All', 'Credit', 'Banking', 'Housing', 'Taxes', 'Saving']
   
   const filteredLessons = selectedCategory === 'All' 
     ? lessons 
@@ -68,10 +68,10 @@ export default function Learn({ language = 'en' }) {
               </span>
             </div>
             <h3 className="mb-2 text-lg font-semibold text-gray-900">
-              {lesson.title[language] || lesson.title.en}
+              {lesson.title}
             </h3>
             <p className="mb-4 text-sm text-gray-600">
-              {lesson.subtitle[language] || lesson.subtitle.en}
+              {lesson.subtitle}
             </p>
             <button className="rounded-lg gradient-header px-4 py-2 text-sm font-medium text-white transition-transform hover:scale-105">
               {t.startLesson}
