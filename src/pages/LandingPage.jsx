@@ -48,7 +48,7 @@ export default function LandingPage({ language, onLanguageChange }) {
             <div className="gradient-header px-4 py-4 sm:px-5">
               <div className="flex items-center justify-between">
                 <h1 className="text-xl font-bold text-white">New Finance</h1>
-                <LanguageSelector />
+                <LanguageSelector onLanguageChange={onLanguageChange} />
               </div>
             </div>
           </div>

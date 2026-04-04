@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const languages = [
   { code: 'en', name: 'English', flag: '🇺🇸' },
@@ -11,11 +11,22 @@ const languages = [
   { code: 'pa', name: 'ਪੰਜਾਬੀ', flag: '🇮🇳' }
 ]
 
-export default function LanguageSelector() {
+export default function LanguageSelector({ onLanguageChange }) {
   const [isOpen, setIsOpen] = useState(false)
-  const [currentLang, setCurrentLang] = useState('en')
+  const [currentLang, setCurrentLang] = useState(() => {
+    return localStorage.getItem('language') || 'en'
+  })
 
   const selectedLanguage = languages.find(lang => lang.code === currentLang)
+
+  const handleLanguageSelect = (langCode) => {
+    setCurrentLang(langCode)
+    setIsOpen(false)
+    localStorage.setItem('language', langCode)
+    if (onLanguageChange) {
+      onLanguageChange(langCode)
+    }
+  }
 
   return (
     <div className="relative">
@@ -35,12 +46,7 @@ export default function LanguageSelector() {
           {languages.map((lang) => (
             <button
               key={lang.code}
-              onClick={() => {
-                setCurrentLang(lang.code)
-                setIsOpen(false)
-                localStorage.setItem('language', lang.code)
-                window.location.reload()
-              }}
+              onClick={() => handleLanguageSelect(lang.code)}
               className="flex w-full items-center gap-3 px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"
             >
               <span>{lang.flag}</span>
