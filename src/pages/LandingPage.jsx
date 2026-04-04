@@ -19,7 +19,7 @@ export default function LandingPage({ language, onLanguageChange }) {
         const timer = setTimeout(() => {
           setShowTimePopup(true)
           setHasShownTimePopup(true)
-        }, 15000)
+        }, 3000) // Changed from 15000 to 3000 (3 seconds)
         return () => clearTimeout(timer)
       }
     }
@@ -586,30 +586,30 @@ export default function LandingPage({ language, onLanguageChange }) {
       {/* Exit Intent Popup */}
       {showExitPopup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm px-4">
-          <div className="w-full max-w-sm rounded-3xl bg-white p-8 shadow-2xl">
-            <div className="text-center mb-6">
-              <div className="mx-auto h-16 w-16 rounded-2xl gradient-header flex items-center justify-center mb-4">
-                <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-full max-w-sm rounded-3xl bg-white p-6 shadow-2xl">
+            <div className="text-center mb-4">
+              <div className="mx-auto h-12 w-12 rounded-2xl gradient-header flex items-center justify-center mb-3">
+                <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
             </div>
-            <h3 className="mb-4 text-2xl font-bold text-gray-900 text-center">
+            <h3 className="mb-3 text-lg font-bold text-gray-900 text-center leading-tight">
               {t.exitPopup.title}
             </h3>
-            <p className="mb-6 text-gray-600 text-base text-center">
+            <p className="mb-4 text-sm text-gray-600 text-center leading-relaxed">
               {t.exitPopup.subtitle}
             </p>
             <div className="flex gap-3">
               <Link
                 to="/learn"
-                className="flex-1 btn-primary"
+                className="flex-1 btn-primary text-sm py-2"
               >
                 {t.exitPopup.cta}
               </Link>
               <button
                 onClick={() => setShowExitPopup(false)}
-                className="flex-1 btn-secondary"
+                className="flex-1 btn-secondary text-sm py-2"
               >
                 Maybe Later
               </button>
@@ -621,30 +621,30 @@ export default function LandingPage({ language, onLanguageChange }) {
       {/* Time-based Popup */}
       {showTimePopup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm px-4">
-          <div className="w-full max-w-sm rounded-3xl bg-white p-8 shadow-2xl">
-            <div className="text-center mb-6">
-              <div className="mx-auto h-16 w-16 rounded-2xl gradient-header flex items-center justify-center mb-4">
-                <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-full max-w-sm rounded-3xl bg-white p-6 shadow-2xl">
+            <div className="text-center mb-4">
+              <div className="mx-auto h-12 w-12 rounded-2xl gradient-header flex items-center justify-center mb-3">
+                <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
             </div>
-            <h3 className="mb-4 text-2xl font-bold text-gray-900 text-center">
+            <h3 className="mb-3 text-lg font-bold text-gray-900 text-center leading-tight">
               {t.timePopup.title}
             </h3>
-            <p className="mb-6 text-gray-600 text-base text-center">
+            <p className="mb-4 text-sm text-gray-600 text-center leading-relaxed">
               {t.timePopup.subtitle}
             </p>
             <div className="flex gap-3">
               <Link
                 to="/learn"
-                className="flex-1 btn-primary"
+                className="flex-1 btn-primary text-sm py-2"
               >
                 {t.timePopup.cta}
               </Link>
               <button
                 onClick={() => setShowTimePopup(false)}
-                className="flex-1 btn-secondary"
+                className="flex-1 btn-secondary text-sm py-2"
               >
                 Dismiss
               </button>
