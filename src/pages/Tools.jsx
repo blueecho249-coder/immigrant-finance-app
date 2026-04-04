@@ -298,12 +298,12 @@ export default function Tools() {
   return (
     <div className="px-4 py-6">
       <div className="mb-6">
-        <h1 className="mb-2 text-2xl font-bold text-gray-900">Financial Tools</h1>
+        <h1 className="mb-2 text-2xl md:text-3xl font-bold text-gray-900">Financial Tools</h1>
         <p className="text-gray-600">Calculate and plan your finances</p>
       </div>
 
       <div className="mb-6">
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-3 max-w-md mx-auto lg:max-w-none">
           {tools.map(tool => (
             <button
               key={tool.id}
@@ -323,14 +323,29 @@ export default function Tools() {
         </div>
       </div>
 
-      <div className="card">
-        <div className="gradient-header text-white p-4 rounded-t-xl">
-          <h2 className="text-lg font-bold">
-            {tools.find(t => t.id === activeTool)?.name}
-          </h2>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Budget Calculator */}
+        <div className="card">
+          <div className="gradient-header text-white p-4 rounded-t-xl">
+            <h2 className="text-lg font-bold">
+              Budget Calculator
+            </h2>
+          </div>
+          <div className="p-4">
+            {renderBudgetCalculator()}
+          </div>
         </div>
-        <div className="p-4">
-          {renderTool()}
+
+        {/* Credit Card Payoff Calculator */}
+        <div className="card">
+          <div className="gradient-header text-white p-4 rounded-t-xl">
+            <h2 className="text-lg font-bold">
+              Credit Card Payoff
+            </h2>
+          </div>
+          <div className="p-4">
+            {renderCreditCardPayoff()}
+          </div>
         </div>
       </div>
     </div>

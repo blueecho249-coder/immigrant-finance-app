@@ -217,63 +217,199 @@ export default function LandingPage({ language, onLanguageChange }) {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-50">
-      <div className="mx-auto max-w-phone px-4 sm:px-5">
-        <div className="relative flex min-h-dvh flex-col overflow-hidden bg-white shadow-phone sm:min-h-[min(100dvh,920px)] sm:rounded-2xl sm:shadow-phone-sm">
-          <div className="sticky top-0 z-40">
-            <div className="gradient-header px-4 py-4 sm:px-5">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <div className="h-8 w-8 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                    <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
+      {/* Mobile Layout */}
+      <div className="md:hidden">
+        <div className="mx-auto max-w-phone px-4 sm:px-5">
+          <div className="relative flex min-h-dvh flex-col overflow-hidden bg-white shadow-phone sm:min-h-[min(100dvh,920px)] sm:rounded-2xl sm:shadow-phone-sm">
+            <div className="sticky top-0 z-40">
+              <div className="gradient-header px-4 py-4 sm:px-5">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="h-8 w-8 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                      <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <h1 className="text-xl font-bold text-white">NewFinance</h1>
                   </div>
-                  <h1 className="text-xl font-bold text-white">NewFinance</h1>
+                  <LanguageSelector onLanguageChange={onLanguageChange} />
                 </div>
-                <LanguageSelector onLanguageChange={onLanguageChange} />
               </div>
             </div>
-          </div>
-          
-          <main className="flex-1 overflow-y-auto">
-            <div className="px-4 py-8 sm:px-5">
-              {/* Hero Section */}
-              <div className="text-center mb-12">
-                <div className="mb-8">
-                  <div className="mx-auto h-24 w-24 rounded-3xl gradient-header flex items-center justify-center mb-8 shadow-2xl">
-                    <svg className="h-12 w-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
+            
+            <main className="flex-1 overflow-y-auto">
+              <div className="px-4 py-8 sm:px-5">
+                {/* Hero Section */}
+                <div className="text-center mb-12">
+                  <div className="mb-8">
+                    <div className="mx-auto h-24 w-24 rounded-3xl gradient-header flex items-center justify-center mb-8 shadow-2xl">
+                      <svg className="h-12 w-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <h1 className="mb-6 text-5xl font-bold text-gray-900 sm:text-6xl leading-tight">
+                      {t.title}
+                    </h1>
+                    <p className="mb-8 text-xl text-gray-600 leading-relaxed max-w-lg mx-auto">
+                      {t.subtitle}
+                    </p>
                   </div>
-                  <h1 className="mb-6 text-5xl font-bold text-gray-900 sm:text-6xl leading-tight">
-                    {t.title}
-                  </h1>
-                  <p className="mb-8 text-xl text-gray-600 leading-relaxed max-w-lg mx-auto">
-                    {t.subtitle}
-                  </p>
+
+                  {/* Stats Section */}
+                  <div className="mb-10 grid grid-cols-2 gap-4 max-w-sm mx-auto">
+                    {t.stats.map((stat, index) => (
+                      <div key={index} className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100">
+                        <div className="text-2xl font-bold text-indigo-600">{stat.number}</div>
+                        <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Main CTA */}
+                  <div className="mb-8 space-y-3">
+                    <Link
+                      to="/learn"
+                      className="block w-full btn-primary text-lg py-4 shadow-xl"
+                    >
+                      {t.cta}
+                    </Link>
+                    <Link
+                      to="/learn"
+                      className="block w-full btn-secondary text-lg py-4"
+                    >
+                      {t.secondaryCta}
+                    </Link>
+                  </div>
+
+                  {/* Trust Badge */}
+                  <div className="mb-12">
+                    <div className="inline-flex items-center gap-3 rounded-full bg-green-100 px-8 py-4 border-2 border-green-200 shadow-lg">
+                      <svg className="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-lg font-bold text-green-700">100% Free • No Credit Card Required</span>
+                    </div>
+                  </div>
                 </div>
 
+                {/* Features Section */}
+                <div className="mb-12">
+                  <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
+                    Everything You Need to Succeed
+                  </h2>
+                  <div className="grid gap-6">
+                    {t.features.map((feature, index) => (
+                      <div key={index} className="card p-6 hover:shadow-xl transition-all">
+                        <div className="flex items-start gap-4">
+                          <div className="flex-shrink-0 h-16 w-16 rounded-2xl gradient-header flex items-center justify-center shadow-lg">
+                            <span className="text-2xl">{feature.icon}</span>
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="mb-2 text-xl font-bold text-gray-900">{feature.title}</h3>
+                            <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Testimonials Section */}
+                <div className="mb-12">
+                  <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
+                    Success Stories
+                  </h2>
+                  <div className="space-y-6">
+                    {t.testimonials.map((testimonial, index) => (
+                      <div key={index} className="bg-gradient-to-r from-indigo-50 to-cyan-50 rounded-2xl p-6 border border-indigo-200">
+                        <div className="flex items-start gap-4">
+                          <div className="flex-shrink-0">
+                            <div className="h-12 w-12 rounded-full bg-indigo-600 flex items-center justify-center">
+                              <span className="text-white font-bold text-lg">
+                                {testimonial.name.charAt(0)}
+                              </span>
+                            </div>
+                          </div>
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2 mb-2">
+                              <div className="flex gap-1">
+                                {[...Array(testimonial.rating)].map((_, i) => (
+                                  <svg key={i} className="h-4 w-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                  </svg>
+                                ))}
+                              </div>
+                            </div>
+                            <p className="text-gray-800 font-medium mb-2">"{testimonial.text}"</p>
+                            <div className="text-sm text-gray-600">
+                              <div className="font-semibold">{testimonial.name}</div>
+                              <div>{testimonial.location}</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Final CTA Section */}
+                <div className="text-center mb-8">
+                  <div className="bg-gradient-to-r from-indigo-600 to-cyan-600 rounded-3xl p-8 text-white shadow-2xl">
+                    <h2 className="mb-4 text-3xl font-bold">
+                      Start Your Financial Journey Today
+                    </h2>
+                    <p className="mb-6 text-lg opacity-90 max-w-md mx-auto">
+                      {t.trust}
+                    </p>
+                    <Link
+                      to="/learn"
+                      className="inline-block bg-white text-indigo-600 font-bold py-4 px-8 rounded-xl hover:bg-gray-50 transition-all transform hover:scale-105 shadow-lg"
+                    >
+                      {t.cta}
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop Layout */}
+      <div className="hidden md:block">
+        <div className="min-h-screen flex items-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Content */}
+              <div className="text-center lg:text-left">
+                <h1 className="mb-6 text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight">
+                  {t.title}
+                </h1>
+                <p className="mb-8 text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl">
+                  {t.subtitle}
+                </p>
+
                 {/* Stats Section */}
-                <div className="mb-10 grid grid-cols-2 gap-4 max-w-sm mx-auto">
+                <div className="mb-10 grid grid-cols-2 lg:grid-cols-4 gap-6">
                   {t.stats.map((stat, index) => (
-                    <div key={index} className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100">
-                      <div className="text-2xl font-bold text-indigo-600">{stat.number}</div>
+                    <div key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+                      <div className="text-3xl font-bold text-indigo-600">{stat.number}</div>
                       <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
                     </div>
                   ))}
                 </div>
 
                 {/* Main CTA */}
-                <div className="mb-8 space-y-3">
+                <div className="mb-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Link
                     to="/learn"
-                    className="block w-full btn-primary text-lg py-4 shadow-xl"
+                    className="btn-primary text-lg py-4 px-8 shadow-xl"
                   >
                     {t.cta}
                   </Link>
                   <Link
                     to="/learn"
-                    className="block w-full btn-secondary text-lg py-4"
+                    className="btn-secondary text-lg py-4 px-8"
                   >
                     {t.secondaryCta}
                   </Link>
@@ -290,88 +426,163 @@ export default function LandingPage({ language, onLanguageChange }) {
                 </div>
               </div>
 
-              {/* Features Section */}
-              <div className="mb-12">
-                <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
-                  Everything You Need to Succeed
-                </h2>
-                <div className="grid gap-6">
-                  {t.features.map((feature, index) => (
-                    <div key={index} className="card p-6 hover:shadow-xl transition-all">
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 h-16 w-16 rounded-2xl gradient-header flex items-center justify-center shadow-lg">
-                          <span className="text-2xl">{feature.icon}</span>
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="mb-2 text-xl font-bold text-gray-900">{feature.title}</h3>
-                          <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+              {/* Right Content - App Mockup */}
+              <div className="relative">
+                <div className="relative mx-auto max-w-sm">
+                  {/* Phone Frame */}
+                  <div className="bg-gray-900 rounded-3xl p-2 shadow-2xl">
+                    <div className="bg-white rounded-2xl overflow-hidden">
+                      {/* App Header */}
+                      <div className="gradient-header px-4 py-4">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2">
+                            <div className="h-8 w-8 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                              <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
+                            </div>
+                            <h1 className="text-xl font-bold text-white">NewFinance</h1>
+                          </div>
+                          <div className="h-8 w-8 rounded-lg bg-white/20 backdrop-blur-sm"></div>
                         </div>
                       </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Testimonials Section */}
-              <div className="mb-12">
-                <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
-                  Success Stories
-                </h2>
-                <div className="space-y-6">
-                  {t.testimonials.map((testimonial, index) => (
-                    <div key={index} className="bg-gradient-to-r from-indigo-50 to-cyan-50 rounded-2xl p-6 border border-indigo-200">
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0">
-                          <div className="h-12 w-12 rounded-full bg-indigo-600 flex items-center justify-center">
-                            <span className="text-white font-bold text-lg">
-                              {testimonial.name.charAt(0)}
-                            </span>
+                      
+                      {/* App Content */}
+                      <div className="p-4 space-y-4">
+                        <div className="text-center">
+                          <div className="mx-auto h-16 w-16 rounded-2xl gradient-header flex items-center justify-center mb-4">
+                            <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
                           </div>
+                          <h2 className="text-lg font-bold text-gray-900 mb-2">Welcome to NewFinance</h2>
+                          <p className="text-sm text-gray-600 mb-4">Start your financial journey today</p>
+                          <div className="bg-indigo-600 text-white py-3 px-6 rounded-xl font-semibold">Get Started</div>
                         </div>
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-2">
-                            <div className="flex gap-1">
-                              {[...Array(testimonial.rating)].map((_, i) => (
-                                <svg key={i} className="h-4 w-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                </svg>
-                              ))}
+                        
+                        {/* Sample Lesson Cards */}
+                        <div className="space-y-3">
+                          <div className="bg-gray-50 rounded-xl p-3 border border-gray-200">
+                            <div className="flex items-center gap-3">
+                              <div className="h-10 w-10 rounded-lg bg-indigo-100 flex items-center justify-center">
+                                <span className="text-indigo-600 font-bold text-sm">1</span>
+                              </div>
+                              <div className="flex-1">
+                                <h3 className="font-semibold text-gray-900 text-sm">Banking Basics</h3>
+                                <p className="text-xs text-gray-600">Learn how to open an account</p>
+                              </div>
                             </div>
                           </div>
-                          <p className="text-gray-800 font-medium mb-2">"{testimonial.text}"</p>
-                          <div className="text-sm text-gray-600">
-                            <div className="font-semibold">{testimonial.name}</div>
-                            <div>{testimonial.location}</div>
+                          <div className="bg-gray-50 rounded-xl p-3 border border-gray-200">
+                            <div className="flex items-center gap-3">
+                              <div className="h-10 w-10 rounded-lg bg-green-100 flex items-center justify-center">
+                                <span className="text-green-600 font-bold text-sm">2</span>
+                              </div>
+                              <div className="flex-1">
+                                <h3 className="font-semibold text-gray-900 text-sm">Credit Score</h3>
+                                <p className="text-xs text-gray-600">Build and maintain good credit</p>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
+                      
+                      {/* Bottom Nav */}
+                      <div className="border-t border-gray-200 px-4 py-2">
+                        <div className="flex justify-around">
+                          <div className="h-8 w-8 rounded-lg bg-indigo-100"></div>
+                          <div className="h-8 w-8 rounded-lg bg-gray-200"></div>
+                          <div className="h-8 w-8 rounded-lg bg-gray-200"></div>
+                          <div className="h-8 w-8 rounded-lg bg-gray-200"></div>
+                          <div className="h-8 w-8 rounded-lg bg-gray-200"></div>
+                        </div>
+                      </div>
                     </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Final CTA Section */}
-              <div className="text-center mb-8">
-                <div className="bg-gradient-to-r from-indigo-600 to-cyan-600 rounded-3xl p-8 text-white shadow-2xl">
-                  <h2 className="mb-4 text-3xl font-bold">
-                    Start Your Financial Journey Today
-                  </h2>
-                  <p className="mb-6 text-lg opacity-90 max-w-md mx-auto">
-                    {t.trust}
-                  </p>
-                  <Link
-                    to="/learn"
-                    className="inline-block bg-white text-indigo-600 font-bold py-4 px-8 rounded-xl hover:bg-gray-50 transition-all transform hover:scale-105 shadow-lg"
-                  >
-                    {t.cta}
-                  </Link>
+                  </div>
                 </div>
               </div>
             </div>
-          </main>
+
+            {/* Features Section */}
+            <div className="mt-20">
+              <h2 className="mb-12 text-center text-4xl font-bold text-gray-900">
+                Everything You Need to Succeed
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {t.features.map((feature, index) => (
+                  <div key={index} className="card p-6 hover:shadow-xl transition-all">
+                    <div className="text-center">
+                      <div className="mx-auto h-20 w-20 rounded-2xl gradient-header flex items-center justify-center mb-6 shadow-lg">
+                        <span className="text-3xl">{feature.icon}</span>
+                      </div>
+                      <h3 className="mb-4 text-xl font-bold text-gray-900">{feature.title}</h3>
+                      <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Testimonials Section */}
+            <div className="mt-20">
+              <h2 className="mb-12 text-center text-4xl font-bold text-gray-900">
+                Success Stories
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {t.testimonials.map((testimonial, index) => (
+                  <div key={index} className="bg-gradient-to-r from-indigo-50 to-cyan-50 rounded-2xl p-8 border border-indigo-200">
+                    <div className="flex items-start gap-6">
+                      <div className="flex-shrink-0">
+                        <div className="h-16 w-16 rounded-full bg-indigo-600 flex items-center justify-center">
+                          <span className="text-white font-bold text-2xl">
+                            {testimonial.name.charAt(0)}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-4">
+                          <div className="flex gap-1">
+                            {[...Array(testimonial.rating)].map((_, i) => (
+                              <svg key={i} className="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                              </svg>
+                            ))}
+                          </div>
+                        </div>
+                        <p className="text-gray-800 text-lg font-medium mb-4">"{testimonial.text}"</p>
+                        <div className="text-gray-600">
+                          <div className="font-semibold text-lg">{testimonial.name}</div>
+                          <div>{testimonial.location}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Final CTA Section */}
+            <div className="mt-20 text-center">
+              <div className="bg-gradient-to-r from-indigo-600 to-cyan-600 rounded-3xl p-12 text-white shadow-2xl">
+                <h2 className="mb-6 text-4xl font-bold">
+                  Start Your Financial Journey Today
+                </h2>
+                <p className="mb-8 text-xl opacity-90 max-w-2xl mx-auto">
+                  {t.trust}
+                </p>
+                <Link
+                  to="/learn"
+                  className="inline-block bg-white text-indigo-600 font-bold py-4 px-12 rounded-xl text-lg hover:bg-gray-50 transition-all transform hover:scale-105 shadow-xl"
+                >
+                  {t.cta}
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
+      {/* Popups - shown on both layouts */}
       {/* Exit Intent Popup */}
       {showExitPopup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm px-4">

@@ -85,15 +85,15 @@ export default function Learn({ language = 'en' }) {
 
   return (
     <div className="px-4 py-6">
-      <div className="mb-8">
-        <h1 className="mb-3 text-3xl font-bold text-gray-900">{t.title}</h1>
-        <p className="text-lg text-gray-600">{t.subtitle}</p>
+      <div className="mb-6">
+        <h1 className="mb-2 text-2xl md:text-3xl font-bold text-gray-900">Learn</h1>
+        <p className="text-gray-600">Choose a category to get started</p>
       </div>
 
+      {/* Category Filter */}
       <div className="mb-8">
-        <h2 className="mb-4 text-lg font-semibold text-gray-700">{t.categories}</h2>
-        <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
-          {categories.map(category => (
+        <div className="flex flex-wrap gap-3">
+          {categories.map((category) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
@@ -109,35 +109,49 @@ export default function Learn({ language = 'en' }) {
         </div>
       </div>
 
-      <div className="space-y-4">
-        {filteredLessons.length === 0 ? (
-          <div className="text-center py-12">
-            <div className="mx-auto h-16 w-16 rounded-2xl bg-gray-100 flex items-center justify-center mb-4">
-              <svg className="h-8 w-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <p className="text-gray-500 font-medium">{t.noLessons}</p>
-          </div>
-        ) : (
-          filteredLessons.map(lesson => (
+      {/* Lessons Grid */}
+      <div className={`grid gap-6 ${
+        filteredLessons.length === 0 
+          ? 'grid-cols-1' 
+          : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+      }`}>
+        {filteredLessons.length > 0 ? (
+          filteredLessons.map((lesson) => (
             <div key={lesson.id} className="card p-6 hover:shadow-lg transition-all">
-              <div className="mb-4">
-                <span className={`badge ${getCategoryColor(lesson.category)}`}>
-                  {lesson.category}
-                </span>
-              </div>
+              <span className={`badge ${getCategoryColor(lesson.category)}`}>
+                {lesson.category}
+              </span>
               <h3 className="mb-3 text-xl font-bold text-gray-900">
                 {lesson.title[language] || lesson.title.en}
               </h3>
               <p className="mb-6 text-base text-gray-600 leading-relaxed">
                 {lesson.subtitle[language] || lesson.subtitle.en}
               </p>
-              <button className="btn-primary">
+              <Link
+                to={`/lesson/${lesson.id}`}
+                className="btn-primary w-full text-center"
+              >
                 {t.startLesson}
-              </button>
+              </Link>
             </div>
           ))
+        ) : (
+          <div className="col-span-full text-center py-12">
+            <div className="mx-auto h-16 w-16 rounded-2xl bg-gray-100 flex items-center justify-center mb-4">
+              <svg className="h-8 w-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">No lessons found</h3>
+            <p className="text-gray-600">
+              {language === 'es' 
+                ? 'No hay lecciones disponibles en esta categoría' 
+                : language === 'hi'
+                ? 'इस श्रेणी में कोई पाठ उपलब्ध नहीं है'
+                : 'No lessons available in this category'
+              }
+            </p>
+          </div>
         )}
       </div>
     </div>

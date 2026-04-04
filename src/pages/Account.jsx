@@ -104,73 +104,79 @@ export default function Account() {
 
   if (isLoggedIn) {
     return (
-      <div className="px-4 py-6">
+      <div className="px-4 py-6 max-w-4xl mx-auto">
         {/* User Profile Section */}
-        <div className="text-center mb-8">
-          <div className="mx-auto h-20 w-20 rounded-full gradient-header flex items-center justify-center mb-4 shadow-lg">
-            <span className="text-2xl font-bold text-white">
+        <div className="text-center mb-12">
+          <div className="mx-auto h-24 w-24 rounded-full gradient-header flex items-center justify-center mb-6 shadow-xl">
+            <span className="text-3xl font-bold text-white">
               {getInitial(userEmail)}
             </span>
           </div>
-          <h2 className="text-xl font-bold text-gray-900 mb-1">{userEmail}</h2>
-          <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-700">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">{userEmail}</h2>
+          <span className="inline-flex items-center px-4 py-2 rounded-full text-lg font-medium bg-gray-100 text-gray-700">
             Free Plan
           </span>
         </div>
 
-        {/* Upgrade Card */}
-        <div className="mb-8">
-          <div className="bg-gradient-to-r from-indigo-600 to-cyan-600 rounded-2xl p-6 text-white shadow-xl">
-            <h3 className="text-xl font-bold mb-2">Unlock all 20 lessons</h3>
-            <p className="mb-4 opacity-90">Get premium access to exclusive content and advanced features</p>
-            <a
-              href="https://blueecho3.gumroad.com/l/btyknk"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block w-full bg-white text-indigo-600 font-bold py-3 px-6 rounded-xl text-center hover:bg-gray-50 transition-all"
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Main Content - 2 columns */}
+          <div className="lg:col-span-2 space-y-8">
+            {/* Upgrade Card */}
+            <div className="bg-gradient-to-r from-indigo-600 to-cyan-600 rounded-2xl p-8 text-white shadow-xl">
+              <h3 className="text-2xl font-bold mb-3">Unlock all 20 lessons</h3>
+              <p className="mb-6 text-lg opacity-90">Get premium access to exclusive content and advanced features</p>
+              <a
+                href="https://blueecho3.gumroad.com/l/btyknk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block w-full lg:w-auto bg-white text-indigo-600 font-bold py-4 px-8 rounded-xl text-center hover:bg-gray-50 transition-all"
+              >
+                Get Premium — $9.99/month
+              </a>
+            </div>
+
+            {/* Progress Section */}
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-6">Your Progress</h3>
+              <div className="bg-gray-50 rounded-2xl p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-gray-700 text-lg">Lessons Completed</span>
+                  <span className="font-semibold text-gray-900 text-xl">3 / 20</span>
+                </div>
+                <div className="w-full bg-gray-200 rounded-full h-3 mb-4">
+                  <div className="gradient-header h-3 rounded-full" style={{ width: '15%' }}></div>
+                </div>
+                <p className="text-gray-600">Keep learning to unlock more lessons!</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Sidebar - 1 column */}
+          <div className="space-y-8">
+            {/* Sign Out Button */}
+            <button
+              onClick={handleSignOut}
+              className="w-full py-4 px-6 rounded-xl font-medium border border-gray-300 text-gray-700 hover:bg-gray-50 transition-all"
             >
-              Get Premium — $9.99/month
-            </a>
+              Sign Out
+            </button>
           </div>
         </div>
-
-        {/* Progress Section */}
-        <div className="mb-8">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Your Progress</h3>
-          <div className="bg-gray-50 rounded-xl p-4">
-            <div className="flex items-center justify-between mb-3">
-              <span className="text-gray-700">Lessons Completed</span>
-              <span className="font-semibold text-gray-900">3 / 20</span>
-            </div>
-            <div className="w-full bg-gray-200 rounded-full h-2">
-              <div className="gradient-header h-2 rounded-full" style={{ width: '15%' }}></div>
-            </div>
-            <p className="text-sm text-gray-600 mt-3">Keep learning to unlock more lessons!</p>
-          </div>
-        </div>
-
-        {/* Sign Out Button */}
-        <button
-          onClick={handleSignOut}
-          className="w-full py-3 px-6 rounded-xl font-medium border border-gray-300 text-gray-700 hover:bg-gray-50 transition-all"
-        >
-          Sign Out
-        </button>
       </div>
     )
   }
 
   return (
-    <div className="px-4 py-6">
+    <div className="px-4 py-6 max-w-4xl mx-auto">
       {/* Logo */}
       <div className="text-center mb-8">
         <div className="mx-auto h-16 w-16 rounded-full gradient-header flex items-center justify-center mb-4 shadow-lg">
           <span className="text-xl font-bold text-white">NF</span>
         </div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
           {isSignUp ? 'Create your account' : 'Sign in to save your progress'}
         </h2>
-        <p className="text-gray-600">
+        <p className="text-gray-600 text-lg">
           {isSignUp ? 'Join thousands learning financial literacy' : 'Your lessons sync across all your devices'}
         </p>
       </div>
@@ -183,7 +189,7 @@ export default function Account() {
       )}
 
       {/* Form */}
-      <form onSubmit={isSignUp ? handleSignUp : handleSignIn} className="space-y-4">
+      <form onSubmit={isSignUp ? handleSignUp : handleSignIn} className="space-y-4 max-w-md mx-auto">
         <div>
           <input
             type="email"

@@ -86,7 +86,11 @@ export default function Offers() {
         </p>
       </div>
 
-      <div className="space-y-4">
+      <div className={`grid gap-6 ${
+        offers.length === 1 
+          ? 'grid-cols-1' 
+          : 'grid-cols-1 lg:grid-cols-2'
+      }`}>
         {offers.map(offer => {
           const colors = getColorClasses(offer.color)
           return (
@@ -94,7 +98,7 @@ export default function Offers() {
               {/* Top border */}
               <div className={`h-1 ${colors.bg}`}></div>
               
-              <div className="p-4">
+              <div className="p-4 lg:p-6">
                 {/* Header */}
                 <div className="flex items-start justify-between mb-3">
                   <div>
