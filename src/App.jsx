@@ -23,8 +23,8 @@ export default function App() {
         <Route element={<Layout />}>
           <Route path="/learn" element={<Learn language={language} />} />
           <Route path="/score" element={<Score language={language} />} />
-          <Route path="/tools" element={<Tools language={language} />} />
-          <Route path="/offers" element={<Offers language={language} />} />
+          <Route path="/tools" element={<Tools />} />
+          <Route path="/offers" element={<Offers />} />
           <Route path="/account" element={<Account />} />
         </Route>
       </Routes>

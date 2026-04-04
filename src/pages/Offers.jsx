@@ -1,129 +1,142 @@
-export default function Offers({ language = 'en' }) {
+export default function Offers() {
   const offers = [
     {
       id: 1,
-      title: {
-        en: "Premium Bank Account",
-        es: "Cuenta Bancaria Premium",
-        hi: "प्रीमियम बैंक खाता"
-      },
-      description: {
-        en: "No monthly fees, free international transfers, and higher interest rates",
-        es: "Sin cuotas mensuales, transferencias internacionales gratuitas y tasas de interés más altas",
-        hi: "कोई मासिक शुल्क नहीं, मुफ्त अंतर्राष्ट्रीय हस्तांतरण, और उच्च ब्याज दरें"
-      },
-      partner: "Global Bank",
-      logo: "🏦",
-      cta: "Learn More",
-      link: "#"
+      product: "Secured Credit Card",
+      description: "Build credit with no credit history required",
+      bestFor: "No credit history",
+      color: "purple",
+      badge: "Most Popular",
+      link: "https://www.neofinancial.com",
+      partner: "Neo Financial"
     },
     {
       id: 2,
-      title: {
-        en: "Credit Builder Card",
-        es: "Tarjeta para Construir Crédito",
-        hi: "क्रेडिट बिल्डर कार्ड"
-      },
-      description: {
-        en: "Build your credit history with no annual fee and cash back rewards",
-        es: "Construye tu historial de crédito sin cuota anual y recompensas de cashback",
-        hi: "कोई वार्षिक शुल्क और कैशबैक रिवॉर्ड के साथ अपना क्रेडिट इतिहास बनाएं"
-      },
-      partner: "Credit Plus",
-      logo: "💳",
-      cta: "Apply Now",
-      link: "#"
+      product: "Savings Plus Account",
+      description: "High interest savings with no monthly fees",
+      bestFor: "Growing your savings",
+      color: "teal",
+      badge: null,
+      link: "https://www.eqbank.ca",
+      partner: "EQ Bank"
     },
     {
       id: 3,
-      title: {
-        en: "Student Loan Help",
-        es: "Ayuda con Préstamos Estudiantiles",
-        hi: "छात्र ऋण सहायता"
-      },
-      description: {
-        en: "Refinance your student loans with lower interest rates and flexible payments",
-        es: "Refinancia tus préstamos estudiantiles con tasas de interés más bajas y pagos flexibles",
-        hi: "कम ब्याज दरों और लचीले भुगतान के साथ अपने छात्र ऋण का पुनर्वित्त करें"
-      },
-      partner: "EduFinance",
-      logo: "🎓",
-      cta: "Get Quote",
-      link: "#"
+      product: "Free Credit Score",
+      description: "Check your credit score for free instantly",
+      bestFor: "Monitoring credit",
+      color: "amber",
+      badge: null,
+      link: "https://www.borrowell.com",
+      partner: "Borrowell"
     },
     {
       id: 4,
-      title: {
-        en: "Insurance Protection",
-        es: "Procción de Seguros",
-        hi: "बीमा सुरक्षा"
-      },
-      description: {
-        en: "Affordable health, auto, and home insurance for newcomers",
-        es: "Seguro de salud, auto y hogar asequible para recién llegados",
-        hi: "नए आने वालों के लिए सस्ती स्वास्थ्य, ऑटो और होम बीमा"
-      },
-      partner: "SafeGuard",
-      logo: "🛡️",
-      cta: "Get Quote",
-      link: "#"
+      product: "Free Investing Account",
+      description: "Start investing with as little as $1",
+      bestFor: "First time investors",
+      color: "blue",
+      badge: null,
+      link: "https://www.wealthsimple.com",
+      partner: "Wealthsimple"
     }
   ]
 
-  const content = {
-    en: {
-      title: "Special Offers",
-      subtitle: "Exclusive deals for newcomers",
-      featured: "Featured",
-      allOffers: "All Offers"
-    },
-    es: {
-      title: "Ofertas Especiales",
-      subtitle: "Tratos exclusivos para recién llegados",
-      featured: "Destacado",
-      allOffers: "Todas las Ofertas"
-    },
-    hi: {
-      title: "विशेष ऑफ़र",
-      subtitle: "नए आने वालों के लिए अनन्य सौदे",
-      featured: "विशेष",
-      allOffers: "सभी ऑफ़र"
+  const getColorClasses = (color) => {
+    const colors = {
+      purple: {
+        border: 'border-purple-500',
+        bg: 'bg-purple-500',
+        text: 'text-purple-700',
+        lightBg: 'bg-purple-50'
+      },
+      teal: {
+        border: 'border-teal-500',
+        bg: 'bg-teal-500',
+        text: 'text-teal-700',
+        lightBg: 'bg-teal-50'
+      },
+      amber: {
+        border: 'border-amber-500',
+        bg: 'bg-amber-500',
+        text: 'text-amber-700',
+        lightBg: 'bg-amber-50'
+      },
+      blue: {
+        border: 'border-blue-500',
+        bg: 'bg-blue-500',
+        text: 'text-blue-700',
+        lightBg: 'bg-blue-50'
+      }
     }
+    return colors[color] || colors.purple
   }
-
-  const t = content[language] || content.en
 
   return (
     <div className="px-4 py-6">
       <div className="mb-6">
-        <h1 className="mb-2 text-2xl font-bold text-gray-900">{t.title}</h1>
-        <p className="text-gray-600">{t.subtitle}</p>
+        <h1 className="mb-2 text-2xl font-bold text-gray-900">Financial Partners</h1>
+        <p className="text-gray-600">Recommended products for newcomers</p>
+      </div>
+
+      {/* Disclaimer */}
+      <div className="mb-6 p-3 bg-amber-50 border border-amber-200 rounded-xl">
+        <p className="text-sm text-amber-800">
+          We may earn a referral fee — this helps keep the app free
+        </p>
       </div>
 
       <div className="space-y-4">
-        {offers.map(offer => (
-          <div key={offer.id} className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
-            <div className="flex items-start gap-4">
-              <div className="text-3xl">{offer.logo}</div>
-              <div className="flex-1">
-                <div className="mb-1">
-                  <span className="rounded-full bg-purple-100 px-2 py-1 text-xs font-medium text-purple-700">
-                    {offer.partner}
+        {offers.map(offer => {
+          const colors = getColorClasses(offer.color)
+          return (
+            <div key={offer.id} className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+              {/* Top border */}
+              <div className={`h-1 ${colors.bg}`}></div>
+              
+              <div className="p-4">
+                {/* Header */}
+                <div className="flex items-start justify-between mb-3">
+                  <div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">
+                      {offer.product}
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      {offer.partner}
+                    </p>
+                  </div>
+                  {offer.badge && (
+                    <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${colors.lightBg} ${colors.text}`}>
+                      {offer.badge}
+                    </span>
+                  )}
+                </div>
+
+                {/* Description */}
+                <p className="text-gray-700 mb-3">
+                  {offer.description}
+                </p>
+
+                {/* Best for */}
+                <div className="mb-4">
+                  <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${colors.lightBg} ${colors.text}`}>
+                    Best for: {offer.bestFor}
                   </span>
                 </div>
-                <h3 className="mb-2 text-lg font-semibold text-gray-900">
-                  {offer.title[language] || offer.title.en}
-                </h3>
-                <p className="mb-3 text-sm text-gray-600">
-                  {offer.description[language] || offer.description.en}
-                </p>
-                <button className="rounded-lg gradient-header px-4 py-2 text-sm font-medium text-white transition-transform hover:scale-105">
-                  {offer.cta}
-                </button>
+
+                {/* CTA Button */}
+                <a
+                  href={offer.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-block w-full ${colors.bg} text-white font-semibold py-3 px-4 rounded-xl text-center transition-all hover:opacity-90`}
+                >
+                  Apply Now
+                </a>
               </div>
             </div>
-          </div>
-        ))}
+          )
+        })}
       </div>
     </div>
   )
