@@ -1,7 +1,38 @@
 import { Link } from 'react-router-dom'
 import LanguageSelector from '../components/LanguageSelector.jsx'
+import { useState, useEffect } from 'react'
 
 export default function LandingPage({ language, onLanguageChange }) {
+  const [showExitPopup, setShowExitPopup] = useState(false)
+  const [showTimePopup, setShowTimePopup] = useState(false)
+  const [hasShownTimePopup, setHasShownTimePopup] = useState(false)
+
+  useEffect(() => {
+    const handleMouseLeave = (e) => {
+      if (e.clientY <= 0) {
+        setShowExitPopup(true)
+      }
+    }
+
+    const handleTimePopup = () => {
+      if (!hasShownTimePopup) {
+        const timer = setTimeout(() => {
+          setShowTimePopup(true)
+          setHasShownTimePopup(true)
+        }, 15000)
+        return () => clearTimeout(timer)
+      }
+    }
+
+    document.addEventListener('mouseleave', handleMouseLeave)
+    const timeTimer = handleTimePopup()
+
+    return () => {
+      document.removeEventListener('mouseleave', handleMouseLeave)
+      if (timeTimer) timeTimer()
+    }
+  }, [hasShownTimePopup])
+
   const content = {
     en: {
       title: "Master Your Financial Future",
@@ -14,7 +45,17 @@ export default function LandingPage({ language, onLanguageChange }) {
         "Financial calculators and tools"
       ],
       trust: "Join 10,000+ newcomers building financial confidence",
-      social: ["⭐⭐⭐⭐⭐", "5,000+ reviews", "4.8/5 rating"]
+      social: ["5,000+ reviews", "4.8/5 rating"],
+      exitPopup: {
+        title: "Wait! Don't miss this opportunity",
+        subtitle: "Get started today and take control of your financial future",
+        cta: "Continue Learning"
+      },
+      timePopup: {
+        title: "Ready to take the next step?",
+        subtitle: "Thousands have already started their journey to financial success",
+        cta: "Start Now"
+      }
     },
     es: {
       title: "Domina Tu Futuro Financiero",
@@ -27,7 +68,17 @@ export default function LandingPage({ language, onLanguageChange }) {
         "Calculadoras y herramientas financieras"
       ],
       trust: "Únete a más de 10,000 recién llegados construyendo confianza financiera",
-      social: ["⭐⭐⭐⭐⭐", "5,000+ reseñas", "4.8/5 calificación"]
+      social: ["5,000+ reseñas", "4.8/5 calificación"],
+      exitPopup: {
+        title: "¡Espera! No te pierdas esta oportunidad",
+        subtitle: "Comienza hoy y toma el control de tu futuro financiero",
+        cta: "Continuar Aprendiendo"
+      },
+      timePopup: {
+        title: "¿Listo para dar el siguiente paso?",
+        subtitle: "Miles ya han comenzado su camino hacia el éxito financiero",
+        cta: "Comenzar Ahora"
+      }
     },
     hi: {
       title: "अपने वित्तीय भविष्य पर मास्टर करें",
@@ -40,14 +91,24 @@ export default function LandingPage({ language, onLanguageChange }) {
         "वित्तीय कैलकुलेटर और उपकरण"
       ],
       trust: "10,000+ नए आने वालों के साथ वित्तीय आत्मविश्वास बनाने में शामिल हों",
-      social: ["⭐⭐⭐⭐⭐", "5,000+ समीक्षाएं", "4.8/5 रेटिंग"]
+      social: ["5,000+ समीक्षाएं", "4.8/5 रेटिंग"],
+      exitPopup: {
+        title: "रुकिए! यह अवसर न चूकें",
+        subtitle: "आज शुरू करें और अपने वित्तीय भविष्य पर नियंत्रण करें",
+        cta: "सीखना जारी रखें"
+      },
+      timePopup: {
+        title: "अगला कदम उठाने के लिए तैयार हैं?",
+        subtitle: "हजारों ने अपनी वित्तीय सफलता की यात्रा शुरू कर दी है",
+        cta: "अभी शुरू करें"
+      }
     }
   }
 
   const t = content[language] || content.en
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-teal-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
       <div className="mx-auto max-w-phone px-4 sm:px-5">
         <div className="relative flex min-h-dvh flex-col overflow-hidden bg-white shadow-phone sm:min-h-[min(100dvh,920px)] sm:rounded-2xl sm:shadow-phone-sm">
           <div className="sticky top-0 z-40">
@@ -64,8 +125,10 @@ export default function LandingPage({ language, onLanguageChange }) {
               {/* Hero Section */}
               <div className="text-center">
                 <div className="mb-6">
-                  <div className="mx-auto h-20 w-20 rounded-full gradient-header flex items-center justify-center mb-4">
-                    <span className="text-4xl">💰</span>
+                  <div className="mx-auto h-16 w-16 rounded-full gradient-header flex items-center justify-center mb-4">
+                    <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                   </div>
                   <h1 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl leading-tight">
                     {t.title}
@@ -76,11 +139,17 @@ export default function LandingPage({ language, onLanguageChange }) {
                 </div>
 
                 {/* Social Proof */}
-                <div className="mb-8 rounded-lg bg-purple-50 p-4">
+                <div className="mb-8 rounded-lg bg-blue-50 border border-blue-200 p-4">
                   <div className="flex flex-col items-center gap-2">
-                    <div className="text-2xl">{t.social[0]}</div>
-                    <div className="text-sm font-medium text-gray-700">{t.social[1]}</div>
-                    <div className="text-sm text-purple-600 font-semibold">{t.social[2]}</div>
+                    <div className="flex gap-1">
+                      {[1,2,3,4,5].map(i => (
+                        <svg key={i} className="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ))}
+                    </div>
+                    <div className="text-sm font-medium text-gray-700">{t.social[0]}</div>
+                    <div className="text-sm text-blue-600 font-semibold">{t.social[1]}</div>
                   </div>
                 </div>
 
@@ -95,7 +164,9 @@ export default function LandingPage({ language, onLanguageChange }) {
                 {/* Trust Badge */}
                 <div className="mb-8 text-center">
                   <div className="inline-flex items-center gap-2 rounded-full bg-green-100 px-4 py-2">
-                    <span className="text-green-600">✓</span>
+                    <svg className="h-4 w-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
                     <span className="text-sm font-medium text-green-700">100% Free</span>
                   </div>
                 </div>
@@ -121,8 +192,10 @@ export default function LandingPage({ language, onLanguageChange }) {
               {/* Community Trust */}
               <div className="text-center">
                 <div className="mb-4">
-                  <div className="mx-auto h-16 w-16 rounded-lg bg-gradient-to-br from-purple-100 to-teal-100 flex items-center justify-center">
-                    <span className="text-3xl">🌍</span>
+                  <div className="mx-auto h-16 w-16 rounded-lg bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
+                    <svg className="h-8 w-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                   </div>
                 </div>
                 <p className="text-sm text-gray-600 italic">
@@ -133,6 +206,62 @@ export default function LandingPage({ language, onLanguageChange }) {
           </main>
         </div>
       </div>
+
+      {/* Exit Intent Popup */}
+      {showExitPopup && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 px-4">
+          <div className="w-full max-w-sm rounded-lg bg-white p-6 shadow-xl">
+            <h3 className="mb-2 text-xl font-bold text-gray-900">
+              {t.exitPopup.title}
+            </h3>
+            <p className="mb-4 text-gray-600">
+              {t.exitPopup.subtitle}
+            </p>
+            <div className="flex gap-3">
+              <Link
+                to="/learn"
+                className="flex-1 rounded-lg gradient-header px-4 py-2 text-center font-medium text-white"
+              >
+                {t.exitPopup.cta}
+              </Link>
+              <button
+                onClick={() => setShowExitPopup(false)}
+                className="flex-1 rounded-lg border border-gray-300 px-4 py-2 font-medium text-gray-700 hover:bg-gray-50"
+              >
+                Maybe Later
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Time-based Popup */}
+      {showTimePopup && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 px-4">
+          <div className="w-full max-w-sm rounded-lg bg-white p-6 shadow-xl">
+            <h3 className="mb-2 text-xl font-bold text-gray-900">
+              {t.timePopup.title}
+            </h3>
+            <p className="mb-4 text-gray-600">
+              {t.timePopup.subtitle}
+            </p>
+            <div className="flex gap-3">
+              <Link
+                to="/learn"
+                className="flex-1 rounded-lg gradient-header px-4 py-2 text-center font-medium text-white"
+              >
+                {t.timePopup.cta}
+              </Link>
+              <button
+                onClick={() => setShowTimePopup(false)}
+                className="flex-1 rounded-lg border border-gray-300 px-4 py-2 font-medium text-gray-700 hover:bg-gray-50"
+              >
+                Dismiss
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
