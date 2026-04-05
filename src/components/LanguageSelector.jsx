@@ -26,6 +26,8 @@ export default function LanguageSelector({ onLanguageChange }) {
     if (onLanguageChange) {
       onLanguageChange(langCode)
     }
+    // Force reload to ensure all content updates properly
+    window.location.reload()
   }
 
   // Close dropdown when clicking outside
