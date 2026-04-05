@@ -283,7 +283,8 @@ export const lessons = [
       tl: "Mga pangunahin sa pabahay para mga bagong dating",
       zh: "新移民住房基础知识",
       ar: "أساسيات السكن للمهاجرين الجدد",
-      fr: "Notions de base en logement pour les nouveaux arrivants"
+      fr: "Notions de base en logement pour les nouveaux arrivants",
+      pa: "ਆਵਾਸ ਦੀਦੀ ਸ਼ਰਤ ਬਣਾਂ"
     },
     subtitle: {
       en: "Understanding rental agreements and tenant rights",
