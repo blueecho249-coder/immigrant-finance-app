@@ -238,10 +238,10 @@ export default function LandingPage({ language, onLanguageChange }) {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
-                    <h1 className="mb-6 text-5xl sm:text-6xl font-bold text-gray-900 leading-tight">
-                      Build Your <span className="bg-gradient-to-r from-purple-600 to-teal-500 bg-clip-text text-transparent">Financial</span> Future in North America
+                    <h1 className="mb-6 text-5xl sm:text-6xl font-bold text-white leading-tight">
+                      Build Your <span className="text-yellow-300">Financial</span> Future in North America
                     </h1>
-                    <p className="mb-8 text-xl text-gray-600 leading-relaxed max-w-lg mx-auto">
+                    <p className="mb-8 text-xl text-white/95 leading-relaxed max-w-lg mx-auto font-medium">
                       {t.subtitle}
                     </p>
                   </div>
@@ -256,8 +256,8 @@ export default function LandingPage({ language, onLanguageChange }) {
                       
                       return (
                         <div key={index} className={`bg-white rounded-2xl p-4 shadow-lg ${colors.border} overflow-hidden flex flex-col justify-center items-center min-h-[80px]`}>
-                          <div className="text-xl md:text-2xl lg:text-3xl font-bold text-center leading-tight">{stat.number}</div>
-                          <div className="text-sm md:text-base text-gray-600 font-medium text-center leading-tight mt-1">{stat.label}</div>
+                          <div className="text-xl md:text-2xl lg:text-3xl font-bold text-center leading-tight text-gray-900">{stat.number}</div>
+                          <div className="text-sm md:text-base text-gray-800 font-bold text-center leading-tight mt-1">{stat.label}</div>
                         </div>
                       )
                     })}
@@ -288,7 +288,7 @@ export default function LandingPage({ language, onLanguageChange }) {
                       <svg className="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      <span className="text-lg font-bold text-green-700">100% Free • No Credit Card Required</span>
+                      <span className="text-lg font-bold text-green-800">100% Free • No Credit Card Required</span>
                     </div>
                   </div>
                 </div>
@@ -300,14 +300,14 @@ export default function LandingPage({ language, onLanguageChange }) {
                   </h2>
                   <div className="grid gap-6">
                     {t.features.map((feature, index) => (
-                      <div key={index} className="card p-6 hover:shadow-xl transition-all">
+                      <div key={index} className="card p-6 hover:shadow-xl transition-all bg-white border-2 border-gray-200">
                         <div className="flex items-start gap-4">
                           <div className="flex-shrink-0 h-16 w-16 rounded-2xl gradient-header flex items-center justify-center shadow-lg">
                             <span className="text-2xl">{feature.icon}</span>
                           </div>
                           <div className="flex-1">
                             <h3 className="mb-2 text-xl font-bold text-gray-900">{feature.title}</h3>
-                            <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                            <p className="text-gray-800 leading-relaxed font-medium">{feature.description}</p>
                           </div>
                         </div>
                       </div>
@@ -322,7 +322,7 @@ export default function LandingPage({ language, onLanguageChange }) {
                   </h2>
                   <div className="space-y-6">
                     {t.testimonials.map((testimonial, index) => (
-                      <div key={index} className="bg-gradient-to-r from-indigo-50 to-cyan-50 rounded-2xl p-6 border border-indigo-200">
+                      <div key={index} className="bg-gradient-to-r from-indigo-50 to-cyan-50 rounded-2xl p-6 border-2 border-indigo-200">
                         <div className="flex items-start gap-4">
                           <div className="flex-shrink-0">
                             <div className="h-12 w-12 rounded-full bg-indigo-600 flex items-center justify-center">
@@ -341,9 +341,9 @@ export default function LandingPage({ language, onLanguageChange }) {
                                 ))}
                               </div>
                             </div>
-                            <p className="text-gray-800 font-medium mb-2">"{testimonial.text}"</p>
-                            <div className="text-sm text-gray-600">
-                              <div className="font-semibold">{testimonial.name}</div>
+                            <p className="text-gray-900 font-bold mb-2">"{testimonial.text}"</p>
+                            <div className="text-sm text-gray-700">
+                              <div className="font-bold">{testimonial.name}</div>
                               <div>{testimonial.location}</div>
                             </div>
                           </div>
@@ -359,7 +359,7 @@ export default function LandingPage({ language, onLanguageChange }) {
                     <h2 className="mb-4 text-3xl font-bold">
                       Start Your Financial Journey Today
                     </h2>
-                    <p className="mb-6 text-lg opacity-90 max-w-md mx-auto">
+                    <p className="mb-6 text-lg text-white/95 max-w-md mx-auto font-medium">
                       {t.trust}
                     </p>
                     <Link
