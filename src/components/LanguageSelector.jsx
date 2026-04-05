@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react'
 
 const languages = [
-  { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'es', name: 'Español', flag: '🇪🇸' },
-  { code: 'hi', name: 'हिंदी', flag: '🇮🇳' },
-  { code: 'tl', name: 'Tagalog', flag: '🇵🇭' },
-  { code: 'zh', name: '中文', flag: '🇨🇳' },
-  { code: 'ar', name: 'العربية', flag: '🇸🇦' },
-  { code: 'fr', name: 'Français', flag: '🇫🇷' },
-  { code: 'pa', name: 'ਪੰਜਾਬੀ', flag: '🇮🇳' }
+  { code: 'en', name: 'English' },
+  { code: 'es', name: 'Español' },
+  { code: 'hi', name: 'हिन्दी' },
+  { code: 'tl', name: 'Tagalog' },
+  { code: 'zh', name: '中文' },
+  { code: 'ar', name: 'العربية' },
+  { code: 'fr', name: 'Français' },
+  { code: 'pa', name: 'ਪੰਜਾਬੀ' }
 ]
 
 export default function LanguageSelector({ onLanguageChange }) {
@@ -42,18 +42,21 @@ export default function LanguageSelector({ onLanguageChange }) {
 
   return (
     <div className="language-selector relative">
-      <div className="text-white text-xs font-medium opacity-75 mb-2 text-center">Select Language</div>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-3 rounded-xl bg-white/20 backdrop-blur-sm px-5 py-3 text-white transition-all hover:bg-white/30 transform hover:scale-105 border border-white/30 shadow-lg"
+        className="flex items-center gap-2 rounded-lg border border-white/30 bg-transparent px-3 py-2 text-white transition-all hover:bg-white/10 hover:border-white/50"
       >
-        <span className="text-xl">{selectedLanguage.flag}</span>
-        <div className="flex flex-col items-start">
-          <span className="text-xs font-medium opacity-75">Language</span>
-          <span className="text-sm font-bold">{selectedLanguage.name}</span>
-        </div>
+        {/* Globe Icon */}
+        <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+        </svg>
+        
+        {/* Current Language Name */}
+        <span className="text-sm font-medium">{selectedLanguage.name}</span>
+        
+        {/* Down Arrow */}
         <svg 
-          className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} 
+          className={`h-3 w-3 transition-transform ${isOpen ? 'rotate-180' : ''}`} 
           fill="none" 
           stroke="currentColor" 
           viewBox="0 0 24 24"
@@ -62,27 +65,21 @@ export default function LanguageSelector({ onLanguageChange }) {
         </svg>
       </button>
 
+      {/* Dropdown Menu */}
       {isOpen && (
-        <div className="absolute right-0 mt-3 w-72 rounded-2xl bg-white shadow-2xl border border-gray-200 overflow-hidden z-50">
-          <div className="p-2 border-b border-gray-100">
-            <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider px-2">Select Language</div>
-          </div>
-          <div className="max-h-96 overflow-y-auto scrollbar-hide">
+        <div className="absolute right-0 mt-2 w-48 rounded-lg bg-white shadow-lg border border-gray-200 overflow-hidden z-50">
+          <div className="py-1">
             {languages.map((lang) => (
               <button
                 key={lang.code}
                 onClick={() => handleLanguageSelect(lang.code)}
-                className={`flex w-full items-center gap-4 px-4 py-4 text-left transition-all hover:bg-gray-50 ${
-                  lang.code === currentLang ? 'bg-purple-50 text-purple-700 font-semibold' : 'text-gray-700'
+                className={`flex w-full items-center justify-between px-4 py-2 text-sm transition-colors hover:bg-gray-50 ${
+                  lang.code === currentLang ? 'text-purple-700 font-medium' : 'text-gray-700'
                 }`}
               >
-                <span className="text-2xl">{lang.flag}</span>
-                <div className="flex-1">
-                  <div className="font-medium">{lang.name}</div>
-                  <div className="text-xs opacity-75">{lang.code.toUpperCase()}</div>
-                </div>
+                <span>{lang.name}</span>
                 {lang.code === currentLang && (
-                  <svg className="h-5 w-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="h-4 w-4 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 )}
