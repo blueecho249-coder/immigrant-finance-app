@@ -13,7 +13,8 @@ export const lessons = [
       tl: "Pagbuo ng credit mula sa wala",
       zh: "从零开始建立信用",
       ar: "بناء الائتمان من الصفر",
-      fr: "Construire son crédit à partir de zéro"
+      fr: "Construire son crédit à partir de zéro",
+      pa: "ਸ਼ਰਾਂ ਤੋਂ ਸ਼ਰਤ ਬਣਾਂ"
     },
     subtitle: {
       en: "How scores work and the habits that grow them",
@@ -22,7 +23,8 @@ export const lessons = [
       tl: "Paano gumagana ang mga credit score at mga kaugalian na nagpapabuti sa kanilang mga ito?",
       zh: "信用评分如何运作以及培养良好信用的习惯",
       ar: "كيف تعمل درجات الائتمان والعادات التي تنميها",
-      fr: "Comment fonctionnent les scores de crédit et les habitudes qui les font grandir"
+      fr: "Comment fonctionnent les scores de crédit et les habitudes qui les font grandir",
+      pa: "ਕਰਡਤ ਅਤੇ ਕਿਵਾਂ ਤੋਂ ਜਾਂ ਦੀਦੇ ਹਨ"
     },
     category: "Credit",
     content: {
