@@ -108,106 +108,108 @@ export default function Tools({ language }) {
         {/* Input Fields */}
         <div className="space-y-4">
           <div>
-            <label className="mb-2 block text-sm font-medium text-gray-700">
+            <label className="mb-2 block text-sm font-bold text-purple-700">
               {t.monthlyIncomeAfterTax}
             </label>
             <input
               type="number"
               value={income}
               onChange={(e) => setIncome(parseFloat(e.target.value) || 0)}
-              className="input-field"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
             />
           </div>
           
           <div>
-            <label className="mb-2 block text-sm font-medium text-gray-700">
+            <label className="mb-2 block text-sm font-bold text-purple-700">
               {t.rent}
             </label>
             <input
               type="number"
               value={rent}
               onChange={(e) => setRent(parseFloat(e.target.value) || 0)}
-              className="input-field"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
             />
           </div>
 
           <div>
-            <label className="mb-2 block text-sm font-medium text-gray-700">
+            <label className="mb-2 block text-sm font-bold text-purple-700">
               {t.groceries}
             </label>
             <input
               type="number"
               value={groceries}
               onChange={(e) => setGroceries(parseFloat(e.target.value) || 0)}
-              className="input-field"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
             />
           </div>
 
           <div>
-            <label className="mb-2 block text-sm font-medium text-gray-700">
+            <label className="mb-2 block text-sm font-bold text-purple-700">
               {t.transport}
             </label>
             <input
               type="number"
               value={transport}
               onChange={(e) => setTransport(parseFloat(e.target.value) || 0)}
-              className="input-field"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
             />
           </div>
 
           <div>
-            <label className="mb-2 block text-sm font-medium text-gray-700">
+            <label className="mb-2 block text-sm font-bold text-purple-700">
               {t.phoneBill}
             </label>
             <input
               type="number"
               value={phone}
               onChange={(e) => setPhone(parseFloat(e.target.value) || 0)}
-              className="input-field"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
             />
           </div>
 
           <div>
-            <label className="mb-2 block text-sm font-medium text-gray-700">
+            <label className="mb-2 block text-sm font-bold text-purple-700">
               {t.otherExpenses}
             </label>
             <input
               type="number"
               value={other}
               onChange={(e) => setOther(parseFloat(e.target.value) || 0)}
-              className="input-field"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
             />
           </div>
         </div>
 
         {/* Results */}
         <div className="space-y-4">
-          <div className={`rounded-xl p-4 ${moneyLeft >= 0 ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}`}>
-            <div className="text-sm text-gray-600 mb-1">{t.totalExpenses}</div>
-            <div className="text-2xl font-bold text-gray-900">${totalExpenses.toFixed(2)}</div>
-          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="rounded-xl p-4 bg-teal-50 border border-teal-200">
+              <div className="text-sm text-gray-600 mb-1">{t.totalExpenses}</div>
+              <div className="text-2xl font-bold text-teal-700">${totalExpenses.toFixed(2)}</div>
+            </div>
 
-          <div className={`rounded-xl p-4 ${moneyLeft >= 0 ? 'bg-teal-50 border border-teal-200' : 'bg-red-100 border border-red-300'}`}>
-            <div className="text-sm text-gray-600 mb-1">{t.moneyLeftOver}</div>
-            <div className={`text-2xl font-bold ${moneyLeft >= 0 ? 'text-teal-700' : 'text-red-700'}`}>
-              ${moneyLeft.toFixed(2)}
+            <div className={`rounded-xl p-4 ${moneyLeft >= 0 ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}`}>
+              <div className="text-sm text-gray-600 mb-1">{t.moneyLeftOver}</div>
+              <div className={`text-2xl font-bold ${moneyLeft >= 0 ? 'text-green-700' : 'text-red-700'}`}>
+                ${moneyLeft.toFixed(2)}
+              </div>
             </div>
           </div>
 
           {/* Expense Breakdown */}
-          <div className="space-y-2">
-            <div className="text-sm font-medium text-gray-700">{t.expenseBreakdown}</div>
+          <div className="space-y-3">
+            <div className="text-sm font-bold text-gray-700">{t.expenseBreakdown}</div>
             {expenses.map((expense) => {
               const percentage = income > 0 ? (expense.amount / income) * 100 : 0
               return (
-                <div key={expense.name} className="space-y-1">
+                <div key={expense.name} className="space-y-2">
                   <div className="flex justify-between text-sm">
-                    <span className="text-gray-600">{expense.name}</span>
-                    <span className="font-medium">${expense.amount.toFixed(2)} ({percentage.toFixed(1)}%)</span>
+                    <span className="text-gray-600 font-medium">{expense.name}</span>
+                    <span className="font-bold">${expense.amount.toFixed(2)} ({percentage.toFixed(1)}%)</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div className="w-full bg-gray-200 rounded-full h-4">
                     <div 
-                      className={`${expense.color} h-2 rounded-full transition-all`}
+                      className={`${expense.color} h-4 rounded-full transition-all`}
                       style={{ width: `${Math.min(percentage, 100)}%` }}
                     ></div>
                   </div>
@@ -274,19 +276,19 @@ export default function Tools({ language }) {
         {/* Input Fields */}
         <div className="space-y-4">
           <div>
-            <label className="mb-2 block text-sm font-medium text-gray-700">
+            <label className="mb-2 block text-sm font-bold text-teal-700">
               {t.currentBalance}
             </label>
             <input
               type="number"
               value={balance}
               onChange={(e) => setBalance(parseFloat(e.target.value) || 0)}
-              className="input-field"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
             />
           </div>
 
           <div>
-            <label className="mb-2 block text-sm font-medium text-gray-700">
+            <label className="mb-2 block text-sm font-bold text-teal-700">
               {t.interestRate}
             </label>
             <input
@@ -294,19 +296,19 @@ export default function Tools({ language }) {
               step="0.01"
               value={interestRate}
               onChange={(e) => setInterestRate(parseFloat(e.target.value) || 0)}
-              className="input-field"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
             />
           </div>
 
           <div>
-            <label className="mb-2 block text-sm font-medium text-gray-700">
+            <label className="mb-2 block text-sm font-bold text-teal-700">
               {t.monthlyPaymentAmount}
             </label>
             <input
               type="number"
               value={monthlyPayment}
               onChange={(e) => setMonthlyPayment(parseFloat(e.target.value) || 0)}
-              className="input-field"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
             />
             {paymentTooLow && (
               <p className="mt-2 text-sm text-red-600">
@@ -318,30 +320,32 @@ export default function Tools({ language }) {
 
         {/* Results */}
         <div className="space-y-4">
-          <div className="rounded-xl bg-teal-50 border border-teal-200 p-4">
-            <div className="text-sm text-gray-600 mb-1">{t.monthsUntilPaidOff}</div>
-            <div className="text-2xl font-bold text-teal-700">
-              {formatTime(monthsToPayoff)}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="rounded-xl p-4 bg-purple-50 border border-purple-200">
+              <div className="text-sm text-gray-600 mb-1">{t.monthsUntilPaidOff}</div>
+              <div className="text-2xl font-bold text-purple-700">
+                {formatTime(monthsToPayoff)}
+              </div>
             </div>
-          </div>
 
-          <div className="rounded-xl bg-blue-50 border border-blue-200 p-4">
-            <div className="text-sm text-gray-600 mb-1">{t.totalInterestYouWillPay}</div>
-            <div className="text-2xl font-bold text-blue-700">
-              ${totalInterest.toFixed(2)}
+            <div className="rounded-xl p-4 bg-orange-50 border border-orange-200">
+              <div className="text-sm text-gray-600 mb-1">{t.totalInterestYouWillPay}</div>
+              <div className="text-2xl font-bold text-orange-700">
+                ${totalInterest.toFixed(2)}
+              </div>
             </div>
-          </div>
 
-          <div className="rounded-xl bg-purple-50 border border-purple-200 p-4">
-            <div className="text-sm text-gray-600 mb-1">{t.totalAmountPaidOverall}</div>
-            <div className="text-2xl font-bold text-purple-700">
-              ${totalPaid.toFixed(2)}
+            <div className="rounded-xl p-4 bg-red-50 border border-red-200">
+              <div className="text-sm text-gray-600 mb-1">{t.totalAmountPaidOverall}</div>
+              <div className="text-2xl font-bold text-red-700">
+                ${totalPaid.toFixed(2)}
+              </div>
             </div>
           </div>
 
           {paymentTooLow && (
-            <div className="rounded-xl bg-red-50 border border-red-200 p-4">
-              <div className="text-sm font-medium text-red-800">
+            <div className="rounded-xl bg-red-100 border-2 border-red-300 p-4">
+              <div className="text-sm font-bold text-red-800">
                 ⚠️ Your monthly payment is less than minimum required. 
                 This will never pay off the balance and interest will continue to accumulate.
               </div>
@@ -365,25 +369,27 @@ export default function Tools({ language }) {
 
   return (
     <div className="px-4 py-6">
-      <div className="mb-6">
-        <h1 className="mb-2 text-2xl md:text-3xl font-bold text-gray-900">{t.title}</h1>
-        <p className="text-gray-600">{t.subtitle}</p>
+      {/* Page Header with Gradient Banner */}
+      <div className="mb-8 bg-gradient-to-r from-purple-600 to-teal-500 -mx-4 px-4 py-8 rounded-b-2xl">
+        <h1 className="mb-2 text-3xl md:text-4xl font-bold text-white">{t.title}</h1>
+        <p className="text-white opacity-90 text-lg">{t.subtitle}</p>
       </div>
 
-      <div className="mb-6">
+      {/* Enhanced Tab Switcher */}
+      <div className="mb-8">
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-3 max-w-md mx-auto lg:max-w-none">
           {tools.map(tool => (
             <button
               key={tool.id}
               onClick={() => setActiveTool(tool.id)}
-              className={`rounded-xl p-4 text-center transition-all ${
+              className={`rounded-xl p-6 text-center transition-all transform hover:scale-105 ${
                 activeTool === tool.id
-                  ? 'gradient-header text-white shadow-lg'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  ? 'bg-purple-600 text-white shadow-lg'
+                  : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200'
               }`}
             >
-              <div className="text-2xl mb-2">{tool.icon}</div>
-              <div className="text-sm font-semibold">
+              <div className="text-3xl mb-2">{tool.icon}</div>
+              <div className="text-base font-semibold">
                 {tool.name}
               </div>
             </button>
@@ -391,8 +397,9 @@ export default function Tools({ language }) {
         </div>
       </div>
 
+      {/* Tool Content */}
       <div className="max-w-4xl mx-auto">
-        <div className="card">
+        <div className={`card border-l-4 ${activeTool === 'budget' ? 'border-l-purple-500' : 'border-l-teal-500'}`}>
           <div className="gradient-header text-white p-4 rounded-t-xl">
             <h2 className="text-lg font-bold">
               {activeTool === 'budget' ? t.budgetCalculator : t.creditCardPayoff}
