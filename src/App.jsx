@@ -20,11 +20,11 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage language={language} onLanguageChange={handleLanguageChange} />} />
-        <Route path="/learn" element={<Layout><Learn language={language} /></Layout>} />
-        <Route path="/score" element={<Layout><Score language={language} /></Layout>} />
-        <Route path="/tools" element={<Layout><Tools /></Layout>} />
-        <Route path="/offers" element={<Layout><Offers /></Layout>} />
-        <Route path="/account" element={<Layout><Account /></Layout>} />
+        <Route path="/learn" element={<div style={{padding: '20px', fontSize: '24px'}}>LEARN PAGE WORKS</div>} />
+        <Route path="/score" element={<div style={{padding: '20px', fontSize: '24px'}}>SCORE PAGE WORKS</div>} />
+        <Route path="/tools" element={<div style={{padding: '20px', fontSize: '24px'}}>TOOLS PAGE WORKS</div>} />
+        <Route path="/offers" element={<div style={{padding: '20px', fontSize: '24px'}}>OFFERS PAGE WORKS</div>} />
+        <Route path="/account" element={<div style={{padding: '20px', fontSize: '24px'}}>ACCOUNT PAGE WORKS</div>} />
       </Routes>
     </BrowserRouter>
   )
