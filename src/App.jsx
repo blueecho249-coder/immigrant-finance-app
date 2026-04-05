@@ -23,7 +23,7 @@ export default function App() {
         <Route path="/" element={<LandingPage language={language} onLanguageChange={handleLanguageChange} />} />
         <Route path="/learn" element={<Layout><Learn language={language} /></Layout>} />
         <Route path="/lesson/:id" element={<Layout><LessonDetail language={language} /></Layout>} />
-        <Route path="/score" element={<div style={{padding: '20px', fontSize: '24px'}}>SCORE PAGE WORKS</div>} />
+        <Route path="/score" element={<Layout><Score language={language} /></Layout>} />
         <Route path="/tools" element={<Layout><Tools language={language} /></Layout>} />
         <Route path="/offers" element={<Layout><Offers language={language} /></Layout>} />
         <Route path="/account" element={<Layout><Account language={language} /></Layout>} />
