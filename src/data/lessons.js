@@ -166,7 +166,8 @@ export const lessons = [
       tl: "Mga pangunahin sa pagbabang para mga bagong dating",
       zh: "新移民银行基础知识",
       ar: "أساسيات البنوك للمهاجرين الجدد",
-      fr: "Notions de base en banque pour les nouveaux arrivants"
+      fr: "Notions de base en banque pour les nouveaux arrivants",
+      pa: "ਬੈਂਕ ਬੈਂਗ ਦੀਦੀ ਸ਼ਰਤ ਬਣਾਂ"
     },
     subtitle: {
       en: "What to bring and which account type to start with",
