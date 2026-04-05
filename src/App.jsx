@@ -10,7 +10,9 @@ import Offers from './pages/Offers.jsx'
 import Account from './pages/Account.jsx'
 
 export default function App() {
-  const [language, setLanguage] = useState('en')
+  const [language, setLanguage] = useState(() => {
+    return localStorage.getItem('language') || 'en'
+  })
 
   const handleLanguageChange = (lang) => {
     setLanguage(lang)
