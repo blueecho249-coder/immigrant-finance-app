@@ -1,20 +1,82 @@
-export default function Offers() {
+export default function Offers({ language }) {
+  const content = {
+    en: {
+      title: 'Financial Partners',
+      subtitle: 'Recommended products for newcomers',
+      disclaimer: 'We may earn a referral fee — this helps keep the app free',
+      securedCreditCard: 'Secured Credit Card',
+      securedDescription: 'Build credit with no credit history required',
+      securedBestFor: 'No credit history',
+      savingsAccount: 'Savings Plus Account',
+      savingsDescription: 'High interest savings with no monthly fees',
+      savingsBestFor: 'Growing your savings',
+      creditScore: 'Free Credit Score',
+      creditDescription: 'Check your credit score for free instantly',
+      creditBestFor: 'Monitoring credit',
+      investingAccount: 'Free Investing Account',
+      investingDescription: 'Start investing with as little as $1',
+      investingBestFor: 'First time investors',
+      mostPopular: 'Most Popular',
+      applyNow: 'Apply Now'
+    },
+    es: {
+      title: 'Socios Financieros',
+      subtitle: 'Productos recomendados para recién llegados',
+      disclaimer: 'Podemos ganar una tarifa de referencia — esto ayuda a mantener la aplicación gratuita',
+      securedCreditCard: 'Tarjeta de Crédito Asegurada',
+      securedDescription: 'Construye crédito sin historial de crédito requerido',
+      securedBestFor: 'Sin historial de crédito',
+      savingsAccount: 'Cuenta de Ahorro Plus',
+      savingsDescription: 'Ahorros de alto interés sin cuotas mensuales',
+      savingsBestFor: 'Hacer crecer tus ahorros',
+      creditScore: 'Puntuación de Crédito Gratuita',
+      creditDescription: 'Verifica tu puntuación de crédito gratis instantáneamente',
+      creditBestFor: 'Monitoreando crédito',
+      investingAccount: 'Cuenta de Inversión Gratuita',
+      investingDescription: 'Comienza a invertir con tan solo $1',
+      investingBestFor: 'Primeros inversores',
+      mostPopular: 'Más Popular',
+      applyNow: 'Aplicar Ahora'
+    },
+    hi: {
+      title: 'वित्तीय साझेदार',
+      subtitle: 'नए आने वालों के लिए अनुशंसित उत्पाद',
+      disclaimer: 'हम रेफरल शुल्क कमा सकते हैं — यह ऐप को मुफ्त रखने में मदद करता है',
+      securedCreditCard: 'सिक्योर्ड क्रेडिट कार्ड',
+      securedDescription: 'बिना क्रेडिट इतिहास के क्रेडिट बनाएं',
+      securedBestFor: 'कोई क्रेडिट इतिहास नहीं',
+      savingsAccount: 'बचत प्लस खाता',
+      savingsDescription: 'बिना मासिक शुल्क के उच्च ब्याज बचत',
+      savingsBestFor: 'अपनी बचत बढ़ाना',
+      creditScore: 'मुफ्त क्रेडिट स्कोर',
+      creditDescription: 'तुरंत मुफ्त में अपना क्रेडिट स्कोर जांचें',
+      creditBestFor: 'क्रेडिट मॉनिटरिंग',
+      investingAccount: 'मुफ्त निवेश खाता',
+      investingDescription: 'मात्र $1 से निवेश शुरू करें',
+      investingBestFor: 'पहली बार निवेशकर्ता',
+      mostPopular: 'सबसे लोकप्रिय',
+      applyNow: 'अभी आवेदन करें'
+    }
+  }
+
+  const t = content[language] || content.en
+
   const offers = [
     {
       id: 1,
-      product: "Secured Credit Card",
-      description: "Build credit with no credit history required",
-      bestFor: "No credit history",
+      product: t.securedCreditCard,
+      description: t.securedDescription,
+      bestFor: t.securedBestFor,
       color: "purple",
-      badge: "Most Popular",
+      badge: t.mostPopular,
       link: "https://www.neofinancial.com",
       partner: "Neo Financial"
     },
     {
       id: 2,
-      product: "Savings Plus Account",
-      description: "High interest savings with no monthly fees",
-      bestFor: "Growing your savings",
+      product: t.savingsAccount,
+      description: t.savingsDescription,
+      bestFor: t.savingsBestFor,
       color: "teal",
       badge: null,
       link: "https://www.eqbank.ca",
@@ -22,9 +84,9 @@ export default function Offers() {
     },
     {
       id: 3,
-      product: "Free Credit Score",
-      description: "Check your credit score for free instantly",
-      bestFor: "Monitoring credit",
+      product: t.creditScore,
+      description: t.creditDescription,
+      bestFor: t.creditBestFor,
       color: "amber",
       badge: null,
       link: "https://www.borrowell.com",
@@ -32,9 +94,9 @@ export default function Offers() {
     },
     {
       id: 4,
-      product: "Free Investing Account",
-      description: "Start investing with as little as $1",
-      bestFor: "First time investors",
+      product: t.investingAccount,
+      description: t.investingDescription,
+      bestFor: t.investingBestFor,
       color: "blue",
       badge: null,
       link: "https://www.wealthsimple.com",
@@ -75,14 +137,14 @@ export default function Offers() {
   return (
     <div className="px-4 py-6">
       <div className="mb-6">
-        <h1 className="mb-2 text-2xl font-bold text-gray-900">Financial Partners</h1>
-        <p className="text-gray-600">Recommended products for newcomers</p>
+        <h1 className="mb-2 text-2xl font-bold text-gray-900">{t.title}</h1>
+        <p className="text-gray-600">{t.subtitle}</p>
       </div>
 
       {/* Disclaimer */}
       <div className="mb-6 p-3 bg-amber-50 border border-amber-200 rounded-xl">
         <p className="text-sm text-amber-800">
-          We may earn a referral fee — this helps keep the app free
+          {t.disclaimer}
         </p>
       </div>
 
@@ -135,7 +197,7 @@ export default function Offers() {
                   rel="noopener noreferrer"
                   className={`inline-block w-full ${colors.bg} text-white font-semibold py-3 px-4 rounded-xl text-center transition-all hover:opacity-90`}
                 >
-                  Apply Now
+                  {t.applyNow}
                 </a>
               </div>
             </div>
