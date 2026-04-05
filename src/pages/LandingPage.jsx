@@ -566,9 +566,9 @@ export default function LandingPage({ language, onLanguageChange }) {
             {/* Features Section */}
             <div className="mt-20">
               <h2 className="mb-12 text-center text-4xl font-bold text-gray-900">
-                Everything You Need to <span className="relative inline-block">
+                Everything You Need to <span className="relative inline-block pb-2">
                   Succeed
-                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-600 to-teal-500"></div>
+                  <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-purple-600 to-teal-500"></div>
                 </span>
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

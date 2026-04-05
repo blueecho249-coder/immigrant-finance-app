@@ -116,10 +116,10 @@ export default function Learn({ language }) {
       </div>
 
       <div className="mb-8 animate-fadeIn">
-        <h1 className="mb-3 text-4xl md:text-5xl font-bold text-gray-900">{t.title}</h1>
-        <div className="relative inline-block">
+        <h1 className="mb-4 text-4xl md:text-5xl font-bold text-gray-900">{t.title}</h1>
+        <div className="relative inline-block pb-3">
           <p className="text-xl text-gray-700 pr-2 font-medium">{t.subtitle}</p>
-          <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-indigo-500 to-teal-500 rounded-full"></div>
+          <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 to-teal-500 rounded-full"></div>
         </div>
       </div>
 
