@@ -55,23 +55,31 @@ export default function BottomNav() {
   return (
     <div className="fixed bottom-0 left-0 right-0 border-t-2 border-gray-200/60 bg-white/90 backdrop-blur-xl shadow-lg">
       <div className="mx-auto max-w-phone">
-        <div className="flex items-center justify-around py-3">
+        <div className="flex items-center justify-around py-4">
           {navItems.map((item) => {
             const isActive = location.pathname === item.path
             return (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`flex flex-col items-center px-4 py-3 text-sm font-bold transition-all transform hover:scale-105 rounded-2xl ${
+                className={`flex flex-col items-center px-4 py-4 text-base font-black transition-all transform hover:scale-110 rounded-2xl ${
                   isActive
-                    ? 'text-indigo-600 bg-indigo-50/80 shadow-md'
-                    : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50/60'
+                    ? 'text-indigo-600 bg-indigo-50/80 shadow-lg border-2 border-indigo-300'
+                    : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50/60'
                 }`}
               >
-                <div className={`mb-2 transition-all ${isActive ? 'scale-110 text-indigo-600' : 'scale-100 text-gray-500'}`}>
+                <div className={`mb-2 transition-all ${
+                  isActive 
+                    ? 'scale-125 text-indigo-600 drop-shadow-lg' 
+                    : 'scale-100 text-gray-600'
+                }`}>
                   {item.icon}
                 </div>
-                <span className={isActive ? 'font-bold' : 'font-semibold'}>{item.label}</span>
+                <span className={`text-xs font-black tracking-wide ${
+                  isActive ? 'text-indigo-600' : 'text-gray-600'
+                }`}>
+                  {item.label}
+                </span>
               </Link>
             )
           })}
