@@ -44,7 +44,7 @@ export default function LanguageSelector({ onLanguageChange }) {
     <div className="language-selector relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 rounded-lg border border-white/30 bg-transparent px-3 py-2 text-white transition-all hover:bg-white/10 hover:border-white/50"
+        className="flex items-center gap-2 rounded-lg border border-white/60 bg-white/10 backdrop-blur-sm px-4 py-2.5 text-white transition-all hover:bg-white/20 hover:border-white/80 shadow-md"
       >
         {/* Globe Icon */}
         <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -52,7 +52,7 @@ export default function LanguageSelector({ onLanguageChange }) {
         </svg>
         
         {/* Current Language Name */}
-        <span className="text-sm font-medium">{selectedLanguage.name}</span>
+        <span className="text-sm font-semibold">{selectedLanguage.name}</span>
         
         {/* Down Arrow */}
         <svg 
@@ -67,14 +67,14 @@ export default function LanguageSelector({ onLanguageChange }) {
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 rounded-lg bg-white shadow-lg border border-gray-200 overflow-hidden z-50">
+        <div className="absolute right-0 mt-2 w-48 rounded-lg bg-white shadow-xl border border-gray-200 overflow-hidden z-50">
           <div className="py-1">
             {languages.map((lang) => (
               <button
                 key={lang.code}
                 onClick={() => handleLanguageSelect(lang.code)}
-                className={`flex w-full items-center justify-between px-4 py-2 text-sm transition-colors hover:bg-gray-50 ${
-                  lang.code === currentLang ? 'text-purple-700 font-medium' : 'text-gray-700'
+                className={`flex w-full items-center justify-between px-4 py-2.5 text-sm transition-colors hover:bg-gray-50 ${
+                  lang.code === currentLang ? 'text-purple-700 font-medium bg-purple-50' : 'text-gray-700'
                 }`}
               >
                 <span>{lang.name}</span>
