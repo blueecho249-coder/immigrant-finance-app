@@ -3,7 +3,7 @@ import LanguageSelector from './LanguageSelector.jsx'
 export default function Header() {
   return (
     <div className="sticky top-0 z-40">
-      <div className="gradient-header px-4 py-4 sm:px-5">
+      <div className="bg-gradient-to-r from-purple-600 to-teal-500 px-4 py-4 sm:px-5 shadow-md">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="h-8 w-8 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center">

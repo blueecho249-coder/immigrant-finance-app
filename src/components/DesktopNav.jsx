@@ -18,12 +18,12 @@ export default function DesktopNav() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-lg gradient-header flex items-center justify-center">
+            <div className="h-8 w-8 rounded-lg bg-gradient-to-r from-purple-600 to-teal-500 flex items-center justify-center">
               <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <span className="text-xl font-bold text-gray-900">NewFinance</span>
+            <span className="text-xl font-bold text-white">NewFinance</span>
           </Link>
 
           {/* Navigation Links */}
@@ -34,8 +34,8 @@ export default function DesktopNav() {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`text-sm font-medium transition-colors hover:text-indigo-600 ${
-                    isActive ? 'text-indigo-600' : 'text-gray-700'
+                  className={`text-sm font-medium transition-colors hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-600 pb-1 ${
+                    isActive ? 'text-indigo-600 border-indigo-600' : 'text-gray-700'
                   }`}
                 >
                   {item.label}
