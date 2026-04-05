@@ -406,7 +406,8 @@ export const lessons = [
         options: {
           en: ["At least 6 years", "2 years"],
           es: ["Al menos 6 años", "2 años"],
-          hi: ["कम से कम 6 वर्ष", "2 वर्ष"]
+          hi: ["कम से कम 6 वर्ष", "2 वर्ष"],
+          tl: ["Higit sa 6 taon", "2 taon"]
         },
         correctIndex: 0
       }
