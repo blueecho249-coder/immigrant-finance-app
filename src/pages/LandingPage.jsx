@@ -258,9 +258,9 @@ export default function LandingPage({ language, onLanguageChange }) {
                   {/* Stats Section */}
                   <div className="mb-10 grid grid-cols-2 gap-4 max-w-sm mx-auto">
                     {t.stats.map((stat, index) => (
-                      <div key={index} className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100">
-                        <div className="text-2xl font-bold text-indigo-600">{stat.number}</div>
-                        <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
+                      <div key={index} className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100 overflow-hidden flex flex-col justify-center items-center min-h-[80px]">
+                        <div className="text-lg md:text-xl font-bold text-indigo-600 text-center leading-tight">{stat.number}</div>
+                        <div className="text-xs md:text-sm text-gray-600 font-medium text-center leading-tight mt-1">{stat.label}</div>
                       </div>
                     ))}
                   </div>
@@ -392,9 +392,9 @@ export default function LandingPage({ language, onLanguageChange }) {
                 {/* Stats Section */}
                 <div className="mb-10 grid grid-cols-2 lg:grid-cols-4 gap-6">
                   {t.stats.map((stat, index) => (
-                    <div key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-                      <div className="text-3xl font-bold text-indigo-600">{stat.number}</div>
-                      <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
+                    <div key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 overflow-hidden flex flex-col justify-center items-center min-h-[100px]">
+                      <div className="text-xl md:text-2xl lg:text-3xl font-bold text-indigo-600 text-center leading-tight">{stat.number}</div>
+                      <div className="text-xs md:text-sm text-gray-600 font-medium text-center leading-tight mt-1">{stat.label}</div>
                     </div>
                   ))}
                 </div>
