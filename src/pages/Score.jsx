@@ -143,7 +143,7 @@ export default function Score({ language }) {
     }
   }
 
-  const t = content[language] || content['en']
+  const t = content[language] || content.en
   const scoreColor = getScoreColor(creditScore)
   const ringProgress = getRingProgress(creditScore)
   const targetScore = 750

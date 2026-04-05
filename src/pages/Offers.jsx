@@ -82,7 +82,7 @@ export default function Offers({ language }) {
     }
   }
 
-  const t = content[language] || content['en']
+  const t = content[language] || content.en
 
   const offers = [
     {

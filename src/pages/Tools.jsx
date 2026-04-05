@@ -69,7 +69,7 @@ export default function Tools({ language }) {
     }
   }
 
-  const t = content[language] || content['en']
+  const t = content[language] || content.en
 
   const tools = [
     {

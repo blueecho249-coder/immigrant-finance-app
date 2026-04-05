@@ -155,7 +155,7 @@ export default function Account({ language }) {
     }
   }
 
-  const t = content[language] || content['en']
+  const t = content[language] || content.en
 
   useEffect(() => {
     // Check if user is logged in on component mount
