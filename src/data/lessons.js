@@ -11,14 +11,16 @@ export const lessons = [
       es: "Construir crédito desde cero",
       hi: "शून्य के क्रेडिट बनाना",
       tl: "Pagbuo ng credit mula sa wala",
-      zh: "从零开始建立信用"
+      zh: "从零开始建立信用",
+      ar: "بناء الائتمان من الصفر"
     },
     subtitle: {
       en: "How scores work and the habits that grow them",
       es: "Cómo funcionan las puntuaciones y los hábitos que las hacen crecer",
       hi: "स्कोर कैसे काम करते हैं और उन्हें बढ़ाने वाली आदतें",
       tl: "Paano gumagana ang mga credit score at mga kaugalian na nagpapabuti sa kanilang mga ito?",
-      zh: "信用评分如何运作以及培养良好信用的习惯"
+      zh: "信用评分如何运作以及培养良好信用的习惯",
+      ar: "كيف تعمل درجات الائتمان والعادات التي تنميها"
     },
     category: "Credit",
     content: {
@@ -32,6 +34,14 @@ export const lessons = [
         "Maintaining low credit utilization (using less than 30% of your available credit) is key to building good credit. If you have a $1,000 limit, try to keep your balance below $300. This shows lenders you can manage credit responsibly without relying too heavily on it.",
         "Building excellent credit takes time, typically 6-12 months of consistent positive behavior. During this time, pay all bills on time, keep balances low, and avoid applying for too much new credit. Monitor your credit report regularly to ensure accuracy and track your progress.",
         "Once you've established good credit, maintain it by continuing responsible habits. Set up automatic payments to avoid missing due dates, keep old accounts open (even if unused) to maintain credit history length, and only apply for new credit when necessary."
+      ],
+      ar: [
+        "في كندا والولايات المتحدة، درجة الائتمان هي رقم مكون من ثلاثة أرقام، عادة ما بين 300 و 850، يستخدمها المقرضون لتقييم ملاءتك الائتماني. يمثل هذا الرقم احتمالية سداد الأموال المقترضة في الوقت المحدد. فكر فيه كدرجة مالية تخبر البنوك وشركات بطاقات الائتمان والمقرضين الآخرين مدى مسؤوليتك مع الائتمان.",
+        "يتم حساب درجة الائتمان الخاصة بك باستخدام عدة عوامل: تاريخ السداد (35%)، المبالغ المستحقة (30%)، مدة تاريخ الائتمان (15%)، الائتمان الجديد (10%)، ومزيج الائتمان (10%). يعد تاريخ السداد هو العامل الأهم، لذا فإن سداد جميع المدفوعات في الوقت المناسب أمر بالغ الأهمية لبناء والحفاظ على ائتمان جيد.",
+        "عند وصولك لأول مرة إلى كندا أو الولايات المتحدة، تبدأ عادة بدون تاريخ ائتماني. هذا لا يعني أن لديك ائتمان سيئ - فهذا يعني فقط أن المقرضين ليس لديهم معلومات عن عادات اقتراضك. بناء الائتمان من الصفر يتطلب الصبر والسلوك المسؤول باستمرار.",
+        "بطاقة الائتمان المضمونة هي أداة ممتازة لبناء الائتمان. أنت تقدم وديعة أمان (عادة 300-500 دولار) تصبح حد ائتمانك. يبلغ البنك تاريخ سدادك إلى مكاتب الائتمان، مما يساعدك على بناء تاريخ ائتمان إيجابي. بعد 6-12 شهرًا من الاستخدام المسؤول، سيقوم العديد من البنوك بترقيتك إلى بطاقة غير مضمونة ويعيد لك وديعتك.",
+        "خيار آخر هو أن تصبح مستخدمًا مصرحًا على بطاقة ائتمان شخص آخر - عادة ما يكون فردًا من العائلة لديه ائتمان جيد. يمكن أن يساعد تاريخ سداداته الإيجابي في بناء ائتمانك، ولكن كن حذرًا من أن أي نشاط سلبي قد يؤثر أيضًا على تقرير الائتمان الخاص بك.",
+        "بطاقات الائتمان الطلابية، وبطاقات المتاجر، وقروض بناء الائتمان هي خيارات أخرى لإنشاء الائتمان. لكل منها إيجابيات وسلبيات، لذا ابحث بعناية قبل التقديم. قد يؤدي التقديم الكثيرة في فترة قصيرة إلى خفض درجة الائتمان الخاص بك بشكل مؤقت."
       ],
       zh: [
         "在加拿大和美国，信用评分是一个三位数的数字，通常范围在300到850之间，贷款人用它来评估你的信用价值。这个数字代表了你按时偿还借款资金的可能性。把它看作一个金融等级，告诉银行、信用卡公司和其他贷款人你对信用的负责程度。",
