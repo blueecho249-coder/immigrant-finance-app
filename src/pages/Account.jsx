@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-export default function Account() {
+export default function Account({ language }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [isSignUp, setIsSignUp] = useState(false)
   const [email, setEmail] = useState('')
@@ -10,6 +10,89 @@ export default function Account() {
   const [error, setError] = useState('')
   const [userEmail, setUserEmail] = useState('')
   const [isPremium, setIsPremium] = useState(false)
+
+  const content = {
+    en: {
+      createAccount: 'Create your account',
+      signInToSave: 'Sign in to save your progress',
+      joinThousands: 'Join thousands learning financial literacy',
+      lessonsSync: 'Your lessons sync across all your devices',
+      email: 'Email',
+      password: 'Password',
+      confirmPassword: 'Confirm password',
+      createAccountBtn: 'Create account',
+      signIn: 'Sign in',
+      haveAccount: 'Already have an account? Sign in',
+      noAccount: "Don't have an account? Sign up",
+      emailRequired: 'Email is required',
+      passwordMinLength: 'Password must be at least 6 characters',
+      passwordsNotMatch: 'Passwords do not match',
+      invalidCredentials: 'Invalid email or password',
+      freePlan: 'Free Plan',
+      premiumPlan: 'Premium',
+      unlockAllLessons: 'Unlock all 20 lessons',
+      premiumAccess: 'Get premium access to exclusive content and advanced features',
+      getPremium: 'Get Premium — $9.99/month',
+      yourProgress: 'Your Progress',
+      lessonsCompleted: 'Lessons Completed',
+      keepLearning: 'Keep learning to unlock more lessons!',
+      signOut: 'Sign Out'
+    },
+    es: {
+      createAccount: 'Crea tu cuenta',
+      signInToSave: 'Inicia sesión para guardar tu progreso',
+      joinThousands: 'Únete a miles aprendiendo educación financiera',
+      lessonsSync: 'Tus lecciones se sincronizan en todos tus dispositivos',
+      email: 'Correo electrónico',
+      password: 'Contraseña',
+      confirmPassword: 'Confirmar contraseña',
+      createAccountBtn: 'Crear cuenta',
+      signIn: 'Iniciar sesión',
+      haveAccount: '¿Ya tienes una cuenta? Inicia sesión',
+      noAccount: '¿No tienes una cuenta? Regístrate',
+      emailRequired: 'El correo electrónico es requerido',
+      passwordMinLength: 'La contraseña debe tener al menos 6 caracteres',
+      passwordsNotMatch: 'Las contraseñas no coinciden',
+      invalidCredentials: 'Correo electrónico o contraseña inválidos',
+      freePlan: 'Plan Gratuito',
+      premiumPlan: 'Premium',
+      unlockAllLessons: 'Desbloquea todas las 20 lecciones',
+      premiumAccess: 'Obtén acceso premium a contenido exclusivo y características avanzadas',
+      getPremium: 'Obtener Premium — $9.99/mes',
+      yourProgress: 'Tu Progreso',
+      lessonsCompleted: 'Lecciones Completadas',
+      keepLearning: '¡Sigue aprendiendo para desbloquear más lecciones!',
+      signOut: 'Cerrar sesión'
+    },
+    hi: {
+      createAccount: 'अपना खाता बनाएं',
+      signInToSave: 'अपनी प्रगति सहेजने के लिए साइन इन करें',
+      joinThousands: 'वित्तीय साक्षरता सीखने वालों हजारों में शामिल हों',
+      lessonsSync: 'आपके सभी उपकरणों पर आपकी पाठ यों का सिंक्रनाइज़ेशन होता है',
+      email: 'ईमेल',
+      password: 'पासवर्ड',
+      confirmPassword: 'पासवर्ड की पुष्टि करें',
+      createAccountBtn: 'खाता बनाएं',
+      signIn: 'साइन इन करें',
+      haveAccount: 'पहले से खाता है? साइन इन करें',
+      noAccount: 'खाता नहीं है? साइन अप करें',
+      emailRequired: 'ईमेल आवश्यक है',
+      passwordMinLength: 'पासवर्ड कम से कम 6 अक्षरों का होना चाहिए',
+      passwordsNotMatch: 'पासवर्ड मेल नहीं खाते',
+      invalidCredentials: 'अमान्य ईमेल या पासवर्ड',
+      freePlan: 'मुफ्त योजना',
+      premiumPlan: 'प्रीमियम',
+      unlockAllLessons: 'सभी 20 पाठ अनलॉक करें',
+      premiumAccess: 'अनन्य सामग्री और उन्नत विशेषताओं तक प्रीमियम पहुंच प्राप्त करें',
+      getPremium: 'प्रीमियम प्राप्त करें — $9.99/महीना',
+      yourProgress: 'आपकी प्रगति',
+      lessonsCompleted: 'पूरी पाठें',
+      keepLearning: 'अधिक पाठ अनलॉक करने के लिए सीखना जारी रखें!',
+      signOut: 'साइन आउट'
+    }
+  }
+
+  const t = content[language] || content.en
 
   useEffect(() => {
     // Check if user is logged in on component mount
@@ -36,12 +119,12 @@ export default function Account() {
     setError('')
 
     if (!validateEmail(email)) {
-      setError('Email is required')
+      setError(t.emailRequired)
       return
     }
 
     if (!validatePassword(password)) {
-      setError('Password must be at least 6 characters')
+      setError(t.passwordMinLength)
       return
     }
 
@@ -55,7 +138,7 @@ export default function Account() {
       localStorage.setItem('userEmail', email)
       localStorage.setItem('userPassword', password)
     } else {
-      setError('Invalid email or password')
+      setError(t.invalidCredentials)
     }
   }
 
@@ -64,17 +147,17 @@ export default function Account() {
     setError('')
 
     if (!validateEmail(email)) {
-      setError('Email is required')
+      setError(t.emailRequired)
       return
     }
 
     if (!validatePassword(password)) {
-      setError('Password must be at least 6 characters')
+      setError(t.passwordMinLength)
       return
     }
 
     if (password !== confirmPassword) {
-      setError('Passwords do not match')
+      setError(t.passwordsNotMatch)
       return
     }
 
@@ -114,7 +197,7 @@ export default function Account() {
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">{userEmail}</h2>
           <span className="inline-flex items-center px-4 py-2 rounded-full text-lg font-medium bg-gray-100 text-gray-700">
-            Free Plan
+            {isPremium ? t.premiumPlan : t.freePlan}
           </span>
         </div>
 
@@ -123,30 +206,30 @@ export default function Account() {
           <div className="lg:col-span-2 space-y-8">
             {/* Upgrade Card */}
             <div className="bg-gradient-to-r from-indigo-600 to-cyan-600 rounded-2xl p-8 text-white shadow-xl">
-              <h3 className="text-2xl font-bold mb-3">Unlock all 20 lessons</h3>
-              <p className="mb-6 text-lg opacity-90">Get premium access to exclusive content and advanced features</p>
+              <h3 className="text-2xl font-bold mb-3">{t.unlockAllLessons}</h3>
+              <p className="mb-6 text-lg opacity-90">{t.premiumAccess}</p>
               <a
                 href="https://blueecho3.gumroad.com/l/btyknk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block w-full lg:w-auto bg-white text-indigo-600 font-bold py-4 px-8 rounded-xl text-center hover:bg-gray-50 transition-all"
               >
-                Get Premium — $9.99/month
+                {t.getPremium}
               </a>
             </div>
 
             {/* Progress Section */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-6">Your Progress</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-6">{t.yourProgress}</h3>
               <div className="bg-gray-50 rounded-2xl p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-gray-700 text-lg">Lessons Completed</span>
+                  <span className="text-gray-700 text-lg">{t.lessonsCompleted}</span>
                   <span className="font-semibold text-gray-900 text-xl">3 / 20</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-3 mb-4">
                   <div className="gradient-header h-3 rounded-full" style={{ width: '15%' }}></div>
                 </div>
-                <p className="text-gray-600">Keep learning to unlock more lessons!</p>
+                <p className="text-gray-600">{t.keepLearning}</p>
               </div>
             </div>
           </div>
@@ -158,7 +241,7 @@ export default function Account() {
               onClick={handleSignOut}
               className="w-full py-4 px-6 rounded-xl font-medium border border-gray-300 text-gray-700 hover:bg-gray-50 transition-all"
             >
-              Sign Out
+              {t.signOut}
             </button>
           </div>
         </div>
@@ -174,10 +257,10 @@ export default function Account() {
           <span className="text-xl font-bold text-white">NF</span>
         </div>
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-          {isSignUp ? 'Create your account' : 'Sign in to save your progress'}
+          {isSignUp ? t.createAccount : t.signInToSave}
         </h2>
         <p className="text-gray-600 text-lg">
-          {isSignUp ? 'Join thousands learning financial literacy' : 'Your lessons sync across all your devices'}
+          {isSignUp ? t.joinThousands : t.lessonsSync}
         </p>
       </div>
 
@@ -193,7 +276,7 @@ export default function Account() {
         <div>
           <input
             type="email"
-            placeholder="Email"
+            placeholder={t.email}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="input-field"
@@ -204,7 +287,7 @@ export default function Account() {
         <div>
           <input
             type="password"
-            placeholder="Password"
+            placeholder={t.password}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="input-field"
@@ -216,7 +299,7 @@ export default function Account() {
           <div>
             <input
               type="password"
-              placeholder="Confirm password"
+              placeholder={t.confirmPassword}
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               className="input-field"
@@ -229,7 +312,7 @@ export default function Account() {
           type="submit"
           className="w-full btn-primary"
         >
-          {isSignUp ? 'Create account' : 'Sign in'}
+          {isSignUp ? t.createAccountBtn : t.signIn}
         </button>
       </form>
 
@@ -242,7 +325,7 @@ export default function Account() {
           }}
           className="text-indigo-600 font-medium hover:text-indigo-700 transition-colors"
         >
-          {isSignUp ? 'Already have an account? Sign in' : "Don't have an account? Sign up"}
+          {isSignUp ? t.haveAccount : t.noAccount}
         </button>
       </div>
     </div>
