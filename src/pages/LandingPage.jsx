@@ -4,34 +4,22 @@ import { useState, useEffect } from 'react'
 
 export default function LandingPage({ language, onLanguageChange }) {
   const [showExitPopup, setShowExitPopup] = useState(false)
-  const [showTimePopup, setShowTimePopup] = useState(false)
-  const [hasShownTimePopup, setHasShownTimePopup] = useState(false)
+  const [hasShownExitPopup, setHasShownExitPopup] = useState(false)
 
   useEffect(() => {
     const handleMouseLeave = (e) => {
-      if (e.clientY <= 0) {
+      if (e.clientY <= 0 && !hasShownExitPopup) {
         setShowExitPopup(true)
-      }
-    }
-
-    const handleTimePopup = () => {
-      if (!hasShownTimePopup) {
-        const timer = setTimeout(() => {
-          setShowTimePopup(true)
-          setHasShownTimePopup(true)
-        }, 3000) // Changed from 15000 to 3000 (3 seconds)
-        return () => clearTimeout(timer)
+        setHasShownExitPopup(true)
       }
     }
 
     document.addEventListener('mouseleave', handleMouseLeave)
-    const timeTimer = handleTimePopup()
 
     return () => {
       document.removeEventListener('mouseleave', handleMouseLeave)
-      if (timeTimer) timeTimer()
     }
-  }, [hasShownTimePopup])
+  }, [hasShownExitPopup])
 
   const content = {
     en: {
@@ -86,11 +74,6 @@ export default function LandingPage({ language, onLanguageChange }) {
         title: "Wait! Your Financial Journey Starts Here",
         subtitle: "Don't miss this opportunity to learn essential money skills that will help you succeed in North America",
         cta: "Continue Learning"
-      },
-      timePopup: {
-        title: "Ready to Transform Your Financial Future?",
-        subtitle: "Thousands of newcomers have already started their journey. Begin yours today.",
-        cta: "Start Now"
       }
     },
     es: {
@@ -145,11 +128,6 @@ export default function LandingPage({ language, onLanguageChange }) {
         title: "¡Espera! Tu Viaje Financiero Comienza Aquí",
         subtitle: "No te pierdas esta oportunidad de aprender habilidades esenciales de dinero que te ayudarán a tener éxito en América del Norte",
         cta: "Continuar Aprendiendo"
-      },
-      timePopup: {
-        title: "¿Listo para Transformar tu Futuro Financiero?",
-        subtitle: "Miles de recién llegados ya han comenzado su viaje. Comienza el tuyo hoy.",
-        cta: "Comenzar Ahora"
       }
     },
     hi: {
@@ -204,11 +182,6 @@ export default function LandingPage({ language, onLanguageChange }) {
         title: "रुकिए! आपका वित्तीय यात्रा यहां शुरू होती है",
         subtitle: "उत्तरी अमेरिका में सफल होने में मदद करने वाले आवश्यक धन कौशल सीखने का अवसर न चूकें",
         cta: "सीखना जारी रखें"
-      },
-      timePopup: {
-        title: "अपना वित्तीय भविष्य बदलने के लिए तैयार हैं?",
-        subtitle: "हजारों नए आने वाले पहले ही अपनी यात्रा शुरू कर चुके हैं। आज अपनी शुरुआत करें।",
-        cta: "अभी शुरू करें"
       }
     }
   }
@@ -618,40 +591,6 @@ export default function LandingPage({ language, onLanguageChange }) {
         </div>
       )}
 
-      {/* Time-based Popup */}
-      {showTimePopup && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm px-4">
-          <div className="w-full max-w-sm rounded-3xl bg-white p-6 shadow-2xl">
-            <div className="text-center mb-4">
-              <div className="mx-auto h-12 w-12 rounded-2xl gradient-header flex items-center justify-center mb-3">
-                <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-            </div>
-            <h3 className="mb-3 text-lg font-bold text-gray-900 text-center leading-tight">
-              {t.timePopup.title}
-            </h3>
-            <p className="mb-4 text-sm text-gray-600 text-center leading-relaxed">
-              {t.timePopup.subtitle}
-            </p>
-            <div className="flex gap-3">
-              <Link
-                to="/learn"
-                className="flex-1 btn-primary text-sm py-2"
-              >
-                {t.timePopup.cta}
-              </Link>
-              <button
-                onClick={() => setShowTimePopup(false)}
-                className="flex-1 btn-secondary text-sm py-2"
-              >
-                Dismiss
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   )
 }
