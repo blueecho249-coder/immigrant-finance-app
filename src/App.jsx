@@ -20,7 +20,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage language={language} onLanguageChange={handleLanguageChange} />} />
-        <Route element={<Layout />}>
+        <Route path="/" element={<Layout />}>
           <Route path="/learn" element={<Learn language={language} />} />
           <Route path="/score" element={<Score language={language} />} />
           <Route path="/tools" element={<Tools />} />
