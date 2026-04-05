@@ -12,7 +12,8 @@ export const lessons = [
       hi: "शून्य के क्रेडिट बनाना",
       tl: "Pagbuo ng credit mula sa wala",
       zh: "从零开始建立信用",
-      ar: "بناء الائتمان من الصفر"
+      ar: "بناء الائتمان من الصفر",
+      fr: "Construire son crédit à partir de zéro"
     },
     subtitle: {
       en: "How scores work and the habits that grow them",
@@ -20,7 +21,8 @@ export const lessons = [
       hi: "स्कोर कैसे काम करते हैं और उन्हें बढ़ाने वाली आदतें",
       tl: "Paano gumagana ang mga credit score at mga kaugalian na nagpapabuti sa kanilang mga ito?",
       zh: "信用评分如何运作以及培养良好信用的习惯",
-      ar: "كيف تعمل درجات الائتمان والعادات التي تنميها"
+      ar: "كيف تعمل درجات الائتمان والعادات التي تنميها",
+      fr: "Comment fonctionnent les scores de crédit et les habitudes qui les font grandir"
     },
     category: "Credit",
     content: {
@@ -34,6 +36,17 @@ export const lessons = [
         "Maintaining low credit utilization (using less than 30% of your available credit) is key to building good credit. If you have a $1,000 limit, try to keep your balance below $300. This shows lenders you can manage credit responsibly without relying too heavily on it.",
         "Building excellent credit takes time, typically 6-12 months of consistent positive behavior. During this time, pay all bills on time, keep balances low, and avoid applying for too much new credit. Monitor your credit report regularly to ensure accuracy and track your progress.",
         "Once you've established good credit, maintain it by continuing responsible habits. Set up automatic payments to avoid missing due dates, keep old accounts open (even if unused) to maintain credit history length, and only apply for new credit when necessary."
+      ],
+      fr: [
+        "Au Canada et aux États-Unis, un score de crédit est un numéro à trois chiffres, généralement entre 300 et 850, que les prêteurs utilisent pour évaluer votre solvabilité. Ce nombre représente votre probabilité de rembourser l'argent emprunté à temps. Pensez-y comme une note financière qui indique aux banques, aux sociétés de cartes de crédit et aux autres prêteurs à quel point vous êtes responsable avec le crédit.",
+        "Votre score de crédit est calculé en utilisant plusieurs facteurs : historique des paiements (35%), montants dus (30%), durée de l'historique de crédit (15%), nouveau crédit (10%) et mélange de crédit (10%). L'historique des paiements est le facteur le plus important, donc effectuer tous vos paiements à temps est crucial pour construire et maintenir un bon crédit.",
+        "Lorsque vous arrivez pour la première fois au Canada ou aux États-Unis, vous commencez généralement sans historique de crédit. Cela ne signifie pas que vous avez un mauvais crédit - cela signifie simplement que les prêteurs n'ont aucune information sur vos habitudes d'emprunt. Construire un crédit à partir de zéro exige de la patience et un comportement responsable constant.",
+        "Une carte de crédit garantie est un excellent outil pour construire un crédit. Vous fournissez un dépôt de garantie (généralement 300-500 $) qui devient votre limite de crédit. La banque rapporte votre historique des paiements aux bureaux de crédit, vous aidant à construire un historique de crédit positif. Après 6-12 mois d'utilisation responsable, de nombreuses banques vous mettront à niveau une carte non garantie et vous rembourseront votre dépôt.",
+        "Une autre option est de devenir un utilisateur autorisé sur la carte de crédit de quelqu'un d'autre - généralement un membre de la famille ayant un bon crédit. Leur historique de paiements positif peut aider à construire votre crédit, mais soyez conscient que toute activité négative affectera également votre rapport de crédit.",
+        "Les cartes de crédit étudiantes, les cartes de magasin et les prêts de construction de crédit sont d'autres options pour établir un crédit. Chacune a des avantages et des inconvénients, donc recherchez attentivement avant de postuler. Trop de demandes sur une courte période peuvent temporairement baisser votre score.",
+        "Maintenir une faible utilisation du crédit (utilisant moins de 30% de votre crédit disponible) est essentiel pour construire un bon crédit. Si vous avez une limite de 1 000 $, essayez de maintenir votre solde en dessous de 300 $. Cela montre aux prêteurs que vous pouvez gérer le crédit de manière responsable sans trop dépendre de lui.",
+        "Construire un excellent crédit prend du temps, généralement 6-12 mois de comportement positif constant. Pendant cette période, payez toutes les factures à temps, maintenez les soldes bas et évitez de postuler pour trop de nouveau crédit. Surveillez votre rapport de crédit régulièrement pour assurer l'exactitude et suivre vos progrès.",
+        "Une fois que vous avez établi un bon crédit, maintenez-le en continuant les habitudes responsables. Configurez des paiements automatiques pour éviter les dates d'échéance manquées, gardez les anciens comptes ouverts (même s'ils ne sont pas utilisés) pour maintenir la durée de l'historique de crédit, et ne postulez pour du nouveau crédit que lorsque c'est nécessaire."
       ],
       ar: [
         "في كندا والولايات المتحدة، درجة الائتمان هي رقم مكون من ثلاثة أرقام، عادة ما بين 300 و 850، يستخدمها المقرضون لتقييم ملاءتك الائتماني. يمثل هذا الرقم احتمالية سداد الأموال المقترضة في الوقت المحدد. فكر فيه كدرجة مالية تخبر البنوك وشركات بطاقات الائتمان والمقرضين الآخرين مدى مسؤوليتك مع الائتمان.",
@@ -93,16 +106,20 @@ export const lessons = [
         question: {
           en: "What is the most important factor in calculating your credit score?",
           es: "¿Cuál es el factor más importante en el cálculo de tu puntuación de crédito?",
-          hi: "आपके क्रेडिट स्कोर की गणना में सबसे महत्वपूर्ण कारक क्या है?",
+          hi: "आपके क्रेडिट स्कोर की गणना में सबसे महत्वपूर्ण कारक है?",
           tl: "Ano ang pinakamahalagang bagian sa pagkalkula sa iyong credit score?",
-          zh: "在计算你的信用评分时，最重要的因素是什么？"
+          zh: "在计算你的信用评分时，最重要的因素是什么？",
+          ar: "ما هو العامل الأكثر أهمية في حساب درجة الائتمان الخاصة بك؟",
+          fr: "Quel est le facteur le plus important dans le calcul de votre score de crédit ?"
         },
         options: {
           en: ["Credit utilization ratio", "Payment history"],
           es: ["Relación de utilización de crédito", "Historial de pagos"],
           hi: ["क्रेडिट उपयोग अनुपात", "भुगतान इतिहास"],
           tl: ["Ratio ng paggamit ng credit", "Kasaysayan ng pagbabayad"],
-          zh: ["信用利用率", "付款历史"]
+          zh: ["信用利用率", "付款历史"],
+          ar: ["نسبة استخدام الائتمان", "تاريخ السداد"],
+          fr: ["Ratio d'utilisation du crédit", "Histoire des paiements"]
         },
         correctIndex: 1
       },
