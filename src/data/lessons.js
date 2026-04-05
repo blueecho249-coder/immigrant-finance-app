@@ -319,12 +319,14 @@ export const lessons = [
     title: {
       en: "Tax fundamentals for newcomers",
       es: "Fundamentos de impuestos para recién llegados",
-      hi: "नए आने वालों के लिए कर मूल बातें"
+      hi: "नए आने वालों के लिए कर के मूल बातें",
+      tl: "Mga pangunahin sa buwis para mga bagong dating"
     },
     subtitle: {
       en: "Understanding tax obligations and maximizing returns",
       es: "Entendiendo obligaciones fiscales y maximizando devoluciones",
-      hi: "कर दायिताओं को समझना और रिटर्न को अधिकतम करना"
+      hi: "कर दायिताओं को समझना और रिटर्न को अधिकतम करना",
+      tl: "Pag-unawa sa mga obligasyon sa buwis at pagpapalaki ng mga pagbabalik"
     },
     category: "Taxes",
     content: {
