@@ -5,10 +5,12 @@ import { lessons } from '../data/lessons.js'
 export default function LessonDetail({ language = 'en' }) {
   const { id } = useParams()
   const navigate = useNavigate()
+  const [currentQuizIndex, setCurrentQuizIndex] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState(null)
   const [showResult, setShowResult] = useState(false)
   const [isCorrect, setIsCorrect] = useState(false)
   const [lessonComplete, setLessonComplete] = useState(false)
+  const [quizScores, setQuizScores] = useState([])
 
   const lesson = lessons.find(l => l.id === id)
 
@@ -28,14 +30,27 @@ export default function LessonDetail({ language = 'en' }) {
     )
   }
 
+  const currentQuiz = lesson.quizzes[currentQuizIndex]
+
   const handleAnswerClick = (answerIndex) => {
     setSelectedAnswer(answerIndex)
-    const correct = answerIndex === lesson.quiz.correctIndex
+    const correct = answerIndex === currentQuiz.correctIndex
     setIsCorrect(correct)
     setShowResult(true)
 
-    if (correct) {
-      // Mark lesson as complete
+    // Save quiz score
+    const newScores = [...quizScores, correct ? 1 : 0]
+    setQuizScores(newScores)
+  }
+
+  const handleNextQuiz = () => {
+    if (currentQuizIndex < lesson.quizzes.length - 1) {
+      setCurrentQuizIndex(currentQuizIndex + 1)
+      setSelectedAnswer(null)
+      setShowResult(false)
+      setIsCorrect(false)
+    } else {
+      // All quizzes completed
       const completedLessons = JSON.parse(localStorage.getItem('completedLessons') || '[]')
       if (!completedLessons.includes(id)) {
         completedLessons.push(id)
@@ -62,25 +77,37 @@ export default function LessonDetail({ language = 'en' }) {
       back: "← Back to Lessons",
       complete: "✓ Lesson Complete",
       tryAgain: "Try Again",
-      next: "Next Lesson",
+      next: "Next Question",
+      finishLesson: "Complete Lesson",
+      nextLesson: "Next Lesson",
       correct: "Correct! Well done!",
-      incorrect: "Incorrect. Try again!"
+      incorrect: "Incorrect. Try again!",
+      quizProgress: `Quiz ${currentQuizIndex + 1} of ${lesson.quizzes.length}`,
+      yourScore: `Your score: ${quizScores.filter(s => s).length} out of ${quizScores.length}`
     },
     es: {
       back: "← Volver a Lecciones",
       complete: "✓ Lección Completa",
       tryAgain: "Intentar de Nuevo",
-      next: "Siguiente Lección",
+      next: "Siguiente Pregunta",
+      finishLesson: "Completar Lección",
+      nextLesson: "Siguiente Lección",
       correct: "¡Correcto! ¡Bien hecho!",
-      incorrect: "Incorrecto. ¡Intenta de nuevo!"
+      incorrect: "¡Incorrecto! ¡Intenta de nuevo!",
+      quizProgress: `Cuestionario ${currentQuizIndex + 1} de ${lesson.quizzes.length}`,
+      yourScore: `Tu puntuación: ${quizScores.filter(s => s).length} de ${quizScores.length}`
     },
     hi: {
       back: "← पाठों पर वापस जाएं",
       complete: "✓ पाठ पूर्ण",
       tryAgain: "फिर से कोशिश करें",
-      next: "अगला पाठ",
+      next: "अगला सवाल",
+      finishLesson: "पाठ पूरा करें",
+      nextLesson: "अगला पाठ",
       correct: "सही! बहुत बढ़िया!",
-      incorrect: "गलत। फिर से कोशिश करें!"
+      incorrect: "गलत! फिर से कोशिश करें!",
+      quizProgress: `प्रश्नोत्तरी ${currentQuizIndex + 1} ${lesson.quizzes.length} में से`,
+      yourScore: `आपका स्कोर: ${quizScores.filter(s => s).length} ${quizScores.length} में से`
     }
   }
 
@@ -136,93 +163,155 @@ export default function LessonDetail({ language = 'en' }) {
         ))}
       </div>
 
-      {/* Quiz */}
-      <div style={{
-        backgroundColor: '#f9fafb',
-        padding: '24px',
-        borderRadius: '12px',
-        border: '1px solid #e5e7eb'
-      }}>
-        <h2 style={{fontSize: '20px', fontWeight: 'bold', color: '#1f2937', marginBottom: '16px'}}>
-          Quiz
-        </h2>
-        <p style={{fontSize: '18px', color: '#4b5563', marginBottom: '20px'}}>
-          {lesson.quiz.question[language] || lesson.quiz.question.en}
-        </p>
-        
-        <div style={{display: 'flex', flexDirection: 'column', gap: '12px'}}>
-          {(lesson.quiz.options[language] || lesson.quiz.options.en).map((option, index) => (
-            <button
-              key={index}
-              onClick={() => !showResult && handleAnswerClick(index)}
-              disabled={showResult}
-              style={{
-                padding: '16px',
-                borderRadius: '8px',
-                border: '2px solid',
-                borderColor: selectedAnswer === index 
-                  ? isCorrect 
-                    ? '#10b981' 
-                    : '#ef4444'
-                  : '#d1d5db',
-                backgroundColor: selectedAnswer === index
-                  ? isCorrect
-                    ? '#ecfdf5'
-                    : '#fef2f2'
-                  : 'white',
-                cursor: showResult ? 'not-allowed' : 'pointer',
-                fontSize: '16px',
-                textAlign: 'left',
-                transition: 'all 0.2s'
-              }}
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-
-        {/* Result Message */}
-        {showResult && (
+      {/* Quiz Section */}
+      {!lessonComplete && lesson.quizzes && lesson.quizzes.length > 0 && (
+        <div style={{
+          backgroundColor: '#f9fafb',
+          padding: '24px',
+          borderRadius: '12px',
+          border: '1px solid #e5e7eb'
+        }}>
+          <h2 style={{fontSize: '20px', fontWeight: 'bold', color: '#1f2937', marginBottom: '16px'}}>
+            Quiz
+          </h2>
+          
+          {/* Progress */}
           <div style={{
-            marginTop: '20px',
-            padding: '16px',
-            borderRadius: '8px',
-            backgroundColor: isCorrect ? '#ecfdf5' : '#fef2f2',
-            border: `2px solid ${isCorrect ? '#10b981' : '#ef4444'}`,
-            color: isCorrect ? '#065f46' : '#991b1b',
+            marginBottom: '20px',
             fontSize: '16px',
+            color: '#6b7280',
             fontWeight: '500'
           }}>
-            {isCorrect ? t.correct : t.incorrect}
-            {!isCorrect && (
+            {t.quizProgress}
+          </div>
+
+          {/* Question */}
+          <p style={{fontSize: '18px', color: '#4b5563', marginBottom: '20px'}}>
+            {currentQuiz.question[language] || currentQuiz.question.en}
+          </p>
+          
+          {/* Options */}
+          <div style={{display: 'flex', flexDirection: 'column', gap: '12px'}}>
+            {(currentQuiz.options[language] || currentQuiz.options.en).map((option, index) => (
               <button
-                onClick={resetQuiz}
+                key={index}
+                onClick={() => !showResult && handleAnswerClick(index)}
+                disabled={showResult}
                 style={{
-                  marginTop: '12px',
-                  padding: '8px 16px',
-                  backgroundColor: '#ef4444',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '6px',
-                  cursor: 'pointer',
-                  fontSize: '14px'
+                  padding: '16px',
+                  borderRadius: '8px',
+                  border: '2px solid',
+                  borderColor: selectedAnswer === index 
+                    ? isCorrect 
+                      ? '#10b981' 
+                      : '#ef4444'
+                    : '#d1d5db',
+                  backgroundColor: selectedAnswer === index
+                    ? isCorrect
+                      ? '#ecfdf5'
+                      : '#fef2f2'
+                    : 'white',
+                  cursor: showResult ? 'not-allowed' : 'pointer',
+                  fontSize: '16px',
+                  textAlign: 'left',
+                  transition: 'all 0.2s'
                 }}
               >
-                {t.tryAgain}
+                {option}
               </button>
-            )}
+            ))}
           </div>
-        )}
 
-        {/* Next Lesson Button */}
-        {lessonComplete && (
+          {/* Result Message */}
+          {showResult && (
+            <div style={{
+              marginTop: '20px',
+              padding: '16px',
+              borderRadius: '8px',
+              backgroundColor: isCorrect ? '#ecfdf5' : '#fef2f2',
+              border: `2px solid ${isCorrect ? '#10b981' : '#ef4444'}`,
+              color: isCorrect ? '#065f46' : '#991b1b',
+              fontSize: '16px',
+              fontWeight: '500'
+            }}>
+              {isCorrect ? t.correct : t.incorrect}
+              {!isCorrect && (
+                <button
+                  onClick={resetQuiz}
+                  style={{
+                    marginTop: '12px',
+                    padding: '8px 16px',
+                    backgroundColor: '#ef4444',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '6px',
+                    cursor: 'pointer',
+                    fontSize: '14px'
+                  }}
+                >
+                  {t.tryAgain}
+                </button>
+              )}
+              {isCorrect && currentQuizIndex < lesson.quizzes.length - 1 && (
+                <button
+                  onClick={handleNextQuiz}
+                  style={{
+                    marginTop: '12px',
+                    padding: '8px 16px',
+                    backgroundColor: '#10b981',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '6px',
+                    cursor: 'pointer',
+                    fontSize: '14px'
+                  }}
+                >
+                  {t.next}
+                </button>
+              )}
+              {isCorrect && currentQuizIndex === lesson.quizzes.length - 1 && (
+                <button
+                  onClick={handleNextQuiz}
+                  style={{
+                    marginTop: '12px',
+                    padding: '8px 16px',
+                    backgroundColor: '#10b981',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '6px',
+                    cursor: 'pointer',
+                    fontSize: '14px'
+                  }}
+                >
+                  {t.finishLesson}
+                </button>
+              )}
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Lesson Complete Section */}
+      {lessonComplete && (
+        <div style={{
+          backgroundColor: '#f0fdf4',
+          padding: '24px',
+          borderRadius: '12px',
+          border: '1px solid #86efac',
+          marginTop: '30px'
+        }}>
+          <h3 style={{fontSize: '20px', fontWeight: 'bold', color: '#166534', marginBottom: '16px'}}>
+            🎉 {t.complete}
+          </h3>
+          <p style={{fontSize: '16px', color: '#15803d', marginBottom: '20px'}}>
+            {t.yourScore}
+          </p>
           <Link
             to={getNextLesson()}
             style={{
               display: 'inline-block',
-              marginTop: '20px',
               padding: '12px 24px',
-              backgroundColor: '#4f46e5',
+              backgroundColor: '#16a34a',
               color: 'white',
               textDecoration: 'none',
               borderRadius: '8px',
@@ -230,10 +319,10 @@ export default function LessonDetail({ language = 'en' }) {
               fontWeight: '500'
             }}
           >
-            {t.next}
+            {t.nextLesson}
           </Link>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   )
 }
