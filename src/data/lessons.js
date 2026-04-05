@@ -145,14 +145,16 @@ export const lessons = [
       es: "Conceptos básicos de banca para recién llegados",
       hi: "नए आने वालों के लिए बैंकिंग बेसिक्स",
       tl: "Mga pangunahin sa pagbabang para mga bagong dating",
-      zh: "新移民银行基础知识"
+      zh: "新移民银行基础知识",
+      ar: "أساسيات البنوك للمهاجرين الجدد"
     },
     subtitle: {
       en: "What to bring and which account type to start with",
       es: "Qué llevar y con qué tipo de cuenta empezar",
       hi: "क्या लाना है और किस खाते प्रकार से शुरू करना है",
       tl: "Ano ang dapat dalhin at kung anong uri ng account ang magsisimula",
-      zh: "需要带什么以及从哪种账户类型开始"
+      zh: "需要带什么以及从哪种账户类型开始",
+      ar: "ماذا يجب إحضاره وأي نوع من الحسابات تبدأ به؟"
     },
     category: "Banking",
     content: {
