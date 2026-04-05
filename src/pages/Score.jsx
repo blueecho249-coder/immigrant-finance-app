@@ -80,6 +80,66 @@ export default function Score({ language }) {
         "Suriin ang iyong credit report nang regular"
       ],
       pointsToTarget: "mga puntos para maabot sa iyong target"
+    },
+    zh: {
+      title: "信用评分追踪器",
+      subtitle: "监控和改善您的信用评分",
+      currentScore: "当前评分",
+      targetScore: "目标评分",
+      rating: "评级",
+      tips: "改进技巧",
+      tipsList: [
+        "按时支付所有账单",
+        "保持信用卡余额低于30%",
+        "不要关闭旧信用卡",
+        "定期检查您的信用报告"
+      ],
+      pointsToTarget: "分达到您的目标"
+    },
+    ar: {
+      title: "متتبع درجة الائتمان",
+      subtitle: "راقب وحسن درجة الائتمان الخاصة بك",
+      currentScore: "الدرجة الحالية",
+      targetScore: "الدرجة المستهدفة",
+      rating: "التقييم",
+      tips: "نصائح التحسين",
+      tipsList: [
+        "ادفع جميع الفواتير في الوقت المحدد",
+        "حافظ على أرصدة بطاقات الائتمان أقل من 30%",
+        "لا تغلق بطاقات الائتمان القديمة",
+        "تحقق من تقرير الائتمان الخاص بك بانتظام"
+      ],
+      pointsToTarget: "نقطة للوصول إلى هدفك"
+    },
+    fr: {
+      title: "Suivi du score de crédit",
+      subtitle: "Surveillez et améliorez votre score de crédit",
+      currentScore: "Score actuel",
+      targetScore: "Score cible",
+      rating: "Évaluation",
+      tips: "Conseils d'amélioration",
+      tipsList: [
+        "Payez toutes les factures à temps",
+        "Gardez les soldes de cartes de crédit en dessous de 30%",
+        "Ne fermez pas les anciennes cartes de crédit",
+        "Vérifiez votre rapport de crédit régulièrement"
+      ],
+      pointsToTarget: "points pour atteindre votre objectif"
+    },
+    pa: {
+      title: "ਕਰਡਿਟ ਸਕੋਰ ਟਰੈਕਰ",
+      subtitle: "ਆਪਣਾ ਕਰਡਿਟ ਸਕੋਰ ਦੇਖੋ ਅਤੇ ਸੁਧਾਰੋ",
+      currentScore: "ਮੌਜੂਦਾ ਸਕੋਰ",
+      targetScore: "ਟੀਚਾ ਸਕੋਰ",
+      rating: "ਰੇਟਿੰਗ",
+      tips: "ਸੁਧਾਰ ਦੀਆਂ ਟਿਪਾਂ",
+      tipsList: [
+        "ਸਾਰੇ ਬਿੱਲ ਸਮੇਂ ਤੇ ਦਿਓ",
+        "ਕਰਡਿਟ ਕਾਰਡ ਬੈਲੇਂਸ 30% ਤੋਂ ਹੇਠਾਂ ਰੱਖੋ",
+        "ਪੁਰਾਣੇ ਕਰਡਿਟ ਕਾਰਡ ਬੰਦ ਨਾ ਕਰੋ",
+        "ਆਪਣਾ ਕਰਡਿਟ ਰਿਪੋਰਟ ਨਿਯਮਿਤ ਚੈੱਕ ਕਰੋ"
+      ],
+      pointsToTarget: "ਆਪਣੇ ਟੀਚੇ ਤੱਕ ਪੁਆਇੰਟ"
     }
   }
 

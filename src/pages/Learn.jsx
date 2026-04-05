@@ -47,6 +47,42 @@ export default function Learn({ language }) {
       noLessons: "Walang araling na nakita sa kategoryang ito.",
       progressBanner: "0 sa 20 na aralin ang kumpleto",
       motivationalMessage: "Simulan ang iyong paglalakbay sa pananalapi ngayon"
+    },
+    zh: {
+      title: "金融课程",
+      subtitle: "用自己的语言按自己的节奏学习",
+      startLesson: "开始课程",
+      categories: "分类",
+      noLessons: "此类别中未找到课程。",
+      progressBanner: "20个课程中完成0个",
+      motivationalMessage: "今天开始您的财务之旅"
+    },
+    ar: {
+      title: "الدروس المالية",
+      subtitle: "تعلم بالسرعة التي تناسبك بلغتك",
+      startLesson: "ابدأ الدرس",
+      categories: "الفئات",
+      noLessons: "لم يتم العثور على دروس في هذه الفئة.",
+      progressBanner: "0 من 20 درس مكتمل",
+      motivationalMessage: "ابدأ رحلتك المالية اليوم"
+    },
+    fr: {
+      title: "Leçons financières",
+      subtitle: "Apprenez à votre propre rythme dans votre langue",
+      startLesson: "Commencer la leçon",
+      categories: "Catégories",
+      noLessons: "Aucune leçon trouvée dans cette catégorie.",
+      progressBanner: "0 sur 20 leçons terminées",
+      motivationalMessage: "Commencez votre voyage financier aujourd'hui"
+    },
+    pa: {
+      title: "ਵਿੱਤੀ ਪਾਠ",
+      subtitle: "ਆਪਣੀ ਭਾਸ਼ਾ ਵਿੱਚ ਆਪਣੀ ਗਤੀ ਨਾਲ ਸਿੱਖੋ",
+      startLesson: "ਪਾਠ ਸ਼ੁਰੂ ਕਰੋ",
+      categories: "ਸ਼੍ਰੇਣੀਆਂ",
+      noLessons: "ਇਸ ਸ਼੍ਰੇਣੀ ਵਿੱਚ ਕੋਈ ਪਾਠ ਨਹੀਂ ਮਿਲਿਆ।",
+      progressBanner: "20 ਪਾਠਾਂ ਵਿੱਚੋਂ 0 ਪੂਰੇ ਹੋਏ",
+      motivationalMessage: "ਅੱਜ ਆਪਣਾ ਵਿੱਤੀ ਸਫ਼ਰ ਸ਼ੁਰੂ ਕਰੋ"
     }
   }
 

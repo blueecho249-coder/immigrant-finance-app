@@ -108,6 +108,54 @@ export default function LessonDetail({ language }) {
       incorrect: "Mali. Subukan uli!",
       quizProgress: `Pagsusulit ${currentQuizIndex + 1} ng ${lesson.quizzes.length}`,
       yourScore: `Ang iyong score mo: ${quizScores.filter(s => s).length} sa ${quizScores.length}`
+    },
+    zh: {
+      back: "← 返回课程",
+      complete: "✓ 课程完成",
+      tryAgain: "再试一次",
+      next: "下一题",
+      finishLesson: "完成课程",
+      nextLesson: "下一课",
+      correct: "正确！做得好！",
+      incorrect: "错误！再试一次！",
+      quizProgress: `测验 ${currentQuizIndex + 1} / ${lesson.quizzes.length}`,
+      yourScore: `您的得分：${quizScores.filter(s => s).length} / ${quizScores.length}`
+    },
+    ar: {
+      back: "← العودة إلى الدروس",
+      complete: "✓ الدرس مكتمل",
+      tryAgain: "حاول مرة أخرى",
+      next: "السؤال التالي",
+      finishLesson: "إكمال الدرس",
+      nextLesson: "الدرس التالي",
+      correct: "صحيح! أحسنت!",
+      incorrect: "خطأ! حاول مرة أخرى!",
+      quizProgress: `اختبار ${currentQuizIndex + 1} من ${lesson.quizzes.length}`,
+      yourScore: `درجاتك: ${quizScores.filter(s => s).length} من ${quizScores.length}`
+    },
+    fr: {
+      back: "← Retour aux leçons",
+      complete: "✓ Leçon terminée",
+      tryAgain: "Réessayer",
+      next: "Question suivante",
+      finishLesson: "Terminer la leçon",
+      nextLesson: "Leçon suivante",
+      correct: "Correct ! Bien joué !",
+      incorrect: "Incorrect ! Réessayez !",
+      quizProgress: `Quiz ${currentQuizIndex + 1} sur ${lesson.quizzes.length}`,
+      yourScore: `Votre score : ${quizScores.filter(s => s).length} sur ${quizScores.length}`
+    },
+    pa: {
+      back: "← ਪਾਠਾਂ ਵਾਪਸ ਜਾਓ",
+      complete: "✓ ਪਾਠ ਪੂਰਾ ਹੋਇਆ",
+      tryAgain: "ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+      next: "ਅਗਲਾ ਸਵਾਲ",
+      finishLesson: "ਪਾਠ ਪੂਰਾ ਕਰੋ",
+      nextLesson: "ਅਗਲਾ ਪਾਠ",
+      correct: "ਸਹੀਂ! ਵਧੀਆ!",
+      incorrect: "ਗਲਤ! ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ!",
+      quizProgress: `ਕੁਇਜ਼ ${currentQuizIndex + 1} ਦਾ ${lesson.quizzes.length}`,
+      yourScore: `ਤੁਹਾਡਾ ਸਕੋਰ: ${quizScores.filter(s => s).length} ਦਾ ${quizScores.length}`
     }
   }
 
