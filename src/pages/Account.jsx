@@ -32,10 +32,15 @@ export default function Account({ language }) {
       premiumPlan: 'Premium',
       unlockAllLessons: 'Unlock all 20 lessons',
       premiumAccess: 'Get premium access to exclusive content and advanced features',
-      getPremium: 'Get Premium — $9.99/month',
+      getPremium: 'Get Premium',
+      premiumBenefits: {
+        allLessons: 'All 20 lessons unlocked',
+        languages: 'Available in 8 languages',
+        cancelAnytime: 'Cancel any time'
+      },
       yourProgress: 'Your Progress',
       lessonsCompleted: 'Lessons Completed',
-      keepLearning: 'Keep learning to unlock more lessons!',
+      keepLearning: 'Great progress! Keep learning to unlock more lessons!',
       signOut: 'Sign Out'
     },
     es: {
@@ -58,10 +63,15 @@ export default function Account({ language }) {
       premiumPlan: 'Premium',
       unlockAllLessons: 'Desbloquea todas las 20 lecciones',
       premiumAccess: 'Obtén acceso premium a contenido exclusivo y características avanzadas',
-      getPremium: 'Obtener Premium — $9.99/mes',
+      getPremium: 'Obtener Premium',
+      premiumBenefits: {
+        allLessons: 'Todas las 20 lecciones desbloqueadas',
+        languages: 'Disponible en 8 idiomas',
+        cancelAnytime: 'Cancelar en cualquier momento'
+      },
       yourProgress: 'Tu Progreso',
       lessonsCompleted: 'Lecciones Completadas',
-      keepLearning: '¡Sigue aprendiendo para desbloquear más lecciones!',
+      keepLearning: '¡Gran progreso! Sigue aprendiendo para desbloquear más lecciones!',
       signOut: 'Cerrar sesión'
     },
     hi: {
@@ -84,10 +94,15 @@ export default function Account({ language }) {
       premiumPlan: 'प्रीमियम',
       unlockAllLessons: 'सभी 20 पाठ अनलॉक करें',
       premiumAccess: 'अनन्य सामग्री और उन्नत विशेषताओं तक प्रीमियम पहुंच प्राप्त करें',
-      getPremium: 'प्रीमियम प्राप्त करें — $9.99/महीना',
+      getPremium: 'प्रीमियम प्राप्त करें',
+      premiumBenefits: {
+        allLessons: 'सभी 20 पाठ अनलॉक किए गए',
+        languages: '8 भाषाओं में उपलब्ध',
+        cancelAnytime: 'किसी भी समय रद्द करें'
+      },
       yourProgress: 'आपकी प्रगति',
       lessonsCompleted: 'पूरी पाठें',
-      keepLearning: 'अधिक पाठ अनलॉक करने के लिए सीखना जारी रखें!',
+      keepLearning: 'बढ़िया प्रगति! और अधिक पाठ अनलॉक करने के लिए सीखना जारी रखें!',
       signOut: 'साइन आउट'
     }
   }
@@ -188,15 +203,18 @@ export default function Account({ language }) {
   if (isLoggedIn) {
     return (
       <div className="px-4 py-6 max-w-4xl mx-auto">
-        {/* User Profile Section */}
+        {/* Enhanced User Profile Section */}
         <div className="text-center mb-12">
-          <div className="mx-auto h-24 w-24 rounded-full gradient-header flex items-center justify-center mb-6 shadow-xl">
-            <span className="text-3xl font-bold text-white">
-              {getInitial(userEmail)}
-            </span>
+          <div className="relative inline-block mb-6">
+            <div className="h-20 w-20 rounded-full gradient-header flex items-center justify-center shadow-xl">
+              <span className="text-4xl font-bold text-white">
+                {getInitial(userEmail)}
+              </span>
+            </div>
+            <div className="absolute inset-0 h-20 w-20 rounded-full border-4 border-purple-500 -m-1"></div>
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">{userEmail}</h2>
-          <span className="inline-flex items-center px-4 py-2 rounded-full text-lg font-medium bg-gray-100 text-gray-700">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">{userEmail}</h2>
+          <span className="inline-flex items-center px-4 py-2 rounded-full text-lg font-bold bg-purple-100 text-purple-700 border border-purple-200">
             {isPremium ? t.premiumPlan : t.freePlan}
           </span>
         </div>
@@ -204,42 +222,77 @@ export default function Account({ language }) {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content - 2 columns */}
           <div className="lg:col-span-2 space-y-8">
-            {/* Upgrade Card */}
-            <div className="bg-gradient-to-r from-indigo-600 to-cyan-600 rounded-2xl p-8 text-white shadow-xl">
-              <h3 className="text-2xl font-bold mb-3">{t.unlockAllLessons}</h3>
+            {/* Enhanced Premium Upgrade Card */}
+            <div className="bg-gradient-to-r from-purple-600 to-teal-500 rounded-2xl p-8 text-white shadow-xl">
+              <div className="flex items-center gap-3 mb-4">
+                <svg className="w-8 h-8 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M5.5 16.573a4.5 4.5 0 01-1.896-1.78l5.106-4.719c.467-.467 1.211-.467 1.678 0l5.106 4.719a4.5 4.5 0 01-1.896 1.78l-5.106-4.718a1.125 1.125 0 00-1.678 0l-5.106 4.718z"/>
+                  <path d="M12.5 16.573a4.5 4.5 0 001.896-1.78l-5.106-4.719a1.125 1.125 0 00-1.678 0l-5.106 4.718a4.5 4.5 0 001.896 1.78l5.106-4.718a1.125 1.125 0 011.678 0l5.106 4.718z"/>
+                </svg>
+                <h3 className="text-2xl font-bold">{t.unlockAllLessons}</h3>
+              </div>
               <p className="mb-6 text-lg opacity-90">{t.premiumAccess}</p>
+              
+              {/* Benefits List */}
+              <div className="mb-6 space-y-3">
+                <div className="flex items-center gap-3">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-base">{t.premiumBenefits.allLessons}</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-base">{t.premiumBenefits.languages}</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-base">{t.premiumBenefits.cancelAnytime}</span>
+                </div>
+              </div>
+
+              {/* Price Display */}
+              <div className="mb-6 text-center">
+                <div className="text-3xl font-bold mb-1">$9.99</div>
+                <div className="text-sm opacity-75">per month</div>
+              </div>
+
               <a
                 href="https://blueecho3.gumroad.com/l/btyknk"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block w-full lg:w-auto bg-white text-indigo-600 font-bold py-4 px-8 rounded-xl text-center hover:bg-gray-50 transition-all"
+                className="inline-block w-full lg:w-auto bg-white text-purple-600 font-bold py-4 px-8 rounded-xl text-center hover:bg-gray-50 transition-all shadow-lg"
               >
                 {t.getPremium}
               </a>
             </div>
 
-            {/* Progress Section */}
+            {/* Enhanced Progress Section */}
             <div>
               <h3 className="text-xl font-semibold text-gray-900 mb-6">{t.yourProgress}</h3>
               <div className="bg-gray-50 rounded-2xl p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-gray-700 text-lg">{t.lessonsCompleted}</span>
-                  <span className="font-semibold text-gray-900 text-xl">3 / 20</span>
+                  <span className="text-gray-700 text-lg font-medium">{t.lessonsCompleted}</span>
+                  <span className="font-bold text-gray-900 text-2xl">3 / 20</span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-3 mb-4">
-                  <div className="gradient-header h-3 rounded-full" style={{ width: '15%' }}></div>
+                <div className="w-full bg-gray-200 rounded-full h-4 mb-4">
+                  <div className="bg-gradient-to-r from-purple-600 to-teal-500 h-4 rounded-full transition-all" style={{ width: '15%' }}></div>
                 </div>
-                <p className="text-gray-600">{t.keepLearning}</p>
+                <p className="text-gray-600 text-base font-medium">{t.keepLearning}</p>
               </div>
             </div>
           </div>
 
           {/* Sidebar - 1 column */}
           <div className="space-y-8">
-            {/* Sign Out Button */}
+            {/* Sign Out Button - Moved to bottom */}
             <button
               onClick={handleSignOut}
-              className="w-full py-4 px-6 rounded-xl font-medium border border-gray-300 text-gray-700 hover:bg-gray-50 transition-all"
+              className="w-full py-3 px-6 rounded-xl font-medium border-2 border-gray-300 text-gray-600 hover:bg-gray-50 transition-all text-sm"
             >
               {t.signOut}
             </button>
