@@ -57,15 +57,21 @@ export default function LandingPage({ language, onLanguageChange }) {
       ],
       testimonials: [
         {
-          name: "Maria Rodriguez",
-          location: "Toronto, Canada",
-          text: "This platform helped me understand Canadian banking. I finally built my credit score!",
+          name: "Priya S.",
+          location: "India → Toronto",
+          text: "This app helped me understand credit scores in Canada in Hindi. Life changing!",
           rating: 5
         },
         {
-          name: "Raj Patel",
-          location: "New York, USA", 
-          text: "The tax basics section saved me thousands. Clear, simple, and in my language.",
+          name: "Maria R.",
+          location: "Philippines → Vancouver",
+          text: "Finally an app that explains banking in Tagalog. My whole family uses it now.",
+          rating: 5
+        },
+        {
+          name: "Ahmed K.",
+          location: "Egypt → Calgary",
+          text: "The budget calculator helped me save my first $1000 in Canada.",
           rating: 5
         }
       ],
@@ -111,15 +117,21 @@ export default function LandingPage({ language, onLanguageChange }) {
       ],
       testimonials: [
         {
-          name: "Ana García",
-          location: "Toronto, Canadá",
-          text: "Esta plataforma me ayudó a entender la banca canadiense. ¡Finalmente construí mi puntaje de crédito!",
+          name: "Priya S.",
+          location: "India → Toronto",
+          text: "This app helped me understand credit scores in Canada in Hindi. Life changing!",
           rating: 5
         },
         {
-          name: "Carlos Méndez",
-          location: "Nueva York, EE. UU.",
-          text: "La sección de impuestos básicos me ahorró miles. Claro, simple y en mi idioma.",
+          name: "Maria R.",
+          location: "Philippines → Vancouver",
+          text: "Finally an app that explains banking in Tagalog. My whole family uses it now.",
+          rating: 5
+        },
+        {
+          name: "Ahmed K.",
+          location: "Egypt → Calgary",
+          text: "The budget calculator helped me save my first $1000 in Canada.",
           rating: 5
         }
       ],
@@ -165,15 +177,21 @@ export default function LandingPage({ language, onLanguageChange }) {
       ],
       testimonials: [
         {
-          name: "प्रिया शर्मा",
-          location: "टोरंटो, कनाडा",
-          text: "इस प्लेटफॉर्म ने मुझे कनाडाई बैंकिंग समझने में मदद की। मैंने आखिरकार अपना क्रेडिट स्कोर बनाया!",
+          name: "Priya S.",
+          location: "India → Toronto",
+          text: "This app helped me understand credit scores in Canada in Hindi. Life changing!",
           rating: 5
         },
         {
-          name: "राहुल वर्मा",
-          location: "न्यूयॉर्क, यूएस",
-          text: "टैक्स बेसिक्स सेक्शन ने मुझे हजारों बचाए। स्पष्ट, सरल, और मेरी भाषा में।",
+          name: "Maria R.",
+          location: "Philippines → Vancouver",
+          text: "Finally an app that explains banking in Tagalog. My whole family uses it now.",
+          rating: 5
+        },
+        {
+          name: "Ahmed K.",
+          location: "Egypt → Calgary",
+          text: "The budget calculator helped me save my first $1000 in Canada.",
           rating: 5
         }
       ],
@@ -213,15 +231,15 @@ export default function LandingPage({ language, onLanguageChange }) {
             <main className="flex-1 overflow-y-auto">
               <div className="px-4 py-8 sm:px-5">
                 {/* Hero Section */}
-                <div className="text-center mb-12">
+                <div className="text-center mb-12 bg-gradient-to-br from-purple-600 to-teal-500 -mx-4 sm:mx-0 px-4 py-12 sm:px-5 sm:py-16">
                   <div className="mb-8">
                     <div className="mx-auto h-24 w-24 rounded-3xl gradient-header flex items-center justify-center mb-8 shadow-2xl">
                       <svg className="h-12 w-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
-                    <h1 className="mb-6 text-5xl font-bold text-gray-900 sm:text-6xl leading-tight">
-                      {t.title}
+                    <h1 className="mb-6 text-5xl sm:text-6xl font-bold text-gray-900 leading-tight">
+                      Build Your <span className="bg-gradient-to-r from-purple-600 to-teal-500 bg-clip-text text-transparent">Financial</span> Future in North America
                     </h1>
                     <p className="mb-8 text-xl text-gray-600 leading-relaxed max-w-lg mx-auto">
                       {t.subtitle}
@@ -230,25 +248,35 @@ export default function LandingPage({ language, onLanguageChange }) {
 
                   {/* Stats Section */}
                   <div className="mb-10 grid grid-cols-2 gap-4 max-w-sm mx-auto">
-                    {t.stats.map((stat, index) => (
-                      <div key={index} className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100 overflow-hidden flex flex-col justify-center items-center min-h-[80px]">
-                        <div className="text-lg md:text-xl font-bold text-indigo-600 text-center leading-tight">{stat.number}</div>
-                        <div className="text-xs md:text-sm text-gray-600 font-medium text-center leading-tight mt-1">{stat.label}</div>
-                      </div>
-                    ))}
+                    {t.stats.map((stat, index) => {
+                      const colors = index === 0 ? { border: 'border-purple-500', bg: 'bg-purple-50' } :
+                                   index === 1 ? { border: 'border-teal-500', bg: 'bg-teal-50' } :
+                                   index === 2 ? { border: 'border-amber-500', bg: 'bg-amber-50' } :
+                                   { border: 'border-blue-500', bg: 'bg-blue-50' }
+                      
+                      return (
+                        <div key={index} className={`bg-white rounded-2xl p-4 shadow-lg ${colors.border} overflow-hidden flex flex-col justify-center items-center min-h-[80px]`}>
+                          <div className="text-xl md:text-2xl lg:text-3xl font-bold text-center leading-tight">{stat.number}</div>
+                          <div className="text-sm md:text-base text-gray-600 font-medium text-center leading-tight mt-1">{stat.label}</div>
+                        </div>
+                      )
+                    })}
                   </div>
 
                   {/* Main CTA */}
                   <div className="mb-8 space-y-3">
                     <Link
                       to="/learn"
-                      className="block w-full btn-primary text-lg py-4 shadow-xl"
+                      className="block w-full bg-gradient-to-r from-purple-600 to-teal-500 text-white text-lg py-4 px-6 rounded-xl shadow-xl hover:opacity-90 transition-all"
                     >
                       {t.cta}
+                      <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
                     </Link>
                     <Link
                       to="/learn"
-                      className="block w-full btn-secondary text-lg py-4"
+                      className="block w-full border-2 border-purple-500 text-purple-600 text-lg py-4 px-6 rounded-xl hover:bg-purple-50 transition-all"
                     >
                       {t.secondaryCta}
                     </Link>
@@ -354,9 +382,9 @@ export default function LandingPage({ language, onLanguageChange }) {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left Content */}
-              <div className="text-center lg:text-left">
+              <div className="text-center lg:text-left mb-6 lg:mb-8">
                 <h1 className="mb-6 text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight">
-                  {t.title}
+                  Build Your <span className="bg-gradient-to-r from-purple-600 to-teal-500 bg-clip-text text-transparent">Financial</span> Future in North America
                 </h1>
                 <p className="mb-8 text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl">
                   {t.subtitle}
@@ -364,13 +392,20 @@ export default function LandingPage({ language, onLanguageChange }) {
 
                 {/* Stats Section */}
                 <div className="mb-10 grid grid-cols-2 lg:grid-cols-4 gap-6">
-                  {t.stats.map((stat, index) => (
-                    <div key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 overflow-hidden flex flex-col justify-center items-center min-h-[100px]">
-                      <div className="text-xl md:text-2xl lg:text-3xl font-bold text-indigo-600 text-center leading-tight">{stat.number}</div>
-                      <div className="text-xs md:text-sm text-gray-600 font-medium text-center leading-tight mt-1">{stat.label}</div>
-                    </div>
-                  ))}
-                </div>
+                  {t.stats.map((stat, index) => {
+                    const colors = index === 0 ? { border: 'border-purple-500', bg: 'bg-purple-50' } :
+                                   index === 1 ? { border: 'border-teal-500', bg: 'bg-teal-50' } :
+                                   index === 2 ? { border: 'border-amber-500', bg: 'bg-amber-50' } :
+                                   { border: 'border-blue-500', bg: 'bg-blue-50' }
+                      
+                    return (
+                        <div key={index} className={`bg-white rounded-2xl p-6 shadow-lg ${colors.border} overflow-hidden flex flex-col justify-center items-center min-h-[100px]`}>
+                          <div className="text-xl md:text-2xl lg:text-3xl font-bold text-center leading-tight">{stat.number}</div>
+                          <div className="text-sm md:text-base text-gray-600 font-medium text-center leading-tight mt-1">{stat.label}</div>
+                        </div>
+                      )
+                    })}
+                  </div>
 
                 {/* Main CTA */}
                 <div className="mb-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -403,8 +438,9 @@ export default function LandingPage({ language, onLanguageChange }) {
               <div className="relative">
                 <div className="relative mx-auto max-w-sm">
                   {/* Phone Frame */}
-                  <div className="bg-gray-900 rounded-3xl p-2 shadow-2xl">
-                    <div className="bg-white rounded-2xl overflow-hidden">
+                  <div className="bg-gray-900 rounded-3xl p-2 shadow-2xl relative">
+                    <div className="absolute inset-0 bg-purple-500/20 rounded-3xl blur-xl"></div>
+                    <div className="bg-white rounded-2xl overflow-hidden relative">
                       {/* App Header */}
                       <div className="gradient-header px-4 py-4">
                         <div className="flex items-center justify-between">
@@ -479,20 +515,31 @@ export default function LandingPage({ language, onLanguageChange }) {
             {/* Features Section */}
             <div className="mt-20">
               <h2 className="mb-12 text-center text-4xl font-bold text-gray-900">
-                Everything You Need to Succeed
+                Everything You Need to <span className="relative inline-block">
+                  Succeed
+                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-600 to-teal-500"></div>
+                </span>
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {t.features.map((feature, index) => (
-                  <div key={index} className="card p-6 hover:shadow-xl transition-all">
-                    <div className="text-center">
-                      <div className="mx-auto h-20 w-20 rounded-2xl gradient-header flex items-center justify-center mb-6 shadow-lg">
-                        <span className="text-3xl">{feature.icon}</span>
+                {t.features.map((feature, index) => {
+                  const colors = index === 0 ? { border: 'border-purple-500', bg: 'bg-purple-50', icon: 'text-purple-600' } :
+                                   index === 1 ? { border: 'border-teal-500', bg: 'bg-teal-50', icon: 'text-teal-600' } :
+                                   index === 2 ? { border: 'border-amber-500', bg: 'bg-amber-50', icon: 'text-amber-600' } :
+                                   index === 3 ? { border: 'border-blue-500', bg: 'bg-blue-50', icon: 'text-blue-600' } :
+                                   { border: 'border-green-500', bg: 'bg-green-50', icon: 'text-green-600' }
+                  
+                  return (
+                    <div key={index} className={`card p-6 hover:shadow-xl transition-all border-2 ${colors.border}`}>
+                      <div className="text-center">
+                        <div className="mx-auto h-20 w-20 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                          <span className="text-3xl">{feature.icon}</span>
+                        </div>
+                        <h3 className="mb-4 text-xl font-bold text-gray-900">{feature.title}</h3>
+                        <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                       </div>
-                      <h3 className="mb-4 text-xl font-bold text-gray-900">{feature.title}</h3>
-                      <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                     </div>
-                  </div>
-                ))}
+                  )
+                })}
               </div>
             </div>
 
@@ -536,16 +583,16 @@ export default function LandingPage({ language, onLanguageChange }) {
 
             {/* Final CTA Section */}
             <div className="mt-20 text-center">
-              <div className="bg-gradient-to-r from-indigo-600 to-cyan-600 rounded-3xl p-12 text-white shadow-2xl">
+              <div className="bg-gradient-to-r from-purple-600 to-teal-500 rounded-3xl p-12 text-white shadow-2xl">
                 <h2 className="mb-6 text-4xl font-bold">
-                  Start Your Financial Journey Today
+                  Get Started For Free
                 </h2>
                 <p className="mb-8 text-xl opacity-90 max-w-2xl mx-auto">
-                  {t.trust}
+                  Join thousands of newcomers building their financial future
                 </p>
                 <Link
                   to="/learn"
-                  className="inline-block bg-white text-indigo-600 font-bold py-4 px-12 rounded-xl text-lg hover:bg-gray-50 transition-all transform hover:scale-105 shadow-xl"
+                  className="inline-block bg-white text-purple-600 font-bold py-4 px-12 rounded-xl text-lg hover:bg-gray-50 transition-all transform hover:scale-105 shadow-xl"
                 >
                   {t.cta}
                 </Link>
