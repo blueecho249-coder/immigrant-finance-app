@@ -186,5 +186,101 @@ export const lessons = [
         correctIndex: 0
       }
     ]
+  },
+  {
+    id: "tax-fundamentals",
+    title: {
+      en: "Tax fundamentals for newcomers",
+      es: "Fundamentos de impuestos para recién llegados",
+      hi: "नए आने वालों के लिए कर मूल बातें"
+    },
+    subtitle: {
+      en: "Understanding tax obligations and maximizing returns",
+      es: "Entendiendo obligaciones fiscales y maximizando devoluciones",
+      hi: "कर दायिताओं को समझना और रिटर्न को अधिकतम करना"
+    },
+    category: "Taxes",
+    content: {
+      en: [
+        "Understanding taxes is crucial for financial success in Canada and the US. As a newcomer, you must file taxes even if you arrived partway through the year. Both countries have tax treaties with many countries to prevent double taxation, and numerous credits and deductions specifically for newcomers that can significantly reduce your tax burden or increase your refund.",
+        "In Canada, the tax year runs from January 1 to December 31, and taxes are due by April 30 of the following year. In the US, the tax year is the calendar year, and taxes are typically due by April 15. These deadlines are strict—late filing can result in penalties and interest charges that accumulate quickly.",
+        "Social Insurance Number (SIN) in Canada or Social Security Number (SSN) in the US is essential for tax filing. You should apply for these numbers immediately upon arrival. Without them, you may face higher tax withholding rates and miss out on government benefits and tax credits designed for newcomers.",
+        "Both countries use progressive tax systems with different brackets based on income levels. In Canada, federal tax rates range from 15% to 33%, plus provincial taxes. In the US, federal rates range from 10% to 37%, plus state taxes. Understanding which bracket you fall into helps with tax planning throughout the year.",
+        "Tax residency is determined by where you live and maintain significant ties. In Canada, you're generally considered a tax resident if you live there or have residential ties (home, spouse, dependents). In the US, you're a tax resident if you're a citizen, green card holder, or meet the substantial presence test (183 days over three years).",
+        "Newcomer tax benefits are substantial but often overlooked. In Canada, these include the GST/HST credit, Canada Workers Benefit, and various newcomer-specific credits. In the US, you may qualify for the Earned Income Tax Credit (EITC), Child Tax Credit, and education credits. These can provide thousands in benefits even if you owe no tax.",
+        "Deductible expenses can significantly reduce your taxable income. Common deductions include: moving expenses (if you moved for work), child care expenses, RRSP contributions (Canada) or 401(k) contributions (US), student loan interest, and certain employment expenses. Keep detailed records and receipts for all potential deductions.",
+        "Tax filing software has made the process much more accessible. Options include TurboTax, H&R Block, Wealthsimple Tax (Canada), or free options like Credit Karma Tax (US) and SimpleTax (Canada). Many offer free versions for simple returns and guided interfaces that help maximize your credits and deductions.",
+        "If you're self-employed or have freelance income, tax obligations are more complex. You must track all income and expenses, make quarterly estimated tax payments, and may need to pay self-employment tax (Social Security and Medicare in US, CPP and EI in Canada). Consider hiring a tax professional for the first few years.",
+        "Tax records should be kept for at least 6 years in Canada and 3-7 years in the US. This includes T-slips (Canada) or W-2s, 1099s (US), receipts for deductions, and copies of filed returns. Good record-keeping protects you if you're ever audited and helps with future tax planning.",
+        "Both countries offer tax help services. In Canada, free tax clinics are available through community organizations and the CRA's Volunteer Tax Preparation Program. In the US, the IRS provides Free File, VITA (Volunteer Income Tax Assistance), and TCE (Tax Counseling for the Elderly) programs. These services are especially valuable for newcomers navigating their first tax system."
+      ],
+      es: [
+        "Entender los impuestos es crucial para el éxito financiero en Canadá y EE. UU. Como recién llegado, debes presentar impuestos incluso si llegaste a mitad de año. Ambos países tienen tratados fiscales con muchos países para prevenir la doble imposición, y numerosos créditos y deducciones específicamente para recién llegados que pueden reducir significativamente tu carga fiscal o aumentar tu reembolso.",
+        "En Canadá, el año fiscal corre del 1 de enero al 31 de diciembre, y los impuestos se deben pagar antes del 30 de abril del año siguiente. En EE. UU., el año fiscal es el año calendario, y los impuestos típicamente se deben pagar antes del 15 de abril. Estas fechas límite son estrictas—la presentación tardía puede resultar en penalidades y cargos de interés que se acumulan rápidamente.",
+        "El Número de Seguro Social (SIN) en Canadá o el Número de Seguro Social (SSN) en EE. UU. es esencial para la presentación de impuestos. Debes solicitar estos números inmediatamente al llegar. Sin ellos, podrías enfrentar tasas de retención de impuestos más altas y perderte beneficios gubernamentales y créditos fiscales diseñados para recién llegados.",
+        "Ambos países usan sistemas fiscales progresivos con diferentes tramos basados en niveles de ingresos. En Canadá, las tasas impositivas federales van del 15% al 33%, más impuestos provinciales. En EE. UU., las tasas federales van del 10% al 37%, más impuestos estatales. Entender en qué tramo caes ayuda con la planificación fiscal durante todo el año.",
+        "La residencia fiscal se determina por dónde vives y mantienes vínculos significativos. En Canadá, generalmente se te considera residente fiscal si vives allí o tienes vínculos residenciales (hogar, cónyuge, dependientes). En EE. UU., eres residente fiscal si eres ciudadano, titular de tarjeta verde, o cumples la prueba de presencia sustancial (183 días durante tres años).",
+        "Los beneficios fiscales para recién llegados son sustanciales pero a menudo pasados por alto. En Canadá, estos incluyen el crédito de IVA/IVA, Beneficio para Trabajadores Canadienses, y varios créditos específicos para recién llegados. En EE. UU., puedes calificar para el Crédito Fiscal por Ingresos del Trabajo (EITC), Crédito Fiscal por Hijos, y créditos educativos. Estos pueden proporcionar miles en beneficios incluso si no debes impuestos.",
+        "Los gastos deducibles pueden reducir significativamente tus ingresos imponibles. Las deducciones comunes incluyen: gastos de mudanza (si te mudaste por trabajo), gastos de cuidado de niños, contribuciones a RRSP (Canadá) o 401(k) (EE. UU.), intereses de préstamos estudiantiles, y ciertos gastos de empleo. Mantén registros detallados y recibos para todas las deducciones potenciales.",
+        "El software de presentación de impuestos ha hecho el proceso mucho más accesible. Las opciones incluyen TurboTax, H&R Block, Wealthsimple Tax (Canadá), u opciones gratuitas como Credit Karma Tax (EE. UU.) y SimpleTax (Canadá). Muchos ofrecen versiones gratuitas para declaraciones simples e interfaces guiadas que ayudan a maximizar tus créditos y deducciones.",
+        "Si eres trabajador independiente o tienes ingresos freelance, las obligaciones fiscales son más complejas. Debes rastrear todos los ingresos y gastos, hacer pagos estimados de impuestos trimestrales, y podrías necesitar pagar impuestos de trabajo por cuenta propia (Seguro Social y Medicare en EE. UU., CPP y EI en Canadá). Considera contratar un profesional fiscal para los primeros años.",
+        "Los registros fiscales deben mantenerse por al menos 6 años en Canadá y 3-7 años en EE. UU. Esto incluye T-slips (Canadá) o W-2s, 1099s (EE. UU.), recibos para deducciones, y copias de declaraciones presentadas. El buen mantenimiento de registros te protege si alguna vez eres auditado y ayuda con la planificación fiscal futura.",
+        "Ambos países ofrecen servicios de ayuda fiscal. En Canadá, clínicas fiscales gratuitas están disponibles a través de organizaciones comunitarias y el Programa de Preparación Voluntaria de Impuestos del CRA. En EE. UU., el IRS proporciona Free File, VITA (Asistencia Voluntaria de Impuestos sobre Ingresos), y TCE (Asesoramiento Fiscal para Personas Mayores). Estos servicios son especialmente valiosos para recién llegados navegando su primer sistema fiscal."
+      ],
+      hi: [
+        "कनाडा और यूएस में वित्तीय सफलता के लिए करों को समझना महत्वपूर्ण है। एक नए आने वाले के रूप में, यदि आप वर्ष के बीच में आए हैं, तो भी आपको कर दाखिल करने होंगे। दोनों देशों के पास दोहरे कराधान को रोकने के लिए कई देशों के साथ कर संधान हैं, और नए आने वालों के लिए विशिष्ट रूप से कई क्रेडिट और कटौती हैं जो आपके कर बोझ को महत्वपूर्ण रूप से कम कर सकती हैं या आपके रिफंड को बढ़ा सकती हैं।",
+        "कनाडा में, कर वर्ष 1 जनवरी से 31 दिसंबर तक चलता है, और कर अगले वर्ष की 30 अप्रैल तक देय हैं। यूएस में, कर वर्ष कैलेंडर वर्ष है, और कर आमतौर पर 15 अप्रैल तक देय हैं। ये समय सीमाएं सख्त हैं—देर से दाखिल करने पर दंड और ब्याज शुल्क हो सकते हैं जो जल्दी से बढ़ती हैं।",
+        "कनाडा में सोशल इंश्योरेंस नंबर (SIN) या यूएस में सोशल सिक्योरिटी नंबर (SSN) कर दाखिल करने के लिए आवश्यक है। आपको आने पर तुरंत इन नंबरों के लिए आवेदन करना चाहिए। इनके बिना, आपको उच्च कर कटौती दरों का सामना करना पड़ सकता है और नए आने वालों के लिए डिज़ाइन किए गए सरकारी लाभ और कर क्रेडिट से वंचित हो सकते हैं।",
+        "दोनों देशों आय स्तर तक के आधार पर आधारित कर प्रणालियों का उपयोग करते हैं। कनाडा में, संघीय कर दरें 15% से 33% तक हैं, साथ ही प्रांतीय कर। यूएस में, संघीय दरें 10% से 37% तक हैं, साथ ही राज्य कर। यह समझना कि आप किस श्रेणी में आते हैं, पूरे वर्ष भर कर योजना में मदद करता है।",
+        "कर निवासी यह निर्धारित करता है कि आप कहाँ रहते हैं और महत्वपूर्ण संबंध बनाए रखते हैं। कनाडा में, आप आमतौर पर एक कर निवासी माने जाते हैं यदि आप वहाँ रहते हैं या आवासीय संबंध (घर, पति/पत्नी, आश्रित) हैं। यूएस में, आप एक कर निवासी हैं यदि आप नागरिक हैं, ग्रीन कार्ड धारक हैं, या पर्याप्त उपस्थिति परीक्षण (तीन वर्षों में 183 दिन) को पूरा करते हैं।",
+        "नए आने वालों के लिए कर लाभ पर्याप्त हैं लेकिन अक्सर अनदेखे जाते हैं। कनाडा में, इनमें GST/HST क्रेडिट, कनाडा वर्कर्स बेनिफिट, और विभिन्न नए-आने वाले-विशिष्ट क्रेडिट शामिल हैं। यूएस में, आप अर्न्ड इनकम टैक्स क्रेडिट (EITC), चाइल्ड टैक्स क्रेडिट, और शिक्षा क्रेडिट के लिए योग्य हो सकते हैं। ये भले ही यदि आपको कोई कर नहीं देना है तो हजारों लाभ प्रदान कर सकते हैं।",
+        "कटौटी योग्य खर्चे आपकी कर योग्य आय को महत्वपूर्ण रूप से कम कर सकते हैं। सामान्य कटौतीयाँ में शामिल हैं: स्थानांतरण खर्चे (यदि आप काम के लिए बदले), बाल देखभाल खर्चे, RRSP योगदान (कनाडा) या 401(k) योगदान (यूएस), छात्र ऋण ब्याज, और कुछ रोजगार खर्चे। सभी संभावित कटौतीयों के लिए विस्तृत रिकॉर्ड और रसीद रखें।",
+        "कर दाखिल सॉफ्टवेयर ने प्रक्रिया को बहुत अधिक पहुंच बना दिया है। विकल्पों में टर्बोटैक्स, एचएंडआर ब्लॉक, वेल्थसिंपल टैक्स (कनाडा), या मुफ्त विकल्प जैसे क्रेडिट कर्मा टैक्स (यूएस) और सिंपलटैक्स (कनाडा) शामिल हैं। कई सरल रिटर्न के लिए मुफ्त संस्करण और मार्गदर्शन इंटरफेस प्रदान करते हैं जो आपके क्रेडिट और कटौतीयों को अधिकतम करने में मदद करते हैं।",
+        "यदि आप स्व-रोजगार हैं या फ्रीलांस आय हैं, तो कर दायिताएं अधिक जटिल हैं। आपको सभी आय और खर्चों को ट्रैक करना होगा, त्रैमास्तिक अनुमानित कर भुगतान करने होंगे, और आपको स्व-रोजगार कर (यूएस में सोशल सिक्योरिटी और मेडिकेयर, कनाडा में CPP और EI) का भुगतान करना पड़ सकता है। पहले कुछ वर्षों के लिए एक कर पेशेवर किराए जाने पर विचार करें।",
+        "कर रिकॉर्ड कम से कम 6 वर्षों के लिए कनाडा में और 3-7 वर्षों के लिए यूएस में रखे जाने चाहिए। इसमें T-स्लिप (कनाडा) या W-2s, 1099s (यूएस), कटौतीयों के लिए रसीद, और दाखिल रिटर्न की प्रतियां शामिल हैं। अच्छा रिकॉर्ड-रखरण आपकी सुरक्षा करता है यदि आप कभी ऑडिट किए जाते हैं और भविष्य कर योजना में मदद करता है।",
+        "दोनों देश कर मदद सेवाएं प्रदान करते हैं। कनाडा में, मुफ्त कर क्लिनिक सामुदायिक संगठनों और CRA के स्वयंसेवक कर तैयारी कार्यक्रम के माध्यम से उपलब्ध हैं। यूएस में, IRS फ्री फाइल, VITA (स्वयंसेवक आय आय कर सहायता), और TCE (वृद्धों के लिए कर परामर्श) कार्यक्रम प्रदान करता है। ये सेवाएं विशेष रूप से उन नए आने वालों के लिए मूल्यमान हैं जो अपने पहले कर प्रणाली में नेविगेट कर रहे हैं।"
+      ]
+    },
+    quizzes: [
+      {
+        question: {
+          en: "What is the typical tax filing deadline in Canada?",
+          es: "¿Cuál es la fecha límite típica para presentar impuestos en Canadá?",
+          hi: "कनाडा में आमतौर पर कर दाखिल करने की समय सीमा क्या है?"
+        },
+        options: {
+          en: ["April 30", "June 15"],
+          es: ["30 de abril", "15 de junio"],
+          hi: ["30 अप्रैल", "15 जून"]
+        },
+        correctIndex: 0
+      },
+      {
+        question: {
+          en: "What number is essential for tax filing in Canada?",
+          es: "¿Qué número es esencial para la presentación de impuestos en Canadá?",
+          hi: "कनाडा में कर दाखिल करने के लिए कौन सा नंबर आवश्यक है?"
+        },
+        options: {
+          en: ["Social Insurance Number (SIN)", "Driver's License Number"],
+          es: ["Número de Seguro Social (SIN)", "Número de Licencia de Conducir"],
+          hi: ["सोशल इंश्योरेंस नंबर (SIN)", "ड्राइवर का लाइसेंस नंबर"]
+        },
+        correctIndex: 0
+      },
+      {
+        question: {
+          en: "How long should you keep tax records in Canada?",
+          es: "¿Cuánto tiempo debes mantener registros fiscales en Canadá?",
+          hi: "कनाडा में आपको कर रिकॉर्ड कितने समय तक रखने चाहिए?"
+        },
+        options: {
+          en: ["At least 6 years", "2 years"],
+          es: ["Al menos 6 años", "2 años"],
+          hi: ["कम से कम 6 वर्ष", "2 वर्ष"]
+        },
+        correctIndex: 0
+      }
+    ]
   }
 ]
