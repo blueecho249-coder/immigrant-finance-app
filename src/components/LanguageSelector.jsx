@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react'
 
 const languages = [
-  { code: 'en', name: 'English' },
-  { code: 'es', name: 'Español' },
-  { code: 'hi', name: 'हिन्दी' },
-  { code: 'tl', name: 'Tagalog' },
-  { code: 'zh', name: '中文' },
-  { code: 'ar', name: 'العربية' },
-  { code: 'fr', name: 'Français' },
-  { code: 'pa', name: 'ਪੰਜਾਬੀ' }
+  { code: 'en', name: 'English', flag: '🇺🇸' },
+  { code: 'es', name: 'Español', flag: '🇪🇸' },
+  { code: 'hi', name: 'हिंदी', flag: '🇮🇳' },
+  { code: 'tl', name: 'Tagalog', flag: '🇵🇭' },
+  { code: 'zh', name: '中文', flag: '🇨🇳' },
+  { code: 'ar', name: 'العربية', flag: '🇸🇦' },
+  { code: 'fr', name: 'Français', flag: '🇫🇷' },
+  { code: 'pa', name: 'ਪੰਜਾਬੀ', flag: '🇮🇳' }
 ]
 
 export default function LanguageSelector({ onLanguageChange }) {
@@ -51,8 +51,8 @@ export default function LanguageSelector({ onLanguageChange }) {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
         </svg>
         
-        {/* Current Language Name */}
-        <span className="text-sm font-semibold">{selectedLanguage.name}</span>
+        {/* Current Language Flag and Name */}
+        <span className="text-sm font-semibold">{selectedLanguage.flag} {selectedLanguage.name}</span>
         
         {/* Down Arrow */}
         <svg 
@@ -67,7 +67,7 @@ export default function LanguageSelector({ onLanguageChange }) {
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 rounded-lg bg-white shadow-xl border border-gray-200 overflow-hidden z-50">
+        <div className="absolute right-0 mt-2 w-56 rounded-lg bg-white shadow-xl border border-gray-200 overflow-hidden z-50">
           <div className="py-1">
             {languages.map((lang) => (
               <button
@@ -77,7 +77,10 @@ export default function LanguageSelector({ onLanguageChange }) {
                   lang.code === currentLang ? 'text-purple-700 font-medium bg-purple-50' : 'text-gray-700'
                 }`}
               >
-                <span>{lang.name}</span>
+                <div className="flex items-center gap-3">
+                  <span className="text-lg">{lang.flag}</span>
+                  <span>{lang.name}</span>
+                </div>
                 {lang.code === currentLang && (
                   <svg className="h-4 w-4 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
