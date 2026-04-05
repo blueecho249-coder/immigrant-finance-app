@@ -279,7 +279,8 @@ export const lessons = [
       hi: "नए आने वालों के लिए आवास मूल बातें",
       tl: "Mga pangunahin sa pabahay para mga bagong dating",
       zh: "新移民住房基础知识",
-      ar: "أساسيات السكن للمهاجرين الجدد"
+      ar: "أساسيات السكن للمهاجرين الجدد",
+      fr: "Notions de base en logement pour les nouveaux arrivants"
     },
     subtitle: {
       en: "Understanding rental agreements and tenant rights",
@@ -287,7 +288,8 @@ export const lessons = [
       hi: "किराया समझौते और किरायेदार अधिकारों को समझना",
       tl: "Pag-unawa sa mga kasunduanan at karapatan sa mamamahal",
       zh: "理解租赁协议和租户权利",
-      ar: "فهم اتفاقيات الإيجار وحقوق المستأجر"
+      ar: "فهم اتفاقيات الإيجار وحقوق المستأجر",
+      fr: "Comprendre les baux de location et les droits des locataires"
     },
     category: "Housing",
     content: {
@@ -378,7 +380,8 @@ export const lessons = [
       hi: "नए आने वालों के लिए कर के मूल बातें",
       tl: "Mga pangunahin sa buwis para mga bagong dating",
       zh: "新移民税务基础知识",
-      ar: "أساسيات الضرائب للمهاجرين الجدد"
+      ar: "أساسيات الضرائب للمهاجرين الجدد",
+      fr: "Notions de base en fiscalité pour les nouveaux arrivants"
     },
     subtitle: {
       en: "Understanding tax obligations and maximizing returns",
@@ -386,7 +389,8 @@ export const lessons = [
       hi: "कर दायिताओं को समझना महत्वपूर्ण है। कनाडा और यूएस में कर के मूल बातें एक जटिंग वर्ष है, जो कि आपकी आय और आपके परिवार वित्तीय जीविन्यों को प्रभावित करता है। दोनों के अनुसार फंदिशाया गई हैं: आयकर और आय (GST/HST), कनाडा वर्कर्स क्रेडिट (CCB), और विभिन्न लाभ (RRSP)।",
       tl: "Pag-unawa sa mga obligasyon sa buwis at pagpapalaki ng mga pagbabalik",
       zh: "了解税务义务和最大化退税",
-      ar: "فهم الالتزامات الضريبية وتعظيم العائدات"
+      ar: "فهم الالتزامات الضريبية وتعظيم العائدات",
+      fr: "Comprendre les obligations fiscales et maximiser les remboursements"
     },
     category: "Taxes",
     content: {
