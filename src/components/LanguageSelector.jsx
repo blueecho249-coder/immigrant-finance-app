@@ -42,6 +42,7 @@ export default function LanguageSelector({ onLanguageChange }) {
 
   return (
     <div className="language-selector relative">
+      <div className="text-white text-xs font-medium opacity-75 mb-2 text-center">Select Language</div>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-3 rounded-xl bg-white/20 backdrop-blur-sm px-5 py-3 text-white transition-all hover:bg-white/30 transform hover:scale-105 border border-white/30 shadow-lg"
