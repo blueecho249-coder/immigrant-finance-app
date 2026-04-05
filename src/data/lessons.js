@@ -9,14 +9,16 @@ export const lessons = [
     title: {
       en: "Building credit from zero",
       es: "Construir crédito desde cero",
-      hi: "शून्य से क्रेडिट बनाना",
-      tl: "Pagbuo ng credit mula sa wala"
+      hi: "शून्य के क्रेडिट बनाना",
+      tl: "Pagbuo ng credit mula sa wala",
+      zh: "从零开始建立信用"
     },
     subtitle: {
       en: "How scores work and the habits that grow them",
       es: "Cómo funcionan las puntuaciones y los hábitos que las hacen crecer",
       hi: "स्कोर कैसे काम करते हैं और उन्हें बढ़ाने वाली आदतें",
-      tl: "Paano gumagana ang mga credit score at mga kaugalian na nagpapabuti sa kanilang mga ito?"
+      tl: "Paano gumagana ang mga credit score at mga kaugalian na nagpapabuti sa kanilang mga ito?",
+      zh: "信用评分如何运作以及培养良好信用的习惯"
     },
     category: "Credit",
     content: {
@@ -30,6 +32,17 @@ export const lessons = [
         "Maintaining low credit utilization (using less than 30% of your available credit) is key to building good credit. If you have a $1,000 limit, try to keep your balance below $300. This shows lenders you can manage credit responsibly without relying too heavily on it.",
         "Building excellent credit takes time, typically 6-12 months of consistent positive behavior. During this time, pay all bills on time, keep balances low, and avoid applying for too much new credit. Monitor your credit report regularly to ensure accuracy and track your progress.",
         "Once you've established good credit, maintain it by continuing responsible habits. Set up automatic payments to avoid missing due dates, keep old accounts open (even if unused) to maintain credit history length, and only apply for new credit when necessary."
+      ],
+      zh: [
+        "在加拿大和美国，信用评分是一个三位数的数字，通常范围在300到850之间，贷款人用它来评估你的信用价值。这个数字代表了你按时偿还借款资金的可能性。把它看作一个金融等级，告诉银行、信用卡公司和其他贷款人你对信用的负责程度。",
+        "你的信用评分使用几个因素计算：付款历史（35%）、欠款金额（30%）、信用历史长度（15%）、新信用（10%）和信用组合（10%）。付款历史是最重要的因素，所以按时支付所有账单对于建立和维护良好信用至关重要。",
+        "当你第一次到达加拿大或美国时，你通常没有信用历史。这并不意味着你有不良信用——只是贷款人没有关于你借贷习惯的信息。从零开始建立信用需要耐心和一贯的负责任行为。",
+        "安全信用卡是建立信用的绝佳工具。你提供一笔保证金（通常300-500美元），这成为你的信用额度。银行向信用机构报告你的付款历史，帮助你建立积极的信用记录。在负责任使用6-12个月后，许多银行会将你升级为无担保卡并退还你的保证金。",
+        "另一个选择是成为他人信用卡的授权用户——通常是信用良好的家庭成员。他们积极的付款历史可以帮助建立你的信用，但要注意任何负面活动也会影响你的信用报告。",
+        "学生信用卡、零售商店卡和信用建设贷款是建立信用的其他选择。每个都有优缺点，所以在申请前要仔细研究。短时间内申请太多可能会暂时降低你的分数。",
+        "保持低信用利用率（使用少于30%的可用信用）是建立良好信用的关键。如果你有1000美元的限额，尽量将余额保持在300美元以下。这向贷款人显示你可以在不过度依赖的情况下负责任地管理信用。",
+        "建立优秀信用需要时间，通常需要6-12个月的一致积极行为。在此期间，按时支付所有账单，保持余额低，避免申请新信用。定期监控你的信用报告以确保准确性并跟踪你的进度。",
+        "一旦建立了良好信用，通过继续负责任的习惯来维护它。设置自动付款以避免错过截止日期，保留旧账户（即使不使用）以保持信用历史长度，只在必要时申请新信用。"
       ],
       es: [
         "En Canadá y EE. UU., una puntuación de crédito es un número de tres dígitos, típicamente entre 300 y 850, que los prestamistas usan para evaluar tu solvencia. Este número representa tu probabilidad de pagar dinero prestado a tiempo. Piénsalo como una calificación financiera que dice a bancos, compañías de tarjetas de crédito y otros prestamistas qué tan responsable eres con el crédito.",
@@ -71,13 +84,15 @@ export const lessons = [
           en: "What is the most important factor in calculating your credit score?",
           es: "¿Cuál es el factor más importante en el cálculo de tu puntuación de crédito?",
           hi: "आपके क्रेडिट स्कोर की गणना में सबसे महत्वपूर्ण कारक क्या है?",
-          tl: "Ano ang pinakamahalagang bagian sa pagkalkula sa iyong credit score?"
+          tl: "Ano ang pinakamahalagang bagian sa pagkalkula sa iyong credit score?",
+          zh: "在计算你的信用评分时，最重要的因素是什么？"
         },
         options: {
           en: ["Credit utilization ratio", "Payment history"],
           es: ["Relación de utilización de crédito", "Historial de pagos"],
           hi: ["क्रेडिट उपयोग अनुपात", "भुगतान इतिहास"],
-          tl: ["Ratio ng paggamit ng credit", "Kasaysayan ng pagbabayad"]
+          tl: ["Ratio ng paggamit ng credit", "Kasaysayan ng pagbabayad"],
+          zh: ["信用利用率", "付款历史"]
         },
         correctIndex: 1
       },
@@ -85,12 +100,14 @@ export const lessons = [
         question: {
           en: "How much of your available credit should you typically use to maintain good credit?",
           es: "¿Cuánto de tu crédito disponible deberías usar típicamente para mantener buen crédito?",
-          hi: "अच्छा क्रेडिट बनाए रखने के लिए आपको आमतौर पर अपने उपलब्ध क्रेडिट का कितना उपयोग करना चाहिए?"
+          hi: "अच्छा क्रेडिट बनाए रखने के लिए आपको आमतौर पर अपने उपलब्ध क्रेडिट का कितना उपयोग करना चाहिए?",
+          zh: "为了维持良好信用，你通常应该使用多少可用信用？"
         },
         options: {
           en: ["Less than 30%", "Up to 50%"],
           es: ["Menos del 30%", "Hasta el 50%"],
-          hi: ["30% से कम", "50% तक"]
+          hi: ["30% से कम", "50% तक"],
+          zh: ["少于30%", "高达50%"]
         },
         correctIndex: 0
       },
@@ -98,12 +115,14 @@ export const lessons = [
         question: {
           en: "What type of credit card requires a security deposit?",
           es: "¿Qué tipo de tarjeta de crédito requiere un depósito de seguridad?",
-          hi: "किस प्रकार के क्रेडिट कार्ड के लिए सुरक्षा जमा की आवश्यकता होती है?"
+          hi: "किस प्रकार के क्रेडिट कार्ड के लिए सुरक्षा जमा की आवश्यकता होती है?",
+          zh: "哪种类型的信用卡需要保证金？"
         },
         options: {
           en: ["Student credit card", "Secured credit card"],
           es: ["Tarjeta de crédito estudiantil", "Tarjeta de crédito asegurada"],
-          hi: ["छात्र क्रेडिट कार्ड", "सिक्योर्ड क्रेडिट कार्ड"]
+          hi: ["छात्र क्रेडिट कार्ड", "सिक्योर्ड क्रेडिट कार्ड"],
+          zh: ["学生信用卡", "安全信用卡"]
         },
         correctIndex: 1
       }
@@ -115,13 +134,15 @@ export const lessons = [
       en: "Banking basics for newcomers",
       es: "Conceptos básicos de banca para recién llegados",
       hi: "नए आने वालों के लिए बैंकिंग बेसिक्स",
-      tl: "Mga pangunahin sa pagbabang para mga bagong dating"
+      tl: "Mga pangunahin sa pagbabang para mga bagong dating",
+      zh: "新移民银行基础知识"
     },
     subtitle: {
       en: "What to bring and which account type to start with",
       es: "Qué llevar y con qué tipo de cuenta empezar",
       hi: "क्या लाना है और किस खाते प्रकार से शुरू करना है",
-      tl: "Ano ang dapat dalhin at kung anong uri ng account ang magsisimula"
+      tl: "Ano ang dapat dalhin at kung anong uri ng account ang magsisimula",
+      zh: "需要带什么以及从哪种账户类型开始"
     },
     category: "Banking",
     content: {
