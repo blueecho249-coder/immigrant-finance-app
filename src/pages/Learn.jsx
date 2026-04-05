@@ -50,7 +50,7 @@ export default function Learn({ language }) {
     }
   }
 
-  const t = content[language] || content.en
+  const t = content[language] || content['en']
 
   const getCategoryColor = (category) => {
     const colors = {
