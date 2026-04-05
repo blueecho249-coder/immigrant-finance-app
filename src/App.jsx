@@ -21,12 +21,12 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage language={language} onLanguageChange={handleLanguageChange} />} />
-        <Route path="/learn" element={<Layout><Learn language={language} /></Layout>} />
-        <Route path="/lesson/:id" element={<Layout><LessonDetail language={language} /></Layout>} />
-        <Route path="/score" element={<Layout><Score language={language} /></Layout>} />
-        <Route path="/tools" element={<Layout><Tools language={language} /></Layout>} />
-        <Route path="/offers" element={<Layout><Offers language={language} /></Layout>} />
-        <Route path="/account" element={<Layout><Account language={language} /></Layout>} />
+        <Route path="/learn" element={<Layout><Learn language={language} onLanguageChange={handleLanguageChange} /></Layout>} />
+        <Route path="/lesson/:id" element={<Layout><LessonDetail language={language} onLanguageChange={handleLanguageChange} /></Layout>} />
+        <Route path="/score" element={<Layout><Score language={language} onLanguageChange={handleLanguageChange} /></Layout>} />
+        <Route path="/tools" element={<Layout><Tools language={language} onLanguageChange={handleLanguageChange} /></Layout>} />
+        <Route path="/offers" element={<Layout><Offers language={language} onLanguageChange={handleLanguageChange} /></Layout>} />
+        <Route path="/account" element={<Layout><Account language={language} onLanguageChange={handleLanguageChange} /></Layout>} />
       </Routes>
     </BrowserRouter>
   )

@@ -9,7 +9,7 @@ const navItems = [
   { path: '/account', label: 'Account' }
 ]
 
-export default function DesktopNav() {
+export default function DesktopNav({ onLanguageChange }) {
   const location = useLocation()
 
   return (
@@ -45,7 +45,7 @@ export default function DesktopNav() {
           </div>
 
           {/* Language Selector */}
-          <LanguageSelector />
+          <LanguageSelector onLanguageChange={onLanguageChange} />
         </div>
       </div>
     </nav>

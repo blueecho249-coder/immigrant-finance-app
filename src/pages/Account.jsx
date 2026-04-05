@@ -41,7 +41,23 @@ export default function Account({ language }) {
       yourProgress: 'Your Progress',
       lessonsCompleted: 'Lessons Completed',
       keepLearning: 'Great progress! Keep learning to unlock more lessons!',
-      signOut: 'Sign Out'
+      signOut: 'Sign Out',
+      accountSettings: 'Account Settings',
+      memberSince: 'Member since',
+      lastLogin: 'Last login',
+      achievements: 'Achievements',
+      firstSteps: 'First Steps',
+      quickLearner: 'Quick Learner',
+      consistent: 'Consistent',
+      streakDays: 'day streak',
+      learningStats: 'Learning Statistics',
+      totalTimeSpent: 'Total time spent',
+      avgSessionTime: 'Average session time',
+      completedExercises: 'Completed exercises',
+      quickLinks: 'Quick Links',
+      viewAllLessons: 'View All Lessons',
+      yourProfile: 'Your Profile',
+      helpSupport: 'Help & Support'
     },
     es: {
       createAccount: 'Crea tu cuenta',
@@ -72,7 +88,23 @@ export default function Account({ language }) {
       yourProgress: 'Tu Progreso',
       lessonsCompleted: 'Lecciones Completadas',
       keepLearning: '¡Gran progreso! Sigue aprendiendo para desbloquear más lecciones!',
-      signOut: 'Cerrar sesión'
+      signOut: 'Cerrar sesión',
+      accountSettings: 'Configuración de Cuenta',
+      memberSince: 'Miembro desde',
+      lastLogin: 'Último inicio de sesión',
+      achievements: 'Logros',
+      firstSteps: 'Primeros Pasos',
+      quickLearner: 'Aprendiz Rápido',
+      consistent: 'Consistente',
+      streakDays: 'días seguidos',
+      learningStats: 'Estadísticas de Aprendizaje',
+      totalTimeSpent: 'Tiempo total dedicado',
+      avgSessionTime: 'Tiempo promedio por sesión',
+      completedExercises: 'Ejercicios completados',
+      quickLinks: 'Enlaces Rápidos',
+      viewAllLessons: 'Ver Todas las Lecciones',
+      yourProfile: 'Tu Perfil',
+      helpSupport: 'Ayuda y Soporte'
     },
     hi: {
       createAccount: 'अपना खाता बनाएं',
@@ -103,7 +135,23 @@ export default function Account({ language }) {
       yourProgress: 'आपकी प्रगति',
       lessonsCompleted: 'पूरी पाठें',
       keepLearning: 'बढ़िया प्रगति! और अधिक पाठ अनलॉक करने के लिए सीखना जारी रखें!',
-      signOut: 'साइन आउट'
+      signOut: 'साइन आउट',
+      accountSettings: 'खाता सेटिंग्स',
+      memberSince: 'सदस्य बने',
+      lastLogin: 'अंतिम लॉगिन',
+      achievements: 'उपलब्धियां',
+      firstSteps: 'पहले कदम',
+      quickLearner: 'तेज़ ग्राहक',
+      consistent: 'निरंतर',
+      streakDays: 'दिनों की लड़ी',
+      learningStats: 'सीखने के आँकड़े',
+      totalTimeSpent: 'कुल समय',
+      avgSessionTime: 'औसत सत्र समय',
+      completedExercises: 'पूर्ण किए गए अभ्यास',
+      quickLinks: 'त्वरित लिंक',
+      viewAllLessons: 'सभी पाठ देखें',
+      yourProfile: 'आपकी प्रोफ़ाइल',
+      helpSupport: 'सहायता और समर्थन'
     }
   }
 
@@ -222,6 +270,66 @@ export default function Account({ language }) {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content - 2 columns */}
           <div className="lg:col-span-2 space-y-8">
+            {/* Account Settings */}
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">{t.accountSettings}</h3>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center py-3 border-b border-gray-100">
+                  <span className="text-gray-600">{t.memberSince}</span>
+                  <span className="font-medium text-gray-900">January 2024</span>
+                </div>
+                <div className="flex justify-between items-center py-3 border-b border-gray-100">
+                  <span className="text-gray-600">{t.lastLogin}</span>
+                  <span className="font-medium text-gray-900">Today, 2:30 PM</span>
+                </div>
+                <div className="flex justify-between items-center py-3">
+                  <span className="text-gray-600">Account Status</span>
+                  <span className="font-medium text-green-600">Active</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Achievements Section */}
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">{t.achievements}</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="text-center p-4 bg-yellow-50 rounded-xl border border-yellow-200">
+                  <div className="text-3xl mb-2">🏆</div>
+                  <div className="font-medium text-gray-900">{t.firstSteps}</div>
+                  <div className="text-sm text-gray-600">Completed first lesson</div>
+                </div>
+                <div className="text-center p-4 bg-blue-50 rounded-xl border border-blue-200">
+                  <div className="text-3xl mb-2">⚡</div>
+                  <div className="font-medium text-gray-900">{t.quickLearner}</div>
+                  <div className="text-sm text-gray-600">3 lessons in 1 day</div>
+                </div>
+                <div className="text-center p-4 bg-green-50 rounded-xl border border-green-200">
+                  <div className="text-3xl mb-2">🔥</div>
+                  <div className="font-medium text-gray-900">{t.consistent}</div>
+                  <div className="text-sm text-gray-600">5 {t.streakDays}</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Learning Statistics */}
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">{t.learningStats}</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="text-center p-4 bg-purple-50 rounded-xl">
+                  <div className="text-2xl font-bold text-purple-700 mb-1">2h 45m</div>
+                  <div className="text-sm text-gray-600">{t.totalTimeSpent}</div>
+                </div>
+                <div className="text-center p-4 bg-teal-50 rounded-xl">
+                  <div className="text-2xl font-bold text-teal-700 mb-1">25 min</div>
+                  <div className="text-sm text-gray-600">{t.avgSessionTime}</div>
+                </div>
+                <div className="text-center p-4 bg-orange-50 rounded-xl">
+                  <div className="text-2xl font-bold text-orange-700 mb-1">12</div>
+                  <div className="text-sm text-gray-600">{t.completedExercises}</div>
+                </div>
+              </div>
+            </div>
+
             {/* Enhanced Premium Upgrade Card */}
             <div className="bg-gradient-to-r from-purple-600 to-teal-500 rounded-2xl p-8 text-white shadow-xl">
               <div className="flex items-center gap-3 mb-4">
@@ -289,6 +397,25 @@ export default function Account({ language }) {
 
           {/* Sidebar - 1 column */}
           <div className="space-y-8">
+            {/* Quick Links */}
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">{t.quickLinks}</h3>
+              <div className="space-y-3">
+                <Link
+                  to="/learn"
+                  className="block w-full text-left px-4 py-3 rounded-lg border border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-purple-300 transition-all"
+                >
+                  📚 {t.viewAllLessons}
+                </Link>
+                <button className="block w-full text-left px-4 py-3 rounded-lg border border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-purple-300 transition-all">
+                  👤 {t.yourProfile}
+                </button>
+                <button className="block w-full text-left px-4 py-3 rounded-lg border border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-purple-300 transition-all">
+                  💬 {t.helpSupport}
+                </button>
+              </div>
+            </div>
+
             {/* Sign Out Button - Moved to bottom */}
             <button
               onClick={handleSignOut}

@@ -1,6 +1,6 @@
 import LanguageSelector from './LanguageSelector.jsx'
 
-export default function Header() {
+export default function Header({ onLanguageChange }) {
   return (
     <div className="sticky top-0 z-40">
       <div className="bg-gradient-to-r from-purple-600 to-teal-500 px-4 py-4 sm:px-5 shadow-md">
@@ -13,7 +13,7 @@ export default function Header() {
             </div>
             <h1 className="text-xl font-bold text-white">NewFinance</h1>
           </div>
-          <LanguageSelector />
+          <LanguageSelector onLanguageChange={onLanguageChange} />
         </div>
       </div>
     </div>
