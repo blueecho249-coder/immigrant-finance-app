@@ -26,6 +26,8 @@ export default function LanguageSelector({ onLanguageChange }) {
     if (onLanguageChange) {
       onLanguageChange(langCode)
     }
+    // Reload the page to apply language changes
+    window.location.reload()
   }
 
   // Close dropdown when clicking outside
@@ -48,7 +50,7 @@ export default function LanguageSelector({ onLanguageChange }) {
       >
         {/* Globe Icon */}
         <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9 9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 0118 0z" />
         </svg>
         
         {/* Current Language Flag and Name */}
@@ -67,27 +69,33 @@ export default function LanguageSelector({ onLanguageChange }) {
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-56 rounded-lg bg-white shadow-xl border border-gray-200 overflow-hidden z-50">
+        <div className="absolute right-0 mt-2 w-64 rounded-lg bg-white shadow-xl border border-gray-200 overflow-hidden z-50">
           <div className="py-1">
-            {languages.map((lang) => (
-              <button
-                key={lang.code}
-                onClick={() => handleLanguageSelect(lang.code)}
-                className={`flex w-full items-center justify-between px-4 py-2.5 text-sm transition-colors hover:bg-gray-50 ${
-                  lang.code === currentLang ? 'text-purple-700 font-medium bg-purple-50' : 'text-gray-700'
-                }`}
-              >
-                <div className="flex items-center gap-3">
-                  <span className="text-lg">{lang.flag}</span>
-                  <span>{lang.name}</span>
-                </div>
-                {lang.code === currentLang && (
-                  <svg className="h-4 w-4 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                )}
-              </button>
-            ))}
+            <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider px-4 py-2 border-b border-gray-100">
+              Select Language
+            </div>
+            <div className="py-1">
+              {languages.map((lang) => (
+                <button
+                  key={lang.code}
+                  onClick={() => handleLanguageSelect(lang.code)}
+                  className={`flex w-full items-center gap-4 px-4 py-3 text-sm transition-colors hover:bg-gray-50 ${
+                    lang.code === currentLang ? 'text-purple-700 font-medium bg-purple-50' : 'text-gray-700'
+                  }`}
+                >
+                  <span className="text-2xl">{lang.flag}</span>
+                  <div className="flex flex-col text-left">
+                    <span className="font-medium">{lang.name}</span>
+                    <span className="text-xs text-gray-500">{lang.code.toUpperCase()}</span>
+                  </div>
+                  {lang.code === currentLang && (
+                    <svg className="h-5 w-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586a1 1 0 01.414 1.414L16.707 5.293a1 1 0 010 1.414z" clipRule="evenodd" />
+                    </svg>
+                  )}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       )}
