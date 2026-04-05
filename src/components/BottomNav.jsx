@@ -53,25 +53,25 @@ export default function BottomNav() {
   const location = useLocation()
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 border-t border-gray-200 bg-white/95 backdrop-blur-sm">
+    <div className="fixed bottom-0 left-0 right-0 border-t-2 border-gray-200/60 bg-white/90 backdrop-blur-xl shadow-lg">
       <div className="mx-auto max-w-phone">
-        <div className="flex items-center justify-around py-2">
+        <div className="flex items-center justify-around py-3">
           {navItems.map((item) => {
             const isActive = location.pathname === item.path
             return (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`flex flex-col items-center px-3 py-2 text-xs font-medium transition-all transform hover:scale-105 ${
+                className={`flex flex-col items-center px-4 py-3 text-sm font-bold transition-all transform hover:scale-105 rounded-2xl ${
                   isActive
-                    ? 'text-indigo-600'
-                    : 'text-gray-500 hover:text-gray-700'
+                    ? 'text-indigo-600 bg-indigo-50/80 shadow-md'
+                    : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50/60'
                 }`}
               >
-                <div className={`mb-1 transition-all ${isActive ? 'scale-110' : 'scale-100'}`}>
+                <div className={`mb-2 transition-all ${isActive ? 'scale-110 text-indigo-600' : 'scale-100 text-gray-500'}`}>
                   {item.icon}
                 </div>
-                <span className={isActive ? 'font-semibold' : 'font-medium'}>{item.label}</span>
+                <span className={isActive ? 'font-bold' : 'font-semibold'}>{item.label}</span>
               </Link>
             )
           })}

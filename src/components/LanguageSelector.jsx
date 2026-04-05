@@ -46,19 +46,19 @@ export default function LanguageSelector({ onLanguageChange }) {
     <div className="language-selector relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 rounded-lg border border-white/60 bg-white/10 backdrop-blur-sm px-4 py-2.5 text-white transition-all hover:bg-white/20 hover:border-white/80 shadow-md"
+        className="flex items-center gap-3 rounded-2xl border-2 border-white/30 bg-white/20 backdrop-blur-sm px-4 py-3 text-white transition-all hover:bg-white/30 hover:border-white/50 shadow-lg animate-fadeIn"
       >
         {/* Globe Icon */}
-        <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9 9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 0118 0z" />
         </svg>
         
         {/* Current Language Flag and Name */}
-        <span className="text-sm font-semibold">{selectedLanguage.flag} {selectedLanguage.name}</span>
+        <span className="text-base font-semibold">{selectedLanguage.flag} {selectedLanguage.name}</span>
         
         {/* Down Arrow */}
         <svg 
-          className={`h-3 w-3 transition-transform ${isOpen ? 'rotate-180' : ''}`} 
+          className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} 
           fill="none" 
           stroke="currentColor" 
           viewBox="0 0 24 24"
@@ -69,29 +69,33 @@ export default function LanguageSelector({ onLanguageChange }) {
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-64 rounded-lg bg-white shadow-xl border border-gray-200 overflow-hidden z-50">
-          <div className="py-1">
-            <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider px-4 py-2 border-b border-gray-100">
+        <div className="absolute right-0 mt-3 w-72 rounded-2xl bg-white shadow-2xl border border-gray-200/60 overflow-hidden z-50 animate-slideInRight backdrop-blur-xl">
+          <div className="py-2">
+            <div className="text-xs font-bold text-gray-500 uppercase tracking-wider px-5 py-3 border-b border-gray-100 bg-gray-50/50">
               Select Language
             </div>
-            <div className="py-1">
+            <div className="py-2 max-h-96 overflow-y-auto scrollbar-hide">
               {languages.map((lang) => (
                 <button
                   key={lang.code}
                   onClick={() => handleLanguageSelect(lang.code)}
-                  className={`flex w-full items-center gap-4 px-4 py-3 text-sm transition-colors hover:bg-gray-50 ${
-                    lang.code === currentLang ? 'text-purple-700 font-medium bg-purple-50' : 'text-gray-700'
+                  className={`flex w-full items-center gap-4 px-5 py-4 text-base transition-all hover:bg-gray-50/80 ${
+                    lang.code === currentLang 
+                      ? 'text-indigo-700 font-bold bg-indigo-50/80 border-l-4 border-indigo-500' 
+                      : 'text-gray-700 hover:text-gray-900'
                   }`}
                 >
-                  <span className="text-2xl">{lang.flag}</span>
-                  <div className="flex flex-col text-left">
-                    <span className="font-medium">{lang.name}</span>
-                    <span className="text-xs text-gray-500">{lang.code.toUpperCase()}</span>
+                  <span className="text-3xl">{lang.flag}</span>
+                  <div className="flex flex-col text-left flex-1">
+                    <span className="font-bold">{lang.name}</span>
+                    <span className="text-sm text-gray-500 font-medium">{lang.code.toUpperCase()}</span>
                   </div>
                   {lang.code === currentLang && (
-                    <svg className="h-5 w-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586a1 1 0 01.414 1.414L16.707 5.293a1 1 0 010 1.414z" clipRule="evenodd" />
-                    </svg>
+                    <div className="h-6 w-6 rounded-full bg-indigo-500 flex items-center justify-center">
+                      <svg className="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586a1 1 0 01.414 1.414L16.707 5.293a1 1 0 010 1.414z" clipRule="evenodd" />
+                      </svg>
+                    </div>
                   )}
                 </button>
               ))}

@@ -103,30 +103,30 @@ export default function Learn({ language }) {
   return (
     <div className="px-4 py-6">
       {/* Progress Banner */}
-      <div className="mb-8 bg-purple-50 border border-purple-200 rounded-xl p-6">
+      <div className="mb-8 bg-gradient-to-r from-indigo-50 to-teal-50 border-2 border-indigo-200/60 rounded-3xl p-8 shadow-lg animate-fadeInUp">
         <div className="flex items-center justify-between">
           <div>
-            <h3 className="text-lg font-semibold text-purple-900 mb-2">{t.progressBanner}</h3>
-            <div className="w-full bg-purple-200 rounded-full h-3">
-              <div className="bg-purple-600 h-3 rounded-full" style={{ width: '0%' }}></div>
+            <h3 className="text-xl font-bold text-indigo-900 mb-3">{t.progressBanner}</h3>
+            <div className="w-full bg-indigo-200/60 rounded-full h-4 shadow-inner">
+              <div className="bg-gradient-to-r from-indigo-500 to-teal-500 h-4 rounded-full shadow-lg" style={{ width: '0%' }}></div>
             </div>
           </div>
-          <div className="text-purple-700 font-medium">{t.motivationalMessage}</div>
+          <div className="text-indigo-700 font-bold text-lg bg-white/80 px-4 py-2 rounded-2xl shadow-md">{t.motivationalMessage}</div>
         </div>
       </div>
 
-      <div className="mb-6">
-        <h1 className="mb-2 text-3xl md:text-4xl font-bold text-gray-900">{t.title}</h1>
+      <div className="mb-8 animate-fadeIn">
+        <h1 className="mb-3 text-4xl md:text-5xl font-bold text-gray-900">{t.title}</h1>
         <div className="relative inline-block">
-          <p className="text-lg text-gray-600 pr-2">{t.subtitle}</p>
-          <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-600 to-teal-500"></div>
+          <p className="text-xl text-gray-700 pr-2 font-medium">{t.subtitle}</p>
+          <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-indigo-500 to-teal-500 rounded-full"></div>
         </div>
       </div>
 
       {/* Category Filter */}
-      <div className="mb-8">
-        <h2 className="mb-4 text-lg font-semibold text-gray-900">{t.categories}</h2>
-        <div className="flex flex-wrap gap-3">
+      <div className="mb-10 animate-fadeInUp">
+        <h2 className="mb-6 text-2xl font-bold text-gray-900">{t.categories}</h2>
+        <div className="flex flex-wrap gap-4">
           {categories.map((category) => {
             const colors = getCategoryColor(category)
             const isActive = selectedCategory === category
@@ -135,10 +135,10 @@ export default function Learn({ language }) {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`whitespace-nowrap rounded-full px-6 py-3 text-sm font-semibold transition-all transform hover:scale-105 ${
+                className={`whitespace-nowrap rounded-2xl px-8 py-4 text-base font-bold transition-all transform hover:scale-105 shadow-md ${
                   isActive
-                    ? `text-white shadow-lg`
-                    : `bg-white text-gray-700 border-2 hover:border-gray-400 hover:bg-gray-50`
+                    ? `text-white shadow-xl`
+                    : `bg-white text-gray-700 border-2 hover:border-gray-400 hover:bg-gray-50/80`
                 }`}
                 style={{
                   backgroundColor: isActive ? colors.bg : 'transparent',
@@ -154,49 +154,50 @@ export default function Learn({ language }) {
       </div>
 
       {/* Lessons Grid */}
-      <div className={`grid gap-8 px-4 sm:px-0 ${
+      <div className={`grid gap-10 px-4 sm:px-0 ${
         filteredLessons.length === 0 
           ? 'grid-cols-1' 
           : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
       }`}>
         {filteredLessons.length > 0 ? (
-          filteredLessons.map((lesson) => {
+          filteredLessons.map((lesson, index) => {
             const colors = getCategoryColor(lesson.category)
             return (
-              <div key={lesson.id} className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-200 hover:-translate-y-1 overflow-hidden">
+              <div key={lesson.id} className="card hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden animate-fadeInUp" style={{ animationDelay: `${index * 0.1}s` }}>
                 {/* Top border */}
-                <div className="h-2" style={{ backgroundColor: colors.border }}></div>
+                <div className="h-3" style={{ backgroundColor: colors.border }}></div>
                 
-                <div className="p-6">
+                <div className="p-8">
                   {/* Category Badge */}
-                  <div className="mb-4">
+                  <div className="mb-6">
                     <span 
-                      className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold"
+                      className="inline-flex items-center px-4 py-2 rounded-full text-sm font-bold border-2"
                       style={{
                         backgroundColor: colors.bg,
-                        color: colors.text
+                        color: colors.text,
+                        borderColor: colors.border
                       }}
                     >
                       {lesson.category}
                     </span>
                   </div>
 
-                  <h3 className="mb-3 text-xl font-bold text-gray-900">
+                  <h3 className="mb-4 text-2xl font-bold text-gray-900 leading-tight">
                     {lesson.title[language] || lesson.title.en}
                   </h3>
-                  <p className="mb-6 text-base text-gray-600 leading-relaxed">
+                  <p className="mb-8 text-lg text-gray-700 leading-relaxed font-medium">
                     {lesson.subtitle[language] || lesson.subtitle.en}
                   </p>
                   <Link
                     to={`/lesson/${lesson.id}`}
-                    className={`inline-flex items-center justify-center w-full py-3 px-4 rounded-xl font-semibold transition-all hover:opacity-90`}
+                    className={`inline-flex items-center justify-center w-full py-4 px-6 rounded-2xl font-bold transition-all hover:opacity-90 transform hover:scale-105 shadow-lg`}
                     style={{
                       backgroundColor: colors.bg,
                       color: colors.text
                     }}
                   >
                     {t.startLesson}
-                    <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="ml-3 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </Link>
@@ -205,14 +206,14 @@ export default function Learn({ language }) {
             )
           })
         ) : (
-          <div className="col-span-full text-center py-12">
-            <div className="mx-auto h-16 w-16 rounded-2xl bg-gray-100 flex items-center justify-center mb-4">
-              <svg className="h-8 w-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="col-span-full text-center py-16 animate-fadeInUp">
+            <div className="mx-auto h-20 w-20 rounded-3xl bg-gray-100/80 flex items-center justify-center mb-6 border-2 border-gray-200/60">
+              <svg className="h-10 w-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 00-5.656 0l-6.836 6.836a4 4 0 005.656 0l6.836-6.836a4 4 0 00-5.656 0z" />
               </svg>
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">No lessons found</h3>
-            <p className="text-gray-600">{t.noLessons}</p>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">No lessons found</h3>
+            <p className="text-gray-600 text-lg font-medium">{t.noLessons}</p>
           </div>
         )}
       </div>
