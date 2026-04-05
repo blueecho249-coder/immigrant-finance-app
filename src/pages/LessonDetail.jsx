@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { lessons } from '../data/lessons.js'
 
-export default function LessonDetail({ language = 'en' }) {
+export default function LessonDetail({ language }) {
   const { id } = useParams()
   const navigate = useNavigate()
   const [currentQuizIndex, setCurrentQuizIndex] = useState(0)
@@ -97,17 +97,17 @@ export default function LessonDetail({ language = 'en' }) {
       quizProgress: `Cuestionario ${currentQuizIndex + 1} de ${lesson.quizzes.length}`,
       yourScore: `Tu puntuación: ${quizScores.filter(s => s).length} de ${quizScores.length}`
     },
-    hi: {
-      back: "← पाठों पर वापस जाएं",
-      complete: "✓ पाठ पूर्ण",
-      tryAgain: "फिर से कोशिश करें",
-      next: "अगला सवाल",
-      finishLesson: "पाठ पूरा करें",
-      nextLesson: "अगला पाठ",
-      correct: "सही! बहुत बढ़िया!",
-      incorrect: "गलत! फिर से कोशिश करें!",
-      quizProgress: `प्रश्नोत्तरी ${currentQuizIndex + 1} ${lesson.quizzes.length} में से`,
-      yourScore: `आपका स्कोर: ${quizScores.filter(s => s).length} ${quizScores.length} में से`
+    tl: {
+      back: "← Bumalik sa mga Aralin",
+      complete: "✓ Kumpletong Aralin",
+      tryAgain: "Subukan uli",
+      next: "Susunod na Katanungan",
+      finishLesson: "Kumpletong ang Aralin",
+      nextLesson: "Susunod na Aralin",
+      correct: "Tama! Mahusay mo!",
+      incorrect: "Mali. Subukan uli!",
+      quizProgress: `Pagsusulit ${currentQuizIndex + 1} ng ${lesson.quizzes.length}`,
+      yourScore: `Ang iyong score mo: ${quizScores.filter(s => s).length} sa ${quizScores.length}`
     }
   }
 

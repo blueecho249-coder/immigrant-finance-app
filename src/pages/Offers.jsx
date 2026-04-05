@@ -59,6 +59,26 @@ export default function Offers({ language }) {
       mostPopular: 'सबसे लोकप्रिय',
       applyNow: 'अभी आवेदन करें',
       whyRecommend: 'हम इन्हें क्यों अनुशंसित करते हैं — हम एक छोटी रेफरल फीस कमाते हैं जो ऐप को सभी के लिए मुफ्त रखने में मदद करती है'
+    },
+    tl: {
+      title: 'Inirerekomenda Para Sa Iyo',
+      subtitle: 'Pinagkakati ng mga bagong sa Canada at US',
+      disclaimer: 'Maaari tayo ng isang maliit na referral fee — tumutulong na panatiliin ang libre ang app para sa lahat',
+      securedCreditCard: 'Naka-secure na Credit Card',
+      securedDescription: 'Magbuo ng credit nang walang kailangang credit history',
+      securedBestFor: 'Walang credit history',
+      savingsAccount: 'Savings Plus Account',
+      savingsDescription: 'Mataas na savings na walang buwanang bayad',
+      savingsBestFor: 'Paglago ng iyong savings',
+      creditScore: 'Libreng Credit Score',
+      creditDescription: 'Suriin ang iyong credit score nang libre',
+      creditBestFor: 'Pagsubay sa credit',
+      investingAccount: 'Libreng Investing Account',
+      investingDescription: 'Magsimula sa pag-iinvest na halagang $1',
+      investingBestFor: 'Mga unang investor',
+      mostPopular: 'Pinakasikat-Popular',
+      applyNow: 'Mag-apply Ngayon',
+      whyRecommend: 'Bakit namin irekomenda ito — Nakakukuha kami ng isang maliit na referral fee na tumutulong na panatiliin ang libre ang app para sa lahat'
     }
   }
 

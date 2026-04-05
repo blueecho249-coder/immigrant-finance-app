@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-export default function Score({ language = 'en' }) {
+export default function Score({ language }) {
   const [creditScore, setCreditScore] = useState(650)
 
   const getScoreColor = (score) => {
@@ -66,20 +66,20 @@ export default function Score({ language = 'en' }) {
       ],
       pointsToTarget: "puntos para alcanzar tu objetivo"
     },
-    hi: {
-      title: "क्रेडिट स्कोर ट्रैकर",
-      subtitle: "अपना क्रेडिट स्कोर मॉनिटर और सुधारें",
-      currentScore: "वर्तमान स्कोर",
-      targetScore: "लक्ष्य स्कोर",
-      rating: "रेटिंग",
-      tips: "सुधार के टिप्स",
+    tl: {
+      title: "Tagap ng Puntos ng Kredito",
+      subtitle: "Bantayan at ayusin ang iyong credit score mo",
+      currentScore: "Kasalang Score",
+      targetScore: "Target na Score",
+      rating: "Rating",
+      tips: "Mga Tips sa Pagpapabuti",
       tipsList: [
-        "सभी बिल समय पर चुकाएं",
-        "क्रेडिट कार्ड बैलेंस को 30% से नीचे रखें",
-        "पुराने क्रेडिट कार्ड बंद न करें",
-        "नियमित रूप से क्रेडिट रिपोर्ट जांचें"
+        "Bayaran lahat ang lahat ng bayad",
+        "Panatiliin ang credit card balances sa ibaba 30%",
+        "Huwag pansarilin ang mga lumang credit card",
+        "Suriin ang iyong credit report nang regular"
       ],
-      pointsToTarget: "अपने लक्ष्य तक पहुंचने के लिए अंक"
+      pointsToTarget: "mga puntos para maabot sa iyong target"
     }
   }
 

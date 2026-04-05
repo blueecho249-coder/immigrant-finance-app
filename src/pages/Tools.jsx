@@ -46,26 +46,26 @@ export default function Tools({ language }) {
       totalInterestYouWillPay: 'Interés total que pagarás',
       totalAmountPaidOverall: 'Cantidad total pagada'
     },
-    hi: {
-      title: 'वित्तीय उपकरण',
-      subtitle: 'अपने वित्त की गणना और योजना बनाएं',
-      budgetCalculator: 'बजट कैलकुलेटर',
-      creditCardPayoff: 'क्रेडिट कार्ड भुगतान',
-      monthlyIncomeAfterTax: 'मासिक आय कर के बाद',
-      rent: 'किराया',
-      groceries: 'किराना',
-      transport: 'परिवहन',
-      phoneBill: 'फोन बिल',
-      otherExpenses: 'अन्य खर्च',
-      totalExpenses: 'कुल खर्च',
-      moneyLeftOver: 'बची हुई राशि',
-      expenseBreakdown: 'खर्च विवरण',
-      currentBalance: 'वर्तमान शेष',
-      interestRate: 'ब्याज दर (%)',
-      monthlyPaymentAmount: 'मासिक भुगतान राशि',
-      monthsUntilPaidOff: 'भुगतान तक महीने',
-      totalInterestYouWillPay: 'आप द्वारा भुगतान किया जाने वाला कुल ब्याज',
-      totalAmountPaidOverall: 'कुल भुगतान की गई राशि'
+    tl: {
+      title: 'Mga Kagamitan sa Pananalapi',
+      subtitle: 'Kalkulahin at planuhin ang iyong pinansak',
+      budgetCalculator: 'Kalkuladora ng Budget',
+      creditCardPayoff: 'Pagbayad ng Credit Card',
+      monthlyIncomeAfterTax: 'Buwanang buwan matapos ang buwis',
+      rent: 'Upa',
+      groceries: 'Mga grocery',
+      transport: 'Transportasyon',
+      phoneBill: 'Bayad sa telepono',
+      otherExpenses: 'Iba panggastos',
+      totalExpenses: 'Kabuuang gastos',
+      moneyLeftOver: 'Natitirang pera',
+      expenseBreakdown: 'Detalye ng gastos',
+      currentBalance: 'Kasalang balanse',
+      interestRate: 'Rate ng interes (%)',
+      monthlyPaymentAmount: 'Halaga ng buwanang pagbabayad',
+      monthsUntilPaidOff: 'Buwan hanggang mababayaran',
+      totalInterestYouWillPay: 'Kabuuang interes na babayaran mo',
+      totalAmountPaidOverall: 'Kabuuang halagang babayaran'
     }
   }
 

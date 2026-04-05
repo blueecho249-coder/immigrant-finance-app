@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { lessons } from '../data/lessons.js'
 
-export default function Learn({ language = 'en' }) {
+export default function Learn({ language }) {
   const [selectedCategory, setSelectedCategory] = useState('All')
   
   const categories = ['All', 'Credit', 'Banking', 'Housing', 'Taxes', 'Saving']
@@ -38,6 +38,15 @@ export default function Learn({ language = 'en' }) {
       noLessons: "इस श्रेणी में कोई पाठ नहीं मिला।",
       progressBanner: "0 कुल 20 पाठों में से पूरी",
       motivationalMessage: "आज अपनी वित्तीय यात्रा शुरू करें"
+    },
+    tl: {
+      title: "Mga Aralin sa Pananalapi",
+      subtitle: "Matuto sa sariling mong sarili mong iyong wika sa iyong wika",
+      startLesson: "Simulan ang Aralin",
+      categories: "Mga Kategorya",
+      noLessons: "Walang araling na nakita sa kategoryang ito.",
+      progressBanner: "0 sa 20 na aralin ang kumpleto",
+      motivationalMessage: "Simulan ang iyong paglalakbay sa pananalapi ngayon"
     }
   }
 
