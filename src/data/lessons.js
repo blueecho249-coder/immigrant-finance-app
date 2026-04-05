@@ -114,12 +114,14 @@ export const lessons = [
     title: {
       en: "Banking basics for newcomers",
       es: "Conceptos básicos de banca para recién llegados",
-      hi: "नए आने वालों के लिए बैंकिंग बेसिक्स"
+      hi: "नए आने वालों के लिए बैंकिंग बेसिक्स",
+      tl: "Mga pangunahin sa pagbabang para mga bagong dating"
     },
     subtitle: {
       en: "What to bring and which account type to start with",
       es: "Qué llevar y con qué tipo de cuenta empezar",
-      hi: "क्या लाना है और किस खाते प्रकार से शुरू करना है"
+      hi: "क्या लाना है और किस खाते प्रकार से शुरू करना है",
+      tl: "Ano ang dapat dalhin at kung anong uri ng account ang magsisimula"
     },
     category: "Banking",
     content: {
@@ -155,9 +157,21 @@ export const lessons = [
         "डिजिटल-केवल बैंक एक और विकल्प हैं, जो शुल्क-मुक्त खाते और प्रतिस्पर्धी ब्याज दरें प्रदान करते हैं। जबकि उनके पास भौतिक शाखाएं नहीं हैं, वे उत्कृष्ट मोबाइल बैंकिंग ऐप्स, 24/7 ग्राहक समर्थन, और अक्सर ATM शुल्क प्रतिपूर्ति करते हैं। लोकप्रिय विकल्पों में Tangerine, Simplii Financial, EQ Bank, और Neo Financial शामिल हैं।",
         "जब आप बैंक शाखा का दौरा करते हैं, तो अपना खाता खोलने में 30-60 मिनट बिताने की उम्मीद करें। बैंक प्रतिनिधि विभिन्न खाता विकल्पों को समझाएगा, आपकी आवश्यकताओं के आधार पर आपका चयन में मदद करेगा, और ऑनलाइन बैंकिंग पहुंच स्थापित करेगा। आप तुरंत अपना डेबिट कार्ड प्राप्त करेंगे, जिसे आप सक्रिय कर और उपयोग शुरू कर सकते हैं। PIN नंबर आमतौर पर दौरे के दौरान चुने जाते हैं।",
         "मोबाइल बैंकिंग ऐप्स आपके वित्त को प्रबंधित करने के लिए आवश्यक उपकरण बन गए हैं। आप शेष राशि जांच सकते हैं, पैसे स्थानांतरित कर सकते हैं, बिल भुगतान कर सकते हैं, फोटो लेकर चेक जमा कर सकते हैं, और स्वचालित बचत ट्रांसफर स्थापित कर सकते हैं। अधिकांश ऐप्स में बजटिंग सुविधाएं और खर्च वर्गीकरण भी शामिल हैं ताकि आप अपने वित्तीय आदतों को ट्रैक कर सकें।",
-        "बैंक शुल्कों को समझना अनावश्यक शुल्कों से बचने के लिए महत्वपूर्ण है। सामान्य शुल्कों में मासिक खाता शुल्क, ओवरड्राफ्ट शुल्क (जब आप अपने पास से अधिक खर्च करते हैं), अन्य बैंकों की मशीनों पर ATM निकासी शुल्क, वायर ट्रांसफर शुल्क, और विदेशी लेनदेन शुल्क शामिल हैं। कई बैंक छात्रों या नए आने वालों के लिए पहले 6-12 महीनों के लिए शुल्क माफी प्रदान करते हैं।",
+        "बैंक शुल्कों को समझना अनावश्यक शुल्कों से बचने के लिए महत्वपूर्ण है। सामान्य शुल्कों में मासिक खाता शुल्क, ओवरड्राफ्ट शुल्क (जब आप अपने पास से अधिक खर्च करते हैं), ATM निकासी शुल्क (जब आप अपने पास से अधिक खर्च करते हैं), वायर ट्रांसफर शुल्क, और विदेशी लेनदेन शुल्क शामिल हैं। कई बैंक छात्रों या नए आने वालों के लिए पहले 6-12 महीनों के लिए शुल्क माफी प्रदान करते हैं।",
         "अपने बैंक के साथ रिश्ता बनाना आपको दीर्घकालिक रूप से लाभ दे सकता है। कई महीनों के जिम्मेदार बैंकिंग के बाद, आप क्रेडिट कार्ड, क्रेडिट लाइनों, या गिरवी के लिए योग्य हो सकते हैं। आपका बैंकिंग इतिहास लेंडर्स को वित्तीय जिम्मेदारी दर्शाता है, जिससे आवश्यकता पड़ने पर अन्य वित्तीय उत्पादों तक पहुंच करना आसान बना जाता है।",
         "बैंकिंग में सुरक्षा सर्वोपरि है। कभी भी अपना PIN या ऑनलाइन बैंकिंग पासवर्ड किसी के साथ साझा न करें। अपने बैंकिंग ऐप पर दो-कारक प्रमाणीकरण सक्षम करें, मजबूत अद्वितीय पासवर्ड का उपयोग करें, और अनधिकृत लेनदेन के लिए अपने खातों की नियमित रूप से निगरानी करें। किसी भी संदिग्ध गतिविधि को तुरंत अपने पैसे और पहचान की रिपोर्ट करें।"
+      ],
+      tl: [
+        "Ang pagbubukas ng isang bank account ay isa sa mga unang hakbang upang magtataguy ng buhay na pananalapi sa Canada o US. Ang mga bangko at credit unions ay kailangang suriin ang iyong identidad sa ilalim ng pederal na regulasyon, kaya kakailangan mo ng mga tukoy na dokumento. Karamihan sa mga institusyon ay nangangangailangan ng government-issued photo ID (tulad ng passport o driver's license), patunay ng address (utility bill, lease agreement, o opisyal na mail), at iyong mga dokumento sa imigrasyon (work permit, study permit, o permanent resident card).",
+        "Mayroong dalawang pangunahing uri ng mga bank account: chequing accounts at savings accounts. Ang chequing account ay idinisenyo para sa mga araw-araw na transaksyon—pagbabayad ng mga bill, paggawa ng mga purchase gamit ang iyong debit card, pagkuha ng cash, at pagtanggap ng direktang deposito mula sa iyong employer. Karamihan sa mga chequing accounts ay kasama ang walang limitadong debit na transaksyon at karaniwang kasama ito sa isang buwanang bayad na maaaring ma-waive kung panatili mo ang isang minimum balance o mag-set up ng mga direktang deposito.",
+        "Ang mga savings accounts ay idinisenyo upang tumulong sa iyo na mag-ipon ng pera para sa mga hinaharap na goal. Karaniwang sila ay nag-aalok ng mas mataas na interest rate kaysa sa mga chequing accounts at maaaring magkaroon ng mga limitasyon sa buwanang pagkuha. Ilan sa mga savings account ay ganap na libre, habang ang iba ay nagbabayad ng bayad kung hindi mo panatiliin ang isang minimum balance. Ang mga high-yield savings account ay nag-aalok ng mas maayos na interest rate ngunit maaaring mangangailangan ng mas mataas na minimum balance.",
+        "Kapag pumipili ng isang bangko, isaalang mo ang parehong mga tradisyonal na bangko at credit unions. Ang mga tradisyonal na bangko tulad ng RBC, TD, BMO, CIBC, at Scotiabank ay may malawak na network ng mga sangay at advanced na digital banking platform. Ang mga credit union ay mga member-owned cooperatives na karaniwang nag-aalok ng mas maayos na rate at mas mababang bayad, ngunit maaaring may mas kaunting mga lokasyon. Marami sa mga bagong dating ay nagsisimula sa isang pangunahing bangko para sa kaginhawahan, pagkatapos ay tuklasin ang mga credit union mamaya.",
+        "Ang mga digital-only bank ay isa pang opsyon, na nag-aalok ng mga no-fee account at competitive na interest rates. Bagama't wala silang pisikal na mga sangay, nagbibigay sila ng mga excellent na mobile banking apps, 24/7 customer support, at karaniwang nagre-reimburse ng mga ATM fee. Ang mga sikat na opsyon ay kasama ang Tangerine, Simplii Financial, EQ Bank, at Neo Financial.",
+        "Kapag bumibisita ka sa isang sangay ng bangko, asahan na gumugit ka ng 30-60 minuto sa pagbubukas ng iyong account. Ang kinatawan ng bangko ay ipapaliwanag sa iyo ang iba't ibang account options, tutulungan kang na pumili batay sa iyong mga pangangailangan, at itataguy ang online banking access. Tatanggap mo agad ang iyong debit card, na maaari mong i-activate at magsimulang gamitin kaagahan. Ang mga numero ng PIN ay karaniwang pinipili sa panahon ng pagbisita.",
+        "Ang mga mobile banking apps ay naging mga mahalagang tool para sa pamamahala sa iyong mga pananalapi. Maaari kang suriin ang mga balance, maglipat ng pera, magbayad ng mga bill, magdeposito ng mga check sa pamamagitan ng pagkuha ng mga litrato, at mag-set up ng mga automatic na savings transfer. Karamihan sa mga apps ay kasama rin ang mga budgeting feature at spending categorization upang tulungan kang subaybayan ang iyong mga pananalaping kaugalian.",
+        "Ang pag-unawa sa mga bank fee ay kritikal para sa pag-iwas sa mga hindi kinakailangang bayad. Ang mga karaniwang bayad ay kasama ang buwanang account fee, overdraft fee (kapag gumugit ka ng higit pa sa sa iyong), ATM withdrawal fee sa mga makina ng iba pang bangko, wire transfer fee, at foreign transaction fee. Maraming bangko ay nag-aalok ng student o newcomer packages na may fee waiver para sa unang 6-12 buwan.",
+        "Ang pagbuo ng isang relasyon sa iyong bangko ay maaaring makabenepisyo mo sa long-term. Matapos ang ilang buwan ng responsable na pagbabang, maaari kang kwalipika para sa mga credit card, lines of credit, o mga mortgages. Ang iyong banking history ay nagpapakita ng financial responsibility sa mga lender, na nagpapadali ng pag-access sa iba pang mga financial products kapag kinakailangan.",
+        "Ang seguridad ay pinakamahalaga sa pagbabang. Huwag kailanman sa iyong PIN o online banking password sa sinuman. I-enable ang two-factor authentication sa iyong banking app, gamitin ang mga malakas na unique na password, at bantayan ang iyong mga account nang regular para sa mga awtorisadong transaksyon. Ulat ang anumang suspetsosong aktibidad kaagadan upang protektahan ang iyong pera at identidad."
       ]
     },
     quizzes: [
@@ -170,7 +184,8 @@ export const lessons = [
         options: {
           en: ["Savings account", "Chequing account"],
           es: ["Cuenta de ahorros", "Cuenta de cheques"],
-          hi: ["बचत खाता", "चेकिंग खाता"]
+          hi: ["बचत खाता", "चेकिंग खाता"],
+          tl: ["Savings account", "Chequing account"]
         },
         correctIndex: 1
       },
@@ -183,7 +198,8 @@ export const lessons = [
         options: {
           en: ["Government-issued photo ID", "Credit card statement"],
           es: ["Identificación con foto emitida por el gobierno", "Estado de cuenta de tarjeta de crédito"],
-          hi: ["सरकार द्वारा जारी फोटो पहचान", "क्रेडिट कार्ड स्टेटमेंट"]
+          hi: ["सरकार द्वारा जारी फोटो पहचान", "क्रेडिट कार्ड स्टेटमेंट"],
+          tl: ["Government-issued photo ID", "Credit card statement"]
         },
         correctIndex: 1
       },
@@ -196,7 +212,8 @@ export const lessons = [
         options: {
           en: ["They typically offer better rates and lower fees", "They have more branches worldwide"],
           es: ["Generalmente ofrecen mejores tasas y tarifas más bajas", "Tienen más sucursales en todo el mundo"],
-          hi: ["वे आमतौर पर बेहतर दरें और कम शुल्क प्रदान करते हैं", "उनके दुनिया भर में अधिक शाखाएं हैं"]
+          hi: ["वे आमतौर पर बेहतर दरें और कम शुल्क प्रदान करते हैं", "उनके दुनिया भर में अधिक शाखाएं हैं"],
+          tl: ["They typically offer better rates and lower fees", "They have more branches worldwide"]
         },
         correctIndex: 0
       }
