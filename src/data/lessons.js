@@ -224,12 +224,14 @@ export const lessons = [
     title: {
       en: "Housing fundamentals for newcomers",
       es: "Fundamentos de vivienda para recién llegados",
-      hi: "नए आने वालों के लिए आवास मूल बातें"
+      hi: "नए आने वालों के लिए आवास मूल बातें",
+      tl: "Mga pangunahin sa pabahay para mga bagong dating"
     },
     subtitle: {
       en: "Understanding rental agreements and tenant rights",
       es: "Entendiendo contratos de alquiler y derechos de inquilinos",
-      hi: "किराया समझौते और किरायेदार अधिकारों को समझना"
+      hi: "किराया समझौते और किरायेदार अधिकारों को समझना",
+      tl: "Pag-unawa sa mga kasunduanan at karapatan sa mamamahal"
     },
     category: "Housing",
     content: {
