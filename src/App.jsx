@@ -26,7 +26,7 @@ export default function App() {
         <Route path="/score" element={<div style={{padding: '20px', fontSize: '24px'}}>SCORE PAGE WORKS</div>} />
         <Route path="/tools" element={<Layout><Tools language={language} /></Layout>} />
         <Route path="/offers" element={<Layout><Offers language={language} /></Layout>} />
-        <Route path="/account" element={<div style={{padding: '20px', fontSize: '24px'}}>ACCOUNT PAGE WORKS</div>} />
+        <Route path="/account" element={<Layout><Account language={language} /></Layout>} />
       </Routes>
     </BrowserRouter>
   )
