@@ -259,7 +259,7 @@ export default function Account({ language }) {
                 {getInitial(userEmail)}
               </span>
             </div>
-            <div className="absolute inset-0 h-20 w-20 rounded-full border-4 border-purple-500 -m-1"></div>
+            <div className="absolute inset-0 h-20 w-20 rounded-full border-4 border-purple-500"></div>
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">{userEmail}</h2>
           <span className="inline-flex items-center px-4 py-2 rounded-full text-lg font-bold bg-purple-100 text-purple-700 border border-purple-200">
