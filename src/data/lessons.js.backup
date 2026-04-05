@@ -9,14 +9,12 @@ export const lessons = [
     title: {
       en: "Building credit from zero",
       es: "Construir crédito desde cero",
-      hi: "शून्य से क्रेडिट बनाना",
-      tl: "Pagbuo ng credit mula sa wala"
+      hi: "शून्य से क्रेडिट बनाना"
     },
     subtitle: {
       en: "How scores work and the habits that grow them",
       es: "Cómo funcionan las puntuaciones y los hábitos que las hacen crecer",
-      hi: "स्कोर कैसे काम करते हैं और उन्हें बढ़ाने वाली आदतें",
-      tl: "Paano gumagana ang mga credit score at mga kaugalian na nagpapabuti sa kanilang mga ito?"
+      hi: "स्कोर कैसे काम करते हैं और उन्हें बढ़ाने वाली आदतें"
     },
     category: "Credit",
     content: {
@@ -51,18 +49,7 @@ export const lessons = [
         "छात्र क्रेडिट कार्ड, खुदरा स्टोर कार्ड, और क्रेडिट बिल्डर लोन क्रेडिट स्थापित करने के अन्य विकल्प हैं। प्रत्येक के पेशेवर और विपक्ष हैं, इसलिए आवेदन करने से पहले सावधान से शोध करें। छोटी अवधि में बहुत सारे आवेदन अस्थायी रूप से आपके स्कोर को अस्थायी रूप से कम कर सकते हैं।",
         "कम क्रेडिट उपयोग बनाए रखना (उपलब्ध क्रेडिट का 30% से कम का उपयोग करना) अच्छा क्रेडिट बनाने के लिए महत्वपूर्ण है। यदि आपके पास $1,000 की सीमा है, तो अपने बैलेंस को $300 से नीचे रखने का प्रयास करें। यह लेंडर्स को दर्शाता है कि आप बिना इस पर बहुत अधिक निर्भर करके जिम्मेदारी तरीके से क्रेडिट प्रबंधित कर सकते हैं।",
         "उत्कृष्ट क्रेडिट बनाने में समय लगता है, आमतौर पर 6-12 महीने का निरंतर सकारात्मक सकारात्मक व्यवहार। इस समय के दौरान, सभी बिल समय पर चुकाएं, बैलेंस कम रखें, और बहुत सारे नए क्रेडिट के लिए आवेदन करने से बचें। सटीकता सुनिश्चित रूप से अपने क्रेडिट रिपोर्ट को मॉनिटर करें और सटीकता सुनिश्चित होने के लिए अपनी प्रगति को ट्रैक करें।",
-        "एक बार जब आपने अच्छा क्रेडिट स्थापित कर लिया है, तो जिम्मेदार आदतों को जारी रखकर इसे बनाए रखें। स्वचालित भुगतान सेट अप करें, नियत तिथियों को चूकने से बचें, पुराने खातों को खुले रखें, और केवल आवश्यकता होने पर नए क्रेडिट के लिए आवेदन करें।"
-      ],
-      tl: [
-        "Sa Canada at US, ang credit score ay isang tatlong-digit na numero, karaniwang mula 300 hanggang 850, na ginagamit ng mga lender upang masuri ang iyong creditworthiness. Ang numerong ito ay kumakatawan sa iyong posibilidad na magbayad ng borrowed money sa tamang oras. Isipin ito bilang isang financial grade na nagsasabi sa mga bangko, credit card companies, at iba pang mga lender kung gaano responsable ka sa credit.",
-        "Ang iyong credit score ay kinakalkula gamit ang ilang mga factor: payment history (35%), amounts owed (30%), length ng credit history (15%), bagong credit (10%), at credit mix (10%). Ang payment history ang pinakamahalagang factor, kaya ang paggawa sa lahat ng iyong mga bayad sa oras ay kritikal para sa pagbuo at pagpapanatili ng mabuting credit.",
-        "Kapag unang beses kang dumating sa Canada o US, karaniwang magsisimula ka nang walang credit history. Ibig sabihin nitong hindi ka may masamang credit—nagkakapamilya lang nitong walang impormasyon ang mga lender tungkol sa iyong mga kaugalian sa pag-utang. Ang pagbuo ng credit mula sa wala ay nangangangailangan ng pasensya at mag-consistent na responsable na pag-uugali.",
-        "Ang secured credit card ay isang mahusay na tool para sa pagbuo ng credit. Nagbibigay ka ng isang security deposit (karaniwang $300-$500) na nagiging iyong credit limit. Ang bangko ay nag-uulat ng iyong payment history sa mga credit bureau, tumutulong sa iyo na magbuo ng isang positibong credit history. Matapos ang 6-12 buwan ng responsable na paggamit, maraming bangko ang mag-upgrade sa iyo sa isang unsecured card at ibabalik ang iyong deposit.",
-        "Isang opsyon ay maging isang authorized user sa credit card ng iba karaniwang isang miyembro ng pamilya na may mabuting credit. Ang kanilang positibong payment history ay maaaring tumulong sa pagbuo ng iyong credit, ngunit maging alerto na anumang negatibong aktibidad ay maaari ring makaapekto sa iyong credit report.",
-        "Ang mga student credit cards, retail store cards, at credit builder loans ay iba pang mga opsyon para sa pagtataguy ng credit. Bawat isa ay may mga kalamangan at disadvantage, kaya mag-aral nang mabuti bago mag-apply. Masyadong maraming aplikasyon sa maikling panahon ay maaaring pansamantalang mababa sa iyong score.",
-        "Ang pagpapanatili ng mababang credit utilization (paggamit ng mas mababa sa 30% ng iyong available credit) ay susi para sa pagbuo ng mabuting credit. Kung may $1,000 ka na limit, subukan na panatiliin ang iyong balance sa ibaba ng $300. Ipinapakita nitong sa mga lender na kayang mamahala ng credit nang responsable nang hindi masyadong umaasa rito.",
-        "Ang pagbuo ng excellent credit ay kumukuha ng oras, karaniwang 6-12 buwan ng mag-consistent na positibong pag-uugali. Sa panahong ito, bayaran ang lahat ng mga bill sa oras, panatiliin ang mga mababang balance, at iwasan ang mag-apply sa masyadong bagong credit. Bantayan ang iyong credit report nang regular upang matiyak ang accuracy at subaybayan ang iyong pag-unawa.",
-        "Kapag nagtataguy ka na ng mabuting credit, panatiliin ito sa pamamagitan ng pagpapatuloy sa mga responsable na kaugalian. Mag-set up ng mga automatic payment upang iwasan ang pagkakaltol sa mga due dates, panatiliin ang mga lumang account na bukas (kahit kung hindi ginagamit) upang panatiliin ang haba ng credit history, at mag-apply lang ng bagong credit kung kinakailangan."
+        "एक बार जब आपने अच्छा क्रेडिट स्थापित कर लिया है, तो जिम्मेदार आदतों को जारी रखकर इसे बनाए रखें। स्वचालित भुगतान सेट अप करें ताकि आप नियत तिथियों से चूक न जाएं, पुराने खाते खुले रखें (भले ही अप्रयुक्त हों तो) क्रेडिट इतिहास की लंबाई बनाए रखने के लिए, और केवल तभी आवश्यकत होने पर नए क्रेडिट के लिए आवेदन करें।"
       ]
     },
     quizzes: [
@@ -70,14 +57,12 @@ export const lessons = [
         question: {
           en: "What is the most important factor in calculating your credit score?",
           es: "¿Cuál es el factor más importante en el cálculo de tu puntuación de crédito?",
-          hi: "आपके क्रेडिट स्कोर की गणना में सबसे महत्वपूर्ण कारक क्या है?",
-          tl: "Ano ang pinakamahalagang bagian sa pagkalkula sa iyong credit score?"
+          hi: "आपके क्रेडिट स्कोर की गणना में सबसे महत्वपूर्ण कारक क्या है?"
         },
         options: {
           en: ["Credit utilization ratio", "Payment history"],
           es: ["Relación de utilización de crédito", "Historial de pagos"],
-          hi: ["क्रेडिट उपयोग अनुपात", "भुगतान इतिहास"],
-          tl: ["Ratio ng paggamit ng credit", "Kasaysayan ng pagbabayad"]
+          hi: ["क्रेडिट उपयोग अनुपात", "भुगतान इतिहास"]
         },
         correctIndex: 1
       },
