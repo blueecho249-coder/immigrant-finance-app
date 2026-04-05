@@ -1,17 +1,85 @@
 import { useState } from 'react'
 
-export default function Tools() {
+export default function Tools({ language }) {
   const [activeTool, setActiveTool] = useState('budget')
+
+  const content = {
+    en: {
+      title: 'Financial Tools',
+      subtitle: 'Calculate and plan your finances',
+      budgetCalculator: 'Budget Calculator',
+      creditCardPayoff: 'Credit Card Payoff',
+      monthlyIncomeAfterTax: 'Monthly income after tax',
+      rent: 'Rent',
+      groceries: 'Groceries',
+      transport: 'Transport',
+      phoneBill: 'Phone bill',
+      otherExpenses: 'Other expenses',
+      totalExpenses: 'Total expenses',
+      moneyLeftOver: 'Money left over',
+      expenseBreakdown: 'Expense Breakdown',
+      currentBalance: 'Current balance',
+      interestRate: 'Interest rate (%)',
+      monthlyPaymentAmount: 'Monthly payment amount',
+      monthsUntilPaidOff: 'Months until paid off',
+      totalInterestYouWillPay: 'Total interest you will pay',
+      totalAmountPaidOverall: 'Total amount paid overall'
+    },
+    es: {
+      title: 'Herramientas Financieras',
+      subtitle: 'Calcula y planifica tus finanzas',
+      budgetCalculator: 'Calculadora de Presupuesto',
+      creditCardPayoff: 'Pago de Tarjeta de Crédito',
+      monthlyIncomeAfterTax: 'Ingreso mensual después de impuestos',
+      rent: 'Renta',
+      groceries: 'Comestibles',
+      transport: 'Transporte',
+      phoneBill: 'Factura de teléfono',
+      otherExpenses: 'Otros gastos',
+      totalExpenses: 'Gastos totales',
+      moneyLeftOver: 'Dinero restante',
+      expenseBreakdown: 'Desglose de gastos',
+      currentBalance: 'Saldo actual',
+      interestRate: 'Tasa de interés (%)',
+      monthlyPaymentAmount: 'Cantidad de pago mensual',
+      monthsUntilPaidOff: 'Meses hasta pagar',
+      totalInterestYouWillPay: 'Interés total que pagarás',
+      totalAmountPaidOverall: 'Cantidad total pagada'
+    },
+    hi: {
+      title: 'वित्तीय उपकरण',
+      subtitle: 'अपने वित्त की गणना और योजना बनाएं',
+      budgetCalculator: 'बजट कैलकुलेटर',
+      creditCardPayoff: 'क्रेडिट कार्ड भुगतान',
+      monthlyIncomeAfterTax: 'मासिक आय कर के बाद',
+      rent: 'किराया',
+      groceries: 'किराना',
+      transport: 'परिवहन',
+      phoneBill: 'फोन बिल',
+      otherExpenses: 'अन्य खर्च',
+      totalExpenses: 'कुल खर्च',
+      moneyLeftOver: 'बची हुई राशि',
+      expenseBreakdown: 'खर्च विवरण',
+      currentBalance: 'वर्तमान शेष',
+      interestRate: 'ब्याज दर (%)',
+      monthlyPaymentAmount: 'मासिक भुगतान राशि',
+      monthsUntilPaidOff: 'भुगतान तक महीने',
+      totalInterestYouWillPay: 'आप द्वारा भुगतान किया जाने वाला कुल ब्याज',
+      totalAmountPaidOverall: 'कुल भुगतान की गई राशि'
+    }
+  }
+
+  const t = content[language] || content.en
 
   const tools = [
     {
       id: 'budget',
-      name: 'Budget Calculator',
+      name: t.budgetCalculator,
       icon: '💰'
     },
     {
       id: 'credit',
-      name: 'Credit Card Payoff',
+      name: t.creditCardPayoff,
       icon: '💳'
     }
   ]
@@ -41,7 +109,7 @@ export default function Tools() {
         <div className="space-y-4">
           <div>
             <label className="mb-2 block text-sm font-medium text-gray-700">
-              Monthly income after tax
+              {t.monthlyIncomeAfterTax}
             </label>
             <input
               type="number"
@@ -53,7 +121,7 @@ export default function Tools() {
           
           <div>
             <label className="mb-2 block text-sm font-medium text-gray-700">
-              Rent
+              {t.rent}
             </label>
             <input
               type="number"
@@ -65,7 +133,7 @@ export default function Tools() {
 
           <div>
             <label className="mb-2 block text-sm font-medium text-gray-700">
-              Groceries
+              {t.groceries}
             </label>
             <input
               type="number"
@@ -77,7 +145,7 @@ export default function Tools() {
 
           <div>
             <label className="mb-2 block text-sm font-medium text-gray-700">
-              Transport
+              {t.transport}
             </label>
             <input
               type="number"
@@ -89,7 +157,7 @@ export default function Tools() {
 
           <div>
             <label className="mb-2 block text-sm font-medium text-gray-700">
-              Phone bill
+              {t.phoneBill}
             </label>
             <input
               type="number"
@@ -101,7 +169,7 @@ export default function Tools() {
 
           <div>
             <label className="mb-2 block text-sm font-medium text-gray-700">
-              Other expenses
+              {t.otherExpenses}
             </label>
             <input
               type="number"
@@ -115,12 +183,12 @@ export default function Tools() {
         {/* Results */}
         <div className="space-y-4">
           <div className={`rounded-xl p-4 ${moneyLeft >= 0 ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}`}>
-            <div className="text-sm text-gray-600 mb-1">Total expenses</div>
+            <div className="text-sm text-gray-600 mb-1">{t.totalExpenses}</div>
             <div className="text-2xl font-bold text-gray-900">${totalExpenses.toFixed(2)}</div>
           </div>
 
           <div className={`rounded-xl p-4 ${moneyLeft >= 0 ? 'bg-teal-50 border border-teal-200' : 'bg-red-100 border border-red-300'}`}>
-            <div className="text-sm text-gray-600 mb-1">Money left over</div>
+            <div className="text-sm text-gray-600 mb-1">{t.moneyLeftOver}</div>
             <div className={`text-2xl font-bold ${moneyLeft >= 0 ? 'text-teal-700' : 'text-red-700'}`}>
               ${moneyLeft.toFixed(2)}
             </div>
@@ -128,7 +196,7 @@ export default function Tools() {
 
           {/* Expense Breakdown */}
           <div className="space-y-2">
-            <div className="text-sm font-medium text-gray-700">Expense Breakdown</div>
+            <div className="text-sm font-medium text-gray-700">{t.expenseBreakdown}</div>
             {expenses.map((expense) => {
               const percentage = income > 0 ? (expense.amount / income) * 100 : 0
               return (
@@ -207,7 +275,7 @@ export default function Tools() {
         <div className="space-y-4">
           <div>
             <label className="mb-2 block text-sm font-medium text-gray-700">
-              Current balance
+              {t.currentBalance}
             </label>
             <input
               type="number"
@@ -219,7 +287,7 @@ export default function Tools() {
 
           <div>
             <label className="mb-2 block text-sm font-medium text-gray-700">
-              Interest rate (%)
+              {t.interestRate}
             </label>
             <input
               type="number"
@@ -232,7 +300,7 @@ export default function Tools() {
 
           <div>
             <label className="mb-2 block text-sm font-medium text-gray-700">
-              Monthly payment amount
+              {t.monthlyPaymentAmount}
             </label>
             <input
               type="number"
@@ -251,21 +319,21 @@ export default function Tools() {
         {/* Results */}
         <div className="space-y-4">
           <div className="rounded-xl bg-teal-50 border border-teal-200 p-4">
-            <div className="text-sm text-gray-600 mb-1">Months until paid off</div>
+            <div className="text-sm text-gray-600 mb-1">{t.monthsUntilPaidOff}</div>
             <div className="text-2xl font-bold text-teal-700">
               {formatTime(monthsToPayoff)}
             </div>
           </div>
 
           <div className="rounded-xl bg-blue-50 border border-blue-200 p-4">
-            <div className="text-sm text-gray-600 mb-1">Total interest you will pay</div>
+            <div className="text-sm text-gray-600 mb-1">{t.totalInterestYouWillPay}</div>
             <div className="text-2xl font-bold text-blue-700">
               ${totalInterest.toFixed(2)}
             </div>
           </div>
 
           <div className="rounded-xl bg-purple-50 border border-purple-200 p-4">
-            <div className="text-sm text-gray-600 mb-1">Total amount paid overall</div>
+            <div className="text-sm text-gray-600 mb-1">{t.totalAmountPaidOverall}</div>
             <div className="text-2xl font-bold text-purple-700">
               ${totalPaid.toFixed(2)}
             </div>
@@ -274,7 +342,7 @@ export default function Tools() {
           {paymentTooLow && (
             <div className="rounded-xl bg-red-50 border border-red-200 p-4">
               <div className="text-sm font-medium text-red-800">
-                ⚠️ Your monthly payment is less than the minimum required. 
+                ⚠️ Your monthly payment is less than minimum required. 
                 This will never pay off the balance and interest will continue to accumulate.
               </div>
             </div>
@@ -298,8 +366,8 @@ export default function Tools() {
   return (
     <div className="px-4 py-6">
       <div className="mb-6">
-        <h1 className="mb-2 text-2xl md:text-3xl font-bold text-gray-900">Financial Tools</h1>
-        <p className="text-gray-600">Calculate and plan your finances</p>
+        <h1 className="mb-2 text-2xl md:text-3xl font-bold text-gray-900">{t.title}</h1>
+        <p className="text-gray-600">{t.subtitle}</p>
       </div>
 
       <div className="mb-6">
@@ -323,28 +391,15 @@ export default function Tools() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Budget Calculator */}
+      <div className="max-w-4xl mx-auto">
         <div className="card">
           <div className="gradient-header text-white p-4 rounded-t-xl">
             <h2 className="text-lg font-bold">
-              Budget Calculator
+              {activeTool === 'budget' ? t.budgetCalculator : t.creditCardPayoff}
             </h2>
           </div>
           <div className="p-4">
-            {renderBudgetCalculator()}
-          </div>
-        </div>
-
-        {/* Credit Card Payoff Calculator */}
-        <div className="card">
-          <div className="gradient-header text-white p-4 rounded-t-xl">
-            <h2 className="text-lg font-bold">
-              Credit Card Payoff
-            </h2>
-          </div>
-          <div className="p-4">
-            {renderCreditCardPayoff()}
+            {renderTool()}
           </div>
         </div>
       </div>
