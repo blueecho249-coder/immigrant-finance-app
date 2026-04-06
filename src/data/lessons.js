@@ -788,5 +788,81 @@ export const lessons = [
         correctIndex: 1
       }
     ]
+  },
+  {
+    id: "tfsa-saving",
+    isPremium: true,
+    title: {
+      en: "How to use a TFSA to grow your money",
+      es: "Cómo usar una TFSA para hacer crecer tu dinero",
+      hi: "TFSA का उपयोग अपने पैसे को बढ़ाने के लिए",
+      tl: "Kung paano gamitin ang TFSA upang palaguin ang iyong pera",
+      zh: "如何使用TFSA来增加您的资金",
+      ar: "كيفية استخدام TFSA لتنمية أموالك",
+      fr: "Comment utiliser un CELI pour faire croître votre argent",
+      pa: "TFSA ਦੀ ਵਰਤੋਂ ਆਪਣੇ ਪੈਸੇ ਨੂੰ ਵਧਾਉਣ ਲਈ ਵਰਤੋਂ"
+    },
+    subtitle: {
+      en: "Canada's most powerful free savings account explained simply",
+      es: "La cuenta de ahorro gratuita más poderosa de Canadá explicada simplemente",
+      hi: "कैनेडा का सबसे शक्तिशाली मुफ्त बचत खाता खਾਤਾ ਸਰਲ ਸਮਝਾਇਆ",
+      tl: "Ang pinakamakapangyariang libreng savings account sa Canada ipinaliwan nang simple",
+      zh: "加拿大最强大的免费储蓄账户简单解释",
+      ar: "أقوى حساب توفير مجاني في كندا مبسط الشرح",
+      fr: "Le compte d'épargne gratuit le plus puissant du Canada expliqué simplement",
+      pa: "ਕੈਨੇਡਾ ਦਾ ਸਭ ਤੋਂ ਸ਼ਕਤੀਸ਼ਾਲ ਮੁਫਤ ਬਚਤ ਖਾਤਾ ਸਰਲ ਸਮਝਾਇਆ"
+    },
+    category: "Saving",
+    content: {
+      en: [
+        "A Tax Free Savings Account or TFSA is one of the best financial tools available to Canadian residents. Any money you earn inside a TFSA — from interest, dividends or investments — is completely tax free forever. Every Canadian resident over 18 gets $6,000 to $7,000 of new contribution room each year and unused room carries forward indefinitely. You can hold cash, GICs, mutual funds and stocks inside a TFSA — it is not just a savings account. Unlike an RRSP you can withdraw money any time with no tax penalty and is room comes back the following year."
+      ],
+      es: [
+        "Una Cuenta de Ahorro Libre de Impuestos o TFSA es una de las mejores herramientas financieras disponibles para los residentes canadienses. Cualquier dinero que ganes dentro de una TFSA — de intereses, dividendos o inversiones — es completamente libre de impuestos para siempre. Cada residente canadiense mayor de 18 años obtiene de $6,000 a $7,000 de nuevo espacio de contribución cada año y el espacio no utilizado se traslada indefinidamente. Puedes mantener efectivo, GICs, fondos mutuos y acciones dentro de una TFSA — no es solo una cuenta de ahorros. A diferencia de un RRSP puedes retirar dinero en cualquier momento sin penalización fiscal y el espacio regresa el año siguiente."
+      ],
+      hi: [
+        "एक टैक्स फ्री सेविंग अकाउंट या TFSA कनाडाई निवासियों के लिए उपलब्ध सबसे अच्छे वित्तीय उपकरणों में से एक है। TFSA के अंदर आप जो भी पैसा कमाते हैं — ब्याज, लाभांश या निवेशनों से — स्थायी रूप से पूरी तरह टैक्स मुक्त है। हर 18 वर्ष से अधिक कनाडाई निवासी प्रति वर्ष $6,000 से $7,000 का नया योगदान कमरा प्राप्त करता है और अप्रयुक्त कमरा अनिश्चित रूप से आगे बढ़ता है। आप TFSA के अंदर नकद, GICs, म्यूचुअल फंड और स्टॉक रख सकते हैं — यह सिर्फ एक बचत खाता खाता नहीं है। RRSP के विपरीत, आप किसी भी समय बिना टैक्स दंड के पैसे निकाल सकते हैं और कमरा अगले वर्ष वापस आता है।"
+      ],
+      tl: [
+        "Ang isang Tax Free Savings Account o TFSA ay isa sa mga pinakamahusay na pinansyal na kagamitan na magagamit sa mga residente ng Canada. Anumang pera na kumita mo sa loob ng isang TFSA — mula sa interest, dividendos o investments — ay kumpleto nang tax libre forever. Bawat Canadian resident na higit sa 18 taong gulang ay nakakakuha ng $6,000 hanggang $7,000 ng bagong contribution room bawat taon at ang hindi nagamit na room ay isinasakat nang walang hangganan. Maaari mong hawak ang cash, GICs, mutual funds at stocks sa loob ng isang TFSA — hindi ito isang savings account lang. Hindi tulad ng RRSP maaari mong i-withdraw ang pera anumang oras nang walang tax penalty at ang room ay bumalik sa sumunod na taon."
+      ],
+      zh: [
+        "免税储蓄账户或TFSA是加拿大居民可用的最佳金融工具之一。您在TFSA内赚取的任何资金——来自利息、股息或投资——永远完全免税。每位18岁以上的加拿大居民每年获得6,000至7,000加元的新供款额度，未使用的额度无限期结转。您可以在TFSA内持有现金、GIC、共同基金和股票——它不仅仅是一个储蓄账户。与RRSP不同，您可以随时提取资金而无需税务处罚，并且额度会在下一年恢复。"
+      ],
+      ar: [
+        "حساب التوفير المعفى من الضرائب أو TFSA هو أحد أفضل الأدوات المالية المتاحة للمقيمين الكنديين. أي أموال تكسبها داخل TFSA — من الفوائد أو الأرباح الموزعة أو الاستثمارات — معفاة تمامًا من الضرائب إلى الأبد. كل مقيم كندي فوق سن 18 يحصل على 6,000 إلى 7,000 دولار من مساحة مساهمة جديدة كل سنة والمساحة غير المستخدمة تنتقل إلى ما لا نهاية. يمكنك الاحتفاظ بالنقود وصناديق الاستثمار والأسهم داخل TFSA — ليست مجرد حساب توفير. على عكس RRSP يمكنك سحب الأموال في أي وقت بدون عقوبة ضريبية والمساحة تعود في العام التالي."
+      ],
+      fr: [
+        "Un Compte d'Épargne Libre d'Impôt ou CELI est l'un des meilleurs outils financiers disponibles pour les résidents canadiens. Tout argent que vous gagnez à l'intérieur d'un CELI — des intérêts, dividendes ou placements — est complètement exempt d'impôt pour toujours. Chaque résident canadien de plus de 18 ans obtient de 6,000 à 7,000 $ de nouvelle marge de contribution chaque année et la marge non utilisée est reportée indéfiniment. Vous pouvez détenir des liquidités, CPG, fonds communs et actions à l'intérieur d'un CELI — ce n'est pas seulement un compte d'épargne. Contrairement à un REER vous pouvez retirer de l'argent à tout moment sans pénalité fiscale et la marge revient l'année suivante."
+      ],
+      pa: [
+        "ਇੱਕ ਟੈਕਸ ਫਰੀ ਸੇਵਿੰਗ ਅਕਾਊਂਟ ਜਾਂ TFSA ਕੈਨੇਡੀਅਨ ਨਿਵਾਸੀਆਂ ਲਈ ਉਪਲਬਧ ਸਭ ਤੋਂ ਸ਼ਕਤੀਸ਼ਾਲ ਵਿੱਤੀਏ ਉਪਕਰਣਾਂ ਵਿੱਚੋਂ ਇੱਕ ਹੈ। TFSA ਦੇ ਅੰਦਰ ਤੁਸੀਂ ਪੈਸਾ ਜੋ ਵੀ ਕਮਾਂਦੇ ਹੋ — ਬਿਆਜ, ਲਾਭਾਂਸ਼ ਜਾਂ ਨਿਵੇਸ਼ਾਂ ਤੋਂ — ਸਥਾਈ ਰੂਪ ਨਾਲ ਪੂਰੀ ਤਰਹਾਂ ਟੈਕਸ ਮੁਕਤ ਹੈ। ਹਰ 18 ਸਾਲ ਤੋਂ ਵੱਧ ਕੈਨੇਡੀਅਨ ਨਿਵਾਸੀ ਹਰ ਸਾਲ $6,000 ਤੋਂ $7,000 ਦੀ ਨਵੀਂ ਯੋਗਦਾਨ ਕਮਰਾ ਹਰ ਸਾਲ ਪ੍ਰਾਪਤ ਕਰਦਾ ਹੈ ਅਤੇ ਅਪ੍ਰਯੁਕਤ ਕਮਰਾ ਅਨਿਸ਼ਚਿਤ ਰੂਪ ਨਾਲ ਅਗੇ ਵਧਦਾ ਹੈ। ਤੁਸੀਂ TFSA ਦੇ ਅੰਦਰ ਨਕਦ, GICs, ਮਿਊਚੂਅਲ ਫੰਡ ਅਤੇ ਸਟੌਕ ਰੱਖ ਸਕਦੇ ਹੋ — ਇਹ ਸਿਰਫ ਇੱਕ ਬਚਤ ਖਾਤਾ ਖਾਤਾ ਨਹੀਂ ਹੈ। RRSP ਦੇ ਉਲਟ, ਤੁਸੀਂ ਕਿਸੇ ਵੀ ਸਮੇਂ ਬਿਨਾ ਟੈਕਸ ਦੰਡ ਦੇ ਬਿਨਾ ਪੈਸੇ ਨਿਕਾਲ ਸਕਦੇ ਹੋ ਅਤੇ ਕਮਰਾ ਅਗਲੇ ਸਾਲ ਵਾਪਸ ਆਉਂਦਾ ਹੈ।"
+      ]
+    },
+    quiz: [
+      {
+        question: {
+          en: "When you withdraw money from a TFSA do you pay tax on it?",
+          es: "¿Cuando retiras dinero de una TFSA pagas impuestos sobre él?",
+          hi: "ਜਦੋਂ ਤੁਸੀਂ TFSA ਤੋਂ ਪੈਸੇ ਨਿਕਾਲਦੇ ਹੋ ਤਾਂ ਕੀ ਤੁਹਾਨੂੰ ਟੈਕਸ ਦੇਣਾ ਪਵੇਂਦਾ ਹੈ?",
+          tl: "Kapag i-withdraw mo ang pera mula sa isang TFSA babayaran mo ba ng tax dito?",
+          zh: "当您从TFSA提取资金时需要缴税吗？",
+          ar: "عندما تسحب الأموال من TFSA هل تدفع ضريبة عليها؟",
+          fr: "Quand vous retirez de l'argent d'un CELI payez-vous de l'impôt dessus?",
+          pa: "ਜਦੋਂ ਤੁਸੀਂ TFSA ਤੋਂ ਪੈਸੇ ਨਿਕਾਲਦੇ ਹੋ ਤਾਂ ਕੀ ਤੁਹਾਨੂੰ ਟੈਕਸ ਦੇਣਾ ਪਵੇਂਦਾ ਹੈ?"
+        },
+        options: {
+          en: ["Yes — withdrawals are taxed", "No — withdrawals are tax free"],
+          es: ["Sí — los retiros están gravados", "No — los retiros están libres de impuestos"],
+          hi: ["हाँ — निकासी पर टैक्स लगता है", "नहीं — निकासी टैक्स मुक्त है"],
+          tl: ["Oo — ang mga withdrawal ay may tax", "Hindi — ang mga withdrawal ay tax free"],
+          zh: ["是的——提款需要缴税", "不——提款免税"],
+          ar: ["نعم — عمليات السحب تخضع للضريبة", "لا — عمليات السحب معفاة من الضرائب"],
+          fr: ["Oui — les retraits sont imposés", "Non — les retraits sont libres d'impôt"],
+          pa: ["ਹਾਂ — ਨਿਕਾਸੀ 'ਤੇ ਟੈਕਸ ਲੱਗਦਾ ਹੈ", "ਨਹੀਂ — ਨਿਕਾਸੀ ਟੈਕਸ ਮੁਕਤ ਹੈ"]
+        },
+        correctIndex: 1
+      }
+    ]
   }
 ]
