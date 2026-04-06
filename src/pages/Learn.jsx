@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { lessons } from '../data/lessons.js'
+import Header from '../components/Header.jsx'
 
 export default function Learn({ language }) {
   const [selectedCategory, setSelectedCategory] = useState('All')
@@ -117,19 +118,21 @@ export default function Learn({ language }) {
   }
 
   return (
-    <div className="px-4 py-6">
-      {/* Progress Banner */}
-      <div className="mb-8 bg-gradient-to-r from-indigo-50 to-teal-50 border-2 border-indigo-200/60 rounded-3xl p-8 shadow-lg animate-fadeInUp">
-        <div className="flex items-center justify-between">
-          <div>
-            <h3 className="text-xl font-bold text-indigo-900 mb-3">{t.progressBanner}</h3>
-            <div className="w-full bg-indigo-200/60 rounded-full h-4 shadow-inner">
-              <div className="bg-gradient-to-r from-indigo-500 to-teal-500 h-4 rounded-full shadow-lg" style={{ width: '0%' }}></div>
+    <div>
+      <Header onLanguageChange={language} />
+      <div className="px-4 py-6">
+        {/* Progress Banner */}
+        <div className="mb-8 bg-gradient-to-r from-indigo-50 to-teal-50 border-2 border-indigo-200/60 rounded-3xl p-8 shadow-lg animate-fadeInUp">
+          <div className="flex items-center justify-between">
+            <div>
+              <h3 className="text-xl font-bold text-indigo-900 mb-3">{t.progressBanner}</h3>
+              <div className="w-full bg-indigo-200/60 rounded-full h-4 shadow-inner">
+                <div className="bg-gradient-to-r from-indigo-500 to-teal-500 h-4 rounded-full shadow-lg" style={{ width: '0%' }}></div>
+              </div>
             </div>
+            <div className="text-indigo-700 font-bold text-lg bg-white/80 px-4 py-2 rounded-2xl shadow-md">{t.motivationalMessage}</div>
           </div>
-          <div className="text-indigo-700 font-bold text-lg bg-white/80 px-4 py-2 rounded-2xl shadow-md">{t.motivationalMessage}</div>
         </div>
-      </div>
 
       <div className="mb-8 animate-fadeIn">
         <h1 className="mb-4 text-4xl md:text-5xl font-bold text-gray-900">{t.title}</h1>
