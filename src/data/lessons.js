@@ -560,5 +560,81 @@ export const lessons = [
         correctIndex: 1
       }
     ]
+  },
+  {
+    id: "avoid-bank-fees",
+    isPremium: true,
+    title: {
+      en: "How to avoid bank fees in Canada",
+      es: "Cómo evitar las tarifas bancarias en Canadá",
+      hi: "कैनेडा में बैंक शुल्क से बचने के तरीके",
+      tl: "Kung iwasan ang mga bank fee sa Canada",
+      zh: "如何在加拿大避免银行费用",
+      ar: "كيفية تجنب رسوم البنوك في كندا",
+      fr: "Comment éviter les frais bancaires au Canada",
+      pa: "ਕੈਨੇਡਾ ਵਿੱਚ ਬੈਂਕ ਫੀਸਾਂ ਤੋਂ ਬਚਾਓ"
+    },
+    subtitle: {
+      en: "Save money by understanding how Canadian bank fees work",
+      es: "Ahorre dinero entendiendo cómo funcionan las tarifas bancarias canadienses",
+      hi: "ਕੈਨੇਡੀਅਨ ਬੈਂਕ ਫੀਸਾਂ ਕਿਵੇਂ ਕੰਮ ਕਰਦੀਆਂ ਹਨ ਇਹ ਸਮਝ ਕੇ ਪੈਸੇ ਬਚਾਓ",
+      tl: "Magtipid sa pera sa pamamagitan ng pag-unawa sa kung paano gumana ang mga bank fee sa Canada",
+      zh: "通过了解加拿大银行费用的运作方式来省钱",
+      ar: "وفر المال من خلال فهم كيفية عمل رسوم البنوك الكندية",
+      fr: "Économisez de l'argent en comprenant le fonctionnement des frais bancaires canadiens",
+      pa: "ਕੈਨੇਡੀਅਨ ਬੈਂਕ ਫੀਸਾਂ ਦੀ ਕਾਰਵਾਈ ਸਮਝ ਕੇ ਪੈਸੇ ਬਚਾਓ"
+    },
+    category: "Banking",
+    content: {
+      en: [
+        "Canadian banks charge fees for many services that newcomers do not expect. Monthly account fees range from $4 to $30 depending on the account type — look for free accounts at online banks like EQ Bank or Tangerine. Avoid overdraft fees by never spending more than your balance — set up low balance alerts on your phone. ATM fees can be $3 to $5 per withdrawal at machines outside your bank network — always use your own banks ATM. Many banks offer free newcomer accounts for the first year so always ask when you arrive."
+      ],
+      es: [
+        "Los bancos canadienses cobran tarifas por muchos servicios que los recién llegados no esperan. Las tarifas mensuales de la cuenta van de $4 a $30 dependiendo del tipo de cuenta — busque cuentas gratuitas en bancos en línea como EQ Bank o Tangerine. Evite las tarifas de sobregiro nunca gastando más de su saldo — configure alertas de saldo bajo en su teléfono. Las tarifas de cajero automático pueden ser de $3 a $5 por retiro en máquinas fuera de la red de su banco — siempre use el cajero automático de su propio banco. Muchos bancos ofrecen cuentas gratuitas para recién llegados durante el primer año, así que siempre pregunte cuando llegue."
+      ],
+      hi: [
+        "कनाडाई बैंक कई सेवाओं के लिए शुल्क लेते हैं जिनकी नए आने वालों को उम्मीद नहीं होती। मासिक खाता शुल्क खाता प्रकार के अनुसार $4 से $30 तक होते हैं — EQ Bank या Tangerine जैसे ऑनलाइन बैंकों में मुफ्त खातों की तलाश करें। ओवरड्राफ्ट शुल्क से बचने के लिए कभी भी अपने बैलेंस से अधिक खर्च न करें — अपने फोन पर कम बैलेंस अलर्ट सेट करें। एटीएम शुल्क आपके बैंक नेटवर्क के बाहर मशीनों पर $3 से $5 प्रति निकासी हो सकते हैं — हमेशा अपने बैंक के एटीएम का उपयोग करें। कई बैंक पहले वर्ष के लिए मुफ्त नए आने वालों के खाते प्रदान करते हैं, इसलिए हमेशा पूछें जब आप पहुंचते हैं।"
+      ],
+      tl: [
+        "Ang mga bank sa Canada ay nagbabayad ng bayad para sa maraming serbisyo na hindi inaasahan ng mga bagong dating. Ang buwanang account fee ay mula $4 hanggang $30 depende sa uri ng account — hanapin ang mga free account sa online banks tulad ng EQ Bank o Tangerine. Iwasan ang overdraft fees sa pamamagitan ng hindi na gumugastos ng higit sa iyong balance — i-set up ang mga low balance alert sa iyong telepono. Ang ATM fees ay maaaring maging $3 hanggang $5 bawat withdrawal sa mga machine sa labas ng iyong bank network — gamitin mo palagi ang ATM ng iyong sariling bank. Maraming bank ang nag-aalok ng free newcomer accounts para sa unang taon kaya siempre tanungin kapag dumating ka."
+      ],
+      zh: [
+        "加拿大银行对许多新移民意想不到的服务收取费用。月账户费根据账户类型从4加元到30加元不等——在EQ Bank或Tangerine等在线银行寻找免费账户。避免透支费用，永远不要花费超过您的余额——在手机上设置低余额警报。在您银行网络外的机器上取款，ATM费用可能为每次3到5加元——始终使用您自己银行的ATM。许多银行为第一年提供免费新移民账户，所以到达时一定要询问。"
+      ],
+      ar: [
+        "تفرض البنوك الكندية رسومًا على العديد من الخدمات التي لا يتوقعها المهاجرون الجدد. تتراوح رسوم الحساب الشهرية من 4 إلى 30 دولارًا حسب نوع الحساب — ابحث عن حسابات مجانية في البنوك عبر الإنترنت مثل EQ Bank أو Tangerine. تجنب رسوم السحب على المكشوف عن طريق عدم الإنفاق أكثر من رصيدك — قم بإعداد تنبيهات الرصيد المنخفض على هاتفك. يمكن أن تكون رسوم أجهزة الصراف الآلي من 3 إلى 5 دولارات لكل سحب في أجهزة خارج شبكة بنكك — استخدم دائمًا جهاز الصراف الآلي لبنكك الخاص. تقدم العديد من البنوك حسابات مجانية للمهاجرين الجدد خلال السنة الأولى فاسأل دائمًا عند وصولك."
+      ],
+      fr: [
+        "Les banques canadiennes facturent des frais pour de nombreux services que les nouveaux arrivants ne s'attendent pas. Les frais mensuels de compte vont de 4 à 30 $ selon le type de compte — recherchez des comptes gratuits dans les banques en ligne comme EQ Bank ou Tangerine. Évitez les frais de découvert en ne dépensant jamais plus que votre solde — configurez des alertes de solde faible sur votre téléphone. Les frais de guichet automatique peuvent être de 3 à 5 $ par retrait aux machines hors du réseau de votre banque — utilisez toujours le guichet automatique de votre propre banque. De nombreuses banques offrent des comptes gratuits pour les nouveaux arrivants pendant la première année, alors demandez toujours à votre arrivée."
+      ],
+      pa: [
+        "ਕੈਨੇਡੀਅਨ ਬੈਂਕ ਬਹੁਤ ਸਾਰੀਆਂ ਸੇਵਾਵਾਂ ਲਈ ਫੀਸਾਂ ਲੈਂਦੇ ਹਨ ਜਿਨ੍ਹਾਂ ਦੀ ਨਵੇਂ ਆਉਣ ਵਾਲਿਆਂ ਨੂੰ ਉਮੀਦ ਨਹੀਂ ਹੁੰਦੀ। ਮਹੀਨਾਵਾਰ ਖਾਤਾ ਫੀਸਾਂ ਖਾਤਾ ਦੀ ਕਿਸਮ ਦੇ ਅਨੁਸਾਰ $4 ਤੋਂ $30 ਤੱਕ ਹੁੰਦੀਆਂ ਹਨ — EQ Bank ਜਾਂ Tangerine ਵਰਗੇ ਆਨਲਾਈਨ ਬੈਂਕਾਂ ਵਿੱਚ ਮੁਫਤ ਖਾਤਿਆਂ ਦੀ ਖੋਜ ਕਰੋ। ਓਵਰਡਰਾਫਟ ਫੀਸਾਂ ਤੋਂ ਬਚਣ ਲਈ ਕਦੇ ਵੀ ਆਪਣੇ ਬੈਲੇਂਸ ਤੋਂ ਵੱਧ ਖਰਚ ਨ ਕਰੋ — ਆਪਣੇ ਫੋਨ 'ਤੇ ਘੱਟ ਬੈਲੇਂਸ ਚੇਤਾਵਨੀਆਂ ਸੈੱਟ ਕਰੋ। ATM ਫੀਸਾਂ ਤੁਹਾਡੇ ਬੈਂਕ ਨੈੱਟਵਰਕ ਤੋਂ ਬਾਹਰ ਮਸ਼ੀਨਾਂ 'ਤੇ ਹਰ ਵਾਢੀ ਲਈ $3 ਤੋਂ $5 ਹੋ ਸਕਦੀਆਂ ਹਨ — ਹਮੇਸ਼ਾ ਆਪਣੇ ਬੈਂਕ ਦਾ ATM ਵਰਤੋ। ਬਹੁਤ ਸਾਰੇ ਬੈਂਕ ਪਹਿਲੇ ਸਾਲ ਲਈ ਮੁਫਤ ਨਵੇਂ ਆਉਣ ਵਾਲਿਆਂ ਦੇ ਖਾਤੇ ਪੇਸ਼ ਕਰਦੇ ਹਨ, ਇਸ ਲਈ ਜਦੋਂ ਤੁਸੀਂ ਪਹੁੰਚਦੇ ਹੋ ਤਾਂ ਹਮੇਸ਼ਾ ਪੁੱਛੋ।"
+      ]
+    },
+    quiz: [
+      {
+        question: {
+          en: "Which type of bank often offers free accounts with no monthly fees?",
+          es: "¿Qué tipo de banco a menudo ofrece cuentas gratuitas sin tarifas mensuales?",
+          hi: "ਕਿਸ ਕਿਸਮ ਦੇ ਬੈਂਕ ਅਕਸਰ ਬਿਨਾ ਮਾਸਿਕ ਫੀਸਾਂ ਦੇ ਮੁਫਤ ਖਾਤੇ ਪੇਸ਼ ਕਰਦੇ ਹਨ?",
+          tl: "Aling uri ng bank ay madalas na nag-aalok ng mga free account na walang buwanang bayad?",
+          zh: "哪种类型的银行通常提供没有月费的免费账户？",
+          ar: "أي نوع من البنوك غالبًا ما يقدم حسابات مجانية بدون رسوم شهرية؟",
+          fr: "Quel type de banque offre souvent des comptes gratuits sans frais mensuels?",
+          pa: "ਕਿਸ ਕਿਸਮ ਦੇ ਬੈਂਕ ਅਕਸਰ ਬਿਨਾ ਮਾਸਿਕ ਫੀਸਾਂ ਦੇ ਮੁਫਤ ਖਾਤੇ ਪੇਸ਼ ਕਰਦੇ ਹਨ?"
+        },
+        options: {
+          en: ["Large traditional banks", "Online banks like EQ Bank"],
+          es: ["Grandes bancos tradicionales", "Bancos en línea como EQ Bank"],
+          hi: ["बड़े पारंपरिक बैंक", "EQ Bank जैसे ऑनलाइन बैंक"],
+          tl: ["Malalaking tradisyonal na bank", "Mga online bank tulad ng EQ Bank"],
+          zh: ["大型传统银行", "像EQ Bank这样的在线银行"],
+          ar: ["البنوك التقليدية الكبيرة", "البنوك عبر الإنترنت مثل EQ Bank"],
+          fr: ["Grandes banques traditionnelles", "Banques en ligne comme EQ Bank"],
+          pa: ["ਵੱਡੇ ਰਵਾਇਤੀ ਬੈਂਕ", "EQ Bank ਵਰਗੇ ਆਨਲਾਈਨ ਬੈਂਕ"]
+        },
+        correctIndex: 1
+      }
+    ]
   }
 ]
