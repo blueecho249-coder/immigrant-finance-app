@@ -162,7 +162,7 @@ export default function LessonDetail({ language }) {
   const t = content[language] || content.en
 
   return (
-    <div style={{padding: '20px', maxWidth: '800px', margin: '0 auto'}}>
+    <div style={{padding: '20px', maxWidth: '800px', margin: '0 auto', minHeight: '100vh', display: 'flex', flexDirection: 'column'}}>
       {/* Header */}
       <div style={{marginBottom: '30px'}}>
         <Link 
@@ -179,9 +179,14 @@ export default function LessonDetail({ language }) {
         >
           {t.back}
         </Link>
+      </div>
+      
+      {/* Main Content */}
+      <div style={{flex: 1, display: 'flex', flexDirection: 'column'}}>
         <h1 style={{fontSize: '32px', fontWeight: 'bold', color: '#1f2937', marginBottom: '10px'}}>
           {lesson.title[language] || lesson.title.en}
         </h1>
+        
         {lessonComplete && (
           <div style={{
             backgroundColor: '#10b981',
@@ -195,20 +200,20 @@ export default function LessonDetail({ language }) {
             {t.complete}
           </div>
         )}
-      </div>
-
-      {/* Content */}
-      <div style={{marginBottom: '40px'}}>
-        {(lesson.content[language] || lesson.content.en).map((paragraph, index) => (
-          <p key={index} style={{
-            fontSize: '18px',
-            lineHeight: '1.6',
-            color: '#4b5563',
-            marginBottom: '16px'
-          }}>
-            {paragraph}
-          </p>
-        ))}
+        
+        {/* Content */}
+        <div style={{marginBottom: '40px'}}>
+          {(lesson.content[language] || lesson.content.en).map((paragraph, index) => (
+            <p key={index} style={{
+              fontSize: '18px',
+              lineHeight: '1.6',
+              color: '#4b5563',
+              marginBottom: '16px'
+            }}>
+              {paragraph}
+            </p>
+          ))}
+        </div>
       </div>
 
       {/* Quiz Section */}
@@ -217,7 +222,8 @@ export default function LessonDetail({ language }) {
           backgroundColor: '#f9fafb',
           padding: '24px',
           borderRadius: '12px',
-          border: '1px solid #e5e7eb'
+          border: '1px solid #e5e7eb',
+          marginTop: 'auto'
         }}>
           <h2 style={{fontSize: '20px', fontWeight: 'bold', color: '#1f2937', marginBottom: '16px'}}>
             Quiz
@@ -232,7 +238,7 @@ export default function LessonDetail({ language }) {
           }}>
             {t.quizProgress}
           </div>
-
+          
           {/* Question */}
           <p style={{fontSize: '18px', color: '#4b5563', marginBottom: '20px'}}>
             {currentQuiz.question[language] || currentQuiz.question.en}
@@ -269,7 +275,7 @@ export default function LessonDetail({ language }) {
               </button>
             ))}
           </div>
-
+          
           {/* Result Message */}
           {showResult && (
             <div style={{
@@ -300,42 +306,44 @@ export default function LessonDetail({ language }) {
                   {t.tryAgain}
                 </button>
               )}
-              {isCorrect && currentQuizIndex < lesson.quizzes.length - 1 && (
-                <button
-                  onClick={handleNextQuiz}
-                  style={{
-                    marginTop: '12px',
-                    padding: '8px 16px',
-                    backgroundColor: '#10b981',
-                    color: 'white',
-                    border: 'none',
-                    borderRadius: '6px',
-                    cursor: 'pointer',
-                    fontSize: '14px'
-                  }}
-                >
-                  {t.next}
-                </button>
-              )}
-              {isCorrect && currentQuizIndex === lesson.quizzes.length - 1 && (
-                <button
-                  onClick={handleNextQuiz}
-                  style={{
-                    marginTop: '12px',
-                    padding: '8px 16px',
-                    backgroundColor: '#10b981',
-                    color: 'white',
-                    border: 'none',
-                    borderRadius: '6px',
-                    cursor: 'pointer',
-                    fontSize: '14px'
-                  }}
-                >
-                  {t.finishLesson}
-                </button>
-              )}
             </div>
           )}
+          
+          {/* Navigation Buttons */}
+          <div style={{marginTop: '20px', display: 'flex', gap: '12px', justifyContent: 'center'}}>
+            {isCorrect && currentQuizIndex < lesson.quizzes.length - 1 && (
+              <button
+                onClick={handleNextQuiz}
+                style={{
+                  padding: '8px 16px',
+                  backgroundColor: '#10b981',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '6px',
+                  cursor: 'pointer',
+                  fontSize: '14px'
+                }}
+              >
+                {t.next}
+              </button>
+            )}
+            {isCorrect && currentQuizIndex === lesson.quizzes.length - 1 && (
+              <button
+                onClick={handleNextQuiz}
+                style={{
+                  padding: '8px 16px',
+                  backgroundColor: '#10b981',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '6px',
+                  cursor: 'pointer',
+                  fontSize: '14px'
+                }}
+              >
+                {t.finishLesson}
+              </button>
+            )}
+          </div>
         </div>
       )}
 
