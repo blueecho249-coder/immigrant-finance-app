@@ -200,8 +200,8 @@ export default function Learn({ language }) {
                 <div className="p-8">
                   {/* Faint Grey Lock Overlay for Premium Lessons */}
                   {isPremiumLesson && (
-                    <div className="absolute top-3 right-3 opacity-30">
-                      <svg className="h-16 w-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="absolute top-12 right-12 opacity-30">
+                      <svg className="h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                       </svg>
                     </div>
