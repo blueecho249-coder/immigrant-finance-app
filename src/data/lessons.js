@@ -6,6 +6,7 @@
 export const lessons = [
   {
     id: "building-credit",
+    isPremium: false,
     title: {
       en: "Building credit from zero",
       es: "Construir crédito desde cero",
@@ -159,6 +160,7 @@ export const lessons = [
   },
   {
     id: "banking-basics",
+    isPremium: false,
     title: {
       en: "Banking basics for newcomers",
       es: "Conceptos básicos de banca para recién llegados",
@@ -276,6 +278,7 @@ export const lessons = [
   },
   {
     id: "housing-fundamentals",
+    isPremium: true,
     title: {
       en: "Housing fundamentals for newcomers",
       es: "Fundamentos de vivienda para recién llegados",
@@ -378,6 +381,7 @@ export const lessons = [
   },
   {
     id: "tax-fundamentals",
+    isPremium: false,
     title: {
       en: "Tax fundamentals for newcomers",
       es: "Fundamentos de impuestos para recién llegados",
