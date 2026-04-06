@@ -712,5 +712,81 @@ export const lessons = [
         correctIndex: 1
       }
     ]
+  },
+  {
+    id: "tax-credits-benefits",
+    isPremium: true,
+    title: {
+      en: "Tax credits and benefits for newcomers",
+      es: "Créditos fiscales y beneficios para recién llegados",
+      hi: "नए आने वालों के लिए कर क्रेडिट और लाभ",
+      tl: "Mga tax credit at benepisyo para sa mga bagong dating",
+      zh: "新移民的税收抵免和福利",
+      ar: "الاعتمادات الضريبية والمزايا للمهاجرين الجدد",
+      fr: "Crédits d'impôt et prestations pour les nouveaux arrivants",
+      pa: "ਨਵੇਂ ਆਉਣ ਵਾਲਿਆਂ ਲਈ ਟੈਕਸ ਕ੍ਰੈਡਿਟ ਅਤੇ ਲਾਭ"
+    },
+    subtitle: {
+      en: "Free money from the government you might not know about",
+      es: "Dinero gratis del gobierno que podrías no conocer",
+      hi: "ਸਰਕਾਰ ਤੋਂ ਮੁਫਤ ਪੈਸਾ ਜਿਸ ਬਾਰੇ ਤੁਸੀਂ ਨਹੀਂ ਜਾਣਦੇ ਹੋ",
+      tl: "Libreng pera mula sa gobyerno na baka hindi mo alam",
+      zh: "您可能不知道的政府免费资金",
+      ar: "أموال مجانية من الحكومة قد لا تعرف عنها",
+      fr: "Argent gratuit du gouvernement que vous ne connaissez peut-être pas",
+      pa: "ਸਰਕਾਰ ਤੋਂ ਮੁਫਤ ਪੈਸੇ ਜਿਸ ਬਾਰੇ ਤੁਸੀਂ ਨਹੀਂ ਜਾਣਦੇ ਹੋ"
+    },
+    category: "Taxes",
+    content: {
+      en: [
+        "Canada has several tax credits and benefits that newcomers can claim — many people miss these and leave free money on the table. The GST/HST credit gives low and middle income earners up to $500 per year automatically when you file your taxes. The Canada Child Benefit gives families up to $7,000 per year per child under 18 — you must file taxes every year to keep receiving it. The Climate Action Incentive pays quarterly payments to residents of eligible provinces. You must file a tax return every year even if you have no income to receive these benefits."
+      ],
+      es: [
+        "Canadá tiene varios créditos fiscales y beneficios que los recién llegados pueden reclamar — muchas personas se pierden estos y dejan dinero gratis sobre la mesa. El crédito de GST/HST da a los trabajadores de ingresos bajos y medianos hasta $500 por año automáticamente cuando presentas tus impuestos. El Beneficio Canadiense para Niños da a las familias hasta $7,000 por año por niño menor de 18 — debes presentar impuestos cada año para seguir recibiéndolo. El Incentivo de Acción Climática paga pagos trimestrales a los residentes de provincias elegibles. Debes presentar una declaración de impuestos cada año incluso si no tienes ingresos para recibir estos beneficios."
+      ],
+      hi: [
+        "कनाडा में कई टैक्स क्रेडिट और लाभ हैं जिन्हें नए आने वाले दावा कर सकते हैं — कई लोग इन्हें चूक करते हैं और मुफ्त पैसे को टेबल पर छोड़ देते हैं। GST/HST क्रेडिट कम और मध्यम आय वालों को हर साल $500 तक स्वचालित रूप से देता है जब आप अपने टैक्स दाखिल करते हैं। कनाडा चाइल्ड बेनिफिट परिवारों को प्रति वर्ष प्रति 18 वर्ष से कम बच्चे के लिए $7,000 तक देता है — आपको इसे प्राप्त करने के लिए हर साल टैक्स दाखिल करने होंगे। क्लाइमेट एक्शन इंसेंटिव योग्य प्रांतों के निवासियों को त्रैमासिक भुगतान करता है। आपको इन लाभों को प्राप्त करने के लिए हर साल टैक्स रिटर्न दाखिल करना होगा भले ही आपकी कोई आय नहीं है।"
+      ],
+      tl: [
+        "Ang Canada ay may ilang tax credit at benepisyo na maaaring i-claim ng mga bagong dating — maraming tao ang nakakamiss nito at nag-iwan ng libreng pera sa mesa. Ang GST/HST credit ay nagbibigay sa mga low at middle income earners hanggang $500 bawat taon awtomatiko kapag i-file mo ang iyong mga buwis. Ang Canada Child Benefit ay nagbibigay sa mga pamilya hanggang $7,000 bawat taon bawat bata na wala pang 18 taong gulang — kailangan mong i-file ang mga buwis bawat taon upang magpatuloy sa pagtanggap nito. Ang Climate Action Incentive ay nagbabayad ng quarterly payments sa mga residente ng mga karatig-ang probinsya. Kailangan mong i-file ang tax return bawat taon kahit wala kang income upang makatanggap ng mga benepisyong ito."
+      ],
+      zh: [
+        "加拿大有几项新移民可以申请的税收抵免和福利——许多人错过了这些，留下了免费的资金。GST/HST抵免在您报税时自动给予中低收入者每年最高500加元。加拿大儿童福利为家庭提供每个18岁以下儿童每年最高7,000加元——您必须每年报税才能继续领取。气候行动激励措施向符合条件的省份居民支付季度付款。即使您没有收入，也必须每年报税才能获得这些福利。"
+      ],
+      ar: [
+        "كندا لديها عدة اعتمادات ضريبية ومزايا يمكن للمهاجرين الجدد المطالبة بها — الكثير من الناس يفوتون هذه ويتركون أموالاً مجانية على الطاولة. ائتمان ضريبة GST/HST يعطي أصحاب الدخل المنخفض والمتوسط حتى 500 دولار سنويًا تلقائيًا عند تقديم ضرائبك. مزايا الطفل الكندي تعطي العائلات حتى 7,000 دولار سنويًا لكل طفل تحت سن 18 — يجب عليك تقديم ضرائب كل عام لمواصلة استلامها. حافز العمل المناخي يدفع مدفوعات ربع سنوية لسكان المقاطع المؤهلة. يجب عليك تقديم إقرار ضريبي كل عام حتى لو لم يكن لديك دخل لتلقي هذه المزايا."
+      ],
+      fr: [
+        "Le Canada a plusieurs crédits d'impôt et prestations que les nouveaux arrivants peuvent réclamer — beaucoup de gens manquent ceux-ci et laissent de l'argent gratuit sur la table. Le crédit de TPS/TVH donne aux travailleurs à faible et moyen revenu jusqu'à 500 $ par année automatiquement lorsque vous déclarez vos impôts. La Prestation canadienne pour enfants donne aux familles jusqu'à 7,000 $ par année par enfant de moins de 18 ans — vous devez déclarer vos impôts chaque année pour continuer à la recevoir. L'Incitatif à l'action climatique verse des paiements trimestriels aux résidents des provinces admissibles. Vous devez déclarer une déclaration de revenus chaque année même si vous n'avez aucun revenu pour recevoir ces prestations."
+      ],
+      pa: [
+        "ਕੈਨੇਡਾ ਦੇ ਕਈ ਟੈਕਸ ਕ੍ਰੈਡਿਟ ਅਤੇ ਲਾਭ ਹਨ ਜਿਨ੍ਹਾਂ ਨੂੰ ਨਵੇਂ ਆਉਣ ਵਾਲੇ ਦਾਵਾ ਕਰ ਸਕਦੇ ਹਨ — ਬਹੁਤ ਸਾਰੇ ਲੋਕ ਇਹਨਾਂ ਨੂੰ ਚੁਕ ਜਾਂਦੇ ਹਨ ਅਤੇ ਟੇਬਲ 'ਤੇ ਮੁਫਤ ਪੈਸੇ ਛੱਡ ਦਿੰਦੇ ਹਨ। GST/HST ਕ੍ਰੈਡਿਟ ਘੱਟ ਅਤੇ ਦਰਮਿਆਨੀ ਆਮਦਨ ਵਾਲਿਆਂ ਨੂੰ ਹਰ ਸਾਲ $500 ਤੱਕ ਆਟੋਮੈਟਿਕ ਤੌਰ 'ਤੇ ਦਿੰਦਾ ਹੈ ਜਦੋਂ ਤੁਸੀਂ ਆਪਣੇ ਟੈਕਸ ਦਾਖਲ ਕਰਦੇ ਹੋ। ਕੈਨੇਡਾ ਚਾਈਲਡ ਬੇਨਿਫਿਟ ਪਰਿਵਾਰਾਂ ਨੂੰ ਹਰ ਸਾਲ ਹਰ 18 ਸਾਲ ਤੋਂ ਘੱਟ ਬੱਚੇ ਦੇ ਲਈ $7,000 ਤੱਕ ਦਿੰਦਾ ਹੈ — ਤੁਹਾਨੂੰ ਇਸ ਨੂੰ ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ ਹਰ ਸਾਲ ਟੈਕਸ ਦਾਖਲ ਕਰਨੇ ਪਵੇਗੇ। ਕਲਾਈਮੇਟ ਐਕਸ਼ਨ ਇੰਸੈਂਟਿਵ ਯੋਗ ਪ੍ਰਾਂਤਾਂ ਦੇ ਨਿਵਾਸੀਆਂ ਨੂੰ ਤਿਮਾਹੀ ਭੁਗਤਾਨ ਕਰਦਾ ਹੈ। ਤੁਹਾਨੂੰ ਇਹਨਾਂ ਲਾਭ ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ ਹਰ ਸਾਲ ਟੈਕਸ ਰਿਟਰਨ ਦਾਖਲ ਕਰਨਾ ਪਵੇਗਾ ਭਲੇ ਹੀ ਤੁਹਾਡੀ ਕੋਈ ਆਮਦਨ ਨਹੀਂ ਹੈ।"
+      ]
+    },
+    quiz: [
+      {
+        question: {
+          en: "Do you need to file a tax return to receive Canadian government benefits like the GST credit?",
+          es: "¿Necesitas presentar una declaración de impuestos para recibir beneficios del gobierno canadiense como el crédito de GST?",
+          hi: "क्या आपको कैनेडीअन सरकारी लाभ जैसे GST क्रेडिट प्राप्त करने के लिए टैक्स रिटर्न दाखिल करना होगा?",
+          tl: "Kailangan mo bang i-file ang tax return upang makatanggap ng mga benepisyo ng gobyerno ng Canada tulad ng GST credit?",
+          zh: "您需要报税才能获得像GST抵免这样的加拿大政府福利吗？",
+          ar: "هل تحتاج إلى تقديم إقرار ضريبي لتلقي مزايا الحكومة الكندية مثل ائتمان ضريبة GST?",
+          fr: "Devez-vous déclarer une déclaration de revenus pour recevoir les prestations du gouvernement canadien comme le crédit de TPS?",
+          pa: "ਕੀ ਤੁਹਾਨੂੰ ਕੈਨੇਡੀਅਨ ਸਰਕਾਰੀ ਲਾਭ ਜਿਵੇਂ GST ਕ੍ਰੈਡਿਟ ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ ਟੈਕਸ ਰਿਟਰਨ ਦਾਖਲ ਕਰਨਾ ਪਵੇਗਾ?"
+        },
+        options: {
+          en: ["No — benefits are automatic", "Yes — you must file every year"],
+          es: ["No — los beneficios son automáticos", "Sí — debes presentar cada año"],
+          hi: ["नहीं — लाभ स्वचालित हैं", "हाँ — आपको हर साल दाखिल करना होगा"],
+          tl: ["Hindi — awtomatiko ang mga benepisyo", "Oo — kailang mag-file bawat taon"],
+          zh: ["不需要——福利是自动的", "是的——您必须每年报税"],
+          ar: ["لا — المزايا تلقائية", "نعم — يجب عليك التقديم كل عام"],
+          fr: ["Non — les prestations sont automatiques", "Oui — vous devez déclarer chaque année"],
+          pa: ["ਨਹੀਂ — ਲਾਭ ਆਟੋਮੈਟਿਕ ਹਨ", "ਹਾਂ — ਤੁਹਾਨੂੰ ਹਰ ਸਾਲ ਦਾਖਲ ਕਰਨਾ ਪਵੇਗਾ"]
+        },
+        correctIndex: 1
+      }
+    ]
   }
 ]
