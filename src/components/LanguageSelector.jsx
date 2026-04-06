@@ -56,6 +56,11 @@ export default function LanguageSelector({ onLanguageChange }) {
         {/* Current Language Flag and Name */}
         <span className="text-base font-semibold">{selectedLanguage.flag} {selectedLanguage.name}</span>
         
+        {/* Current Language Name in Black Circle */}
+        <div className="ml-3 h-8 w-8 rounded-full bg-gray-900 flex items-center justify-center shadow-md">
+          <span className="text-white text-sm font-bold px-2">{selectedLanguage.code.toUpperCase()}</span>
+        </div>
+        
         {/* Down Arrow */}
         <svg 
           className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} 
