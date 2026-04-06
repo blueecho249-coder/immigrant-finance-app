@@ -61,8 +61,8 @@ export default function LanguageSelector({ onLanguageChange }) {
         </div>
         
         {/* Current Language Name in Black Circle */}
-        <div className="ml-3 h-8 w-8 rounded-full bg-gray-900 flex items-center justify-center shadow-md">
-          <span className="text-white text-sm font-bold px-2">{selectedLanguage.code.toUpperCase()}</span>
+        <div className="ml-2 h-6 w-6 rounded-full bg-gray-900 flex items-center justify-center shadow-md">
+          <span className="text-white text-xs font-bold">{selectedLanguage.code.toUpperCase()}</span>
         </div>
         
         {/* Down Arrow */}
