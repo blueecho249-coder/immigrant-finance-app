@@ -484,5 +484,81 @@ export const lessons = [
         correctIndex: 0
       }
     ]
+  },
+  {
+    id: "fix-bad-credit",
+    isPremium: true,
+    title: {
+      en: "How to fix a bad credit score",
+      es: "Cómo arreglar una mala puntuación de crédito",
+      hi: "खराब क्रेडिट स्कोर को कैसे ठीक करें",
+      tl: "Kung paano ayusin ang isang masamang credit score",
+      zh: "如何修复不良信用评分",
+      ar: "كيفية إصلاح درجة الائتمان السيئة",
+      fr: "Comment réparer un mauvais score de crédit",
+      pa: "ਮਾੜੇ ਕ੍ਰੈਡਿਟ ਸਕੋਰ ਨੂੰ ਕਿਵੇਂ ਠੀਕ ਕਰੀਏ"
+    },
+    subtitle: {
+      en: "Steps to rebuild your credit after mistakes",
+      es: "Pasos para reconstruir tu crédito después de errores",
+      hi: "ਗਲਤੀਆਂ ਤੋਂ ਬਾਅਦ ਆਪਣੇ ਕ੍ਰੈਡਿਟ ਨੂੰ ਦੁਬਾਰਾ ਬਣਾਉਣ ਦੇ ਪਗ",
+      tl: "Mga hakbang na muling itayo ang iyong credit matapos ang mga pagkakamali",
+      zh: "犯错后重建信用的步骤",
+      ar: "خطوات إعادة بناء الائتمان بعد الأخطاء",
+      fr: "Étapes pour reconstruire votre crédit après des erreurs",
+      pa: "ਗਲਤੀਆਂ ਤੋਂ ਬਾਅਦ ਆਪਣੇ ਕ੍ਰੈਡਿਟ ਨੂੰ ਦੁਬਾਰਾ ਬਣਾਉਣ ਦੇ ਪਗ"
+    },
+    category: "Credit",
+    content: {
+      en: [
+        "A bad credit score is not permanent. The first step is to check your credit report for errors at Equifax or TransUnion — mistakes are common and can be disputed for free. Next pay all current bills on time every month — even one on time payment starts to rebuild trust. Keep your credit card balance below 30% of your limit and avoid applying for new credit while rebuilding. Most negative marks disappear from your report after 6 to 7 years in Canada."
+      ],
+      es: [
+        "Una mala puntuación de crédito no es permanente. El primer paso es verificar su informe de crédito en busca de errores en Equifax o TransUnion — los errores son comunes y pueden disputarse gratuitamente. Luego pague todas las facturas actuales a tiempo cada mes — incluso un pago a tiempo comienza a reconstruir la confianza. Mantenga el saldo de su tarjeta de crédito por debajo del 30% de su límite y evite solicitar nuevo crédito mientras reconstruye. La mayoría de las marcas negativas desaparecen de su informe después de 6 a 7 años en Canadá."
+      ],
+      hi: [
+        "एक खराब क्रेडिट स्कोर स्थायी नहीं है। पहला कदम Equifax या TransUnion पर अपने क्रेडिट रिपोर्ट में त्रुटियों की जांच करना है — गलतियाँ आम हैं और मुफ्त में विवादित की जा सकती हैं। अगले हर महीने सभी वर्तमान बिल समय पर भुगतान करें — यहां तक कि एक समय पर भुगतान भी भरोसा पुनर्निर्माण शुरू करता है। अपने क्रेडिट कार्ड बैलेंस को अपनी सीमा के 30% से नीचे रखें और पुनर्निर्माण के दौरान नए क्रेडिट के लिए आवेदन करने से बचें। कनाडा में 6 से 7 साल बाद अधिकांश नकारात्मक चिह्न आपकी रिपोर्ट से गायब हो जाते हैं।"
+      ],
+      tl: [
+        "Ang isang masamang credit score ay hindi permanente. Ang unang hakbang ay suriin ang iyong credit report para sa mga error sa Equifax o TransUnion — ang mga mali ay karaniwan at maaaring itulak nang libre. Susunod na bayaran ang lahat ng kasalukuyang bills sa takda bawat buwan — kahit isang bayad sa takda ay nagsisimulang muling itayo ang tiwala. Panatilihin ang iyong credit card balance sa ibaba ng 30% ng iyong limit at iwasan ang paglalapat para sa bagong credit habang nagsisimula. Karamihan sa mga negatibong marka ay naglalaho sa iyong report matapos ang 6 hanggang 7 taon sa Canada."
+      ],
+      zh: [
+        "不良信用评分不是永久的。第一步是检查您在Equifax或TransUnion的信用报告是否有错误——错误很常见，可以免费争议。接下来每月按时支付所有当前账单——即使一次按时付款也开始重建信任。将您的信用卡余额保持在限额的30%以下，并在重建期间避免申请新信用。在加拿大，大多数负面标记会在6到7年后从您的报告中消失。"
+      ],
+      ar: [
+        "درجة الائتمان السيئة ليست دائمة. الخطوة الأولى هي فحص تقرير الائتمان الخاص بك بحثًا عن أخطاء في Equifax أو TransUnion — الأخطاء شائعة ويمكن الطعن فيها مجانًا. بعد ذلك قم بسداد جميع الفواتير الحالية في الوقت المحدد كل شهر — حتى دفعة واحدة في الوقت المحدد تبدأ في إعادة بناء الثقة. حافظ على رصيد بطاقة الائتمان أقل من 30% من حدودك وتجنب التقدم للحصول على ائتمان جديد أثناء إعادة البناء. معظم العلامات السلبية تختفي من تقريرك بعد 6 إلى 7 سنوات في كندا."
+      ],
+      fr: [
+        "Un mauvais score de crédit n'est pas permanent. La première étape est de vérifier votre rapport de crédit pour des erreurs chez Equifax ou TransUnion — les erreurs sont courantes et peuvent être contestées gratuitement. Ensuite, payez toutes les factures actuelles à temps chaque mois — même un paiement à temps commence à reconstruire la confiance. Maintenez le solde de votre carte de crédit en dessous de 30% de votre limite et évitez de demander un nouveau crédit pendant la reconstruction. La plupart des marques négatives disparaissent de votre rapport après 6 à 7 ans au Canada."
+      ],
+      pa: [
+        "ਇੱਕ ਮਾੜਾ ਕ੍ਰੈਡਿਟ ਸਕੋਰ ਸਥਾਈ ਨਹੀਂ ਹੈ। ਪਹਿਲਾਂ ਕਦਮ Equifax ਜਾਂ TransUnion 'ਤੇ ਆਪਣੇ ਕ੍ਰੈਡਿਟ ਰਿਪੋਰਟ ਵਿੱਚ ਗਲਤੀਆਂ ਲਈ ਜਾਂਚ ਕਰਨਾ ਹੈ — ਗਲਤੀਆਂ ਆਮ ਹਨ ਅਤੇ ਮੁਫਤ ਵਿੱਚ ਵਿਵਾਦ ਕੀਤੀਆਂ ਜਾ ਸਕਦੀਆਂ ਹਨ। ਅਗਲਾ ਹਰ ਮਹੀਨੇ ਸਾਰੇ ਮੌਜੂਦਾ ਬਿਲ ਸਮੇਂ 'ਤੇ ਭੁਗਤਾਨ ਕਰੋ — ਇੱਥੋਂ ਤੱਕ ਕਿ ਇੱਕ ਸਮੇਂ 'ਤੇ ਭੁਗਤਾਨ ਵੀ ਭਰੋਸਾ ਦੁਬਾਰਾ ਬਣਾਉਣਾ ਸ਼ੁਰੂ ਹੁੰਦਾ ਹੈ। ਆਪਣੇ ਕ੍ਰੈਡਿਟ ਕਾਰਡ ਬੈਲੇਂਸ ਨੂੰ ਆਪਣੀ ਸੀਮਾ ਦੇ 30% ਤੋਂ ਹੇਠਾਂ ਰੱਖੋ ਅਤੇ ਦੁਬਾਰਾ ਬਣਾਉਣ ਦੌਰਾਨ ਨਵੇਂ ਕ੍ਰੈਡਿਟ ਲਈ ਅਰਜ਼ੀ ਦੇਣ ਤੋਂ ਬਚੋ। ਕੈਨੇਡਾ ਵਿੱਚ 6 ਤੋਂ 7 ਸਾਲ ਬਾਅਦ ਬਹੁਤੇ ਨਕਾਰਾਤਮਕ ਨਿਸ਼ਾਨ ਤੁਹਾਡੀ ਰਿਪੋਰਟ ਤੋਂ ਗਾਇਬ ਹੋ ਜਾਂਦੇ ਹਨ।"
+      ]
+    },
+    quiz: [
+      {
+        question: {
+          en: "How long do most negative marks stay on your Canadian credit report?",
+          es: "¿Cuánto tiempo permanecen la mayoría de las marcas negativas en su informe de crédito canadiense?",
+          hi: "ਕੈਨੇਡੀਅਨ ਕ੍ਰੈਡਿਟ ਰਿਪੋਰਟ 'ਤੇ ਬਹੁਤੇ ਨਕਾਰਾਤਮਕ ਨਿਸ਼ਾਨ ਕਿੰਨੇ ਸਮੇਂ ਰਹਿੰਦੇ ਹਨ?",
+          tl: "Gaano katagal ang karamihan sa mga negatibong marka nananatili sa iyong Canadian credit report?",
+          zh: "大多数负面标记在您的加拿大信用报告上保留多长时间？",
+          ar: "كم من الوقت تبقى معظم العلامات السلبية في تقرير الائتمان الكندي الخاص بك؟",
+          fr: "Combien de temps la plupart des marques négatives restent-elles sur votre rapport de crédit canadien?",
+          pa: "ਤੁਹਾਡੇ ਕੈਨੇਡੀਅਨ ਕ੍ਰੈਡਿਟ ਰਿਪੋਰਟ 'ਤੇ ਬਹੁਤੇ ਨਕਾਰਾਤਮਕ ਨਿਸ਼ਾਨ ਕਿੰਨੇ ਸਮੇਂ ਰਹਿੰਦੇ ਹਨ?"
+        },
+        options: {
+          en: ["2 to 3 years", "6 to 7 years"],
+          es: ["2 a 3 años", "6 a 7 años"],
+          hi: ["2 ਤੋਂ 3 ਸਾਲ", "6 ਤੋਂ 7 ਸਾਲ"],
+          tl: ["2 hanggang 3 taon", "6 hanggang 7 taon"],
+          zh: ["2到3年", "6到7年"],
+          ar: ["2 إلى 3 سنوات", "6 إلى 7 سنوات"],
+          fr: ["2 à 3 ans", "6 à 7 ans"],
+          pa: ["2 ਤੋਂ 3 ਸਾਲ", "6 ਤੋਂ 7 ਸਾਲ"]
+        },
+        correctIndex: 1
+      }
+    ]
   }
 ]
