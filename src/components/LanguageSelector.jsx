@@ -55,7 +55,8 @@ export default function LanguageSelector({ onLanguageChange }) {
         
         {/* Current Language Flag and Name */}
         <div className="flex items-center">
-          <span className="text-3xl mr-2">{selectedLanguage.flag}</span>
+          <span className="text-3xl">{selectedLanguage.flag}</span>
+          <div className="border-l border-gray-300 h-6 mx-2"></div>
           <span className="text-base font-semibold">{selectedLanguage.name}</span>
         </div>
         
