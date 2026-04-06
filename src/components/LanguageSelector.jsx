@@ -54,7 +54,10 @@ export default function LanguageSelector({ onLanguageChange }) {
         </svg>
         
         {/* Current Language Flag and Name */}
-        <span className="text-base font-semibold">{selectedLanguage.flag} {selectedLanguage.name}</span>
+        <div className="flex items-center">
+          <span className="text-3xl mr-2">{selectedLanguage.flag}</span>
+          <span className="text-base font-semibold">{selectedLanguage.name}</span>
+        </div>
         
         {/* Current Language Name in Black Circle */}
         <div className="ml-3 h-8 w-8 rounded-full bg-gray-900 flex items-center justify-center shadow-md">
