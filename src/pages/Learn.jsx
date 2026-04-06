@@ -198,6 +198,15 @@ export default function Learn({ language }) {
                 <div className="h-3" style={{ backgroundColor: colors.border }}></div>
                 
                 <div className="p-8">
+                  {/* Faint Grey Lock Overlay for Premium Lessons */}
+                  {isPremiumLesson && (
+                    <div className="absolute top-3 right-3 opacity-30">
+                      <svg className="h-16 w-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                      </svg>
+                    </div>
+                  )}
+                  
                   {/* Category Badge */}
                   <div className="mb-6">
                     <span 
@@ -220,15 +229,17 @@ export default function Learn({ language }) {
                   </p>
                   
                   {isPremiumLesson ? (
-                    <button
+                    <a
+                      href="https://blueecho3.gumroad.com/l/btyknk"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={`inline-flex items-center justify-center w-full py-4 px-6 rounded-2xl font-bold transition-all hover:opacity-90 transform hover:scale-105 shadow-lg bg-gradient-to-r from-amber-500 to-amber-600 text-white`}
-                      onClick={() => alert('Premium subscription required to access this lesson!')}
                     >
                       <svg className="mr-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                       </svg>
                       {t.upgradeToPremium}
-                    </button>
+                    </a>
                   ) : (
                     <Link
                       to={`/lesson/${lesson.id}`}
