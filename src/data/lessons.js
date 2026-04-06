@@ -636,5 +636,81 @@ export const lessons = [
         correctIndex: 1
       }
     ]
+  },
+  {
+    id: "understanding-lease",
+    isPremium: true,
+    title: {
+      en: "Understanding your lease agreement",
+      es: "Entendiendo tu contrato de arrendamiento",
+      hi: "अपने लीज़ समझौते को समझना",
+      tl: "Pag-unawa sa iyong kasunduan sa pag-upa",
+      zh: "理解您的租赁协议",
+      ar: "فهم اتفاقية الإيجار الخاصة بك",
+      fr: "Comprendre votre contrat de location",
+      pa: "ਆਪਣੇ ਲੀਜ਼ ਇਕਰਾਰਾ ਨੂੰ ਸਮਝਣਾ"
+    },
+    subtitle: {
+      en: "What to read before you sign a rental contract",
+      es: "Qué leer antes de firmar un contrato de alquiler",
+      hi: "ਕਿਰਾਏ ਦੇ ਸਮਝੌਤੇ 'ਤੇ ਦਸਤਖਤ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਕੀ ਪੜ੍ਹਨਾ ਹੈ",
+      tl: "Kung ano ang basahin bago ka mag-sign ng kasunduan sa pag-upa",
+      zh: "在签署租赁合同之前要阅读什么",
+      ar: "ماذا تقرأ قبل توقيع عقد الإيجار",
+      fr: "Que lire avant de signer un contrat de location",
+      pa: "ਕਿਰਾਏ ਦੇ ਸਮਝੌਤੇ 'ਤੇ ਦਸਤਖਤ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਕੀ ਪੜ੍ਹਨਾ ਹੈ"
+    },
+    category: "Housing",
+    content: {
+      en: [
+        "A lease is a legal contract between you and your landlord — read every word before signing. Check the rent amount, due date, and what utilities are included like heat water and electricity. Look for rules about guests, pets, and subletting — breaking these can result in eviction. Your landlord must give you proper notice before entering your unit — usually 24 hours in most provinces. In Ontario your landlord cannot increase rent more than the government guideline percentage each year — know your rights as a tenant."
+      ],
+      es: [
+        "Un contrato de arrendamiento es un contrato legal entre usted y su casero — lea cada palabra antes de firmar. Verifique el monto del alquiler, la fecha de vencimiento y qué servicios públicos están incluidos como calefacción, agua y electricidad. Busque reglas sobre invitados, mascotas y subarrendamiento — romper estas puede resultar en desalojo. Su casero debe darle aviso adecuado antes de ingresar a su unidad — generalmente 24 horas en la mayoría de las provincias. En Ontario su casero no puede aumentar el alquiler más que el porcentaje de la guía del gobierno cada año — conozca sus derechos como inquilino."
+      ],
+      hi: [
+        "एक लीज़ आप और आपके मकान मालिक के बीच एक कानूनी अनुबंध है — हस्ताक्षर करने से पहले हर शब्द पढ़ें। किराया राशि, नियत तिथि, और कौन से उपयोगिताएँ शामिल हैं जैसे गर्मी, पानी और बिजली जांचें। मेहमानों, पालतू जानवरों और उप-किराये के बारे में नियम खोजें — इन्हें तोड़ने से निकाली जा सकती है। आपके मकान मालिक को आपके यूनिट में प्रवेश करने से पहले आपको उचित सूचना देनी होगी — अधिकांश प्रांतों में आमतौर पर 24 घंटे। ओंटारियो में आपका मकान मालिक हर साल सरकारी दिशानिर्देश प्रतिशत से अधिक किराया नहीं बढ़ा सकता — एक किरायेदार के रूप में अपने अधिकार जानें।"
+      ],
+      tl: [
+        "Ang isang lease ay isang legal na kontrata sa pagitan mo at ng iyong landlord — basahin ang bawat salita bago mag-sign. Suriin ang halaga ng upa, ang due date, at kung ano ang mga utilities ay kasama tulad ng init, tubig at kuryente. Hanapin ang mga panuntunan tungkol sa mga bisita, alagang hayop, at pag-sublet — pagkasira sa mga ito ay maaaring magresulta sa pagkakatapon. Ang iyong landlord ay dapat magbigay sa iyo ng tamang paalala bago pumasok sa iyong unit — karaniwang 24 oras sa karamihan ng mga lalawigan. Sa Ontario ang iyong landlord ay hindi maaaring taasan ang upa higit sa porsyento ng gabay ng gobyerno bawat taon — alamin ang iyong karapatan bilang isang tenant."
+      ],
+      zh: [
+        "租赁是您与房东之间的法律合同——在签署之前请逐字阅读。检查租金金额、到期日期以及包含哪些公用事业费用，如暖气、水和电。查找关于客人、宠物和转租的规则——违反这些可能导致驱逐。您的房东必须在进入您的单元之前给您适当的通知——在大多数省份通常是24小时。在安大略省，您的房东每年不能将租金提高超过政府指导百分比——了解您作为租户的权利。"
+      ],
+      ar: [
+        "عقد الإيجار هو عقد قانوني بينك وبين المالك — اقرأ كل كلمة قبل التوقيع. تحقق من مبلغ الإيجار وتاريخ الاستحقاق وما هي المرافق المدرجة مثل التدفئة والماء والكهرباء. ابحث عن قواعد بشأن الضيوف والحيوانات الأليفة والإيجار الفرعي — كسر هذه قد يؤدي إلى الطرد. يجب على المالك أن يعطيك إشعارًا مناسبًا قبل دخول وحدتك — عادة 24 ساعة في معظم المقاطعات. في أونتاريو لا يمكن لمالك زيادة الإيجار أكثر من نسبة إرشادات الحكومة كل عام — اعرف حقوقك كمستأجر."
+      ],
+      fr: [
+        "Un bail est un contrat légal entre vous et votre propriétaire — lisez chaque mot avant de signer. Vérifiez le montant du loyer, la date d'échéance et les services publics inclus comme le chauffage, l'eau et l'électricité. Recherchez les règles concernant les invités, les animaux de compagnie et la sous-location — enfreindre celles-ci peut entraîner une expulsion. Votre propriétaire doit vous donner un préavis approprié avant d'entrer dans votre unité — généralement 24 heures dans la plupart des provinces. En Ontario, votre propriétaire ne peut pas augmenter le loyer de plus que le pourcentage directif du gouvernement chaque année — connaissez vos droits en tant que locataire."
+      ],
+      pa: [
+        "ਇੱਕ ਲੀਜ਼ ਤੁਹਾਡੇ ਅਤੇ ਤੁਹਾਡੇ ਮਕਾਨ ਮਾਲਕ ਦੇ ਵਿਚਕਾਰਨੀ ਇਕਰਾਰਾ ਹੈ — ਦਸਤਖਤ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਹਰ ਸ਼ਬਦ ਪੜ੍ਹੋ। ਕਿਰਾਏ ਦੀ ਰਕਮ, ਨਿਯਤ ਮਿਤੀ, ਅਤੇ ਕਿਹੜੇ ਉਪਯੋਗਿਤਾਂ ਸ਼ਾਮਲ ਹਨ ਜਿਵੇਂ ਗਰਮੀ, ਪਾਣੀ ਅਤੇ ਬਿਜਲੀ ਜਾਂਚੋ। ਮਹਿਮਾਨਾਂ, ਪਾਲਤੂਆਂ ਅਤੇ ਸਬ-ਲੀਜ਼ ਬਾਰੇ ਨਿਯਮ ਖੋਜੋ — ਇਹਨਾਂ ਤੋੜ੍ਹਨ ਨਾਲ ਕੱਢ੍ਹੇ ਜਾਣ ਦਾ ਨਤੀਜਾ ਹੋ ਸਕਦਾ ਹੈ। ਤੁਹਾਡੇ ਮਕਾਨ ਮਾਲਕ ਨੂੰ ਤੁਹਾਡੇ ਯੂਨਿਟ ਵਿੱਚ ਦਾਖਲ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਤੁਹਾਨੂੰ ਢੁੱਕਵੀਂ ਸੂਚਨਾ ਦੇਣੀ ਪਵੇਗੀ — ਬਹੁਤੇ ਸੂਬਿਆਂ ਵਿੱਚ ਆਮ ਤੌਰ 'ਤੇ 24 ਘੰਟੇ। ਓਨਟਾਰੀਓ ਵਿੱਚ ਤੁਹਾਡੇ ਮਕਾਨ ਮਾਲਕ ਹਰ ਸਾਲ ਸਰਕਾਰੀ ਦਿਸ਼ਾਟੇ ਪ੍ਰਤੀਸ਼ਤ ਤੋਂ ਵੱਧ ਕਿਰਾਇਆ ਨਹੀਂ ਵਧਾ ਸਕਦਾ — ਇੱਕ ਕਿਰਾਏਦਾਰ ਵਜੋਂ ਆਪਣੇ ਹੱਕ ਜਾਣੋ।"
+      ]
+    },
+    quiz: [
+      {
+        question: {
+          en: "How much notice must a landlord usually give before entering your rental unit in Canada?",
+          es: "¿Cuánto aviso debe dar un casero generalmente antes de ingresar a su unidad de alquiler en Canadá?",
+          hi: "ਕੈਨੇਡਾ ਵਿੱਚ ਆਪਣੇ ਕਿਰਾਏ ਦੀ ਯੂਨਿਟ ਵਿੱਚ ਦਾਖਲ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਇੱਕ ਮਕਾਨ ਮਾਲਕ ਨੂੰ ਕਿੰਨੀ ਸੂਚਨਾ ਦੇਣੀ ਚਾਹੀਦੀ ਹੈ?",
+          tl: "Gaano kahaba ang dapat ibigay ng isang landlord bago pumasok sa iyong rental unit sa Canada?",
+          zh: "在加拿大，房东在进入您的出租单元之前通常需要提前多久通知？",
+          ar: "كم من الإشعار يجب على المالك عادة إعطاؤه قبل دخول وحدتك الإيجارية في كندا؟",
+          fr: "Combien de préavis un propriétaire doit-il généralement donner avant d'entrer dans votre unité de location au Canada?",
+          pa: "ਕੈਨੇਡਾ ਵਿੱਚ ਆਪਣੇ ਕਿਰਾਏ ਦੀ ਯੂਨਿਟ ਵਿੱਚ ਦਾਖਲ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਇੱਕ ਮਕਾਨ ਮਾਲਕ ਨੂੰ ਕਿੰਨੀ ਸੂਚਨਾ ਦੇਣੀ ਚਾਹੀਦੀ ਹੈ?"
+        },
+        options: {
+          en: ["No notice required", "Usually 24 hours notice"],
+          es: ["No se requiere aviso", "Generalmente 24 horas de aviso"],
+          hi: ["ਕੋਈ ਸੂਚਨਾ ਦੀ ਲੋੜ ਨਹੀਂ", "ਆਮ ਤੌਰ 'ਤੇ 24 ਘੰਟੇ ਦੀ ਸੂਚਨਾ"],
+          tl: ["Walang kinakailangang paalala", "Karaniwang 24 oras na paalala"],
+          zh: ["无需通知", "通常24小时通知"],
+          ar: ["لا يلزم إشعار", "عادة 24 ساعة إشعار"],
+          fr: ["Aucun préavis requis", "Généralement 24 heures de préavis"],
+          pa: ["ਕੋਈ ਸੂਚਨਾ ਦੀ ਲੋੜ ਨਹੀਂ", "ਆਮ ਤੌਰ 'ਤੇ 24 ਘੰਟੇ ਦੀ ਸੂਚਨਾ"]
+        },
+        correctIndex: 1
+      }
+    ]
   }
 ]
