@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { lessons } from '../data/lessons.js'
+import SEO from '../components/SEO.jsx'
 
 export default function LessonDetail({ language }) {
   const { id } = useParams()
@@ -162,7 +163,16 @@ export default function LessonDetail({ language }) {
   const t = content[language] || content.en
 
   return (
-    <div style={{padding: '20px', maxWidth: '800px', margin: '0 auto', minHeight: '100vh', display: 'flex', flexDirection: 'column'}}>
+    <>
+      <SEO 
+        title={`${lesson.title[language] || lesson.title.en} - ${lesson.category} Lesson | NewStart Finance`}
+        description={`Learn ${lesson.category.toLowerCase()} with expert-led lessons. ${(lesson.content[language] || lesson.content.en)[0]?.substring(0, 100) || 'Master essential financial skills'} Available in 8 languages for newcomers to Canada and USA.`}
+        keywords={`${lesson.category.toLowerCase()} education, financial literacy, ${lesson.title[language] || lesson.title.en}, newcomer finance, multilingual lessons`}
+        canonicalUrl={`https://newstart-finance.com/lesson/${lesson.id}`}
+        ogImage={`https://newstart-finance.com/lesson-${lesson.id}.jpg`}
+        type="article"
+      />
+      <div style={{padding: '20px', maxWidth: '800px', margin: '0 auto', minHeight: '100vh', display: 'flex', flexDirection: 'column'}}>
       {/* Header */}
       <div style={{marginBottom: '30px'}}>
         <Link 
@@ -380,5 +390,6 @@ export default function LessonDetail({ language }) {
         </div>
       )}
     </div>
+    </>
   )
 }

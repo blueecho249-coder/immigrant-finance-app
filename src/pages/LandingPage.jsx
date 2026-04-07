@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import LanguageSelector from '../components/LanguageSelector.jsx'
+import SEO from '../components/SEO.jsx'
 import { useState, useEffect } from 'react'
 
 export default function LandingPage({ language, onLanguageChange }) {
@@ -258,7 +259,15 @@ export default function LandingPage({ language, onLanguageChange }) {
   const t = content[language] || content.en
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-50">
+    <>
+      <SEO 
+        title="NewStart Finance — Financial Literacy for Newcomers | Learn Banking, Credit"
+        description="Learn financial literacy for newcomers to Canada and USA. Master banking, credit, housing, taxes, and saving with free expert-led courses in 8 languages. Start your financial journey today."
+        keywords="financial literacy, newcomer finance, Canada banking, US credit, housing, taxes, saving, immigrant finance, financial education, multilingual finance, expert-led courses"
+        canonicalUrl="https://newstart-finance.com"
+        ogImage="https://newstart-finance.com/og-home.jpg"
+      />
+      <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-teal-50">
       {/* Mobile Layout */}
       <div className="md:hidden">
         <div className="mx-auto max-w-phone px-4 sm:px-5">
@@ -688,7 +697,7 @@ export default function LandingPage({ language, onLanguageChange }) {
           </div>
         </div>
       )}
-
     </div>
+    </>
   )
 }

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { lessons } from '../data/lessons.js'
 import Header from '../components/Header.jsx'
+import SEO from '../components/SEO.jsx'
 
 export default function Learn({ language }) {
   const [selectedCategory, setSelectedCategory] = useState('All')
@@ -22,7 +23,28 @@ export default function Learn({ language }) {
       categories: "Categories",
       noLessons: "No lessons found in this category.",
       progressBanner: "0 of 20 lessons complete",
-      motivationalMessage: "Start your financial journey today"
+      motivationalMessage: "Start your financial journey today",
+      faq: {
+        title: "Frequently Asked Questions",
+        questions: [
+          {
+            q: "Are these financial lessons really free?",
+            a: "Yes! All basic lessons are completely free. Only premium lessons require a small one-time payment to unlock advanced content."
+          },
+          {
+            q: "How long does each lesson take to complete?",
+            a: "Most lessons take 15-30 minutes to complete, including the quiz. You can learn at your own pace and return anytime."
+          },
+          {
+            q: "Can I access lessons in multiple languages?",
+            a: "Absolutely! All lessons are available in 8 languages: English, Spanish, Hindi, Tagalog, Mandarin, Arabic, French, and Punjabi."
+          },
+          {
+            q: "Do I get a certificate after completing lessons?",
+            a: "While we don't provide formal certificates, your progress is tracked and you can see your completed lessons in your account."
+          }
+        ]
+      }
     },
     es: {
       title: "Lecciones Financieras",
@@ -118,9 +140,17 @@ export default function Learn({ language }) {
   }
 
   return (
-    <div>
-      <Header onLanguageChange={language} />
-      <div className="px-4 py-6">
+    <>
+      <SEO 
+        title="Financial Lessons - Learn Banking, Credit, Housing | NewStart Finance"
+        description="Learn financial literacy with expert-led lessons on banking, credit, housing, taxes, and saving. Available in 8 languages for newcomers to Canada and USA."
+        keywords="financial lessons, banking courses, credit education, housing finance, tax education, saving lessons, newcomer finance, multilingual financial education"
+        canonicalUrl="https://newstart-finance.com/learn"
+        ogImage="https://newstart-finance.com/og-learn.jpg"
+      />
+      <div>
+        <Header onLanguageChange={language} />
+        <div className="px-4 py-6">
         {/* Progress Banner */}
         <div className="mb-8 bg-gradient-to-r from-indigo-50 to-teal-50 border-2 border-indigo-200/60 rounded-3xl p-8 shadow-lg animate-fadeInUp">
           <div className="flex items-center justify-between">
@@ -274,6 +304,42 @@ export default function Learn({ language }) {
           </div>
         )}
       </div>
+      
+      {/* FAQ Section */}
+      <div className="mt-16 mb-8 animate-fadeInUp">
+        <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-xl p-8 border border-gray-200/60">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">{t.faq.title}</h2>
+          <div className="space-y-6">
+            {t.faq.questions.map((item, index) => (
+              <div key={index} className="border-b border-gray-200 pb-6 last:border-b-0">
+                <button
+                  className="w-full text-left group"
+                  onClick={() => {
+                    const element = document.getElementById(`faq-${index}`)
+                    if (element) {
+                      element.classList.toggle('hidden')
+                    }
+                  }}
+                >
+                  <div className="flex items-center justify-between py-3">
+                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
+                      {item.q}
+                    </h3>
+                    <svg className="h-5 w-5 text-gray-400 group-hover:text-indigo-600 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7 7" />
+                    </svg>
+                  </div>
+                </button>
+                <div id={`faq-${index}`} className="hidden">
+                  <p className="text-gray-600 leading-relaxed pt-4 pb-2">
+                    {item.a}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
     </div>
+    </>
   )
 }
