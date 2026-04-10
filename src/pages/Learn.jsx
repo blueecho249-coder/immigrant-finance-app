@@ -3,15 +3,26 @@ import { Link } from 'react-router-dom'
 import { lessons } from '../data/lessons.js'
 import Header from '../components/Header.jsx'
 import SEO from '../components/SEO.jsx'
+import XPDisplay from '../components/XPDisplay.jsx'
+import StreakCounter from '../components/StreakCounter.jsx'
+import { progressTracker } from '../utils/progressTracker.js'
 
 export default function Learn({ language }) {
   const [selectedCategory, setSelectedCategory] = useState('All')
+  const [totalXP, setTotalXP] = useState(0)
+  const [streak, setStreak] = useState(0)
   
   const categories = ['All', 'Credit', 'Banking', 'Housing', 'Taxes', 'Saving']
   
   const filteredLessons = selectedCategory === 'All' 
     ? lessons 
     : lessons.filter(lesson => lesson.category === selectedCategory)
+
+  useEffect(() => {
+    // Load progress data
+    setTotalXP(progressTracker.getTotalXP())
+    setStreak(progressTracker.getStreak())
+  }, [])
 
   const content = {
     en: {
@@ -160,7 +171,10 @@ export default function Learn({ language }) {
                 <div className="bg-gradient-to-r from-indigo-500 to-teal-500 h-4 rounded-full shadow-lg" style={{ width: '0%' }}></div>
               </div>
             </div>
-            <div className="text-indigo-700 font-bold text-lg bg-white/80 px-4 py-2 rounded-2xl shadow-md">{t.motivationalMessage}</div>
+            <div className="flex flex-col items-end space-y-2">
+              <StreakCounter streak={streak} />
+              <XPDisplay xpEarned={0} totalXP={totalXP} showAnimation={false} />
+            </div>
           </div>
         </div>
 
@@ -326,7 +340,7 @@ export default function Learn({ language }) {
                       {item.q}
                     </h3>
                     <svg className="h-5 w-5 text-gray-400 group-hover:text-indigo-600 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7 7" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </div>
                 </button>
@@ -339,6 +353,7 @@ export default function Learn({ language }) {
             ))}
           </div>
         </div>
+      </div>
     </div>
     </>
   )

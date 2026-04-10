@@ -3,20 +3,31 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import { lessons } from '../data/lessons.js'
 import SEO from '../components/SEO.jsx'
 import LessonStep from '../components/LessonStep.jsx'
+import LessonCelebration from '../components/LessonCelebration.jsx'
+import { progressTracker } from '../utils/progressTracker.js'
 
 export default function LessonDetail({ language }) {
   const { id } = useParams()
   const navigate = useNavigate()
   const [currentStepIndex, setCurrentStepIndex] = useState(0)
   const [lessonComplete, setLessonComplete] = useState(false)
+  const [showCelebration, setShowCelebration] = useState(false)
 
   const lesson = lessons.find(l => l.id === id)
 
   useEffect(() => {
+    // Update streak when lesson starts
+    progressTracker.updateStreak()
+    
     // Check if lesson is already complete
-    const completedLessons = JSON.parse(localStorage.getItem('completedLessons') || '[]')
-    if (completedLessons.includes(id)) {
+    if (progressTracker.isLessonCompleted(id)) {
       setLessonComplete(true)
+    }
+    
+    // Load lesson progress
+    const lessonProgress = progressTracker.getLessonProgress(id)
+    if (lessonProgress.currentStep > 0) {
+      setCurrentStepIndex(lessonProgress.currentStep)
     }
   }, [id])
 
@@ -35,24 +46,48 @@ export default function LessonDetail({ language }) {
 
     const handleNextStep = () => {
       if (currentStepIndex < totalSteps - 1) {
-        setCurrentStepIndex(currentStepIndex + 1)
+        const nextStepIndex = currentStepIndex + 1
+        setCurrentStepIndex(nextStepIndex)
+        
+        // Save lesson progress
+        progressTracker.updateLessonProgress(id, nextStepIndex + 1, totalSteps)
       } else {
-        // Mark lesson as complete
-        const completedLessons = JSON.parse(localStorage.getItem('completedLessons') || '[]')
-        if (!completedLessons.includes(id)) {
-          completedLessons.push(id)
-          localStorage.setItem('completedLessons', JSON.stringify(completedLessons))
-          setLessonComplete(true)
-        }
-        // Navigate to next lesson or back to learn
-        const currentIndex = lessons.findIndex(l => l.id === id)
-        const nextLesson = lessons[currentIndex + 1]
-        if (nextLesson) {
-          navigate(`/lesson/${nextLesson.id}`)
-        } else {
-          navigate('/learn')
-        }
+        // Lesson complete - show celebration
+        setShowCelebration(true)
       }
+    }
+
+    const handleLessonComplete = () => {
+      // Mark lesson as complete
+      progressTracker.completeLesson(id)
+      setLessonComplete(true)
+      setShowCelebration(false)
+      
+      // Navigate to next lesson or back to learn
+      const currentIndex = lessons.findIndex(l => l.id === id)
+      const nextLesson = lessons[currentIndex + 1]
+      if (nextLesson) {
+        navigate(`/lesson/${nextLesson.id}`)
+      } else {
+        navigate('/learn')
+      }
+    }
+
+    const handleBackToLessons = () => {
+      setShowCelebration(false)
+      navigate('/learn')
+    }
+
+    // Show celebration overlay
+    if (showCelebration) {
+      return (
+        <LessonCelebration
+          lessonTitle={lesson.title[language] || lesson.title.en}
+          xpEarned={25} // Lesson completion XP
+          onNextLesson={handleLessonComplete}
+          onBackToLessons={handleBackToLessons}
+        />
+      )
     }
 
     return (
@@ -108,6 +143,8 @@ export default function LessonDetail({ language }) {
               onNext={handleNextStep}
               stepNumber={currentStepIndex + 1}
               totalSteps={totalSteps}
+              lessonId={id}
+              onLessonComplete={handleLessonComplete}
             />
           </div>
         </div>
