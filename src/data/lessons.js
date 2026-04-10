@@ -28,133 +28,346 @@ export const lessons = [
       pa: "ਕਰਡਤ ਅਤੇ ਕਿਵਾਂ ਤੋਂ ਜਾਂ ਦੀਦੇ ਹਨ"
     },
     category: "Credit",
-    content: {
-      en: [
-        "In Canada and the US, a credit score is a three-digit number, typically ranging from 300 to 850, that lenders use to assess your creditworthiness. This number represents your likelihood of repaying borrowed money on time. Think of it as a financial grade that tells banks, credit card companies, and other lenders how responsible you are with credit.",
-        "Your credit score is calculated using several factors: payment history (35%), amounts owed (30%), length of credit history (15%), new credit (10%), and credit mix (10%). Payment history is the most important factor, so making all your payments on time is crucial for building and maintaining good credit.",
-        "When you first arrive in Canada or the US, you typically start with no credit history. This doesn't mean you have bad credit—it just means lenders have no information about your borrowing habits. Building credit from scratch requires patience and consistent responsible behavior.",
-        "A secured credit card is an excellent tool for building credit. You provide a security deposit (usually $300-$500) which becomes your credit limit. The bank reports your payment history to credit bureaus, helping you build a positive credit history. After 6-12 months of responsible use, many banks will upgrade you to an unsecured card and return your deposit.",
-        "Another option is to become an authorized user on someone else's credit card—typically a family member with good credit. Their positive payment history can help build your credit, but be aware that any negative activity will also affect your credit report.",
-        "Student credit cards, retail store cards, and credit builder loans are other options for establishing credit. Each has pros and cons, so research carefully before applying. Too many applications in a short period can temporarily lower your score.",
-        "Maintaining low credit utilization (using less than 30% of your available credit) is key to building good credit. If you have a $1,000 limit, try to keep your balance below $300. This shows lenders you can manage credit responsibly without relying too heavily on it.",
-        "Building excellent credit takes time, typically 6-12 months of consistent positive behavior. During this time, pay all bills on time, keep balances low, and avoid applying for too much new credit. Monitor your credit report regularly to ensure accuracy and track your progress.",
-        "Once you've established good credit, maintain it by continuing responsible habits. Set up automatic payments to avoid missing due dates, keep old accounts open (even if unused) to maintain credit history length, and only apply for new credit when necessary."
-      ],
-      fr: [
-        "Au Canada et aux États-Unis, un score de crédit est un numéro à trois chiffres, généralement entre 300 et 850, que les prêteurs utilisent pour évaluer votre solvabilité. Ce nombre représente votre probabilité de rembourser l'argent emprunté à temps. Pensez-y comme une note financière qui indique aux banques, aux sociétés de cartes de crédit et aux autres prêteurs à quel point vous êtes responsable avec le crédit.",
-        "Votre score de crédit est calculé en utilisant plusieurs facteurs : historique des paiements (35%), montants dus (30%), durée de l'historique de crédit (15%), nouveau crédit (10%) et mélange de crédit (10%). L'historique des paiements est le facteur le plus important, donc effectuer tous vos paiements à temps est crucial pour construire et maintenir un bon crédit.",
-        "Lorsque vous arrivez pour la première fois au Canada ou aux États-Unis, vous commencez généralement sans historique de crédit. Cela ne signifie pas que vous avez un mauvais crédit - cela signifie simplement que les prêteurs n'ont aucune information sur vos habitudes d'emprunt. Construire un crédit à partir de zéro exige de la patience et un comportement responsable constant.",
-        "Une carte de crédit garantie est un excellent outil pour construire un crédit. Vous fournissez un dépôt de garantie (généralement 300-500 $) qui devient votre limite de crédit. La banque rapporte votre historique des paiements aux bureaux de crédit, vous aidant à construire un historique de crédit positif. Après 6-12 mois d'utilisation responsable, de nombreuses banques vous mettront à niveau une carte non garantie et vous rembourseront votre dépôt.",
-        "Une autre option est de devenir un utilisateur autorisé sur la carte de crédit de quelqu'un d'autre - généralement un membre de la famille ayant un bon crédit. Leur historique de paiements positif peut aider à construire votre crédit, mais soyez conscient que toute activité négative affectera également votre rapport de crédit.",
-        "Les cartes de crédit étudiantes, les cartes de magasin et les prêts de construction de crédit sont d'autres options pour établir un crédit. Chacune a des avantages et des inconvénients, donc recherchez attentivement avant de postuler. Trop de demandes sur une courte période peuvent temporairement baisser votre score.",
-        "Maintenir une faible utilisation du crédit (utilisant moins de 30% de votre crédit disponible) est essentiel pour construire un bon crédit. Si vous avez une limite de 1 000 $, essayez de maintenir votre solde en dessous de 300 $. Cela montre aux prêteurs que vous pouvez gérer le crédit de manière responsable sans trop dépendre de lui.",
-        "Construire un excellent crédit prend du temps, généralement 6-12 mois de comportement positif constant. Pendant cette période, payez toutes les factures à temps, maintenez les soldes bas et évitez de postuler pour trop de nouveau crédit. Surveillez votre rapport de crédit régulièrement pour assurer l'exactitude et suivre vos progrès.",
-        "Une fois que vous avez établi un bon crédit, maintenez-le en continuant les habitudes responsables. Configurez des paiements automatiques pour éviter les dates d'échéance manquées, gardez les anciens comptes ouverts (même s'ils ne sont pas utilisés) pour maintenir la durée de l'historique de crédit, et ne postulez pour du nouveau crédit que lorsque c'est nécessaire."
-      ],
-      ar: [
-        "في كندا والولايات المتحدة، درجة الائتمان هي رقم مكون من ثلاثة أرقام، عادة ما بين 300 و 850، يستخدمها المقرضون لتقييم ملاءتك الائتماني. يمثل هذا الرقم احتمالية سداد الأموال المقترضة في الوقت المحدد. فكر فيه كدرجة مالية تخبر البنوك وشركات بطاقات الائتمان والمقرضين الآخرين مدى مسؤوليتك مع الائتمان.",
-        "يتم حساب درجة الائتمان الخاصة بك باستخدام عدة عوامل: تاريخ السداد (35%)، المبالغ المستحقة (30%)، مدة تاريخ الائتمان (15%)، الائتمان الجديد (10%)، ومزيج الائتمان (10%). يعد تاريخ السداد هو العامل الأهم، لذا فإن سداد جميع المدفوعات في الوقت المناسب أمر بالغ الأهمية لبناء والحفاظ على ائتمان جيد.",
-        "عند وصولك لأول مرة إلى كندا أو الولايات المتحدة، تبدأ عادة بدون تاريخ ائتماني. هذا لا يعني أن لديك ائتمان سيئ - فهذا يعني فقط أن المقرضين ليس لديهم معلومات عن عادات اقتراضك. بناء الائتمان من الصفر يتطلب الصبر والسلوك المسؤول باستمرار.",
-        "بطاقة الائتمان المضمونة هي أداة ممتازة لبناء الائتمان. أنت تقدم وديعة أمان (عادة 300-500 دولار) تصبح حد ائتمانك. يبلغ البنك تاريخ سدادك إلى مكاتب الائتمان، مما يساعدك على بناء تاريخ ائتمان إيجابي. بعد 6-12 شهرًا من الاستخدام المسؤول، سيقوم العديد من البنوك بترقيتك إلى بطاقة غير مضمونة ويعيد لك وديعتك.",
-        "خيار آخر هو أن تصبح مستخدمًا مصرحًا على بطاقة ائتمان شخص آخر - عادة ما يكون فردًا من العائلة لديه ائتمان جيد. يمكن أن يساعد تاريخ سداداته الإيجابي في بناء ائتمانك، ولكن كن حذرًا من أن أي نشاط سلبي قد يؤثر أيضًا على تقرير الائتمان الخاص بك.",
-        "بطاقات الائتمان الطلابية، وبطاقات المتاجر، وقروض بناء الائتمان هي خيارات أخرى لإنشاء الائتمان. لكل منها إيجابيات وسلبيات، لذا ابحث بعناية قبل التقديم. قد يؤدي التقديم الكثيرة في فترة قصيرة إلى خفض درجة الائتمان الخاص بك بشكل مؤقت."
-      ],
-      zh: [
-        "在加拿大和美国，信用评分是一个三位数的数字，通常范围在300到850之间，贷款人用它来评估你的信用价值。这个数字代表了你按时偿还借款资金的可能性。把它看作一个金融等级，告诉银行、信用卡公司和其他贷款人你对信用的负责程度。",
-        "你的信用评分使用几个因素计算：付款历史（35%）、欠款金额（30%）、信用历史长度（15%）、新信用（10%）和信用组合（10%）。付款历史是最重要的因素，所以按时支付所有账单对于建立和维护良好信用至关重要。",
-        "当你第一次到达加拿大或美国时，你通常没有信用历史。这并不意味着你有不良信用——只是贷款人没有关于你借贷习惯的信息。从零开始建立信用需要耐心和一贯的负责任行为。",
-        "安全信用卡是建立信用的绝佳工具。你提供一笔保证金（通常300-500美元），这成为你的信用额度。银行向信用机构报告你的付款历史，帮助你建立积极的信用记录。在负责任使用6-12个月后，许多银行会将你升级为无担保卡并退还你的保证金。",
-        "另一个选择是成为他人信用卡的授权用户——通常是信用良好的家庭成员。他们积极的付款历史可以帮助建立你的信用，但要注意任何负面活动也会影响你的信用报告。",
-        "学生信用卡、零售商店卡和信用建设贷款是建立信用的其他选择。每个都有优缺点，所以在申请前要仔细研究。短时间内申请太多可能会暂时降低你的分数。",
-        "保持低信用利用率（使用少于30%的可用信用）是建立良好信用的关键。如果你有1000美元的限额，尽量将余额保持在300美元以下。这向贷款人显示你可以在不过度依赖的情况下负责任地管理信用。",
-        "建立优秀信用需要时间，通常需要6-12个月的一致积极行为。在此期间，按时支付所有账单，保持余额低，避免申请新信用。定期监控你的信用报告以确保准确性并跟踪你的进度。",
-        "一旦建立了良好信用，通过继续负责任的习惯来维护它。设置自动付款以避免错过截止日期，保留旧账户（即使不使用）以保持信用历史长度，只在必要时申请新信用。"
-      ],
-      es: [
-        "En Canadá y EE. UU., una puntuación de crédito es un número de tres dígitos, típicamente entre 300 y 850, que los prestamistas usan para evaluar tu solvencia. Este número representa tu probabilidad de pagar dinero prestado a tiempo. Piénsalo como una calificación financiera que dice a bancos, compañías de tarjetas de crédito y otros prestamistas qué tan responsable eres con el crédito.",
-        "Tu puntuación de crédito se calcula usando varios factores: historial de pagos (35%), cantidades adeudadas (30%), longitud del historial de crédito (15%), crédito nuevo (10%) y mezcla de crédito (10%). El historial de pagos es el factor más importante, así que hacer todos tus pagos a tiempo es crucial para construir y mantener buen crédito.",
-        "Cuando llegas por primera vez a Canadá o EE. UU., típicamente comienzas sin historial de crédito. Esto no significa que tengas mal crédito—solo significa que los prestamistas no tienen información sobre tus hábitos de endeudamiento. Construir crédito desde cero requiere paciencia y comportamiento responsable consistente.",
-        "Una tarjeta de crédito asegurada es una excelente herramienta para construir crédito. Proporcionas un depósito de seguridad (usualmente $300-$500) que se convierte en tu límite de crédito. El banco reporta tu historial de pagos a las agencias de crédito, ayudándote a construir un historial de crédito positivo. Después de 6-12 meses de uso responsable, muchos bancos te actualizarán a una tarjeta no asegurada y devolverán tu depósito.",
-        "Otra opción es convertirte en usuario autorizado en la tarjeta de crédito de alguien más—típicamente un miembro de familia con buen crédito. Su historial de pagos positivo puede ayudar a construir tu crédito, pero ten en cuenta que cualquier actividad negativa también afectará tu reporte de crédito.",
-        "Tarjetas de crédito estudiantiles, tarjetas de tienda minorista y préstamos constructor de crédito son otras opciones para establecer crédito. Cada una tiene pros y contras, así que investiga cuidadosamente antes de aplicar. Demasiadas aplicaciones en un corto período pueden bajar temporalmente tu puntuación.",
-        "Mantener baja la utilización de crédito (usando menos del 30% de tu crédito disponible) es clave para construir buen crédito. Si tienes un límite de $1,000, intenta mantener tu saldo por debajo de $300. Esto muestra a los prestamistas que puedes manejar crédito responsablemente sin depender demasiado de él.",
-        "Construir crédito excelente toma tiempo, típicamente 6-12 meses de comportamiento positivo consistente. Durante este tiempo, paga todas las facturas a tiempo, mantén los saldos bajos, y evita solicitar demasiado crédito nuevo. Monitorea tu reporte de crédito regularmente para asegurar precisión y seguir tu progreso.",
-        "Una vez que hayas establecido buen crédito, manténlo continuando hábitos responsables. Configura pagos automáticos para evitar fechas de vencimiento, mantén cuentas viejas abiertas (incluso si no se usan) para mantener la longitud del historial de crédito, y solo solicita crédito nuevo cuando sea necesario."
-      ],
-      hi: [
-        "कनाडा और यूएस में, क्रेडिट स्कोर एक तीन-अंकों की संख्या है, आमतौर पर 300 से 850 के बीच, जिसका उपयोग लेंडर्स आपकी क्रेडिटयोग्यता का आकलन करने के लिए करते हैं। यह संख्या उधार लिए गए पैसे को समय पर चुकाने की आपकी संभावना को दर्शाती है। इसे एक वित्तीय ग्रेड के रूप में सोचें जो बैंकों, क्रेडिट कार्ड कंपनियों, और अन्य लेंडर्स को बताता है कि आप क्रेडिट के साथ कितने जिम्मेदार हैं।",
-        "आपका क्रेडिट स्कोर कई कारकों का उपयोग करके गणना किया जाता है: भुगतान इतिहास (35%), देय राशि (30%), क्रेडिट इतिहास की लंबाई (15%), नया क्रेडिट (10%), और क्रेडिट मिश्रण (10%)। भुगतान इतिहास सबसे महत्वपूर्ण कारक है, इसलिए सभी भुगतान समय पर करना अच्छा क्रेडिट बनाने और बनाए रखने के लिए महत्वपूर्ण है।",
-        "जब आप पहली बार कनाडा या यूएस में आते हैं, तो आप आमतौर पर कोई क्रेडिट इतिहास के साथ शुरू करते हैं। इसका मतलब यह नहीं है कि आपका क्रेडिट खराब है—इसका मतलब है कि लेंडर्स के पास आपके उधार लेने की आदतों के बारे में कोई जानकारी नहीं है। शून्य से क्रेडिट बनाने के लिए धैर्य और निरंतर जिम्मेदार व्यवहार की आवश्यकता होती है।",
-        "एक सिक्योर्ड क्रेडिट कार्ड क्रेडिट बनाने के लिए एक उत्कृष्ट उपकरण है। आप एक सुरक्षा जमा प्रदान करते हैं (आमतौर पर $300-$500) जो आपकी क्रेडिट सीमा बन जाती है। बैंक आपके भुगतान इतिहास को क्रेडिट ब्यूरो को रिपोर्ट करता है, जिससे आप एक सकारात्मक क्रेडिट इतिहास बनाने में मदद करते हैं। 6-12 महीने के जिम्मेदार उपयोग के बाद, कई बैंक आपको एक असिक्योर्ड कार्ड में अपग्रेड करेंगे और आपका जमा वापस कर देंगे।",
-        "एक और विकल्प किसी और के क्रेडिट कार्ड पर अधिकृत उपयोगकर्ता बनना है—आमतौर पर एक परिवार सदस्य जिसका अच्छा क्रेडिट है। उनका सकारात्मक भुगतान इतिहास आपके क्रेडिट को बना सकता है, लेकिन ध्यान दें कि कोई भी नकारात्मक गतिविधि भी आपके क्रेडिट रिपोर्ट को प्रभावित करेगी।",
-        "छात्र क्रेडिट कार्ड, खुदरा स्टोर कार्ड, और क्रेडिट बिल्डर लोन क्रेडिट स्थापित करने के अन्य विकल्प हैं। प्रत्येक के पेशेवर और विपक्ष हैं, इसलिए आवेदन करने से पहले सावधान से शोध करें। छोटी अवधि में बहुत सारे आवेदन अस्थायी रूप से आपके स्कोर को अस्थायी रूप से कम कर सकते हैं।",
-        "कम क्रेडिट उपयोग बनाए रखना (उपलब्ध क्रेडिट का 30% से कम का उपयोग करना) अच्छा क्रेडिट बनाने के लिए महत्वपूर्ण है। यदि आपके पास $1,000 की सीमा है, तो अपने बैलेंस को $300 से नीचे रखने का प्रयास करें। यह लेंडर्स को दर्शाता है कि आप बिना इस पर बहुत अधिक निर्भर करके जिम्मेदारी तरीके से क्रेडिट प्रबंधित कर सकते हैं।",
-        "उत्कृष्ट क्रेडिट बनाने में समय लगता है, आमतौर पर 6-12 महीने का निरंतर सकारात्मक सकारात्मक व्यवहार। इस समय के दौरान, सभी बिल समय पर चुकाएं, बैलेंस कम रखें, और बहुत सारे नए क्रेडिट के लिए आवेदन करने से बचें। सटीकता सुनिश्चित रूप से अपने क्रेडिट रिपोर्ट को मॉनिटर करें और सटीकता सुनिश्चित होने के लिए अपनी प्रगति को ट्रैक करें।",
-        "एक बार जब आपने अच्छा क्रेडिट स्थापित कर लिया है, तो जिम्मेदार आदतों को जारी रखकर इसे बनाए रखें। स्वचालित भुगतान सेट अप करें, नियत तिथियों को चूकने से बचें, पुराने खातों को खुले रखें, और केवल आवश्यकता होने पर नए क्रेडिट के लिए आवेदन करें।"
-      ],
-      tl: [
-        "Sa Canada at US, ang credit score ay isang tatlong-digit na numero, karaniwang mula 300 hanggang 850, na ginagamit ng mga lender upang masuri ang iyong creditworthiness. Ang numerong ito ay kumakatawan sa iyong posibilidad na magbayad ng borrowed money sa tamang oras. Isipin ito bilang isang financial grade na nagsasabi sa mga bangko, credit card companies, at iba pang mga lender kung gaano responsable ka sa credit.",
-        "Ang iyong credit score ay kinakalkula gamit ang ilang mga factor: payment history (35%), amounts owed (30%), length ng credit history (15%), bagong credit (10%), at credit mix (10%). Ang payment history ang pinakamahalagang factor, kaya ang paggawa sa lahat ng iyong mga bayad sa oras ay kritikal para sa pagbuo at pagpapanatili ng mabuting credit.",
-        "Kapag unang beses kang dumating sa Canada o US, karaniwang magsisimula ka nang walang credit history. Ibig sabihin nitong hindi ka may masamang credit—nagkakapamilya lang nitong walang impormasyon ang mga lender tungkol sa iyong mga kaugalian sa pag-utang. Ang pagbuo ng credit mula sa wala ay nangangangailangan ng pasensya at mag-consistent na responsable na pag-uugali.",
-        "Ang secured credit card ay isang mahusay na tool para sa pagbuo ng credit. Nagbibigay ka ng isang security deposit (karaniwang $300-$500) na nagiging iyong credit limit. Ang bangko ay nag-uulat ng iyong payment history sa mga credit bureau, tumutulong sa iyo na magbuo ng isang positibong credit history. Matapos ang 6-12 buwan ng responsable na paggamit, maraming bangko ang mag-upgrade sa iyo sa isang unsecured card at ibabalik ang iyong deposit.",
-        "Isang opsyon ay maging isang authorized user sa credit card ng iba karaniwang isang miyembro ng pamilya na may mabuting credit. Ang kanilang positibong payment history ay maaaring tumulong sa pagbuo ng iyong credit, ngunit maging alerto na anumang negatibong aktibidad ay maaari ring makaapekto sa iyong credit report.",
-        "Ang mga student credit cards, retail store cards, at credit builder loans ay iba pang mga opsyon para sa pagtataguy ng credit. Bawat isa ay may mga kalamangan at disadvantage, kaya mag-aral nang mabuti bago mag-apply. Masyadong maraming aplikasyon sa maikling panahon ay maaaring pansamantalang mababa sa iyong score.",
-        "Ang pagpapanatili ng mababang credit utilization (paggamit ng mas mababa sa 30% ng iyong available credit) ay susi para sa pagbuo ng mabuting credit. Kung may $1,000 ka na limit, subukan na panatiliin ang iyong balance sa ibaba ng $300. Ipinapakita nitong sa mga lender na kayang mamahala ng credit nang responsable nang hindi masyadong umaasa rito.",
-        "Ang pagbuo ng excellent credit ay kumukuha ng oras, karaniwang 6-12 buwan ng mag-consistent na positibong pag-uugali. Sa panahong ito, bayaran ang lahat ng mga bill sa oras, panatiliin ang mga mababang balance, at iwasan ang mag-apply sa masyadong bagong credit. Bantayan ang iyong credit report nang regular upang matiyak ang accuracy at subaybayan ang iyong pag-unawa.",
-        "Kapag nagtataguy ka na ng mabuting credit, panatiliin ito sa pamamagitan ng pagpapatuloy sa mga responsable na kaugalian. Mag-set up ng mga automatic payment upang iwasan ang pagkakaltol sa mga due dates, panatiliin ang mga lumang account na bukas (kahit kung hindi ginagamit) upang panatiliin ang haba ng credit history, at mag-apply lang ng bagong credit kung kinakailangan."
-      ]
-    },
-    quizzes: [
+    steps: [
       {
-        question: {
-          en: "What is the most important factor in calculating your credit score?",
-          es: "¿Cuál es el factor más importante en el cálculo de tu puntuación de crédito?",
-          hi: "आपके क्रेडिट स्कोर की गणना में सबसे महत्वपूर्ण कारक है?",
-          tl: "Ano ang pinakamahalagang bagian sa pagkalkula sa iyong credit score?",
-          zh: "在计算你的信用评分时，最重要的因素是什么？",
-          ar: "ما هو العامل الأكثر أهمية في حساب درجة الائتمان الخاصة بك؟",
-          fr: "Quel est le facteur le plus important dans le calcul de votre score de crédit ?"
-        },
-        options: {
-          en: ["Credit utilization ratio", "Payment history"],
-          es: ["Relación de utilización de crédito", "Historial de pagos"],
-          hi: ["क्रेडिट उपयोग अनुपात", "भुगतान इतिहास"],
-          tl: ["Ratio ng paggamit ng credit", "Kasaysayan ng pagbabayad"],
-          zh: ["信用利用率", "付款历史"],
-          ar: ["نسبة استخدام الائتمان", "تاريخ السداد"],
-          fr: ["Ratio d'utilisation du crédit", "Histoire des paiements"]
-        },
-        correctIndex: 1
+        type: "concept",
+        content: {
+          en: {
+            headline: "Credit Score is Your Financial Grade",
+            illustration: "score",
+            explanation: [
+              "A credit score is a three-digit number (300-850) that tells lenders how responsible you are with money.",
+              "Think of it like a school grade - higher numbers mean you're better at managing credit.",
+              "Banks use this score to decide if they should lend you money for cars, homes, or credit cards."
+            ]
+          },
+          es: {
+            headline: "Tu Score de Crédito es tu Calificación Financiera",
+            illustration: "score",
+            explanation: [
+              "Un score de crédito es un número de tres dígitos (300-850) que dice a los prestamistas cuán responsable eres con el dinero.",
+              "Piensa en ello como una calificación escolar - números más altos significan que eres mejor manejando crédito.",
+              "Los bancos usan este score para decidir si deben prestarte dinero para autos, casas o tarjetas de crédito."
+            ]
+          },
+          hi: {
+            headline: "Credit Score aapka financial grade hai",
+            illustration: "score",
+            explanation: [
+              "Credit score teen digit ka number hai (300-850) jo lenders ko batata hai ki aap paise ke saath kitne responsible hain.",
+              "Isse school grade ki tarah sochiye - higher numbers ka matlab hai aap credit manage karne mein better hain.",
+              "Banks is score ka use karte hain decide karne ke liye ki unhe aapko cars, homes ya credit cards ke liye paise dena chahiye ya nahi."
+            ]
+          },
+          tl: {
+            headline: "Ang Credit Score ay iyong Financial Grade",
+            illustration: "score",
+            explanation: [
+              "Ang credit score ay isang three-digit number (300-850) na nagsasabi sa mga kung gaano ka responsible sa pera.",
+              "Isipin ito bilang isang school grade - mas mataas na numero ay mas magaling ka sa pag-handle ng credit.",
+              "Ang mga banks ay gumagamit nito para magdesisyon kung dapat kang pahiramin ng pera para sa kotse, bahay, o credit cards."
+            ]
+          },
+          zh: {
+            headline: "Credit Score is your financial grade",
+            illustration: "score",
+            explanation: [
+              "Credit score is a three-digit number (300-850) that tells lenders how responsible you are with money.",
+              "Think of it like a school grade - higher numbers mean you're better at managing credit.",
+              "Banks use this score to decide if they should lend you money for cars, homes, or credit cards."
+            ]
+          },
+          ar: {
+            headline: "Credit Score is your financial grade",
+            illustration: "score",
+            explanation: [
+              "Credit score is a three-digit number (300-850) that tells lenders how responsible you are with money.",
+              "Think of it like a school grade - higher numbers mean you're better at managing credit.",
+              "Banks use this score to decide if they should lend you money for cars, homes, or credit cards."
+            ]
+          },
+          fr: {
+            headline: "Credit Score is your financial grade",
+            illustration: "score",
+            explanation: [
+              "Credit score is a three-digit number (300-850) that tells lenders how responsible you are with money.",
+              "Think of it like a school grade - higher numbers mean you're better at managing credit.",
+              "Banks use this score to decide if they should lend you money for cars, homes, or credit cards."
+            ]
+          },
+          pa: {
+            headline: "Credit Score aapka financial grade hai",
+            illustration: "score",
+            explanation: [
+              "Credit score teen digit ka number hai (300-850) jo lenders ko batata hai ki aap paise ke saath kitne responsible hain.",
+              "Isse school grade ki tarah sochiye - higher numbers ka matlab hai aap credit manage karne mein better hain.",
+              "Banks is score ka use karte hain decide karne ke liye ki unhe aapko cars, homes ya credit cards ke liye paise dena chahiye ya nahi."
+            ]
+          }
+        }
       },
       {
-        question: {
-          en: "How much of your available credit should you typically use to maintain good credit?",
-          es: "¿Cuánto de tu crédito disponible deberías usar típicamente para mantener buen crédito?",
-          hi: "अच्छा क्रेडिट बनाए रखने के लिए आपको आमतौर पर अपने उपलब्ध क्रेडिट का कितना उपयोग करना चाहिए?",
-          zh: "为了维持良好信用，你通常应该使用多少可用信用？"
-        },
-        options: {
-          en: ["Less than 30%", "Up to 50%"],
-          es: ["Menos del 30%", "Hasta el 50%"],
-          hi: ["30% से कम", "50% तक"],
-          zh: ["少于30%", "高达50%"]
-        },
-        correctIndex: 0
+        type: "quickCheck",
+        correctIndex: 0,
+        content: {
+          en: {
+            question: "A higher credit score means you're better at managing money.",
+            options: ["True", "False"],
+            explanation: "Correct! Higher scores (700+) show lenders you're very responsible with credit."
+          },
+          es: {
+            question: "Un score de crédito más alto significa que eres mejor manejando dinero.",
+            options: ["Verdadero", "Falso"],
+            explanation: "¡Correcto! Scores más altos (700+) muestran a los prestamistas que eres muy responsable con el crédito."
+          },
+          hi: {
+            question: "Higher credit score ka matlab hai aap paise manage karne mein better hain.",
+            options: ["True", "False"],
+            explanation: "Correct! Higher scores (700+) lenders ko dikhaate hain ki aap credit ke saath bahut responsible hain."
+          },
+          tl: {
+            question: "Mas mataas na credit score ay mas magaling ka sa pag-handle ng pera.",
+            options: ["Tama", "Mali"],
+            explanation: "Tama! Mas mataas na scores (700+) ay nagpapakita sa mga lenders na responsible ka sa credit."
+          },
+          zh: {
+            question: "Higher credit score means you're better at managing money.",
+            options: ["True", "False"],
+            explanation: "Correct! Higher scores (700+) show lenders you're very responsible with credit."
+          },
+          ar: {
+            question: "Higher credit score means you're better at managing money.",
+            options: ["True", "False"],
+            explanation: "Correct! Higher scores (700+) show lenders you're very responsible with credit."
+          },
+          fr: {
+            question: "Higher credit score means you're better at managing money.",
+            options: ["True", "False"],
+            explanation: "Correct! Higher scores (700+) show lenders you're very responsible with credit."
+          },
+          pa: {
+            question: "Higher credit score da matlab hai aap paise manage karne vich better ho.",
+            options: ["True", "False"],
+            explanation: "Correct! Higher scores (700+) lenders nu dikhande hain ki aap credit naal bahut responsible ho."
+          }
+        }
       },
       {
-        question: {
-          en: "What type of credit card requires a security deposit?",
-          es: "¿Qué tipo de tarjeta de crédito requiere un depósito de seguridad?",
-          hi: "किस प्रकार के क्रेडिट कार्ड के लिए सुरक्षा जमा की आवश्यकता होती है?",
-          zh: "哪种类型的信用卡需要保证金？"
-        },
-        options: {
-          en: ["Student credit card", "Secured credit card"],
-          es: ["Tarjeta de crédito estudiantil", "Tarjeta de crédito asegurada"],
-          hi: ["छात्र क्रेडिट कार्ड", "सिक्योर्ड क्रेडिट कार्ड"],
-          zh: ["学生信用卡", "安全信用卡"]
-        },
-        correctIndex: 1
+        type: "fillBlank",
+        correctIndex: 1,
+        content: {
+          en: {
+            sentence: "Payment history makes up ___% of your credit score calculation.",
+            options: ["10%", "35%", "50%", "75%"],
+            explanation: "Payment history is 35% - the biggest factor! Always pay on time."
+          },
+          es: {
+            sentence: "El historial de pagos representa ___% del cálculo de tu score de crédito.",
+            options: ["10%", "35%", "50%", "75%"],
+            explanation: "El historial de pagos es 35% - ¡el factor más grande! Siempre paga a tiempo."
+          },
+          hi: {
+            sentence: "Payment history aapke credit score calculation ka ___% banati hai.",
+            options: ["10%", "35%", "50%", "75%"],
+            explanation: "Payment history 35% hai - sabse bada factor! Hamesha on time pay karo."
+          },
+          tl: {
+            sentence: "Ang payment history ay ___% ng iyong credit score calculation.",
+            options: ["10%", "35%", "50%", "75%"],
+            explanation: "Ang payment history ay 35% - ang pinakamalaking factor! Palagi kang magbayad sa tamang oras."
+          },
+          zh: {
+            sentence: "Payment history makes up ___% of your credit score calculation.",
+            options: ["10%", "35%", "50%", "75%"],
+            explanation: "Payment history is 35% - the biggest factor! Always pay on time."
+          },
+          ar: {
+            sentence: "Payment history makes up ___% of your credit score calculation.",
+            options: ["10%", "35%", "50%", "75%"],
+            explanation: "Payment history is 35% - the biggest factor! Always pay on time."
+          },
+          fr: {
+            sentence: "Payment history makes up ___% of your credit score calculation.",
+            options: ["10%", "35%", "50%", "75%"],
+            explanation: "Payment history is 35% - the biggest factor! Always pay on time."
+          },
+          pa: {
+            sentence: "Payment history aapde credit score calculation da ___% banaundi hai.",
+            options: ["10%", "35%", "50%", "75%"],
+            explanation: "Payment history 35% hai - sabse vada factor! Hamesha time te pay karo."
+          }
+        }
+      },
+      {
+        type: "realWorld",
+        correctIndex: 1,
+        content: {
+          en: {
+            scenarioTitle: "Maria's First Credit Card",
+            scenarioIcon: "person",
+            scenario: "Maria just arrived from Philippines. She has no credit history and wants to buy a car in 6 months. She has $500 saved for a security deposit.",
+            question: "What should Maria do first?",
+            options: [
+              "Apply for 5 different credit cards to get the best one",
+              "Get a secured credit card with her $500 deposit"
+            ],
+            explanation: "Perfect! A secured card uses her deposit as collateral and reports to credit bureaus. Applying for multiple cards at once can hurt her score."
+          },
+          es: {
+            scenarioTitle: "Primera Tarjeta de Crédito de María",
+            scenarioIcon: "person",
+            scenario: "María acaba de llegar de Filipinas. No tiene historial de crédito y quiere comprar un coche en 6 meses. Tiene $500 ahorrados para un depósito de seguridad.",
+            question: "¿Qué debería hacer María primero?",
+            options: [
+              "Solicitar 5 tarjetas de crédito diferentes para obtener la mejor",
+              "Obtener una tarjeta de crédito garantizada con su depósito de $500"
+            ],
+            explanation: "¡Perfecto! Una tarjeta garantizada usa su depósito como garantía y reporta a las agencias de crédito. Solicitar múltiples tarjetas a la vez puede dañar su score."
+          },
+          hi: {
+            scenarioTitle: "Maria ki pehli credit card",
+            scenarioIcon: "person",
+            scenario: "Maria abhi Philippines se ayi hai. Uske paas koi credit history nahi hai aur woh 6 months mein car kharidna chahti hai. Uske paas $500 security deposit ke liye saved hain.",
+            question: "Maria ko pehle kya karna chahiye?",
+            options: [
+              "Best card lene ke liye 5 alag-alag credit cards apply karna",
+              "Apne $500 deposit ke saath secured credit card lena"
+            ],
+            explanation: "Perfect! Secured card uske deposit ko collateral ke roop mein use karta hai aur credit bureaus ko report karta hai. Ek saath multiple cards apply karne se uski score hurt ho sakti hai."
+          },
+          tl: {
+            scenarioTitle: "Unang Credit Card ni Maria",
+            scenarioIcon: "person",
+            scenario: "Maria ay bagong dating galing sa Philippines. Wala siyang credit history at gusto niyang bumili ng kotse sa 6 na buwan. May $500 siyang nai-save para sa security deposit.",
+            question: "Ano ang dapat gawin ni Maria muna?",
+            options: [
+              "Mag-apply ng 5 magkaibang credit cards para makuha ang pinakamabuti",
+              "Kumuha ng secured credit card gamit ang kanyang $500 deposit"
+            ],
+            explanation: "Perfect! Ang secured card ay gumagamit ng kanyang deposit bilang collateral at nagrereport sa credit bureaus. Ang pag-apply ng maraming cards nang sabay ay maaaring makasira sa kanyang score."
+          },
+          zh: {
+            scenarioTitle: "Maria's First Credit Card",
+            scenarioIcon: "person",
+            scenario: "Maria just arrived from Philippines. She has no credit history and wants to buy a car in 6 months. She has $500 saved for a security deposit.",
+            question: "What should Maria do first?",
+            options: [
+              "Apply for 5 different credit cards to get the best one",
+              "Get a secured credit card with her $500 deposit"
+            ],
+            explanation: "Perfect! A secured card uses her deposit as collateral and reports to credit bureaus. Applying for multiple cards at once can hurt her score."
+          },
+          ar: {
+            scenarioTitle: "Maria's First Credit Card",
+            scenarioIcon: "person",
+            scenario: "Maria just arrived from Philippines. She has no credit history and wants to buy a car in 6 months. She has $500 saved for a security deposit.",
+            question: "What should Maria do first?",
+            options: [
+              "Apply for 5 different credit cards to get the best one",
+              "Get a secured credit card with her $500 deposit"
+            ],
+            explanation: "Perfect! A secured card uses her deposit as collateral and reports to credit bureaus. Applying for multiple cards at once can hurt her score."
+          },
+          fr: {
+            scenarioTitle: "Maria's First Credit Card",
+            scenarioIcon: "person",
+            scenario: "Maria just arrived from Philippines. She has no credit history and wants to buy a car in 6 months. She has $500 saved for a security deposit.",
+            question: "What should Maria do first?",
+            options: [
+              "Apply for 5 different credit cards to get the best one",
+              "Get a secured credit card with her $500 deposit"
+            ],
+            explanation: "Perfect! A secured card uses her deposit as collateral and reports to credit bureaus. Applying for multiple cards at once can hurt her score."
+          },
+          pa: {
+            scenarioTitle: "Maria di pehli credit card",
+            scenarioIcon: "person",
+            scenario: "Maria Philippines to aayi hai. Usde kol koi credit history nahi hai te oh 6 months vich car kharidna chahidi hai. Usde kol $500 security deposit lai saved ne.",
+            question: "Maria pehlon ki karna chahidi hai?",
+            options: [
+              "Best card lai 5 v-vartaman credit cards apply karna",
+              "Aapde $500 deposit naal secured credit card lena"
+            ],
+            explanation: "Perfect! Secured card usde deposit nu collateral valle use karda hai te credit bureaus nu report karda hai. Ek naal multiple cards apply karne naal usdi score hurt ho sakti hai."
+          }
+        }
+      },
+      {
+        type: "summary",
+        content: {
+          en: {
+            takeaways: [
+              "Credit scores range from 300-850 and show how responsible you are with money",
+              "Payment history is 35% of your score - always pay bills on time",
+              "Start with a secured credit card if you have no credit history",
+              "Keep credit utilization below 30% to maintain good scores",
+              "Building good credit takes 6-12 months of consistent responsible habits"
+            ]
+          },
+          es: {
+            takeaways: [
+              "Los scores de crédito van de 300-850 y muestran qué tan responsable eres con el dinero",
+              "El historial de pagos es 35% de tu score - siempre paga las facturas a tiempo",
+              "Comienza con una tarjeta de crédito garantizada si no tienes historial de crédito",
+              "Mantén la utilización de crédito por debajo del 30% para mantener buenos scores",
+              "Construir buen crédito toma 6-12 meses de hábitos responsables consistentes"
+            ]
+          },
+          hi: {
+            takeaways: [
+              "Credit scores 300-850 ke beech hote hain aur dikate hain ki aap paise ke saath kitne responsible hain",
+              "Payment history aapke score ka 35% hai - hamesha bills on time pay karo",
+              "Agar aapke paas koi credit history nahi hai to secured credit card se shuru karo",
+              "Good scores banane ke liye credit utilization ko 30% se kam rakho",
+              "Good credit banane mein 6-12 months lagte hain consistent responsible habits ka"
+            ]
+          },
+          tl: {
+            takeaways: [
+              "Ang credit scores ay mula 300-850 at nagpapakita kung gaano ka responsible sa pera",
+              "Ang payment history ay 35% ng iyong score - palagi kang magbayad ng bills sa tamang oras",
+              "Magsimula sa secured credit card kung wala kang credit history",
+              "Panatilihin ang credit utilization sa ibaba ng 30% para magmaintain ng magagandang scores",
+              "Ang pagbuo ng magandang credit ay tumatagal ng 6-12 na buwan ng consistent na responsible na mga kaugalian"
+            ]
+          },
+          zh: {
+            takeaways: [
+              "Credit scores range from 300-850 and show how responsible you are with money",
+              "Payment history is 35% of your score - always pay bills on time",
+              "Start with a secured credit card if you have no credit history",
+              "Keep credit utilization below 30% to maintain good scores",
+              "Building good credit takes 6-12 months of consistent responsible habits"
+            ]
+          },
+          ar: {
+            takeaways: [
+              "Credit scores range from 300-850 and show how responsible you are with money",
+              "Payment history is 35% of your score - always pay bills on time",
+              "Start with a secured credit card if you have no credit history",
+              "Keep credit utilization below 30% to maintain good scores",
+              "Building good credit takes 6-12 months of consistent responsible habits"
+            ]
+          },
+          fr: {
+            takeaways: [
+              "Credit scores range from 300-850 and show how responsible you are with money",
+              "Payment history is 35% of your score - always pay bills on time",
+              "Start with a secured credit card if you have no credit history",
+              "Keep credit utilization below 30% to maintain good scores",
+              "Building good credit takes 6-12 months of consistent responsible habits"
+            ]
+          },
+          pa: {
+            takeaways: [
+              "Credit scores 300-850 de vich hinde ne te dikande hain ki tu paise naal kitne responsible han",
+              "Payment history tuhade score da 35% hai - hamesha time te pay karo",
+              "Jade tuhade kol koi credit history nahi hai ta secured credit card to shuru karo",
+              "Good scores banane lai credit utilization nu 30% toh rakho",
+              "Good credit banane vich 6-12 months lagde ne consistent responsible habits da"
+            ]
+          }
+        }
       }
     ]
   },

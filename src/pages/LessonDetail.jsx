@@ -2,16 +2,13 @@ import { useState, useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { lessons } from '../data/lessons.js'
 import SEO from '../components/SEO.jsx'
+import LessonStep from '../components/LessonStep.jsx'
 
 export default function LessonDetail({ language }) {
   const { id } = useParams()
   const navigate = useNavigate()
-  const [currentQuizIndex, setCurrentQuizIndex] = useState(0)
-  const [selectedAnswer, setSelectedAnswer] = useState(null)
-  const [showResult, setShowResult] = useState(false)
-  const [isCorrect, setIsCorrect] = useState(false)
+  const [currentStepIndex, setCurrentStepIndex] = useState(0)
   const [lessonComplete, setLessonComplete] = useState(false)
-  const [quizScores, setQuizScores] = useState([])
 
   const lesson = lessons.find(l => l.id === id)
 
@@ -30,6 +27,100 @@ export default function LessonDetail({ language }) {
       </div>
     )
   }
+
+  // Check if lesson uses new step-based format
+  if (lesson.steps) {
+    const currentStep = lesson.steps[currentStepIndex]
+    const totalSteps = lesson.steps.length
+
+    const handleNextStep = () => {
+      if (currentStepIndex < totalSteps - 1) {
+        setCurrentStepIndex(currentStepIndex + 1)
+      } else {
+        // Mark lesson as complete
+        const completedLessons = JSON.parse(localStorage.getItem('completedLessons') || '[]')
+        if (!completedLessons.includes(id)) {
+          completedLessons.push(id)
+          localStorage.setItem('completedLessons', JSON.stringify(completedLessons))
+          setLessonComplete(true)
+        }
+        // Navigate to next lesson or back to learn
+        const currentIndex = lessons.findIndex(l => l.id === id)
+        const nextLesson = lessons[currentIndex + 1]
+        if (nextLesson) {
+          navigate(`/lesson/${nextLesson.id}`)
+        } else {
+          navigate('/learn')
+        }
+      }
+    }
+
+    return (
+      <>
+        <SEO 
+          title={`${lesson.title[language] || lesson.title.en} - ${lesson.category} Lesson | NewStart Finance`}
+          description={`Learn ${lesson.category.toLowerCase()} with expert-led interactive lessons. Available in 8 languages for newcomers to Canada and USA.`}
+          keywords={`${lesson.category.toLowerCase()} education, financial literacy, ${lesson.title[language] || lesson.title.en}, newcomer finance, multilingual lessons`}
+          canonicalUrl={`https://newstart-finance.com/lesson/${lesson.id}`}
+          ogImage={`https://newstart-finance.com/lesson-${lesson.id}.jpg`}
+          type="article"
+        />
+        <div style={{padding: '20px', maxWidth: '1000px', margin: '0 auto', minHeight: '100vh', display: 'flex', flexDirection: 'column'}}>
+          {/* Header */}
+          <div style={{marginBottom: '30px'}}>
+            <Link 
+              to="/learn" 
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                color: '#4f46e5',
+                textDecoration: 'none',
+                fontSize: '16px',
+                marginBottom: '20px',
+                padding: '8px 0'
+              }}
+            >
+              Back to Lessons
+            </Link>
+            <h1 style={{fontSize: '32px', fontWeight: 'bold', color: '#1f2937', marginBottom: '10px'}}>
+              {lesson.title[language] || lesson.title.en}
+            </h1>
+            {lessonComplete && (
+              <div style={{
+                backgroundColor: '#10b981',
+                color: 'white',
+                padding: '8px 16px',
+                borderRadius: '8px',
+                display: 'inline-block',
+                fontSize: '14px',
+                fontWeight: '500'
+              }}>
+                Lesson Complete
+              </div>
+            )}
+          </div>
+
+          {/* Interactive Step */}
+          <div style={{flex: 1, display: 'flex', alignItems: 'center'}}>
+            <LessonStep 
+              step={currentStep}
+              language={language}
+              onNext={handleNextStep}
+              stepNumber={currentStepIndex + 1}
+              totalSteps={totalSteps}
+            />
+          </div>
+        </div>
+      </>
+    )
+  }
+
+  // Fallback to old format for lessons not yet converted
+  const [currentQuizIndex, setCurrentQuizIndex] = useState(0)
+  const [selectedAnswer, setSelectedAnswer] = useState(null)
+  const [showResult, setShowResult] = useState(false)
+  const [isCorrect, setIsCorrect] = useState(false)
+  const [quizScores, setQuizScores] = useState([])
 
   const currentQuiz = lesson.quizzes[currentQuizIndex]
 
@@ -75,8 +166,8 @@ export default function LessonDetail({ language }) {
 
   const content = {
     en: {
-      back: "← Back to Lessons",
-      complete: "✓ Lesson Complete",
+      back: "Back to Lessons",
+      complete: "Lesson Complete",
       tryAgain: "Try Again",
       next: "Next Question",
       finishLesson: "Complete Lesson",
@@ -87,8 +178,8 @@ export default function LessonDetail({ language }) {
       yourScore: `Your score: ${quizScores.filter(s => s).length} out of ${quizScores.length}`
     },
     es: {
-      back: "← Volver a Lecciones",
-      complete: "✓ Lección Completa",
+      back: "Volver a Lecciones",
+      complete: "Lección Completa",
       tryAgain: "Intentar de Nuevo",
       next: "Siguiente Pregunta",
       finishLesson: "Completar Lección",
@@ -98,9 +189,21 @@ export default function LessonDetail({ language }) {
       quizProgress: `Cuestionario ${currentQuizIndex + 1} de ${lesson.quizzes.length}`,
       yourScore: `Tu puntuación: ${quizScores.filter(s => s).length} de ${quizScores.length}`
     },
+    hi: {
+      back: "Lessons par wapas jao",
+      complete: "Lesson complete",
+      tryAgain: "Phir se try karo",
+      next: "Agla sawal",
+      finishLesson: "Lesson complete karo",
+      nextLesson: "Agla lesson",
+      correct: "Sahi! Bahut badhiya!",
+      incorrect: "Galat. Phir se try karo!",
+      quizProgress: `Quiz ${currentQuizIndex + 1} ka ${lesson.quizzes.length}`,
+      yourScore: `Aapka score: ${quizScores.filter(s => s).length} ka ${quizScores.length}`
+    },
     tl: {
-      back: "← Bumalik sa mga Aralin",
-      complete: "✓ Kumpletong Aralin",
+      back: "Bumalik sa mga Aralin",
+      complete: "Kumpletong Aralin",
       tryAgain: "Subukan uli",
       next: "Susunod na Katanungan",
       finishLesson: "Kumpletong ang Aralin",
@@ -111,32 +214,32 @@ export default function LessonDetail({ language }) {
       yourScore: `Ang iyong score mo: ${quizScores.filter(s => s).length} sa ${quizScores.length}`
     },
     zh: {
-      back: "← 返回课程",
-      complete: "✓ 课程完成",
-      tryAgain: "再试一次",
-      next: "下一题",
-      finishLesson: "完成课程",
-      nextLesson: "下一课",
-      correct: "正确！做得好！",
-      incorrect: "错误！再试一次！",
-      quizProgress: `测验 ${currentQuizIndex + 1} / ${lesson.quizzes.length}`,
-      yourScore: `您的得分：${quizScores.filter(s => s).length} / ${quizScores.length}`
+      back: "Back to Lessons",
+      complete: "Lesson Complete",
+      tryAgain: "Try Again",
+      next: "Next Question",
+      finishLesson: "Complete Lesson",
+      nextLesson: "Next Lesson",
+      correct: "Correct! Well done!",
+      incorrect: "Incorrect. Try again!",
+      quizProgress: `Quiz ${currentQuizIndex + 1} of ${lesson.quizzes.length}`,
+      yourScore: `Your score: ${quizScores.filter(s => s).length} out of ${quizScores.length}`
     },
     ar: {
-      back: "← العودة إلى الدروس",
-      complete: "✓ الدرس مكتمل",
-      tryAgain: "حاول مرة أخرى",
-      next: "السؤال التالي",
-      finishLesson: "إكمال الدرس",
-      nextLesson: "الدرس التالي",
-      correct: "صحيح! أحسنت!",
-      incorrect: "خطأ! حاول مرة أخرى!",
-      quizProgress: `اختبار ${currentQuizIndex + 1} من ${lesson.quizzes.length}`,
-      yourScore: `درجاتك: ${quizScores.filter(s => s).length} من ${quizScores.length}`
+      back: "Back to Lessons",
+      complete: "Lesson Complete",
+      tryAgain: "Try Again",
+      next: "Next Question",
+      finishLesson: "Complete Lesson",
+      nextLesson: "Next Lesson",
+      correct: "Correct! Well done!",
+      incorrect: "Incorrect. Try again!",
+      quizProgress: `Quiz ${currentQuizIndex + 1} of ${lesson.quizzes.length}`,
+      yourScore: `Your score: ${quizScores.filter(s => s).length} out of ${quizScores.length}`
     },
     fr: {
-      back: "← Retour aux leçons",
-      complete: "✓ Leçon terminée",
+      back: "Retour aux leçons",
+      complete: "Leçon terminée",
       tryAgain: "Réessayer",
       next: "Question suivante",
       finishLesson: "Terminer la leçon",
@@ -147,16 +250,16 @@ export default function LessonDetail({ language }) {
       yourScore: `Votre score : ${quizScores.filter(s => s).length} sur ${quizScores.length}`
     },
     pa: {
-      back: "← ਪਾਠਾਂ ਵਾਪਸ ਜਾਓ",
-      complete: "✓ ਪਾਠ ਪੂਰਾ ਹੋਇਆ",
-      tryAgain: "ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
-      next: "ਅਗਲਾ ਸਵਾਲ",
-      finishLesson: "ਪਾਠ ਪੂਰਾ ਕਰੋ",
-      nextLesson: "ਅਗਲਾ ਪਾਠ",
-      correct: "ਸਹੀਂ! ਵਧੀਆ!",
-      incorrect: "ਗਲਤ! ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ!",
-      quizProgress: `ਕੁਇਜ਼ ${currentQuizIndex + 1} ਦਾ ${lesson.quizzes.length}`,
-      yourScore: `ਤੁਹਾਡਾ ਸਕੋਰ: ${quizScores.filter(s => s).length} ਦਾ ${quizScores.length}`
+      back: "Lessons to wapas jao",
+      complete: "Lesson complete",
+      tryAgain: "Phir try karo",
+      next: "Agla sawal",
+      finishLesson: "Lesson complete karo",
+      nextLesson: "Agla lesson",
+      correct: "Sahi! Vaddia!",
+      incorrect: "Galat. Phir try karo!",
+      quizProgress: `Quiz ${currentQuizIndex + 1} da ${lesson.quizzes.length}`,
+      yourScore: `Tuhada score: ${quizScores.filter(s => s).length} da ${quizScores.length}`
     }
   }
 
@@ -367,7 +470,7 @@ export default function LessonDetail({ language }) {
           marginTop: '30px'
         }}>
           <h3 style={{fontSize: '20px', fontWeight: 'bold', color: '#166534', marginBottom: '16px'}}>
-            🎉 {t.complete}
+            {t.complete}
           </h3>
           <p style={{fontSize: '16px', color: '#15803d', marginBottom: '20px'}}>
             {t.yourScore}
