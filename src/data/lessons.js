@@ -394,98 +394,346 @@ export const lessons = [
       fr: "Quoi apporter et quel type de compte commencer ?"
     },
     category: "Banking",
-    content: {
-      en: [
-        "Opening a bank account is one of the first steps to establishing financial life in Canada or the US. Banks and credit unions need to verify your identity under federal regulations, so you'll need specific documents. Most institutions require government-issued photo ID (like a passport or driver's license), proof of address (utility bill, lease agreement, or official mail), and your immigration documents (work permit, study permit, or permanent resident card).",
-        "There are two main types of bank accounts: chequing accounts and savings accounts. A chequing account is designed for daily transactions—paying bills, making purchases with your debit card, withdrawing cash, and receiving direct deposits from your employer. Most chequing accounts include unlimited debit transactions and often come with a monthly fee that can be waived if you maintain a minimum balance or set up direct deposits.",
-        "Savings accounts are designed to help you save money for future goals. They typically offer higher interest rates than chequing accounts and may have limits on monthly withdrawals. Some savings accounts are completely free, while others charge fees if you don't maintain a minimum balance. High-yield savings accounts offer better interest rates but may require higher minimum balances.",
-        "When choosing a bank, consider both traditional banks and credit unions. Traditional banks like RBC, TD, BMO, CIBC, and Scotiabank have extensive branch networks and advanced digital banking platforms. Credit unions are member-owned cooperatives that often offer better rates and lower fees, but may have fewer locations. Many newcomers start with a major bank for convenience, then explore credit unions later.",
-        "Digital-only banks are another option, offering no-fee accounts and competitive interest rates. While they lack physical branches, they provide excellent mobile banking apps, 24/7 customer support, and often reimburse ATM fees. Popular options include Tangerine, Simplii Financial, EQ Bank, and Neo Financial.",
-        "When you visit a bank branch, expect to spend 30-60 minutes opening your account. The bank representative will explain different account options, help you choose based on your needs, and set up online banking access. You'll receive your debit card immediately, which you can activate and start using right away. PIN numbers are typically chosen during the visit.",
-        "Mobile banking apps have become essential tools for managing your finances. You can check balances, transfer money, pay bills, deposit checks by taking photos, and set up automatic savings transfers. Most apps also include budgeting features and spending categorization to help you track your financial habits.",
-        "Understanding bank fees is crucial for avoiding unnecessary charges. Common fees include monthly account fees, overdraft fees (when you spend more than you have), ATM withdrawal fees at other banks' machines, wire transfer fees, and foreign transaction fees. Many banks offer student or newcomer packages with fee waivers for the first 6-12 months.",
-        "Building a relationship with your bank can benefit you long-term. After several months of responsible banking, you may qualify for credit cards, lines of credit, or mortgages. Your banking history demonstrates financial responsibility to lenders, making it easier to access other financial products when needed.",
-        "Security is paramount in banking. Never share your PIN or online banking password with anyone. Enable two-factor authentication on your banking app, use strong unique passwords, and monitor your accounts regularly for unauthorized transactions. Report any suspicious activity immediately to protect your money and identity."
-      ],
-      es: [
-        "Abrir una cuenta bancaria es uno de los primeros pasos para establecer vida financiera en Canadá o EE. UU. Los bancos y cooperativas de crédito necesitan verificar tu identidad bajo regulaciones federales, así que necesitarás documentos específicos. La mayoría de las instituciones requieren identificación con foto emitida por el gobierno (como pasaporte o licencia de conducir), comprobante de domicilio (factura de servicios, contrato de alquiler o correo oficial), y tus documentos de inmigración (permiso de trabajo, permiso de estudio o tarjeta de residente permanente).",
-        "Hay dos tipos principales de cuentas bancarias: cuentas de cheques y cuentas de ahorros. Una cuenta de cheques está diseñada para transacciones diarias—pagar facturas, hacer compras con tu tarjeta de débito, retirar efectivo y recibir depósitos directos de tu empleador. La mayoría de las cuentas de cheques incluyen transacciones de débito ilimitadas y a menudo vienen con una tarifa mensual que puede ser exenta si mantienes un saldo mínimo o configuras depósitos directos.",
-        "Las cuentas de ahorros están diseñadas para ayudarte a ahorrar dinero para metas futuras. Típicamente ofrecen tasas de interés más altas que las cuentas de cheques y pueden tener límites en retiros mensuales. Algunas cuentas de ahorros son completamente gratuitas, mientras que otras cobran tarifas si no mantienes un saldo mínimo. Las cuentas de ahorros de alto rendimiento ofrecen mejores tasas de interés pero pueden requerir saldos mínimos más altos.",
-        "Al elegir un banco, considera tanto bancos tradicionales como cooperativas de crédito. Los bancos tradicionales como RBC, TD, BMO, CIBC y Scotiabank tienen redes extensas de sucursales y plataformas avanzadas de banca digital. Las cooperativas de crédito son cooperativas propiedad de miembros que a menudo ofrecen mejores tasas y tarifas más bajas, pero pueden tener menos ubicaciones. Muchos recién llegados comienzan con un banco importante por conveniencia, luego exploran cooperativas de crédito más tarde.",
-        "Los bancos digitales son otra opción, ofreciendo cuentas sin tarifas y tasas de interés competitivas. Aunque carecen de sucursales físicas, proporcionan excelentes aplicaciones de banca móvil, soporte al cliente 24/7 y a menudo reembolsan tarifas de ATM. Opciones populares incluyen Tangerine, Simplii Financial, EQ Bank y Neo Financial.",
-        "Cuando visitas una sucursal bancaria, espera pasar 30-60 minutos abriendo tu cuenta. El representante del banco explicará diferentes opciones de cuenta, te ayudará a elegir basándose en tus necesidades y configurará el acceso a banca en línea. Recibirás tu tarjeta de débito inmediatamente, que puedes activar y comenzar a usar de inmediato. Los números PIN típicamente se eligen durante la visita.",
-        "Las aplicaciones de banca móvil se han convertido en herramientas esenciales para gestionar tus finanzas. Puedes verificar saldos, transferir dinero, pagar facturas, depositar cheques tomando fotos y configurar transferencias automáticas de ahorro. La mayoría de las aplicaciones también incluyen características de presupuesto y categorización de gastos para ayudarte a rastrear tus hábitos financieros.",
-        "Entender las tarifas bancarias es crucial para evitar cargos innecesarios. Las tarifas comunes incluyen tarifas mensuales de cuenta, tarifas de sobregiro (cuando gastas más de lo que tienes), tarifas de retiro de ATM en máquinas de otros bancos, tarifas de transferencia bancaria y tarifas de transacciones extranjeras. Muchos bancos ofrecen paquetes para estudiantes o recién llegados con exenciones de tarifas para los primeros 6-12 meses.",
-        "Construir una relación con tu banco puede beneficiarte a largo plazo. Después de varios meses de banca responsable, puedes calificar para tarjetas de crédito, líneas de crédito o hipotecas. Tu historial bancario demuestra responsabilidad financiera a los prestamistas, facilitando el acceso a otros productos financieros cuando sea necesario.",
-        "La seguridad es primordial en la banca. Nunca compartas tu PIN o contraseña de banca en línea con nadie. Habilita la autenticación de dos factores en tu aplicación bancaria, usa contraseñas fuertes y únicas, y monitorea tus cuentas regularmente para transacciones no autorizadas. Reporta cualquier actividad sospechosa inmediatamente para proteger tu dinero e identidad."
-      ],
-      hi: [
-        "कनाडा या यूएस में बैंक खाता खोलना वित्तीय जीवन स्थापित करने के पहले कदमों में से एक है। बैंकों और क्रेडिट यूनियनों को संघीय नियमों के तहत आपकी पहचान सत्यापित करने की आवश्यकता होती है, इसलिए आपको विशिष्ट दस्तावेजों की आवश्यकता होगी। अधिकांश संस्थानों को सरकार द्वारा जारी फोटो पहचान (पासपोर्ट या ड्राइवर लाइसेंस), पता प्रमाण (यूटिलिटी बिल, लीज समझौता, या आधिकारिक मेल), और आपके आव्रजन दस्तावेज (वर्क परमिट, स्टडी परमिट, या परमानेंट रेजिडेंट कार्ड) की आवश्यकता होगी।",
-        "बैंक खातों के दो मुख्य प्रकार हैं: चेकिंग खाते और बचत खाते। एक चेकिंग खाता दैनिक लेनदेन के लिए डिज़ाइन किया गया है—बिल भुगतान करना, अपने डेबिट कार्ड से खरीदारी करना, नकद निकालना, और अपने नियोक्ता से प्रत्यक्ष जमा प्राप्त करना। अधिकांश चेकिंग खातों में असीमित डेबिट लेनदेन शामिल होते हैं और अक्सर मासिक शुल्क के साथ आते हैं जिसे न्यूनतम शेष राशि बनाए रखने या प्रत्यक्ष जमा स्थापित करने पर माफ किया जा सकता है।",
-        "बचत खाते भविष्य लक्ष्यों के लिए डिज़ाइन किए गए हैं। वे आमतौर पर चेकिंग खातों की तुलना में उच्च ब्याज दरें प्रदान करते हैं और मासिक निकासी पर सीमाएं हो सकती हैं। कुछ बचत खाते पूरी तरह से मुफ्त हैं, जबकि अन्य शुल्क लगाते हैं यदि आप न्यूनतम शेष राशि नहीं बनाए रखते। उच्च-उपज बचत खाते बेहतर ब्याज दरें प्रदान करते हैं लेकिन उच्चतर न्यूनतम शेष राशियों की आवश्यकता हो सकती है।",
-        "बैंक चुनते समय पारंपरिक बैंकों और क्रेडिट यूनियनों दोनों पर विचार करें। पारंपरिक बैंक जैसे RBC, TD, BMO, CIBC, और Scotiabank के पास व्यापक शाखा नेटवर्क और उन्नत डिजिटल बैंकिंग प्लेटफॉर्म हैं। क्रेडिट यूनियन सदस्य-स्वामित सहकारी हैं जो अक्सर बेहतर दरें और कम शुल्क प्रदान करते हैं, लेकिन कम स्थानों पर हो सकते हैं। कई नए आने वाले सुविधा के लिए एक प्रमुख बैंक से शुरू करते हैं, फिर बाद में क्रेडिट यूनियनों का पता लगाते हैं।",
-        "डिजिटल-केवल बैंक एक और विकल्प हैं, जो शुल्क-मुक्त खाते और प्रतिस्पर्धी ब्याज दरें प्रदान करते हैं। जबकि उनके पास भौतिक शाखाएं नहीं हैं, वे उत्कृष्ट मोबाइल बैंकिंग ऐप्स, 24/7 ग्राहक समर्थन, और अक्सर ATM शुल्क प्रतिपूर्ति करते हैं। लोकप्रिय विकल्पों में Tangerine, Simplii Financial, EQ Bank, और Neo Financial शामिल हैं।",
-        "जब आप बैंक शाखा का दौरा करते हैं, तो अपना खाता खोलने में 30-60 मिनट बिताने की उम्मीद करें। बैंक प्रतिनिधि विभिन्न खाता विकल्पों को समझाएगा, आपकी आवश्यकताओं के आधार पर आपका चयन में मदद करेगा, और ऑनलाइन बैंकिंग पहुंच स्थापित करेगा। आप तुरंत अपना डेबिट कार्ड प्राप्त करेंगे, जिसे आप सक्रिय कर और उपयोग शुरू कर सकते हैं। PIN नंबर आमतौर पर दौरे के दौरान चुने जाते हैं।",
-        "मोबाइल बैंकिंग ऐप्स आपके वित्त को प्रबंधित करने के लिए आवश्यक उपकरण बन गए हैं। आप शेष राशि जांच सकते हैं, पैसे स्थानांतरित कर सकते हैं, बिल भुगतान कर सकते हैं, फोटो लेकर चेक जमा कर सकते हैं, और स्वचालित बचत ट्रांसफर स्थापित कर सकते हैं। अधिकांश ऐप्स में बजटिंग सुविधाएं और खर्च वर्गीकरण भी शामिल हैं ताकि आप अपने वित्तीय आदतों को ट्रैक कर सकें।",
-        "बैंक शुल्कों को समझना अनावश्यक शुल्कों से बचने के लिए महत्वपूर्ण है। सामान्य शुल्कों में मासिक खाता शुल्क, ओवरड्राफ्ट शुल्क (जब आप अपने पास से अधिक खर्च करते हैं), ATM निकासी शुल्क (जब आप अपने पास से अधिक खर्च करते हैं), वायर ट्रांसफर शुल्क, और विदेशी लेनदेन शुल्क शामिल हैं। कई बैंक छात्रों या नए आने वालों के लिए पहले 6-12 महीनों के लिए शुल्क माफी प्रदान करते हैं।",
-        "अपने बैंक के साथ रिश्ता बनाना आपको दीर्घकालिक रूप से लाभ दे सकता है। कई महीनों के जिम्मेदार बैंकिंग के बाद, आप क्रेडिट कार्ड, क्रेडिट लाइनों, या गिरवी के लिए योग्य हो सकते हैं। आपका बैंकिंग इतिहास लेंडर्स को वित्तीय जिम्मेदारी दर्शाता है, जिससे आवश्यकता पड़ने पर अन्य वित्तीय उत्पादों तक पहुंच करना आसान बना जाता है।",
-        "बैंकिंग में सुरक्षा सर्वोपरि है। कभी भी अपना PIN या ऑनलाइन बैंकिंग पासवर्ड किसी के साथ साझा न करें। अपने बैंकिंग ऐप पर दो-कारक प्रमाणीकरण सक्षम करें, मजबूत अद्वितीय पासवर्ड का उपयोग करें, और अनधिकृत लेनदेन के लिए अपने खातों की नियमित रूप से निगरानी करें। किसी भी संदिग्ध गतिविधि को तुरंत अपने पैसे और पहचान की रिपोर्ट करें।"
-      ],
-      tl: [
-        "Ang pagbubukas ng isang bank account ay isa sa mga unang hakbang upang magtataguy ng buhay na pananalapi sa Canada o US. Ang mga bangko at credit unions ay kailangang suriin ang iyong identidad sa ilalim ng pederal na regulasyon, kaya kakailangan mo ng mga tukoy na dokumento. Karamihan sa mga institusyon ay nangangangailangan ng government-issued photo ID (tulad ng passport o driver's license), patunay ng address (utility bill, lease agreement, o opisyal na mail), at iyong mga dokumento sa imigrasyon (work permit, study permit, o permanent resident card).",
-        "Mayroong dalawang pangunahing uri ng mga bank account: chequing accounts at savings accounts. Ang chequing account ay idinisenyo para sa mga araw-araw na transaksyon—pagbabayad ng mga bill, paggawa ng mga purchase gamit ang iyong debit card, pagkuha ng cash, at pagtanggap ng direktang deposito mula sa iyong employer. Karamihan sa mga chequing accounts ay kasama ang walang limitadong debit na transaksyon at karaniwang kasama ito sa isang buwanang bayad na maaaring ma-waive kung panatili mo ang isang minimum balance o mag-set up ng mga direktang deposito.",
-        "Ang mga savings accounts ay idinisenyo upang tumulong sa iyo na mag-ipon ng pera para sa mga hinaharap na goal. Karaniwang sila ay nag-aalok ng mas mataas na interest rate kaysa sa mga chequing accounts at maaaring magkaroon ng mga limitasyon sa buwanang pagkuha. Ilan sa mga savings account ay ganap na libre, habang ang iba ay nagbabayad ng bayad kung hindi mo panatiliin ang isang minimum balance. Ang mga high-yield savings account ay nag-aalok ng mas maayos na interest rate ngunit maaaring mangangailangan ng mas mataas na minimum balance.",
-        "Kapag pumipili ng isang bangko, isaalang mo ang parehong mga tradisyonal na bangko at credit unions. Ang mga tradisyonal na bangko tulad ng RBC, TD, BMO, CIBC, at Scotiabank ay may malawak na network ng mga sangay at advanced na digital banking platform. Ang mga credit union ay mga member-owned cooperatives na karaniwang nag-aalok ng mas maayos na rate at mas mababang bayad, ngunit maaaring may mas kaunting mga lokasyon. Marami sa mga bagong dating ay nagsisimula sa isang pangunahing bangko para sa kaginhawahan, pagkatapos ay tuklasin ang mga credit union mamaya.",
-        "Ang mga digital-only bank ay isa pang opsyon, na nag-aalok ng mga no-fee account at competitive na interest rates. Bagama't wala silang pisikal na mga sangay, nagbibigay sila ng mga excellent na mobile banking apps, 24/7 customer support, at karaniwang nagre-reimburse ng mga ATM fee. Ang mga sikat na opsyon ay kasama ang Tangerine, Simplii Financial, EQ Bank, at Neo Financial.",
-        "Kapag bumibisita ka sa isang sangay ng bangko, asahan na gumugit ka ng 30-60 minuto sa pagbubukas ng iyong account. Ang kinatawan ng bangko ay ipapaliwanag sa iyo ang iba't ibang account options, tutulungan kang na pumili batay sa iyong mga pangangailangan, at itataguy ang online banking access. Tatanggap mo agad ang iyong debit card, na maaari mong i-activate at magsimulang gamitin kaagahan. Ang mga numero ng PIN ay karaniwang pinipili sa panahon ng pagbisita.",
-        "Ang mga mobile banking apps ay naging mga mahalagang tool para sa pamamahala sa iyong mga pananalapi. Maaari kang suriin ang mga balance, maglipat ng pera, magbayad ng mga bill, magdeposito ng mga check sa pamamagitan ng pagkuha ng mga litrato, at mag-set up ng mga automatic na savings transfer. Karamihan sa mga apps ay kasama rin ang mga budgeting feature at spending categorization upang tulungan kang subaybayan ang iyong mga pananalaping kaugalian.",
-        "Ang pag-unawa sa mga bank fee ay kritikal para sa pag-iwas sa mga hindi kinakailangang bayad. Ang mga karaniwang bayad ay kasama ang buwanang account fee, overdraft fee (kapag gumugit ka ng higit pa sa sa iyong), ATM withdrawal fee sa mga makina ng iba pang bangko, wire transfer fee, at foreign transaction fee. Maraming bangko ay nag-aalok ng student o newcomer packages na may fee waiver para sa unang 6-12 buwan.",
-        "Ang pagbuo ng isang relasyon sa iyong bangko ay maaaring makabenepisyo mo sa long-term. Matapos ang ilang buwan ng responsable na pagbabang, maaari kang kwalipika para sa mga credit card, lines of credit, o mga mortgages. Ang iyong banking history ay nagpapakita ng financial responsibility sa mga lender, na nagpapadali ng pag-access sa iba pang mga financial products kapag kinakailangan.",
-        "Ang seguridad ay pinakamahalaga sa pagbabang. Huwag kailanman sa iyong PIN o online banking password sa sinuman. I-enable ang two-factor authentication sa iyong banking app, gamitin ang mga malakas na unique na password, at bantayan ang iyong mga account nang regular para sa mga awtorisadong transaksyon. Ulat ang anumang suspetsosong aktibidad kaagadan upang protektahan ang iyong pera at identidad."
-      ]
-    },
-    quizzes: [
+    steps: [
       {
-        question: {
-          en: "Which account type is best for daily transactions like paying bills and shopping?",
-          es: "¿Qué tipo de cuenta es mejor para transacciones diarias como pagar facturas y compras?",
-          hi: "बिल भुगतान और खरीदारी जैसे दैनिक लेनदेन के लिए कौन सा खाता प्रकार सबसे अच्छा है?"
-        },
-        options: {
-          en: ["Savings account", "Chequing account"],
-          es: ["Cuenta de ahorros", "Cuenta de cheques"],
-          hi: ["बचत खाता", "चेकिंग खाता"],
-          tl: ["Savings account", "Chequing account"]
-        },
-        correctIndex: 1
+        type: "concept",
+        content: {
+          en: {
+            headline: "Chequing vs Savings accounts",
+            illustration: "bank",
+            explanation: [
+              "A chequing account is for everyday spending — paying rent, buying groceries, receiving your salary.",
+              "A savings account is for money you want to grow — it earns interest and should not be touched regularly.",
+              "Most people use both: chequing for daily life and savings to build wealth over time."
+            ]
+          },
+          es: {
+            headline: "Cuentas de cheques vs cuentas de ahorros",
+            illustration: "bank",
+            explanation: [
+              "Una cuenta de cheques es para gastos diarios — pagar alquiler, comprar comestibles, recibir tu salario.",
+              "Una cuenta de ahorros es para dinero que quieres hacer crecer — gana interés y no debe tocarse regularmente.",
+              "La mayoría de las personas usan ambas: cheques para la vida diaria y ahorros para construir riqueza con el tiempo."
+            ]
+          },
+          hi: {
+            headline: "चेकिंग बनाम बचत खाते",
+            illustration: "bank",
+            explanation: [
+              "चेकिंग खाता रोज़मर्रा के खर्चों के लिए है — किराया देना, किराने की खरीदारी करना, वेतन प्राप्त करना।",
+              "बचत खाता उस पैसे के लिए है जो आप बढ़ाना चाहते हैं — यह ब्याज अर्जित करता है और नियमित रूप से छुआ नहीं जाना चाहिए।",
+              "अधिकांश लोग दोनों का उपयोग करते हैं: रोज़मर्रा के जीवन के लिए चेकिंग और समय के साथ धन बनाने के लिए बचत।"
+            ]
+          },
+          tl: {
+            headline: "Chequing vs Savings account",
+            illustration: "bank",
+            explanation: [
+              "Ang chequing account ay para sa pang-araw-araw na gastusin — pagbayad ng rent, pamimili ng groceries, pag-tanggap ng sahod.",
+              "Ang savings account ay para sa pera na gusto mong lumaki — kumikita ito ng interes at hindi dapat pinag-ipunan nang regular.",
+              "Karamihan ng mga tao ay gumagamit ng pareho: chequing para sa pang-araw-araw na buhay at savings upang bumuo ng yaman sa loob ng panahon."
+            ]
+          },
+          zh: {
+            headline: "支票账户 vs 储蓄账户",
+            illustration: "bank",
+            explanation: [
+              "支票账户用于日常开支 — 支付房租、购买杂货、接收工资。",
+              "储蓄账户用于您想要增长的资金 — 它赚取利息，不应该定期使用。",
+              "大多数人同时使用两者：用支票账户处理日常生活，用储蓄账户随时间建立财富。"
+            ]
+          },
+          ar: {
+            headline: "حساب الشيكات مقابل حساب التوفير",
+            illustration: "bank",
+            explanation: [
+              "حساب الشيكات مخصص للنفقات اليومية — دفع الإيجار وشراء البقالة واستقبال الراتب.",
+              "حساب التوفير مخصص للأموال التي تريد أن تنمو — فهو يكسب فائدة ولا ينبغي أن يتم التعامل معه بانتظام.",
+              "يستخدم معظم الناس كليهما: شيكات للحياة اليومية وتوفير لبناء الثروة بمرور الوقت."
+            ]
+          },
+          fr: {
+            headline: "Compte courant vs compte d'épargne",
+            illustration: "bank",
+            explanation: [
+              "Un compte courant est pour les dépenses quotidiennes — payer le loyer, faire l'épicerie, recevoir votre salaire.",
+              "Un compte d'épargne est pour l'argent que vous voulez faire croître — il gagne des intérêts et ne doit pas être touché régulièrement.",
+              "La plupart des gens utilisent les deux : courant pour la vie quotidienne et épargne pour construire la richesse au fil du temps."
+            ]
+          },
+          pa: {
+            headline: "چیکنگ بنام بچت کھاتے",
+            illustration: "bank",
+            explanation: [
+              "چیکنگ کھاتہ روز مرہ کے اخراجات کے لیے ہے — کرائے کی ادائیگی، گروسریز کی خریداری، تنخواہ کی وصولی۔",
+              "بچت کا کھاتہ اس رقم کے لیے ہے جو آپ بڑھانا چاہتے ہیں — یہ سود حاصل کرتا ہے اور اسے باقاعدگی سے نہیں چھوا جانا چاہیے۔",
+              "زیادہ تر لوگ دونوں استعمال کرتے ہیں: روز مرہ کی زندگی کے لیے چیکنگ اور وقت کے ساتھ دولت بنانے کے لیے بچت۔"
+            ]
+          }
+        }
       },
       {
-        question: {
-          en: "What document is typically NOT required to open a bank account?",
-          es: "¿Qué documento típicamente NO se requiere para abrir una cuenta bancaria?",
-          hi: "बैंक खाता खोलने के लिए कौन सा दस्तावेज आमतौर पर आवश्यक नहीं है?"
-        },
-        options: {
-          en: ["Government-issued photo ID", "Credit card statement"],
-          es: ["Identificación con foto emitida por el gobierno", "Estado de cuenta de tarjeta de crédito"],
-          hi: ["सरकार द्वारा जारी फोटो पहचान", "क्रेडिट कार्ड स्टेटमेंट"],
-          tl: ["Government-issued photo ID", "Credit card statement"]
-        },
-        correctIndex: 1
+        type: "quickCheck",
+        correctIndex: 1,
+        content: {
+          en: {
+            question: "Which account should your salary be deposited into?",
+            options: ["Savings account", "Chequing account"],
+            explanation: "Correct! Your salary should go into chequing for daily expenses, then transfer what you want to save."
+          },
+          es: {
+            question: "¿En qué cuenta debe depositarse tu salario?",
+            options: ["Cuenta de ahorros", "Cuenta de cheques"],
+            explanation: "¡Correcto! Tu salario debe ir a la cuenta de cheques para gastos diarios, luego transfiere lo que quieres ahorrar."
+          },
+          hi: {
+            question: "आपका वेतन किस खाते में जमा होना चाहिए?",
+            options: ["बचत खाता", "चेकिंग खाता"],
+            explanation: "सही! आपका वेतन दैनिक खर्चों के लिए चेकिंग में जाना चाहिए, फिर वह स्थानांतरित करें जो आप बचाना चाहते हैं।"
+          },
+          tl: {
+            question: "Aling account ang dapat i-deposit ang iyong sahod?",
+            options: ["Savings account", "Chequing account"],
+            explanation: "Tama! Ang iyong sahod ay dapat sumama sa chequing para sa pang-araw-araw na gastusin, pagkatapos ay ilipat kung ano ang gusto mong i-save."
+          },
+          zh: {
+            question: "您的工资应该存入哪个账户？",
+            options: ["储蓄账户", "支票账户"],
+            explanation: "正确！您的工资应该进入支票账户用于日常开支，然后转移您想要保存的金额。"
+          },
+          ar: {
+            question: "في أي حساب يجب إيداع راتبك؟",
+            options: ["حساب التوفير", "حساب الشيكات"],
+            explanation: "صحيح! يجب أن يذهب راتبك إلى حساب الشيكات لنفقات يومية، ثم نقل ما تريد توفيره."
+          },
+          fr: {
+            question: "Sur quel compte votre salaire doit-il être déposé?",
+            options: ["Compte d'épargne", "Compte courant"],
+            explanation: "Correct! Votre salaire doit aller au compte courant pour les dépenses quotidiennes, puis transférez ce que vous voulez économiser."
+          },
+          pa: {
+            question: "آپ کی تنخواہ کس کھاتے میں جمع ہونی چاہیے؟",
+            options: ["بچت کا کھاتہ", "چیکنگ کھاتہ"],
+            explanation: "صحیح! آپ کی تنخواہ روز مرہ کے اخراجات کے لیے چیکنگ میں جانی چاہیے، پھر وہ منتقل کریں جو آپ بچانا چاہتے ہیں۔"
+          }
+        }
       },
       {
-        question: {
-          en: "What is a key advantage of credit unions compared to traditional banks?",
-          es: "¿Cuál es una ventaja clave de las cooperativas de crédito comparadas con los bancos tradicionales?",
-          hi: "पारंपरिक बैंकों की तुलना में क्रेडिट यूनियनों का एक मुख्य लाभ क्या है?"
-        },
-        options: {
-          en: ["They typically offer better rates and lower fees", "They have more branches worldwide"],
-          es: ["Generalmente ofrecen mejores tasas y tarifas más bajas", "Tienen más sucursales en todo el mundo"],
-          hi: ["वे आमतौर पर बेहतर दरें और कम शुल्क प्रदान करते हैं", "उनके दुनिया भर में अधिक शाखाएं हैं"],
-          tl: ["They typically offer better rates and lower fees", "They have more branches worldwide"]
-        },
-        correctIndex: 0
+        type: "realWorld",
+        correctIndex: 1,
+        content: {
+          en: {
+            scenarioTitle: "Ahmed's payday plan",
+            scenarioIcon: "person",
+            scenario: "Ahmed gets paid $2,000. He wants to save $400. What should he do?",
+            question: "Which strategy is best?",
+            options: [
+              "Keep all $2,000 in chequing so it's easier to access",
+              "Transfer $400 to savings right away on payday"
+            ],
+            explanation: "Perfect! Pay yourself first — move savings before you can spend it. This is called 'pay yourself first' and helps you build wealth automatically."
+          },
+          es: {
+            scenarioTitle: "Plan de día de pago de Ahmed",
+            scenarioIcon: "person",
+            scenario: "Ahmed recibe $2,000. Quiere ahorrar $400. ¿Qué debería hacer?",
+            question: "¿Cuál estrategia es mejor?",
+            options: [
+              "Mantener todo los $2,000 en cheques para que sea más fácil acceder",
+              "Transferir $400 a ahorros de inmediato en día de pago"
+            ],
+            explanation: "¡Perfecto! Paga te a ti mismo primero — mueve ahorros antes de que puedas gastarlo. Esto se llama 'pago yourself first' y te ayuda a construir riqueza automáticamente."
+          },
+          hi: {
+            scenarioTitle: "अहमद की तनख्वाह योजना",
+            scenarioIcon: "person",
+            scenario: "अहमद को $2,000 मिलता है। वह $400 बचाना चाहता है। उसे क्या करना चाहिए?",
+            question: "कौन सी रणनीति सबसे अच्छी है?",
+            options: [
+              "सभी $2,000 चेकिंग में रखें ताकि एक्सेस करना आसान हो",
+              "तनख्वाह के दिन तुरंत बचत में $400 स्थानांतरित करें"
+            ],
+            explanation: "बिल्कुल! पहले अपने आप को भुगतान करें — खर्च करने से पहले बचत को स्थानांतरित करें। इसे 'pay yourself first' कहा जाता है और आपको स्वचालित रूप से धन बनाने में मदद करता है।"
+          },
+          tl: {
+            scenarioTitle: "Plano ng payday ni Ahmed",
+            scenarioIcon: "person",
+            scenario: "Si Ahmed ay nakakatanggap ng $2,000. Gusto niyang makatipid ng $400. Ano ang dapat gawin niya?",
+            question: "Aling estratehiya ang pinakamahusay?",
+            options: [
+              "Panatilihin lahat ng $2,000 sa cheque upang mas madaling ma-access",
+              "Ilipat $400 sa savings kaagad sa araw ng payday"
+            ],
+            explanation: "Perfect! Bayaran ang iyong sarili muna — ilipat ang savings bago mo magastos. Ito ay tinatawag na 'pay yourself first' at tumutulong sa iyo na bumuo ng yaman ng awtomatiko."
+          },
+          zh: {
+            scenarioTitle: "艾哈迈德的发薪日计划",
+            scenarioIcon: "person",
+            scenario: "艾哈迈德获得$2,000。他想存$400。他应该怎么做？",
+            question: "哪种策略最好？",
+            options: [
+              "将全部$2,000保留在支票账户中以便更容易获取",
+              "在发薪日立即将$400转入储蓄"
+            ],
+            explanation: "完美！先支付自己 — 在你能花钱之前转移储蓄。这称为\"先支付自己\"，可以帮助您自动建立财富。"
+          },
+          ar: {
+            scenarioTitle: "خطة يوم الدفع لأحمد",
+            scenarioIcon: "person",
+            scenario: "أحمد يحصل على 2000 دولار. يريد توفير 400 دولار. ماذا يجب أن يفعل؟",
+            question: "أي استراتيجية هي الأفضل؟",
+            options: [
+              "احتفظ بكل 2000 دولار في الشيكات لتسهيل الوصول إليها",
+              "نقل 400 دولار إلى التوفير مباشرة في يوم الدفع"
+            ],
+            explanation: "مثالي! ادفع لنفسك أولاً — نقل التوفير قبل أن تتمكن من إنفاقه. يُطلق على هذا 'دفع نفسك أولاً' ويساعدك على بناء الثروة تلقائياً."
+          },
+          fr: {
+            scenarioTitle: "Plan de jour de paie d'Ahmed",
+            scenarioIcon: "person",
+            scenario: "Ahmed reçoit 2000 dollars. Il veut économiser 400 dollars. Que devrait-il faire?",
+            question: "Quelle stratégie est la meilleure?",
+            options: [
+              "Conservez les 2000 dollars complets en chèques pour plus facile d'accès",
+              "Transférer 400 dollars à l'épargne immédiatement le jour de la paie"
+            ],
+            explanation: "Parfait! Payez-vous d'abord — transférez les économies avant de pouvoir les dépenser. C'est ce qu'on appelle 'se payer d'abord' et cela vous aide à construire la richesse automatiquement."
+          },
+          pa: {
+            scenarioTitle: "احمد کے تنخواہ کا منصوبہ",
+            scenarioIcon: "person",
+            scenario: "احمد کو $2,000 ملتے ہیں۔ وہ $400 بچانا چاہتا ہے۔ اسے کیا کرنا چاہیے؟",
+            question: "کون سی حکمت عملی سب سے بہتر ہے؟",
+            options: [
+              "تمام $2,000 کو چیکوں میں رکھیں تاکہ رسائی آسان ہو",
+              "تنخواہ کے دن فوری طور پر $400 بچت میں منتقل کریں"
+            ],
+            explanation: "بہترین! پہلے اپنے آپ کو ادائیگی کریں — خرچ کرنے سے پہلے بچت منتقل کریں۔ اسے 'pay yourself first' کہا جاتا ہے اور یہ آپ کو خودکار طریقے سے دولت بنانے میں مدد کرتا ہے۔"
+          }
+        }
+      },
+      {
+        type: "fillBlank",
+        correctIndex: 1,
+        content: {
+          en: {
+            sentence: "Online banks like EQ Bank often have ___ monthly fees than big traditional banks",
+            options: ["higher", "lower", "same"],
+            explanation: "Lower is correct! Online banks have fewer costs because they don't maintain physical branches."
+          },
+          es: {
+            sentence: "Los bancos en línea como EQ Bank a menudo tienen tarifas mensuales ___ que los grandes bancos tradicionales",
+            options: ["más altas", "más bajas", "iguales"],
+            explanation: "¡Más bajas es correcto! Los bancos en línea tienen menores costos porque no mantienen sucursales físicas."
+          },
+          hi: {
+            sentence: "EQ Bank जैसे ऑनलाइन बैंकों में अक्सर बड़े पारंपरिक बैंकों की तुलना में ___ मासिक शुल्क होते हैं",
+            options: ["अधिक", "कम", "समान"],
+            explanation: "कम सही है! ऑनलाइन बैंकों में कम लागत होती है क्योंकि वे भौतिक शाखाएं नहीं रखते हैं।"
+          },
+          tl: {
+            sentence: "Ang mga online bank tulad ng EQ Bank ay madalas na may ___ buwanang bayad kaysa sa malalaking tradisyonal na bangko",
+            options: ["mas mataas", "mas mababa", "pareho"],
+            explanation: "Mas mababa ang tama! Ang mga online bank ay may mas kaunting gastos dahil hindi nila pinapanatili ang pisikal na mga sangay."
+          },
+          zh: {
+            sentence: "像EQ Bank这样的在线银行通常比大型传统银行有___ 月费",
+            options: ["更高", "更低", "相同"],
+            explanation: "更低是正确的！在线银行的成本较低，因为它们不维持实体分支机构。"
+          },
+          ar: {
+            sentence: "البنوك على الإنترنت مثل EQ Bank غالباً ما تكون رسوم شهرية ___ أكبر من البنوك التقليدية",
+            options: ["أعلى", "أقل", "نفس"],
+            explanation: "أقل هو الصحيح! البنوك على الإنترنت لديها تكاليف أقل لأنها لا تحتفظ بفروع فعلية."
+          },
+          fr: {
+            sentence: "Les banques en ligne comme EQ Bank ont souvent des frais mensuels ___ plus grands que les grandes banques traditionnelles",
+            options: ["plus élevés", "plus bas", "identiques"],
+            explanation: "Plus bas est correct! Les banques en ligne ont des coûts inférieurs parce qu'elles ne maintiennent pas de succursales physiques."
+          },
+          pa: {
+            sentence: "EQ Bank جیسے آن لائن بینکوں میں اکثر بڑے روایتی بینکوں کے مقابلے ___ ماہانہ فیس ہوتی ہے",
+            options: ["زیادہ", "کم", "برابر"],
+            explanation: "کم صحیح ہے! آن لائن بینکوں میں کم لاگت ہے کیونکہ وہ جسمانی شاخیں نہیں رکھتے ہیں۔"
+          }
+        }
+      },
+      {
+        type: "summary",
+        content: {
+          en: {
+            takeaways: [
+              "Chequing for daily spending, savings for growing money",
+              "Online banks have lower fees than traditional banks",
+              "Always ask about newcomer account specials",
+              "Pay yourself first — move savings before spending",
+              "CDIC insures up to $100,000 in case of bank failure"
+            ]
+          },
+          es: {
+            takeaways: [
+              "Chequeos para gastos diarios, ahorros para crecer dinero",
+              "Los bancos en línea tienen tarifas más bajas que los bancos tradicionales",
+              "Siempre pregunta sobre especiales de cuentas para recién llegados",
+              "Paga a ti mismo primero — mueve ahorros antes de gastar",
+              "CDIC asegura hasta $100,000 en caso de quiebra bancaria"
+            ]
+          },
+          hi: {
+            takeaways: [
+              "दैनिक खर्च के लिए चेकिंग, पैसे बढ़ाने के लिए बचत",
+              "ऑनलाइन बैंकों में पारंपरिक बैंकों की तुलना में कम शुल्क होते हैं",
+              "हमेशा नए आने वालों के खातों के बारे में पूछें",
+              "पहले अपने आप को भुगतान करें — खर्च करने से पहले बचत को स्थानांतरित करें",
+              "CDIC बैंक विफलता की स्थिति में $100,000 तक का बीमा करता है"
+            ]
+          },
+          tl: {
+            takeaways: [
+              "Chequing para pang-araw-araw na gastusin, savings para sa paglaki ng pera",
+              "Ang mga online bank ay may mas mababang bayad kaysa sa tradisyonal na bangko",
+              "Palaging magtanong tungkol sa mga espesyal na account para sa mga bagong dating",
+              "Bayaran ang iyong sarili muna — ilipat ang savings bago magastos",
+              "Ang CDIC ay nag-aassure ng hanggang $100,000 sa kalagayan ng pagkabigo ng bangko"
+            ]
+          },
+          zh: {
+            takeaways: [
+              "支票账户用于日常开支，储蓄用于增加资金",
+              "在线银行的费用低于传统银行",
+              "始终询问新移民账户特价",
+              "先支付自己 — 在花钱前转移储蓄",
+              "CDIC在银行倒闭情况下保险高达$100,000"
+            ]
+          },
+          ar: {
+            takeaways: [
+              "الشيكات للنفقات اليومية، التوفير لتنمية الأموال",
+              "البنوك على الإنترنت لديها رسوم أقل من البنوك التقليدية",
+              "دائما اسأل عن خصوصيات الحساب للمهاجرين الجدد",
+              "ادفع لنفسك أولاً — نقل التوفير قبل الإنفاق",
+              "CDIC تؤمن حتى 100000 دولار في حالة فشل البنك"
+            ]
+          },
+          fr: {
+            takeaways: [
+              "Chèques pour dépenses quotidiennes, épargne pour croissance monétaire",
+              "Les banques en ligne ont des frais moins élevés que les banques traditionnelles",
+              "Toujours demander des spéciales de compte pour les nouveaux arrivants",
+              "Payez-vous d'abord — transférez l'épargne avant de dépenser",
+              "CDIC assure jusqu'à 100000 dollars en cas de faillite bancaire"
+            ]
+          },
+          pa: {
+            takeaways: [
+              "روزمرہ کے اخراجات کے لیے چیکنگ، پیسہ بڑھانے کے لیے بچت",
+              "آن لائن بینکوں میں روایتی بینکوں کے مقابلے کم فیس ہوتی ہے",
+              "ہمیشہ نئے آنے والوں کے کھاتوں کے خصوصیات کے بارے میں پوچھیں",
+              "پہلے اپنے آپ کو ادائیگی کریں — خرچ کرنے سے پہلے بچت منتقل کریں",
+              "CDIC بینک کی ناکامی کی صورت میں $100,000 تک کا بیمہ کرتا ہے"
+            ]
+          }
+        }
       }
     ]
   },
@@ -512,83 +760,346 @@ export const lessons = [
       fr: "Comprendre les baux de location et les droits des locataires"
     },
     category: "Housing",
-    content: {
-      en: [
-        "Finding suitable housing is one of the biggest challenges for newcomers to Canada and the US. Understanding the rental market, your rights as a tenant, and how to protect yourself legally can save you thousands of dollars and prevent serious housing problems. This comprehensive guide covers everything you need to know about renting your first home.",
-        "Types of housing vary significantly between urban and rural areas. In major cities like Toronto, Vancouver, New York, or San Francisco, you'll find apartments, condos, townhouses, and basement suites. In smaller cities and suburban areas, single-family homes are more common. Each type has different costs, maintenance responsibilities, and lifestyle benefits.",
-        "Before starting your housing search, understand your budget. Financial experts recommend spending no more than 30-35% of your gross monthly income on housing. This includes rent, utilities (hydro/electricity, water, heating), and tenant insurance. For example, if you earn $4,000 monthly, your housing budget should be around $1,200-1,400 total.",
-        "The rental application process in Canada and the US requires several documents: proof of income (employment letter, pay stubs, or tax returns), credit history, references (previous landlords or employers), and sometimes a guarantor if you're new to the country. Many landlords require first and last month's rent plus a security deposit equal to one month's rent.",
-        "Understanding lease agreements is critical. A standard lease should specify: rent amount and due date, lease term (typically 12 months), included utilities, rules about pets and guests, maintenance responsibilities, and conditions for termination. Never sign a lease without reading it completely and understanding every clause.",
-        "Tenant rights vary by province or state but generally include: the right to a habitable living space, privacy protections (landlords must give notice before entering), protection from unfair rent increases, and the right to dispute security deposit deductions. In Canada, each province has a landlord-tenant board; in the US, state housing departments handle these issues.",
-        "Security deposits are typically one month's rent and must be returned within a specific timeframe after you move out (usually 14-30 days). Landlords can only deduct for unpaid rent, damage beyond normal wear and tear, or cleaning costs. Always document the property condition with photos/videos when you move in and out.",
-        "Roommates can significantly reduce housing costs but require clear agreements. Even with friends, create a written roommate agreement covering: rent split, utility divisions, cleaning schedules, guest policies, and rules for shared spaces. This prevents conflicts and protects everyone legally if disputes arise.",
-        "Tenant insurance is often required by landlords and is crucial for protecting your belongings. It covers theft, fire, water damage, and liability if someone is injured in your unit. Basic policies cost $15-30 monthly and provide $20,000-50,000 in coverage. This is one of the best investments you can make as a renter.",
-        "When problems arise with your landlord, document everything in writing. Send emails or written notices for maintenance requests, keep copies of all correspondence, and take photos of issues. If problems aren't resolved, contact your local tenant rights organization or housing authority. Most jurisdictions offer free or low-cost legal assistance for tenant disputes."
-      ],
-      es: [
-        "Encontrar vivienda adecuada es uno de los mayores desafíos para recién llegados a Canadá y EE. UU. Entender el mercado de alquiler, tus derechos como inquilino, y cómo protegerte legalmente puede ahorrarte miles de dólares y prevenir graves problemas de vivienda. Esta guía completa cubre todo lo que necesitas saber sobre alquilar tu primer hogar.",
-        "Los tipos de vivienda varían significativamente entre áreas urbanas y rurales. En ciudades importantes como Toronto, Vancouver, Nueva York o San Francisco, encontrarás apartamentos, condominios, casas adosadas y suites en sótano. En ciudades más pequeñas y áreas suburbanas, las casas unifamiliares son más comunes. Cada tipo tiene diferentes costos, responsabilidades de mantenimiento y beneficios de estilo de vida.",
-        "Antes de comenzar tu búsqueda de vivienda, entiende tu presupuesto. Los expertos financieros recomiendan gastar no más del 30-35% de tus ingresos mensuales brutos en vivienda. Esto incluye alquiler, servicios públicos (hidro/electricidad, agua, calefacción) y seguro de inquilino. Por ejemplo, si ganas $4,000 mensuales, tu presupuesto de vivienda debería ser alrededor de $1,200-1,400 total.",
-        "El proceso de solicitud de alquiler en Canadá y EE. UU. requiere varios documentos: prueba de ingresos (carta de empleo, recibos de pago o declaraciones de impuestos), historial de crédito, referencias (propietarios anteriores o empleadores) y a veces un garante si eres nuevo en el país. Muchos propietarios requieren primer y último mes de alquiler más un depósito de seguridad igual a un mes de alquiler.",
-        "Entender los contratos de alquiler es crítico. Un contrato estándar debe especificar: cantidad de alquiler y fecha de vencimiento, plazo del contrato (típicamente 12 meses), servicios públicos incluidos, reglas sobre mascotas e invitados, responsabilidades de mantenimiento y condiciones para terminación. Nunca firmes un contrato sin leerlo completamente y entender cada cláusula.",
-        "Los derechos de inquilino varían por provincia o estado pero generalmente incluyen: el derecho a un espacio habitable, protecciones de privacidad (los propietarios deben dar aviso antes de entrar), protección contra aumentos de alquiler injustos y el derecho a disputar deducciones de depósito de seguridad. En Canadá, cada provincia tiene una junta de propietarios-inquilinos; en EE. UU., los departamentos de vivienda estatales manejan estos problemas.",
-        "Los depósitos de seguridad son típicamente un mes de alquiler y deben ser devueltos dentro de un marco de tiempo específico después de que te mudes (usualmente 14-30 días). Los propietarios solo pueden deducir por alquiler no pagado, daño más allá del desgaste normal o costos de limpieza. Siempre documenta la condición de la propiedad con fotos/videos cuando te mudas y sales.",
-        "Los compañeros de cuarto pueden reducir significativamente los costos de vivienda pero requieren acuerdos claros. Incluso con amigos, crea un acuerdo de compañero de cuarto por escrito cubriendo: división de alquiler, divisiones de servicios públicos, horarios de limpieza, políticas de invitados y reglas para espacios compartidos. Esto previene conflictos y protege legalmente a todos si surgen disputas.",
-        "El seguro de inquilino a menudo es requerido por propietarios y es crucial para proteger tus pertenencias. Cubre robo, fuego, daños por agua y responsabilidad si alguien resulta herido en tu unidad. Las pólizas básicas cuestan $15-30 mensuales y proporcionan $20,000-50,000 en cobertura. Esta es una de las mejores inversiones que puedes hacer como inquilino.",
-        "Cuando surgen problemas con tu propietario, documenta todo por escrito. Envía correos electrónicos o avisos escritos para solicitudes de mantenimiento, guarda copias de toda correspondencia y toma fotos de los problemas. Si los problemas no se resuelven, contacta tu organización local de derechos de inquilinos o autoridad de vivienda. La mayoría de jurisdicciones ofrecen asistencia legal gratuita o de bajo costo para disputas de inquilinos."
-      ],
-      hi: [
-        "कनाडा और यूएस में नए आने वालों के लिए उपयुक्त आवास ढूंढना सबसे बड़ी चुनौतियों में से एक है। किराया बाजार को समझना, आपके एक किरायेदार के रूप में अधिकार, और कानूनी रूप से खुद की रक्षा कैसे करें, यह आपको हजारों डॉलर बचा सकता है और गंभीर आवास समस्याओं को रोक सकता है। यह व्यापक गाइड आपके पहले घर किराया लेने के लिए आवश्यक सब कुछ शामिल करती है।",
-        "आवास के प्रकार शहरी और ग्रामीण क्षेत्रों के बीच काफी भिन्न होते हैं। टोरंटो, वैंकूवर, न्यूयॉर्क, या सैन फ्रांसिस्को जैसे प्रमुख शहरों में, आपको अपार्टमेंट, कोंडो, टाउनहाउस, और बेसमेंट सूट मिलेंगे। छोटे शहरों और उपनग्रीय क्षेत्रों में, एकल-परिवार घर अधिक सामान्य हैं। प्रत्येक प्रकार के अलग-अलग खर्च, रखरखाव की जिम्मेदारियां, और जीवनशैली लाभ हैं।",
-        "अपने आवास खोज शुरू करने से पहले, अपने बजट को समझें। वित्तीय विशेषज्ञ अनुसारित करते हैं कि आप अपनी कुल मासिक आय का 30-35% से अधिक खर्च करने की सलाह देते हैं। इसमें किराया, उपयोगिती (हाइड्रो/बिजली, पानी, हीटिंग), और किरायेदार बीमा शामिल है। उदाहरण के लिए, यदि आप मासिक $4,000 कमाते हैं, तो आपका आवास बजट लगभग $1,200-1,400 कुल होना चाहिए।",
-        "कनाडा और यूएस में किराया आवेदन प्रक्रिया में कई दस्तावेजों की आवश्यकता होती है: आय प्रमाण (रोजगार पत्र, वेतन स्लिप, या टैक्स रिटर्न), क्रेडिट इतिहास, संदर्भ (पिछले मकान मालिक या नियोक्ता), और कभी-कभी एक गारंटर यदि आप देश में नए हैं। कई मकान मालिक पहले और आखिरी महीने का किराया और एक महीने के बराबर सुरक्षा जमा की आवश्यकता रखते हैं।",
-        "किराया समझौतों को समझना महत्वपूर्ण है। एक मानक किराया समझौते में निर्दिष्ट होना चाहिए: किराया राशि और नियत तिथि, किराया अवधि (आमतौर पर 12 महीने), शामिल उपयोगिती, पालतू और मेहमानों के बारे में नियम, और समापन की शर्तें। बिना पूरी तरह से पढ़े और हर खंड को समझे बिना किराया समझौते पर हस्ताक्षर न करें।",
-        "किरायेदार अधिकार प्रांत या राज्य के अनुसार भिन्न होते हैं लेकिन आमतौर प्रदान करते हैं: रहने योग्य स्थान का अधिकार, गोपनीय सुरक्षा (मकान मालिकों को प्रवेश करने से पहले सूचना देना होगा), अनुचित किराया वृद्धि से सुरक्षा, और सुरक्षा जमा कटौती को विवादित करने का अधिकार। कनाडा में, प्रत्येक प्रांत में एक मकान-मालिक-किरायेदार बोर्ड है; यूएस में, राज्य आवास विभाग हैंडल करते हैं ये मुद्दों को संभालित करते हैं।",
-        "सुरक्षा जमा आमतौर पर एक महीने के किराया के बराबर होता है और आपके बाहर निकलने के बाद एक विशिष्ट समय सीमा के भीतर वापस किया जाना चाहिए (आमतौर पर 14-30 दिन)। मकान मालिक केवल अवैत किराया के लिए, सामान्य पहने से अधिक क्षति के लिए, या सफाई लागत के लिए कट सकते हैं। हमेशा संपत्ति की स्थिति को फोटो/वीडियो के साथ दस्तावेजित करें जब आप अंदर और बाहर जाएं।",
-        "रूममेट्स आवास लागत को महत्वपूर्ण रूप से कम कर सकते हैं लेकिन स्पष्ट समझौतों की आवश्यकता होती है। दोस्तों के साथ भी, एक लिखित रूममेट समझौता बनाएं जिसमें शामिल है: किराया विभाजन, उपयोगिती विभाजन, सफाई अनुसूची, मेहमान नीतियां, और साझा स्थानों के लिए नियम। यह संघर्ष रोकता है और यदि विवाद उठते हैं तो कानूनी रूप से सभी की रक्षा करता है।",
-        "किरायेदार बीमा अक्सर मकान मालिकों द्वारा आवश्यक होता है और आपके सामानों की रक्षा के लिए महत्वपूर्ण है। यह चोरी, आग, पानी की क्षति, और दायित्व को कवर करता है यदि कोई आपके यूनिट में घायल होता है। बेसिक पॉलिसी $15-30 मासिक लागत हैं और $20,000-50,000 की कवरेज प्रदान करती हैं। यह एक किरायेदार के रूप में आप कर सकने वाली सर्वोत्तम निवेशन में से एक है।",
-        "जब आपके मकान मालिक के साथ समस्याएं उत्पन्न होती हैं, तो सब कुछ लिखित रूप में दस्तावेजित करें। रखरखाव अनुरोधों के लिए ईमेल या लिखित सूचना भेजें, सभी पत्राचार की प्रतियां रखें, और समस्याओं की फोटो लें। यदि समस्याएं हल नहीं होती हैं, तो अपनी स्थानीय किरायेदार अधिकार संगठन या आवास प्राधिकरण से संपर्क करें। अधिकांश क्षेत्राधिकारी क्षेत्रों में किरायेदार विवादों के लिए मुफ्त या कम लागत वाली कानूनी सहायता प्रदान करते हैं।"
-      ]
-    },
-    quizzes: [
+    steps: [
       {
-        question: {
-          en: "What percentage of gross monthly income do financial experts recommend spending on housing?",
-          es: "¿Qué porcentaje de los ingresos mensuales brutos recomiendan los expertos financieros gastar en vivienda?",
-          hi: "वित्तीय विशेषज्ञ आवास पर कुल मासिक आय का कितना प्रतिशत खर्च करने की सलाह देते हैं?"
-        },
-        options: {
-          en: ["30-35%", "50-60%"],
-          es: ["30-35%", "50-60%"],
-          hi: ["30-35%", "50-60%"]
-        },
-        correctIndex: 0
+        type: "concept",
+        content: {
+          en: {
+            headline: "What landlords check before renting to you",
+            illustration: "home",
+            explanation: [
+              "Most landlords in Canada will check your credit score, ask for proof of income, and want references.",
+              "As a newcomer you may not have all of these yet — but there are ways around it.",
+              "Being prepared with documents and a guarantor can open doors even without Canadian credit history."
+            ]
+          },
+          es: {
+            headline: "Qué verifican los propietarios antes de alquilarte",
+            illustration: "home",
+            explanation: [
+              "La mayoría de los propietarios en Canadá verificarán tu puntuación de crédito, pedirán comprobante de ingresos y querrán referencias.",
+              "Como recién llegado es posible que no tengas todo esto todavía — pero hay formas de solucionarlo.",
+              "Estar preparado con documentos y un garante puede abrir puertas incluso sin historial de crédito canadiense."
+            ]
+          },
+          hi: {
+            headline: "मकान मालिक किराये पर लेने से पहले क्या जांच करते हैं",
+            illustration: "home",
+            explanation: [
+              "कनाडा में अधिकांश मकान मालिक आपके क्रेडिट स्कोर की जांच करेंगे, आय का प्रमाण माँगेंगे, और संदर्भ चाहेंगे।",
+              "एक नए आने वाले के रूप में आपके पास शायद यह सब अभी तक नहीं है — लेकिन इसका समाधान करने के तरीके हैं।",
+              "दस्तावेजों और गारंटर के साथ तैयार होना कनाडाई क्रेडिट इतिहास के बिना भी दरवाजे खोल सकता है।"
+            ]
+          },
+          tl: {
+            headline: "Kung ano ang tinitingnan ng mga landlord bago kang mag-alok",
+            illustration: "home",
+            explanation: [
+              "Karamihan ng mga landlord sa Canada ay susuriin ang iyong credit score, hihilingin ang patunay ng kita, at gustong mayroon kang mga reference.",
+              "Bilang bagong dating maaaring wala ka pa sa lahat ng ito — pero may mga paraan upang malutas ito.",
+              "Pagiging handa sa mga dokumento at isang guarantor ay maaaring magbukas ng mga pintuan kahit walang Canadian credit history."
+            ]
+          },
+          zh: {
+            headline: "房东在租给你之前会检查什么",
+            illustration: "home",
+            explanation: [
+              "加拿大的大多数房东会检查您的信用评分，要求收入证明并需要推荐信。",
+              "作为新来者，您可能还没有所有这些信息，但有解决方法。",
+              "准备好文件和担保人即使没有加拿大信用历史也可以打开大门。"
+            ]
+          },
+          ar: {
+            headline: "ما الذي يتحقق منه الملاك قبل تأجيرك",
+            illustration: "home",
+            explanation: [
+              "معظم الملاك في كندا سيتحققون من درجة الائتمان الخاصة بك وطلب إثبات الدخل وسيريدون مراجع.",
+              "كمهاجر جديد قد لا يكون لديك كل هذا حتى الآن — لكن هناك طرقًا للحل.",
+              "إن كونك مستعدًا بالمستندات والضامن يمكنه فتح الأبواب حتى بدون سجل ائتمان كندي."
+            ]
+          },
+          fr: {
+            headline: "Ce que les propriétaires vérifient avant de vous louer",
+            illustration: "home",
+            explanation: [
+              "La plupart des propriétaires au Canada vérifieront votre pointage de crédit, demanderont la preuve de revenu et voudront des références.",
+              "En tant que nouveau venant vous n'avez peut-être pas tout cela pour le moment — mais il y a des façons de résoudre cela.",
+              "Être préparé avec des documents et un garant peut ouvrir des portes même sans antécédents de crédit canadien."
+            ]
+          },
+          pa: {
+            headline: "ਮਕਾਨ ਮਾਲਕ ਤੁਹਾਨੂੰ ਕਿਰਾਏ 'ਤੇ ਦੇਣ ਤੋਂ ਪਹਿਲਾਂ ਕੀ ਜਾਂਚਦੇ ਹਨ",
+            illustration: "home",
+            explanation: [
+              "ਕੈਨੇਡਾ ਵਿੱਚ ਅਧਿਕਾਂਸ਼ ਮਕਾਨ ਮਾਲਕ ਤੁਹਾਡੇ ਕ੍ਰੈਡਿਟ ਸਕੋਰ ਦੀ ਜਾਂਚ ਕਰਨਗੇ, ਆਮਦਨ ਦਾ ਸਬੂਤ ਮੰਗਣਗੇ, ਅਤੇ ਸੰਦਰਭ ਚਾਹੋ ਗੇ।",
+              "ਇੱਕ ਨਵੇਂ ਆਉਣ ਵਾਲੇ ਵਜੋਂ ਤੁਹਾਡੇ ਕੋਲ ਸ਼ਾਇਦ ਇਹ ਸਭ ਅਭੀ ਨਹੀਂ ਹੈ — ਪਰ ਇਸ ਨੂੰ ਹੱਲ ਕਰਨ ਦੇ ਤਰੀਕੇ ਹਨ।",
+              "ਦਸਤਾਵੇਜ਼ਾਂ ਅਤੇ ਗੁਆਂਢ ਮਿੱਤਰ ਦੇ ਨਾਲ ਤਿਆਰ ਹੋਣਾ ਕੈਨੇਡੀਅਨ ਕ੍ਰੈਡਿਟ ਇਤਿਹਾਸ ਦੇ ਬਿਨਾ ਵੀ ਦਰਵਾਜ਼ੇ ਖੋਲ ਸਕਦਾ ਹੈ।"
+            ]
+          }
+        }
       },
       {
-        question: {
-          en: "What is typically required as a security deposit when renting?",
-          es: "¿Qué se típicamente requiere como depósito de seguridad al alquilar?",
-          hi: "किराया पर लेने के लिए सुरक्षा जमा के रूप में आमतौर पर क्या आवश्यक होता है?"
-        },
-        options: {
-          en: ["One week's rent", "One month's rent"],
-          es: ["Una semana de alquiler", "Un mes de alquiler"],
-          hi: ["एक सप्ताह का किराया", "एक महीने का किराया"]
-        },
-        correctIndex: 1
+        type: "quickCheck",
+        correctIndex: 0,
+        content: {
+          en: {
+            question: "A security deposit in Canada is typically:",
+            options: ["One month rent", "Three months rent"],
+            explanation: "Correct! One month's rent is the standard security deposit across Canada and the US."
+          },
+          es: {
+            question: "Un depósito de seguridad en Canadá es típicamente:",
+            options: ["Un mes de alquiler", "Tres meses de alquiler"],
+            explanation: "¡Correcto! Un mes de alquiler es el depósito de seguridad estándar en Canadá y EE. UU."
+          },
+          hi: {
+            question: "कनाडा में एक सुरक्षा जमा आमतौर पर है:",
+            options: ["एक महीने का किराया", "तीन महीने का किराया"],
+            explanation: "सही! एक महीने का किराया कनाडा और यूएस में मानक सुरक्षा जमा है।"
+          },
+          tl: {
+            question: "Ang isang security deposit sa Canada ay karaniwang:",
+            options: ["Isang buwan ng alquiler", "Tatlong buwang alquiler"],
+            explanation: "Tama! Ang isang buwan ng alquiler ay ang karaniwang security deposit sa Canada at US."
+          },
+          zh: {
+            question: "加拿大的安全押金通常是：",
+            options: ["一个月的租金", "三个月的租金"],
+            explanation: "正确！一个月的租金是加拿大和美国的标准安全押金。"
+          },
+          ar: {
+            question: "عادة ما يكون الإيداع الأمني في كندا:",
+            options: ["شهر واحد من الإيجار", "ثلاثة أشهر من الإيجار"],
+            explanation: "صحيح! شهر واحد من الإيجار هو الإيداع الأمني القياسي في كندا والولايات المتحدة."
+          },
+          fr: {
+            question: "Un dépôt de garantie au Canada est généralement:",
+            options: ["Un mois de loyer", "Trois mois de loyer"],
+            explanation: "Correct! Un mois de loyer est le dépôt de garantie standard au Canada et aux É.-U."
+          },
+          pa: {
+            question: "ਕੈਨੇਡਾ ਵਿੱਚ ਇੱਕ ਸੁਰੱਖਿਆ ਜਮਾ ਆਮ ਤੌਰ 'ਤੇ ਹੈ:",
+            options: ["ਇੱਕ ਮਹੀਨੇ ਦਾ ਕਿਰਾਇਆ", "ਤਿੰਨ ਮਹੀਨੇ ਦਾ ਕਿਰਾਇਆ"],
+            explanation: "ਸਹੀ! ਇੱਕ ਮਹੀਨੇ ਦਾ ਕਿਰਾਇਆ ਕੈਨੇਡਾ ਅਤੇ ਯੂਐਸ ਵਿੱਚ ਮਾਨਕ ਸੁਰੱਖਿਆ ਜਮਾ ਹੈ।"
+          }
+        }
       },
       {
-        question: {
-          en: "What does tenant insurance typically cover?",
-          es: "¿Qué cubre típicamente el seguro de inquilino?",
-          hi: "किरायेदार बीमा आमतौर पर क्या कवर करता है?"
-        },
-        options: {
-          en: ["Theft, fire, water damage, and liability", "Only structural building damage"],
-          es: ["Robo, fuego, daños por agua y responsabilidad", "Solo daños estructurales del edificio"],
-          hi: ["चोरी, आग, पानी की क्षति, और दायित्व", "केवल संरचनात्मक भवन क्षति"]
-        },
-        correctIndex: 0
+        type: "realWorld",
+        correctIndex: 1,
+        content: {
+          en: {
+            scenarioTitle: "Carlos's housing challenge",
+            scenarioIcon: "person",
+            scenario: "Carlos has no Canadian credit history. A landlord asks for a credit check. What can Carlos offer?",
+            question: "What is his best option?",
+            options: [
+              "Nothing — he cannot rent without credit",
+              "First and last month rent plus a reference letter from employer"
+            ],
+            explanation: "Perfect! A strong guarantor, first and last month rent, and employer reference can convince a landlord to take a chance on you."
+          },
+          es: {
+            scenarioTitle: "Desafío de vivienda de Carlos",
+            scenarioIcon: "person",
+            scenario: "Carlos no tiene historial de crédito canadiense. Un propietario le pide una verificación de crédito. ¿Qué puede ofrecer Carlos?",
+            question: "¿Cuál es su mejor opción?",
+            options: [
+              "Nada — no puede alquilar sin crédito",
+              "Primer y último mes de alquiler más una carta de referencia del empleador"
+            ],
+            explanation: "¡Perfecto! Un fuerte garante, primer y último mes de alquiler, y referencia del empleador pueden convencer a un propietario de arriesgarse contigo."
+          },
+          hi: {
+            scenarioTitle: "कार्लोस की आवास चुनौती",
+            scenarioIcon: "person",
+            scenario: "कार्लोस के पास कनाडाई क्रेडिट इतिहास नहीं है। एक मकान मालिक क्रेडिट जांच माँगता है। कार्लोस क्या प्रस्ताव दे सकता है?",
+            question: "उसका सबसे अच्छा विकल्प क्या है?",
+            options: [
+              "कुछ नहीं — वह क्रेडिट के बिना किराया नहीं दे सकता",
+              "पहले और आखिरी महीने का किराया साथ ही नियोक्ता से संदर्भ पत्र"
+            ],
+            explanation: "बिल्कुल! एक मजबूत गारंटर, पहले और आखिरी महीने का किराया, और नियोक्ता संदर्भ मकान मालिक को आपके साथ जोखिम लेने के लिए राजी कर सकता है।"
+          },
+          tl: {
+            scenarioTitle: "Hamon sa pabahay ni Carlos",
+            scenarioIcon: "person",
+            scenario: "Si Carlos ay wala sa Canadian credit history. Ang isang landlord ay humingi ng credit check. Ano ang maaaring mag-alok si Carlos?",
+            question: "Alin ang kanyang pinakamahusay na opsyon?",
+            options: [
+              "Walang — hindi siya makakarent nang walang credit",
+              "Unang at huling buwan ng alquiler plus isang reference letter mula sa employer"
+            ],
+            explanation: "Perfect! Ang isang malakas na guarantor, unang at huling buwan ng alquiler, at reference ng employer ay maaaring hikayatin ang isang landlord na magsugal sa iyo."
+          },
+          zh: {
+            scenarioTitle: "卡洛斯的住房挑战",
+            scenarioIcon: "person",
+            scenario: "卡洛斯没有加拿大信用历史。房东要求进行信用检查。卡洛斯能提供什么？",
+            question: "他最好的选择是什么？",
+            options: [
+              "什么都不能——没有信用就不能租住",
+              "第一个月和最后一个月的租金加上雇主的推荐信"
+            ],
+            explanation: "完美！强有力的担保人、第一个月和最后一个月的租金以及雇主参考可以说服房东冒险选择您。"
+          },
+          ar: {
+            scenarioTitle: "تحدي الإسكان لكارلوس",
+            scenarioIcon: "person",
+            scenario: "كارلوس ليس لديه سجل ائتماني كندي. يطلب المالك فحص الائتمان. ماذا يمكن أن يقدم كارلوس؟",
+            question: "ما هو خياره الأفضل؟",
+            options: [
+              "لا شيء — لا يمكنه الإيجار بدون ائتمان",
+              "الشهر الأول والأخير من الإيجار بالإضافة إلى رسالة مرجعية من صاحب العمل"
+            ],
+            explanation: "مثالي! يمكن لضامن قوي والشهر الأول والأخير من الإيجار والمراجع من صاحب العمل أن تقنع المالك بالمخاطرة بك."
+          },
+          fr: {
+            scenarioTitle: "Le défi du logement de Carlos",
+            scenarioIcon: "person",
+            scenario: "Carlos n'a pas d'historique de crédit canadien. Un propriétaire demande une vérification de crédit. Que peut offrir Carlos?",
+            question: "Quelle est sa meilleure option?",
+            options: [
+              "Rien — il ne peut pas louer sans crédit",
+              "Premier et dernier mois de loyer plus une lettre de référence de l'employeur"
+            ],
+            explanation: "Parfait! Un garant solide, premier et dernier mois de loyer, et référence de l'employeur peuvent convaincre un propriétaire de prendre un risque sur vous."
+          },
+          pa: {
+            scenarioTitle: "ਕਾਰਲੋਸ ਦੀ ਆਵਾਸ ਚੁਨੌਤੀ",
+            scenarioIcon: "person",
+            scenario: "ਕਾਰਲੋਸ ਕੋਲ ਕੈਨੇਡੀਅਨ ਕ੍ਰੈਡਿਟ ਇਤਿਹਾਸ ਨਹੀਂ ਹੈ। ਇੱਕ ਮਕਾਨ ਮਾਲਕ ਕ੍ਰੈਡਿਟ ਜਾਂਚ ਮੰਗਦਾ ਹੈ। ਕਾਰਲੋਸ ਕੀ ਪੇਸ਼ ਕਰ ਸਕਦਾ ਹੈ?",
+            question: "ਉਸ ਦਾ ਸਭ ਤੋਂ ਵਧੀਆ ਵਿਕਲਪ ਕੀ ਹੈ?",
+            options: [
+              "ਕੁਝ ਨਹੀਂ — ਉਹ ਕ੍ਰੈਡਿਟ ਦੇ ਬਿਨਾ ਕਿਰਾਏ ਨਹੀਂ ਦੇ ਸਕਦਾ",
+              "ਪਹਿਲਾ ਅਤੇ ਆਖਰੀ ਮਹੀਨੇ ਦਾ ਕਿਰਾਇਆ ਅਤੇ ਨਿਯੋਜਕ ਤੋਂ ਸੰਦਰਭ ਪੱਤਰ"
+            ],
+            explanation: "ਬਹੁਤ ਵਧੀਆ! ਇੱਕ ਮਜ਼ਬੂਤ ਗੁਆਂਢ ਮਿੱਤਰ, ਪਹਿਲਾ ਅਤੇ ਆਖਰੀ ਮਹੀਨੇ ਦਾ ਕਿਰਾਇਆ, ਅਤੇ ਨਿਯੋਜਕ ਸੰਦਰਭ ਇੱਕ ਮਕਾਨ ਮਾਲਕ ਨੂੰ ਤੁਹਾਡੇ ਉੱਪਰ ਜੋਖਮ ਲੈਣ ਲਈ ਸਮਝਾ ਸਕਦਾ ਹੈ।"
+          }
+        }
+      },
+      {
+        type: "fillBlank",
+        correctIndex: 1,
+        content: {
+          en: {
+            sentence: "A landlord must give ___ notice before entering your apartment",
+            options: ["no", "24 hours", "1 week"],
+            explanation: "24 hours is correct! This is a basic tenant right — landlords cannot enter without proper notice."
+          },
+          es: {
+            sentence: "Un propietario debe dar ___ aviso antes de entrar a tu apartamento",
+            options: ["ninguno", "24 horas", "1 semana"],
+            explanation: "¡24 horas es correcto! Este es un derecho básico del inquilino — los propietarios no pueden entrar sin aviso adecuado."
+          },
+          hi: {
+            sentence: "एक मकान मालिक को आपके अपार्टमेंट में प्रवेश करने से पहले ___ सूचना देना होगी",
+            options: ["कोई नहीं", "24 घंटे", "1 सप्ताह"],
+            explanation: "24 घंटे सही है! यह एक बुनियादी किरायेदार अधिकार है — मकान मालिक बिना उचित सूचना के प्रवेश नहीं कर सकते हैं।"
+          },
+          tl: {
+            sentence: "Ang isang landlord ay dapat magbigay ng ___ paalala bago pumasok sa iyong apartment",
+            options: ["walang", "24 oras", "1 linggo"],
+            explanation: "24 oras ang tama! Ito ay isang pangunahing karapatan ng tenant — ang mga landlord ay hindi maaaring pumasok nang walang tamang paalala."
+          },
+          zh: {
+            sentence: "房东在进入您的公寓前必须提前 ___ 通知",
+            options: ["无通知", "24小时", "1周"],
+            explanation: "24小时是正确的！这是基本的承租人权利——房东不能在未经适当通知的情况下进入。"
+          },
+          ar: {
+            sentence: "يجب على المالك إعطاء ___ إشعار قبل دخول شقتك",
+            options: ["بدون إشعار", "24 ساعة", "1 أسبوع"],
+            explanation: "24 ساعة صحيحة! هذا حق أساسي للمستأجر — لا يمكن للملاك الدخول بدون إشعار مناسب."
+          },
+          fr: {
+            sentence: "Un propriétaire doit donner ___ avis avant d'entrer dans votre appartement",
+            options: ["aucune", "24 heures", "1 semaine"],
+            explanation: "24 heures c'est correct! C'est un droit fondamental du locataire — les propriétaires ne peuvent pas entrer sans préavis approprié."
+          },
+          pa: {
+            sentence: "ਇੱਕ ਮਕਾਨ ਮਾਲਕ ਨੂੰ ਤੁਹਾਡੇ ਅਪਾਰਟਮੈਂਟ ਵਿੱਚ ਦਾਖਲ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ___ ਸੂਚਨਾ ਦੇਣੀ ਪਵੇਗੀ",
+            options: ["ਕੋਈ ਨਹੀਂ", "24 ਘੰਟੇ", "1 ਹਫਤਾ"],
+            explanation: "24 ਘੰਟੇ ਸਹੀ ਹੈ! ਇਹ ਇੱਕ ਬਨਿਆਦੀ ਕਿਰਾਏਦਾਰ ਅਧਿਕਾਰ ਹੈ — ਮਕਾਨ ਮਾਲਕ ਵਿਨਾ ਢੁੱਕਵੀ ਸੂਚਨਾ ਦੇ ਅੰਦਰ ਨਹੀਂ ਜਾ ਸਕਦੇ ਹਨ।"
+          }
+        }
+      },
+      {
+        type: "summary",
+        content: {
+          en: {
+            takeaways: [
+              "Landlords check credit and income",
+              "Offer first and last if no credit",
+              "Get everything in writing",
+              "Know your rights as a tenant",
+              "Landlord needs 24 hours notice to enter"
+            ]
+          },
+          es: {
+            takeaways: [
+              "Los propietarios verifican crédito e ingresos",
+              "Ofrece primer y último si no tienes crédito",
+              "Obtén todo por escrito",
+              "Conoce tus derechos como inquilino",
+              "El propietario necesita 24 horas de aviso para entrar"
+            ]
+          },
+          hi: {
+            takeaways: [
+              "मकान मालिक क्रेडिट और आय जांच करते हैं",
+              "यदि क्रेडिट नहीं है तो पहला और आखिरी दें",
+              "सब कुछ लिखित में प्राप्त करें",
+              "किरायेदार के रूप में अपने अधिकार जानें",
+              "मकान मालिक को प्रवेश के लिए 24 घंटे की सूचना चाहिए"
+            ]
+          },
+          tl: {
+            takeaways: [
+              "Ang mga landlord ay nag-verify ng credit at income",
+              "Mag-alok ng unang at huling kung walang credit",
+              "Makakuha ng lahat sa sulat",
+              "Alamin ang iyong mga karapatan bilang tenant",
+              "Ang landlord ay kailangan ng 24 oras na paalala upang makapasok"
+            ]
+          },
+          zh: {
+            takeaways: [
+              "房东检查信用和收入",
+              "如果没有信用则提供第一个月和最后一个月",
+              "获取书面形式的所有内容",
+              "了解您作为租户的权利",
+              "房东需要24小时通知才能进入"
+            ]
+          },
+          ar: {
+            takeaways: [
+              "الملاك يتحققون من الائتمان والدخل",
+              "عرض الأول والأخير إذا لم يكن لديك ائتمان",
+              "احصل على كل شيء كتابة",
+              "اعرف حقوقك كمستأجر",
+              "يحتاج المالك إلى 24 ساعة إشعار للدخول"
+            ]
+          },
+          fr: {
+            takeaways: [
+              "Les propriétaires vérifient le crédit et le revenu",
+              "Offrez d'abord et dernier si pas de crédit",
+              "Obtenez tout par écrit",
+              "Connaître vos droits en tant que locataire",
+              "Le propriétaire a besoin de 24 heures de préavis pour entrer"
+            ]
+          },
+          pa: {
+            takeaways: [
+              "ਮਕਾਨ ਮਾਲਕ ਕ੍ਰੈਡਿਟ ਅਤੇ ਆਮਦਨ ਦੀ ਪੁਸ਼ਟੀ ਕਰਦੇ ਹਨ",
+              "ਜੇ ਕ੍ਰੈਡਿਟ ਨਹੀਂ ਹੈ ਤਾਂ ਪਹਿਲਾ ਅਤੇ ਆਖਰੀ ਦਿਓ",
+              "ਸਾਰੀ ਚੀਜ਼ ਲਿਖਤ ਰੂਪ ਵਿੱਚ ਪ੍ਰਾਪਤ ਕਰੋ",
+              "ਕਿਰਾਏਦਾਰ ਵਜੋਂ ਆਪਣੇ ਅਧਿਕਾਰ ਜਾਣੋ",
+              "ਮਕਾਨ ਮਾਲਕ ਨੂੰ ਦਾਖਲ ਹੋਣ ਲਈ 24 ਘੰਟੇ ਦੀ ਸੂਚਨਾ ਚਾਹੀਦੀ ਹੈ"
+            ]
+          }
+        }
       }
     ]
   },

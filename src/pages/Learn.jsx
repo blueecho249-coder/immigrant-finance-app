@@ -354,6 +354,7 @@ export default function Learn({ language }) {
           </div>
         </div>
       </div>
+      </div>
     </div>
     </>
   )
