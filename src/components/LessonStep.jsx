@@ -99,7 +99,7 @@ export default function LessonStep({
 
             <div className="space-y-3">
               <button
-                onClick={() => handleFinalQuizComplete()}
+                onClick={handleFinalQuizComplete}
                 className="w-full p-4 rounded-2xl text-left transition-all bg-gradient-to-r from-purple-100 to-blue-100 hover:from-purple-200 hover:to-blue-200"
               >
                 <div className="flex items-center space-x-3">
