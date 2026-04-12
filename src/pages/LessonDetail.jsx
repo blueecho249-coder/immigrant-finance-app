@@ -4,7 +4,6 @@ import { lessons } from '../data/lessons.js'
 import SEO from '../components/SEO.jsx'
 import SimpleLessonStep from '../components/SimpleLessonStep.jsx'
 import LessonCelebration from '../components/LessonCelebration.jsx'
-import { progressTracker } from '../utils/progressTracker.js'
 
 export default function LessonDetail({ language }) {
   const { id } = useParams()
@@ -16,19 +15,8 @@ export default function LessonDetail({ language }) {
   const lesson = lessons.find(l => l.id === id)
 
   useEffect(() => {
-    // Update streak when lesson starts
-    progressTracker.updateStreak()
-    
-    // Check if lesson is already complete
-    if (progressTracker.isLessonCompleted(id)) {
-      setLessonComplete(true)
-    }
-    
-    // Load lesson progress
-    const lessonProgress = progressTracker.getLessonProgress(id)
-    if (lessonProgress.currentStep > 0) {
-      setCurrentStepIndex(lessonProgress.currentStep)
-    }
+    // Simple lesson initialization
+    setLessonComplete(false)
   }, [id])
 
   if (!lesson) {
@@ -48,9 +36,6 @@ export default function LessonDetail({ language }) {
       if (currentStepIndex < totalSteps - 1) {
         const nextStepIndex = currentStepIndex + 1
         setCurrentStepIndex(nextStepIndex)
-        
-        // Save lesson progress
-        progressTracker.updateLessonProgress(id, nextStepIndex + 1, totalSteps)
       } else {
         // Lesson complete - show celebration
         setShowCelebration(true)
@@ -59,7 +44,6 @@ export default function LessonDetail({ language }) {
 
     const handleLessonComplete = () => {
       // Mark lesson as complete
-      progressTracker.completeLesson(id)
       setLessonComplete(true)
       setShowCelebration(false)
       

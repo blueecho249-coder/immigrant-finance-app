@@ -14,11 +14,10 @@ export default function SimpleLessonStep({
   const [selectedQuizAnswer, setSelectedQuizAnswer] = useState(null)
   const [showQuizResult, setShowQuizResult] = useState(false)
 
-  // Simple lesson content that will build successfully
   const lessonContent = [
     {
       type: "paragraph",
-      content: "Building good credit takes time and consistency. Start with small steps like getting a secured credit card."
+      content: "Building good credit takes time and consistency."
     },
     {
       type: "question",
@@ -33,7 +32,7 @@ export default function SimpleLessonStep({
     },
     {
       type: "paragraph",
-      content: "Pay your bills on time every month. This is the most important factor in building good credit."
+      content: "Pay your bills on time every month."
     },
     {
       type: "question",
