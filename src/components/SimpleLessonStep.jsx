@@ -212,7 +212,7 @@ export default function SimpleLessonStep({
       <div className="bg-white rounded-3xl shadow-xl p-8 border border-gray-200/60">
         <div className="mb-6">
           <div className="flex items-center justify-between">
-            <span className="text-sm font-medium text-indigo-600">
+            <span className="text-sm font-medium text-red-600">
               Step {currentContentIndex + 1} of {lessonContent.length + 1}
             </span>
             <div className="flex items-center space-x-2">
