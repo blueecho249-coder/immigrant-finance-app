@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { lessons } from '../data/lessons.js'
 import SEO from '../components/SEO.jsx'
-import LessonStep from '../components/LessonStep.jsx'
+import SimpleLessonStep from '../components/SimpleLessonStep.jsx'
 import LessonCelebration from '../components/LessonCelebration.jsx'
 import { progressTracker } from '../utils/progressTracker.js'
 
@@ -137,7 +137,7 @@ export default function LessonDetail({ language }) {
 
           {/* Interactive Step */}
           <div style={{flex: 1, display: 'flex', alignItems: 'center'}}>
-            <LessonStep 
+            <SimpleLessonStep 
               step={currentStep}
               language={language}
               onNext={handleNextStep}
