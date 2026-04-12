@@ -3,7 +3,6 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import { lessons } from '../data/lessons.js'
 import SEO from '../components/SEO.jsx'
 import SimpleLessonStep from '../components/SimpleLessonStep.jsx'
-import LessonCelebration from '../components/LessonCelebration.jsx'
 
 export default function LessonDetail({ language }) {
   const { id } = useParams()
@@ -62,18 +61,7 @@ export default function LessonDetail({ language }) {
       navigate('/learn')
     }
 
-    // Show celebration overlay
-    if (showCelebration) {
-      return (
-        <LessonCelebration
-          lessonTitle={lesson.title[language] || lesson.title.en}
-          xpEarned={25} // Lesson completion XP
-          onNextLesson={handleLessonComplete}
-          onBackToLessons={handleBackToLessons}
-        />
-      )
-    }
-
+    
     return (
       <>
         <SEO 
