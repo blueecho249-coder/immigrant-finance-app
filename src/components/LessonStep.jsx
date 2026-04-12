@@ -78,7 +78,7 @@ export default function LessonStep({
     }
   }
 
-  const renderParagraphContent = () => {
+  const renderParagraphStep = () => {
     const t = step.content[language] || step.content.en
     const content = t.contentBreakdown || t.explanation
     const currentContent = content[currentContentIndex]
@@ -98,19 +98,13 @@ export default function LessonStep({
             />
             <div className="flex items-center justify-between mt-4">
               <span className="text-sm font-medium text-indigo-600">
-                {t.headline} - Step {currentContentIndex + 1} of {content.length + 1}
+                Step {currentContentIndex + 1} of {content.length + 1}
               </span>
               <XPDisplay 
                 xpEarned={xpEarned} 
                 totalXP={totalXP} 
                 showAnimation={showXPAnimation} 
               />
-            </div>
-          </div>
-
-          <div className="mb-8 flex justify-center">
-            <div className="w-32 h-32 rounded-3xl bg-gradient-to-br from-indigo-100 to-teal-100 flex items-center justify-center text-6xl">
-              {t.illustration || 'lightbulb'}
             </div>
           </div>
 
@@ -136,31 +130,6 @@ export default function LessonStep({
                 <h4 className="font-bold text-blue-900 mb-2">{currentContent.title}</h4>
                 <p className="text-blue-800">{currentContent.content}</p>
               </div>
-            ) : null}
-          </div>
-
-          <div className="flex justify-center">
-            {Array.isArray(currentContent) ? (
-              <button
-                onClick={handleNextContent}
-                className="bg-gradient-to-r from-indigo-600 to-teal-600 text-white font-semibold py-4 px-8 rounded-2xl hover:from-indigo-700 hover:to-teal-700 transition-all transform hover:scale-105 shadow-lg"
-              >
-                Continue
-              </button>
-            ) : currentContent.type === 'text' ? (
-              <button
-                onClick={handleNextContent}
-                className="bg-gradient-to-r from-indigo-600 to-teal-600 text-white font-semibold py-4 px-8 rounded-2xl hover:from-indigo-700 hover:to-teal-700 transition-all transform hover:scale-105 shadow-lg"
-              >
-                Continue
-              </button>
-            ) : currentContent.type === 'example' ? (
-              <button
-                onClick={handleNextContent}
-                className="bg-gradient-to-r from-indigo-600 to-teal-600 text-white font-semibold py-4 px-8 rounded-2xl hover:from-indigo-700 hover:to-teal-700 transition-all transform hover:scale-105 shadow-lg"
-              >
-                Got it!
-              </button>
             ) : currentContent.type === 'quickQuestion' ? (
               <div>
                 <div className="mb-6">
@@ -233,6 +202,31 @@ export default function LessonStep({
                   </div>
                 )}
               </div>
+            ) : null}
+          </div>
+
+          <div className="flex justify-center">
+            {Array.isArray(currentContent) ? (
+              <button
+                onClick={handleNextContent}
+                className="bg-gradient-to-r from-indigo-600 to-teal-600 text-white font-semibold py-4 px-8 rounded-2xl hover:from-indigo-700 hover:to-teal-700 transition-all transform hover:scale-105 shadow-lg"
+              >
+                Continue
+              </button>
+            ) : currentContent.type === 'text' ? (
+              <button
+                onClick={handleNextContent}
+                className="bg-gradient-to-r from-indigo-600 to-teal-600 text-white font-semibold py-4 px-8 rounded-2xl hover:from-indigo-700 hover:to-teal-700 transition-all transform hover:scale-105 shadow-lg"
+              >
+                Continue
+              </button>
+            ) : currentContent.type === 'example' ? (
+              <button
+                onClick={handleNextContent}
+                className="bg-gradient-to-r from-indigo-600 to-teal-600 text-white font-semibold py-4 px-8 rounded-2xl hover:from-indigo-700 hover:to-teal-700 transition-all transform hover:scale-105 shadow-lg"
+              >
+                Got it!
+              </button>
             ) : null}
           </div>
         </div>
@@ -382,18 +376,18 @@ export default function LessonStep({
 
   switch (step.type) {
     case 'concept':
-      return renderParagraphContent()
+      return renderParagraphStep()
     case 'quickCheck':
-      return renderParagraphContent()
+      return renderParagraphStep()
     case 'fillBlank':
-      return renderParagraphContent()
+      return renderParagraphStep()
     case 'realWorld':
-      return renderParagraphContent()
+      return renderParagraphStep()
     case 'finalTest':
       return renderFinalQuiz()
     case 'summary':
-      return renderParagraphContent()
+      return renderParagraphStep()
     default:
-      return renderParagraphContent()
+      return renderParagraphStep()
   }
 }
