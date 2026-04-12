@@ -30,6 +30,8 @@ export default function LessonStep({
   }
 
   const handleNext = () => {
+    if (!step || !step.content) return
+    
     const t = step.content[language] || step.content.en
     const content = t.contentBreakdown || t.explanation
     
@@ -50,7 +52,7 @@ export default function LessonStep({
     const content = t.contentBreakdown || t.explanation
     const currentContent = content[currentContentIndex]
     
-    if (currentContent.correct === answerIndex) {
+    if (currentContent && currentContent.correct === answerIndex) {
       awardXP(5)
       setTimeout(() => {
         handleNext()
@@ -68,8 +70,21 @@ export default function LessonStep({
     }
   }
 
+  // Safety checks
+  if (!step || !step.content) {
+    return (
+      <div className="max-w-2xl mx-auto">
+        <div className="bg-white rounded-3xl shadow-xl p-8 border border-gray-200/60">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
+            Loading lesson...
+          </h2>
+        </div>
+      </div>
+    )
+  }
+
   const t = step.content[language] || step.content.en
-  const content = t.contentBreakdown || t.explanation
+  const content = t.contentBreakdown || t.explanation || []
   const currentContent = content[currentContentIndex]
 
   if (showQuiz) {
@@ -156,7 +171,7 @@ export default function LessonStep({
         </div>
 
         <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
-          {t.headline}
+          {t.headline || 'Lesson Content'}
         </h2>
 
         <div className="mb-8">
@@ -166,18 +181,18 @@ export default function LessonStep({
                 {currentContent[0]}
               </p>
             </div>
-          ) : currentContent.type === 'text' ? (
+          ) : currentContent && currentContent.type === 'text' ? (
             <div className="bg-gray-50 p-6 rounded-2xl">
               <p className="text-lg text-gray-700 leading-relaxed">
                 {currentContent.content}
               </p>
             </div>
-          ) : currentContent.type === 'example' ? (
+          ) : currentContent && currentContent.type === 'example' ? (
             <div className="bg-blue-50 p-6 rounded-2xl border border-blue-200">
               <h4 className="font-bold text-blue-900 mb-2">{currentContent.title}</h4>
               <p className="text-blue-800">{currentContent.content}</p>
             </div>
-          ) : currentContent.type === 'quickQuestion' ? (
+          ) : currentContent && currentContent.type === 'quickQuestion' ? (
             <div>
               <div className="mb-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
@@ -211,12 +226,18 @@ export default function LessonStep({
                   quizAnswer === currentContent.correct ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
                 }`}>
                   <p className="font-semibold">
-                    {quizAnswer === currentContent.correct ? 'Correct! Great job!' : currentContent.explanation}
+                    {quizAnswer === currentContent.correct ? 'Correct! Great job!' : (currentContent.explanation || 'Try again!')}
                   </p>
                 </div>
               )}
             </div>
-          ) : null}
+          ) : (
+            <div className="bg-gray-50 p-6 rounded-2xl">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Loading content...
+              </p>
+            </div>
+          )}
         </div>
 
         <div className="flex justify-center">
@@ -227,14 +248,14 @@ export default function LessonStep({
             >
               Continue
             </button>
-          ) : currentContent.type === 'text' ? (
+          ) : currentContent && currentContent.type === 'text' ? (
             <button
               onClick={handleNext}
               className="bg-gradient-to-r from-indigo-600 to-teal-600 text-white font-semibold py-4 px-8 rounded-2xl hover:from-indigo-700 hover:to-teal-700 transition-all transform hover:scale-105 shadow-lg"
             >
               Continue
             </button>
-          ) : currentContent.type === 'example' ? (
+          ) : currentContent && currentContent.type === 'example' ? (
             <button
               onClick={handleNext}
               className="bg-gradient-to-r from-indigo-600 to-teal-600 text-white font-semibold py-4 px-8 rounded-2xl hover:from-indigo-700 hover:to-teal-700 transition-all transform hover:scale-105 shadow-lg"
