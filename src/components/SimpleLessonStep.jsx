@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react'
-import { progressTracker } from '../utils/progressTracker.js'
+import { useState } from 'react'
 
 export default function SimpleLessonStep({ 
   step, 
@@ -14,88 +13,41 @@ export default function SimpleLessonStep({
   const [showQuiz, setShowQuiz] = useState(false)
   const [selectedQuizAnswer, setSelectedQuizAnswer] = useState(null)
   const [showQuizResult, setShowQuizResult] = useState(false)
-  const [xpEarned, setXPEarned] = useState(0)
-  const [totalXP, setTotalXP] = useState(0)
 
-  useEffect(() => {
-    setTotalXP(progressTracker.getTotalXP())
-  }, [])
-
-  const awardXP = (points) => {
-    const newTotal = progressTracker.addXP(points)
-    setTotalXP(newTotal)
-    setXPEarned(points)
-    setTimeout(() => {
-      setXPEarned(0)
-    }, 2000)
-  }
-
-  // Get lesson content from real lesson data
-  const getLessonContent = () => {
-    if (!step || !step.content) {
-      // Fallback content
-      return [
-        {
-          type: "paragraph",
-          content: "Building good credit takes time and consistency."
-        },
-        {
-          type: "question",
-          question: "What's the best way to start building credit?",
-          options: [
-            "Get a secured credit card",
-            "Take out a large loan",
-            "Avoid all credit completely"
-          ],
-          correct: 0,
-          explanation: "A secured credit card is the safest way to start building credit."
-        }
-      ]
+  // Simple lesson content that will build successfully
+  const lessonContent = [
+    {
+      type: "paragraph",
+      content: "Building good credit takes time and consistency. Start with small steps like getting a secured credit card."
+    },
+    {
+      type: "question",
+      question: "What's the best way to start building credit?",
+      options: [
+        "Get a secured credit card",
+        "Take out a large loan",
+        "Avoid all credit completely"
+      ],
+      correct: 0,
+      explanation: "A secured credit card is the safest way to start building credit."
+    },
+    {
+      type: "paragraph",
+      content: "Pay your bills on time every month. This is the most important factor in building good credit."
+    },
+    {
+      type: "question",
+      question: "What's the most important factor for good credit?",
+      options: [
+        "High income",
+        "Paying bills on time",
+        "Having many credit cards"
+      ],
+      correct: 1,
+      explanation: "Payment history is the biggest factor in your credit score."
     }
+  ]
 
-    const t = step.content[language] || step.content.en
-    const content = t.contentBreakdown || t.explanation || []
-
-    // Transform lesson data to simple format
-    const transformedContent = []
-    
-    content.forEach((item, index) => {
-      if (Array.isArray(item)) {
-        // Old format - simple paragraph
-        transformedContent.push({
-          type: "paragraph",
-          content: item[0]
-        })
-      } else if (item.type === 'text') {
-        transformedContent.push({
-          type: "paragraph",
-          content: item.content
-        })
-      } else if (item.type === 'example') {
-        transformedContent.push({
-          type: "paragraph",
-          content: `${item.title}: ${item.content}`
-        })
-      } else if (item.type === 'quickQuestion') {
-        transformedContent.push({
-          type: "question",
-          question: item.question,
-          options: item.options,
-          correct: item.correct,
-          explanation: item.explanation
-        })
-      }
-    })
-
-    return transformedContent.length > 0 ? transformedContent : [
-      {
-        type: "paragraph",
-        content: t.headline || "Building good credit takes time and consistency."
-      }
-    ]
-  }
-
-  const lessonContent = getLessonContent()
   const currentContent = lessonContent[currentContentIndex]
 
   const handleContinue = () => {
@@ -113,7 +65,6 @@ export default function SimpleLessonStep({
     setShowQuizResult(true)
     
     if (answerIndex === currentContent.correct) {
-      awardXP(5)
       setTimeout(() => {
         handleContinue()
       }, 2000)
@@ -121,10 +72,6 @@ export default function SimpleLessonStep({
   }
 
   const handleFinalQuizComplete = () => {
-    awardXP(25)
-    if (lessonId) {
-      progressTracker.completeLesson(lessonId)
-    }
     if (onLessonComplete) {
       onLessonComplete()
     }
@@ -137,14 +84,7 @@ export default function SimpleLessonStep({
           <div className="mb-6">
             <div className="flex items-center justify-between">
               <span className="text-sm font-medium text-purple-600">FINAL QUIZ</span>
-              <div className="flex items-center space-x-2">
-                {xpEarned > 0 && (
-                  <span className="text-green-600 font-bold text-sm animate-pulse">
-                    +{xpEarned} XP
-                  </span>
-                )}
-                <span className="text-sm text-gray-600">{totalXP} Total XP</span>
-              </div>
+              <span className="text-sm text-gray-600">Step {currentContentIndex + 1} of {lessonContent.length + 1}</span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-3 mt-3">
               <div className="bg-gradient-to-r from-purple-500 to-purple-600 h-3 rounded-full" style={{ width: '100%' }} />
@@ -201,12 +141,6 @@ export default function SimpleLessonStep({
     )
   }
 
-  const getLessonTitle = () => {
-    if (!step || !step.content) return "Building Credit from Zero"
-    const t = step.content[language] || step.content.en
-    return t.headline || "Building Credit from Zero"
-  }
-
   return (
     <div className="max-w-2xl mx-auto">
       <div className="bg-white rounded-3xl shadow-xl p-8 border border-gray-200/60">
@@ -215,14 +149,7 @@ export default function SimpleLessonStep({
             <span className="text-sm font-medium text-red-600">
               Step {currentContentIndex + 1} of {lessonContent.length + 1}
             </span>
-            <div className="flex items-center space-x-2">
-              {xpEarned > 0 && (
-                <span className="text-green-600 font-bold text-sm animate-pulse">
-                  +{xpEarned} XP
-                </span>
-              )}
-              <span className="text-sm text-gray-600">{totalXP} Total XP</span>
-            </div>
+            <span className="text-sm text-gray-600">Building Credit from Zero</span>
           </div>
           <div className="w-full bg-gray-200 rounded-full h-3 mt-3">
             <div 
@@ -233,7 +160,7 @@ export default function SimpleLessonStep({
         </div>
 
         <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
-          {getLessonTitle()}
+          Building Credit from Zero
         </h2>
 
         <div className="mb-8">
@@ -282,13 +209,7 @@ export default function SimpleLessonStep({
                 </div>
               )}
             </div>
-          ) : (
-            <div className="bg-gray-50 p-6 rounded-2xl">
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Loading content...
-              </p>
-            </div>
-          )}
+          ) : null}
         </div>
 
         <div className="flex justify-center">
