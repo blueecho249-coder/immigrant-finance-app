@@ -90,7 +90,6 @@ export default function LessonStep({
     return (
       <div className="max-w-2xl mx-auto">
         <div className="bg-white rounded-3xl shadow-xl p-8 border border-gray-200/60">
-          {/* Progress */}
           <div className="mb-6">
             <ProgressBar 
               currentStep={currentContentIndex + 1} 
@@ -109,36 +108,30 @@ export default function LessonStep({
             </div>
           </div>
 
-          {/* Illustration */}
           <div className="mb-8 flex justify-center">
             <div className="w-32 h-32 rounded-3xl bg-gradient-to-br from-indigo-100 to-teal-100 flex items-center justify-center text-6xl">
               {t.illustration || 'lightbulb'}
             </div>
           </div>
 
-          {/* Headline */}
           <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
             {t.headline}
           </h2>
 
-          {/* Current Content - One Paragraph at a Time */}
           <div className="mb-8">
             {Array.isArray(currentContent) ? (
-              // Old format - simple paragraph
               <div className="bg-gray-50 p-6 rounded-2xl">
                 <p className="text-lg text-gray-700 leading-relaxed">
                   {currentContent[0]}
                 </p>
               </div>
             ) : currentContent.type === 'text' ? (
-              // Text paragraph
               <div className="bg-gray-50 p-6 rounded-2xl">
                 <p className="text-lg text-gray-700 leading-relaxed">
                   {currentContent.content}
                 </p>
               </div>
             ) : currentContent.type === 'example' ? (
-              // Example content
               <div className="bg-blue-50 p-6 rounded-2xl border border-blue-200">
                 <h4 className="font-bold text-blue-900 mb-2">{currentContent.title}</h4>
                 <p className="text-blue-800">{currentContent.content}</p>
@@ -146,111 +139,102 @@ export default function LessonStep({
             ) : null}
           </div>
 
-          {/* Question or Continue Button */}
-          {Array.isArray(currentContent) ? (
-            // Old format - simple continue button
-            <div className="flex justify-center">
+          <div className="flex justify-center">
+            {Array.isArray(currentContent) ? (
               <button
                 onClick={handleNextContent}
                 className="bg-gradient-to-r from-indigo-600 to-teal-600 text-white font-semibold py-4 px-8 rounded-2xl hover:from-indigo-700 hover:to-teal-700 transition-all transform hover:scale-105 shadow-lg"
               >
                 Continue
               </button>
-            </div>
-          ) : currentContent.type === 'text' ? (
-            // Text content - simple continue button
-            <div className="flex justify-center">
+            ) : currentContent.type === 'text' ? (
               <button
                 onClick={handleNextContent}
                 className="bg-gradient-to-r from-indigo-600 to-teal-600 text-white font-semibold py-4 px-8 rounded-2xl hover:from-indigo-700 hover:to-teal-700 transition-all transform hover:scale-105 shadow-lg"
               >
                 Continue
               </button>
-            </div>
-          ) : currentContent.type === 'example' ? (
-            // Example content - continue button
-            <div className="flex justify-center">
+            ) : currentContent.type === 'example' ? (
               <button
                 onClick={handleNextContent}
                 className="bg-gradient-to-r from-indigo-600 to-teal-600 text-white font-semibold py-4 px-8 rounded-2xl hover:from-indigo-700 hover:to-teal-700 transition-all transform hover:scale-105 shadow-lg"
               >
                 Got it!
               </button>
-            </div>
-          ) : currentContent.type === 'quickQuestion' ? (
-            // Question content - show question with answers
-            <div>
-              <div className="mb-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
-                  {currentContent.question}
-                </h3>
-              </div>
+            ) : currentContent.type === 'quickQuestion' ? (
+              <div>
+                <div className="mb-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
+                    {currentContent.question}
+                  </h3>
+                </div>
 
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                {currentContent.options.map((option, index) => (
-                  <button
-                    key={index}
-                    onClick={() => !showFeedback && handleContentAnswer(index)}
-                    disabled={showFeedback}
-                    className={`py-6 px-4 rounded-2xl font-semibold text-lg transition-all transform hover:scale-105 ${
-                      showFeedback
-                        ? index === currentContent.correct
-                          ? 'bg-green-500 text-white animate-pulse'
-                          : index === selectedAnswer
-                          ? 'bg-red-500 text-white animate-bounce'
-                          : 'bg-gray-100 text-gray-400'
-                        : 'bg-gradient-to-r from-indigo-100 to-teal-100 text-gray-800 hover:from-indigo-200 hover:to-teal-200'
-                    }`}
-                  >
-                    {option}
-                  </button>
-                ))}
-              </div>
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  {currentContent.options.map((option, index) => (
+                    <button
+                      key={index}
+                      onClick={() => !showFeedback && handleContentAnswer(index)}
+                      disabled={showFeedback}
+                      className={`py-6 px-4 rounded-2xl font-semibold text-lg transition-all transform hover:scale-105 ${
+                        showFeedback
+                          ? index === currentContent.correct
+                            ? 'bg-green-500 text-white animate-pulse'
+                            : index === selectedAnswer
+                            ? 'bg-red-500 text-white animate-bounce'
+                            : 'bg-gray-100 text-gray-400'
+                          : 'bg-gradient-to-r from-indigo-100 to-teal-100 text-gray-800 hover:from-indigo-200 hover:to-teal-200'
+                      }`}
+                    >
+                      {option}
+                    </button>
+                  ))}
+                </div>
 
-              {showFeedback && (
-                <div className={`p-4 rounded-2xl text-center ${
-                  isCorrect ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
-                }`}>
-                  <p className="font-semibold">
-                    {isCorrect ? 'Correct! Great job!' : currentContent.explanation}
-                  </p>
-                  {!isCorrect && currentContent.spacedRepetition && (
-                    <div className="mt-4 space-y-3">
-                      <div className="bg-orange-50 p-3 rounded-xl">
-                        <p className="font-bold text-orange-900 text-sm">{currentContent.spacedRepetition.onWrong.reviewText}</p>
-                        <ul className="mt-2 space-y-1">
-                          {currentContent.spacedRepetition.onWrong.reviewContent.map((point, index) => (
-                            <li key={index} className="text-orange-800 text-xs">· {point}</li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div>
-                        <p className="font-medium text-orange-900 text-sm mb-2">{currentContent.spacedRepetition.onWrong.retryQuestion.question}</p>
-                        <div className="grid grid-cols-2 gap-2">
-                          {currentContent.spacedRepetition.onWrong.retryQuestion.options.map((option, index) => (
-                            <button
-                              key={index}
-                              onClick={() => {
-                                if (index === currentContent.spacedRepetition.onWrong.retryQuestion.correct) {
-                                  setIsCorrect(true)
-                                  setTimeout(() => {
-                                    handleNextContent()
-                                  }, 1500)
-                                }
-                              }}
-                              className="p-2 rounded-lg bg-white border border-orange-300 hover:bg-orange-100 text-sm"
-                            >
-                              {option}
-                            </button>
-                          ))}
+                {showFeedback && (
+                  <div className={`p-4 rounded-2xl text-center ${
+                    isCorrect ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+                  }`}>
+                    <p className="font-semibold">
+                      {isCorrect ? 'Correct! Great job!' : currentContent.explanation}
+                    </p>
+                    {!isCorrect && currentContent.spacedRepetition && (
+                      <div className="mt-4 space-y-3">
+                        <div className="bg-orange-50 p-3 rounded-xl">
+                          <p className="font-bold text-orange-900 text-sm">{currentContent.spacedRepetition.onWrong.reviewText}</p>
+                          <ul className="mt-2 space-y-1">
+                            {currentContent.spacedRepetition.onWrong.reviewContent.map((point, index) => (
+                              <li key={index} className="text-orange-800 text-xs">· {point}</li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div>
+                          <p className="font-medium text-orange-900 text-sm mb-2">{currentContent.spacedRepetition.onWrong.retryQuestion.question}</p>
+                          <div className="grid grid-cols-2 gap-2">
+                            {currentContent.spacedRepetition.onWrong.retryQuestion.options.map((option, index) => (
+                              <button
+                                key={index}
+                                onClick={() => {
+                                  if (index === currentContent.spacedRepetition.onWrong.retryQuestion.correct) {
+                                    setIsCorrect(true)
+                                    setTimeout(() => {
+                                      handleNextContent()
+                                    }, 1500)
+                                  }
+                                }}
+                                className="p-2 rounded-lg bg-white border border-orange-300 hover:bg-orange-100 text-sm"
+                              >
+                                {option}
+                              </button>
+                            ))}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
-          ) : null}
+                    )}
+                  </div>
+                )}
+              </div>
+            ) : null}
+          </div>
         </div>
       </div>
     )
@@ -263,13 +247,12 @@ export default function LessonStep({
     const [showResults, setShowResults] = useState(false)
     const [score, setScore] = useState(0)
 
-    // Simple final quiz questions for each lesson
     const quizQuestions = t.finalQuizQuestions || [
       {
         question: "Based on what you learned, what's the most important takeaway?",
         options: [
           "Building good credit takes time and consistency",
-          "You should avoid all debt", 
+          "You should avoid all debt",
           "Credit scores don't matter in Canada",
           "Only rich people need financial literacy"
         ],
@@ -285,7 +268,6 @@ export default function LessonStep({
       if (currentQuestion < quizQuestions.length - 1) {
         setCurrentQuestion(currentQuestion + 1)
       } else {
-        // Calculate score
         let correctCount = 0
         newAnswers.forEach((answer, index) => {
           if (answer === quizQuestions[index].correct) {
@@ -398,7 +380,6 @@ export default function LessonStep({
     )
   }
 
-  // Render different step types
   switch (step.type) {
     case 'concept':
       return renderParagraphContent()
