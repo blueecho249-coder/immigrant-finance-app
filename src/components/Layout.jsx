@@ -10,7 +10,7 @@ export default function Layout({ children, onLanguageChange }) {
         <DesktopNav onLanguageChange={onLanguageChange} />
         <main className="min-h-screen bg-gradient-to-br from-gray-50/50 to-gray-100/50 pt-28">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="animate-fadeInUp">
+            <div className="animate-fadeInUp glass-card rounded-3xl p-6 sm:p-8">
               {children}
             </div>
           </div>

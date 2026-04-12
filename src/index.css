@@ -18,7 +18,10 @@ body {
   font-family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%);
+  background:
+    radial-gradient(circle at top left, rgba(99, 102, 241, 0.12), transparent 35%),
+    radial-gradient(circle at top right, rgba(20, 184, 166, 0.12), transparent 30%),
+    linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%);
   color: #111827;
   line-height: 1.6;
 }
@@ -53,6 +56,30 @@ body {
   overflow: hidden;
 }
 
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+}
+
 .shadow-3xl {
   box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+}
+
+.input-field {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid rgb(209 213 219);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 14px 16px;
+  font-size: 1rem;
+  color: #111827;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: rgb(99 102 241);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
 }
