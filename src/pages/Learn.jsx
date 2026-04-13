@@ -228,7 +228,7 @@ export default function Learn({ language }) {
             const isPremiumLesson = lesson.isPremium
             
             return (
-              <div key={lesson.id} className="card hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden animate-fadeInUp relative" style={{ animationDelay: `${index * 0.1}s` }}>
+              <div key={lesson.id} className="group card hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden animate-fadeInUp relative border border-gray-200/70 bg-white/95" style={{ animationDelay: `${index * 0.1}s` }}>
                 {/* Premium Badge */}
                 {isPremiumLesson && (
                   <div className="absolute top-4 right-4 z-10">
@@ -242,9 +242,9 @@ export default function Learn({ language }) {
                 )}
                 
                 {/* Top border */}
-                <div className="h-3" style={{ backgroundColor: colors.border }}></div>
+                <div className="h-3" style={{ background: `linear-gradient(90deg, ${colors.border} 0%, rgba(255,255,255,0.35) 100%)` }}></div>
                 
-                <div className="p-8">
+                <div className="p-8 bg-gradient-to-b from-white to-gray-50/40">
                   {/* Faint Grey Lock Overlay for Premium Lessons */}
                   {isPremiumLesson && (
                     <div className="absolute top-12 right-12 opacity-30">
@@ -257,7 +257,7 @@ export default function Learn({ language }) {
                   {/* Category Badge */}
                   <div className="mb-6">
                     <span 
-                      className="inline-flex items-center px-4 py-2 rounded-full text-sm font-bold border-2"
+                      className="inline-flex items-center px-4 py-2 rounded-full text-sm font-bold border-2 shadow-sm"
                       style={{
                         backgroundColor: colors.bg,
                         color: colors.text,
@@ -268,12 +268,17 @@ export default function Learn({ language }) {
                     </span>
                   </div>
 
-                  <h3 className="mb-4 text-2xl font-bold text-gray-900 leading-tight">
+                  <h3 className="mb-3 text-2xl font-bold text-gray-900 leading-tight group-hover:text-gray-950">
                     {lesson.title[language] || lesson.title.en}
                   </h3>
-                  <p className="mb-8 text-lg text-gray-700 leading-relaxed font-medium">
+                  <p className="mb-6 text-lg text-gray-700 leading-relaxed font-medium">
                     {lesson.subtitle[language] || lesson.subtitle.en}
                   </p>
+                  <div className="mb-6 flex items-center gap-2 text-sm font-semibold text-gray-500">
+                    <span className="rounded-full bg-gray-100 px-3 py-1">{lesson.category}</span>
+                    <span>•</span>
+                    <span>{isPremiumLesson ? t.premiumRequired : t.startLesson}</span>
+                  </div>
                   
                   {isPremiumLesson ? (
                     <a
@@ -290,7 +295,7 @@ export default function Learn({ language }) {
                   ) : (
                     <Link
                       to={`/lesson/${lesson.id}`}
-                      className={`inline-flex items-center justify-center w-full py-4 px-6 rounded-2xl font-bold transition-all hover:opacity-90 transform hover:scale-105 shadow-lg`}
+                      className={`inline-flex items-center justify-center w-full py-4 px-6 rounded-2xl font-bold transition-all hover:opacity-90 transform hover:scale-105 shadow-lg ring-1 ring-black/5`}
                       style={{
                         backgroundColor: colors.bg,
                         color: colors.text

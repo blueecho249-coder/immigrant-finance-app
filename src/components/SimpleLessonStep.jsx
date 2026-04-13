@@ -100,35 +100,35 @@ export default function SimpleLessonStep({ step, language, onNext, stepNumber, t
   }
 
   return (
-    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
-      <div style={{ background: 'white', padding: '40px', borderRadius: '20px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
-        {/* Progress bar */}
-        <div style={{ marginBottom: '30px' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ color: '#6366f1', fontSize: '14px', fontWeight: '600' }}>
-              Step {stepNumber || 1} of {totalSteps || 1}
-            </span>
-            <span style={{ color: '#6b7280', fontSize: '14px' }}>{headline}</span>
-          </div>
-          <div style={{ width: '100%', background: '#e5e7eb', height: '8px', borderRadius: '6px', marginTop: '12px' }}>
-            <div style={{ width: `${progressPct}%`, height: '100%', background: 'linear-gradient(to right, #6366f1, #14b8a6)', borderRadius: '6px', transition: 'width 0.4s ease' }} />
-          </div>
+    <div className="mx-auto max-w-3xl p-2 sm:p-4">
+      <div className="rounded-3xl bg-white p-6 shadow-xl ring-1 ring-gray-200/80 sm:p-8">
+        <div className="mb-6 flex items-center justify-between rounded-2xl bg-gradient-to-r from-indigo-50 to-teal-50 px-4 py-3">
+          <span className="text-sm font-bold text-indigo-700">
+            Step {stepNumber || 1} of {totalSteps || 1}
+          </span>
+          <span className="text-sm font-semibold text-gray-600">{headline}</span>
+        </div>
+        <div className="mb-8 h-2 w-full rounded-full bg-gray-200">
+          <div
+            className="h-2 rounded-full bg-gradient-to-r from-indigo-600 to-teal-500 transition-all duration-500"
+            style={{ width: `${progressPct}%` }}
+          />
         </div>
 
         {headline && (
-          <h2 style={{ textAlign: 'center', fontSize: '26px', fontWeight: '700', color: '#1f2937', marginBottom: '24px' }}>
+          <h2 className="mb-6 text-center text-3xl font-bold text-gray-900">
             {headline}
           </h2>
         )}
 
         {currentContent && (
-          <div style={{ marginBottom: '32px' }}>
+          <div className="mb-8">
             {isQuickQuestion ? (
-              <div>
-                <h3 style={{ fontSize: '18px', fontWeight: '600', color: '#1f2937', marginBottom: '16px' }}>
+              <div className="rounded-3xl bg-gradient-to-br from-white to-indigo-50 p-5 ring-1 ring-indigo-100">
+                <h3 className="mb-4 text-xl font-semibold text-gray-900">
                   {currentContent.question}
                 </h3>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <div className="flex flex-col gap-3">
                   {currentContent.options.map((option, idx) => {
                     let bg = '#f9fafb', border = '2px solid #e5e7eb', color = '#374151'
                     if (showFeedback) {
@@ -138,33 +138,39 @@ export default function SimpleLessonStep({ step, language, onNext, stepNumber, t
                       bg = '#ede9fe'; border = '2px solid #7c3aed'
                     }
                     return (
-                      <button key={idx} onClick={() => handleAnswerSelect(idx)}
-                        style={{ background: bg, border, color, borderRadius: '10px', padding: '14px 18px', textAlign: 'left', fontSize: '15px', cursor: 'pointer', transition: 'all 0.2s' }}>
+                      <button
+                        key={idx}
+                        onClick={() => handleAnswerSelect(idx)}
+                        className="rounded-2xl px-4 py-4 text-left text-base font-medium transition-transform hover:scale-[1.01]"
+                        style={{ background: bg, border, color }}
+                      >
                         {option}
                       </button>
                     )
                   })}
                 </div>
                 {showFeedback && selectedAnswer !== currentContent.correct && (
-                  <div style={{ marginTop: '12px' }}>
-                    <div style={{ padding: '12px 16px', borderRadius: '8px', background: '#fee2e2', color: '#991b1b', fontSize: '14px', marginBottom: '8px' }}>
+                  <div className="mt-4">
+                    <div className="mb-3 rounded-xl bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
                       Not quite — {currentContent.explanation || 'Try again.'}
                     </div>
-                    <button onClick={() => { setShowFeedback(false); setSelectedAnswer(null) }}
-                      style={{ background: '#6366f1', color: 'white', border: 'none', borderRadius: '8px', padding: '10px 20px', fontSize: '14px', cursor: 'pointer' }}>
+                    <button
+                      onClick={() => { setShowFeedback(false); setSelectedAnswer(null) }}
+                      className="rounded-xl bg-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-indigo-700"
+                    >
                       Try Again
                     </button>
                   </div>
                 )}
                 {showFeedback && selectedAnswer === currentContent.correct && (
-                  <div style={{ marginTop: '12px', padding: '12px 16px', borderRadius: '8px', background: '#d1fae5', color: '#065f46', fontSize: '14px' }}>
+                  <div className="mt-4 rounded-xl bg-green-50 px-4 py-3 text-sm font-medium text-green-700">
                     ✓ {currentContent.explanation || 'Correct!'}
                   </div>
                 )}
               </div>
             ) : (
-              <div style={{ background: '#f9fafb', padding: '28px', borderRadius: '14px' }}>
-                <p style={{ fontSize: '17px', lineHeight: '1.7', color: '#374151' }}>
+              <div className="rounded-3xl bg-gradient-to-br from-gray-50 to-white p-6 ring-1 ring-gray-200">
+                <p className="text-[17px] leading-8 text-gray-700">
                   {currentContent.content || (typeof currentContent === 'string' ? currentContent : '')}
                 </p>
               </div>
@@ -173,19 +179,11 @@ export default function SimpleLessonStep({ step, language, onNext, stepNumber, t
         )}
 
         {!isQuickQuestion && (
-          <div style={{ textAlign: 'center' }}>
+          <div className="text-center">
             <button
               onClick={advanceContent}
-              style={{
-                background: 'linear-gradient(to right, #4f46e5, #14b8a6)',
-                color: 'white',
-                border: 'none',
-                padding: '16px 40px',
-                borderRadius: '14px',
-                fontSize: '17px',
-                fontWeight: '600',
-                cursor: 'pointer',
-              }}>
+              className="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-indigo-600 to-teal-500 px-10 py-4 text-lg font-semibold text-white shadow-xl transition-transform hover:scale-105"
+            >
               {contentIndex < rawContent.length - 1 ? 'Continue' : quiz ? 'Take Quiz' : 'Next Step'}
             </button>
           </div>
