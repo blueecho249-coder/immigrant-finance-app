@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const languages = [
   { code: 'en', name: 'English', flag: '🇺🇸' },
@@ -13,6 +14,7 @@ const languages = [
 
 export default function LanguageSelector({ onLanguageChange }) {
   const [isOpen, setIsOpen] = useState(false)
+  const navigate = useNavigate()
   const [currentLang, setCurrentLang] = useState(() => {
     return localStorage.getItem('language') || 'en'
   })
@@ -23,11 +25,11 @@ export default function LanguageSelector({ onLanguageChange }) {
     setCurrentLang(langCode)
     setIsOpen(false)
     localStorage.setItem('language', langCode)
-    if (onLanguageChange) {
+    if (typeof onLanguageChange === 'function') {
       onLanguageChange(langCode)
+    } else {
+      navigate(0)
     }
-    // Force reload to ensure all content updates properly
-    window.location.reload()
   }
 
   // Close dropdown when clicking outside
@@ -82,6 +84,29 @@ export default function LanguageSelector({ onLanguageChange }) {
           <div className="py-2">
             <div className="text-xs font-bold text-gray-500 uppercase tracking-wider px-5 py-3 border-b border-gray-100 bg-gray-50/50">
               Select Language
+            </div>
+            <div className="px-5 pt-3">
+              <button
+                onClick={() => handleLanguageSelect('en')}
+                className={`flex w-full items-center gap-4 rounded-2xl px-4 py-4 text-base transition-all hover:bg-gray-50/80 ${
+                  currentLang === 'en'
+                    ? 'text-indigo-700 font-bold bg-indigo-50/80 border border-indigo-200'
+                    : 'text-gray-700 hover:text-gray-900 border border-gray-200'
+                }`}
+              >
+                <span className="text-3xl">🇺🇸</span>
+                <div className="flex flex-col text-left flex-1">
+                  <span className="font-bold">English</span>
+                  <span className="text-sm text-gray-500 font-medium">EN</span>
+                </div>
+                {currentLang === 'en' && (
+                  <div className="h-6 w-6 rounded-full bg-indigo-500 flex items-center justify-center">
+                    <svg className="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586a1 1 0 01.414 1.414L16.707 5.293a1 1 0 010 1.414z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                )}
+              </button>
             </div>
             <div className="py-2 max-h-96 overflow-y-auto scrollbar-hide">
               {languages.map((lang) => (

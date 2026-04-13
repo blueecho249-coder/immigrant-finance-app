@@ -123,7 +123,6 @@ export default function LessonDetail({ language }) {
       />
       <div className="rounded-3xl bg-white p-8 shadow-xl ring-1 ring-gray-200/80">
         <Link to="/learn" className="mb-5 inline-block text-sm font-semibold text-indigo-600">&larr; Back to Lessons</Link>
-        <h1 className="text-3xl font-bold text-gray-900">{lessonTitle}</h1>
         {lessonSubtitle && <p className="mt-3 text-lg text-gray-600">{lessonSubtitle}</p>}
         <div className="mt-6 rounded-2xl border border-gray-200 bg-gradient-to-br from-gray-50 to-white p-6 text-gray-700">This lesson content is coming soon. Check back later!</div>
         <div className="mt-6">
