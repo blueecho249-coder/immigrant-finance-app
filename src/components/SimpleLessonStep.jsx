@@ -8,6 +8,8 @@ export default function SimpleLessonStep({ step, language, onNext, stepNumber, t
   const [quizAnswer, setQuizAnswer] = useState(null)
   const [quizFeedback, setQuizFeedback] = useState(false)
 
+  const safeLanguage = ['en', 'es', 'hi', 'tl', 'zh', 'ar', 'fr', 'pa'].includes(language) ? language : 'en'
+
   if (!step || !step.content) {
     return (
       <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
@@ -18,8 +20,8 @@ export default function SimpleLessonStep({ step, language, onNext, stepNumber, t
     )
   }
 
-  const t = step.content[language] || step.content.en
-  const rawContent = t.contentBreakdown || (t.explanation ? t.explanation.map(e => ({ type: 'text', content: e })) : [])
+  const t = step.content[safeLanguage] || step.content.en
+  const rawContent = t.contentBreakdown || (Array.isArray(t.explanation) ? t.explanation.map(e => ({ type: 'text', content: e })) : typeof t.explanation === 'string' ? [{ type: 'text', content: t.explanation }] : [])
   const headline = t.headline || ''
   const quiz = t.quiz || null
 
