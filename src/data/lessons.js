@@ -1264,6 +1264,214 @@ export const lessons = [
             contentBreakdown: [
               { type: "text", content: "Late payments can hurt your score fast because lenders want to see reliability." },
               { type: "text", content: "Too many credit applications in a short time can also lower it." },
+              { type: "quickQuestion", question: "Which one can hurt your score?", options: ["Paying on time", "High balances", "Keeping balances low"], correct: 1, explanation: "High balances and late payments can lower your score." },
+              { type: "example", title: "Avoid this", content: "Applying for several cards in one week can make lenders worry." }
+            ]
+          },
+          es: {
+            headline: "¿Qué baja tu puntuación?",
+            contentBreakdown: [
+              { type: "text", content: "Los pagos tardíos pueden afectar rápido porque los prestamistas buscan confiabilidad." },
+              { type: "text", content: "Demasiadas solicitudes en poco tiempo también pueden bajarla." },
+              { type: "quickQuestion", question: "¿Qué puede dañar tu puntuación?", options: ["Pagar a tiempo", "Saldos altos", "Mantener saldos bajos"], correct: 1, explanation: "Los saldos altos y los pagos tardíos pueden bajar tu puntuación." },
+              { type: "example", title: "Evita esto", content: "Solicitar varias tarjetas en una semana puede preocupar a los prestamistas." }
+            ]
+          },
+          hi: {
+            headline: "Score kya girata hai?",
+            contentBreakdown: [
+              { type: "text", content: "Late payments score ko jaldi nuksan pahucha sakte hain kyunki lenders reliability dekhte hain." },
+              { type: "text", content: "Short time mein bahut saari applications bhi score girati hain." },
+              { type: "quickQuestion", question: "Kaun si cheez score ko nuksan de sakti hai?", options: ["Time par payment", "High balances", "Low balances"], correct: 1, explanation: "High balances aur late payments score ko ghata sakte hain." },
+              { type: "example", title: "Isse bacho", content: "Ek hafte mein kai cards ke liye apply karna lenders ko worry kar sakta hai." }
+            ]
+          },
+          tl: {
+            headline: "Ano ang nagpapababa ng score?",
+            contentBreakdown: [
+              { type: "text", content: "Ang late payments ay mabilis makasama dahil gusto ng lenders ang reliability." },
+              { type: "text", content: "Masyadong maraming applications sa maikling panahon ay makakapagbaba rin." },
+              { type: "quickQuestion", question: "Alin ang maaaring makasira sa score?", options: ["Pagbayad sa oras", "Mataas na balanse", "Mababang balanse"], correct: 1, explanation: "Ang mataas na balanse at late payments ay nakakapagbaba ng score." },
+              { type: "example", title: "Iwasan ito", content: "Ang pag-apply ng maraming cards sa isang linggo ay nakakapag-alala sa lenders." }
+            ]
+          },
+          zh: {
+            headline: "什么会降低你的分数？",
+            contentBreakdown: [
+              { type: "text", content: "逾期付款会很快伤害分数，因为贷款人看重可靠性。" },
+              { type: "text", content: "短时间内过多申请也会降低分数。" },
+              { type: "quickQuestion", question: "哪一种会伤害你的分数？", options: ["按时付款", "高余额", "保持低余额"], correct: 1, explanation: "高余额和逾期付款会降低你的分数。" },
+              { type: "example", title: "避免这个", content: "一周内申请多张卡会让贷款人担心。" }
+            ]
+          },
+          ar: {
+            headline: "ما الذي يخفض تقييمك؟",
+            contentBreakdown: [
+              { type: "text", content: "المدفوعات المتأخرة تضر سريعًا لأن المقرضين يريدون رؤية الموثوقية." },
+              { type: "text", content: "كثرة الطلبات في وقت قصير قد تخفضه أيضًا." },
+              { type: "quickQuestion", question: "ما الذي قد يضر بتقييمك؟", options: ["الدفع في الوقت", "الأرصدة العالية", "الأرصدة المنخفضة"], correct: 1, explanation: "الأرصدة العالية والمدفوعات المتأخرة يمكن أن تخفض تقييمك." },
+              { type: "example", title: "تجنب هذا", content: "التقديم على عدة بطاقات في أسبوع واحد قد يثير قلق المقرضين." }
+            ]
+          },
+          fr: {
+            headline: "Qu’est-ce qui fait baisser votre cote ?",
+            contentBreakdown: [
+              { type: "text", content: "Les paiements en retard nuisent vite, car les prêteurs veulent voir de la fiabilité." },
+              { type: "text", content: "Trop de demandes en peu de temps peuvent aussi la faire baisser." },
+              { type: "quickQuestion", question: "Qu’est-ce qui peut nuire à votre cote ?", options: ["Payer à temps", "Soldes élevés", "Garder des soldes bas"], correct: 1, explanation: "Les soldes élevés et les paiements en retard peuvent faire baisser votre cote." },
+              { type: "example", title: "À éviter", content: "Demander plusieurs cartes en une semaine peut donner l’impression que vous avez besoin de trop de crédit." }
+            ]
+          },
+          pa: {
+            headline: "Tuhada score kyon ghatda hai?",
+            contentBreakdown: [
+              { type: "text", content: "Late payments score nu jaldi nuksaan pahucha sakde ne kyunki lenders reliability dekhde ne." },
+              { type: "text", content: "Thode same de vich bahut saari credit applications vi score ghata dendi ne." },
+              { type: "quickQuestion", question: "Ki score nu nuksaan de sakda hai?", options: ["Time te pay karna", "High balances", "Low balances rakho"], correct: 1, explanation: "High balances te late payments score nu ghata sakde ne." },
+              { type: "example", title: "Is ton bacho", content: "Ik hafte vich kai cards layi apply karna lenders nu worry kar sakda hai." }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    id: "check-credit-free",
+    isPremium: false,
+    title: {
+      en: "How to check your credit score free",
+      es: "Cómo revisar tu puntuación de crédito gratis",
+      hi: "Apna credit score free mein kaise check karein",
+      tl: "Paano tingnan nang libre ang iyong credit score",
+      zh: "如何免费查看你的信用分数",
+      ar: "كيف تتحقق من تقييمك الائتماني مجانًا",
+      fr: "Comment vérifier gratuitement sa cote de crédit",
+      pa: "Apna credit score free vich kiven check karo"
+    },
+    subtitle: {
+      en: "Use free tools like Borrowell and Credit Karma in Canada",
+      es: "Usa herramientas gratis como Borrowell y Credit Karma en Canadá",
+      hi: "Canada mein Borrowell aur Credit Karma jaise free tools use karo",
+      tl: "Gumamit ng libreng tools tulad ng Borrowell at Credit Karma sa Canada",
+      zh: "在加拿大使用Borrowell和Credit Karma等免费工具",
+      ar: "استخدم أدوات مجانية مثل Borrowell و Credit Karma في كندا",
+      fr: "Utilisez des outils gratuits comme Borrowell et Credit Karma au Canada",
+      pa: "Canada vich Borrowell te Credit Karma varge free tools use karo"
+    },
+    category: "Credit",
+    steps: [
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "Check your score for free",
+            contentBreakdown: [
+              { type: "text", content: "You can check your credit score without paying in Canada using free services." },
+              { type: "text", content: "Borrowell and Credit Karma are common tools that show your score and report updates." },
+              { type: "quickQuestion", question: "Which tools can you use for free in Canada?", options: ["Borrowell and Credit Karma", "Only banks", "Only cash apps"], correct: 0, explanation: "Borrowell and Credit Karma are popular free tools in Canada." },
+              { type: "example", title: "Easy habit", content: "Checking your score monthly helps you spot changes early and stay on track." }
+            ]
+          },
+          es: {
+            headline: "Revisa tu puntuación gratis",
+            contentBreakdown: [
+              { type: "text", content: "Puedes revisar tu puntuación de crédito gratis en Canadá usando servicios sin costo." },
+              { type: "text", content: "Borrowell y Credit Karma son herramientas comunes que muestran tu puntuación." },
+              { type: "quickQuestion", question: "¿Qué herramientas puedes usar gratis en Canadá?", options: ["Borrowell y Credit Karma", "Solo bancos", "Solo apps de efectivo"], correct: 0, explanation: "Borrowell y Credit Karma son herramientas gratis populares en Canadá." },
+              { type: "example", title: "Buen hábito", content: "Revisar tu puntuación cada mes te ayuda a detectar cambios temprano." }
+            ]
+          },
+          hi: {
+            headline: "Credit score free mein check karo",
+            contentBreakdown: [
+              { type: "text", content: "Canada mein aap free services se apna credit score bina paise diye dekh sakte hain." },
+              { type: "text", content: "Borrowell aur Credit Karma common tools hain jo score aur updates dikhate hain." },
+              { type: "quickQuestion", question: "Canada mein kaunse tools free use kar sakte ho?", options: ["Borrowell aur Credit Karma", "Sirf banks", "Sirf cash apps"], correct: 0, explanation: "Borrowell aur Credit Karma Canada mein popular free tools hain." },
+              { type: "example", title: "Easy habit", content: "Har mahine score check karne se changes jaldi pakad mein aate hain." }
+            ]
+          },
+          tl: {
+            headline: "Suriin nang libre ang iyong score",
+            contentBreakdown: [
+              { type: "text", content: "Maaari mong tingnan ang iyong credit score nang libre sa Canada gamit ang free services." },
+              { type: "text", content: "Ang Borrowell at Credit Karma ay karaniwang tools na nagpapakita ng iyong score." },
+              { type: "quickQuestion", question: "Anong tools ang libre sa Canada?", options: ["Borrowell at Credit Karma", "Mga bank lang", "Mga cash app lang"], correct: 0, explanation: "Ang Borrowell at Credit Karma ay sikat na libreng tools sa Canada." },
+              { type: "example", title: "Magandang habit", content: "Ang buwanang pag-check ng score ay nakakatulong makita ang pagbabago agad." }
+            ]
+          },
+          zh: {
+            headline: "免费查看你的信用分数",
+            contentBreakdown: [
+              { type: "text", content: "在加拿大，你可以使用免费服务查看信用分数。" },
+              { type: "text", content: "Borrowell和Credit Karma是常见工具，可以显示你的分数和更新。" },
+              { type: "quickQuestion", question: "在加拿大可以免费使用哪些工具？", options: ["Borrowell和Credit Karma", "只有银行", "只有现金应用"], correct: 0, explanation: "Borrowell和Credit Karma是加拿大很受欢迎的免费工具。" },
+              { type: "example", title: "简单习惯", content: "每月查看一次分数，有助于尽早发现变化。" }
+            ]
+          },
+          ar: {
+            headline: "تحقق من تقييمك مجانًا",
+            contentBreakdown: [
+              { type: "text", content: "يمكنك التحقق من تقييمك الائتماني مجانًا في كندا باستخدام خدمات مجانية." },
+              { type: "text", content: "Borrowell و Credit Karma من الأدوات الشائعة التي تعرض النتيجة والتحديثات." },
+              { type: "quickQuestion", question: "ما الأدوات المجانية المتاحة في كندا؟", options: ["Borrowell و Credit Karma", "البنوك فقط", "تطبيقات الدفع فقط"], correct: 0, explanation: "Borrowell و Credit Karma من الأدوات المجانية الشائعة في كندا." },
+              { type: "example", title: "عادة جيدة", content: "التحقق الشهري يساعدك على ملاحظة التغييرات مبكرًا." }
+            ]
+          },
+          fr: {
+            headline: "Vérifiez votre cote gratuitement",
+            contentBreakdown: [
+              { type: "text", content: "Vous pouvez vérifier votre cote de crédit gratuitement au Canada." },
+              { type: "text", content: "Borrowell et Credit Karma sont des outils courants qui montrent votre cote et les mises à jour." },
+              { type: "quickQuestion", question: "Quels outils pouvez-vous utiliser gratuitement au Canada ?", options: ["Borrowell et Credit Karma", "Seulement les banques", "Seulement les applis de paiement"], correct: 0, explanation: "Borrowell et Credit Karma sont des outils gratuits populaires au Canada." },
+              { type: "example", title: "Bonne habitude", content: "Vérifier votre cote chaque mois vous aide à repérer les changements tôt." }
+            ]
+          },
+          pa: {
+            headline: "Apna score free vich check karo",
+            contentBreakdown: [
+              { type: "text", content: "Canada vich tusi free services naal bina paise de apna credit score dekh sakde ho." },
+              { type: "text", content: "Borrowell te Credit Karma common tools ne jo score te updates dikhaunde ne." },
+              { type: "quickQuestion", question: "Canada vich kaunse tools free ne?", options: ["Borrowell te Credit Karma", "Sirf banks", "Sirf cash apps"], correct: 0, explanation: "Borrowell te Credit Karma Canada vich mashhoor free tools ne." },
+              { type: "example", title: "Achi aadat", content: "Har mahine score check karna changes nu jaldi pakad lainda hai." }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    id: "why-credit-drops",
+    isPremium: false,
+    title: {
+      en: "Why your credit score drops",
+      es: "Por qué baja tu puntuación de crédito",
+      hi: "Aapka credit score kyun girta hai",
+      tl: "Bakit bumababa ang iyong credit score",
+      zh: "为什么你的信用分数会下降",
+      ar: "لماذا ينخفض تقييمك الائتماني",
+      fr: "Pourquoi votre cote de crédit baisse",
+      pa: "Tuhada credit score kyon ghatda hai"
+    },
+    subtitle: {
+      en: "Late payments, too many applications, and high balances can hurt",
+      es: "Los pagos tardíos, demasiadas solicitudes y saldos altos pueden afectar",
+      hi: "Late payments, bahut saare applications, aur high balances nuksan kar sakte hain",
+      tl: "Ang late payments, sobrang applications, at mataas na balanse ay nakakasama",
+      zh: "逾期付款、过多申请和高余额都会伤害分数",
+      ar: "المدفوعات المتأخرة وكثرة الطلبات والأرصدة العالية تضر",
+      fr: "Les paiements en retard, trop de demandes et les soldes élevés peuvent nuire",
+      pa: "Late payments, bahut saari applications, te high balances nuksaan kar sakde ne"
+    },
+    category: "Credit",
+    steps: [
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "What lowers your score?",
+            contentBreakdown: [
+              { type: "text", content: "Late payments can hurt your score fast because lenders want to see reliability." },
+              { type: "text", content: "Too many credit applications in a short time can also lower it." },
               { type: "quickQuestion", question: "What can hurt your score?", options: ["Paying on time", "High balances", "Using one card carefully"], correct: 1, explanation: "High balances and late payments can lower your score." },
               { type: "example", title: "Avoid this", content: "Applying for several cards in one week can make lenders worry you need too much credit." }
             ]
