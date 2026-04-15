@@ -920,6 +920,422 @@ export const lessons = [
     ]
   },
   {
+    id: "what-is-credit-score",
+    isPremium: false,
+    title: {
+      en: "What is a credit score?",
+      es: "¿Qué es una puntuación de crédito?",
+      hi: "Credit score kya hai?",
+      tl: "Ano ang isang credit score?",
+      zh: "什么是信用分数？",
+      ar: "ما هو التقييم الائتماني؟",
+      fr: "Qu’est-ce qu’une cote de crédit ?",
+      pa: "Credit score ki hai?"
+    },
+    subtitle: {
+      en: "Understand the 300-850 range and why it matters",
+      es: "Entiende el rango de 300 a 850 y por qué importa",
+      hi: "300-850 range ko samjhein aur yeh kyun zaroori hai",
+      tl: "Unawain ang 300-850 range at kung bakit ito mahalaga",
+      zh: "了解300-850范围以及它的重要性",
+      ar: "افهم نطاق 300-850 ولماذا يهم",
+      fr: "Comprenez l’échelle de 300 à 850 et son importance",
+      pa: "300-850 range samjho te eh kyon zaroori hai"
+    },
+    category: "Credit",
+    steps: [
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "What is a credit score?",
+            contentBreakdown: [
+              { type: "text", content: "A credit score is a number from 300 to 850 that shows how likely you are to pay money back on time." },
+              { type: "text", content: "A higher score can help you rent apartments, get loans, and qualify for better rates." },
+              { type: "quickQuestion", question: "What score range is used for most credit scores?", options: ["100-500", "300-850", "0-100"], correct: 1, explanation: "Most credit scores in Canada and the US use the 300-850 range." },
+              { type: "example", title: "Why it matters", content: "A renter with a good score may get approved faster than someone with no credit history." }
+            ]
+          },
+          es: {
+            headline: "¿Qué es una puntuación de crédito?",
+            contentBreakdown: [
+              { type: "text", content: "Una puntuación de crédito es un número de 300 a 850 que muestra qué tan probable es que pagues a tiempo." },
+              { type: "text", content: "Una puntuación más alta puede ayudar con renta, préstamos y mejores tasas." },
+              { type: "quickQuestion", question: "¿Qué rango se usa para la mayoría de las puntuaciones de crédito?", options: ["100-500", "300-850", "0-100"], correct: 1, explanation: "La mayoría de las puntuaciones de crédito en Canadá y EE. UU. usan el rango 300-850." },
+              { type: "example", title: "Por qué importa", content: "Una persona con buen crédito puede ser aprobada para rentar más rápido que alguien sin historial." }
+            ]
+          },
+          hi: {
+            headline: "Credit score kya hai?",
+            contentBreakdown: [
+              { type: "text", content: "Credit score 300 se 850 ke beech ka number hai jo dikhata hai ki aap waqt par paisa wapas karte hain ya nahi." },
+              { type: "text", content: "Achha score rent, loans aur better rates mein madad karta hai." },
+              { type: "quickQuestion", question: "Credit scores ka common range kya hai?", options: ["100-500", "300-850", "0-100"], correct: 1, explanation: "Canada aur US mein zyada tar credit scores 300-850 range use karte hain." },
+              { type: "example", title: "Kyun zaroori hai", content: "Achhe score wala renter bina credit history wale vyakti se jaldi approve ho sakta hai." }
+            ]
+          },
+          tl: {
+            headline: "Ano ang isang credit score?",
+            contentBreakdown: [
+              { type: "text", content: "Ang credit score ay numerong 300 hanggang 850 na nagpapakita kung gaano ka malamang magbayad sa oras." },
+              { type: "text", content: "Mas mataas na score ay makakatulong sa renta, loans, at mas mabuting rates." },
+              { type: "quickQuestion", question: "Anong range ang ginagamit para sa credit scores?", options: ["100-500", "300-850", "0-100"], correct: 1, explanation: "Karamihan sa credit scores sa Canada at US ay gumagamit ng 300-850 range." },
+              { type: "example", title: "Bakit mahalaga", content: "Ang renter na may magandang score ay maaaring ma-approve nang mas mabilis kaysa sa walang credit history." }
+            ]
+          },
+          zh: {
+            headline: "什么是信用分数？",
+            contentBreakdown: [
+              { type: "text", content: "信用分数是300到850之间的数字，表示你按时还钱的可能性。" },
+              { type: "text", content: "更高的分数有助于租房、贷款和获得更好的利率。" },
+              { type: "quickQuestion", question: "信用分数通常使用什么范围？", options: ["100-500", "300-850", "0-100"], correct: 1, explanation: "加拿大和美国的大多数信用分数都使用300-850范围。" },
+              { type: "example", title: "为什么重要", content: "信用分数好的人可能比没有信用记录的人更快获批租房。" }
+            ]
+          },
+          ar: {
+            headline: "ما هو التقييم الائتماني؟",
+            contentBreakdown: [
+              { type: "text", content: "التقييم الائتماني هو رقم من 300 إلى 850 يوضح مدى احتمال سداد المال في الوقت المحدد." },
+              { type: "text", content: "التقييم الأعلى يساعد في الاستئجار والقروض والحصول على أسعار أفضل." },
+              { type: "quickQuestion", question: "ما هو النطاق الشائع للتقييم الائتماني؟", options: ["100-500", "300-850", "0-100"], correct: 1, explanation: "معظم التقييمات الائتمانية في كندا والولايات المتحدة تستخدم نطاق 300-850." },
+              { type: "example", title: "لماذا يهم", content: "قد يحصل المستأجر ذو التقييم الجيد على الموافقة أسرع من شخص لا يملك سجلًا ائتمانيًا." }
+            ]
+          },
+          fr: {
+            headline: "Qu’est-ce qu’une cote de crédit ?",
+            contentBreakdown: [
+              { type: "text", content: "Une cote de crédit est un nombre de 300 à 850 qui montre la probabilité de rembourser à temps." },
+              { type: "text", content: "Une cote plus élevée aide pour le logement, les prêts et de meilleurs taux." },
+              { type: "quickQuestion", question: "Quelle plage est utilisée pour la plupart des cotes de crédit ?", options: ["100-500", "300-850", "0-100"], correct: 1, explanation: "La plupart des cotes de crédit au Canada et aux États-Unis utilisent la plage 300-850." },
+              { type: "example", title: "Pourquoi c’est important", content: "Une personne avec une bonne cote peut être approuvée plus vite qu’une personne sans historique." }
+            ]
+          },
+          pa: {
+            headline: "Credit score ki hai?",
+            contentBreakdown: [
+              { type: "text", content: "Credit score 300 to 850 de vichkar number hai jo dikhaunda hai ke tusi time te paisa wapas karonge ya nahi." },
+              { type: "text", content: "Wadha score rent, loans, te better rates vich madad karda hai." },
+              { type: "quickQuestion", question: "Credit scores layi common range ki hai?", options: ["100-500", "300-850", "0-100"], correct: 1, explanation: "Canada te US vich zyadatar credit scores 300-850 range use karde ne." },
+              { type: "example", title: "Kyon zaroori hai", content: "Achhe score wala renter bina credit history wale vyakti ton jaldi approve ho sakda hai." }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    id: "build-credit-from-zero",
+    isPremium: false,
+    title: {
+      en: "How to build credit from zero",
+      es: "Cómo construir crédito desde cero",
+      hi: "Zero se credit kaise banayein",
+      tl: "Paano bumuo ng credit mula sa wala",
+      zh: "如何从零开始建立信用",
+      ar: "كيف تبني الائتمان من الصفر",
+      fr: "Comment construire son crédit à partir de zéro",
+      pa: "Zero ton credit kaise banao"
+    },
+    subtitle: {
+      en: "Use secured cards, pay on time, and keep balances low",
+      es: "Usa tarjetas aseguradas, paga a tiempo y mantén saldos bajos",
+      hi: "Secured cards use karo, time par pay karo, aur balance low rakho",
+      tl: "Gumamit ng secured cards, magbayad sa oras, at panatilihing mababa ang balanse",
+      zh: "使用担保信用卡、按时还款并保持低余额",
+      ar: "استخدم البطاقات المضمونة، وادفع في الوقت المحدد، وحافظ على الرصيد منخفضًا",
+      fr: "Utilisez des cartes sécurisées, payez à temps et gardez des soldes bas",
+      pa: "Secured cards use karo, time te pay karo, te balance low rakho"
+    },
+    category: "Credit",
+    steps: [
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "Build credit step by step",
+            contentBreakdown: [
+              { type: "text", content: "If you have no credit history, start with a secured credit card or a small starter product." },
+              { type: "text", content: "Always pay on time and keep your balance low to build trust with lenders." },
+              { type: "quickQuestion", question: "What helps build credit the most?", options: ["Late payments", "Paying on time", "Maxing out your card"], correct: 1, explanation: "On-time payments are one of the biggest factors in your score." },
+              { type: "example", title: "Simple plan", content: "A $500 secured card, used for small purchases and paid off every month, can build strong credit habits." }
+            ]
+          },
+          es: {
+            headline: "Construye crédito paso a paso",
+            contentBreakdown: [
+              { type: "text", content: "Si no tienes historial, comienza con una tarjeta asegurada o un producto inicial pequeño." },
+              { type: "text", content: "Paga a tiempo y mantén el saldo bajo para generar confianza." },
+              { type: "quickQuestion", question: "¿Qué ayuda más a construir crédito?", options: ["Pagar tarde", "Pagar a tiempo", "Gastar todo el límite"], correct: 1, explanation: "Los pagos a tiempo son uno de los factores más importantes." },
+              { type: "example", title: "Plan simple", content: "Una tarjeta asegurada de $500 usada para compras pequeñas y pagada cada mes puede crear buenos hábitos." }
+            ]
+          },
+          hi: {
+            headline: "Credit step by step banao",
+            contentBreakdown: [
+              { type: "text", content: "Agar credit history nahi hai, to secured credit card ya starter product se shuru karo." },
+              { type: "text", content: "Hamesha time par pay karo aur balance low rakho." },
+              { type: "quickQuestion", question: "Credit build karne mein kya sabse madad karta hai?", options: ["Late payments", "Time par payment", "Card ko max karna"], correct: 1, explanation: "On-time payments score ka sabse important part hain." },
+              { type: "example", title: "Simple plan", content: "$500 secured card se chhoti purchases karke har month full pay karna achha habit banata hai." }
+            ]
+          },
+          tl: {
+            headline: "Bumuo ng credit nang paunti-unti",
+            contentBreakdown: [
+              { type: "text", content: "Kung wala kang credit history, magsimula sa secured credit card o maliit na starter product." },
+              { type: "text", content: "Magbayad sa oras at panatilihing mababa ang balanse." },
+              { type: "quickQuestion", question: "Ano ang pinaka-nakakatulong sa credit building?", options: ["Late payments", "Pagbayad sa oras", "Pag-max ng card"], correct: 1, explanation: "Ang on-time payments ay isa sa pinakamalaking factor ng score." },
+              { type: "example", title: "Simpleng plano", content: "Ang $500 secured card na ginagamit sa maliliit na pagbili at binabayaran bawat buwan ay nakakatulong sa magandang habit." }
+            ]
+          },
+          zh: {
+            headline: "一步一步建立信用",
+            contentBreakdown: [
+              { type: "text", content: "如果你没有信用记录，可以从担保信用卡或小型入门产品开始。" },
+              { type: "text", content: "按时还款并保持低余额，可以建立贷款人的信任。" },
+              { type: "quickQuestion", question: "什么最有助于建立信用？", options: ["迟付款", "按时付款", "刷爆信用卡"], correct: 1, explanation: "按时付款是分数中最重要的因素之一。" },
+              { type: "example", title: "简单计划", content: "$500的担保卡用于小额消费并每月还清，可以建立良好习惯。" }
+            ]
+          },
+          ar: {
+            headline: "ابنِ الائتمان خطوة بخطوة",
+            contentBreakdown: [
+              { type: "text", content: "إذا لم يكن لديك سجل ائتماني فابدأ ببطاقة مضمونة أو منتج بداية صغير." },
+              { type: "text", content: "ادفع في الوقت المحدد وحافظ على الرصيد منخفضًا." },
+              { type: "quickQuestion", question: "ما الذي يساعد أكثر في بناء الائتمان؟", options: ["الدفع المتأخر", "الدفع في الوقت", "استخدام الحد بالكامل"], correct: 1, explanation: "المدفوعات في الوقت المحدد من أهم العوامل." },
+              { type: "example", title: "خطة بسيطة", content: "بطاقة مضمونة بقيمة 500 دولار للمشتريات الصغيرة وسدادها كل شهر تبني عادات قوية." }
+            ]
+          },
+          fr: {
+            headline: "Construire son crédit étape par étape",
+            contentBreakdown: [
+              { type: "text", content: "Sans historique, commencez avec une carte sécurisée ou un petit produit de départ." },
+              { type: "text", content: "Payez à temps et gardez un faible solde pour inspirer confiance." },
+              { type: "quickQuestion", question: "Qu’est-ce qui aide le plus à construire le crédit ?", options: ["Payer en retard", "Payer à temps", "Maximiser la carte"], correct: 1, explanation: "Les paiements à temps sont l’un des facteurs les plus importants." },
+              { type: "example", title: "Plan simple", content: "Une carte sécurisée de 500 $ utilisée pour de petits achats et remboursée chaque mois aide à créer de bonnes habitudes." }
+            ]
+          },
+          pa: {
+            headline: "Zero ton credit kiven banao",
+            contentBreakdown: [
+              { type: "text", content: "Je credit history nahi hai, secured credit card ya chhote starter product ton shuru karo." },
+              { type: "text", content: "Time te pay karo te balance low rakho." },
+              { type: "quickQuestion", question: "Credit build karan vich sab ton wadh ki madad karda hai?", options: ["Late payments", "Time te payment", "Card nu max karna"], correct: 1, explanation: "On-time payments score da sab ton important hissa ne." },
+              { type: "example", title: "Simple plan", content: "$500 secured card naal chhoti kharid te har mahina full pay karna changi aadat banaunda hai." }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    id: "check-credit-free",
+    isPremium: false,
+    title: {
+      en: "How to check your credit score free",
+      es: "Cómo revisar tu puntuación de crédito gratis",
+      hi: "Apna credit score free mein kaise check karein",
+      tl: "Paano tingnan nang libre ang iyong credit score",
+      zh: "如何免费查看你的信用分数",
+      ar: "كيف تتحقق من تقييمك الائتماني مجانًا",
+      fr: "Comment vérifier gratuitement sa cote de crédit",
+      pa: "Apna credit score free vich kiven check karo"
+    },
+    subtitle: {
+      en: "Use free tools like Borrowell and Credit Karma in Canada",
+      es: "Usa herramientas gratis como Borrowell y Credit Karma en Canadá",
+      hi: "Canada mein Borrowell aur Credit Karma jaise free tools use karo",
+      tl: "Gumamit ng libreng tools tulad ng Borrowell at Credit Karma sa Canada",
+      zh: "在加拿大使用Borrowell和Credit Karma等免费工具",
+      ar: "استخدم أدوات مجانية مثل Borrowell و Credit Karma في كندا",
+      fr: "Utilisez des outils gratuits comme Borrowell et Credit Karma au Canada",
+      pa: "Canada vich Borrowell te Credit Karma varge free tools use karo"
+    },
+    category: "Credit",
+    steps: [
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "Check your score for free",
+            contentBreakdown: [
+              { type: "text", content: "You can check your credit score without paying in Canada using free services." },
+              { type: "text", content: "Borrowell and Credit Karma are common tools that show your score and report updates." },
+              { type: "quickQuestion", question: "Which tools can you use for free in Canada?", options: ["Borrowell and Credit Karma", "Only banks", "Only cash apps"], correct: 0, explanation: "Borrowell and Credit Karma are popular free tools in Canada." },
+              { type: "example", title: "Easy habit", content: "Checking your score monthly helps you spot changes early and stay on track." }
+            ]
+          },
+          es: {
+            headline: "Revisa tu puntuación gratis",
+            contentBreakdown: [
+              { type: "text", content: "Puedes revisar tu puntuación de crédito gratis en Canadá usando servicios sin costo." },
+              { type: "text", content: "Borrowell y Credit Karma son herramientas comunes que muestran tu puntuación." },
+              { type: "quickQuestion", question: "¿Qué herramientas puedes usar gratis en Canadá?", options: ["Borrowell y Credit Karma", "Solo bancos", "Solo apps de efectivo"], correct: 0, explanation: "Borrowell y Credit Karma son herramientas gratis populares en Canadá." },
+              { type: "example", title: "Buen hábito", content: "Revisar tu puntuación cada mes te ayuda a detectar cambios temprano." }
+            ]
+          },
+          hi: {
+            headline: "Credit score free mein check karo",
+            contentBreakdown: [
+              { type: "text", content: "Canada mein aap free services se apna credit score bina paise diye dekh sakte hain." },
+              { type: "text", content: "Borrowell aur Credit Karma common tools hain jo score aur updates dikhate hain." },
+              { type: "quickQuestion", question: "Canada mein kaunse tools free use kar sakte ho?", options: ["Borrowell aur Credit Karma", "Sirf banks", "Sirf cash apps"], correct: 0, explanation: "Borrowell aur Credit Karma Canada mein popular free tools hain." },
+              { type: "example", title: "Easy habit", content: "Har mahine score check karne se changes jaldi pakad mein aate hain." }
+            ]
+          },
+          tl: {
+            headline: "Suriin nang libre ang iyong score",
+            contentBreakdown: [
+              { type: "text", content: "Maaari mong tingnan ang iyong credit score nang libre sa Canada gamit ang free services." },
+              { type: "text", content: "Ang Borrowell at Credit Karma ay karaniwang tools na nagpapakita ng iyong score." },
+              { type: "quickQuestion", question: "Anong tools ang libre sa Canada?", options: ["Borrowell at Credit Karma", "Mga bank lang", "Mga cash app lang"], correct: 0, explanation: "Ang Borrowell at Credit Karma ay sikat na libreng tools sa Canada." },
+              { type: "example", title: "Magandang habit", content: "Ang buwanang pag-check ng score ay nakakatulong makita ang pagbabago agad." }
+            ]
+          },
+          zh: {
+            headline: "免费查看你的信用分数",
+            contentBreakdown: [
+              { type: "text", content: "在加拿大，你可以使用免费服务查看信用分数。" },
+              { type: "text", content: "Borrowell和Credit Karma是常见工具，可以显示你的分数和更新。" },
+              { type: "quickQuestion", question: "在加拿大可以免费使用哪些工具？", options: ["Borrowell和Credit Karma", "只有银行", "只有现金应用"], correct: 0, explanation: "Borrowell和Credit Karma是加拿大很受欢迎的免费工具。" },
+              { type: "example", title: "简单习惯", content: "每月查看一次分数，有助于尽早发现变化。" }
+            ]
+          },
+          ar: {
+            headline: "تحقق من تقييمك مجانًا",
+            contentBreakdown: [
+              { type: "text", content: "يمكنك التحقق من تقييمك الائتماني مجانًا في كندا باستخدام خدمات مجانية." },
+              { type: "text", content: "Borrowell و Credit Karma من الأدوات الشائعة التي تعرض النتيجة والتحديثات." },
+              { type: "quickQuestion", question: "ما الأدوات المجانية المتاحة في كندا؟", options: ["Borrowell و Credit Karma", "البنوك فقط", "تطبيقات الدفع فقط"], correct: 0, explanation: "Borrowell و Credit Karma من الأدوات المجانية الشائعة في كندا." },
+              { type: "example", title: "عادة جيدة", content: "التحقق الشهري يساعدك على ملاحظة التغييرات مبكرًا." }
+            ]
+          },
+          fr: {
+            headline: "Vérifiez votre cote gratuitement",
+            contentBreakdown: [
+              { type: "text", content: "Vous pouvez vérifier votre cote de crédit gratuitement au Canada." },
+              { type: "text", content: "Borrowell et Credit Karma sont des outils courants qui montrent votre cote et les mises à jour." },
+              { type: "quickQuestion", question: "Quels outils pouvez-vous utiliser gratuitement au Canada ?", options: ["Borrowell et Credit Karma", "Seulement les banques", "Seulement les applis de paiement"], correct: 0, explanation: "Borrowell et Credit Karma sont des outils gratuits populaires au Canada." },
+              { type: "example", title: "Bonne habitude", content: "Vérifier votre cote chaque mois vous aide à repérer les changements tôt." }
+            ]
+          },
+          pa: {
+            headline: "Apna score free vich check karo",
+            contentBreakdown: [
+              { type: "text", content: "Canada vich tusi free services naal bina paise de apna credit score dekh sakde ho." },
+              { type: "text", content: "Borrowell te Credit Karma common tools ne jo score te updates dikhaunde ne." },
+              { type: "quickQuestion", question: "Canada vich kaunse tools free ne?", options: ["Borrowell te Credit Karma", "Sirf banks", "Sirf cash apps"], correct: 0, explanation: "Borrowell te Credit Karma Canada vich mashhoor free tools ne." },
+              { type: "example", title: "Achi aadat", content: "Har mahine score check karna changes nu jaldi pakad lainda hai." }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    id: "why-credit-drops",
+    isPremium: false,
+    title: {
+      en: "Why your credit score drops",
+      es: "Por qué baja tu puntuación de crédito",
+      hi: "Aapka credit score kyun girta hai",
+      tl: "Bakit bumababa ang iyong credit score",
+      zh: "为什么你的信用分数会下降",
+      ar: "لماذا ينخفض تقييمك الائتماني",
+      fr: "Pourquoi votre cote de crédit baisse",
+      pa: "Tuhada credit score kyon ghatda hai"
+    },
+    subtitle: {
+      en: "Late payments, too many applications, and high balances can hurt",
+      es: "Los pagos tardíos, demasiadas solicitudes y saldos altos pueden afectar",
+      hi: "Late payments, bahut saare applications, aur high balances nuksan kar sakte hain",
+      tl: "Ang late payments, sobrang applications, at mataas na balanse ay nakakasama",
+      zh: "逾期付款、过多申请和高余额都会伤害分数",
+      ar: "المدفوعات المتأخرة وكثرة الطلبات والأرصدة العالية تضر",
+      fr: "Les paiements en retard, trop de demandes et les soldes élevés peuvent nuire",
+      pa: "Late payments, bahut saari applications, te high balances nuksaan kar sakde ne"
+    },
+    category: "Credit",
+    steps: [
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "What lowers your score?",
+            contentBreakdown: [
+              { type: "text", content: "Late payments can hurt your score fast because lenders want to see reliability." },
+              { type: "text", content: "Too many credit applications in a short time can also lower it." },
+              { type: "quickQuestion", question: "What can hurt your score?", options: ["Paying on time", "High balances", "Using one card carefully"], correct: 1, explanation: "High balances and late payments can lower your score." },
+              { type: "example", title: "Avoid this", content: "Applying for several cards in one week can make lenders worry you need too much credit." }
+            ]
+          },
+          es: {
+            headline: "¿Qué baja tu puntuación?",
+            contentBreakdown: [
+              { type: "text", content: "Los pagos tardíos pueden dañar tu puntuación rápidamente." },
+              { type: "text", content: "Demasiadas solicitudes de crédito en poco tiempo también pueden bajarla." },
+              { type: "quickQuestion", question: "¿Qué puede dañar tu puntuación?", options: ["Pagar a tiempo", "Saldos altos", "Usar una tarjeta con cuidado"], correct: 1, explanation: "Los saldos altos y los pagos tardíos pueden bajar tu puntuación." },
+              { type: "example", title: "Evita esto", content: "Solicitar varias tarjetas en una semana puede hacer que parezca que necesitas demasiado crédito." }
+            ]
+          },
+          hi: {
+            headline: "Score kyun girta hai?",
+            contentBreakdown: [
+              { type: "text", content: "Late payments score ko jaldi nuksan pahucha sakte hain." },
+              { type: "text", content: "Short time mein bahut saari credit applications bhi score ko girati hain." },
+              { type: "quickQuestion", question: "Kya score ko nuksan de sakta hai?", options: ["Time par pay karna", "High balances", "Ek card ko carefully use karna"], correct: 1, explanation: "High balances aur late payments score ko kam kar sakte hain." },
+              { type: "example", title: "Isse bacho", content: "Ek hafte mein kai cards ke liye apply karna lenders ko worry kar sakta hai." }
+            ]
+          },
+          tl: {
+            headline: "Bakit bumababa ang score?",
+            contentBreakdown: [
+              { type: "text", content: "Ang late payments ay mabilis makakasira sa score." },
+              { type: "text", content: "Ang sobrang credit applications sa maikling panahon ay maaari ring magpababa nito." },
+              { type: "quickQuestion", question: "Ano ang maaaring makasama sa score?", options: ["Pagbayad sa oras", "Mataas na balanse", "Maingat na paggamit ng isang card"], correct: 1, explanation: "Ang high balances at late payments ay nakakapababa ng score." },
+              { type: "example", title: "Iwasan ito", content: "Ang pag-apply sa ilang cards sa loob ng isang linggo ay maaaring magmukhang sobra ang kailangan mong credit." }
+            ]
+          },
+          zh: {
+            headline: "为什么分数会下降？",
+            contentBreakdown: [
+              { type: "text", content: "逾期付款会很快伤害你的信用分数。" },
+              { type: "text", content: "短时间内申请太多信用产品也会降低分数。" },
+              { type: "quickQuestion", question: "什么会伤害你的分数？", options: ["按时付款", "高余额", "谨慎使用一张卡"], correct: 1, explanation: "高余额和逾期付款都会降低分数。" },
+              { type: "example", title: "避免这样做", content: "一周内申请多张卡会让贷款人担心你需要太多信用。" }
+            ]
+          },
+          ar: {
+            headline: "لماذا ينخفض التقييم؟",
+            contentBreakdown: [
+              { type: "text", content: "المدفوعات المتأخرة يمكن أن تضر تقييمك بسرعة." },
+              { type: "text", content: "كثرة طلبات الائتمان خلال وقت قصير يمكن أن تخفضه أيضًا." },
+              { type: "quickQuestion", question: "ما الذي يمكن أن يضر تقييمك؟", options: ["الدفع في الوقت", "الأرصدة العالية", "استخدام بطاقة واحدة بحذر"], correct: 1, explanation: "الأرصدة العالية والمدفوعات المتأخرة قد تخفض التقييم." },
+              { type: "example", title: "تجنب هذا", content: "التقديم لعدة بطاقات في أسبوع واحد قد يجعل المقرضين يظنون أنك تحتاج إلى ائتمان كثير." }
+            ]
+          },
+          fr: {
+            headline: "Pourquoi la cote baisse-t-elle ?",
+            contentBreakdown: [
+              { type: "text", content: "Les paiements en retard peuvent nuire rapidement à votre cote." },
+              { type: "text", content: "Trop de demandes de crédit en peu de temps peuvent aussi la faire baisser." },
+              { type: "quickQuestion", question: "Qu’est-ce qui peut nuire à votre cote ?", options: ["Payer à temps", "Soldes élevés", "Utiliser une carte avec prudence"], correct: 1, explanation: "Les soldes élevés et les paiements en retard peuvent faire baisser votre cote." },
+              { type: "example", title: "À éviter", content: "Demander plusieurs cartes en une semaine peut donner l’impression que vous avez besoin de trop de crédit." }
+            ]
+          },
+          pa: {
+            headline: "Tuhada score kyon ghatda hai?",
+            contentBreakdown: [
+              { type: "text", content: "Late payments score nu jaldi nuksaan pahucha sakde ne." },
+              { type: "text", content: "Thode same de vich bahut saari credit applications vi score ghata dendi ne." },
+              { type: "quickQuestion", question: "Ki score nu nuksaan de sakda hai?", options: ["Time te pay karna", "High balances", "Ik card nu carefully use karna"], correct: 1, explanation: "High balances te late payments score nu ghata sakde ne." },
+              { type: "example", title: "Is ton bacho", content: "Ik hafte vich kai cards layi apply karna lenders nu worry kar sakda hai." }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
     id: "banking-basics",
     isPremium: false,
     title: {
