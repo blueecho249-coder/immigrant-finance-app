@@ -11,12 +11,17 @@ export default function Learn({ language }) {
   const [selectedCategory, setSelectedCategory] = useState('All')
   const [totalXP, setTotalXP] = useState(0)
   const [streak, setStreak] = useState(0)
+  const [lockedLesson, setLockedLesson] = useState(null)
   
   const categories = ['All', 'Credit', 'Banking', 'Housing', 'Taxes', 'Saving']
   
   const filteredLessons = selectedCategory === 'All' 
     ? lessons 
     : lessons.filter(lesson => lesson.category === selectedCategory)
+  const visibleLessons = filteredLessons.map((lesson, index) => ({
+    ...lesson,
+    isPremium: index >= 3
+  }))
   const safeLanguage = ['en', 'es', 'hi', 'tl', 'zh', 'ar', 'fr', 'pa'].includes(language) ? language : 'en'
 
   useEffect(() => {
@@ -152,6 +157,49 @@ export default function Learn({ language }) {
     return colors[category] || colors['All']
   }
 
+  const premiumPoster = {
+    en: {
+      title: 'Unlock the full course',
+      body: 'This lesson is part of Premium. Get every lesson, advanced tools, and faster progress.',
+      button: 'Get Premium Access'
+    },
+    es: {
+      title: 'Desbloquea el curso completo',
+      body: 'Esta lección es parte de Premium. Obtén todas las lecciones, herramientas avanzadas y progreso más rápido.',
+      button: 'Obtener acceso Premium'
+    },
+    hi: {
+      title: 'Poora course unlock karein',
+      body: 'Yeh lesson Premium ka hissa hai. Sab lessons, advanced tools, aur faster progress unlock karein.',
+      button: 'Premium Access lein'
+    },
+    tl: {
+      title: 'I-unlock ang buong course',
+      body: 'Ang araling ito ay bahagi ng Premium. Makakuha ng lahat ng lessons, advanced tools, at mas mabilis na progreso.',
+      button: 'Kunin ang Premium Access'
+    },
+    zh: {
+      title: '解锁完整课程',
+      body: '这节课属于高级版。获取所有课程、高级工具和更快的进度。',
+      button: '获取高级版'
+    },
+    ar: {
+      title: 'افتح الدورة الكاملة',
+      body: 'هذا الدرس جزء من البريميوم. احصل على كل الدروس والأدوات المتقدمة وتقدم أسرع.',
+      button: 'احصل على بريميوم'
+    },
+    fr: {
+      title: 'Débloquez le cours complet',
+      body: 'Cette leçon fait partie de Premium. Accédez à toutes les leçons, aux outils avancés et à une progression plus rapide.',
+      button: 'Obtenir Premium'
+    },
+    pa: {
+      title: 'Pura course unlock karo',
+      body: 'Eh lesson Premium da hissa hai. Sare lessons, advanced tools, te faster progress unlock karo.',
+      button: 'Premium Access lo'
+    }
+  }
+
   return (
     <>
       <SEO 
@@ -247,12 +295,24 @@ export default function Learn({ language }) {
           : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
       }`}>
         {filteredLessons.length > 0 ? (
-          filteredLessons.map((lesson, index) => {
+          visibleLessons.map((lesson, index) => {
             const colors = getCategoryColor(lesson.category)
             const isPremiumLesson = lesson.isPremium
             
             return (
-              <div key={lesson.id} className="group card hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden animate-fadeInUp relative border border-gray-200/70 bg-white/95" style={{ animationDelay: `${index * 0.1}s` }}>
+              <div
+                key={lesson.id}
+                role="button"
+                tabIndex={0}
+                onClick={() => isPremiumLesson && setLockedLesson(lesson)}
+                onKeyDown={(e) => {
+                  if (isPremiumLesson && (e.key === 'Enter' || e.key === ' ')) {
+                    setLockedLesson(lesson)
+                  }
+                }}
+                className="group card hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden animate-fadeInUp relative border border-gray-200/70 bg-white/95 cursor-pointer"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 {/* Premium Badge */}
                 {isPremiumLesson && (
                   <div className="absolute top-4 right-4 z-10">
@@ -305,17 +365,16 @@ export default function Learn({ language }) {
                   </div>
                   
                   {isPremiumLesson ? (
-                    <a
-                      href="https://blueecho3.gumroad.com/l/btyknk"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`inline-flex items-center justify-center w-full py-4 px-6 rounded-2xl font-bold transition-all hover:opacity-90 transform hover:scale-105 shadow-lg bg-gradient-to-r from-amber-500 to-amber-600 text-white`}
+                    <button
+                      type="button"
+                      onClick={() => setLockedLesson(lesson)}
+                      className="inline-flex items-center justify-center w-full py-4 px-6 rounded-2xl font-bold transition-all hover:opacity-90 transform hover:scale-105 shadow-lg bg-gradient-to-r from-amber-500 to-amber-600 text-white"
                     >
                       <svg className="mr-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                       </svg>
                       {t.upgradeToPremium}
-                    </a>
+                    </button>
                   ) : (
                     <Link
                       to={`/lesson/${lesson.id}`}
@@ -347,6 +406,35 @@ export default function Learn({ language }) {
           </div>
         )}
       </div>
+
+      {lockedLesson && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4 backdrop-blur-sm">
+          <div className="w-full max-w-2xl rounded-3xl bg-white p-8 shadow-2xl">
+            <div className="mb-4 inline-flex rounded-full bg-amber-100 px-4 py-2 text-sm font-bold text-amber-700">
+              {t.premiumRequired}
+            </div>
+            <h3 className="text-3xl font-bold text-gray-900">{premiumPoster[safeLanguage].title}</h3>
+            <p className="mt-4 text-lg text-gray-700">{premiumPoster[safeLanguage].body}</p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="https://blueecho3.gumroad.com/l/btyknk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 px-6 py-4 font-bold text-white shadow-lg transition-transform hover:scale-105"
+              >
+                {premiumPoster[safeLanguage].button}
+              </a>
+              <button
+                type="button"
+                onClick={() => setLockedLesson(null)}
+                className="inline-flex items-center justify-center rounded-2xl border border-gray-300 px-6 py-4 font-bold text-gray-700"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
       
       {/* FAQ Section */}
       <div className="mt-16 mb-8 animate-fadeInUp">
