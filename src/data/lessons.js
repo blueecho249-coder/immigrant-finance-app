@@ -80,6 +80,166 @@ export const lessons = [
     ]
   },
   {
+    id: "how-to-open-a-bank-account",
+    isPremium: false,
+    title: {
+      en: "How to open a bank account",
+      es: "Cómo abrir una cuenta bancaria",
+      hi: "Bank account kaise kholein",
+      tl: "Paano magbukas ng bank account",
+      zh: "如何开银行账户",
+      ar: "كيف تفتح حسابًا بنكيًا",
+      fr: "Comment ouvrir un compte bancaire",
+      pa: "Bank account kiven kholein"
+    },
+    subtitle: {
+      en: "What documents you need and which banks are best for newcomers",
+      es: "Qué documentos necesitas y qué bancos son mejores para recién llegados",
+      hi: "Kaunse documents chahiye aur kaunse banks newcomers ke liye best hain",
+      tl: "Anong mga dokumento ang kailangan at aling bangko ang pinakamainam para sa mga bagong dating",
+      zh: "你需要哪些文件，以及哪些银行最适合新移民",
+      ar: "ما المستندات التي تحتاجها وأي البنوك أفضل للقادمين الجدد",
+      fr: "Quels documents il vous faut et quelles banques sont meilleures pour les nouveaux arrivants",
+      pa: "Kaunse documents chahide han te kaunse banks newcomers layi best han"
+    },
+    category: "Banking",
+    steps: [
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "Opening your first bank account",
+            contentBreakdown: [
+              { type: "text", content: "You usually need a passport or ID, proof of address, and sometimes a work or study permit." },
+              { type: "text", content: "Big banks like RBC, TD, Scotiabank, BMO, and CIBC often have newcomer packages and branch support." },
+              { type: "quickQuestion", question: "What is one common document you need?", options: ["Gym membership", "Passport or ID", "Social media account"], correct: 1, explanation: "Banks need official identification to open an account." }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    id: "chequing-vs-savings-account",
+    isPremium: false,
+    title: {
+      en: "Chequing vs savings account",
+      es: "Cuenta corriente vs cuenta de ahorros",
+      hi: "Chequing vs savings account",
+      tl: "Chequing vs savings account",
+      zh: "支票账户 vs 储蓄账户",
+      ar: "الحساب الجاري مقابل حساب التوفير",
+      fr: "Compte chèques vs compte d'épargne",
+      pa: "Chequing vs savings account"
+    },
+    subtitle: {
+      en: "What each one is for and when to use them",
+      es: "Para qué sirve cada una y cuándo usarlas",
+      hi: "Har ek kis kaam ke liye hai aur kab use karein",
+      tl: "Para saan ang bawat isa at kailan gagamitin",
+      zh: "各自用途是什么，以及何时使用",
+      ar: "ما وظيفة كل واحد ومتى تستخدمه",
+      fr: "À quoi sert chacun et quand les utiliser",
+      pa: "Har ek kis layi hai te kado use karna hai"
+    },
+    category: "Banking",
+    steps: [
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "Use chequing for spending, savings for growing",
+            contentBreakdown: [
+              { type: "text", content: "Chequing is for daily spending like bills, groceries, and rent. Savings is for money you want to keep aside and grow." },
+              { type: "text", content: "A simple rule: money in, bills out, extra into savings." },
+              { type: "quickQuestion", question: "Which account is best for rent payments?", options: ["Savings", "Chequing", "Either"], correct: 1, explanation: "Chequing is designed for everyday transactions." }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    id: "how-to-avoid-bank-fees",
+    isPremium: false,
+    title: {
+      en: "How to avoid bank fees",
+      es: "Cómo evitar comisiones bancarias",
+      hi: "Bank fees kaise bachayein",
+      tl: "Paano iwasan ang bank fees",
+      zh: "如何避免银行费用",
+      ar: "كيف تتجنب رسوم البنك",
+      fr: "Comment éviter les frais bancaires",
+      pa: "Bank fees ton kiven bachiye"
+    },
+    subtitle: {
+      en: "Online banks, free accounts, ATM tips",
+      es: "Bancos en línea, cuentas gratis, consejos de cajero",
+      hi: "Online banks, free accounts, ATM tips",
+      tl: "Online banks, free accounts, ATM tips",
+      zh: "网上银行、免费账户、ATM技巧",
+      ar: "البنوك الإلكترونية، الحسابات المجانية، ونصائح أجهزة الصراف",
+      fr: "Banques en ligne, comptes gratuits, astuces pour les guichets",
+      pa: "Online banks, free accounts, ATM tips"
+    },
+    category: "Banking",
+    steps: [
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "Small habits save money",
+            contentBreakdown: [
+              { type: "text", content: "Choose free or low-fee accounts, keep minimum balances when needed, and use in-network ATMs." },
+              { type: "text", content: "Online banks often charge less than traditional banks because they have lower overhead." },
+              { type: "quickQuestion", question: "How can you often avoid ATM fees?", options: ["Use any ATM", "Use in-network ATMs", "Withdraw daily"], correct: 1, explanation: "In-network ATMs usually avoid extra fees." }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    id: "how-to-send-money-back-home",
+    isPremium: false,
+    title: {
+      en: "How to send money back home",
+      es: "Cómo enviar dinero a casa",
+      hi: "Ghar paise kaise bhejein",
+      tl: "Paano magpadala ng pera pauwi",
+      zh: "如何汇款回家",
+      ar: "كيف ترسل المال إلى بلدك",
+      fr: "Comment envoyer de l'argent chez vous",
+      pa: "Ghar paise kiven bhejiye"
+    },
+    subtitle: {
+      en: "Wise, Remitly, exchange rates, fees comparison",
+      es: "Wise, Remitly, tipos de cambio y comparación de comisiones",
+      hi: "Wise, Remitly, exchange rates, fees comparison",
+      tl: "Wise, Remitly, exchange rates, fees comparison",
+      zh: "Wise、Remitly、汇率与费用比较",
+      ar: "Wise وRemitly وأسعار الصرف ومقارنة الرسوم",
+      fr: "Wise, Remitly, taux de change et comparaison des frais",
+      pa: "Wise, Remitly, exchange rates, fees comparison"
+    },
+    category: "Banking",
+    steps: [
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "Compare the total cost",
+            contentBreakdown: [
+              { type: "text", content: "Look at the transfer fee and the exchange rate together. A low fee can still be expensive if the exchange rate is bad." },
+              { type: "text", content: "Wise and Remitly are common options for newcomers sending money abroad." },
+              { type: "quickQuestion", question: "What should you compare first?", options: ["Only the fee", "Only the exchange rate", "Both fee and exchange rate"], correct: 2, explanation: "The total cost depends on both." }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
     id: "what-is-a-credit-score",
     isPremium: false,
     title: {
