@@ -267,437 +267,515 @@ export default function LandingPage({ language, onLanguageChange }) {
         canonicalUrl="https://newstart-finance.com"
         ogImage="https://newstart-finance.com/og-home.jpg"
       />
-      <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-teal-50">
-      {/* Mobile Layout */}
-      <div className="md:hidden">
-        <div className="mx-auto max-w-phone px-4 sm:px-5">
-          <div className="relative flex min-h-dvh flex-col overflow-hidden bg-white shadow-phone sm:min-h-[min(100dvh,920px)] sm:rounded-2xl sm:shadow-phone-sm">
-            <div className="sticky top-0 z-40">
-              <div className="gradient-header px-4 py-4 sm:px-5">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <div className="h-8 w-8 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                      <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
+      
+      {/* Premium Background with Depth */}
+      <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-slate-50 via-purple-50/30 to-teal-50/20">
+        {/* Background Gradients for Depth */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-teal-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-indigo-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+        </div>
+
+        {/* Mobile Layout */}
+        <div className="md:hidden relative z-10">
+          <div className="mx-auto max-w-phone px-4 sm:px-5">
+            <div className="relative flex min-h-dvh flex-col overflow-hidden bg-white/80 backdrop-blur-xl shadow-phone sm:min-h-[min(100dvh,920px)] sm:rounded-2xl sm:shadow-phone-sm">
+              <div className="sticky top-0 z-40">
+                <div className="gradient-header px-4 py-4 sm:px-5">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="h-8 w-8 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                        <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <h1 className="text-xl font-bold text-white">NewFinance</h1>
                     </div>
-                    <h1 className="text-xl font-bold text-white">NewFinance</h1>
+                    <LanguageSelector onLanguageChange={onLanguageChange} />
                   </div>
-                  <LanguageSelector onLanguageChange={onLanguageChange} />
                 </div>
               </div>
-            </div>
-            
-            <main className="flex-1 overflow-y-auto">
-              <div className="px-4 py-8 sm:px-5">
-                {/* Hero Section */}
-                <div className="text-center mb-12 bg-gradient-to-br from-purple-600 to-teal-500 -mx-4 sm:mx-0 px-4 py-12 sm:px-5 sm:py-16">
-                  <div className="mb-8">
-                    <div className="mx-auto h-24 w-24 rounded-3xl gradient-header flex items-center justify-center mb-8 shadow-2xl">
-                      <svg className="h-12 w-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
+              
+              <main className="flex-1 overflow-y-auto">
+                <div className="px-4 py-8 sm:px-5">
+                  {/* Premium Hero Section */}
+                  <div className="text-center mb-12 bg-gradient-to-br from-purple-600 via-purple-500 to-teal-500 -mx-4 sm:mx-0 px-4 py-16 sm:px-5 sm:py-20 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+                    <div className="relative z-10">
+                      <div className="mb-8">
+                        <div className="mx-auto h-24 w-24 rounded-3xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-8 shadow-2xl border border-white/30">
+                          <svg className="h-12 w-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </div>
+                        <h1 className="mb-6 text-5xl sm:text-6xl font-bold text-white leading-tight">
+                          Build Your <span className="text-yellow-300">Financial</span> Future in North America
+                        </h1>
+                        <p className="mb-8 text-xl text-white/95 leading-relaxed max-w-lg mx-auto font-medium">
+                          {t.subtitle}
+                        </p>
+                      </div>
+
+                      {/* Premium Stats Section */}
+                      <div className="mb-10 grid grid-cols-2 gap-4 max-w-sm mx-auto">
+                        {t.stats.map((stat, index) => {
+                          const colors = index === 0 ? { border: 'border-purple-400', bg: 'bg-purple-500/20' } :
+                                       index === 1 ? { border: 'border-teal-400', bg: 'bg-teal-500/20' } :
+                                       index === 2 ? { border: 'border-amber-400', bg: 'bg-amber-500/20' } :
+                                       { border: 'border-blue-400', bg: 'bg-blue-500/20' }
+                          
+                          return (
+                            <div key={index} className={`bg-white/10 backdrop-blur-sm rounded-2xl p-4 ${colors.border} border overflow-hidden flex flex-col justify-center items-center min-h-[80px]`}>
+                              <div className="text-xl md:text-2xl lg:text-3xl font-bold text-center leading-tight text-white">{stat.number}</div>
+                              <div className="text-sm md:text-base text-white/90 font-bold text-center leading-tight mt-1">{stat.label}</div>
+                            </div>
+                          )
+                        })}
+                      </div>
+
+                      {/* Premium CTA Buttons */}
+                      <div className="mb-8 space-y-3">
+                        <Link
+                          to="/learn"
+                          className="block w-full bg-white text-purple-600 text-lg font-bold py-4 px-6 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+                        >
+                          {t.cta}
+                          <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </Link>
+                        <Link
+                          to="/learn"
+                          className="block w-full bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white text-lg font-bold py-4 px-6 rounded-full hover:bg-white/20 transition-all duration-300"
+                        >
+                          {t.secondaryCta}
+                        </Link>
+                      </div>
+
+                      {/* Trust Indicators */}
+                      <div className="mb-12">
+                        <div className="inline-flex items-center gap-3 rounded-full bg-white/10 backdrop-blur-sm px-6 py-3 border border-white/30">
+                          <svg className="h-5 w-5 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-sm font-bold text-white">100% Free • No Credit Card Required</span>
+                        </div>
+                      </div>
                     </div>
-                    <h1 className="mb-6 text-5xl sm:text-6xl font-bold text-white leading-tight">
-                      Build Your <span className="text-yellow-300">Financial</span> Future in North America
-                    </h1>
-                    <p className="mb-8 text-xl text-white/95 leading-relaxed max-w-lg mx-auto font-medium">
-                      {t.subtitle}
-                    </p>
                   </div>
 
-                  {/* Stats Section */}
-                  <div className="mb-10 grid grid-cols-2 gap-4 max-w-sm mx-auto">
+                  {/* What You'll Learn Section */}
+                  <div className="mb-12">
+                    <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
+                      What You'll Learn
+                    </h2>
+                    <div className="grid gap-4">
+                      {[
+                        { icon: "🏦", title: "Banking Basics", desc: "Open accounts, transfers, mobile banking" },
+                        { icon: "💳", title: "Credit Score", desc: "Build, maintain, and improve credit" },
+                        { icon: "📊", title: "Budgeting", desc: "Track expenses and save effectively" }
+                      ].map((item, index) => (
+                        <div key={index} className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                          <div className="flex items-center gap-4">
+                            <div className="text-3xl">{item.icon}</div>
+                            <div>
+                              <h3 className="font-bold text-gray-900">{item.title}</h3>
+                              <p className="text-sm text-gray-600">{item.desc}</p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Features Section */}
+                  <div className="mb-12">
+                    <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
+                      Everything You Need to Succeed
+                    </h2>
+                    <div className="grid gap-6">
+                      {t.features.map((feature, index) => (
+                        <div key={index} className="card p-6 hover:shadow-xl transition-all bg-white border-2 border-gray-200">
+                          <div className="flex items-start gap-4">
+                            <div className="flex-shrink-0 h-16 w-16 rounded-2xl gradient-header flex items-center justify-center shadow-lg">
+                              <span className="text-2xl">{feature.icon}</span>
+                            </div>
+                            <div className="flex-1">
+                              <h3 className="mb-2 text-xl font-bold text-gray-900">{feature.title}</h3>
+                              <p className="text-gray-800 leading-relaxed font-medium">{feature.description}</p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Testimonials Section */}
+                  <div className="mb-12">
+                    <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
+                      Success Stories
+                    </h2>
+                    <div className="space-y-6">
+                      {t.testimonials.map((testimonial, index) => (
+                        <div key={index} className="bg-gradient-to-r from-indigo-50 to-cyan-50 rounded-2xl p-6 border-2 border-indigo-200">
+                          <div className="flex items-start gap-4">
+                            <div className="flex-shrink-0">
+                              <div className="h-12 w-12 rounded-full bg-indigo-600 flex items-center justify-center">
+                                <span className="text-white font-bold text-lg">
+                                  {testimonial.name.charAt(0)}
+                                </span>
+                              </div>
+                            </div>
+                            <div className="flex-1">
+                              <div className="flex items-center gap-2 mb-2">
+                                <div className="flex gap-1">
+                                  {[...Array(testimonial.rating)].map((_, i) => (
+                                    <svg key={i} className="h-4 w-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                  ))}
+                                </div>
+                              </div>
+                              <p className="text-gray-900 font-bold mb-2">"{testimonial.text}"</p>
+                              <div className="text-sm text-gray-700">
+                                <div className="font-bold">{testimonial.name}</div>
+                                <div>{testimonial.location}</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Final CTA Section */}
+                  <div className="text-center mb-8">
+                    <div className="bg-gradient-to-r from-indigo-600 to-cyan-600 rounded-3xl p-8 text-white shadow-2xl">
+                      <h2 className="mb-4 text-3xl font-bold">
+                        Start Your Financial Journey Today
+                      </h2>
+                      <p className="mb-6 text-lg text-white/95 max-w-md mx-auto font-medium">
+                        {t.trust}
+                      </p>
+                      <Link
+                        to="/learn"
+                        className="inline-block bg-white text-indigo-600 font-bold py-4 px-8 rounded-xl hover:bg-gray-50 transition-all transform hover:scale-105 shadow-lg"
+                      >
+                        {t.cta}
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </main>
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop Layout */}
+        <div className="hidden md:block relative z-10">
+          <div className="min-h-screen flex items-center">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                {/* Left Content - Premium Hero */}
+                <div className="text-center lg:text-left mb-6 lg:mb-8">
+                  <h1 className="mb-8 text-6xl lg:text-7xl xl:text-8xl font-bold text-gray-900 leading-tight">
+                    Build Your <span className="bg-gradient-to-r from-purple-600 via-purple-500 to-teal-500 bg-clip-text text-transparent">Financial</span> Future in North America
+                  </h1>
+                  <p className="mb-12 text-2xl lg:text-3xl text-gray-600 leading-relaxed max-w-2xl font-medium">
+                    {t.subtitle}
+                  </p>
+
+                  {/* Premium Stats Section */}
+                  <div className="mb-12 grid grid-cols-2 lg:grid-cols-4 gap-6">
                     {t.stats.map((stat, index) => {
                       const colors = index === 0 ? { border: 'border-purple-500', bg: 'bg-purple-50' } :
-                                   index === 1 ? { border: 'border-teal-500', bg: 'bg-teal-50' } :
-                                   index === 2 ? { border: 'border-amber-500', bg: 'bg-amber-50' } :
-                                   { border: 'border-blue-500', bg: 'bg-blue-50' }
+                                       index === 1 ? { border: 'border-teal-500', bg: 'bg-teal-50' } :
+                                       index === 2 ? { border: 'border-amber-500', bg: 'bg-amber-50' } :
+                                       { border: 'border-blue-500', bg: 'bg-blue-50' }
                       
                       return (
-                        <div key={index} className={`bg-white rounded-2xl p-4 shadow-lg ${colors.border} overflow-hidden flex flex-col justify-center items-center min-h-[80px]`}>
-                          <div className="text-xl md:text-2xl lg:text-3xl font-bold text-center leading-tight text-gray-900">{stat.number}</div>
-                          <div className="text-sm md:text-base text-gray-800 font-bold text-center leading-tight mt-1">{stat.label}</div>
-                        </div>
-                      )
-                    })}
-                  </div>
+                          <div key={index} className={`bg-white rounded-2xl p-6 shadow-lg ${colors.border} border overflow-hidden flex flex-col justify-center items-center min-h-[100px] backdrop-blur-sm`}>
+                            <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-center leading-tight">{stat.number}</div>
+                            <div className="text-sm md:text-base text-gray-600 font-medium text-center leading-tight mt-1">{stat.label}</div>
+                          </div>
+                        )
+                      })}
+                    </div>
 
-                  {/* Main CTA */}
-                  <div className="mb-8 space-y-3">
+                  {/* Premium CTA Buttons */}
+                  <div className="mb-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                     <Link
                       to="/learn"
-                      className="block w-full bg-gradient-to-r from-purple-600 to-teal-500 text-white text-lg py-4 px-6 rounded-xl shadow-xl hover:opacity-90 transition-all"
+                      className="bg-gradient-to-r from-purple-600 to-teal-500 text-white text-lg font-bold py-4 px-8 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
                     >
                       {t.cta}
-                      <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                     </Link>
                     <Link
                       to="/learn"
-                      className="block w-full border-2 border-purple-500 text-purple-600 text-lg py-4 px-6 rounded-xl hover:bg-purple-50 transition-all"
+                      className="bg-white/10 backdrop-blur-sm border-2 border-purple-500 text-purple-600 text-lg font-bold py-4 px-8 rounded-full hover:bg-purple-50 transition-all duration-300"
                     >
                       {t.secondaryCta}
                     </Link>
                   </div>
 
-                  {/* Trust Badge */}
+                  {/* Trust Indicators */}
                   <div className="mb-12">
-                    <div className="inline-flex items-center gap-3 rounded-full bg-green-100 px-8 py-4 border-2 border-green-200 shadow-lg">
-                      <svg className="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-lg font-bold text-green-800">100% Free • No Credit Card Required</span>
+                    <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                      <div className="inline-flex items-center gap-2 rounded-full bg-green-100 px-4 py-2 border border-green-200">
+                        <svg className="h-4 w-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-sm font-bold text-green-700">Trusted by 5,000+ newcomers</span>
+                      </div>
+                      <div className="inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-2 border border-blue-200">
+                        <svg className="h-4 w-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span className="text-sm font-bold text-blue-700">Works in Canada & USA</span>
+                      </div>
+                      <div className="inline-flex items-center gap-2 rounded-full bg-purple-100 px-4 py-2 border border-purple-200">
+                        <svg className="h-4 w-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                        <span className="text-sm font-bold text-purple-700">No credit card required</span>
+                      </div>
                     </div>
                   </div>
+
+                  {/* Microcopy */}
+                  <p className="text-sm text-gray-500 italic">Takes less than 2 minutes • Start your journey today</p>
                 </div>
 
-                {/* Features Section */}
-                <div className="mb-12">
-                  <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
-                    Everything You Need to Succeed
-                  </h2>
-                  <div className="grid gap-6">
-                    {t.features.map((feature, index) => (
-                      <div key={index} className="card p-6 hover:shadow-xl transition-all bg-white border-2 border-gray-200">
-                        <div className="flex items-start gap-4">
-                          <div className="flex-shrink-0 h-16 w-16 rounded-2xl gradient-header flex items-center justify-center shadow-lg">
-                            <span className="text-2xl">{feature.icon}</span>
-                          </div>
-                          <div className="flex-1">
-                            <h3 className="mb-2 text-xl font-bold text-gray-900">{feature.title}</h3>
-                            <p className="text-gray-800 leading-relaxed font-medium">{feature.description}</p>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Testimonials Section */}
-                <div className="mb-12">
-                  <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
-                    Success Stories
-                  </h2>
-                  <div className="space-y-6">
-                    {t.testimonials.map((testimonial, index) => (
-                      <div key={index} className="bg-gradient-to-r from-indigo-50 to-cyan-50 rounded-2xl p-6 border-2 border-indigo-200">
-                        <div className="flex items-start gap-4">
-                          <div className="flex-shrink-0">
-                            <div className="h-12 w-12 rounded-full bg-indigo-600 flex items-center justify-center">
-                              <span className="text-white font-bold text-lg">
-                                {testimonial.name.charAt(0)}
-                              </span>
-                            </div>
-                          </div>
-                          <div className="flex-1">
-                            <div className="flex items-center gap-2 mb-2">
-                              <div className="flex gap-1">
-                                {[...Array(testimonial.rating)].map((_, i) => (
-                                  <svg key={i} className="h-4 w-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                  </svg>
-                                ))}
+                {/* Right Content - Enhanced Phone Mockup */}
+                <div className="relative">
+                  <div className="relative mx-auto max-w-sm">
+                    {/* Radial Glow Behind Phone */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-400/30 to-teal-400/30 rounded-full blur-3xl transform scale-150"></div>
+                    
+                    {/* Phone Frame with Animation */}
+                    <div className="relative bg-gray-900 rounded-3xl p-2 shadow-2xl transform hover:scale-105 transition-all duration-500" style={{ transform: 'perspective(1000px) rotateY(-5deg)' }}>
+                      <div className="bg-white rounded-2xl overflow-hidden relative">
+                        {/* App Header */}
+                        <div className="gradient-header px-4 py-4">
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-2">
+                              <div className="h-8 w-8 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                                <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
                               </div>
+                              <h1 className="text-xl font-bold text-white">NewFinance</h1>
                             </div>
-                            <p className="text-gray-900 font-bold mb-2">"{testimonial.text}"</p>
-                            <div className="text-sm text-gray-700">
-                              <div className="font-bold">{testimonial.name}</div>
-                              <div>{testimonial.location}</div>
-                            </div>
+                            <div className="h-8 w-8 rounded-lg bg-white/20 backdrop-blur-sm"></div>
                           </div>
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Final CTA Section */}
-                <div className="text-center mb-8">
-                  <div className="bg-gradient-to-r from-indigo-600 to-cyan-600 rounded-3xl p-8 text-white shadow-2xl">
-                    <h2 className="mb-4 text-3xl font-bold">
-                      Start Your Financial Journey Today
-                    </h2>
-                    <p className="mb-6 text-lg text-white/95 max-w-md mx-auto font-medium">
-                      {t.trust}
-                    </p>
-                    <Link
-                      to="/learn"
-                      className="inline-block bg-white text-indigo-600 font-bold py-4 px-8 rounded-xl hover:bg-gray-50 transition-all transform hover:scale-105 shadow-lg"
-                    >
-                      {t.cta}
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </main>
-          </div>
-        </div>
-      </div>
-
-      {/* Desktop Layout */}
-      <div className="hidden md:block">
-        <div className="min-h-screen flex items-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Left Content */}
-              <div className="text-center lg:text-left mb-6 lg:mb-8">
-                <h1 className="mb-6 text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight">
-                  Build Your <span className="bg-gradient-to-r from-purple-600 to-teal-500 bg-clip-text text-transparent">Financial</span> Future in North America
-                </h1>
-                <p className="mb-8 text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl">
-                  {t.subtitle}
-                </p>
-
-                {/* Stats Section */}
-                <div className="mb-10 grid grid-cols-2 lg:grid-cols-4 gap-6">
-                  {t.stats.map((stat, index) => {
-                    const colors = index === 0 ? { border: 'border-purple-500', bg: 'bg-purple-50' } :
-                                   index === 1 ? { border: 'border-teal-500', bg: 'bg-teal-50' } :
-                                   index === 2 ? { border: 'border-amber-500', bg: 'bg-amber-50' } :
-                                   { border: 'border-blue-500', bg: 'bg-blue-50' }
-                      
-                    return (
-                        <div key={index} className={`bg-white rounded-2xl p-6 shadow-lg ${colors.border} overflow-hidden flex flex-col justify-center items-center min-h-[100px]`}>
-                          <div className="text-xl md:text-2xl lg:text-3xl font-bold text-center leading-tight">{stat.number}</div>
-                          <div className="text-sm md:text-base text-gray-600 font-medium text-center leading-tight mt-1">{stat.label}</div>
-                        </div>
-                      )
-                    })}
-                  </div>
-
-                {/* Main CTA */}
-                <div className="mb-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <Link
-                    to="/learn"
-                    className="btn-primary text-lg py-4 px-8 shadow-xl"
-                  >
-                    {t.cta}
-                  </Link>
-                  <Link
-                    to="/learn"
-                    className="btn-secondary text-lg py-4 px-8"
-                  >
-                    {t.secondaryCta}
-                  </Link>
-                </div>
-
-                {/* Trust Badge */}
-                <div className="mb-12">
-                  <div className="inline-flex items-center gap-3 rounded-full bg-green-100 px-8 py-4 border-2 border-green-200 shadow-lg">
-                    <svg className="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-lg font-bold text-green-700">100% Free • No Credit Card Required</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Content - App Mockup */}
-              <div className="relative">
-                <div className="relative mx-auto max-w-sm">
-                  {/* Phone Frame */}
-                  <div className="bg-gray-900 rounded-3xl p-2 shadow-2xl relative">
-                    <div className="absolute inset-0 bg-purple-500/20 rounded-3xl blur-xl"></div>
-                    <div className="bg-white rounded-2xl overflow-hidden relative">
-                      {/* App Header */}
-                      <div className="gradient-header px-4 py-4">
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <div className="h-8 w-8 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                              <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        
+                        {/* Enhanced App Content */}
+                        <div className="p-4 space-y-4">
+                          <div className="text-center">
+                            <div className="mx-auto h-16 w-16 rounded-2xl gradient-header flex items-center justify-center mb-4 shadow-lg">
+                              <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                             </div>
-                            <h1 className="text-xl font-bold text-white">NewFinance</h1>
+                            <h2 className="text-lg font-bold text-gray-900 mb-2">Welcome to NewFinance</h2>
+                            <p className="text-sm text-gray-600 mb-4">Start your financial journey today</p>
+                            <div className="bg-gradient-to-r from-purple-600 to-teal-500 text-white py-3 px-6 rounded-xl font-semibold shadow-lg">Get Started</div>
                           </div>
-                          <div className="h-8 w-8 rounded-lg bg-white/20 backdrop-blur-sm"></div>
-                        </div>
-                      </div>
-                      
-                      {/* App Content */}
-                      <div className="p-4 space-y-4">
-                        <div className="text-center">
-                          <div className="mx-auto h-16 w-16 rounded-2xl gradient-header flex items-center justify-center mb-4">
-                            <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+                          
+                          {/* Enhanced Sample Lesson Cards */}
+                          <div className="space-y-3">
+                            <div className="bg-gray-50 rounded-xl p-3 border border-gray-200 hover:shadow-md transition-all">
+                              <div className="flex items-center gap-3">
+                                <div className="h-10 w-10 rounded-lg bg-purple-100 flex items-center justify-center">
+                                  <span className="text-purple-600 font-bold text-sm">1</span>
+                                </div>
+                                <div className="flex-1">
+                                  <h3 className="font-semibold text-gray-900 text-sm">Banking Basics</h3>
+                                  <p className="text-xs text-gray-600">Learn how to open an account</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="bg-gray-50 rounded-xl p-3 border border-gray-200 hover:shadow-md transition-all">
+                              <div className="flex items-center gap-3">
+                                <div className="h-10 w-10 rounded-lg bg-teal-100 flex items-center justify-center">
+                                  <span className="text-teal-600 font-bold text-sm">2</span>
+                                </div>
+                                <div className="flex-1">
+                                  <h3 className="font-semibold text-gray-900 text-sm">Credit Score</h3>
+                                  <p className="text-xs text-gray-600">Build and maintain good credit</p>
+                                </div>
+                              </div>
+                            </div>
                           </div>
-                          <h2 className="text-lg font-bold text-gray-900 mb-2">Welcome to NewFinance</h2>
-                          <p className="text-sm text-gray-600 mb-4">Start your financial journey today</p>
-                          <div className="bg-indigo-600 text-white py-3 px-6 rounded-xl font-semibold">Get Started</div>
                         </div>
                         
-                        {/* Sample Lesson Cards */}
-                        <div className="space-y-3">
-                          <div className="bg-gray-50 rounded-xl p-3 border border-gray-200">
-                            <div className="flex items-center gap-3">
-                              <div className="h-10 w-10 rounded-lg bg-indigo-100 flex items-center justify-center">
-                                <span className="text-indigo-600 font-bold text-sm">1</span>
-                              </div>
-                              <div className="flex-1">
-                                <h3 className="font-semibold text-gray-900 text-sm">Banking Basics</h3>
-                                <p className="text-xs text-gray-600">Learn how to open an account</p>
-                              </div>
-                            </div>
+                        {/* Bottom Nav */}
+                        <div className="border-t border-gray-200 px-4 py-2">
+                          <div className="flex justify-around">
+                            <div className="h-8 w-8 rounded-lg bg-purple-100"></div>
+                            <div className="h-8 w-8 rounded-lg bg-gray-200"></div>
+                            <div className="h-8 w-8 rounded-lg bg-gray-200"></div>
+                            <div className="h-8 w-8 rounded-lg bg-gray-200"></div>
+                            <div className="h-8 w-8 rounded-lg bg-gray-200"></div>
                           </div>
-                          <div className="bg-gray-50 rounded-xl p-3 border border-gray-200">
-                            <div className="flex items-center gap-3">
-                              <div className="h-10 w-10 rounded-lg bg-green-100 flex items-center justify-center">
-                                <span className="text-green-600 font-bold text-sm">2</span>
-                              </div>
-                              <div className="flex-1">
-                                <h3 className="font-semibold text-gray-900 text-sm">Credit Score</h3>
-                                <p className="text-xs text-gray-600">Build and maintain good credit</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      {/* Bottom Nav */}
-                      <div className="border-t border-gray-200 px-4 py-2">
-                        <div className="flex justify-around">
-                          <div className="h-8 w-8 rounded-lg bg-indigo-100"></div>
-                          <div className="h-8 w-8 rounded-lg bg-gray-200"></div>
-                          <div className="h-8 w-8 rounded-lg bg-gray-200"></div>
-                          <div className="h-8 w-8 rounded-lg bg-gray-200"></div>
-                          <div className="h-8 w-8 rounded-lg bg-gray-200"></div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Features Section */}
-            <div className="mt-20">
-              <h2 className="mb-12 text-center text-4xl font-bold text-gray-900">
-                Everything You Need to <span className="relative inline-block pb-2">
-                  Succeed
-                  <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-purple-600 to-teal-500"></div>
-                </span>
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {t.features.map((feature, index) => {
-                  const colors = index === 0 ? { border: 'border-purple-500', bg: 'bg-purple-50', icon: 'text-purple-600' } :
-                                   index === 1 ? { border: 'border-teal-500', bg: 'bg-teal-50', icon: 'text-teal-600' } :
-                                   index === 2 ? { border: 'border-amber-500', bg: 'bg-amber-50', icon: 'text-amber-600' } :
-                                   index === 3 ? { border: 'border-blue-500', bg: 'bg-blue-50', icon: 'text-blue-600' } :
-                                   { border: 'border-green-500', bg: 'bg-green-50', icon: 'text-green-600' }
-                  
-                  return (
-                    <div key={index} className={`card p-6 hover:shadow-xl transition-all border-2 ${colors.border}`}>
-                      <div className="text-center">
-                        <div className="mx-auto h-20 w-20 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
-                          <span className="text-3xl">{feature.icon}</span>
-                        </div>
-                        <h3 className="mb-4 text-xl font-bold text-gray-900">{feature.title}</h3>
-                        <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-                      </div>
+              {/* What You'll Learn Section */}
+              <div className="mt-24">
+                <h2 className="mb-12 text-center text-4xl font-bold text-gray-900">
+                  What You'll Learn
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {[
+                    { icon: "🏦", title: "Banking Basics", desc: "Open accounts, transfers, mobile banking, and digital payment systems" },
+                    { icon: "💳", title: "Credit Score", desc: "Build, maintain, and improve your credit score for financial success" },
+                    { icon: "📊", title: "Budgeting", desc: "Track expenses, save effectively, and create financial goals" }
+                  ].map((item, index) => (
+                    <div key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                      <div className="text-4xl mb-4">{item.icon}</div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                      <p className="text-gray-600">{item.desc}</p>
                     </div>
-                  )
-                })}
+                  ))}
+                </div>
               </div>
-            </div>
 
-            {/* Testimonials Section */}
-            <div className="mt-20">
-              <h2 className="mb-12 text-center text-4xl font-bold text-gray-900">
-                Success Stories
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {t.testimonials.map((testimonial, index) => (
-                  <div key={index} className="bg-gradient-to-r from-indigo-50 to-cyan-50 rounded-2xl p-8 border border-indigo-200">
-                    <div className="flex items-start gap-6">
-                      <div className="flex-shrink-0">
-                        <div className="h-16 w-16 rounded-full bg-indigo-600 flex items-center justify-center">
-                          <span className="text-white font-bold text-2xl">
-                            {testimonial.name.charAt(0)}
-                          </span>
+              {/* Features Section */}
+              <div className="mt-24">
+                <h2 className="mb-12 text-center text-4xl font-bold text-gray-900">
+                  Everything You Need to <span className="relative inline-block pb-2">
+                    Succeed
+                    <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-purple-600 to-teal-500"></div>
+                  </span>
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                  {t.features.map((feature, index) => {
+                    const colors = index === 0 ? { border: 'border-purple-500', bg: 'bg-purple-50', icon: 'text-purple-600' } :
+                                     index === 1 ? { border: 'border-teal-500', bg: 'bg-teal-50', icon: 'text-teal-600' } :
+                                     index === 2 ? { border: 'border-amber-500', bg: 'bg-amber-50', icon: 'text-amber-600' } :
+                                     index === 3 ? { border: 'border-blue-500', bg: 'bg-blue-50', icon: 'text-blue-600' } :
+                                     { border: 'border-green-500', bg: 'bg-green-50', icon: 'text-green-600' }
+                    
+                    return (
+                      <div key={index} className={`card p-6 hover:shadow-xl transition-all border-2 ${colors.border} bg-white`}>
+                        <div className="text-center">
+                          <div className="mx-auto h-20 w-20 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                            <span className="text-3xl">{feature.icon}</span>
+                          </div>
+                          <h3 className="mb-4 text-xl font-bold text-gray-900">{feature.title}</h3>
+                          <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                         </div>
                       </div>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-4">
-                          <div className="flex gap-1">
-                            {[...Array(testimonial.rating)].map((_, i) => (
-                              <svg key={i} className="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                              </svg>
-                            ))}
+                    )
+                  })}
+                </div>
+              </div>
+
+              {/* Testimonials Section */}
+              <div className="mt-24">
+                <h2 className="mb-12 text-center text-4xl font-bold text-gray-900">
+                  Success Stories
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {t.testimonials.map((testimonial, index) => (
+                    <div key={index} className="bg-gradient-to-r from-indigo-50 to-cyan-50 rounded-2xl p-8 border border-indigo-200 hover:shadow-xl transition-all">
+                      <div className="flex items-start gap-6">
+                        <div className="flex-shrink-0">
+                          <div className="h-16 w-16 rounded-full bg-indigo-600 flex items-center justify-center">
+                            <span className="text-white font-bold text-2xl">
+                              {testimonial.name.charAt(0)}
+                            </span>
                           </div>
                         </div>
-                        <p className="text-gray-800 text-lg font-medium mb-4">"{testimonial.text}"</p>
-                        <div className="text-gray-600">
-                          <div className="font-semibold text-lg">{testimonial.name}</div>
-                          <div>{testimonial.location}</div>
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-4">
+                            <div className="flex gap-1">
+                              {[...Array(testimonial.rating)].map((_, i) => (
+                                <svg key={i} className="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                              ))}
+                            </div>
+                          </div>
+                          <p className="text-gray-800 text-lg font-medium mb-4">"{testimonial.text}"</p>
+                          <div className="text-gray-600">
+                            <div className="font-semibold text-lg">{testimonial.name}</div>
+                            <div>{testimonial.location}</div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
+              </div>
+
+              {/* Final CTA Section */}
+              <div className="mt-24 text-center">
+                <div className="bg-gradient-to-r from-purple-600 to-teal-500 rounded-3xl p-16 text-white shadow-2xl">
+                  <h2 className="mb-6 text-4xl font-bold">
+                    Get Started For Free
+                  </h2>
+                  <p className="mb-8 text-xl opacity-90 max-w-2xl mx-auto">
+                    Join thousands of newcomers building their financial future
+                  </p>
+                  <Link
+                    to="/learn"
+                    className="inline-block bg-white text-purple-600 font-bold py-4 px-12 rounded-xl text-lg hover:bg-gray-50 transition-all transform hover:scale-105 shadow-xl"
+                  >
+                    {t.cta}
+                  </Link>
+                </div>
               </div>
             </div>
+          </div>
+        </div>
 
-            {/* Final CTA Section */}
-            <div className="mt-20 text-center">
-              <div className="bg-gradient-to-r from-purple-600 to-teal-500 rounded-3xl p-12 text-white shadow-2xl">
-                <h2 className="mb-6 text-4xl font-bold">
-                  Get Started For Free
-                </h2>
-                <p className="mb-8 text-xl opacity-90 max-w-2xl mx-auto">
-                  Join thousands of newcomers building their financial future
-                </p>
+        {/* Popups - shown on both layouts */}
+        {/* Exit Intent Popup */}
+        {showExitPopup && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm px-4">
+            <div className="w-full max-w-sm rounded-3xl bg-white p-6 shadow-2xl">
+              <div className="text-center mb-4">
+                <div className="mx-auto h-12 w-12 rounded-2xl gradient-header flex items-center justify-center mb-3">
+                  <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+              </div>
+              <h3 className="mb-3 text-lg font-bold text-gray-900 text-center leading-tight">
+                {t.exitPopup.title}
+              </h3>
+              <p className="mb-4 text-sm text-gray-600 text-center leading-relaxed">
+                {t.exitPopup.subtitle}
+              </p>
+              <div className="flex gap-3">
                 <Link
                   to="/learn"
-                  className="inline-block bg-white text-purple-600 font-bold py-4 px-12 rounded-xl text-lg hover:bg-gray-50 transition-all transform hover:scale-105 shadow-xl"
+                  className="flex-1 btn-primary text-sm py-2"
                 >
-                  {t.cta}
+                  {t.exitPopup.cta}
                 </Link>
+                <button
+                  onClick={() => setShowExitPopup(false)}
+                  className="flex-1 btn-secondary text-sm py-2"
+                >
+                  Maybe Later
+                </button>
               </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
-
-      {/* Popups - shown on both layouts */}
-      {/* Exit Intent Popup */}
-      {showExitPopup && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm px-4">
-          <div className="w-full max-w-sm rounded-3xl bg-white p-6 shadow-2xl">
-            <div className="text-center mb-4">
-              <div className="mx-auto h-12 w-12 rounded-2xl gradient-header flex items-center justify-center mb-3">
-                <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-            </div>
-            <h3 className="mb-3 text-lg font-bold text-gray-900 text-center leading-tight">
-              {t.exitPopup.title}
-            </h3>
-            <p className="mb-4 text-sm text-gray-600 text-center leading-relaxed">
-              {t.exitPopup.subtitle}
-            </p>
-            <div className="flex gap-3">
-              <Link
-                to="/learn"
-                className="flex-1 btn-primary text-sm py-2"
-              >
-                {t.exitPopup.cta}
-              </Link>
-              <button
-                onClick={() => setShowExitPopup(false)}
-                className="flex-1 btn-secondary text-sm py-2"
-              >
-                Maybe Later
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
     </>
   )
 }
