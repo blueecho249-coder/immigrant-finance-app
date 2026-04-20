@@ -35,22 +35,17 @@ export const lessons = [
           en: {
             headline: "What is a credit score?",
             contentBreakdown: [
-              {
-                type: "text",
-                content: "A credit score is a number between 300 and 850 that tells lenders how reliably you pay back money. In Canada, scores above 660 are considered good. Above 760 is excellent."
-              },
-              {
-                type: "example",
-                title: "Real-world impact",
-                content: "With a score of 750, you might get a mortgage at 4.5% interest. With a score of 580, the same mortgage could cost 7% — that's thousands of dollars more per year."
-              },
-              {
-                type: "quickQuestion",
-                question: "Which credit score range is considered excellent in Canada?",
-                options: ["300 to 500", "500 to 660", "760 to 850", "660 to 760"],
-                correct: 2,
-                explanation: "760 and above is considered excellent and unlocks the best interest rates available."
-              }
+              { type: "text", content: "A credit score is a number between 300 and 850 that tells lenders how reliably you pay back money. In Canada, scores above 660 are considered good. Above 760 is excellent." },
+              { type: "example", title: "Real-world impact", content: "With a score of 750, you might get a mortgage at 4.5% interest. With a score of 580, the same mortgage could cost 7% — that's thousands of dollars more per year." },
+              { type: "quickQuestion", question: "Which credit score range is considered excellent in Canada?", options: ["300 to 500", "500 to 660", "760 to 850", "660 to 760"], correct: 2, explanation: "760 and above is considered excellent and unlocks the best interest rates available." }
+            ]
+          },
+          es: {
+            headline: "¿Qué es una puntuación de crédito?",
+            contentBreakdown: [
+              { type: "text", content: "Una puntuación de crédito es un número entre 300 y 850 que indica a los prestamistas qué tan confiablemente devuelves el dinero. En Canadá, puntuaciones superiores a 660 son buenas. Más de 760 es excelente." },
+              { type: "example", title: "Impacto en la vida real", content: "Con una puntuación de 750, podrías obtener una hipoteca al 4.5% de interés. Con 580, la misma hipoteca podría costar 7% — miles de dólares más al año." },
+              { type: "quickQuestion", question: "¿Qué rango de puntuación se considera excelente en Canadá?", options: ["300 a 500", "500 a 660", "760 a 850", "660 a 760"], correct: 2, explanation: "760 o más se considera excelente y desbloquea las mejores tasas de interés disponibles." }
             ]
           }
         }
@@ -61,21 +56,17 @@ export const lessons = [
           en: {
             headline: "No score vs bad score — a critical difference",
             contentBreakdown: [
-              {
-                type: "text",
-                content: "When you arrive in Canada or the US, you do not have a zero credit score — you simply have no score yet. This is very different from having a bad credit history."
-              },
-              {
-                type: "text",
-                content: "No score = a blank slate. Lenders may still work with you. Bad score = a history of missed payments. Lenders see this as risky."
-              },
-              {
-                type: "quickQuestion",
-                question: "A newcomer arrives in Canada with no credit history. What is their credit score?",
-                options: ["Zero", "300 (the lowest possible)", "They have no score yet", "500 (average)"],
-                correct: 2,
-                explanation: "No score and a bad score are completely different. As a newcomer, you start with a blank slate — which is actually an opportunity."
-              }
+              { type: "text", content: "When you arrive in Canada or the US, you do not have a zero credit score — you simply have no score yet. This is very different from having a bad credit history." },
+              { type: "text", content: "No score = a blank slate. Lenders may still work with you. Bad score = a history of missed payments. Lenders see this as risky." },
+              { type: "quickQuestion", question: "A newcomer arrives in Canada with no credit history. What is their credit score?", options: ["Zero", "300 (the lowest possible)", "They have no score yet", "500 (average)"], correct: 2, explanation: "No score and a bad score are completely different. As a newcomer, you start with a blank slate — which is actually an opportunity." }
+            ]
+          },
+          es: {
+            headline: "Sin puntaje vs mal puntaje — una diferencia clave",
+            contentBreakdown: [
+              { type: "text", content: "Cuando llegas a Canadá o EE.UU., no tienes un puntaje de cero — simplemente no tienes puntaje todavía. Esto es muy diferente a tener mal historial crediticio." },
+              { type: "text", content: "Sin puntaje = hoja en blanco. Los prestamistas pueden trabajar contigo. Mal puntaje = historial de pagos fallidos. Los prestamistas lo ven como riesgoso." },
+              { type: "quickQuestion", question: "Un recién llegado a Canadá no tiene historial crediticio. ¿Cuál es su puntaje?", options: ["Cero", "300 (el más bajo)", "Aún no tiene puntaje", "500 (promedio)"], correct: 2, explanation: "Sin puntaje y mal puntaje son completamente diferentes. Como recién llegado, empiezas desde cero — lo cual es una oportunidad." }
             ]
           }
         }
@@ -86,22 +77,17 @@ export const lessons = [
           en: {
             headline: "The 5 factors that build your score",
             contentBreakdown: [
-              {
-                type: "text",
-                content: "Your credit score is calculated from 5 factors: Payment history (35%), Credit utilization (30%), Length of credit history (15%), Credit mix (10%), and New inquiries (10%)."
-              },
-              {
-                type: "example",
-                title: "Payment history is king",
-                content: "If you pay every bill on time for 12 months, this single habit accounts for 35% of your score improvement. One missed payment can drop your score by 50-100 points."
-              },
-              {
-                type: "quickQuestion",
-                question: "Which factor has the biggest impact on your credit score?",
-                options: ["How many credit cards you have", "Payment history", "How long you've had credit", "Your income"],
-                correct: 1,
-                explanation: "Payment history makes up 35% of your score — the single largest factor. Pay on time, every time."
-              }
+              { type: "text", content: "Your credit score is calculated from 5 factors: Payment history (35%), Credit utilization (30%), Length of credit history (15%), Credit mix (10%), and New inquiries (10%)." },
+              { type: "example", title: "Payment history is king", content: "If you pay every bill on time for 12 months, this single habit accounts for 35% of your score improvement. One missed payment can drop your score by 50-100 points." },
+              { type: "quickQuestion", question: "Which factor has the biggest impact on your credit score?", options: ["How many credit cards you have", "Payment history", "How long you've had credit", "Your income"], correct: 1, explanation: "Payment history makes up 35% of your score — the single largest factor. Pay on time, every time." }
+            ]
+          },
+          es: {
+            headline: "Los 5 factores que construyen tu puntaje",
+            contentBreakdown: [
+              { type: "text", content: "Tu puntaje se calcula con 5 factores: Historial de pagos (35%), Utilización del crédito (30%), Duración del historial (15%), Tipos de crédito (10%) y Nuevas consultas (10%)." },
+              { type: "example", title: "El historial de pagos es lo más importante", content: "Si pagas cada factura a tiempo durante 12 meses, este solo hábito representa el 35% de la mejora de tu puntaje. Un pago atrasado puede bajarlo entre 50 y 100 puntos." },
+              { type: "quickQuestion", question: "¿Qué factor tiene el mayor impacto en tu puntaje de crédito?", options: ["Cuántas tarjetas de crédito tienes", "Historial de pagos", "Hace cuánto tienes crédito", "Tu ingreso"], correct: 1, explanation: "El historial de pagos representa el 35% de tu puntaje — el factor individual más grande. Paga a tiempo, siempre." }
             ]
           }
         }
@@ -112,26 +98,17 @@ export const lessons = [
           en: {
             headline: "How to start building credit as a newcomer",
             contentBreakdown: [
-              {
-                type: "text",
-                content: "The fastest way to build credit from zero: get a secured credit card, use it for small purchases (groceries, phone bill), and pay the full balance every month."
-              },
-              {
-                type: "text",
-                content: "A secured card requires a deposit (usually $200-$500) that becomes your credit limit. After 6-12 months of on-time payments, you can upgrade to a regular card."
-              },
-              {
-                type: "quickQuestion",
-                question: "What makes a secured credit card different from a regular one?",
-                options: [
-                  "It has lower interest rates",
-                  "You must put down a cash deposit as collateral",
-                  "It builds credit faster",
-                  "It requires a credit history to apply"
-                ],
-                correct: 1,
-                explanation: "A secured card requires a deposit — this protects the bank and makes it easier to approve newcomers with no credit history."
-              }
+              { type: "text", content: "The fastest way to build credit from zero: get a secured credit card, use it for small purchases (groceries, phone bill), and pay the full balance every month." },
+              { type: "text", content: "A secured card requires a deposit (usually $200-$500) that becomes your credit limit. After 6-12 months of on-time payments, you can upgrade to a regular card." },
+              { type: "quickQuestion", question: "What makes a secured credit card different from a regular one?", options: ["It has lower interest rates", "You must put down a cash deposit as collateral", "It builds credit faster", "It requires a credit history to apply"], correct: 1, explanation: "A secured card requires a deposit — this protects the bank and makes it easier to approve newcomers with no credit history." }
+            ]
+          },
+          es: {
+            headline: "Cómo empezar a construir crédito como recién llegado",
+            contentBreakdown: [
+              { type: "text", content: "La forma más rápida de construir crédito desde cero: obtén una tarjeta de crédito asegurada, úsala para compras pequeñas (comida, teléfono) y paga el saldo completo cada mes." },
+              { type: "text", content: "Una tarjeta asegurada requiere un depósito (generalmente $200-$500) que se convierte en tu límite de crédito. Después de 6-12 meses de pagos puntuales, puedes actualizar a una tarjeta regular." },
+              { type: "quickQuestion", question: "¿Qué hace diferente a una tarjeta de crédito asegurada?", options: ["Tiene tasas de interés más bajas", "Debes depositar dinero en efectivo como garantía", "Construye crédito más rápido", "Requiere historial crediticio para solicitarla"], correct: 1, explanation: "Una tarjeta asegurada requiere un depósito — esto protege al banco y hace más fácil aprobar a recién llegados sin historial crediticio." }
             ]
           }
         }
@@ -142,22 +119,17 @@ export const lessons = [
           en: {
             headline: "Credit utilization — the hidden lever",
             contentBreakdown: [
-              {
-                type: "text",
-                content: "Credit utilization is the percentage of your credit limit you are using. If your limit is $1,000 and you spend $300, your utilization is 30%."
-              },
-              {
-                type: "example",
-                title: "The 30% rule",
-                content: "Keep your balance below 30% of your limit at all times. So on a $1,000 limit card, never carry more than $300. This alone can boost your score significantly."
-              },
-              {
-                type: "quickQuestion",
-                question: "You have a $2,000 credit limit. What is the maximum balance to keep a good score?",
-                options: ["$1,000", "$600", "$2,000", "$200"],
-                correct: 1,
-                explanation: "30% of $2,000 is $600. Keeping your balance at or below this level helps your credit utilization ratio stay healthy."
-              }
+              { type: "text", content: "Credit utilization is the percentage of your credit limit you are using. If your limit is $1,000 and you spend $300, your utilization is 30%." },
+              { type: "example", title: "The 30% rule", content: "Keep your balance below 30% of your limit at all times. So on a $1,000 limit card, never carry more than $300. This alone can boost your score significantly." },
+              { type: "quickQuestion", question: "You have a $2,000 credit limit. What is the maximum balance to keep a good score?", options: ["$1,000", "$600", "$2,000", "$200"], correct: 1, explanation: "30% of $2,000 is $600. Keeping your balance at or below this level helps your credit utilization ratio stay healthy." }
+            ]
+          },
+          es: {
+            headline: "Utilización del crédito — la palanca oculta",
+            contentBreakdown: [
+              { type: "text", content: "La utilización del crédito es el porcentaje de tu límite que estás usando. Si tu límite es $1,000 y gastas $300, tu utilización es del 30%." },
+              { type: "example", title: "La regla del 30%", content: "Mantén tu saldo por debajo del 30% de tu límite en todo momento. En una tarjeta con límite de $1,000, nunca tengas más de $300. Esto solo puede aumentar tu puntaje significativamente." },
+              { type: "quickQuestion", question: "Tienes un límite de crédito de $2,000. ¿Cuál es el saldo máximo para mantener un buen puntaje?", options: ["$1,000", "$600", "$2,000", "$200"], correct: 1, explanation: "El 30% de $2,000 es $600. Mantener tu saldo en este nivel ayuda a que tu ratio de utilización permanezca saludable." }
             ]
           }
         }
@@ -195,26 +167,17 @@ export const lessons = [
           en: {
             headline: "Why you need a bank account first",
             contentBreakdown: [
-              {
-                type: "text",
-                content: "A bank account is the foundation of your financial life in North America. Without one, you cannot receive a paycheck, pay rent by transfer, or start building credit history."
-              },
-              {
-                type: "text",
-                content: "The good news: banks in Canada actively want newcomers as customers and offer special newcomer packages with reduced fees for the first year."
-              },
-              {
-                type: "quickQuestion",
-                question: "Why is a bank account the first financial step for newcomers?",
-                options: [
-                  "To impress employers",
-                  "To receive paychecks, pay bills, and start building credit",
-                  "Only to store cash safely",
-                  "It is not important in the first year"
-                ],
-                correct: 1,
-                explanation: "A bank account enables almost every other financial activity — getting paid, paying rent, and establishing your credit history."
-              }
+              { type: "text", content: "A bank account is the foundation of your financial life in North America. Without one, you cannot receive a paycheck, pay rent by transfer, or start building credit history." },
+              { type: "text", content: "The good news: banks in Canada actively want newcomers as customers and offer special newcomer packages with reduced fees for the first year." },
+              { type: "quickQuestion", question: "Why is a bank account the first financial step for newcomers?", options: ["To impress employers", "To receive paychecks, pay bills, and start building credit", "Only to store cash safely", "It is not important in the first year"], correct: 1, explanation: "A bank account enables almost every other financial activity — getting paid, paying rent, and establishing your credit history." }
+            ]
+          },
+          es: {
+            headline: "Por qué necesitas una cuenta bancaria primero",
+            contentBreakdown: [
+              { type: "text", content: "Una cuenta bancaria es la base de tu vida financiera en América del Norte. Sin ella, no puedes recibir un cheque de pago, pagar el alquiler por transferencia ni empezar a construir historial crediticio." },
+              { type: "text", content: "La buena noticia: los bancos en Canadá buscan activamente a recién llegados y ofrecen paquetes especiales con tarifas reducidas el primer año." },
+              { type: "quickQuestion", question: "¿Por qué es una cuenta bancaria el primer paso financiero para los recién llegados?", options: ["Para impresionar a los empleadores", "Para recibir cheques, pagar facturas y empezar a construir crédito", "Solo para guardar efectivo de forma segura", "No es importante el primer año"], correct: 1, explanation: "Una cuenta bancaria permite casi todas las demás actividades financieras — cobrar, pagar el alquiler y establecer tu historial crediticio." }
             ]
           }
         }
@@ -225,22 +188,17 @@ export const lessons = [
           en: {
             headline: "Documents you need to bring",
             contentBreakdown: [
-              {
-                type: "text",
-                content: "Most banks require two pieces of ID. Primary ID: passport, permanent resident card, or driver's license. Secondary ID: work permit, study permit, or a bill in your name."
-              },
-              {
-                type: "example",
-                title: "Pro tip",
-                content: "Bring your passport AND your immigration document on the same visit. Even if the bank only asks for one, having both prevents a wasted trip."
-              },
-              {
-                type: "quickQuestion",
-                question: "Which of these is typically accepted as primary ID at a Canadian bank?",
-                options: ["A utility bill", "Your passport", "A library card", "An employer letter"],
-                correct: 1,
-                explanation: "A passport is the strongest form of primary ID accepted everywhere. Bills and employer letters are usually secondary ID only."
-              }
+              { type: "text", content: "Most banks require two pieces of ID. Primary ID: passport, permanent resident card, or driver's license. Secondary ID: work permit, study permit, or a bill in your name." },
+              { type: "example", title: "Pro tip", content: "Bring your passport AND your immigration document on the same visit. Even if the bank only asks for one, having both prevents a wasted trip." },
+              { type: "quickQuestion", question: "Which of these is typically accepted as primary ID at a Canadian bank?", options: ["A utility bill", "Your passport", "A library card", "An employer letter"], correct: 1, explanation: "A passport is the strongest form of primary ID accepted everywhere. Bills and employer letters are usually secondary ID only." }
+            ]
+          },
+          es: {
+            headline: "Documentos que necesitas llevar",
+            contentBreakdown: [
+              { type: "text", content: "La mayoría de los bancos requieren dos documentos de identidad. ID primario: pasaporte, tarjeta de residente permanente o licencia de conducir. ID secundario: permiso de trabajo, estudio o una factura a tu nombre." },
+              { type: "example", title: "Consejo útil", content: "Lleva tu pasaporte Y tu documento de inmigración en la misma visita. Aunque el banco solo pida uno, tener ambos evita un viaje en vano." },
+              { type: "quickQuestion", question: "¿Cuál de estos se acepta como ID primario en un banco canadiense?", options: ["Una factura de servicios", "Tu pasaporte", "Una tarjeta de biblioteca", "Una carta del empleador"], correct: 1, explanation: "Un pasaporte es la forma más sólida de ID primario aceptado en todas partes. Las facturas y cartas de empleadores son generalmente solo ID secundario." }
             ]
           }
         }
@@ -251,26 +209,17 @@ export const lessons = [
           en: {
             headline: "Choosing the right bank",
             contentBreakdown: [
-              {
-                type: "text",
-                content: "Canada's Big Five banks — RBC, TD, Scotiabank, BMO, and CIBC — all offer newcomer accounts. Scotiabank and RBC are especially known for newcomer-friendly programs."
-              },
-              {
-                type: "text",
-                content: "Online-only banks like EQ Bank or Simplii Financial charge zero monthly fees. The tradeoff is fewer physical branches for in-person support."
-              },
-              {
-                type: "quickQuestion",
-                question: "What is the main advantage of online-only banks for newcomers?",
-                options: [
-                  "They offer immigration services",
-                  "They have no monthly fees",
-                  "They build your credit faster",
-                  "They accept fewer documents"
-                ],
-                correct: 1,
-                explanation: "Online banks typically charge no monthly fees, which saves you $10-$30 per month compared to traditional bank accounts."
-              }
+              { type: "text", content: "Canada's Big Five banks — RBC, TD, Scotiabank, BMO, and CIBC — all offer newcomer accounts. Scotiabank and RBC are especially known for newcomer-friendly programs." },
+              { type: "text", content: "Online-only banks like EQ Bank or Simplii Financial charge zero monthly fees. The tradeoff is fewer physical branches for in-person support." },
+              { type: "quickQuestion", question: "What is the main advantage of online-only banks for newcomers?", options: ["They offer immigration services", "They have no monthly fees", "They build your credit faster", "They accept fewer documents"], correct: 1, explanation: "Online banks typically charge no monthly fees, which saves you $10-$30 per month compared to traditional bank accounts." }
+            ]
+          },
+          es: {
+            headline: "Elegir el banco correcto",
+            contentBreakdown: [
+              { type: "text", content: "Los cinco grandes bancos de Canadá — RBC, TD, Scotiabank, BMO y CIBC — ofrecen cuentas para recién llegados. Scotiabank y RBC son especialmente conocidos por sus programas amigables con inmigrantes." },
+              { type: "text", content: "Los bancos solo en línea como EQ Bank o Simplii Financial no cobran tarifas mensuales. La contrapartida es menos sucursales físicas para apoyo en persona." },
+              { type: "quickQuestion", question: "¿Cuál es la principal ventaja de los bancos en línea para los recién llegados?", options: ["Ofrecen servicios de inmigración", "No tienen tarifas mensuales", "Construyen tu crédito más rápido", "Aceptan menos documentos"], correct: 1, explanation: "Los bancos en línea generalmente no cobran tarifas mensuales, lo que te ahorra $10-$30 al mes comparado con las cuentas tradicionales." }
             ]
           }
         }
@@ -281,22 +230,17 @@ export const lessons = [
           en: {
             headline: "Understanding account types",
             contentBreakdown: [
-              {
-                type: "text",
-                content: "When you open an account, you will be asked what type you want. A chequing account is for everyday spending. A savings account earns interest on money you set aside."
-              },
-              {
-                type: "example",
-                title: "Start with both",
-                content: "Many newcomers open a chequing account for daily use and a savings account right away. Having both from day one makes budgeting easier and builds good financial habits."
-              },
-              {
-                type: "quickQuestion",
-                question: "Which account type is designed for everyday spending like groceries and bills?",
-                options: ["Savings account", "Investment account", "Chequing account", "RRSP account"],
-                correct: 2,
-                explanation: "A chequing account is built for frequent transactions — it comes with a debit card, e-transfers, and bill payment features."
-              }
+              { type: "text", content: "When you open an account, you will be asked what type you want. A chequing account is for everyday spending. A savings account earns interest on money you set aside." },
+              { type: "example", title: "Start with both", content: "Many newcomers open a chequing account for daily use and a savings account right away. Having both from day one makes budgeting easier and builds good financial habits." },
+              { type: "quickQuestion", question: "Which account type is designed for everyday spending like groceries and bills?", options: ["Savings account", "Investment account", "Chequing account", "RRSP account"], correct: 2, explanation: "A chequing account is built for frequent transactions — it comes with a debit card, e-transfers, and bill payment features." }
+            ]
+          },
+          es: {
+            headline: "Entendiendo los tipos de cuentas",
+            contentBreakdown: [
+              { type: "text", content: "Cuando abres una cuenta, te preguntarán qué tipo quieres. Una cuenta corriente es para gastos diarios. Una cuenta de ahorros genera intereses sobre el dinero que apartes." },
+              { type: "example", title: "Empieza con ambas", content: "Muchos recién llegados abren una cuenta corriente para uso diario y una cuenta de ahorros de inmediato. Tener ambas desde el primer día facilita el presupuesto y crea buenos hábitos financieros." },
+              { type: "quickQuestion", question: "¿Qué tipo de cuenta está diseñada para gastos diarios como víveres y facturas?", options: ["Cuenta de ahorros", "Cuenta de inversión", "Cuenta corriente", "Cuenta RRSP"], correct: 2, explanation: "Una cuenta corriente está diseñada para transacciones frecuentes — incluye tarjeta de débito, transferencias electrónicas y funciones de pago de facturas." }
             ]
           }
         }
@@ -307,26 +251,17 @@ export const lessons = [
           en: {
             headline: "Your first week with a bank account",
             contentBreakdown: [
-              {
-                type: "text",
-                content: "Once your account is open, set up online banking immediately, enable two-factor authentication, and link your direct deposit for your employer."
-              },
-              {
-                type: "text",
-                content: "Also ask the bank about their newcomer credit card. Getting a credit card in your first month starts your credit history early — giving you a head start on building your score."
-              },
-              {
-                type: "quickQuestion",
-                question: "What should you do within your first week of opening a bank account?",
-                options: [
-                  "Wait a month before using it",
-                  "Set up online banking and enable two-factor authentication",
-                  "Apply for a mortgage",
-                  "Transfer all your savings to investments"
-                ],
-                correct: 1,
-                explanation: "Setting up online banking and security protects your account and gives you full control of your money from day one."
-              }
+              { type: "text", content: "Once your account is open, set up online banking immediately, enable two-factor authentication, and link your direct deposit for your employer." },
+              { type: "text", content: "Also ask the bank about their newcomer credit card. Getting a credit card in your first month starts your credit history early — giving you a head start on building your score." },
+              { type: "quickQuestion", question: "What should you do within your first week of opening a bank account?", options: ["Wait a month before using it", "Set up online banking and enable two-factor authentication", "Apply for a mortgage", "Transfer all your savings to investments"], correct: 1, explanation: "Setting up online banking and security protects your account and gives you full control of your money from day one." }
+            ]
+          },
+          es: {
+            headline: "Tu primera semana con una cuenta bancaria",
+            contentBreakdown: [
+              { type: "text", content: "Una vez que tu cuenta esté abierta, configura la banca en línea de inmediato, activa la autenticación de dos factores y vincula tu depósito directo con tu empleador." },
+              { type: "text", content: "También pregunta al banco sobre su tarjeta de crédito para recién llegados. Obtener una tarjeta de crédito en tu primer mes inicia tu historial crediticio temprano, dándote ventaja para construir tu puntaje." },
+              { type: "quickQuestion", question: "¿Qué debes hacer en tu primera semana al abrir una cuenta bancaria?", options: ["Esperar un mes antes de usarla", "Configurar la banca en línea y activar la autenticación de dos factores", "Solicitar una hipoteca", "Transferir todos tus ahorros a inversiones"], correct: 1, explanation: "Configurar la banca en línea y la seguridad protege tu cuenta y te da control total de tu dinero desde el primer día." }
             ]
           }
         }
@@ -364,22 +299,17 @@ export const lessons = [
           en: {
             headline: "Two accounts, two purposes",
             contentBreakdown: [
-              {
-                type: "text",
-                content: "A chequing account is your spending account — money flows in and out freely. A savings account is where money grows — it earns interest and you dip into it less often."
-              },
-              {
-                type: "example",
-                title: "Think of it like this",
-                content: "Chequing is your wallet — you use it every day. Savings is your safe — you put money there to protect and grow it, not to spend casually."
-              },
-              {
-                type: "quickQuestion",
-                question: "You want to set aside money for an emergency fund. Which account should you use?",
-                options: ["Chequing — it's more accessible", "Savings — it earns interest and keeps money separate", "Either one works the same", "A credit card"],
-                correct: 1,
-                explanation: "A savings account is ideal for emergency funds because it earns interest and keeping it separate from spending reduces temptation."
-              }
+              { type: "text", content: "A chequing account is your spending account — money flows in and out freely. A savings account is where money grows — it earns interest and you dip into it less often." },
+              { type: "example", title: "Think of it like this", content: "Chequing is your wallet — you use it every day. Savings is your safe — you put money there to protect and grow it, not to spend casually." },
+              { type: "quickQuestion", question: "You want to set aside money for an emergency fund. Which account should you use?", options: ["Chequing — it's more accessible", "Savings — it earns interest and keeps money separate", "Either one works the same", "A credit card"], correct: 1, explanation: "A savings account is ideal for emergency funds because it earns interest and keeping it separate from spending reduces temptation." }
+            ]
+          },
+          es: {
+            headline: "Dos cuentas, dos propósitos",
+            contentBreakdown: [
+              { type: "text", content: "Una cuenta corriente es tu cuenta de gastos — el dinero entra y sale libremente. Una cuenta de ahorros es donde el dinero crece — genera intereses y la usas con menos frecuencia." },
+              { type: "example", title: "Piénsalo así", content: "La corriente es tu billetera — la usas todos los días. Los ahorros son tu caja fuerte — pones dinero ahí para protegerlo y hacerlo crecer, no para gastarlo casualmente." },
+              { type: "quickQuestion", question: "Quieres apartar dinero para un fondo de emergencia. ¿Qué cuenta deberías usar?", options: ["Corriente — es más accesible", "Ahorros — genera intereses y mantiene el dinero separado", "Ambas funcionan igual", "Una tarjeta de crédito"], correct: 1, explanation: "Una cuenta de ahorros es ideal para fondos de emergencia porque genera intereses y mantenerla separada del gasto reduce la tentación." }
             ]
           }
         }
@@ -390,21 +320,17 @@ export const lessons = [
           en: {
             headline: "What a chequing account does",
             contentBreakdown: [
-              {
-                type: "text",
-                content: "Your chequing account comes with a debit card, online bill payments, Interac e-Transfer, and direct deposit. Most employers pay your salary directly into this account."
-              },
-              {
-                type: "text",
-                content: "Chequing accounts usually do not pay interest. You pay a small monthly fee (often $0 to $16) depending on the bank and plan."
-              },
-              {
-                type: "quickQuestion",
-                question: "Which feature does a chequing account typically include?",
-                options: ["High interest on your balance", "Interac e-Transfer for sending money", "Investment returns", "A free credit card"],
-                correct: 1,
-                explanation: "Chequing accounts are built for transactions — including e-Transfer, which is used constantly in Canada for rent, splitting bills, and paying people."
-              }
+              { type: "text", content: "Your chequing account comes with a debit card, online bill payments, Interac e-Transfer, and direct deposit. Most employers pay your salary directly into this account." },
+              { type: "text", content: "Chequing accounts usually do not pay interest. You pay a small monthly fee (often $0 to $16) depending on the bank and plan." },
+              { type: "quickQuestion", question: "Which feature does a chequing account typically include?", options: ["High interest on your balance", "Interac e-Transfer for sending money", "Investment returns", "A free credit card"], correct: 1, explanation: "Chequing accounts are built for transactions — including e-Transfer, which is used constantly in Canada for rent, splitting bills, and paying people." }
+            ]
+          },
+          es: {
+            headline: "Qué hace una cuenta corriente",
+            contentBreakdown: [
+              { type: "text", content: "Tu cuenta corriente incluye tarjeta de débito, pagos de facturas en línea, Interac e-Transfer y depósito directo. La mayoría de los empleadores pagan tu salario directamente en esta cuenta." },
+              { type: "text", content: "Las cuentas corrientes generalmente no pagan intereses. Pagas una pequeña tarifa mensual (a menudo $0 a $16) según el banco y el plan." },
+              { type: "quickQuestion", question: "¿Qué función incluye típicamente una cuenta corriente?", options: ["Intereses altos en tu saldo", "Interac e-Transfer para enviar dinero", "Rendimientos de inversión", "Una tarjeta de crédito gratis"], correct: 1, explanation: "Las cuentas corrientes están diseñadas para transacciones — incluyendo e-Transfer, que se usa constantemente en Canadá para alquiler, dividir facturas y pagar a personas." }
             ]
           }
         }
@@ -415,22 +341,17 @@ export const lessons = [
           en: {
             headline: "What a savings account does",
             contentBreakdown: [
-              {
-                type: "text",
-                content: "A savings account pays you interest on the money you keep in it. In Canada, a High Interest Savings Account (HISA) can earn 3% to 5% per year — much better than letting cash sit idle."
-              },
-              {
-                type: "example",
-                title: "Interest example",
-                content: "If you keep $5,000 in a HISA at 4% interest, you earn about $200 per year just for leaving your money there. That is free money working for you."
-              },
-              {
-                type: "quickQuestion",
-                question: "What does a High Interest Savings Account (HISA) offer that a chequing account does not?",
-                options: ["A debit card", "Interest earnings on your balance", "Bill payment features", "Unlimited transactions"],
-                correct: 1,
-                explanation: "HISAs pay you interest — typically 3% to 5% annually. Chequing accounts rarely pay interest because they are designed for frequent transactions."
-              }
+              { type: "text", content: "A savings account pays you interest on the money you keep in it. In Canada, a High Interest Savings Account (HISA) can earn 3% to 5% per year — much better than letting cash sit idle." },
+              { type: "example", title: "Interest example", content: "If you keep $5,000 in a HISA at 4% interest, you earn about $200 per year just for leaving your money there. That is free money working for you." },
+              { type: "quickQuestion", question: "What does a High Interest Savings Account (HISA) offer that a chequing account does not?", options: ["A debit card", "Interest earnings on your balance", "Bill payment features", "Unlimited transactions"], correct: 1, explanation: "HISAs pay you interest — typically 3% to 5% annually. Chequing accounts rarely pay interest because they are designed for frequent transactions." }
+            ]
+          },
+          es: {
+            headline: "Qué hace una cuenta de ahorros",
+            contentBreakdown: [
+              { type: "text", content: "Una cuenta de ahorros te paga intereses sobre el dinero que guardas en ella. En Canadá, una Cuenta de Ahorros de Alto Interés (HISA) puede ganar del 3% al 5% anual — mucho mejor que dejar el efectivo inactivo." },
+              { type: "example", title: "Ejemplo de interés", content: "Si mantienes $5,000 en una HISA al 4% de interés, ganas unos $200 al año solo por dejar el dinero ahí. Es dinero gratis trabajando para ti." },
+              { type: "quickQuestion", question: "¿Qué ofrece una Cuenta de Ahorros de Alto Interés (HISA) que una cuenta corriente no?", options: ["Una tarjeta de débito", "Ganancias de intereses sobre tu saldo", "Funciones de pago de facturas", "Transacciones ilimitadas"], correct: 1, explanation: "Las HISAs te pagan intereses — típicamente del 3% al 5% anual. Las cuentas corrientes rara vez pagan intereses porque están diseñadas para transacciones frecuentes." }
             ]
           }
         }
@@ -441,21 +362,17 @@ export const lessons = [
           en: {
             headline: "The 50/30/20 budgeting rule",
             contentBreakdown: [
-              {
-                type: "text",
-                content: "A popular rule: put 50% of your income toward needs (rent, food, bills), 30% toward wants (dining out, entertainment), and 20% into savings. This rule uses both accounts in a structured way."
-              },
-              {
-                type: "text",
-                content: "Set up an automatic transfer on payday. The moment your paycheck arrives in chequing, automatically move 20% to savings. You won't miss money you never see in your spending account."
-              },
-              {
-                type: "quickQuestion",
-                question: "Using the 50/30/20 rule, if you earn $4,000 per month, how much should go to savings?",
-                options: ["$800", "$2,000", "$1,200", "$400"],
-                correct: 0,
-                explanation: "20% of $4,000 is $800. This goes into your savings account each month, building your financial cushion automatically."
-              }
+              { type: "text", content: "A popular rule: put 50% of your income toward needs (rent, food, bills), 30% toward wants (dining out, entertainment), and 20% into savings. This rule uses both accounts in a structured way." },
+              { type: "text", content: "Set up an automatic transfer on payday. The moment your paycheck arrives in chequing, automatically move 20% to savings. You won't miss money you never see in your spending account." },
+              { type: "quickQuestion", question: "Using the 50/30/20 rule, if you earn $4,000 per month, how much should go to savings?", options: ["$800", "$2,000", "$1,200", "$400"], correct: 0, explanation: "20% of $4,000 is $800. This goes into your savings account each month, building your financial cushion automatically." }
+            ]
+          },
+          es: {
+            headline: "La regla de presupuesto 50/30/20",
+            contentBreakdown: [
+              { type: "text", content: "Una regla popular: pon el 50% de tus ingresos en necesidades (alquiler, comida, facturas), el 30% en deseos (comer fuera, entretenimiento) y el 20% en ahorros. Esta regla usa ambas cuentas de manera estructurada." },
+              { type: "text", content: "Configura una transferencia automática el día de pago. En el momento en que tu cheque llega a la cuenta corriente, mueve automáticamente el 20% a ahorros. No extrañarás el dinero que nunca ves en tu cuenta de gastos." },
+              { type: "quickQuestion", question: "Usando la regla 50/30/20, si ganas $4,000 al mes, ¿cuánto debería ir a ahorros?", options: ["$800", "$2,000", "$1,200", "$400"], correct: 0, explanation: "El 20% de $4,000 es $800. Esto va a tu cuenta de ahorros cada mes, construyendo tu colchón financiero automáticamente." }
             ]
           }
         }
@@ -466,27 +383,17 @@ export const lessons = [
           en: {
             headline: "TFSA — your secret savings weapon in Canada",
             contentBreakdown: [
-              {
-                type: "text",
-                content: "A Tax-Free Savings Account (TFSA) is a savings account where you pay zero tax on the interest or growth. It is available to any Canadian resident over 18."
-              },
-              {
-                type: "example",
-                title: "Why it matters",
-                content: "In a regular savings account, you pay tax on interest earned. In a TFSA, all growth is tax-free. Over 10 years this difference can be thousands of dollars in your pocket."
-              },
-              {
-                type: "quickQuestion",
-                question: "What is the key benefit of a TFSA compared to a regular savings account?",
-                options: [
-                  "It pays higher interest automatically",
-                  "You pay no tax on the money it earns",
-                  "It requires no deposit to open",
-                  "Banks give you a bonus when you open one"
-                ],
-                correct: 1,
-                explanation: "The TFSA's superpower is tax-free growth. Every dollar of interest or investment return stays in your pocket — not the government's."
-              }
+              { type: "text", content: "A Tax-Free Savings Account (TFSA) is a savings account where you pay zero tax on the interest or growth. It is available to any Canadian resident over 18." },
+              { type: "example", title: "Why it matters", content: "In a regular savings account, you pay tax on interest earned. In a TFSA, all growth is tax-free. Over 10 years this difference can be thousands of dollars in your pocket." },
+              { type: "quickQuestion", question: "What is the key benefit of a TFSA compared to a regular savings account?", options: ["It pays higher interest automatically", "You pay no tax on the money it earns", "It requires no deposit to open", "Banks give you a bonus when you open one"], correct: 1, explanation: "The TFSA's superpower is tax-free growth. Every dollar of interest or investment return stays in your pocket — not the government's." }
+            ]
+          },
+          es: {
+            headline: "TFSA — tu arma secreta de ahorro en Canadá",
+            contentBreakdown: [
+              { type: "text", content: "Una Cuenta de Ahorro Libre de Impuestos (TFSA) es una cuenta de ahorros donde pagas cero impuestos sobre los intereses o el crecimiento. Está disponible para cualquier residente canadiense mayor de 18 años." },
+              { type: "example", title: "Por qué importa", content: "En una cuenta de ahorros regular, pagas impuestos sobre los intereses ganados. En una TFSA, todo el crecimiento está libre de impuestos. En 10 años, esta diferencia puede ser miles de dólares en tu bolsillo." },
+              { type: "quickQuestion", question: "¿Cuál es el principal beneficio de una TFSA comparado con una cuenta de ahorros regular?", options: ["Paga intereses más altos automáticamente", "No pagas impuestos sobre lo que gana", "No requiere depósito para abrir", "Los bancos te dan un bono al abrirla"], correct: 1, explanation: "El superpoder de la TFSA es el crecimiento libre de impuestos. Cada dólar de interés o retorno de inversión se queda en tu bolsillo, no en el gobierno." }
             ]
           }
         }
