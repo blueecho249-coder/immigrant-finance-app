@@ -98,6 +98,7 @@ export default function LessonDetail({ language }) {
           </div>
           <div className="rounded-3xl bg-white p-4 shadow-xl ring-1 ring-gray-200/80 md:p-6">
             <SimpleLessonStep
+              key={`${id}-step-${currentStepIndex}`}
               step={currentStep}
               language={language}
               onNext={handleNextStep}

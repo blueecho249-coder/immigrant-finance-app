@@ -45,11 +45,6 @@ export default function SimpleLessonStep({ step, language, onNext, stepNumber, t
     if (showFeedback) return
     setSelectedAnswer(idx)
     setShowFeedback(true)
-    if (currentContent.correct === idx) {
-      setTimeout(() => {
-        advanceContent()
-      }, 1200)
-    }
   }
 
   const handleQuizAnswer = (idx) => {
@@ -165,10 +160,25 @@ export default function SimpleLessonStep({ step, language, onNext, stepNumber, t
                   </div>
                 )}
                 {showFeedback && selectedAnswer === currentContent.correct && (
-                  <div className="mt-4 rounded-xl bg-green-50 px-4 py-3 text-sm font-medium text-green-700">
-                    ✓ {currentContent.explanation || 'Correct!'}
+                  <div className="mt-4">
+                    <div className="mb-3 rounded-xl bg-green-50 px-4 py-3 text-sm font-medium text-green-700">
+                      ✓ {currentContent.explanation || 'Correct!'}
+                    </div>
+                    <button
+                      onClick={advanceContent}
+                      className="rounded-xl bg-gradient-to-r from-indigo-600 to-teal-500 px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:scale-105"
+                    >
+                      {contentIndex < rawContent.length - 1 ? 'Continue' : quiz ? 'Take Quiz' : 'Next Step'}
+                    </button>
                   </div>
                 )}
+              </div>
+            ) : currentContent && currentContent.type === 'example' ? (
+              <div className="rounded-3xl bg-gradient-to-br from-blue-50 to-teal-50 p-6 ring-1 ring-blue-200">
+                {currentContent.title && (
+                  <p className="mb-2 text-xs font-bold uppercase tracking-widest text-teal-600">{currentContent.title}</p>
+                )}
+                <p className="text-[17px] leading-8 text-gray-800">{currentContent.content}</p>
               </div>
             ) : (
               <div className="rounded-3xl bg-gradient-to-br from-gray-50 to-white p-6 ring-1 ring-gray-200">
