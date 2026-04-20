@@ -34,283 +34,19 @@ export const lessons = [
         content: {
           en: {
             headline: "What is a credit score?",
-            illustration: "score",
-            explanation: [
-              "A credit score is a number between 300 and 850 that tells lenders how reliably you pay back money.",
-              "Higher scores mean better interest rates and easier loan approvals.",
-              "Lower scores mean higher costs and fewer options."
-            ],
             contentBreakdown: [
-              {
-                type: "text",
-                content: "When you arrive in Canada your score is not zero - you simply have no score yet. This is very different from having bad credit."
-              },
-              {
-                type: "quickQuestion",
-                question: "What's the difference between no score and bad score?",
-                options: [
-                  "No score means you haven't started yet, bad score means you've made mistakes",
-                  "They're the same thing",
-                  "No score is worse than bad score"
-                ],
-                correct: 0,
-                explanation: "No score means you're a blank slate - that's actually good! Bad score means you have negative history.",
-                spacedRepetition: {
-                  onWrong: {
-                    reviewText: "Let's review this important concept:",
-                    reviewContent: [
-                      "No credit score = You haven't started building credit yet",
-                      "Bad credit score = You have negative payment history",
-                      "No score is actually BETTER than bad score!",
-                      "Think: New student vs student who failed exams"
-                    ],
-                    retryQuestion: {
-                      question: "So, which is better when arriving in Canada?",
-                      options: ["Having no score", "Having a bad score", "Both are the same"],
-                      correct: 0,
-                      hint: "Remember: no negative history vs negative history"
-                    }
-                  }
-                }
-              },
-              {
-                type: "text", 
-                content: "Think of it like a school grade. No score is like being a new student - you haven't taken any tests yet. Bad score is like failing your tests."
-              },
-              {
-                type: "example",
-                title: "Real World Example",
-                content: "Maria moved from Mexico and has no Canadian credit. She applies for a secured credit card with a $500 deposit. After 6 months of paying on time, her score appears at 680 - that's excellent progress!"
-              },
-              {
-                type: "quickQuestion",
-                question: "How long does it typically take to build a credit score in Canada?",
-                options: ["1-2 months", "3-6 months", "1-2 years"],
-                correct: 1,
-                explanation: "It usually takes 3-6 months of responsible credit use to generate your first score.",
-                spacedRepetition: {
-                  onWrong: {
-                    reviewText: "Let's review the credit building timeline:",
-                    reviewContent: [
-                      "Month 1-2: Use credit responsibly, payments reported to bureaus",
-                      "Month 3-6: Credit bureaus have enough data to generate your first score",
-                      "Key factors: Payment history, credit utilization, length of history",
-                      "Consistent on-time payments = faster score appearance"
-                    ],
-                    retryQuestion: {
-                      question: "What's the minimum time to get your first credit score?",
-                      options: ["1 month", "3 months", "6 months", "12 months"],
-                      correct: 1,
-                      hint: "Think: How long does it take to show a pattern of responsible behavior?"
-                    }
-                  }
-                }
-              },
-              {
-                type: "text",
-                content: "The key is to start small and be consistent. Even a $300 secured credit card, paid in full each month, will build your score effectively."
-              }
-            ],
-            visualElements: {
-              creditScoreVisualizer: {
-                type: "interactive-meter",
-                ranges: [
-                  { min: 300, max: 579, label: "Poor", color: "#ef4444", emoji: "Poor: High interest rates, loan rejections" },
-                  { min: 580, max: 669, label: "Fair", color: "#f59e0b", emoji: "Fair: Some loan options, higher rates" },
-                  { min: 670, max: 739, label: "Good", color: "#10b981", emoji: "Good: Better rates, more options" },
-                  { min: 740, max: 799, label: "Very Good", color: "#06b6d4", emoji: "Very Good: Best rates, premium cards" },
-                  { min: 800, max: 850, label: "Excellent", color: "#059669", emoji: "Excellent: VIP treatment, lowest rates" }
-                ],
-                description: "Drag the slider to see what different score ranges mean for you!",
-                currentScore: 650,
-                showLabels: true,
-                interactiveFeatures: {
-                  dragToExplore: true,
-                  realTimeFeedback: true,
-                  clickToLearn: true,
-                  scoreImpact: {
-                    "300-579": "Hard to get approved for anything",
-                    "580-669": "Limited options, higher costs",
-                    "670-739": "Good access to credit",
-                    "740-799": "Excellent credit opportunities",
-                    "800-850": "Best deals and rates available"
-                  }
-                }
-              },
-              miniGame: {
-                type: "credit-builder",
-                title: "Build Your Credit Score",
-                description: "Make smart financial choices to build your credit score!",
-                scenarios: [
-                  {
-                    id: "payment_choice",
-                    question: "You got your first credit card bill. What do you do?",
-                    options: [
-                      { text: "Pay the minimum", impact: -10, feedback: "Minimum payment hurts your score!" },
-                      { text: "Pay in full", impact: +15, feedback: "Perfect! Full payments boost your score!" },
-                      { text: "Pay more than minimum", impact: +5, feedback: "Good, but full payment is better!" }
-                    ]
-                  },
-                  {
-                    id: "credit_usage",
-                    question: "Your credit limit is $1000. How much should you spend?",
-                    options: [
-                      { text: "Use $950", impact: -15, feedback: "High usage hurts your score!" },
-                      { text: "Use $300", impact: +10, feedback: "Great! Low usage shows responsibility!" },
-                      { text: "Use $600", impact: 0, feedback: "Okay, but try to stay under 30%" }
-                    ]
-                  }
-                ],
-                winCondition: "Reach 700+ score",
-                reward: "Credit Master Badge"
-              },
-              progressTracker: {
-                type: "milestone-badges",
-                milestones: [
-                  { score: 300, badge: "Newcomer", description: "Just starting your journey" },
-                  { score: 500, badge: "Learner", description: "Understanding the basics" },
-                  { score: 650, badge: "Builder", description: "Building good habits" },
-                  { score: 750, badge: "Achiever", description: "Excellent credit habits" },
-                  { score: 800, badge: "Master", description: "Credit expert!" }
-                ]
-              }
-            }
+              { type: "text", content: "A credit score is a number between 300 and 850 that tells lenders how reliably you pay back money. In Canada, scores above 660 are considered good. Above 760 is excellent." },
+              { type: "example", title: "Real-world impact", content: "With a score of 750, you might get a mortgage at 4.5% interest. With a score of 580, the same mortgage could cost 7% — that's thousands of dollars more per year." },
+              { type: "quickQuestion", question: "Which credit score range is considered excellent in Canada?", options: ["300 to 500", "500 to 660", "760 to 850", "660 to 760"], correct: 2, explanation: "760 and above is considered excellent and unlocks the best interest rates available." }
+            ]
           },
           es: {
             headline: "¿Qué es una puntuación de crédito?",
-            illustration: "score",
-            explanation: [
-              "Una puntuación de crédito es un número entre 300 y 850 que dice a los prestamistas qué tan confiablemente pagas el dinero.",
-              "Cuando llegas a Canadá tu puntuación no es cero - simplemente no tienes puntuación aún. Eso es muy diferente.",
-              "Piensa en ello como una calificación financiera que muestra qué tan responsable eres con el dinero prestado."
+            contentBreakdown: [
+              { type: "text", content: "Una puntuación de crédito es un número entre 300 y 850 que indica a los prestamistas qué tan confiablemente devuelves el dinero. En Canadá, puntuaciones superiores a 660 son buenas. Más de 760 es excelente." },
+              { type: "example", title: "Impacto en la vida real", content: "Con una puntuación de 750, podrías obtener una hipoteca al 4.5% de interés. Con 580, la misma hipoteca podría costar 7% — miles de dólares más al año." },
+              { type: "quickQuestion", question: "¿Qué rango de puntuación se considera excelente en Canadá?", options: ["300 a 500", "500 a 660", "760 a 850", "660 a 760"], correct: 2, explanation: "760 o más se considera excelente y desbloquea las mejores tasas de interés disponibles." }
             ]
-          },
-          hi: {
-            headline: "Credit score kya hai?",
-            illustration: "score",
-            explanation: [
-              "Credit score 300 aur 850 ke beech ka number hai jo lenders ko batata hai ki aap kitne reliably paise wapas chukate hain.",
-              "Jab aap Canada aate hain to aapka score zero nahi hai - aapka bas abhi tak koi score nahi hai. Yeh bahut alag hai.",
-              "Isse financial grade ki tarah sochiye jo dikata hai ki aap borrowed money ke saath kitne responsible hain."
-            ]
-          },
-          tl: {
-            headline: "Ano ang isang credit score?",
-            illustration: "score",
-            explanation: [
-              "Ang isang credit score ay isang numero sa pagitan ng 300 at 850 na nagsasabi sa mga kung gaano kasigurado mong ibabalik ang pera.",
-              "Kapag dumating ka sa Canada ang iyong score ay hindi zero - wala ka lang score pa. Ito ay napakaiba.",
-              "Isipin ito bilang isang financial grade na nagpapakita kung gaano ka responsable sa borrowed money."
-            ]
-          },
-          zh: {
-            headline: "What is a credit score?",
-            illustration: "score",
-            explanation: [
-              "A credit score is a number between 300 and 850 that tells lenders how reliably you pay back money.",
-              "When you arrive in Canada your score is not zero - you simply have no score yet. That is very different.",
-              "Think of it like a financial grade that shows how responsible you are with borrowed money."
-            ]
-          },
-          ar: {
-            headline: "What is a credit score?",
-            illustration: "score",
-            explanation: [
-              "A credit score is a number between 300 and 850 that tells lenders how reliably you pay back money.",
-              "When you arrive in Canada your score is not zero - you simply have no score yet. That is very different.",
-              "Think of it like a financial grade that shows how responsible you are with borrowed money."
-            ]
-          },
-          fr: {
-            headline: "Qu'est-ce qu'un score de crédit?",
-            illustration: "score",
-            explanation: [
-              "Un score de crédit est un nombre entre 300 et 850 qui indique aux prêteurs combien vous remboursez l'argent de manière fiable.",
-              "Quand vous arrivez au Canada votre score n'est pas zéro - vous n'avez simplement pas encore de score. C'est très différent.",
-              "Pensez-y comme une note financière qui montre à quel point vous êtes responsable avec l'argent emprunté."
-            ]
-          },
-          pa: {
-            headline: "Credit score ki hai?",
-            illustration: "score",
-            explanation: [
-              "Credit score 300 te 850 vichar da number hai jo lenders nu dinda hai ki tu paise kitne reliably wapas chukade han.",
-              "Jad tu Canada aunda hai tan tuhada score zero nahi hai - tuhade bas abhi tak koi score nahi hai. Yeh bahut alag hai.",
-              "Isse financial grade valle sochiye jo dinda hai ki tu borrowed money naal kitne responsible han."
-            ]
-          }
-        }
-      },
-      {
-        type: "quickCheck",
-        correctIndex: 1,
-        content: {
-          en: {
-            question: "When you arrive in Canada your credit score is:",
-            options: ["Zero - which means bad credit", "Invisible - no history yet"],
-            explanation: "Having no score is not the same as bad credit. You just need to start building history.",
-            visualElements: {
-              interactiveQuiz: {
-                type: "animated-quiz",
-                animations: {
-                  correct: "green-burst",
-                  incorrect: "red-shake",
-                  reveal: "slide-in"
-                },
-                feedback: {
-                  correct: {
-                    message: "Perfect! You understand the key difference!",
-                    points: 10,
-                    badge: "Credit Smart"
-                  },
-                  incorrect: {
-                    message: "Not quite! Remember: no score is better than bad score.",
-                    hint: "Think about it like this: you haven't taken the test yet vs you failed the test.",
-                    points: 0
-                  }
-                },
-                progressBar: {
-                  showProgress: true,
-                  totalQuestions: 5,
-                  currentQuestion: 1
-                }
-              }
-            }
-          },
-          es: {
-            question: "Cuando llegas a Canadá tu puntuación de crédito es:",
-            options: ["Cero - lo que significa mal crédito", "Invisible - sin historial aún"],
-            explanation: "No tener puntuación no es lo mismo que tener mal crédito. Solo necesitas empezar a construir historial."
-          },
-          hi: {
-            question: "Jab aap Canada aate hain to aapka credit score hota hai:",
-            options: ["Zero - iska matlab bad credit", "Invisible - abhi tak koi history nahi"],
-            explanation: "Koi score nahi hona aur bad credit hona alag hai - aapko bas history banana shuru karna hai."
-          },
-          tl: {
-            question: "Kapag dumating ka sa Canada ang iyong credit score ay:",
-            options: ["Zero - nangangahulugang masamang credit", "Invisible - walang history pa"],
-            explanation: "Ang walang score ay hindi katulad ng masamang credit. Kailangan mo lang lamang na magsimula sa pagbuo ng history."
-          },
-          zh: {
-            question: "When you arrive in Canada your credit score is:",
-            options: ["Zero - which means bad credit", "Invisible - no history yet"],
-            explanation: "Having no score is not the same as bad credit. You just need to start building history."
-          },
-          ar: {
-            question: "When you arrive in Canada your credit score is:",
-            options: ["Zero - which means bad credit", "Invisible - no history yet"],
-            explanation: "Having no score is not the same as bad credit. You just need to start building history."
-          },
-          fr: {
-            question: "Quand vous arrivez au Canada votre score de crédit est:",
-            options: ["Zéro - ce qui signifie mauvais crédit", "Invisible - aucun historique encore"],
-            explanation: "Ne pas avoir de score n'est pas la même chose que d'avoir un mauvais crédit. Vous devez simplement commencer à construire un historique."
-          },
-          pa: {
-            question: "Jad tu Canada aunda hai tan tuhada credit score hunda hai:",
-            options: ["Zero - isda matlab bad credit", "Invisible - abhi tak koi history nahi"],
-            explanation: "Koi score nahi hona te bad credit hona alag hai - tuhanu bas history banana shuru karna hai."
           }
         }
       },
@@ -318,601 +54,714 @@ export const lessons = [
         type: "concept",
         content: {
           en: {
-            headline: "How Credit Scores Are Calculated",
-            illustration: "calculator",
+            headline: "No score vs bad score — a critical difference",
             contentBreakdown: [
-              {
-                type: "text",
-                content: "Credit bureaus calculate your score based on several factors. Understanding these helps you build good credit faster."
-              },
-              {
-                type: "factorBreakdown",
-                title: "The 5 Key Factors",
-                factors: [
-                  {
-                    name: "Payment History (35%)",
-                    description: "Do you pay bills on time? This is the most important factor.",
-                    tip: "Set up automatic payments to never miss a due date."
-                  },
-                  {
-                    name: "Credit Utilization (30%)",
-                    description: "How much of your available credit are you using?",
-                    tip: "Keep balances below 30% of your credit limit for best scores."
-                  },
-                  {
-                    name: "Length of Credit History (15%)",
-                    description: "How long have you been using credit?",
-                    tip: "Keep your first credit card open even if you don't use it much."
-                  },
-                  {
-                    name: "Credit Mix (10%)",
-                    description: "Do you have different types of credit (cards, loans, etc.)?",
-                    tip: "Having both credit cards and installment loans can help."
-                  },
-                  {
-                    name: "New Credit (10%)",
-                    description: "How many recent credit applications do you have?",
-                    tip: "Avoid applying for multiple credit cards in a short period."
-                  }
-                ]
-              },
-              {
-                type: "quickQuestion",
-                question: "Which factor has the biggest impact on your credit score?",
-                options: [
-                  "Credit utilization",
-                  "Payment history", 
-                  "Length of credit history",
-                  "Credit mix"
-                ],
-                correct: 1,
-                explanation: "Payment history accounts for 35% of your score - making on-time payments is crucial!",
-                spacedRepetition: {
-                  onWrong: {
-                    reviewText: "Let's review the 5 credit score factors by importance:",
-                    reviewContent: [
-                      "Payment History: 35% - Most important! Never miss payments",
-                      "Credit Utilization: 30% - Keep balances below 30%",
-                      "Length of History: 15% - Keep old accounts open",
-                      "Credit Mix: 10% - Different types of credit help",
-                      "New Credit: 10% - Don't apply for too many at once"
-                    ],
-                    retryQuestion: {
-                      question: "If you could only focus on ONE thing for your credit score, what should it be?",
-                      options: ["Never miss a payment", "Keep utilization low", "Keep old cards", "Don't apply for new credit"],
-                      correct: 0,
-                      hint: "Think: Which factor is worth 35% of your score?"
-                    }
-                  }
-                }
-              },
-              {
-                type: "example",
-                title: "Real Impact Example",
-                content: "Ahmed has a $1000 credit card. He spends $900 one month (90% utilization) vs $300 the next month (30% utilization). His score drops 40 points with high utilization but stays stable at 30%."
-              },
-              {
-                type: "quickQuestion",
-                question: "What's the maximum credit utilization you should aim for?",
-                options: ["50%", "30%", "70%", "90%"],
-                correct: 1,
-                explanation: "Keep utilization below 30% for optimal credit scores. Above 50% can significantly hurt your score.",
-                spacedRepetition: {
-                  onWrong: {
-                    reviewText: "Let's review credit utilization with real numbers:",
-                    reviewContent: [
-                      "Credit utilization = Balance ÷ Credit Limit",
-                      "Example: $300 balance on $1000 limit = 30% utilization",
-                      "Under 30% = Good for your score",
-                      "Over 50% = Bad for your score (can drop 40+ points!)",
-                      "Rule of thumb: Use credit like a debit card - pay in full monthly"
-                    ],
-                    retryQuestion: {
-                      question: "If your credit card limit is $2000, what's the highest balance you should carry?",
-                      options: ["$2000", "$1000", "$600", "$400"],
-                      correct: 2,
-                      hint: "Calculate: $2000 × 30% = ?"
-                    }
-                  }
-                }
-              },
-              {
-                type: "text",
-                content: "Remember: Building good credit is a marathon, not a sprint. Consistent, responsible habits over time will give you the best results."
-              }
+              { type: "text", content: "When you arrive in Canada or the US, you do not have a zero credit score — you simply have no score yet. This is very different from having a bad credit history." },
+              { type: "text", content: "No score = a blank slate. Lenders may still work with you. Bad score = a history of missed payments. Lenders see this as risky." },
+              { type: "quickQuestion", question: "A newcomer arrives in Canada with no credit history. What is their credit score?", options: ["Zero", "300 (the lowest possible)", "They have no score yet", "500 (average)"], correct: 2, explanation: "No score and a bad score are completely different. As a newcomer, you start with a blank slate — which is actually an opportunity." }
+            ]
+          },
+          es: {
+            headline: "Sin puntaje vs mal puntaje — una diferencia clave",
+            contentBreakdown: [
+              { type: "text", content: "Cuando llegas a Canadá o EE.UU., no tienes un puntaje de cero — simplemente no tienes puntaje todavía. Esto es muy diferente a tener mal historial crediticio." },
+              { type: "text", content: "Sin puntaje = hoja en blanco. Los prestamistas pueden trabajar contigo. Mal puntaje = historial de pagos fallidos. Los prestamistas lo ven como riesgoso." },
+              { type: "quickQuestion", question: "Un recién llegado a Canadá no tiene historial crediticio. ¿Cuál es su puntaje?", options: ["Cero", "300 (el más bajo)", "Aún no tiene puntaje", "500 (promedio)"], correct: 2, explanation: "Sin puntaje y mal puntaje son completamente diferentes. Como recién llegado, empiezas desde cero — lo cual es una oportunidad." }
             ]
           }
         }
       },
       {
-        type: "realWorld",
-        correctIndex: 1,
+        type: "concept",
         content: {
           en: {
-            scenarioTitle: "Priya's First Canadian Credit",
-            scenarioIcon: "person",
-            scenario: "Priya moved from India last month. She has excellent credit back home but Canadian banks cannot see it. What is her first step?",
-            options: [
-              "Apply for a regular credit card",
-              "Apply for a secured credit card"
-            ],
-            explanation: "A secured card requires a deposit and is designed for people with no credit history.",
-            visualElements: {
-              interactiveScenario: {
-                type: "character-journey",
-                character: {
-                  name: "Priya",
-                  avatar: "professional-woman",
-                  background: "Moved from India, excellent credit back home"
-                },
-                journey: {
-                  currentStep: "First Canadian Credit",
-                  previousSteps: ["Arrived in Canada", "Opened bank account"],
-                  nextSteps: ["Build credit history", "Get regular credit card"]
-                },
-                decision: {
-                  question: "Help Priya choose her first step!",
-                  options: [
-                    {
-                      text: "Apply for a regular credit card",
-                      outcome: "Rejected - no Canadian credit history",
-                      animation: "red-cross",
-                      feedback: "Regular cards require Canadian credit history!"
-                    },
-                    {
-                      text: "Apply for a secured credit card",
-                      outcome: "Approved! Start building credit",
-                      animation: "green-checkmark",
-                      feedback: "Perfect! Secured cards are designed for newcomers!"
-                    }
-                  ]
-                },
-                rewards: {
-                  correctChoice: {
-                    points: 15,
-                    badge: "Credit Advisor",
-                    unlock: "Next scenario: Priya's First Purchase"
-                  }
-                }
-              },
-              creditCardComparison: {
-                type: "interactive-cards",
-                title: "Compare Credit Cards",
-                cards: [
-                  {
-                    name: "Regular Credit Card",
-                    icon: "credit-card",
-                    requirements: ["Canadian credit history", "Credit check", "Income verification"],
-                    benefits: ["Rewards points", "No deposit", "Higher limits"],
-                    available: false,
-                    reason: "No Canadian credit history"
-                  },
-                  {
-                    name: "Secured Credit Card",
-                    icon: "shield",
-                    requirements: ["Security deposit ($300-500)", "Basic ID verification"],
-                    benefits: ["Build credit history", "Upgrade to regular card", "Reports to credit bureaus"],
-                    available: true,
-                    reason: "Perfect for newcomers!"
-                  }
-                ]
-              }
-            }
+            headline: "The 5 factors that build your score",
+            contentBreakdown: [
+              { type: "text", content: "Your credit score is calculated from 5 factors: Payment history (35%), Credit utilization (30%), Length of credit history (15%), Credit mix (10%), and New inquiries (10%)." },
+              { type: "example", title: "Payment history is king", content: "If you pay every bill on time for 12 months, this single habit accounts for 35% of your score improvement. One missed payment can drop your score by 50-100 points." },
+              { type: "quickQuestion", question: "Which factor has the biggest impact on your credit score?", options: ["How many credit cards you have", "Payment history", "How long you've had credit", "Your income"], correct: 1, explanation: "Payment history makes up 35% of your score — the single largest factor. Pay on time, every time." }
+            ]
           },
           es: {
-            scenarioTitle: "Primer Crédito Canadiense de Priya",
-            scenarioIcon: "person",
-            scenario: "Priya se mudó de India el mes pasado. Tiene excelente crédito en su país pero los bancos canadienses no pueden verlo. ¿Qué es su primer paso?",
-            options: [
-              "Solicitar una tarjeta de crédito regular",
-              "Solicitar una tarjeta de crédito garantizada"
-            ],
-            explanation: "Una tarjeta garantizada requiere un depósito y está diseñada para personas sin historial de crédito."
-          },
-          hi: {
-            scenarioTitle: "Priya ka pehla Canadian credit",
-            scenarioIcon: "person",
-            scenario: "Priya pichle mahine India se ayi hai. Uske paas ghar mein excellent credit hai lekin Canadian banks use nahi dekh sakte. Uska pehla step kya hai?",
-            options: [
-              "Regular credit card apply karna",
-              "Secured credit card apply karna"
-            ],
-            explanation: "Secured card deposit mangta hai aur no credit history wale logon ke liye design kiya gaya hai."
-          },
-          tl: {
-            scenarioTitle: "Unang Canadian Credit ni Priya",
-            scenarioIcon: "person",
-            scenario: "Lumipat si Priya mula sa India noong nakaraang buwan. Mayroon siyang magandang credit sa kanyang bansa ngunit hindi ito makikita ng mga Canadian bank. Ano ang kanyang unang hakbang?",
-            options: [
-              "Mag-apply ng regular credit card",
-              "Mag-apply ng secured credit card"
-            ],
-            explanation: "Ang secured card ay nangangailangan ng deposit at idinisenyo para sa mga taong walang credit history."
-          },
-          visualElements: {
-            bankAccountComparison: {
-              type: "comparison-cards",
-              accounts: [
-                {
-                  type: "chequing",
-                  name: "Chequing Account",
-                  icon: "check",
-                  features: [
-                    "Free with minimum balance",
-                    "Write checks",
-                    "Good for large payments"
-                  ],
-                  color: "#3b82f6"
-                },
-                {
-                  type: "savings",
-                  name: "Savings Account", 
-                  icon: "piggy-bank",
-                  features: [
-                    "Earns interest",
-                    "Online banking",
-                    "No monthly fees"
-                  ],
-                  color: "#10b981"
-                }
-              ],
-              description: "Compare different account types to find what works best for you"
-            }
-          },
-          zh: {
-            scenarioTitle: "Priya's First Canadian Credit",
-            scenarioIcon: "person",
-            scenario: "Priya moved from India last month. She has excellent credit back home but Canadian banks cannot see it. What is her first step?",
-            options: [
-              "Apply for a regular credit card",
-              "Apply for a secured credit card"
-            ],
-            explanation: "A secured card requires a deposit and is designed for people with no credit history."
-          },
-          ar: {
-            scenarioTitle: "Priya's First Canadian Credit",
-            scenarioIcon: "person",
-            scenario: "Priya moved from India last month. She has excellent credit back home but Canadian banks cannot see it. What is her first step?",
-            options: [
-              "Apply for a regular credit card",
-              "Apply for a secured credit card"
-            ],
-            explanation: "A secured card requires a deposit and is designed for people with no credit history."
-          },
-          fr: {
-            scenarioTitle: "Premier Crédit Canadien de Priya",
-            scenarioIcon: "person",
-            scenario: "Priya a déménagé d'Inde le mois dernier. Elle a un excellent crédit dans son pays d'origine mais les banques canadiennes ne peuvent pas le voir. Quel est son premier pas?",
-            options: [
-              "Demander une carte de crédit régulière",
-              "Demander une carte de crédit garantie"
-            ],
-            explanation: "Une carte garantie nécessite un dépôt et est conçue pour les personnes sans historique de crédit."
-          },
-          pa: {
-            scenarioTitle: "Priya da pehla Canadian credit",
-            scenarioIcon: "person",
-            scenario: "Priya pichle mahine India to aayi hai. Usde kol ghar vich excellent credit hai par Canadian banks use nahi dekh sakde. Usda pehla step ki hai?",
-            options: [
-              "Regular credit card apply karna",
-              "Secured credit card apply karna"
-            ],
-            explanation: "Secured card deposit mangda hai te no credit history valle logan lai design kiya gaya hai."
+            headline: "Los 5 factores que construyen tu puntaje",
+            contentBreakdown: [
+              { type: "text", content: "Tu puntaje se calcula con 5 factores: Historial de pagos (35%), Utilización del crédito (30%), Duración del historial (15%), Tipos de crédito (10%) y Nuevas consultas (10%)." },
+              { type: "example", title: "El historial de pagos es lo más importante", content: "Si pagas cada factura a tiempo durante 12 meses, este solo hábito representa el 35% de la mejora de tu puntaje. Un pago atrasado puede bajarlo entre 50 y 100 puntos." },
+              { type: "quickQuestion", question: "¿Qué factor tiene el mayor impacto en tu puntaje de crédito?", options: ["Cuántas tarjetas de crédito tienes", "Historial de pagos", "Hace cuánto tienes crédito", "Tu ingreso"], correct: 1, explanation: "El historial de pagos representa el 35% de tu puntaje — el factor individual más grande. Paga a tiempo, siempre." }
+            ]
           }
         }
       },
       {
-        type: "fillBlank",
-        correctIndex: 1,
+        type: "concept",
         content: {
           en: {
-            sentence: "To build credit you should keep your balance below ___ of your limit",
-            options: ["10%", "30%", "90%"],
-            explanation: "Keeping below 30% shows lenders you are responsible with credit."
+            headline: "How to start building credit as a newcomer",
+            contentBreakdown: [
+              { type: "text", content: "The fastest way to build credit from zero: get a secured credit card, use it for small purchases (groceries, phone bill), and pay the full balance every month." },
+              { type: "text", content: "A secured card requires a deposit (usually $200-$500) that becomes your credit limit. After 6-12 months of on-time payments, you can upgrade to a regular card." },
+              { type: "quickQuestion", question: "What makes a secured credit card different from a regular one?", options: ["It has lower interest rates", "You must put down a cash deposit as collateral", "It builds credit faster", "It requires a credit history to apply"], correct: 1, explanation: "A secured card requires a deposit — this protects the bank and makes it easier to approve newcomers with no credit history." }
+            ]
           },
           es: {
-            sentence: "Para construir crédito debes mantener tu balance por debajo del ___ de tu límite",
-            options: ["10%", "30%", "90%"],
-            explanation: "Mantenerse por debajo del 30% muestra a los prestamistas que eres responsable con el crédito."
-          },
-          hi: {
-            sentence: "Credit banane ke liye aap apna balance ___ se kam rakhna chahiye apne limit ka",
-            options: ["10%", "30%", "90%"],
-            explanation: "30% se kam rakhna lenders ko dikata hai ki aap credit ke saath responsible hain."
-          },
-          tl: {
-            sentence: "Para makapagbuild ng credit dapat panatilihin ang iyong balance sa ibaba ng ___ ng iyong limit",
-            options: ["10%", "30%", "90%"],
-            explanation: "Ang pagpapanatili sa ibaba ng 30% ay nagpapakita sa mga lenders na responsable ka sa credit."
-          },
-          zh: {
-            sentence: "To build credit you should keep your balance below ___ of your limit",
-            options: ["10%", "30%", "90%"],
-            explanation: "Keeping below 30% shows lenders you are responsible with credit."
-          },
-          ar: {
-            sentence: "To build credit you should keep your balance below ___ of your limit",
-            options: ["10%", "30%", "90%"],
-            explanation: "Keeping below 30% shows lenders you are responsible with credit."
-          },
-          fr: {
-            sentence: "Pour construire du crédit vous devriez maintenir votre solde en dessous de ___ de votre limite",
-            options: ["10%", "30%", "90%"],
-            explanation: "Maintenir en dessous de 30% montre aux prêteurs que vous êtes responsable avec le crédit."
-          },
-          pa: {
-            sentence: "Credit banane lai tu apna balance ___ te kam rakhna chaida hai apne limit da",
-            options: ["10%", "30%", "90%"],
-            explanation: "30% te kam rakhna lenders nu dinda hai ki tu credit naal responsible han."
+            headline: "Cómo empezar a construir crédito como recién llegado",
+            contentBreakdown: [
+              { type: "text", content: "La forma más rápida de construir crédito desde cero: obtén una tarjeta de crédito asegurada, úsala para compras pequeñas (comida, teléfono) y paga el saldo completo cada mes." },
+              { type: "text", content: "Una tarjeta asegurada requiere un depósito (generalmente $200-$500) que se convierte en tu límite de crédito. Después de 6-12 meses de pagos puntuales, puedes actualizar a una tarjeta regular." },
+              { type: "quickQuestion", question: "¿Qué hace diferente a una tarjeta de crédito asegurada?", options: ["Tiene tasas de interés más bajas", "Debes depositar dinero en efectivo como garantía", "Construye crédito más rápido", "Requiere historial crediticio para solicitarla"], correct: 1, explanation: "Una tarjeta asegurada requiere un depósito — esto protege al banco y hace más fácil aprobar a recién llegados sin historial crediticio." }
+            ]
           }
         }
       },
       {
-        type: "finalTest",
+        type: "concept",
         content: {
           en: {
-            title: "Credit Building Final Test",
-            description: "Test your knowledge of everything you've learned about credit scores!",
-            testSections: [
-              {
-                sectionTitle: "Credit Score Basics",
-                questions: [
-                  {
-                    question: "What credit score range is considered 'Good' in Canada?",
-                    options: ["580-669", "670-739", "740-799", "800-850"],
-                    correct: 1,
-                    explanation: "670-739 is considered 'Good' - you'll get decent interest rates and most loan approvals."
-                  },
-                  {
-                    question: "When you first arrive in Canada, what is your credit score?",
-                    options: ["Zero", "300", "No score yet", "550"],
-                    correct: 2,
-                    explanation: "You have no score yet - this is different from having a bad score."
-                  }
-                ]
-              },
-              {
-                sectionTitle: "Building Credit",
-                questions: [
-                  {
-                    question: "What's the best first step to build credit as a newcomer?",
-                    options: [
-                      "Apply for multiple regular credit cards",
-                      "Get a secured credit card",
-                      "Wait 6 months then apply",
-                      "Use your home country credit card"
-                    ],
-                    correct: 1,
-                    explanation: "A secured credit card is designed specifically for newcomers with no Canadian credit history."
-                  },
-                  {
-                    question: "How long does it typically take to get your first credit score?",
-                    options: ["1-2 months", "3-6 months", "6-12 months", "12+ months"],
-                    correct: 1,
-                    explanation: "Usually 3-6 months of responsible credit use will generate your first score."
-                  }
-                ]
-              },
-              {
-                sectionTitle: "Credit Management",
-                questions: [
-                  {
-                    question: "What percentage of your credit limit should you ideally use?",
-                    options: ["Under 10%", "Under 30%", "Under 50%", "Under 70%"],
-                    correct: 1,
-                    explanation: "Keep utilization below 30% for optimal credit scores."
-                  },
-                  {
-                    question: "Which factor has the biggest impact on your credit score?",
-                    options: [
-                      "Credit utilization",
-                      "Payment history",
-                      "Length of credit history",
-                      "Credit mix"
-                    ],
-                    correct: 1,
-                    explanation: "Payment history accounts for 35% of your score - the largest factor."
-                  },
-                  {
-                    question: "What happens if you miss a credit card payment?",
-                    options: [
-                      "Nothing if it's just once",
-                      "Your score drops significantly",
-                      "Your card is cancelled immediately",
-                      "You get charged a small fee only"
-                    ],
-                    correct: 1,
-                    explanation: "Missing payments can drop your score by 50-100 points and stays on your report for 7 years."
-                  }
-                ]
-              },
-              {
-                sectionTitle: "Real Scenarios",
-                questions: [
-                  {
-                    question: "Maria has a $1000 credit card and spends $800. What's her credit utilization?",
-                    options: ["8%", "80%", "20%", "50%"],
-                    correct: 1,
-                    explanation: "$800 ÷ $1000 = 80% utilization - this is too high and will hurt her score."
-                  },
-                  {
-                    question: "Ahmed wants to buy a car in 6 months. What should he focus on now?",
-                    options: [
-                      "Apply for many credit cards quickly",
-                      "Pay all bills on time and keep balances low",
-                      "Close his old credit card",
-                      "Max out his credit card to show he can handle debt"
-                    ],
-                    correct: 1,
-                    explanation: "Consistent on-time payments and low utilization will build his score for the car loan."
-                  }
-                ]
-              }
-            ],
-            passingScore: 80,
-            rewards: {
-              passed: {
-                title: "Credit Expert!",
-                message: "Excellent work! You understand credit building perfectly.",
-                points: 100,
-                badge: "Credit Master"
-              },
-              perfect: {
-                title: "Credit Genius!",
-                message: "Perfect score! You're ready to build excellent credit.",
-                points: 150,
-                badge: "Credit Genius"
-              }
-            },
-            retakeOptions: {
-              allowed: true,
-              maxAttempts: 3,
-              reviewMode: true
-            }
+            headline: "Credit utilization — the hidden lever",
+            contentBreakdown: [
+              { type: "text", content: "Credit utilization is the percentage of your credit limit you are using. If your limit is $1,000 and you spend $300, your utilization is 30%." },
+              { type: "example", title: "The 30% rule", content: "Keep your balance below 30% of your limit at all times. So on a $1,000 limit card, never carry more than $300. This alone can boost your score significantly." },
+              { type: "quickQuestion", question: "You have a $2,000 credit limit. What is the maximum balance to keep a good score?", options: ["$1,000", "$600", "$2,000", "$200"], correct: 1, explanation: "30% of $2,000 is $600. Keeping your balance at or below this level helps your credit utilization ratio stay healthy." }
+            ]
+          },
+          es: {
+            headline: "Utilización del crédito — la palanca oculta",
+            contentBreakdown: [
+              { type: "text", content: "La utilización del crédito es el porcentaje de tu límite que estás usando. Si tu límite es $1,000 y gastas $300, tu utilización es del 30%." },
+              { type: "example", title: "La regla del 30%", content: "Mantén tu saldo por debajo del 30% de tu límite en todo momento. En una tarjeta con límite de $1,000, nunca tengas más de $300. Esto solo puede aumentar tu puntaje significativamente." },
+              { type: "quickQuestion", question: "Tienes un límite de crédito de $2,000. ¿Cuál es el saldo máximo para mantener un buen puntaje?", options: ["$1,000", "$600", "$2,000", "$200"], correct: 1, explanation: "El 30% de $2,000 es $600. Mantener tu saldo en este nivel ayuda a que tu ratio de utilización permanezca saludable." }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    id: "how-to-open-a-bank-account",
+    isPremium: false,
+    title: {
+      en: "How to open a bank account",
+      es: "Cómo abrir una cuenta bancaria",
+      hi: "Bank account kaise kholein",
+      tl: "Paano magbukas ng bank account",
+      zh: "如何开银行账户",
+      ar: "كيف تفتح حسابًا بنكيًا",
+      fr: "Comment ouvrir un compte bancaire",
+      pa: "Bank account kiven kholein"
+    },
+    subtitle: {
+      en: "What documents you need and which banks are best for newcomers",
+      es: "Qué documentos necesitas y qué bancos son mejores para recién llegados",
+      hi: "Kaunse documents chahiye aur kaunse banks newcomers ke liye best hain",
+      tl: "Anong mga dokumento ang kailangan at aling bangko ang pinakamainam para sa mga bagong dating",
+      zh: "你需要哪些文件，以及哪些银行最适合新移民",
+      ar: "ما المستندات التي تحتاجها وأي البنوك أفضل للقادمين الجدد",
+      fr: "Quels documents il vous faut et quelles banques sont meilleures pour les nouveaux arrivants",
+      pa: "Kaunse documents chahide han te kaunse banks newcomers layi best han"
+    },
+    category: "Banking",
+    steps: [
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "Why you need a bank account first",
+            contentBreakdown: [
+              { type: "text", content: "A bank account is the foundation of your financial life in North America. Without one, you cannot receive a paycheck, pay rent by transfer, or start building credit history." },
+              { type: "text", content: "The good news: banks in Canada actively want newcomers as customers and offer special newcomer packages with reduced fees for the first year." },
+              { type: "quickQuestion", question: "Why is a bank account the first financial step for newcomers?", options: ["To impress employers", "To receive paychecks, pay bills, and start building credit", "Only to store cash safely", "It is not important in the first year"], correct: 1, explanation: "A bank account enables almost every other financial activity — getting paid, paying rent, and establishing your credit history." }
+            ]
+          },
+          es: {
+            headline: "Por qué necesitas una cuenta bancaria primero",
+            contentBreakdown: [
+              { type: "text", content: "Una cuenta bancaria es la base de tu vida financiera en América del Norte. Sin ella, no puedes recibir un cheque de pago, pagar el alquiler por transferencia ni empezar a construir historial crediticio." },
+              { type: "text", content: "La buena noticia: los bancos en Canadá buscan activamente a recién llegados y ofrecen paquetes especiales con tarifas reducidas el primer año." },
+              { type: "quickQuestion", question: "¿Por qué es una cuenta bancaria el primer paso financiero para los recién llegados?", options: ["Para impresionar a los empleadores", "Para recibir cheques, pagar facturas y empezar a construir crédito", "Solo para guardar efectivo de forma segura", "No es importante el primer año"], correct: 1, explanation: "Una cuenta bancaria permite casi todas las demás actividades financieras — cobrar, pagar el alquiler y establecer tu historial crediticio." }
+            ]
           }
         }
       },
       {
-        type: "summary",
+        type: "concept",
         content: {
           en: {
-            takeaways: [
-              "No score is not the same as bad score - you're starting fresh",
-              "Start with a secured credit card to build history",
-              "Pay your balance in full every month",
-              "Keep balance under 30% of your credit limit",
-              "Your score will appear after 3-6 months of responsible use"
-            ],
-            visualElements: {
-              achievementSystem: {
-                type: "lesson-complete",
-                title: "Credit Building Master!",
-                subtitle: "You've completed your first credit lesson!",
-                rewards: {
-                  points: 50,
-                  badges: [
-                    {
-                      name: "Credit Beginner",
-                      icon: "star",
-                      description: "Completed first credit lesson"
-                    },
-                    {
-                      name: "Smart Starter",
-                      icon: "lightbulb",
-                      description: "Understand credit score basics"
-                    }
-                  ],
-                  unlocks: [
-                    "Advanced Credit Strategies",
-                    "Credit Monitoring Tools",
-                    "Real-Life Credit Stories"
-                  ]
-                },
-                celebration: {
-                  type: "confetti-burst",
-                  message: "Congratulations! You're on your way to excellent credit!",
-                  animation: "trophy-rise"
-                },
-                nextSteps: {
-                  title: "What's Next?",
-                  options: [
-                    {
-                      label: "Take Advanced Credit Quiz",
-                      type: "quiz",
-                      difficulty: "medium",
-                      points: 25
-                    },
-                    {
-                      label: "Practice Credit Scenarios",
-                      type: "simulation",
-                      difficulty: "easy",
-                      points: 20
-                    },
-                    {
-                      label: "Banking Basics Lesson",
-                      type: "lesson",
-                      difficulty: "beginner",
-                      points: 50
-                    }
-                  ]
-                },
-                progressTracking: {
-                  totalLessons: 3,
-                  completedLessons: 1,
-                  nextMilestone: "Banking Basics",
-                  overallProgress: 33
-                }
-              },
-              shareableAchievement: {
-                type: "social-share",
-                title: "I just learned how to build credit in Canada! ",
-                message: "Starting my financial journey with confidence. #CreditBuilding #NewcomerFinance",
-                platforms: ["twitter", "facebook", "linkedin"],
-                badge: "credit-beginner"
-              }
-            }
+            headline: "Documents you need to bring",
+            contentBreakdown: [
+              { type: "text", content: "Most banks require two pieces of ID. Primary ID: passport, permanent resident card, or driver's license. Secondary ID: work permit, study permit, or a bill in your name." },
+              { type: "example", title: "Pro tip", content: "Bring your passport AND your immigration document on the same visit. Even if the bank only asks for one, having both prevents a wasted trip." },
+              { type: "quickQuestion", question: "Which of these is typically accepted as primary ID at a Canadian bank?", options: ["A utility bill", "Your passport", "A library card", "An employer letter"], correct: 1, explanation: "A passport is the strongest form of primary ID accepted everywhere. Bills and employer letters are usually secondary ID only." }
+            ]
           },
           es: {
-            takeaways: [
-              "No tener puntuación no es lo mismo que tener mala puntuación - estás empezando fresco",
-              "Comienza con una tarjeta de crédito garantizada para construir historial",
-              "Paga tu saldo completo cada mes",
-              "Mantén tu saldo por debajo del 30% de tu límite de crédito",
-              "Tu puntuación aparecerá después de 3-6 meses de uso responsable"
+            headline: "Documentos que necesitas llevar",
+            contentBreakdown: [
+              { type: "text", content: "La mayoría de los bancos requieren dos documentos de identidad. ID primario: pasaporte, tarjeta de residente permanente o licencia de conducir. ID secundario: permiso de trabajo, estudio o una factura a tu nombre." },
+              { type: "example", title: "Consejo útil", content: "Lleva tu pasaporte Y tu documento de inmigración en la misma visita. Aunque el banco solo pida uno, tener ambos evita un viaje en vano." },
+              { type: "quickQuestion", question: "¿Cuál de estos se acepta como ID primario en un banco canadiense?", options: ["Una factura de servicios", "Tu pasaporte", "Una tarjeta de biblioteca", "Una carta del empleador"], correct: 1, explanation: "Un pasaporte es la forma más sólida de ID primario aceptado en todas partes. Las facturas y cartas de empleadores son generalmente solo ID secundario." }
+            ]
+          }
+        }
+      },
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "Choosing the right bank",
+            contentBreakdown: [
+              { type: "text", content: "Canada's Big Five banks — RBC, TD, Scotiabank, BMO, and CIBC — all offer newcomer accounts. Scotiabank and RBC are especially known for newcomer-friendly programs." },
+              { type: "text", content: "Online-only banks like EQ Bank or Simplii Financial charge zero monthly fees. The tradeoff is fewer physical branches for in-person support." },
+              { type: "quickQuestion", question: "What is the main advantage of online-only banks for newcomers?", options: ["They offer immigration services", "They have no monthly fees", "They build your credit faster", "They accept fewer documents"], correct: 1, explanation: "Online banks typically charge no monthly fees, which saves you $10-$30 per month compared to traditional bank accounts." }
+            ]
+          },
+          es: {
+            headline: "Elegir el banco correcto",
+            contentBreakdown: [
+              { type: "text", content: "Los cinco grandes bancos de Canadá — RBC, TD, Scotiabank, BMO y CIBC — ofrecen cuentas para recién llegados. Scotiabank y RBC son especialmente conocidos por sus programas amigables con inmigrantes." },
+              { type: "text", content: "Los bancos solo en línea como EQ Bank o Simplii Financial no cobran tarifas mensuales. La contrapartida es menos sucursales físicas para apoyo en persona." },
+              { type: "quickQuestion", question: "¿Cuál es la principal ventaja de los bancos en línea para los recién llegados?", options: ["Ofrecen servicios de inmigración", "No tienen tarifas mensuales", "Construyen tu crédito más rápido", "Aceptan menos documentos"], correct: 1, explanation: "Los bancos en línea generalmente no cobran tarifas mensuales, lo que te ahorra $10-$30 al mes comparado con las cuentas tradicionales." }
+            ]
+          }
+        }
+      },
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "Understanding account types",
+            contentBreakdown: [
+              { type: "text", content: "When you open an account, you will be asked what type you want. A chequing account is for everyday spending. A savings account earns interest on money you set aside." },
+              { type: "example", title: "Start with both", content: "Many newcomers open a chequing account for daily use and a savings account right away. Having both from day one makes budgeting easier and builds good financial habits." },
+              { type: "quickQuestion", question: "Which account type is designed for everyday spending like groceries and bills?", options: ["Savings account", "Investment account", "Chequing account", "RRSP account"], correct: 2, explanation: "A chequing account is built for frequent transactions — it comes with a debit card, e-transfers, and bill payment features." }
+            ]
+          },
+          es: {
+            headline: "Entendiendo los tipos de cuentas",
+            contentBreakdown: [
+              { type: "text", content: "Cuando abres una cuenta, te preguntarán qué tipo quieres. Una cuenta corriente es para gastos diarios. Una cuenta de ahorros genera intereses sobre el dinero que apartes." },
+              { type: "example", title: "Empieza con ambas", content: "Muchos recién llegados abren una cuenta corriente para uso diario y una cuenta de ahorros de inmediato. Tener ambas desde el primer día facilita el presupuesto y crea buenos hábitos financieros." },
+              { type: "quickQuestion", question: "¿Qué tipo de cuenta está diseñada para gastos diarios como víveres y facturas?", options: ["Cuenta de ahorros", "Cuenta de inversión", "Cuenta corriente", "Cuenta RRSP"], correct: 2, explanation: "Una cuenta corriente está diseñada para transacciones frecuentes — incluye tarjeta de débito, transferencias electrónicas y funciones de pago de facturas." }
+            ]
+          }
+        }
+      },
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "Your first week with a bank account",
+            contentBreakdown: [
+              { type: "text", content: "Once your account is open, set up online banking immediately, enable two-factor authentication, and link your direct deposit for your employer." },
+              { type: "text", content: "Also ask the bank about their newcomer credit card. Getting a credit card in your first month starts your credit history early — giving you a head start on building your score." },
+              { type: "quickQuestion", question: "What should you do within your first week of opening a bank account?", options: ["Wait a month before using it", "Set up online banking and enable two-factor authentication", "Apply for a mortgage", "Transfer all your savings to investments"], correct: 1, explanation: "Setting up online banking and security protects your account and gives you full control of your money from day one." }
+            ]
+          },
+          es: {
+            headline: "Tu primera semana con una cuenta bancaria",
+            contentBreakdown: [
+              { type: "text", content: "Una vez que tu cuenta esté abierta, configura la banca en línea de inmediato, activa la autenticación de dos factores y vincula tu depósito directo con tu empleador." },
+              { type: "text", content: "También pregunta al banco sobre su tarjeta de crédito para recién llegados. Obtener una tarjeta de crédito en tu primer mes inicia tu historial crediticio temprano, dándote ventaja para construir tu puntaje." },
+              { type: "quickQuestion", question: "¿Qué debes hacer en tu primera semana al abrir una cuenta bancaria?", options: ["Esperar un mes antes de usarla", "Configurar la banca en línea y activar la autenticación de dos factores", "Solicitar una hipoteca", "Transferir todos tus ahorros a inversiones"], correct: 1, explanation: "Configurar la banca en línea y la seguridad protege tu cuenta y te da control total de tu dinero desde el primer día." }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    id: "chequing-vs-savings-account",
+    isPremium: false,
+    title: {
+      en: "Chequing vs savings account",
+      es: "Cuenta corriente vs cuenta de ahorros",
+      hi: "Chequing vs savings account",
+      tl: "Chequing vs savings account",
+      zh: "支票账户 vs 储蓄账户",
+      ar: "الحساب الجاري مقابل حساب التوفير",
+      fr: "Compte chèques vs compte d'épargne",
+      pa: "Chequing vs savings account"
+    },
+    subtitle: {
+      en: "What each one is for and when to use them",
+      es: "Para qué sirve cada una y cuándo usarlas",
+      hi: "Har ek kis kaam ke liye hai aur kab use karein",
+      tl: "Para saan ang bawat isa at kailan gagamitin",
+      zh: "各自用途是什么，以及何时使用",
+      ar: "ما وظيفة كل واحد ومتى تستخدمه",
+      fr: "À quoi sert chacun et quand les utiliser",
+      pa: "Har ek kis layi hai te kado use karna hai"
+    },
+    category: "Banking",
+    steps: [
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "Two accounts, two purposes",
+            contentBreakdown: [
+              { type: "text", content: "A chequing account is your spending account — money flows in and out freely. A savings account is where money grows — it earns interest and you dip into it less often." },
+              { type: "example", title: "Think of it like this", content: "Chequing is your wallet — you use it every day. Savings is your safe — you put money there to protect and grow it, not to spend casually." },
+              { type: "quickQuestion", question: "You want to set aside money for an emergency fund. Which account should you use?", options: ["Chequing — it's more accessible", "Savings — it earns interest and keeps money separate", "Either one works the same", "A credit card"], correct: 1, explanation: "A savings account is ideal for emergency funds because it earns interest and keeping it separate from spending reduces temptation." }
+            ]
+          },
+          es: {
+            headline: "Dos cuentas, dos propósitos",
+            contentBreakdown: [
+              { type: "text", content: "Una cuenta corriente es tu cuenta de gastos — el dinero entra y sale libremente. Una cuenta de ahorros es donde el dinero crece — genera intereses y la usas con menos frecuencia." },
+              { type: "example", title: "Piénsalo así", content: "La corriente es tu billetera — la usas todos los días. Los ahorros son tu caja fuerte — pones dinero ahí para protegerlo y hacerlo crecer, no para gastarlo casualmente." },
+              { type: "quickQuestion", question: "Quieres apartar dinero para un fondo de emergencia. ¿Qué cuenta deberías usar?", options: ["Corriente — es más accesible", "Ahorros — genera intereses y mantiene el dinero separado", "Ambas funcionan igual", "Una tarjeta de crédito"], correct: 1, explanation: "Una cuenta de ahorros es ideal para fondos de emergencia porque genera intereses y mantenerla separada del gasto reduce la tentación." }
+            ]
+          }
+        }
+      },
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "What a chequing account does",
+            contentBreakdown: [
+              { type: "text", content: "Your chequing account comes with a debit card, online bill payments, Interac e-Transfer, and direct deposit. Most employers pay your salary directly into this account." },
+              { type: "text", content: "Chequing accounts usually do not pay interest. You pay a small monthly fee (often $0 to $16) depending on the bank and plan." },
+              { type: "quickQuestion", question: "Which feature does a chequing account typically include?", options: ["High interest on your balance", "Interac e-Transfer for sending money", "Investment returns", "A free credit card"], correct: 1, explanation: "Chequing accounts are built for transactions — including e-Transfer, which is used constantly in Canada for rent, splitting bills, and paying people." }
+            ]
+          },
+          es: {
+            headline: "Qué hace una cuenta corriente",
+            contentBreakdown: [
+              { type: "text", content: "Tu cuenta corriente incluye tarjeta de débito, pagos de facturas en línea, Interac e-Transfer y depósito directo. La mayoría de los empleadores pagan tu salario directamente en esta cuenta." },
+              { type: "text", content: "Las cuentas corrientes generalmente no pagan intereses. Pagas una pequeña tarifa mensual (a menudo $0 a $16) según el banco y el plan." },
+              { type: "quickQuestion", question: "¿Qué función incluye típicamente una cuenta corriente?", options: ["Intereses altos en tu saldo", "Interac e-Transfer para enviar dinero", "Rendimientos de inversión", "Una tarjeta de crédito gratis"], correct: 1, explanation: "Las cuentas corrientes están diseñadas para transacciones — incluyendo e-Transfer, que se usa constantemente en Canadá para alquiler, dividir facturas y pagar a personas." }
+            ]
+          }
+        }
+      },
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "What a savings account does",
+            contentBreakdown: [
+              { type: "text", content: "A savings account pays you interest on the money you keep in it. In Canada, a High Interest Savings Account (HISA) can earn 3% to 5% per year — much better than letting cash sit idle." },
+              { type: "example", title: "Interest example", content: "If you keep $5,000 in a HISA at 4% interest, you earn about $200 per year just for leaving your money there. That is free money working for you." },
+              { type: "quickQuestion", question: "What does a High Interest Savings Account (HISA) offer that a chequing account does not?", options: ["A debit card", "Interest earnings on your balance", "Bill payment features", "Unlimited transactions"], correct: 1, explanation: "HISAs pay you interest — typically 3% to 5% annually. Chequing accounts rarely pay interest because they are designed for frequent transactions." }
+            ]
+          },
+          es: {
+            headline: "Qué hace una cuenta de ahorros",
+            contentBreakdown: [
+              { type: "text", content: "Una cuenta de ahorros te paga intereses sobre el dinero que guardas en ella. En Canadá, una Cuenta de Ahorros de Alto Interés (HISA) puede ganar del 3% al 5% anual — mucho mejor que dejar el efectivo inactivo." },
+              { type: "example", title: "Ejemplo de interés", content: "Si mantienes $5,000 en una HISA al 4% de interés, ganas unos $200 al año solo por dejar el dinero ahí. Es dinero gratis trabajando para ti." },
+              { type: "quickQuestion", question: "¿Qué ofrece una Cuenta de Ahorros de Alto Interés (HISA) que una cuenta corriente no?", options: ["Una tarjeta de débito", "Ganancias de intereses sobre tu saldo", "Funciones de pago de facturas", "Transacciones ilimitadas"], correct: 1, explanation: "Las HISAs te pagan intereses — típicamente del 3% al 5% anual. Las cuentas corrientes rara vez pagan intereses porque están diseñadas para transacciones frecuentes." }
+            ]
+          }
+        }
+      },
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "The 50/30/20 budgeting rule",
+            contentBreakdown: [
+              { type: "text", content: "A popular rule: put 50% of your income toward needs (rent, food, bills), 30% toward wants (dining out, entertainment), and 20% into savings. This rule uses both accounts in a structured way." },
+              { type: "text", content: "Set up an automatic transfer on payday. The moment your paycheck arrives in chequing, automatically move 20% to savings. You won't miss money you never see in your spending account." },
+              { type: "quickQuestion", question: "Using the 50/30/20 rule, if you earn $4,000 per month, how much should go to savings?", options: ["$800", "$2,000", "$1,200", "$400"], correct: 0, explanation: "20% of $4,000 is $800. This goes into your savings account each month, building your financial cushion automatically." }
+            ]
+          },
+          es: {
+            headline: "La regla de presupuesto 50/30/20",
+            contentBreakdown: [
+              { type: "text", content: "Una regla popular: pon el 50% de tus ingresos en necesidades (alquiler, comida, facturas), el 30% en deseos (comer fuera, entretenimiento) y el 20% en ahorros. Esta regla usa ambas cuentas de manera estructurada." },
+              { type: "text", content: "Configura una transferencia automática el día de pago. En el momento en que tu cheque llega a la cuenta corriente, mueve automáticamente el 20% a ahorros. No extrañarás el dinero que nunca ves en tu cuenta de gastos." },
+              { type: "quickQuestion", question: "Usando la regla 50/30/20, si ganas $4,000 al mes, ¿cuánto debería ir a ahorros?", options: ["$800", "$2,000", "$1,200", "$400"], correct: 0, explanation: "El 20% de $4,000 es $800. Esto va a tu cuenta de ahorros cada mes, construyendo tu colchón financiero automáticamente." }
+            ]
+          }
+        }
+      },
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "TFSA — your secret savings weapon in Canada",
+            contentBreakdown: [
+              { type: "text", content: "A Tax-Free Savings Account (TFSA) is a savings account where you pay zero tax on the interest or growth. It is available to any Canadian resident over 18." },
+              { type: "example", title: "Why it matters", content: "In a regular savings account, you pay tax on interest earned. In a TFSA, all growth is tax-free. Over 10 years this difference can be thousands of dollars in your pocket." },
+              { type: "quickQuestion", question: "What is the key benefit of a TFSA compared to a regular savings account?", options: ["It pays higher interest automatically", "You pay no tax on the money it earns", "It requires no deposit to open", "Banks give you a bonus when you open one"], correct: 1, explanation: "The TFSA's superpower is tax-free growth. Every dollar of interest or investment return stays in your pocket — not the government's." }
+            ]
+          },
+          es: {
+            headline: "TFSA — tu arma secreta de ahorro en Canadá",
+            contentBreakdown: [
+              { type: "text", content: "Una Cuenta de Ahorro Libre de Impuestos (TFSA) es una cuenta de ahorros donde pagas cero impuestos sobre los intereses o el crecimiento. Está disponible para cualquier residente canadiense mayor de 18 años." },
+              { type: "example", title: "Por qué importa", content: "En una cuenta de ahorros regular, pagas impuestos sobre los intereses ganados. En una TFSA, todo el crecimiento está libre de impuestos. En 10 años, esta diferencia puede ser miles de dólares en tu bolsillo." },
+              { type: "quickQuestion", question: "¿Cuál es el principal beneficio de una TFSA comparado con una cuenta de ahorros regular?", options: ["Paga intereses más altos automáticamente", "No pagas impuestos sobre lo que gana", "No requiere depósito para abrir", "Los bancos te dan un bono al abrirla"], correct: 1, explanation: "El superpoder de la TFSA es el crecimiento libre de impuestos. Cada dólar de interés o retorno de inversión se queda en tu bolsillo, no en el gobierno." }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    id: "how-to-avoid-bank-fees",
+    isPremium: false,
+    title: {
+      en: "How to avoid bank fees",
+      es: "Cómo evitar comisiones bancarias",
+      hi: "Bank fees kaise bachayein",
+      tl: "Paano iwasan ang bank fees",
+      zh: "如何避免银行费用",
+      ar: "كيف تتجنب رسوم البنك",
+      fr: "Comment éviter les frais bancaires",
+      pa: "Bank fees ton kiven bachiye"
+    },
+    subtitle: {
+      en: "Online banks, free accounts, ATM tips",
+      es: "Bancos en línea, cuentas gratis, consejos de cajero",
+      hi: "Online banks, free accounts, ATM tips",
+      tl: "Online banks, free accounts, ATM tips",
+      zh: "网上银行、免费账户、ATM技巧",
+      ar: "البنوك الإلكترونية، الحسابات المجانية، ونصائح أجهزة الصراف",
+      fr: "Banques en ligne, comptes gratuits, astuces pour les guichets",
+      pa: "Online banks, free accounts, ATM tips"
+    },
+    category: "Banking",
+    steps: [
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "Small habits save money",
+            contentBreakdown: [
+              { type: "text", content: "Choose free or low-fee accounts, keep minimum balances when needed, and use in-network ATMs." },
+              { type: "text", content: "Online banks often charge less than traditional banks because they have lower overhead." },
+              { type: "quickQuestion", question: "How can you often avoid ATM fees?", options: ["Use any ATM", "Use in-network ATMs", "Withdraw daily"], correct: 1, explanation: "In-network ATMs usually avoid extra fees." }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    id: "how-to-send-money-back-home",
+    isPremium: false,
+    title: {
+      en: "How to send money back home",
+      es: "Cómo enviar dinero a casa",
+      hi: "Ghar paise kaise bhejein",
+      tl: "Paano magpadala ng pera pauwi",
+      zh: "如何汇款回家",
+      ar: "كيف ترسل المال إلى بلدك",
+      fr: "Comment envoyer de l'argent chez vous",
+      pa: "Ghar paise kiven bhejiye"
+    },
+    subtitle: {
+      en: "Wise, Remitly, exchange rates, fees comparison",
+      es: "Wise, Remitly, tipos de cambio y comparación de comisiones",
+      hi: "Wise, Remitly, exchange rates, fees comparison",
+      tl: "Wise, Remitly, exchange rates, fees comparison",
+      zh: "Wise、Remitly、汇率与费用比较",
+      ar: "Wise وRemitly وأسعار الصرف ومقارنة الرسوم",
+      fr: "Wise, Remitly, taux de change et comparaison des frais",
+      pa: "Wise, Remitly, exchange rates, fees comparison"
+    },
+    category: "Banking",
+    steps: [
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "Compare the total cost",
+            contentBreakdown: [
+              { type: "text", content: "Look at the transfer fee and the exchange rate together. A low fee can still be expensive if the exchange rate is bad." },
+              { type: "text", content: "Wise and Remitly are common options for newcomers sending money abroad." },
+              { type: "quickQuestion", question: "What should you compare first?", options: ["Only the fee", "Only the exchange rate", "Both fee and exchange rate"], correct: 2, explanation: "The total cost depends on both." }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    id: "what-is-a-credit-score",
+    isPremium: false,
+    title: {
+      en: "What is a credit score?",
+      es: "¿Qué es una puntuación de crédito?",
+      hi: "Credit score kya hai?",
+      tl: "Ano ang isang credit score?",
+      zh: "什么是信用分数？",
+      ar: "ما هو التقييم الائتماني؟",
+      fr: "Qu'est-ce qu'un pointage de crédit ?",
+      pa: "Credit score ki hunda hai?"
+    },
+    subtitle: {
+      en: "Understand the 300-850 range and why it matters for renting and borrowing",
+      es: "Entiende el rango 300-850 y por qué importa para rentar y pedir prestado",
+      hi: "300-850 range samjho aur ye renting aur borrowing ke liye kyun important hai",
+      tl: "Unawain ang 300-850 range at bakit ito mahalaga sa pag-upa at pangungutang",
+      zh: "了解300-850的范围，以及它为什么影响租房和借款",
+      ar: "افهم نطاق 300-850 ولماذا يهم عند الاستئجار والاقتراض",
+      fr: "Comprenez l'échelle de 300 à 850 et son importance pour louer et emprunter",
+      pa: "300-850 range samjho te eh rent te borrowing layi kyon zaroori hai"
+    },
+    category: "Credit",
+    steps: [
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "What is a credit score?",
+            contentBreakdown: [
+              { type: "text", content: "A credit score is a number from 300 to 850 that shows how reliably you repay borrowed money." },
+              { type: "quickQuestion", question: "What does a higher credit score usually mean?", options: ["More risk", "Better borrowing options", "No effect"], correct: 1, explanation: "Higher scores usually mean lenders trust you more, which can lead to better rates and approvals." },
+              { type: "text", content: "Good scores can help you rent apartments, get loans, and sometimes even lower your interest rates." }
+            ]
+          },
+          es: {
+            headline: "¿Qué es una puntuación de crédito?",
+            contentBreakdown: [
+              { type: "text", content: "Una puntuación de crédito es un número del 300 al 850 que muestra qué tan confiablemente devuelves el dinero prestado." },
+              { type: "quickQuestion", question: "¿Qué suele significar una puntuación más alta?", options: ["Más riesgo", "Mejores opciones de préstamo", "Ningún efecto"], correct: 1, explanation: "Las puntuaciones más altas suelen dar más confianza a los prestamistas y mejores tasas." },
+              { type: "text", content: "Una buena puntuación puede ayudarte a rentar, pedir préstamos y a veces pagar menos interés." }
             ]
           },
           hi: {
-            takeaways: [
-              "Koi score nahi hona aur bad score hona alag hai - aap fresh start kar rahe hain",
-              "History banane ke liye secured credit card se shuru karo",
-              "Har month apna balance full pay karo",
-              "Apna balance credit limit ke 30% se neeche rakho",
-              "Responsible use ke 3-6 months baad aapka score dikhega"
+            headline: "Credit score kya hai?",
+            contentBreakdown: [
+              { type: "text", content: "Credit score 300 se 850 tak ka number hota hai jo dikhata hai ki aap borrowed money kitni reliably wapas chukate ho." },
+              { type: "quickQuestion", question: "Badi credit score ka aam taur par kya matlab hota hai?", options: ["Zyada risk", "Behtar borrowing options", "Koi effect nahi"], correct: 1, explanation: "High score lenders ko trust deta hai, isliye better rates aur approvals mil sakte hain." },
+              { type: "text", content: "Achha score apartment rent karne, loan lene, aur kabhi-kabhi interest kam karne mein madad karta hai." }
             ]
           },
           tl: {
-            takeaways: [
-              "Ang walang score ay hindi katulad ng masamang score - sisimula ka lang",
-              "Magsimula sa secured credit card para magbuo ng history",
-              "Bayaran ang iyong buong saldo bawat buwan",
-              "Panatilihin ang iyong saldo sa ibaba ng 30% ng iyong credit limit",
-              "Ang iyong score ay lalabas matapos ang 3-6 na buwan ng responsible na paggamit"
+            headline: "Ano ang isang credit score?",
+            contentBreakdown: [
+              { type: "text", content: "Ang credit score ay numero mula 300 hanggang 850 na nagpapakita kung gaano ka kaaasahan sa pagbabayad ng inutang na pera." },
+              { type: "quickQuestion", question: "Ano ang madalas na ibig sabihin ng mas mataas na score?", options: ["Mas maraming risk", "Mas magagandang loan options", "Walang epekto"], correct: 1, explanation: "Mas mataas na score, mas nagtitiwala ang lenders at mas maganda ang offers." },
+              { type: "text", content: "Makakatulong ang magandang score sa pag-upa ng apartment, pagkuha ng loan, at minsan mas mababang interest." }
             ]
           },
           zh: {
-            takeaways: [
-              "No score is not the same as bad score - you're starting fresh",
-              "Start with a secured credit card to build history",
-              "Pay your balance in full every month",
-              "Keep balance under 30% of your credit limit",
-              "Your score will appear after 3-6 months of responsible use"
+            headline: "什么是信用分数？",
+            contentBreakdown: [
+              { type: "text", content: "信用分数是300到850之间的数字，显示你偿还借款的可靠程度。" },
+              { type: "quickQuestion", question: "更高的信用分数通常意味着什么？", options: ["更高风险", "更好的借款选择", "没有影响"], correct: 1, explanation: "分数越高，贷款人通常越信任你，可能获得更好的利率和批准。" },
+              { type: "text", content: "良好的信用分数可以帮助你租房、申请贷款，有时还能降低利率。" }
             ]
           },
           ar: {
-            takeaways: [
-              "No score is not the same as bad score - you're starting fresh",
-              "Start with a secured credit card to build history",
-              "Pay your balance in full every month",
-              "Keep balance under 30% of your credit limit",
-              "Your score will appear after 3-6 months of responsible use"
+            headline: "ما هو التقييم الائتماني؟",
+            contentBreakdown: [
+              { type: "text", content: "التقييم الائتماني هو رقم من 300 إلى 850 يوضح مدى التزامك في سداد المال المقترض." },
+              { type: "quickQuestion", question: "ماذا يعني عادةً التقييم الأعلى؟", options: ["مخاطر أكثر", "خيارات اقتراض أفضل", "لا تأثير"], correct: 1, explanation: "التقييم الأعلى يجعل المقرضين يثقون بك أكثر وقد تحصل على أسعار أفضل." },
+              { type: "text", content: "التقييم الجيد يساعدك في الاستئجار والحصول على القروض وأحيانًا خفض الفائدة." }
             ]
           },
           fr: {
-            takeaways: [
-              "Ne pas avoir de score n'est pas la même chose qu'avoir un mauvais score - vous recommencez à zéro",
-              "Commencez avec une carte de crédit garantie pour construire un historique",
-              "Payez votre solde en entier chaque mois",
-              "Maintenez votre solde en dessous de 30% de votre limite de crédit",
-              "Votre score apparaîtra après 3-6 mois d'utilisation responsable"
+            headline: "Qu'est-ce qu'un pointage de crédit ?",
+            contentBreakdown: [
+              { type: "text", content: "Un pointage de crédit est un nombre de 300 à 850 qui montre à quel point vous remboursez de façon fiable l'argent emprunté." },
+              { type: "quickQuestion", question: "Qu'est-ce qu'un score plus élevé signifie généralement ?", options: ["Plus de risque", "De meilleures options d'emprunt", "Aucun effet"], correct: 1, explanation: "Un score plus élevé inspire plus de confiance aux prêteurs et peut donner de meilleures offres." },
+              { type: "text", content: "Un bon score peut aider à louer, obtenir des prêts et parfois réduire vos intérêts." }
             ]
           },
           pa: {
-            takeaways: [
-              "Koi score nahi hona te bad score hona alag hai - tu fresh start kar reha hai",
-              "History banane lai secured credit card to shuru karo",
-              "Har month apna balance full pay karo",
-              "Apna balance credit limit de 30% te neeche rakho",
-              "Responsible use de 3-6 months baad tuhada score dikhega"
+            headline: "Credit score ki hunda hai?",
+            contentBreakdown: [
+              { type: "text", content: "Credit score 300 ton 850 tak da number hunda hai jo dikhaunda hai ki tusi borrowed paise nu kinni zimmedari naal wapas karde ho." },
+              { type: "quickQuestion", question: "Uchha credit score aam taur te ki dikhaunda hai?", options: ["Zyada risk", "Behtar borrowing options", "Koi asar nahi"], correct: 1, explanation: "High score lenders nu zyada trust dinda hai, jis naal better rates mil sakde han." },
+              { type: "text", content: "Changha score rent, loan, te kabhi-kabhi kam interest vich madad karda hai." }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    id: "check-credit-score-free",
+    isPremium: false,
+    title: {
+      en: "How to check your credit score free",
+      es: "Cómo revisar tu puntuación de crédito gratis",
+      hi: "Apna credit score free mein kaise check karein",
+      tl: "Paano tingnan ang iyong credit score nang libre",
+      zh: "如何免费查看你的信用分数",
+      ar: "كيفية التحقق من تقييمك الائتماني مجانًا",
+      fr: "Comment vérifier gratuitement votre pointage de crédit",
+      pa: "Apna credit score free vich kiven check kariye"
+    },
+    subtitle: {
+      en: "Use free tools like Borrowell and Credit Karma in Canada",
+      es: "Usa herramientas gratis como Borrowell y Credit Karma en Canadá",
+      hi: "Canada mein Borrowell aur Credit Karma jaise free tools use karo",
+      tl: "Gumamit ng mga libreng tool tulad ng Borrowell at Credit Karma sa Canada",
+      zh: "在加拿大使用Borrowell和Credit Karma等免费工具",
+      ar: "استخدم أدوات مجانية مثل Borrowell وCredit Karma في كندا",
+      fr: "Utilisez des outils gratuits comme Borrowell et Credit Karma au Canada",
+      pa: "Canada vich Borrowell ate Credit Karma varge free tools use karo"
+    },
+    category: "Credit",
+    steps: [
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "Free ways to check your score",
+            contentBreakdown: [
+              { type: "text", content: "You can check your credit score for free without hurting it. In Canada, Borrowell and Credit Karma are common free tools." },
+              { type: "example", title: "Good to know", content: "Checking your own score is called a soft check, so it does not lower your credit score." },
+              { type: "quickQuestion", question: "Does checking your own score hurt your credit?", options: ["Yes", "No", "Only if you check twice"], correct: 1, explanation: "Self-checks are soft inquiries and do not lower your score." }
+            ]
+          },
+          es: {
+            headline: "Formas gratis de revisar tu score",
+            contentBreakdown: [
+              { type: "text", content: "Puedes revisar tu puntuación de crédito gratis sin dañarla. En Canadá, Borrowell y Credit Karma son herramientas comunes." },
+              { type: "example", title: "Es bueno saber", content: "Revisar tu propia puntuación se llama una consulta suave, así que no baja tu score." },
+              { type: "quickQuestion", question: "¿Revisar tu propia puntuación daña tu crédito?", options: ["Sí", "No", "Solo si la revisas dos veces"], correct: 1, explanation: "Las consultas suaves no bajan tu puntuación." }
+            ]
+          },
+          hi: {
+            headline: "Free mein score kaise check karein",
+            contentBreakdown: [
+              { type: "text", content: "Aap apna credit score free mein check kar sakte ho bina usse hurt kiye. Canada mein Borrowell aur Credit Karma common tools hain." },
+              { type: "example", title: "Yaad rakho", content: "Apna score check karna soft check hota hai, isse score kam nahi hota." },
+              { type: "quickQuestion", question: "Kya apna score check karne se credit hurt hota hai?", options: ["Haan", "Nahi", "Sirf do baar check karne par"], correct: 1, explanation: "Soft inquiry score ko kam nahi karta." }
+            ]
+          },
+          tl: {
+            headline: "Mga libreng paraan para tingnan ang score",
+            contentBreakdown: [
+              { type: "text", content: "Maaari mong tingnan ang iyong credit score nang libre nang hindi ito nasisira. Sa Canada, karaniwan ang Borrowell at Credit Karma." },
+              { type: "example", title: "Mahalagang tandaan", content: "Ang pagtingin sa sariling score ay soft check, kaya hindi nito binababa ang score mo." },
+              { type: "quickQuestion", question: "Nakakasira ba ng credit ang pag-check ng sarili mong score?", options: ["Oo", "Hindi", "Kapag dalawang beses mo tiningnan"], correct: 1, explanation: "Ang soft checks ay hindi nagpapababa ng score." }
+            ]
+          },
+          zh: {
+            headline: "免费查看信用分数的方法",
+            contentBreakdown: [
+              { type: "text", content: "你可以免费查看自己的信用分数而不会伤害它。在加拿大，Borrowell和Credit Karma是常见的免费工具。" },
+              { type: "example", title: "记住", content: "查看自己的分数属于软查询，不会降低你的信用分数。" },
+              { type: "quickQuestion", question: "查看自己的分数会伤害信用吗？", options: ["会", "不会", "只有看两次才会"], correct: 1, explanation: "软查询不会降低你的分数。" }
+            ]
+          },
+          ar: {
+            headline: "طرق مجانية للتحقق من التقييم",
+            contentBreakdown: [
+              { type: "text", content: "يمكنك التحقق من تقييمك الائتماني مجانًا دون الإضرار به. في كندا، Borrowell وCredit Karma من الأدوات الشائعة." },
+              { type: "example", title: "معلومة مهمة", content: "التحقق من تقييمك بنفسك يسمى فحصًا ناعمًا، لذلك لا يقلل من الدرجة." },
+              { type: "quickQuestion", question: "هل يضر التحقق من تقييمك بنفسك؟", options: ["نعم", "لا", "فقط إذا تحققت مرتين"], correct: 1, explanation: "الفحوصات الناعمة لا تقلل الدرجة." }
+            ]
+          },
+          fr: {
+            headline: "Moyens gratuits de vérifier votre score",
+            contentBreakdown: [
+              { type: "text", content: "Vous pouvez vérifier votre pointage de crédit gratuitement sans l'abîmer. Au Canada, Borrowell et Credit Karma sont des outils courants." },
+              { type: "example", title: "À savoir", content: "Vérifier votre propre score est une consultation souple, donc cela ne baisse pas votre score." },
+              { type: "quickQuestion", question: "Vérifier votre propre score nuit-il à votre crédit ?", options: ["Oui", "Non", "Seulement si vous vérifiez deux fois"], correct: 1, explanation: "Les consultations souples n'affectent pas votre score." }
+            ]
+          },
+          pa: {
+            headline: "Free vich score kiven check kariye",
+            contentBreakdown: [
+              { type: "text", content: "Tusi apna credit score free vich check kar sakde ho bina us nu nuksan pohchaye. Canada vich Borrowell ate Credit Karma common tools han." },
+              { type: "example", title: "Yaad rakho", content: "Apna score check karna soft check hunda hai, is naal score ghattda nahi." },
+              { type: "quickQuestion", question: "Ki apna score check karna credit nu nuksan karda hai?", options: ["Haan", "Nahi", "Sirf do vaar check karan te"], correct: 1, explanation: "Soft checks score nu ghattaunde nahi han." }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    id: "why-credit-score-drops",
+    isPremium: false,
+    title: {
+      en: "Why your credit score drops",
+      es: "Por qué baja tu puntuación de crédito",
+      hi: "Credit score kyun girta hai",
+      tl: "Bakit bumababa ang iyong credit score",
+      zh: "为什么你的信用分数会下降",
+      ar: "لماذا ينخفض تقييمك الائتماني",
+      fr: "Pourquoi votre pointage de crédit baisse",
+      pa: "Tuhada credit score kyun ghattda hai"
+    },
+    subtitle: {
+      en: "Late payments, too many applications, and high balances can hurt your score",
+      es: "Pagos tardíos, demasiadas solicitudes y saldos altos pueden dañar tu score",
+      hi: "Late payments, bahut saari applications, aur high balances score ko nuksan pahucha sakte hain",
+      tl: "Ang late payments, sobrang daming applications, at mataas na balances ay nakakasama sa score",
+      zh: "逾期付款、过多申请和高余额都会伤害你的分数",
+      ar: "الدفعات المتأخرة وكثرة الطلبات والأرصدة المرتفعة قد تضر بالتقييم",
+      fr: "Les paiements en retard, trop de demandes et les soldes élevés peuvent nuire à votre score",
+      pa: "Late payments, bahut applications, ate high balances score nu nuksan kar sakde han"
+    },
+    category: "Credit",
+    steps: [
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "What hurts your credit score?",
+            contentBreakdown: [
+              { type: "text", content: "Late payments are one of the biggest reasons scores drop. Too many credit applications in a short time can also lower your score." },
+              { type: "text", content: "High card balances, especially using too much of your limit, can make lenders think you are stretched too thin." },
+              { type: "quickQuestion", question: "Which action can hurt your credit score?", options: ["Paying on time", "Keeping balances low", "Missing a payment"], correct: 2, explanation: "Missing payments is one of the biggest negative factors." }
+            ]
+          },
+          es: {
+            headline: "¿Qué daña tu puntuación?",
+            contentBreakdown: [
+              { type: "text", content: "Los pagos tardíos son una de las razones más grandes por las que baja tu score. Demasiadas solicitudes de crédito en poco tiempo también pueden bajarlo." },
+              { type: "text", content: "Saldos altos en tarjetas, especialmente usar demasiado de tu límite, puede hacer que los prestamistas piensen que estás muy ajustado." },
+              { type: "quickQuestion", question: "¿Qué acción puede dañar tu score?", options: ["Pagar a tiempo", "Mantener saldos bajos", "Olvidar un pago"], correct: 2, explanation: "Olvidar pagos es uno de los factores más negativos." }
+            ]
+          },
+          hi: {
+            headline: "Credit score kyun girta hai?",
+            contentBreakdown: [
+              { type: "text", content: "Late payments score girne ka bada reason hain. Bahut saari credit applications bhi score ko kam kar sakti hain." },
+              { type: "text", content: "High balances, especially limit ka zyada hissa use karna, lenders ko lagta hai ki aap par zyada load hai." },
+              { type: "quickQuestion", question: "Kaunsi activity score ko hurt kar sakti hai?", options: ["Time par payment", "Balance low rakhna", "Payment miss karna"], correct: 2, explanation: "Missed payment sabse negative factors mein se ek hai." }
+            ]
+          },
+          tl: {
+            headline: "Bakit bumababa ang score?",
+            contentBreakdown: [
+              { type: "text", content: "Ang late payments ay isa sa pinakamalaking dahilan kung bakit bumababa ang score. Masyadong maraming applications sa maikling panahon ay nakabababa rin." },
+              { type: "text", content: "Ang mataas na balances, lalo na ang paggamit ng sobra sa limit, ay nagpapakita sa lenders na masyado kang napipilit." },
+              { type: "quickQuestion", question: "Aling gawain ang makakasama sa credit score?", options: ["Magbayad sa oras", "Panatilihing mababa ang balance", "Mag-miss ng payment"], correct: 2, explanation: "Ang missed payments ay isa sa pinakamalaking negative factors." }
+            ]
+          },
+          zh: {
+            headline: "为什么信用分数会下降？",
+            contentBreakdown: [
+              { type: "text", content: "逾期付款是分数下降的最大原因之一。短时间内过多申请信用也会拉低分数。" },
+              { type: "text", content: "高信用卡余额，尤其是使用过多额度，会让贷款人觉得你压力太大。" },
+              { type: "quickQuestion", question: "哪种行为会伤害信用分数？", options: ["按时付款", "保持低余额", "漏掉付款"], correct: 2, explanation: "漏付是最负面的因素之一。" }
+            ]
+          },
+          ar: {
+            headline: "لماذا ينخفض التقييم؟",
+            contentBreakdown: [
+              { type: "text", content: "الدفعات المتأخرة من أكبر أسباب انخفاض التقييم. كثرة طلبات الائتمان خلال فترة قصيرة قد تخفضه أيضًا." },
+              { type: "text", content: "الأرصدة المرتفعة على البطاقات، خاصة استخدام جزء كبير من الحد، تجعل المقرضين يظنون أنك تحت ضغط مالي." },
+              { type: "quickQuestion", question: "ما الذي قد يضر بتقييمك؟", options: ["الدفع في الوقت", "الحفاظ على رصيد منخفض", "تفويت دفعة"], correct: 2, explanation: "تفويت الدفعات من أكثر العوامل السلبية." }
+            ]
+          },
+          fr: {
+            headline: "Pourquoi votre score baisse-t-il ?",
+            contentBreakdown: [
+              { type: "text", content: "Les paiements en retard sont l'une des plus grandes raisons de baisse du score. Trop de demandes de crédit en peu de temps peuvent aussi le faire baisser." },
+              { type: "text", content: "Des soldes élevés sur vos cartes, surtout si vous utilisez trop de votre limite, peuvent signaler un stress financier." },
+              { type: "quickQuestion", question: "Quelle action peut nuire à votre score ?", options: ["Payer à temps", "Garder un solde bas", "Oublier un paiement"], correct: 2, explanation: "Les paiements manqués sont un facteur très négatif." }
+            ]
+          },
+          pa: {
+            headline: "Credit score kyun ghattda hai?",
+            contentBreakdown: [
+              { type: "text", content: "Late payments score ghatt hon da vadda reason han. Thode time vich bahut credit applications vi score nu down kar sakdiyan han." },
+              { type: "text", content: "High balances, khaaskar limit da zyada hissa use karna, lenders nu lagda hai ki tusi financial pressure ch ho." },
+              { type: "quickQuestion", question: "Kaun sa action score nu nuksan kar sakda hai?", options: ["Time te payment", "Balance low rakhna", "Payment miss karna"], correct: 2, explanation: "Missed payments sab ton negative factor han." }
             ]
           }
         }
