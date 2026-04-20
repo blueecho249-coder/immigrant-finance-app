@@ -34,44 +34,129 @@ export const lessons = [
         content: {
           en: {
             headline: "What is a credit score?",
-            illustration: "score",
-            explanation: [
-              "A credit score is a number between 300 and 850 that tells lenders how reliably you pay back money.",
-              "Higher scores mean better interest rates and easier loan approvals.",
-              "Lower scores mean higher costs and fewer options."
-            ],
             contentBreakdown: [
               {
                 type: "text",
-                content: "When you arrive in Canada your score is not zero - you simply have no score yet. This is very different from having bad credit."
+                content: "A credit score is a number between 300 and 850 that tells lenders how reliably you pay back money. In Canada, scores above 660 are considered good. Above 760 is excellent."
+              },
+              {
+                type: "example",
+                title: "Real-world impact",
+                content: "With a score of 750, you might get a mortgage at 4.5% interest. With a score of 580, the same mortgage could cost 7% — that's thousands of dollars more per year."
               },
               {
                 type: "quickQuestion",
-                question: "What's the difference between no score and bad score?",
+                question: "Which credit score range is considered excellent in Canada?",
+                options: ["300 to 500", "500 to 660", "760 to 850", "660 to 760"],
+                correct: 2,
+                explanation: "760 and above is considered excellent and unlocks the best interest rates available."
+              }
+            ]
+          }
+        }
+      },
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "No score vs bad score — a critical difference",
+            contentBreakdown: [
+              {
+                type: "text",
+                content: "When you arrive in Canada or the US, you do not have a zero credit score — you simply have no score yet. This is very different from having a bad credit history."
+              },
+              {
+                type: "text",
+                content: "No score = a blank slate. Lenders may still work with you. Bad score = a history of missed payments. Lenders see this as risky."
+              },
+              {
+                type: "quickQuestion",
+                question: "A newcomer arrives in Canada with no credit history. What is their credit score?",
+                options: ["Zero", "300 (the lowest possible)", "They have no score yet", "500 (average)"],
+                correct: 2,
+                explanation: "No score and a bad score are completely different. As a newcomer, you start with a blank slate — which is actually an opportunity."
+              }
+            ]
+          }
+        }
+      },
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "The 5 factors that build your score",
+            contentBreakdown: [
+              {
+                type: "text",
+                content: "Your credit score is calculated from 5 factors: Payment history (35%), Credit utilization (30%), Length of credit history (15%), Credit mix (10%), and New inquiries (10%)."
+              },
+              {
+                type: "example",
+                title: "Payment history is king",
+                content: "If you pay every bill on time for 12 months, this single habit accounts for 35% of your score improvement. One missed payment can drop your score by 50-100 points."
+              },
+              {
+                type: "quickQuestion",
+                question: "Which factor has the biggest impact on your credit score?",
+                options: ["How many credit cards you have", "Payment history", "How long you've had credit", "Your income"],
+                correct: 1,
+                explanation: "Payment history makes up 35% of your score — the single largest factor. Pay on time, every time."
+              }
+            ]
+          }
+        }
+      },
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "How to start building credit as a newcomer",
+            contentBreakdown: [
+              {
+                type: "text",
+                content: "The fastest way to build credit from zero: get a secured credit card, use it for small purchases (groceries, phone bill), and pay the full balance every month."
+              },
+              {
+                type: "text",
+                content: "A secured card requires a deposit (usually $200-$500) that becomes your credit limit. After 6-12 months of on-time payments, you can upgrade to a regular card."
+              },
+              {
+                type: "quickQuestion",
+                question: "What makes a secured credit card different from a regular one?",
                 options: [
-                  "No score means you haven't started yet, bad score means you've made mistakes",
-                  "They're the same thing",
-                  "No score is worse than bad score"
+                  "It has lower interest rates",
+                  "You must put down a cash deposit as collateral",
+                  "It builds credit faster",
+                  "It requires a credit history to apply"
                 ],
-                correct: 0,
-                explanation: "No score means you're a blank slate - that's actually good! Bad score means you have negative history.",
-                spacedRepetition: {
-                  onWrong: {
-                    reviewText: "Let's review this important concept:",
-                    reviewContent: [
-                      "No credit score = You haven't started building credit yet",
-                      "Bad credit score = You have negative payment history",
-                      "No score is actually BETTER than bad score!",
-                      "Think: New student vs student who failed exams"
-                    ],
-                    retryQuestion: {
-                      question: "So, which is better when arriving in Canada?",
-                      options: ["Having no score", "Having a bad score", "Both are the same"],
-                      correct: 0,
-                      hint: "Remember: no negative history vs negative history"
-                    }
-                  }
-                }
+                correct: 1,
+                explanation: "A secured card requires a deposit — this protects the bank and makes it easier to approve newcomers with no credit history."
+              }
+            ]
+          }
+        }
+      },
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "Credit utilization — the hidden lever",
+            contentBreakdown: [
+              {
+                type: "text",
+                content: "Credit utilization is the percentage of your credit limit you are using. If your limit is $1,000 and you spend $300, your utilization is 30%."
+              },
+              {
+                type: "example",
+                title: "The 30% rule",
+                content: "Keep your balance below 30% of your limit at all times. So on a $1,000 limit card, never carry more than $300. This alone can boost your score significantly."
+              },
+              {
+                type: "quickQuestion",
+                question: "You have a $2,000 credit limit. What is the maximum balance to keep a good score?",
+                options: ["$1,000", "$600", "$2,000", "$200"],
+                correct: 1,
+                explanation: "30% of $2,000 is $600. Keeping your balance at or below this level helps your credit utilization ratio stay healthy."
               }
             ]
           }
@@ -108,11 +193,140 @@ export const lessons = [
         type: "concept",
         content: {
           en: {
-            headline: "Opening your first bank account",
+            headline: "Why you need a bank account first",
             contentBreakdown: [
-              { type: "text", content: "You usually need a passport or ID, proof of address, and sometimes a work or study permit." },
-              { type: "text", content: "Big banks like RBC, TD, Scotiabank, BMO, and CIBC often have newcomer packages and branch support." },
-              { type: "quickQuestion", question: "What is one common document you need?", options: ["Gym membership", "Passport or ID", "Social media account"], correct: 1, explanation: "Banks need official identification to open an account." }
+              {
+                type: "text",
+                content: "A bank account is the foundation of your financial life in North America. Without one, you cannot receive a paycheck, pay rent by transfer, or start building credit history."
+              },
+              {
+                type: "text",
+                content: "The good news: banks in Canada actively want newcomers as customers and offer special newcomer packages with reduced fees for the first year."
+              },
+              {
+                type: "quickQuestion",
+                question: "Why is a bank account the first financial step for newcomers?",
+                options: [
+                  "To impress employers",
+                  "To receive paychecks, pay bills, and start building credit",
+                  "Only to store cash safely",
+                  "It is not important in the first year"
+                ],
+                correct: 1,
+                explanation: "A bank account enables almost every other financial activity — getting paid, paying rent, and establishing your credit history."
+              }
+            ]
+          }
+        }
+      },
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "Documents you need to bring",
+            contentBreakdown: [
+              {
+                type: "text",
+                content: "Most banks require two pieces of ID. Primary ID: passport, permanent resident card, or driver's license. Secondary ID: work permit, study permit, or a bill in your name."
+              },
+              {
+                type: "example",
+                title: "Pro tip",
+                content: "Bring your passport AND your immigration document on the same visit. Even if the bank only asks for one, having both prevents a wasted trip."
+              },
+              {
+                type: "quickQuestion",
+                question: "Which of these is typically accepted as primary ID at a Canadian bank?",
+                options: ["A utility bill", "Your passport", "A library card", "An employer letter"],
+                correct: 1,
+                explanation: "A passport is the strongest form of primary ID accepted everywhere. Bills and employer letters are usually secondary ID only."
+              }
+            ]
+          }
+        }
+      },
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "Choosing the right bank",
+            contentBreakdown: [
+              {
+                type: "text",
+                content: "Canada's Big Five banks — RBC, TD, Scotiabank, BMO, and CIBC — all offer newcomer accounts. Scotiabank and RBC are especially known for newcomer-friendly programs."
+              },
+              {
+                type: "text",
+                content: "Online-only banks like EQ Bank or Simplii Financial charge zero monthly fees. The tradeoff is fewer physical branches for in-person support."
+              },
+              {
+                type: "quickQuestion",
+                question: "What is the main advantage of online-only banks for newcomers?",
+                options: [
+                  "They offer immigration services",
+                  "They have no monthly fees",
+                  "They build your credit faster",
+                  "They accept fewer documents"
+                ],
+                correct: 1,
+                explanation: "Online banks typically charge no monthly fees, which saves you $10-$30 per month compared to traditional bank accounts."
+              }
+            ]
+          }
+        }
+      },
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "Understanding account types",
+            contentBreakdown: [
+              {
+                type: "text",
+                content: "When you open an account, you will be asked what type you want. A chequing account is for everyday spending. A savings account earns interest on money you set aside."
+              },
+              {
+                type: "example",
+                title: "Start with both",
+                content: "Many newcomers open a chequing account for daily use and a savings account right away. Having both from day one makes budgeting easier and builds good financial habits."
+              },
+              {
+                type: "quickQuestion",
+                question: "Which account type is designed for everyday spending like groceries and bills?",
+                options: ["Savings account", "Investment account", "Chequing account", "RRSP account"],
+                correct: 2,
+                explanation: "A chequing account is built for frequent transactions — it comes with a debit card, e-transfers, and bill payment features."
+              }
+            ]
+          }
+        }
+      },
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "Your first week with a bank account",
+            contentBreakdown: [
+              {
+                type: "text",
+                content: "Once your account is open, set up online banking immediately, enable two-factor authentication, and link your direct deposit for your employer."
+              },
+              {
+                type: "text",
+                content: "Also ask the bank about their newcomer credit card. Getting a credit card in your first month starts your credit history early — giving you a head start on building your score."
+              },
+              {
+                type: "quickQuestion",
+                question: "What should you do within your first week of opening a bank account?",
+                options: [
+                  "Wait a month before using it",
+                  "Set up online banking and enable two-factor authentication",
+                  "Apply for a mortgage",
+                  "Transfer all your savings to investments"
+                ],
+                correct: 1,
+                explanation: "Setting up online banking and security protects your account and gives you full control of your money from day one."
+              }
             ]
           }
         }
@@ -148,11 +362,131 @@ export const lessons = [
         type: "concept",
         content: {
           en: {
-            headline: "Use chequing for spending, savings for growing",
+            headline: "Two accounts, two purposes",
             contentBreakdown: [
-              { type: "text", content: "Chequing is for daily spending like bills, groceries, and rent. Savings is for money you want to keep aside and grow." },
-              { type: "text", content: "A simple rule: money in, bills out, extra into savings." },
-              { type: "quickQuestion", question: "Which account is best for rent payments?", options: ["Savings", "Chequing", "Either"], correct: 1, explanation: "Chequing is designed for everyday transactions." }
+              {
+                type: "text",
+                content: "A chequing account is your spending account — money flows in and out freely. A savings account is where money grows — it earns interest and you dip into it less often."
+              },
+              {
+                type: "example",
+                title: "Think of it like this",
+                content: "Chequing is your wallet — you use it every day. Savings is your safe — you put money there to protect and grow it, not to spend casually."
+              },
+              {
+                type: "quickQuestion",
+                question: "You want to set aside money for an emergency fund. Which account should you use?",
+                options: ["Chequing — it's more accessible", "Savings — it earns interest and keeps money separate", "Either one works the same", "A credit card"],
+                correct: 1,
+                explanation: "A savings account is ideal for emergency funds because it earns interest and keeping it separate from spending reduces temptation."
+              }
+            ]
+          }
+        }
+      },
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "What a chequing account does",
+            contentBreakdown: [
+              {
+                type: "text",
+                content: "Your chequing account comes with a debit card, online bill payments, Interac e-Transfer, and direct deposit. Most employers pay your salary directly into this account."
+              },
+              {
+                type: "text",
+                content: "Chequing accounts usually do not pay interest. You pay a small monthly fee (often $0 to $16) depending on the bank and plan."
+              },
+              {
+                type: "quickQuestion",
+                question: "Which feature does a chequing account typically include?",
+                options: ["High interest on your balance", "Interac e-Transfer for sending money", "Investment returns", "A free credit card"],
+                correct: 1,
+                explanation: "Chequing accounts are built for transactions — including e-Transfer, which is used constantly in Canada for rent, splitting bills, and paying people."
+              }
+            ]
+          }
+        }
+      },
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "What a savings account does",
+            contentBreakdown: [
+              {
+                type: "text",
+                content: "A savings account pays you interest on the money you keep in it. In Canada, a High Interest Savings Account (HISA) can earn 3% to 5% per year — much better than letting cash sit idle."
+              },
+              {
+                type: "example",
+                title: "Interest example",
+                content: "If you keep $5,000 in a HISA at 4% interest, you earn about $200 per year just for leaving your money there. That is free money working for you."
+              },
+              {
+                type: "quickQuestion",
+                question: "What does a High Interest Savings Account (HISA) offer that a chequing account does not?",
+                options: ["A debit card", "Interest earnings on your balance", "Bill payment features", "Unlimited transactions"],
+                correct: 1,
+                explanation: "HISAs pay you interest — typically 3% to 5% annually. Chequing accounts rarely pay interest because they are designed for frequent transactions."
+              }
+            ]
+          }
+        }
+      },
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "The 50/30/20 budgeting rule",
+            contentBreakdown: [
+              {
+                type: "text",
+                content: "A popular rule: put 50% of your income toward needs (rent, food, bills), 30% toward wants (dining out, entertainment), and 20% into savings. This rule uses both accounts in a structured way."
+              },
+              {
+                type: "text",
+                content: "Set up an automatic transfer on payday. The moment your paycheck arrives in chequing, automatically move 20% to savings. You won't miss money you never see in your spending account."
+              },
+              {
+                type: "quickQuestion",
+                question: "Using the 50/30/20 rule, if you earn $4,000 per month, how much should go to savings?",
+                options: ["$800", "$2,000", "$1,200", "$400"],
+                correct: 0,
+                explanation: "20% of $4,000 is $800. This goes into your savings account each month, building your financial cushion automatically."
+              }
+            ]
+          }
+        }
+      },
+      {
+        type: "concept",
+        content: {
+          en: {
+            headline: "TFSA — your secret savings weapon in Canada",
+            contentBreakdown: [
+              {
+                type: "text",
+                content: "A Tax-Free Savings Account (TFSA) is a savings account where you pay zero tax on the interest or growth. It is available to any Canadian resident over 18."
+              },
+              {
+                type: "example",
+                title: "Why it matters",
+                content: "In a regular savings account, you pay tax on interest earned. In a TFSA, all growth is tax-free. Over 10 years this difference can be thousands of dollars in your pocket."
+              },
+              {
+                type: "quickQuestion",
+                question: "What is the key benefit of a TFSA compared to a regular savings account?",
+                options: [
+                  "It pays higher interest automatically",
+                  "You pay no tax on the money it earns",
+                  "It requires no deposit to open",
+                  "Banks give you a bonus when you open one"
+                ],
+                correct: 1,
+                explanation: "The TFSA's superpower is tax-free growth. Every dollar of interest or investment return stays in your pocket — not the government's."
+              }
             ]
           }
         }
