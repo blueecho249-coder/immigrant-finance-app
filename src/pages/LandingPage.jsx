@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import LanguageSelector from '../components/LanguageSelector.jsx'
 import SEO from '../components/SEO.jsx'
 import { useState, useEffect } from 'react'
+import { BookOpen, Globe, Calculator, Users } from 'lucide-react'
 
 export default function LandingPage({ language, onLanguageChange }) {
   const [showExitPopup, setShowExitPopup] = useState(false)
@@ -359,19 +360,25 @@ export default function LandingPage({ language, onLanguageChange }) {
                     Everything You Need to Succeed
                   </h2>
                   <div className="grid gap-6">
-                    {t.features.map((feature, index) => (
-                      <div key={index} className="card p-6 hover:shadow-xl transition-all bg-white border-2 border-gray-200">
-                        <div className="flex items-start gap-4">
-                          <div className="flex-shrink-0 h-16 w-16 rounded-2xl gradient-header flex items-center justify-center shadow-lg">
-                            <span className="text-2xl">{feature.icon}</span>
-                          </div>
-                          <div className="flex-1">
-                            <h3 className="mb-2 text-xl font-bold text-gray-900">{feature.title}</h3>
-                            <p className="text-gray-800 leading-relaxed font-medium">{feature.description}</p>
+                    {t.features.map((feature, index) => {
+                      const iconComponents = [BookOpen, Globe, Calculator, Users]
+                      const bgColors = ['bg-purple-100 text-purple-600', 'bg-teal-100 text-teal-600', 'bg-orange-100 text-orange-600', 'bg-blue-100 text-blue-600']
+                      const IconComponent = iconComponents[index]
+                      
+                      return (
+                        <div key={index} className="card p-6 hover:shadow-xl transition-all bg-white border-2 border-gray-200">
+                          <div className="flex items-start gap-4">
+                            <div className={`w-12 h-12 flex-shrink-0 rounded-full flex items-center justify-center ${bgColors[index]}`}>
+                              <IconComponent className="w-6 h-6" />
+                            </div>
+                            <div className="flex-1">
+                              <h3 className="mb-2 text-xl font-bold text-gray-900">{feature.title}</h3>
+                              <p className="text-gray-800 leading-relaxed font-medium">{feature.description}</p>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    ))}
+                      )
+                    })}
                   </div>
                 </div>
 
@@ -588,14 +595,20 @@ export default function LandingPage({ language, onLanguageChange }) {
                                    index === 3 ? { border: 'border-blue-500', bg: 'bg-blue-50', icon: 'text-blue-600' } :
                                    { border: 'border-green-500', bg: 'bg-green-50', icon: 'text-green-600' }
                   
+                  const iconComponents = [BookOpen, Globe, Calculator, Users]
+                  const bgColors = ['bg-purple-100 text-purple-600', 'bg-teal-100 text-teal-600', 'bg-orange-100 text-orange-600', 'bg-blue-100 text-blue-600']
+                  const IconComponent = iconComponents[index]
+                  
                   return (
                     <div key={index} className={`card p-6 hover:shadow-xl transition-all border-2 ${colors.border}`}>
                       <div className="text-center">
-                        <div className="mx-auto h-20 w-20 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
-                          <span className="text-3xl">{feature.icon}</span>
+                        <div className={`w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full ${bgColors[index]}`}>
+                          <IconComponent className="w-6 h-6" />
                         </div>
-                        <h3 className="mb-4 text-xl font-bold text-gray-900">{feature.title}</h3>
-                        <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                        <div className="space-y-2">
+                          <h3 className="text-xl font-bold text-gray-900">{feature.title}</h3>
+                          <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                        </div>
                       </div>
                     </div>
                   )
