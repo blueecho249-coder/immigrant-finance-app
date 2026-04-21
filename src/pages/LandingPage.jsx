@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import LanguageSelector from '../components/LanguageSelector.jsx'
 import SEO from '../components/SEO.jsx'
 import { useState, useEffect } from 'react'
-import { BookOpen, Globe, Calculator, Users } from 'lucide-react'
+import { Book, Globe, Calculator, Users } from 'lucide-react'
 
 export default function LandingPage({ language, onLanguageChange }) {
   const [showExitPopup, setShowExitPopup] = useState(false)
@@ -361,7 +361,7 @@ export default function LandingPage({ language, onLanguageChange }) {
                   </h2>
                   <div className="grid gap-6">
                     {t.features.map((feature, index) => {
-                      const iconComponents = [BookOpen, Globe, Calculator, Users]
+                      const iconComponents = [Book, Globe, Calculator, Users]
                       const bgColors = ['bg-purple-100 text-purple-600', 'bg-teal-100 text-teal-600', 'bg-orange-100 text-orange-600', 'bg-blue-100 text-blue-600']
                       const IconComponent = iconComponents[index]
                       
@@ -595,7 +595,7 @@ export default function LandingPage({ language, onLanguageChange }) {
                                    index === 3 ? { border: 'border-blue-500', bg: 'bg-blue-50', icon: 'text-blue-600' } :
                                    { border: 'border-green-500', bg: 'bg-green-50', icon: 'text-green-600' }
                   
-                  const iconComponents = [BookOpen, Globe, Calculator, Users]
+                  const iconComponents = [Book, Globe, Calculator, Users]
                   const bgColors = ['bg-purple-100 text-purple-600', 'bg-teal-100 text-teal-600', 'bg-orange-100 text-orange-600', 'bg-blue-100 text-blue-600']
                   const IconComponent = iconComponents[index]
                   
