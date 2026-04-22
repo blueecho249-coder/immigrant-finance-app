@@ -11,6 +11,8 @@ import Offers from './pages/Offers.jsx'
 import Account from './pages/Account.jsx'
 
 export default function App() {
+  console.log('🎯 App component mounted - React Router initializing...')
+  
   const [language, setLanguage] = useState(() => {
     return localStorage.getItem('language') || 'en'
   })
