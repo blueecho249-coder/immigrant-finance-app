@@ -10,6 +10,9 @@ export default function Account({ language }) {
   const [error, setError] = useState('')
   const [userEmail, setUserEmail] = useState('')
   const [isPremium, setIsPremium] = useState(false)
+  const [showClaimModal, setShowClaimModal] = useState(false)
+  const [claimEmail, setClaimEmail] = useState('')
+  const [claimStatus, setClaimStatus] = useState(null) // 'success', 'error', or null
 
   const content = {
     en: {
@@ -57,7 +60,18 @@ export default function Account({ language }) {
       quickLinks: 'Quick Links',
       viewAllLessons: 'View All Lessons',
       yourProfile: 'Your Profile',
-      helpSupport: 'Help & Support'
+      helpSupport: 'Help & Support',
+      alreadyPurchased: "I've already purchased",
+      claimPremium: 'Claim Your Premium Access',
+      enterPurchaseEmail: 'Enter the email you used to purchase premium:',
+      verifyPurchase: 'Verify Purchase',
+      verifying: 'Verifying...',
+      premiumUnlocked: 'Premium Unlocked!',
+      enjoyAllLessons: 'You now have access to all 20 lessons. Enjoy learning!',
+      purchaseNotFound: 'Purchase not found',
+      emailNotRecognized: 'We could not find a premium purchase associated with this email. Please check your email or purchase premium below.',
+      close: 'Close',
+      tryAgain: 'Try Again'
     },
     es: {
       createAccount: 'Crea tu cuenta',
@@ -104,7 +118,18 @@ export default function Account({ language }) {
       quickLinks: 'Enlaces Rápidos',
       viewAllLessons: 'Ver Todas las Lecciones',
       yourProfile: 'Tu Perfil',
-      helpSupport: 'Ayuda y Soporte'
+      helpSupport: 'Ayuda y Soporte',
+      alreadyPurchased: 'Ya compré premium',
+      claimPremium: 'Reclama tu Acceso Premium',
+      enterPurchaseEmail: 'Ingresa el correo que usaste para comprar premium:',
+      verifyPurchase: 'Verificar Compra',
+      verifying: 'Verificando...',
+      premiumUnlocked: '¡Premium Desbloqueado!',
+      enjoyAllLessons: 'Ahora tienes acceso a todas las 20 lecciones. ¡Disfruta aprendiendo!',
+      purchaseNotFound: 'Compra no encontrada',
+      emailNotRecognized: 'No encontramos una compra premium asociada con este correo. Verifica tu correo o compra premium abajo.',
+      close: 'Cerrar',
+      tryAgain: 'Intentar de Nuevo'
     },
     tl: {
       createAccount: 'Gumawa ng iyong account',
@@ -151,7 +176,18 @@ export default function Account({ language }) {
       quickLinks: 'Mga Mabilis Link',
       viewAllLessons: 'Tingnan ang Lahat ng Aralin',
       yourProfile: 'Ang Iyong Profile',
-      helpSupport: 'Tulong at Suporta'
+      helpSupport: 'Tulong at Suporta',
+      alreadyPurchased: 'Nakabili na ako',
+      claimPremium: 'Kunin ang Iyong Premium Access',
+      enterPurchaseEmail: 'Ilagay ang email na ginamit mo para bumili ng premium:',
+      verifyPurchase: 'I-verify ang Bili',
+      verifying: 'Nagve-verify...',
+      premiumUnlocked: 'Premium Na-unlock!',
+      enjoyAllLessons: 'Ngayon may access ka na sa lahat ng 20 aralin. Enjoy learning!',
+      purchaseNotFound: 'Hindi nahanap ang bili',
+      emailNotRecognized: 'Hindi namin nakita ang premium purchase sa email na ito. Paki-check ang email o bumili ng premium sa ibaba.',
+      close: 'Isara',
+      tryAgain: 'Subukan Muli'
     }
   }
 
@@ -242,6 +278,41 @@ export default function Account({ language }) {
     setConfirmPassword('')
     setError('')
     // Keep localStorage data for future sign in
+  }
+
+  const handleClaimPremium = async () => {
+    setClaimStatus('verifying')
+    
+    try {
+      // Call the serverless API to verify purchase
+      const response = await fetch('/api/verify-purchase', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email: claimEmail })
+      })
+      
+      const data = await response.json()
+      
+      if (data.valid) {
+        // Unlock premium
+        localStorage.setItem('isPremium', 'true')
+        setIsPremium(true)
+        setClaimStatus('success')
+      } else {
+        setClaimStatus('error')
+      }
+    } catch (error) {
+      console.error('Error verifying purchase:', error)
+      setClaimStatus('error')
+    }
+  }
+
+  const closeClaimModal = () => {
+    setShowClaimModal(false)
+    setClaimEmail('')
+    setClaimStatus(null)
   }
 
   const getInitial = (email) => {
@@ -389,6 +460,16 @@ export default function Account({ language }) {
               >
                 {t.getPremium}
               </a>
+
+              {/* Already Purchased Button */}
+              {!isPremium && (
+                <button
+                  onClick={() => setShowClaimModal(true)}
+                  className="mt-4 block w-full text-center text-white text-sm underline opacity-80 hover:opacity-100 transition-opacity"
+                >
+                  {t.alreadyPurchased}
+                </button>
+              )}
             </div>
 
             {/* Enhanced Progress Section */}
@@ -452,6 +533,98 @@ export default function Account({ language }) {
             </button>
           </div>
         </div>
+
+        {/* Claim Premium Modal */}
+        {showClaimModal && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+            <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6">
+              {/* Success State */}
+              {claimStatus === 'success' ? (
+                <div className="text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
+                    <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{t.premiumUnlocked}</h3>
+                  <p className="text-gray-600 mb-6">{t.enjoyAllLessons}</p>
+                  <button
+                    onClick={closeClaimModal}
+                    className="w-full btn-primary"
+                  >
+                    {t.close}
+                  </button>
+                </div>
+              ) : claimStatus === 'error' ? (
+                /* Error State */
+                <div className="text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-red-100 rounded-full flex items-center justify-center">
+                    <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{t.purchaseNotFound}</h3>
+                  <p className="text-gray-600 mb-6">{t.emailNotRecognized}</p>
+                  <div className="flex gap-3">
+                    <button
+                      onClick={() => setClaimStatus(null)}
+                      className="flex-1 py-3 px-4 rounded-xl font-medium border border-gray-300 text-gray-700 hover:bg-gray-50 transition-all"
+                    >
+                      {t.tryAgain}
+                    </button>
+                    <button
+                      onClick={closeClaimModal}
+                      className="flex-1 btn-primary"
+                    >
+                      {t.close}
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                /* Input Form */
+                <div>
+                  <div className="flex justify-between items-center mb-4">
+                    <h3 className="text-xl font-bold text-gray-900">{t.claimPremium}</h3>
+                    <button
+                      onClick={closeClaimModal}
+                      className="text-gray-400 hover:text-gray-600 transition-colors"
+                    >
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  </div>
+                  <p className="text-gray-600 mb-4">{t.enterPurchaseEmail}</p>
+                  <input
+                    type="email"
+                    value={claimEmail}
+                    onChange={(e) => setClaimEmail(e.target.value)}
+                    placeholder={t.email}
+                    className="input-field mb-4"
+                    disabled={claimStatus === 'verifying'}
+                  />
+                  <button
+                    onClick={handleClaimPremium}
+                    disabled={!claimEmail.trim() || claimStatus === 'verifying'}
+                    className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {claimStatus === 'verifying' ? (
+                      <span className="flex items-center justify-center gap-2">
+                        <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        {t.verifying}
+                      </span>
+                    ) : (
+                      t.verifyPurchase
+                    )}
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </div>
     )
   }
