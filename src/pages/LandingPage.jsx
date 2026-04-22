@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import LanguageSelector from '../components/LanguageSelector.jsx'
 import SEO from '../components/SEO.jsx'
 import { useState, useEffect } from 'react'
-import { Book, Globe, Calculator, Users } from 'lucide-react'
 
 export default function LandingPage({ language, onLanguageChange }) {
   const [showExitPopup, setShowExitPopup] = useState(false)
