@@ -1,6 +1,13 @@
 // Vercel Serverless Function - Verify Gumroad Purchase
 // This checks if an email has made a purchase on Gumroad
 
+// HARDCODED: Add your test emails here (delete after testing)
+const TEST_VERIFIED_EMAILS = [
+  // Add your test emails here, for example:
+  // 'your-email@example.com',
+  // 'test@example.com',
+]
+
 export default async function handler(req, res) {
   // Only allow POST requests
   if (req.method !== 'POST') {
@@ -21,19 +28,31 @@ export default async function handler(req, res) {
     const accessToken = process.env.GUMROAD_ACCESS_TOKEN
     const productId = process.env.GUMROAD_PRODUCT_ID // Your product ID
 
-    if (!accessToken) {
-      console.error('GUMROAD_ACCESS_TOKEN not configured')
-      // Fallback: Check against a list of verified emails stored in env
-      const verifiedEmails = process.env.VERIFIED_PREMIUM_EMAILS 
-        ? process.env.VERIFIED_PREMIUM_EMAILS.split(',').map(e => e.trim().toLowerCase())
-        : []
+    // Combine hardcoded test emails + env variable emails
+    const envEmails = process.env.VERIFIED_PREMIUM_EMAILS 
+      ? process.env.VERIFIED_PREMIUM_EMAILS.split(',').map(e => e.trim().toLowerCase())
+      : []
+    
+    const allVerifiedEmails = [...TEST_VERIFIED_EMAILS.map(e => e.toLowerCase()), ...envEmails]
+    
+    const isVerified = allVerifiedEmails.includes(normalizedEmail)
+    
+    if (isVerified || !accessToken) {
+      // If verified via email list, or no Gumroad configured, return result
+      if (isVerified) {
+        return res.status(200).json({ 
+          valid: true,
+          message: 'Purchase verified'
+        })
+      }
       
-      const isVerified = verifiedEmails.includes(normalizedEmail)
-      
-      return res.status(200).json({ 
-        valid: isVerified,
-        message: isVerified ? 'Purchase verified' : 'No purchase found for this email'
-      })
+      // Not verified and no Gumroad API - return not found
+      if (!accessToken) {
+        return res.status(200).json({ 
+          valid: false,
+          message: 'No purchase found for this email'
+        })
+      }
     }
 
     // Call Gumroad API to verify purchase
