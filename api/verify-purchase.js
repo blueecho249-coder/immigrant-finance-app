@@ -3,8 +3,8 @@
 
 // HARDCODED: Add your test emails here (delete after testing)
 const TEST_VERIFIED_EMAILS = [
-  // Add your test emails here, for example:
-  // 'your-email@example.com',
+  'blueecho249@gmail.com',
+  // Add more test emails here, for example:
   // 'test@example.com',
 ]
 
