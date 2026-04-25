@@ -12,6 +12,7 @@ export default function Learn({ language }) {
   const [totalXP, setTotalXP] = useState(0)
   const [streak, setStreak] = useState(0)
   const [lockedLesson, setLockedLesson] = useState(null)
+  const [isPremiumUser, setIsPremiumUser] = useState(false)
   
   const categories = ['All', 'Credit', 'Banking', 'Housing', 'Taxes', 'Saving']
   
@@ -28,6 +29,8 @@ export default function Learn({ language }) {
     // Load progress data
     setTotalXP(progressTracker.getTotalXP())
     setStreak(progressTracker.getStreak())
+    // Load premium status
+    setIsPremiumUser(localStorage.getItem('isPremium') === 'true')
   }, [])
 
   const content = {
@@ -298,23 +301,24 @@ export default function Learn({ language }) {
           visibleLessons.map((lesson, index) => {
             const colors = getCategoryColor(lesson.category)
             const isPremiumLesson = lesson.isPremium
+            const isLocked = isPremiumLesson && !isPremiumUser
             
             return (
               <div
                 key={lesson.id}
                 role="button"
                 tabIndex={0}
-                onClick={() => isPremiumLesson && setLockedLesson(lesson)}
+                onClick={() => isLocked && setLockedLesson(lesson)}
                 onKeyDown={(e) => {
-                  if (isPremiumLesson && (e.key === 'Enter' || e.key === ' ')) {
+                  if (isLocked && (e.key === 'Enter' || e.key === ' ')) {
                     setLockedLesson(lesson)
                   }
                 }}
                 className="group card hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden animate-fadeInUp relative border border-gray-200/70 bg-white/95 cursor-pointer"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Premium Badge */}
-                {isPremiumLesson && (
+                {/* Premium Badge - only show if locked */}
+                {isLocked && (
                   <div className="absolute top-4 right-4 z-10">
                     <div className="bg-gradient-to-r from-amber-500 to-amber-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1">
                       <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
@@ -329,8 +333,8 @@ export default function Learn({ language }) {
                 <div className="h-3" style={{ background: `linear-gradient(90deg, ${colors.border} 0%, rgba(255,255,255,0.35) 100%)` }}></div>
                 
                 <div className="p-8 bg-gradient-to-b from-white to-gray-50/40">
-                  {/* Faint Grey Lock Overlay for Premium Lessons */}
-                  {isPremiumLesson && (
+                  {/* Faint Grey Lock Overlay for Locked Premium Lessons */}
+                  {isLocked && (
                     <div className="absolute top-12 right-12 opacity-30">
                       <svg className="h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
@@ -361,10 +365,10 @@ export default function Learn({ language }) {
                   <div className="mb-6 flex items-center gap-2 text-sm font-semibold text-gray-500">
                     <span className="rounded-full bg-gray-100 px-3 py-1">{lesson.category}</span>
                     <span>•</span>
-                    <span>{isPremiumLesson ? t.premiumRequired : t.startLesson}</span>
+                    <span>{isLocked ? t.premiumRequired : t.startLesson}</span>
                   </div>
                   
-                  {isPremiumLesson ? (
+                  {isLocked ? (
                     <button
                       type="button"
                       onClick={() => setLockedLesson(lesson)}
