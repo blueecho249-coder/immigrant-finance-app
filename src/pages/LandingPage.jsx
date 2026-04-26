@@ -1,14 +1,16 @@
 import { Link } from 'react-router-dom'
 import LanguageSelector from '../components/LanguageSelector.jsx'
 import SEO from '../components/SEO.jsx'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Book, Globe, Calculator, Users } from 'lucide-react'
+import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion'
 
 export default function LandingPage({ language, onLanguageChange }) {
   console.log('📄 LandingPage component rendered - language:', language)
   
   const [showExitPopup, setShowExitPopup] = useState(false)
   const [hasShownExitPopup, setHasShownExitPopup] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
     const handleMouseLeave = (e) => {
@@ -24,6 +26,46 @@ export default function LandingPage({ language, onLanguageChange }) {
       document.removeEventListener('mouseleave', handleMouseLeave)
     }
   }, [hasShownExitPopup])
+
+  // Navbar scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // Animated counter component
+  function AnimatedCounter({ value, suffix = '' }) {
+    const ref = useRef(null)
+    const isInView = useInView(ref, { once: true, amount: 0.5 })
+    const count = useMotionValue(0)
+    const rounded = useTransform(count, latest => {
+      if (value.includes('.')) {
+        return latest.toFixed(1)
+      }
+      return Math.round(latest).toLocaleString()
+    })
+
+    useEffect(() => {
+      if (isInView) {
+        const numericValue = parseFloat(value.replace(/[^0-9.]/g, ''))
+        const controls = animate(count, numericValue, {
+          duration: 1.5,
+          ease: 'easeOut'
+        })
+        return controls.stop
+      }
+    }, [isInView, value, count])
+
+    return (
+      <span ref={ref}>
+        <motion.span>{rounded}</motion.span>
+        {suffix}
+      </span>
+    )
+  }
 
   const content = {
     en: {
@@ -276,7 +318,14 @@ export default function LandingPage({ language, onLanguageChange }) {
         <div className="mx-auto max-w-phone px-4 sm:px-5">
           <div className="relative flex min-h-dvh flex-col overflow-hidden bg-white shadow-phone sm:min-h-[min(100dvh,920px)] sm:rounded-2xl sm:shadow-phone-sm">
             <div className="sticky top-0 z-40">
-              <div className="gradient-header px-4 py-4 sm:px-5">
+              <motion.div
+                initial={{ y: 0 }}
+                animate={{
+                  boxShadow: scrolled ? '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' : '0 0 0 0 rgba(0, 0, 0, 0)'
+                }}
+                transition={{ duration: 0.3 }}
+                className="gradient-header px-4 py-4 sm:px-5"
+              >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <div className="h-8 w-8 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center">
@@ -288,26 +337,46 @@ export default function LandingPage({ language, onLanguageChange }) {
                   </div>
                   <LanguageSelector onLanguageChange={onLanguageChange} />
                 </div>
-              </div>
+              </motion.div>
             </div>
             
             <main className="flex-1 overflow-y-auto">
               <div className="px-4 py-8 sm:px-5">
                 {/* Hero Section */}
                 <div className="text-center mb-12 bg-gradient-to-br from-purple-600 to-teal-500 -mx-4 sm:mx-0 px-4 py-12 sm:px-5 sm:py-16">
-                  <div className="mb-8">
-                    <div className="mx-auto h-24 w-24 rounded-3xl gradient-header flex items-center justify-center mb-8 shadow-2xl">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+                    className="mb-8"
+                  >
+                    <motion.div
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+                      className="mx-auto h-24 w-24 rounded-3xl gradient-header flex items-center justify-center mb-8 shadow-2xl"
+                    >
                       <svg className="h-12 w-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
-                    </div>
-                    <h1 className="mb-6 text-5xl sm:text-6xl font-bold text-white leading-tight">
+                    </motion.div>
+                    <motion.h1
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+                      className="mb-6 text-5xl sm:text-6xl font-bold text-white leading-tight"
+                    >
                       Build Your <span className="text-yellow-300">Financial</span> Future in North America
-                    </h1>
-                    <p className="mb-8 text-xl text-white/95 leading-relaxed max-w-lg mx-auto font-medium">
+                    </motion.h1>
+                    <motion.p
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+                      className="mb-8 text-xl text-white/95 leading-relaxed max-w-lg mx-auto font-medium"
+                    >
                       {t.subtitle}
-                    </p>
-                  </div>
+                    </motion.p>
+                  </motion.div>
 
                   {/* Stats Section */}
                   <div className="mb-10 grid grid-cols-2 gap-4 max-w-sm mx-auto">
@@ -316,33 +385,55 @@ export default function LandingPage({ language, onLanguageChange }) {
                                    index === 1 ? { border: 'border-teal-500', bg: 'bg-teal-50' } :
                                    index === 2 ? { border: 'border-amber-500', bg: 'bg-amber-50' } :
                                    { border: 'border-blue-500', bg: 'bg-blue-50' }
+                      const suffix = stat.number.includes('+') ? '+' : stat.number.includes('/') ? '/5' : ''
+                      const numericValue = stat.number.replace(/[^0-9.]/g, '')
                       
                       return (
-                        <div key={index} className={`bg-white rounded-2xl p-4 shadow-lg ${colors.border} overflow-hidden flex flex-col justify-center items-center min-h-[80px]`}>
-                          <div className="text-xl md:text-2xl lg:text-3xl font-bold text-center leading-tight text-gray-900">{stat.number}</div>
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true, amount: 0.5 }}
+                          transition={{ duration: 0.5, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+                          className={`bg-white rounded-2xl p-4 shadow-lg ${colors.border} overflow-hidden flex flex-col justify-center items-center min-h-[80px]`}
+                        >
+                          <div className="text-xl md:text-2xl lg:text-3xl font-bold text-center leading-tight text-gray-900">
+                            <AnimatedCounter value={stat.number} suffix={suffix} />
+                          </div>
                           <div className="text-sm md:text-base text-gray-800 font-bold text-center leading-tight mt-1">{stat.label}</div>
-                        </div>
+                        </motion.div>
                       )
                     })}
                   </div>
 
                   {/* Main CTA */}
                   <div className="mb-8 space-y-3">
-                    <Link
-                      to="/learn"
-                      className="block w-full bg-gradient-to-r from-purple-600 to-teal-500 text-white text-lg py-4 px-6 rounded-xl shadow-xl hover:opacity-90 transition-all"
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+                      className="space-y-3"
                     >
-                      {t.cta}
-                      <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </Link>
-                    <Link
-                      to="/learn"
-                      className="block w-full border-2 border-purple-500 text-purple-600 text-lg py-4 px-6 rounded-xl hover:bg-purple-50 transition-all"
-                    >
-                      {t.secondaryCta}
-                    </Link>
+                      <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} transition={{ duration: 0.2 }}>
+                        <Link
+                          to="/learn"
+                          className="block w-full bg-gradient-to-r from-purple-600 to-teal-500 text-white text-lg py-4 px-6 rounded-xl shadow-xl hover:opacity-90 transition-all"
+                        >
+                          {t.cta}
+                          <svg className="ml-2 h-5 w-5 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </Link>
+                      </motion.div>
+                      <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} transition={{ duration: 0.2 }}>
+                        <Link
+                          to="/learn"
+                          className="block w-full border-2 border-purple-500 text-purple-600 text-lg py-4 px-6 rounded-xl hover:bg-purple-50 transition-all"
+                        >
+                          {t.secondaryCta}
+                        </Link>
+                      </motion.div>
+                    </motion.div>
                   </div>
 
                   {/* Trust Badge */}
@@ -357,10 +448,22 @@ export default function LandingPage({ language, onLanguageChange }) {
                 </div>
 
                 {/* Features Section */}
-                <div className="mb-12">
-                  <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.6 }}
+                  className="mb-12"
+                >
+                  <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+                    className="mb-8 text-center text-3xl font-bold text-gray-900"
+                  >
                     Everything You Need to Succeed
-                  </h2>
+                  </motion.h2>
                   <div className="grid gap-6">
                     {t.features.map((feature, index) => {
                       const iconComponents = [Book, Globe, Calculator, Users]
@@ -368,7 +471,14 @@ export default function LandingPage({ language, onLanguageChange }) {
                       const IconComponent = iconComponents[index]
                       
                       return (
-                        <div key={index} className="card p-6 hover:shadow-xl transition-all bg-white border-2 border-gray-200">
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, y: 30 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true, amount: 0.5 }}
+                          transition={{ duration: 0.5, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+                          className="card p-6 hover:shadow-xl transition-all bg-white border-2 border-gray-200"
+                        >
                           <div className="flex items-start gap-4">
                             <div className={`w-12 h-12 flex-shrink-0 rounded-full flex items-center justify-center ${bgColors[index]}`}>
                               <IconComponent className="w-6 h-6" />
@@ -378,20 +488,39 @@ export default function LandingPage({ language, onLanguageChange }) {
                               <p className="text-gray-800 leading-relaxed font-medium">{feature.description}</p>
                             </div>
                           </div>
-                        </div>
+                        </motion.div>
                       )
                     })}
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Testimonials Section */}
-                <div className="mb-12">
-                  <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.6 }}
+                  className="mb-12"
+                >
+                  <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+                    className="mb-8 text-center text-3xl font-bold text-gray-900"
+                  >
                     Success Stories
-                  </h2>
+                  </motion.h2>
                   <div className="space-y-6">
                     {t.testimonials.map((testimonial, index) => (
-                      <div key={index} className="bg-gradient-to-r from-indigo-50 to-cyan-50 rounded-2xl p-6 border-2 border-indigo-200">
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.5 }}
+                        transition={{ duration: 0.5, delay: index * 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+                        className="bg-gradient-to-r from-indigo-50 to-cyan-50 rounded-2xl p-6 border-2 border-indigo-200"
+                      >
                         <div className="flex items-start gap-4">
                           <div className="flex-shrink-0">
                             <div className="h-12 w-12 rounded-full bg-indigo-600 flex items-center justify-center">
@@ -417,10 +546,10 @@ export default function LandingPage({ language, onLanguageChange }) {
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Final CTA Section */}
                 <div className="text-center mb-8">
