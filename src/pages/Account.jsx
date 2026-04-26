@@ -315,6 +315,16 @@ export default function Account({ language }) {
     setClaimStatus(null)
   }
 
+  // Auto-close modal on success after 2 seconds
+  useEffect(() => {
+    if (claimStatus === 'success') {
+      const timer = setTimeout(() => {
+        closeClaimModal()
+      }, 2000)
+      return () => clearTimeout(timer)
+    }
+  }, [claimStatus])
+
   const getInitial = (email) => {
     return email.charAt(0).toUpperCase()
   }
@@ -413,62 +423,82 @@ export default function Account({ language }) {
               </div>
             </div>
 
-            {/* Enhanced Premium Upgrade Card */}
-            <div className="bg-gradient-to-r from-purple-600 to-teal-500 rounded-2xl p-8 text-white shadow-xl">
-              <div className="flex items-center gap-3 mb-4">
-                <svg className="w-8 h-8 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M5.5 16.573a4.5 4.5 0 01-1.896-1.78l5.106-4.719c.467-.467 1.211-.467 1.678 0l5.106 4.719a4.5 4.5 0 01-1.896 1.78l-5.106-4.718a1.125 1.125 0 00-1.678 0l-5.106 4.718z"/>
-                  <path d="M12.5 16.573a4.5 4.5 0 001.896-1.78l-5.106-4.719a1.125 1.125 0 00-1.678 0l-5.106 4.718a4.5 4.5 0 001.896 1.78l5.106-4.718a1.125 1.125 0 011.678 0l5.106 4.718z"/>
-                </svg>
-                <h3 className="text-2xl font-bold">{t.unlockAllLessons}</h3>
+            {/* Premium Card - Show upgrade or confirmation based on isPremium */}
+            {!isPremium ? (
+              <div className="bg-gradient-to-r from-purple-600 to-teal-500 rounded-2xl p-8 text-white shadow-xl">
+                <div className="flex items-center gap-3 mb-4">
+                  <svg className="w-8 h-8 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M5.5 16.573a4.5 4.5 0 01-1.896-1.78l5.106-4.719c.467-.467 1.211-.467 1.678 0l5.106 4.719a4.5 4.5 0 01-1.896 1.78l-5.106-4.718a1.125 1.125 0 00-1.678 0l-5.106 4.718z"/>
+                    <path d="M12.5 16.573a4.5 4.5 0 001.896-1.78l-5.106-4.719a1.125 1.125 0 00-1.678 0l-5.106 4.718a4.5 4.5 0 001.896 1.78l5.106-4.718a1.125 1.125 0 011.678 0l5.106 4.718z"/>
+                  </svg>
+                  <h3 className="text-2xl font-bold">{t.unlockAllLessons}</h3>
+                </div>
+                <p className="mb-6 text-lg opacity-90">{t.premiumAccess}</p>
+                
+                {/* Benefits List */}
+                <div className="mb-6 space-y-3">
+                  <div className="flex items-center gap-3">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-base">{t.premiumBenefits.allLessons}</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-base">{t.premiumBenefits.languages}</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-base">{t.premiumBenefits.cancelAnytime}</span>
+                  </div>
+                </div>
+
+                {/* Price Display */}
+                <div className="mb-6 text-center">
+                  <div className="text-3xl font-bold mb-1">$9.99</div>
+                  <div className="text-sm opacity-75">per month</div>
+                </div>
+
+                <a
+                  href="https://blueecho3.gumroad.com/l/btyknk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block w-full lg:w-auto bg-white text-purple-600 font-bold py-4 px-8 rounded-xl text-center hover:bg-gray-50 transition-all shadow-lg"
+                >
+                  {t.getPremium}
+                </a>
+
+                {/* Already Purchased Button */}
+                <button
+                  onClick={() => setShowClaimModal(true)}
+                  className="mt-3 w-full bg-white text-purple-600 font-semibold py-3 px-6 rounded-xl text-center hover:bg-gray-50 transition-all shadow-md border border-purple-100 text-sm"
+                >
+                  {t.alreadyPurchased}
+                </button>
               </div>
-              <p className="mb-6 text-lg opacity-90">{t.premiumAccess}</p>
-              
-              {/* Benefits List */}
-              <div className="mb-6 space-y-3">
-                <div className="flex items-center gap-3">
+            ) : (
+              /* Premium Active Confirmation Card */
+              <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl p-8 text-white shadow-xl">
+                <div className="flex items-center gap-3 mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <h3 className="text-2xl font-bold">You have Premium access!</h3>
+                </div>
+                <p className="mb-6 text-lg opacity-90">Enjoy unlimited access to all 20 financial lessons in 8 languages.</p>
+                
+                <div className="flex items-center gap-3 text-base">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-base">{t.premiumBenefits.allLessons}</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-base">{t.premiumBenefits.languages}</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-base">{t.premiumBenefits.cancelAnytime}</span>
+                  <span>All 20 lessons unlocked</span>
                 </div>
               </div>
-
-              {/* Price Display */}
-              <div className="mb-6 text-center">
-                <div className="text-3xl font-bold mb-1">$9.99</div>
-                <div className="text-sm opacity-75">per month</div>
-              </div>
-
-              <a
-                href="https://blueecho3.gumroad.com/l/btyknk"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block w-full lg:w-auto bg-white text-purple-600 font-bold py-4 px-8 rounded-xl text-center hover:bg-gray-50 transition-all shadow-lg"
-              >
-                {t.getPremium}
-              </a>
-
-              {/* Already Purchased Button */}
-              <button
-                onClick={() => setShowClaimModal(true)}
-                className="mt-3 w-full bg-white text-purple-600 font-semibold py-3 px-6 rounded-xl text-center hover:bg-gray-50 transition-all shadow-md border border-purple-100 text-sm"
-              >
-                {t.alreadyPurchased}
-              </button>
-            </div>
+            )}
 
             {/* Enhanced Progress Section */}
             <div>
@@ -534,7 +564,7 @@ export default function Account({ language }) {
 
         {/* Claim Premium Modal */}
         {showClaimModal && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 backdrop-blur-sm">
             <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6">
               {/* Success State */}
               {claimStatus === 'success' ? (
