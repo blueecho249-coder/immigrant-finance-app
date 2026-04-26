@@ -581,12 +581,22 @@ export default function LandingPage({ language, onLanguageChange }) {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left Content */}
               <div className="text-center lg:text-left mb-6 lg:mb-8">
-                <h1 className="mb-6 text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight">
+                <motion.h1
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  className="mb-6 text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight"
+                >
                   Build Your <span className="bg-gradient-to-r from-purple-600 to-teal-500 bg-clip-text text-transparent">Financial</span> Future in North America
-                </h1>
-                <p className="mb-8 text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl">
+                </motion.h1>
+                <motion.p
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  className="mb-8 text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl"
+                >
                   {t.subtitle}
-                </p>
+                </motion.p>
 
                 {/* Stats Section */}
                 <div className="mb-10 grid grid-cols-2 lg:grid-cols-4 gap-6">
@@ -595,31 +605,49 @@ export default function LandingPage({ language, onLanguageChange }) {
                                    index === 1 ? { border: 'border-teal-500', bg: 'bg-teal-50' } :
                                    index === 2 ? { border: 'border-amber-500', bg: 'bg-amber-50' } :
                                    { border: 'border-blue-500', bg: 'bg-blue-50' }
-                      
+                    const suffix = stat.number.includes('+') ? '+' : stat.number.includes('/') ? '/5' : ''
+                    
                     return (
-                        <div key={index} className={`bg-white rounded-2xl p-6 shadow-lg ${colors.border} overflow-hidden flex flex-col justify-center items-center min-h-[100px]`}>
-                          <div className="text-xl md:text-2xl lg:text-3xl font-bold text-center leading-tight">{stat.number}</div>
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.5, delay: 0.4 + index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+                          className={`bg-white rounded-2xl p-6 shadow-lg ${colors.border} overflow-hidden flex flex-col justify-center items-center min-h-[100px]`}
+                        >
+                          <div className="text-xl md:text-2xl lg:text-3xl font-bold text-center leading-tight">
+                            <AnimatedCounter value={stat.number} suffix={suffix} />
+                          </div>
                           <div className="text-sm md:text-base text-gray-600 font-medium text-center leading-tight mt-1">{stat.label}</div>
-                        </div>
+                        </motion.div>
                       )
                     })}
                   </div>
 
                 {/* Main CTA */}
-                <div className="mb-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <Link
-                    to="/learn"
-                    className="btn-primary text-lg py-4 px-8 shadow-xl"
-                  >
-                    {t.cta}
-                  </Link>
-                  <Link
-                    to="/learn"
-                    className="btn-secondary text-lg py-4 px-8"
-                  >
-                    {t.secondaryCta}
-                  </Link>
-                </div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  className="mb-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+                >
+                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} transition={{ duration: 0.2 }}>
+                    <Link
+                      to="/learn"
+                      className="btn-primary text-lg py-4 px-8 shadow-xl inline-block"
+                    >
+                      {t.cta}
+                    </Link>
+                  </motion.div>
+                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} transition={{ duration: 0.2 }}>
+                    <Link
+                      to="/learn"
+                      className="btn-secondary text-lg py-4 px-8 inline-block"
+                    >
+                      {t.secondaryCta}
+                    </Link>
+                  </motion.div>
+                </motion.div>
 
                 {/* Trust Badge */}
                 <div className="mb-12">
@@ -711,13 +739,25 @@ export default function LandingPage({ language, onLanguageChange }) {
             </div>
 
             {/* Features Section */}
-            <div className="mt-20">
-              <h2 className="mb-12 text-center text-4xl font-bold text-gray-900">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6 }}
+              className="mt-20"
+            >
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="mb-12 text-center text-4xl font-bold text-gray-900"
+              >
                 Everything You Need to <span className="relative inline-block pb-2">
                   Succeed
                   <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-purple-600 to-teal-500"></div>
                 </span>
-              </h2>
+              </motion.h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {t.features.map((feature, index) => {
                   const colors = index === 0 ? { border: 'border-purple-500', bg: 'bg-purple-50', icon: 'text-purple-600' } :
@@ -731,7 +771,14 @@ export default function LandingPage({ language, onLanguageChange }) {
                   const IconComponent = iconComponents[index]
                   
                   return (
-                    <div key={index} className={`card p-6 hover:shadow-xl transition-all border-2 ${colors.border}`}>
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.5 }}
+                      transition={{ duration: 0.5, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+                      className={`card p-6 hover:shadow-xl transition-all border-2 ${colors.border}`}
+                    >
                       <div className="text-center">
                         <div className={`w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full ${bgColors[index]}`}>
                           <IconComponent className="w-6 h-6" />
@@ -741,20 +788,39 @@ export default function LandingPage({ language, onLanguageChange }) {
                           <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   )
                 })}
               </div>
-            </div>
+            </motion.div>
 
             {/* Testimonials Section */}
-            <div className="mt-20">
-              <h2 className="mb-12 text-center text-4xl font-bold text-gray-900">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6 }}
+              className="mt-20"
+            >
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="mb-12 text-center text-4xl font-bold text-gray-900"
+              >
                 Success Stories
-              </h2>
+              </motion.h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {t.testimonials.map((testimonial, index) => (
-                  <div key={index} className="bg-gradient-to-r from-indigo-50 to-cyan-50 rounded-2xl p-8 border border-indigo-200">
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 0.5, delay: index * 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+                    className="bg-gradient-to-r from-indigo-50 to-cyan-50 rounded-2xl p-8 border border-indigo-200"
+                  >
                     <div className="flex items-start gap-6">
                       <div className="flex-shrink-0">
                         <div className="h-16 w-16 rounded-full bg-indigo-600 flex items-center justify-center">
@@ -780,10 +846,10 @@ export default function LandingPage({ language, onLanguageChange }) {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
             {/* Final CTA Section */}
             <div className="mt-20 text-center">
