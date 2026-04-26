@@ -462,14 +462,12 @@ export default function Account({ language }) {
               </a>
 
               {/* Already Purchased Button */}
-              {!isPremium && (
-                <button
-                  onClick={() => setShowClaimModal(true)}
-                  className="mt-3 w-full bg-white text-purple-600 font-semibold py-3 px-6 rounded-xl text-center hover:bg-gray-50 transition-all shadow-md border border-purple-100 text-sm"
-                >
-                  {t.alreadyPurchased}
-                </button>
-              )}
+              <button
+                onClick={() => setShowClaimModal(true)}
+                className="mt-3 w-full bg-white text-purple-600 font-semibold py-3 px-6 rounded-xl text-center hover:bg-gray-50 transition-all shadow-md border border-purple-100 text-sm"
+              >
+                {t.alreadyPurchased}
+              </button>
             </div>
 
             {/* Enhanced Progress Section */}
