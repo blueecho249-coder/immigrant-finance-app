@@ -69,7 +69,7 @@ export default function Account({ language }) {
       premiumUnlocked: 'Premium Unlocked!',
       enjoyAllLessons: 'You now have access to all 20 lessons. Enjoy learning!',
       purchaseNotFound: 'Purchase not found',
-      emailNotRecognized: 'We could not find a premium purchase associated with this email. Please check your email or purchase premium below.',
+      emailNotRecognized: "We couldn't find a premium account with that email. Contact support.",
       close: 'Close',
       tryAgain: 'Try Again'
     },
@@ -465,7 +465,7 @@ export default function Account({ language }) {
               {!isPremium && (
                 <button
                   onClick={() => setShowClaimModal(true)}
-                  className="mt-4 block w-full text-center text-white text-sm underline opacity-80 hover:opacity-100 transition-opacity"
+                  className="mt-3 w-full bg-white text-purple-600 font-semibold py-3 px-6 rounded-xl text-center hover:bg-gray-50 transition-all shadow-md border border-purple-100 text-sm"
                 >
                   {t.alreadyPurchased}
                 </button>
