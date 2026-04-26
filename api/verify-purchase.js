@@ -1,12 +1,23 @@
 // Vercel Serverless Function - Verify Gumroad Purchase
 // This checks if an email has made a purchase on Gumroad
 
+import { createClient } from '@supabase/supabase-js'
+
 // HARDCODED: Add your test emails here (delete after testing)
 const TEST_VERIFIED_EMAILS = [
   'blueecho249@gmail.com',
   // Add more test emails here, for example:
   // 'test@example.com',
 ]
+
+// Initialize Supabase client
+const supabaseUrl = process.env.SUPABASE_URL
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+
+let supabase = null
+if (supabaseUrl && supabaseServiceKey) {
+  supabase = createClient(supabaseUrl, supabaseServiceKey)
+}
 
 export default async function handler(req, res) {
   // Only allow POST requests
@@ -23,12 +34,30 @@ export default async function handler(req, res) {
   const normalizedEmail = email.toLowerCase().trim()
 
   try {
-    // Get purchases from Gumroad API
-    // You need to set GUMROAD_ACCESS_TOKEN in Vercel environment variables
+    // Step 1: Check Supabase database for verified premium users
+    if (supabase) {
+      const { data: premiumUser, error: supabaseError } = await supabase
+        .from('premium_users')
+        .select('id')
+        .eq('email', normalizedEmail)
+        .single()
+
+      if (supabaseError && supabaseError.code !== 'PGRST116') {
+        console.error('Supabase error:', supabaseError)
+      }
+
+      if (premiumUser) {
+        return res.status(200).json({ 
+          valid: true,
+          message: 'Purchase verified'
+        })
+      }
+    }
+
+    // Step 2: Check hardcoded test emails + env variable emails
     const accessToken = process.env.GUMROAD_ACCESS_TOKEN
     const productId = process.env.GUMROAD_PRODUCT_ID // Your product ID
 
-    // Combine hardcoded test emails + env variable emails
     const envEmails = process.env.VERIFIED_PREMIUM_EMAILS 
       ? process.env.VERIFIED_PREMIUM_EMAILS.split(',').map(e => e.trim().toLowerCase())
       : []
