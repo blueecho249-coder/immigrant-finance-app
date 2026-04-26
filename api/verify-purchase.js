@@ -6,8 +6,9 @@ import { createClient } from '@supabase/supabase-js'
 // HARDCODED: Add your test emails here (delete after testing)
 const TEST_VERIFIED_EMAILS = [
   'blueecho249@gmail.com',
+  'test@test.com',
   // Add more test emails here, for example:
-  // 'test@example.com',
+  // 'another@example.com',
 ]
 
 // Initialize Supabase client
