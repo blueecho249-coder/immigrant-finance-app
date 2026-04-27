@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/plus-jakarta-sans": "^5.0.0",
     "@supabase/supabase-js": "^2.49.4",
     "framer-motion": "^11.0.0",
     "lucide-react": "^0.263.1",
