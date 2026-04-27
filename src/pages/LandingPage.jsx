@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import LanguageSelector from '../components/LanguageSelector.jsx'
 import SEO from '../components/SEO.jsx'
 import { useState, useEffect, useRef } from 'react'
-import { Book, Globe, Calculator, Users } from 'lucide-react'
+import { Book, Globe, Calculator, Users, Star, BookOpen } from 'lucide-react'
 import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion'
 
 export default function LandingPage({ language, onLanguageChange }) {
@@ -381,11 +381,13 @@ export default function LandingPage({ language, onLanguageChange }) {
                   {/* Stats Section */}
                   <div className="mb-12 grid grid-cols-2 gap-4 max-w-sm mx-auto">
                     {t.stats.map((stat, index) => {
-                      const colors = index === 0 ? { gradient: 'from-purple-500 to-indigo-600', bg: 'bg-purple-50', border: 'border-purple-200' } :
-                                   index === 1 ? { gradient: 'from-teal-500 to-emerald-600', bg: 'bg-teal-50', border: 'border-teal-200' } :
-                                   index === 2 ? { gradient: 'from-amber-500 to-orange-600', bg: 'bg-amber-50', border: 'border-amber-200' } :
-                                   { gradient: 'from-blue-500 to-cyan-600', bg: 'bg-blue-50', border: 'border-blue-200' }
+                      const colors = index === 0 ? { gradient: 'from-purple-500 to-indigo-600', bg: 'bg-purple-50', border: 'border-purple-200', icon: 'text-purple-500' } :
+                                   index === 1 ? { gradient: 'from-teal-500 to-emerald-600', bg: 'bg-teal-50', border: 'border-teal-200', icon: 'text-teal-500' } :
+                                   index === 2 ? { gradient: 'from-amber-500 to-orange-600', bg: 'bg-amber-50', border: 'border-amber-200', icon: 'text-amber-500' } :
+                                   { gradient: 'from-blue-500 to-cyan-600', bg: 'bg-blue-50', border: 'border-blue-200', icon: 'text-blue-500' }
                       const suffix = stat.number.includes('+') ? '+' : stat.number.includes('/') ? '/5' : ''
+                      const iconComponents = [Users, Star, Globe, BookOpen]
+                      const IconComponent = iconComponents[index]
                       
                       return (
                         <motion.div
@@ -394,9 +396,10 @@ export default function LandingPage({ language, onLanguageChange }) {
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true, amount: 0.5 }}
                           transition={{ duration: 0.5, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-                          className={`bg-white rounded-3xl p-5 shadow-xl ${colors.border} border-l-4 overflow-hidden flex flex-col justify-center items-center min-h-[100px]`}
+                          className={`bg-white rounded-3xl p-5 shadow-xl ${colors.border} border-l-4 overflow-hidden flex flex-col justify-center items-center min-h-[120px]`}
                         >
-                          <div className="text-2xl sm:text-3xl font-extrabold text-center leading-tight">
+                          <IconComponent className={`w-6 h-6 mb-2 ${colors.icon}`} />
+                          <div className="text-2xl sm:text-3xl font-extrabold text-center leading-tight text-gray-900">
                             <AnimatedCounter value={stat.number} suffix={suffix} />
                           </div>
                           <div className="text-sm sm:text-base text-gray-500 font-semibold text-center leading-tight mt-1">{stat.label}</div>
@@ -613,11 +616,13 @@ export default function LandingPage({ language, onLanguageChange }) {
                 {/* Stats Section */}
                 <div className="mb-12 grid grid-cols-2 lg:grid-cols-4 gap-5">
                   {t.stats.map((stat, index) => {
-                    const colors = index === 0 ? { gradient: 'from-purple-500 to-indigo-600', bg: 'bg-purple-50', border: 'border-purple-200' } :
-                                   index === 1 ? { gradient: 'from-teal-500 to-emerald-600', bg: 'bg-teal-50', border: 'border-teal-200' } :
-                                   index === 2 ? { gradient: 'from-amber-500 to-orange-600', bg: 'bg-amber-50', border: 'border-amber-200' } :
-                                   { gradient: 'from-blue-500 to-cyan-600', bg: 'bg-blue-50', border: 'border-blue-200' }
+                    const colors = index === 0 ? { gradient: 'from-purple-500 to-indigo-600', bg: 'bg-purple-50', border: 'border-purple-200', icon: 'text-purple-500' } :
+                                   index === 1 ? { gradient: 'from-teal-500 to-emerald-600', bg: 'bg-teal-50', border: 'border-teal-200', icon: 'text-teal-500' } :
+                                   index === 2 ? { gradient: 'from-amber-500 to-orange-600', bg: 'bg-amber-50', border: 'border-amber-200', icon: 'text-amber-500' } :
+                                   { gradient: 'from-blue-500 to-cyan-600', bg: 'bg-blue-50', border: 'border-blue-200', icon: 'text-blue-500' }
                     const suffix = stat.number.includes('+') ? '+' : stat.number.includes('/') ? '/5' : ''
+                    const iconComponents = [Users, Star, Globe, BookOpen]
+                    const IconComponent = iconComponents[index]
                     
                     return (
                         <motion.div
@@ -625,9 +630,10 @@ export default function LandingPage({ language, onLanguageChange }) {
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.5, delay: 0.4 + index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-                          className={`bg-white rounded-3xl p-8 shadow-xl ${colors.border} border-l-4 overflow-hidden flex flex-col justify-center items-center min-h-[120px] hover:shadow-2xl transition-shadow duration-300`}
+                          className={`bg-white rounded-3xl p-8 shadow-xl ${colors.border} border-l-4 overflow-hidden flex flex-col justify-center items-center min-h-[140px] hover:shadow-2xl transition-shadow duration-300`}
                         >
-                          <div className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-center leading-tight bg-gradient-to-r ${colors.gradient} bg-clip-text text-transparent">
+                          <IconComponent className={`w-6 h-6 mb-3 ${colors.icon}`} />
+                          <div className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-center leading-tight text-gray-900">
                             <AnimatedCounter value={stat.number} suffix={suffix} />
                           </div>
                           <div className="text-base md:text-lg text-gray-500 font-semibold text-center leading-tight mt-2">{stat.label}</div>
