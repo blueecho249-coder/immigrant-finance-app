@@ -364,7 +364,7 @@ export default function LandingPage({ language, onLanguageChange }) {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-                      className="mb-6 text-5xl sm:text-6xl font-bold text-white leading-tight"
+                      className="mb-6 text-5xl sm:text-6xl font-extrabold text-white leading-[1.1] tracking-tight"
                     >
                       Build Your <span className="text-yellow-300">Financial</span> Future in North America
                     </motion.h1>
@@ -372,21 +372,20 @@ export default function LandingPage({ language, onLanguageChange }) {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-                      className="mb-8 text-xl text-white/95 leading-relaxed max-w-lg mx-auto font-medium"
+                      className="mb-10 text-xl sm:text-2xl text-white/90 leading-relaxed max-w-lg mx-auto font-medium"
                     >
                       {t.subtitle}
                     </motion.p>
                   </motion.div>
 
                   {/* Stats Section */}
-                  <div className="mb-10 grid grid-cols-2 gap-4 max-w-sm mx-auto">
+                  <div className="mb-12 grid grid-cols-2 gap-4 max-w-sm mx-auto">
                     {t.stats.map((stat, index) => {
-                      const colors = index === 0 ? { border: 'border-purple-500', bg: 'bg-purple-50' } :
-                                   index === 1 ? { border: 'border-teal-500', bg: 'bg-teal-50' } :
-                                   index === 2 ? { border: 'border-amber-500', bg: 'bg-amber-50' } :
-                                   { border: 'border-blue-500', bg: 'bg-blue-50' }
+                      const colors = index === 0 ? { gradient: 'from-purple-500 to-indigo-600', bg: 'bg-purple-50', border: 'border-purple-200' } :
+                                   index === 1 ? { gradient: 'from-teal-500 to-emerald-600', bg: 'bg-teal-50', border: 'border-teal-200' } :
+                                   index === 2 ? { gradient: 'from-amber-500 to-orange-600', bg: 'bg-amber-50', border: 'border-amber-200' } :
+                                   { gradient: 'from-blue-500 to-cyan-600', bg: 'bg-blue-50', border: 'border-blue-200' }
                       const suffix = stat.number.includes('+') ? '+' : stat.number.includes('/') ? '/5' : ''
-                      const numericValue = stat.number.replace(/[^0-9.]/g, '')
                       
                       return (
                         <motion.div
@@ -395,12 +394,12 @@ export default function LandingPage({ language, onLanguageChange }) {
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true, amount: 0.5 }}
                           transition={{ duration: 0.5, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-                          className={`bg-white rounded-2xl p-4 shadow-lg ${colors.border} overflow-hidden flex flex-col justify-center items-center min-h-[80px]`}
+                          className={`bg-white rounded-3xl p-5 shadow-xl ${colors.border} border-l-4 overflow-hidden flex flex-col justify-center items-center min-h-[100px]`}
                         >
-                          <div className="text-xl md:text-2xl lg:text-3xl font-bold text-center leading-tight text-gray-900">
+                          <div className="text-2xl sm:text-3xl font-extrabold text-center leading-tight">
                             <AnimatedCounter value={stat.number} suffix={suffix} />
                           </div>
-                          <div className="text-sm md:text-base text-gray-800 font-bold text-center leading-tight mt-1">{stat.label}</div>
+                          <div className="text-sm sm:text-base text-gray-500 font-semibold text-center leading-tight mt-1">{stat.label}</div>
                         </motion.div>
                       )
                     })}
@@ -461,16 +460,16 @@ export default function LandingPage({ language, onLanguageChange }) {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.6 }}
-                  className="mb-12"
+                  className="mb-16 mt-16"
                 >
                   <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-                    className="mb-8 text-center text-3xl font-bold text-gray-900"
+                    className="mb-10 text-center text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight"
                   >
-                    Everything You Need to Succeed
+                    Everything You Need to <span className="bg-gradient-to-r from-purple-600 to-teal-500 bg-clip-text text-transparent">Succeed</span>
                   </motion.h2>
                   <div className="grid gap-6">
                     {t.features.map((feature, index) => {
@@ -513,16 +512,16 @@ export default function LandingPage({ language, onLanguageChange }) {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.6 }}
-                  className="mb-12"
+                  className="mb-20 mt-20"
                 >
                   <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-                    className="mb-8 text-center text-3xl font-bold text-gray-900"
+                    className="mb-12 text-center text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight"
                   >
-                    Success Stories
+                    <span className="bg-gradient-to-r from-purple-600 to-teal-500 bg-clip-text text-transparent">Success</span> Stories
                   </motion.h2>
                   <div className="space-y-6">
                     {t.testimonials.map((testimonial, index) => (
@@ -589,16 +588,16 @@ export default function LandingPage({ language, onLanguageChange }) {
 
       {/* Desktop Layout */}
       <div className="hidden md:block">
-        <div className="min-h-screen flex items-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="min-h-screen flex items-center bg-gradient-to-br from-indigo-50/80 via-purple-50/50 to-teal-50/80">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               {/* Left Content */}
-              <div className="text-center lg:text-left mb-6 lg:mb-8">
+              <div className="text-center lg:text-left mb-8 lg:mb-0">
                 <motion.h1
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0, ease: [0.25, 0.46, 0.45, 0.94] }}
-                  className="mb-6 text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight"
+                  className="mb-8 text-6xl lg:text-7xl xl:text-8xl font-extrabold text-gray-900 leading-[1.1] tracking-tight"
                 >
                   Build Your <span className="bg-gradient-to-r from-purple-600 to-teal-500 bg-clip-text text-transparent">Financial</span> Future in North America
                 </motion.h1>
@@ -606,18 +605,18 @@ export default function LandingPage({ language, onLanguageChange }) {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-                  className="mb-8 text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl"
+                  className="mb-10 text-2xl lg:text-3xl text-gray-500 leading-relaxed max-w-2xl font-medium"
                 >
                   {t.subtitle}
                 </motion.p>
 
                 {/* Stats Section */}
-                <div className="mb-10 grid grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="mb-12 grid grid-cols-2 lg:grid-cols-4 gap-5">
                   {t.stats.map((stat, index) => {
-                    const colors = index === 0 ? { border: 'border-purple-500', bg: 'bg-purple-50' } :
-                                   index === 1 ? { border: 'border-teal-500', bg: 'bg-teal-50' } :
-                                   index === 2 ? { border: 'border-amber-500', bg: 'bg-amber-50' } :
-                                   { border: 'border-blue-500', bg: 'bg-blue-50' }
+                    const colors = index === 0 ? { gradient: 'from-purple-500 to-indigo-600', bg: 'bg-purple-50', border: 'border-purple-200' } :
+                                   index === 1 ? { gradient: 'from-teal-500 to-emerald-600', bg: 'bg-teal-50', border: 'border-teal-200' } :
+                                   index === 2 ? { gradient: 'from-amber-500 to-orange-600', bg: 'bg-amber-50', border: 'border-amber-200' } :
+                                   { gradient: 'from-blue-500 to-cyan-600', bg: 'bg-blue-50', border: 'border-blue-200' }
                     const suffix = stat.number.includes('+') ? '+' : stat.number.includes('/') ? '/5' : ''
                     
                     return (
@@ -626,12 +625,12 @@ export default function LandingPage({ language, onLanguageChange }) {
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.5, delay: 0.4 + index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-                          className={`bg-white rounded-2xl p-6 shadow-lg ${colors.border} overflow-hidden flex flex-col justify-center items-center min-h-[100px]`}
+                          className={`bg-white rounded-3xl p-8 shadow-xl ${colors.border} border-l-4 overflow-hidden flex flex-col justify-center items-center min-h-[120px] hover:shadow-2xl transition-shadow duration-300`}
                         >
-                          <div className="text-xl md:text-2xl lg:text-3xl font-bold text-center leading-tight">
+                          <div className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-center leading-tight bg-gradient-to-r ${colors.gradient} bg-clip-text text-transparent">
                             <AnimatedCounter value={stat.number} suffix={suffix} />
                           </div>
-                          <div className="text-sm md:text-base text-gray-600 font-medium text-center leading-tight mt-1">{stat.label}</div>
+                          <div className="text-base md:text-lg text-gray-500 font-semibold text-center leading-tight mt-2">{stat.label}</div>
                         </motion.div>
                       )
                     })}
@@ -642,28 +641,31 @@ export default function LandingPage({ language, onLanguageChange }) {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-                  className="mb-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+                  className="mb-10 flex flex-col sm:flex-row gap-5 justify-center lg:justify-start"
                 >
                   <motion.div
-                    whileHover={{ y: -4, scale: 1.03, boxShadow: "0 20px 40px -10px rgba(147, 51, 234, 0.4)" }}
+                    whileHover={{ y: -4, scale: 1.03 }}
                     whileTap={{ scale: 0.98 }}
                     transition={{ type: "spring", stiffness: 400, damping: 25 }}
                   >
                     <Link
                       to="/learn"
-                      className="btn-primary text-lg py-4 px-8 shadow-xl inline-block"
+                      className="inline-flex items-center justify-center bg-gradient-to-r from-purple-600 to-teal-500 text-white text-xl font-bold py-5 px-10 rounded-2xl shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 transition-all duration-300"
                     >
                       {t.cta}
+                      <svg className="ml-3 h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
                     </Link>
                   </motion.div>
                   <motion.div
-                    whileHover={{ y: -4, scale: 1.03, boxShadow: "0 20px 40px -10px rgba(20, 184, 166, 0.3)" }}
+                    whileHover={{ y: -4, scale: 1.03 }}
                     whileTap={{ scale: 0.98 }}
                     transition={{ type: "spring", stiffness: 400, damping: 25 }}
                   >
                     <Link
                       to="/learn"
-                      className="btn-secondary text-lg py-4 px-8 inline-block"
+                      className="inline-flex items-center justify-center bg-white text-gray-700 text-xl font-bold py-5 px-10 rounded-2xl border-2 border-gray-200 shadow-xl hover:border-purple-300 hover:text-purple-600 transition-all duration-300"
                     >
                       {t.secondaryCta}
                     </Link>
@@ -682,10 +684,21 @@ export default function LandingPage({ language, onLanguageChange }) {
               </div>
 
               {/* Right Content - App Mockup */}
-              <div className="relative">
-                <div className="relative mx-auto max-w-sm">
+              <motion.div 
+                className="relative"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+              >
+                <div className="relative mx-auto max-w-md">
+                  {/* Glow Effect */}
+                  <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/30 to-teal-500/30 rounded-[3rem] blur-3xl"></div>
                   {/* Phone Frame */}
-                  <div className="bg-gray-900 rounded-3xl p-2 shadow-2xl relative">
+                  <motion.div 
+                    className="bg-gray-900 rounded-[2.5rem] p-3 shadow-2xl relative"
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  >
                     <div className="absolute inset-0 bg-purple-500/20 rounded-3xl blur-xl"></div>
                     <div className="bg-white rounded-2xl overflow-hidden relative">
                       {/* App Header */}
@@ -754,9 +767,9 @@ export default function LandingPage({ language, onLanguageChange }) {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
-              </div>
+              </motion.div>
             </div>
 
             {/* Features Section */}
@@ -765,19 +778,16 @@ export default function LandingPage({ language, onLanguageChange }) {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
-              className="mt-20"
+              className="mt-28 mb-28"
             >
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="mb-12 text-center text-4xl font-bold text-gray-900"
+                className="mb-16 text-center text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight"
               >
-                Everything You Need to <span className="relative inline-block pb-2">
-                  Succeed
-                  <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-purple-600 to-teal-500"></div>
-                </span>
+                Everything You Need to <span className="bg-gradient-to-r from-purple-600 to-teal-500 bg-clip-text text-transparent">Succeed</span>
               </motion.h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {t.features.map((feature, index) => {
@@ -826,16 +836,16 @@ export default function LandingPage({ language, onLanguageChange }) {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
-              className="mt-20"
+              className="mt-28 mb-28"
             >
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="mb-12 text-center text-4xl font-bold text-gray-900"
+                className="mb-16 text-center text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight"
               >
-                Success Stories
+                <span className="bg-gradient-to-r from-purple-600 to-teal-500 bg-clip-text text-transparent">Success</span> Stories
               </motion.h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {t.testimonials.map((testimonial, index) => (
