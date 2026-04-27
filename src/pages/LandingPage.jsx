@@ -414,7 +414,11 @@ export default function LandingPage({ language, onLanguageChange }) {
                       transition={{ duration: 0.5, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
                       className="space-y-3"
                     >
-                      <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} transition={{ duration: 0.2 }}>
+                      <motion.div
+                        whileHover={{ y: -4, scale: 1.03, boxShadow: "0 20px 40px -10px rgba(147, 51, 234, 0.4)" }}
+                        whileTap={{ scale: 0.98 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                      >
                         <Link
                           to="/learn"
                           className="block w-full bg-gradient-to-r from-purple-600 to-teal-500 text-white text-lg py-4 px-6 rounded-xl shadow-xl hover:opacity-90 transition-all"
@@ -425,7 +429,11 @@ export default function LandingPage({ language, onLanguageChange }) {
                           </svg>
                         </Link>
                       </motion.div>
-                      <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} transition={{ duration: 0.2 }}>
+                      <motion.div
+                        whileHover={{ y: -4, scale: 1.03, boxShadow: "0 20px 40px -10px rgba(20, 184, 166, 0.3)" }}
+                        whileTap={{ scale: 0.98 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                      >
                         <Link
                           to="/learn"
                           className="block w-full border-2 border-purple-500 text-purple-600 text-lg py-4 px-6 rounded-xl hover:bg-purple-50 transition-all"
@@ -477,12 +485,17 @@ export default function LandingPage({ language, onLanguageChange }) {
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true, amount: 0.5 }}
                           transition={{ duration: 0.5, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-                          className="card p-6 hover:shadow-xl transition-all bg-white border-2 border-gray-200"
+                          whileHover={{ y: -8, scale: 1.02, transition: { type: "spring", stiffness: 400, damping: 25 } }}
+                          className="card p-6 hover:shadow-2xl hover:shadow-purple-500/20 transition-all bg-white border-2 border-gray-200 cursor-pointer"
                         >
                           <div className="flex items-start gap-4">
-                            <div className={`w-12 h-12 flex-shrink-0 rounded-full flex items-center justify-center ${bgColors[index]}`}>
+                            <motion.div
+                              whileHover={{ scale: 1.1, y: -4 }}
+                              transition={{ type: "spring", stiffness: 500, damping: 20 }}
+                              className={`w-12 h-12 flex-shrink-0 rounded-full flex items-center justify-center ${bgColors[index]} shadow-lg`}
+                            >
                               <IconComponent className="w-6 h-6" />
-                            </div>
+                            </motion.div>
                             <div className="flex-1">
                               <h3 className="mb-2 text-xl font-bold text-gray-900">{feature.title}</h3>
                               <p className="text-gray-800 leading-relaxed font-medium">{feature.description}</p>
@@ -631,7 +644,11 @@ export default function LandingPage({ language, onLanguageChange }) {
                   transition={{ duration: 0.5, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
                   className="mb-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
                 >
-                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} transition={{ duration: 0.2 }}>
+                  <motion.div
+                    whileHover={{ y: -4, scale: 1.03, boxShadow: "0 20px 40px -10px rgba(147, 51, 234, 0.4)" }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                  >
                     <Link
                       to="/learn"
                       className="btn-primary text-lg py-4 px-8 shadow-xl inline-block"
@@ -639,7 +656,11 @@ export default function LandingPage({ language, onLanguageChange }) {
                       {t.cta}
                     </Link>
                   </motion.div>
-                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} transition={{ duration: 0.2 }}>
+                  <motion.div
+                    whileHover={{ y: -4, scale: 1.03, boxShadow: "0 20px 40px -10px rgba(20, 184, 166, 0.3)" }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                  >
                     <Link
                       to="/learn"
                       className="btn-secondary text-lg py-4 px-8 inline-block"
@@ -777,12 +798,17 @@ export default function LandingPage({ language, onLanguageChange }) {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, amount: 0.5 }}
                       transition={{ duration: 0.5, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-                      className={`card p-6 hover:shadow-xl transition-all border-2 ${colors.border}`}
+                      whileHover={{ y: -8, scale: 1.02, transition: { type: "spring", stiffness: 400, damping: 25 } }}
+                      className={`card p-6 hover:shadow-2xl hover:shadow-${colors.border.replace('border-', '')}/30 transition-all border-2 ${colors.border} cursor-pointer`}
                     >
                       <div className="text-center">
-                        <div className={`w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full ${bgColors[index]}`}>
+                        <motion.div
+                          whileHover={{ scale: 1.1, y: -4 }}
+                          transition={{ type: "spring", stiffness: 500, damping: 20 }}
+                          className={`w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full ${bgColors[index]} shadow-lg`}
+                        >
                           <IconComponent className="w-6 h-6" />
-                        </div>
+                        </motion.div>
                         <div className="space-y-2">
                           <h3 className="text-xl font-bold text-gray-900">{feature.title}</h3>
                           <p className="text-gray-600 leading-relaxed">{feature.description}</p>
