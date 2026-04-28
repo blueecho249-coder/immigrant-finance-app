@@ -379,7 +379,7 @@ export default function LandingPage({ language, onLanguageChange }) {
                   </motion.div>
 
                   {/* Stats Section */}
-                  <div className="mb-12 grid grid-cols-2 gap-3 sm:gap-4 w-full max-w-md mx-auto">
+                  <div className="mb-12 grid grid-cols-2 gap-3 sm:gap-4 w-full max-w-lg mx-auto">
                     {t.stats.map((stat, index) => {
                       const colors = index === 0 ? { gradient: 'from-purple-500 to-indigo-600', bg: 'bg-purple-50', border: 'border-purple-200', icon: 'text-purple-500' } :
                                    index === 1 ? { gradient: 'from-teal-500 to-emerald-600', bg: 'bg-teal-50', border: 'border-teal-200', icon: 'text-teal-500' } :
@@ -396,10 +396,10 @@ export default function LandingPage({ language, onLanguageChange }) {
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true, amount: 0.5 }}
                           transition={{ duration: 0.5, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-                          className={`bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 shadow-lg sm:shadow-xl ${colors.border} border-l-4 flex flex-col justify-center items-center`}
+                          className={`bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 shadow-lg sm:shadow-xl ${colors.border} border-l-4 flex flex-col justify-center items-center overflow-hidden`}
                         >
                           <IconComponent className={`w-5 h-5 sm:w-6 sm:h-6 mb-1 sm:mb-2 ${colors.icon}`} />
-                          <div className="text-xl sm:text-2xl font-bold text-center leading-tight text-gray-900 whitespace-nowrap">
+                          <div className="text-lg sm:text-xl font-bold text-center leading-tight text-gray-900">
                             <AnimatedCounter value={stat.number} suffix={suffix} />
                           </div>
                           <div className="text-xs sm:text-sm text-gray-500 font-medium text-center leading-tight mt-1">{stat.label}</div>
@@ -630,10 +630,10 @@ export default function LandingPage({ language, onLanguageChange }) {
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.5, delay: 0.4 + index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-                          className={`bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-8 shadow-lg lg:shadow-xl ${colors.border} border-l-4 flex flex-col justify-center items-center hover:shadow-2xl transition-shadow duration-300`}
+                          className={`bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-8 shadow-lg lg:shadow-xl ${colors.border} border-l-4 flex flex-col justify-center items-center hover:shadow-2xl transition-shadow duration-300 overflow-hidden`}
                         >
                           <IconComponent className={`w-5 h-5 lg:w-6 lg:h-6 mb-2 lg:mb-3 ${colors.icon}`} />
-                          <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center leading-tight text-gray-900 whitespace-nowrap">
+                          <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-center leading-tight text-gray-900">
                             <AnimatedCounter value={stat.number} suffix={suffix} />
                           </div>
                           <div className="text-sm lg:text-base text-gray-500 font-semibold text-center leading-tight mt-1 lg:mt-2">{stat.label}</div>
