@@ -88,7 +88,7 @@ export default function SimpleLessonStep({ step, language, onNext, stepNumber, t
               <span className="text-sm font-semibold text-purple-600 tracking-wide uppercase">Knowledge Check</span>
             </div>
             
-            <h3 className="mb-8 text-2xl sm:text-3xl font-bold text-gray-900 leading-tight">
+            <h3 className="mb-8 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
               {quiz.question}
             </h3>
             
@@ -117,7 +117,7 @@ export default function SimpleLessonStep({ step, language, onNext, stepNumber, t
                     whileHover={{ scale: quizFeedback ? 1 : 1.01 }}
                     whileTap={{ scale: quizFeedback ? 1 : 0.99 }}
                     disabled={quizFeedback}
-                    className="group rounded-xl px-5 py-4 text-left text-base font-medium transition-all duration-200 flex items-center gap-3 hover:bg-indigo-50/50 hover:border-indigo-200 hover:shadow-sm"
+                    className="group rounded-xl px-5 py-5 text-left text-lg font-medium transition-all duration-200 flex items-center gap-3 hover:bg-indigo-50/50 hover:border-indigo-200 hover:shadow-sm"
                     style={{ background: bg, border, color, borderLeft }}
                   >
                     <span className="flex-1">{option}</span>
@@ -253,7 +253,7 @@ export default function SimpleLessonStep({ step, language, onNext, stepNumber, t
                   <span className="text-sm font-semibold text-purple-600 tracking-wide uppercase">Quick Question</span>
                 </div>
                 
-                <h3 className="mb-8 text-2xl sm:text-3xl font-bold text-gray-900 leading-tight">
+                <h3 className="mb-8 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
                   {currentContent.question}
                 </h3>
                 
@@ -282,7 +282,7 @@ export default function SimpleLessonStep({ step, language, onNext, stepNumber, t
                         whileHover={{ scale: showFeedback ? 1 : 1.01 }}
                         whileTap={{ scale: showFeedback ? 1 : 0.99 }}
                         disabled={showFeedback}
-                        className="group rounded-xl px-5 py-4 text-left text-base font-medium transition-all duration-200 flex items-center gap-3 hover:bg-indigo-50/50 hover:border-indigo-200 hover:shadow-sm"
+                        className="group rounded-xl px-5 py-5 text-left text-lg font-medium transition-all duration-200 flex items-center gap-3 hover:bg-indigo-50/50 hover:border-indigo-200 hover:shadow-sm"
                         style={{ background: bg, border, color, borderLeft }}
                       >
                         <span className="flex-1">{option}</span>
@@ -355,12 +355,12 @@ export default function SimpleLessonStep({ step, language, onNext, stepNumber, t
                   <p className="text-xs font-bold uppercase tracking-widest text-teal-600">{currentContent.title}</p>
                 </div>
               )}
-              <p className="text-lg leading-[1.8] text-gray-700 font-normal">{currentContent.content}</p>
+              <p className="text-xl sm:text-2xl leading-[1.7] text-gray-700 font-normal">{currentContent.content}</p>
             </div>
           ) : (
             <div className="relative rounded-[22px] bg-white/80 backdrop-blur-sm border border-white/60 shadow-lg p-6 sm:p-8 overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-purple-100/30 to-transparent rounded-tr-[22px] rounded-bl-[100px] pointer-events-none" />
-              <p className="text-lg leading-[1.8] text-gray-700 font-normal">
+              <p className="text-xl sm:text-2xl leading-[1.7] text-gray-700 font-normal">
                 {currentContent.content || (typeof currentContent === 'string' ? currentContent : '')}
               </p>
             </div>
