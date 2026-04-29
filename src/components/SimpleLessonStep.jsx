@@ -58,36 +58,37 @@ export default function SimpleLessonStep({ step, language, onNext, stepNumber, t
 
   if (phase === 'quiz' && quiz) {
     return (
-      <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
-        <div style={{ background: 'white', padding: '40px', borderRadius: '20px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
-          <h3 style={{ fontSize: '20px', fontWeight: '700', color: '#1f2937', marginBottom: '24px' }}>
+      <div className="mx-auto max-w-3xl p-2 sm:p-4" style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}>
+        <div className="rounded-3xl bg-white p-6 shadow-lg border border-gray-100 sm:p-8">
+          <h3 className="mb-6 text-2xl font-bold text-gray-900 leading-tight" style={{ fontWeight: 700 }}>
             {quiz.question}
           </h3>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          <div className="flex flex-col gap-3">
             {quiz.options.map((option, idx) => {
-              let bg = '#f9fafb', border = '2px solid #e5e7eb', color = '#374151'
+              let bg = '#f9fafb', border = '2px solid #e5e7eb', color = '#374151', borderLeft = '2px solid #e5e7eb'
               if (quizFeedback) {
-                if (idx === quiz.correct) { bg = '#d1fae5'; border = '2px solid #10b981'; color = '#065f46' }
-                else if (idx === quizAnswer) { bg = '#fee2e2'; border = '2px solid #ef4444'; color = '#991b1b' }
+                if (idx === quiz.correct) { bg = '#d1fae5'; border = '2px solid #10b981'; color = '#065f46'; borderLeft = '4px solid #10b981' }
+                else if (idx === quizAnswer) { bg = '#fee2e2'; border = '2px solid #ef4444'; color = '#991b1b'; borderLeft = '4px solid #ef4444' }
               } else if (idx === quizAnswer) {
-                bg = '#ede9fe'; border = '2px solid #7c3aed'
+                bg = '#ede9fe'; border = '2px solid #8b5cf6'; color = '#5b21b6'; borderLeft = '4px solid #8b5cf6'
               }
               return (
                 <button key={idx} onClick={() => handleQuizAnswer(idx)}
-                  style={{ background: bg, border, color, borderRadius: '12px', padding: '16px 20px', textAlign: 'left', fontSize: '16px', cursor: 'pointer', transition: 'all 0.2s' }}>
+                  className="rounded-2xl px-4 py-4 text-left text-base font-medium transition-all hover:bg-indigo-50 hover:border-indigo-300 hover:border-l-4 hover:border-l-indigo-500"
+                  style={{ background: bg, border, color, borderLeft }}>
                   {option}
                 </button>
               )
             })}
           </div>
           {quizFeedback && (
-            <div style={{ marginTop: '16px', padding: '12px 16px', borderRadius: '8px', background: quizAnswer === quiz.correct ? '#d1fae5' : '#fee2e2', color: quizAnswer === quiz.correct ? '#065f46' : '#991b1b', fontSize: '14px' }}>
+            <div className={`mt-4 rounded-xl px-4 py-3 text-sm font-medium ${quizAnswer === quiz.correct ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'}`}>
               {quizAnswer === quiz.correct ? `✓ ${quiz.explanation || 'Correct!'}` : '✗ Try again!'}
             </div>
           )}
           {quizFeedback && quizAnswer !== quiz.correct && (
             <button onClick={() => { setQuizAnswer(null); setQuizFeedback(false) }}
-              style={{ marginTop: '12px', background: 'linear-gradient(to right, #4f46e5, #14b8a6)', color: 'white', border: 'none', borderRadius: '12px', padding: '12px 24px', fontSize: '16px', fontWeight: '600', cursor: 'pointer' }}>
+              className="mt-3 rounded-xl bg-gradient-to-r from-purple-600 to-teal-500 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:scale-105">
               Try Again
             </button>
           )}
@@ -97,23 +98,23 @@ export default function SimpleLessonStep({ step, language, onNext, stepNumber, t
   }
 
   return (
-    <div className="mx-auto max-w-3xl p-2 sm:p-4">
-      <div className="rounded-3xl bg-white p-6 shadow-xl ring-1 ring-gray-200/80 sm:p-8">
+    <div className="mx-auto max-w-3xl p-2 sm:p-4" style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}>
+      <div className="rounded-3xl bg-white p-6 shadow-lg border border-gray-100 sm:p-8">
         <div className="mb-6 flex items-center justify-between rounded-2xl bg-gradient-to-r from-indigo-50 to-teal-50 px-4 py-3">
-          <span className="text-sm font-bold text-indigo-700">
+          <span className="text-sm font-semibold text-purple-700 tracking-wide">
             Step {stepNumber || 1} of {totalSteps || 1}
           </span>
-          <span className="text-sm font-semibold text-gray-600">{headline}</span>
+          <span className="text-sm font-medium text-gray-500">{headline}</span>
         </div>
-        <div className="mb-8 h-2 w-full rounded-full bg-gray-200">
+        <div className="mb-8 h-2.5 w-full rounded-full bg-gray-100">
           <div
-            className="h-2 rounded-full bg-gradient-to-r from-indigo-600 to-teal-500 transition-all duration-500"
+            className="h-2.5 rounded-full bg-gradient-to-r from-purple-600 to-teal-500 transition-all duration-500"
             style={{ width: `${progressPct}%` }}
           />
         </div>
 
         {headline && (
-          <h2 className="mb-6 text-center text-3xl font-bold text-gray-900">
+          <h2 className="mb-6 text-center text-2xl font-bold text-gray-900 leading-tight" style={{ fontWeight: 700 }}>
             {headline}
           </h2>
         )}
@@ -122,24 +123,24 @@ export default function SimpleLessonStep({ step, language, onNext, stepNumber, t
           <div className="mb-8">
             {isQuickQuestion ? (
               <div className="rounded-3xl bg-gradient-to-br from-white to-indigo-50 p-5 ring-1 ring-indigo-100">
-                <h3 className="mb-4 text-xl font-semibold text-gray-900">
+                <h3 className="mb-4 text-2xl font-bold text-gray-900 leading-tight" style={{ fontWeight: 700 }}>
                   {currentContent.question}
                 </h3>
                 <div className="flex flex-col gap-3">
                   {currentContent.options.map((option, idx) => {
-                    let bg = '#f9fafb', border = '2px solid #e5e7eb', color = '#374151'
+                    let bg = '#f9fafb', border = '2px solid #e5e7eb', color = '#374151', borderLeft = '2px solid #e5e7eb'
                     if (showFeedback) {
-                      if (idx === currentContent.correct) { bg = '#d1fae5'; border = '2px solid #10b981'; color = '#065f46' }
-                      else if (idx === selectedAnswer) { bg = '#fee2e2'; border = '2px solid #ef4444'; color = '#991b1b' }
+                      if (idx === currentContent.correct) { bg = '#d1fae5'; border = '2px solid #10b981'; color = '#065f46'; borderLeft = '4px solid #10b981' }
+                      else if (idx === selectedAnswer) { bg = '#fee2e2'; border = '2px solid #ef4444'; color = '#991b1b'; borderLeft = '4px solid #ef4444' }
                     } else if (idx === selectedAnswer) {
-                      bg = '#ede9fe'; border = '2px solid #7c3aed'
+                      bg = '#ede9fe'; border = '2px solid #8b5cf6'; color = '#5b21b6'; borderLeft = '4px solid #8b5cf6'
                     }
                     return (
                       <button
                         key={idx}
                         onClick={() => handleAnswerSelect(idx)}
-                        className="rounded-2xl px-4 py-4 text-left text-base font-medium transition-transform hover:scale-[1.01]"
-                        style={{ background: bg, border, color }}
+                        className="rounded-2xl px-4 py-4 text-left text-base font-medium transition-all hover:bg-indigo-50 hover:border-indigo-300 hover:border-l-4 hover:border-l-indigo-500"
+                        style={{ background: bg, border, color, borderLeft }}
                       >
                         {option}
                       </button>
@@ -174,15 +175,15 @@ export default function SimpleLessonStep({ step, language, onNext, stepNumber, t
                 )}
               </div>
             ) : currentContent && currentContent.type === 'example' ? (
-              <div className="rounded-3xl bg-gradient-to-br from-blue-50 to-teal-50 p-6 ring-1 ring-blue-200">
+              <div className="rounded-3xl bg-gradient-to-br from-blue-50 to-teal-50 p-6 ring-1 ring-blue-100">
                 {currentContent.title && (
                   <p className="mb-2 text-xs font-bold uppercase tracking-widest text-teal-600">{currentContent.title}</p>
                 )}
-                <p className="text-[17px] leading-8 text-gray-800">{currentContent.content}</p>
+                <p className="text-base leading-[1.7] text-gray-600" style={{ fontWeight: 400, lineHeight: 1.7 }}>{currentContent.content}</p>
               </div>
             ) : (
-              <div className="rounded-3xl bg-gradient-to-br from-gray-50 to-white p-6 ring-1 ring-gray-200">
-                <p className="text-[17px] leading-8 text-gray-700">
+              <div className="rounded-3xl bg-gradient-to-br from-gray-50 to-white p-6 ring-1 ring-gray-100">
+                <p className="text-base leading-[1.7] text-gray-600" style={{ fontWeight: 400, lineHeight: 1.7 }}>
                   {currentContent.content || (typeof currentContent === 'string' ? currentContent : '')}
                 </p>
               </div>
@@ -194,9 +195,12 @@ export default function SimpleLessonStep({ step, language, onNext, stepNumber, t
           <div className="text-center">
             <button
               onClick={advanceContent}
-              className="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-indigo-600 to-teal-500 px-10 py-4 text-lg font-semibold text-white shadow-xl transition-transform hover:scale-105"
+              className="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-purple-600 to-teal-500 px-10 py-4 text-lg font-bold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105"
             >
               {contentIndex < rawContent.length - 1 ? 'Continue' : quiz ? 'Take Quiz' : 'Next Step'}
+              <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+              </svg>
             </button>
           </div>
         )}

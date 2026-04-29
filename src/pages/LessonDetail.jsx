@@ -92,9 +92,9 @@ export default function LessonDetail({ language }) {
         />
         <div className="space-y-6">
           <div className="rounded-3xl bg-gradient-to-r from-indigo-600 via-purple-600 to-teal-500 p-6 text-white shadow-2xl">
-            <Link to="/learn" className="mb-4 inline-flex items-center text-sm font-semibold text-white/90 hover:text-white">&larr; Back to Lessons</Link>
-            <h1 className="text-3xl font-bold md:text-4xl">{lessonTitle}</h1>
-            {lessonSubtitle && <p className="mt-2 max-w-3xl text-white/90">{lessonSubtitle}</p>}
+            <Link to="/learn" className="mb-4 inline-flex items-center text-sm font-semibold text-white/80 hover:text-white transition-colors">&larr; Back to Lessons</Link>
+            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">{lessonTitle}</h1>
+            {lessonSubtitle && <p className="mt-2 max-w-3xl text-white/70 text-lg font-medium">{lessonSubtitle}</p>}
           </div>
           <div className="rounded-3xl bg-white p-4 shadow-xl ring-1 ring-gray-200/80 md:p-6">
             <SimpleLessonStep
