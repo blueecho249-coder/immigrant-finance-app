@@ -1,6 +1,19 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { CheckCircle, XCircle, ArrowRight, HelpCircle, Lightbulb, FileText } from 'lucide-react'
+import { CheckCircle, XCircle, ArrowRight, HelpCircle, Lightbulb, FileText, Check } from 'lucide-react'
+
+// Custom hook for reduced motion preference
+const useReducedMotion = () => {
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+    setPrefersReducedMotion(mediaQuery.matches)
+    const handler = (e) => setPrefersReducedMotion(e.matches)
+    mediaQuery.addEventListener('change', handler)
+    return () => mediaQuery.removeEventListener('change', handler)
+  }, [])
+  return prefersReducedMotion
+}
 
 export default function SimpleLessonStep({ step, language, onNext, stepNumber, totalSteps }) {
   const [contentIndex, setContentIndex] = useState(0)
@@ -50,10 +63,17 @@ export default function SimpleLessonStep({ step, language, onNext, stepNumber, t
     }
   }
 
+  const [shakeIndex, setShakeIndex] = useState(null)
+  const prefersReducedMotion = useReducedMotion()
+
   const handleAnswerSelect = (idx) => {
     if (showFeedback) return
     setSelectedAnswer(idx)
     setShowFeedback(true)
+    if (idx !== currentContent.correct) {
+      setShakeIndex(idx)
+      setTimeout(() => setShakeIndex(null), 400)
+    }
   }
 
   const handleQuizAnswer = (idx) => {
@@ -233,10 +253,10 @@ export default function SimpleLessonStep({ step, language, onNext, stepNumber, t
       <AnimatePresence mode="wait">
         <motion.div
           key={contentIndex + (isQuickQuestion ? '-question' : '')}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.3 }}
+          initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, x: -30 }}
+          transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="mb-8"
         >
           {isQuickQuestion ? (
@@ -253,9 +273,14 @@ export default function SimpleLessonStep({ step, language, onNext, stepNumber, t
                   <span className="text-sm font-semibold text-purple-600 tracking-wide uppercase">Quick Question</span>
                 </div>
                 
-                <h3 className="mb-8 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
+                <motion.h3 
+                  initial={prefersReducedMotion ? {} : { opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.1 }}
+                  className="mb-8 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight"
+                >
                   {currentContent.question}
-                </h3>
+                </motion.h3>
                 
                 <div className="flex flex-col gap-3">
                   {currentContent.options.map((option, idx) => {
@@ -279,10 +304,12 @@ export default function SimpleLessonStep({ step, language, onNext, stepNumber, t
                       <motion.button
                         key={idx}
                         onClick={() => handleAnswerSelect(idx)}
-                        whileHover={{ scale: showFeedback ? 1 : 1.01 }}
-                        whileTap={{ scale: showFeedback ? 1 : 0.99 }}
+                        animate={shakeIndex === idx && !prefersReducedMotion ? { x: [-4, 4, -4, 4, 0] } : {}}
+                        transition={{ duration: 0.4 }}
+                        whileHover={{ scale: showFeedback ? 1 : 1.01, y: showFeedback ? 0 : -2 }}
+                        whileTap={{ scale: showFeedback ? 1 : 0.97 }}
                         disabled={showFeedback}
-                        className="group rounded-xl px-5 py-5 text-left text-lg font-medium transition-all duration-200 flex items-center gap-3 hover:bg-indigo-50/50 hover:border-indigo-200 hover:shadow-sm"
+                        className="group rounded-xl px-5 py-5 text-left text-lg font-medium transition-all duration-200 flex items-center gap-3 hover:bg-indigo-50/50 hover:border-indigo-300 hover:shadow-md"
                         style={{ background: bg, border, color, borderLeft }}
                       >
                         <span className="flex-1">{option}</span>
@@ -378,12 +405,24 @@ export default function SimpleLessonStep({ step, language, onNext, stepNumber, t
         >
           <motion.button
             onClick={advanceContent}
-            whileHover={{ scale: 1.02, y: -2 }}
-            whileTap={{ scale: 0.98 }}
-            className="group relative inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-purple-600 to-teal-500 px-10 py-4 text-lg font-bold text-white shadow-xl shadow-purple-500/20 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/30 overflow-hidden"
+            whileHover={{ scale: 1.03, y: -3 }}
+            whileTap={{ scale: 0.97 }}
+            className="group relative inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-purple-600 to-teal-500 px-10 py-4 text-lg font-bold text-white shadow-xl shadow-purple-500/20 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/30 hover:shadow-[0_20px_40px_-10px_rgba(124,58,237,0.4)] active:shadow-lg overflow-hidden"
           >
-            {/* Button shine effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+            {/* Auto shimmer effect */}
+            {!prefersReducedMotion && (
+              <motion.div 
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent"
+                initial={{ x: '-100%' }}
+                animate={{ x: '100%' }}
+                transition={{ 
+                  duration: 2.5, 
+                  repeat: Infinity, 
+                  repeatDelay: 4,
+                  ease: 'easeInOut'
+                }}
+              />
+            )}
             
             <span className="relative">{contentIndex < rawContent.length - 1 ? 'Continue' : quiz ? 'Take Quiz' : 'Next Step'}</span>
             <ArrowRight className="relative w-5 h-5 transition-transform group-hover:translate-x-1" />

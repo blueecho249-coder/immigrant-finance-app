@@ -201,15 +201,25 @@ export default function LessonDetail({ language }) {
         </div>
 
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
           className="relative space-y-8"
         >
           {/* Premium Hero Header */}
-          <div className="relative">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="relative"
+          >
             {/* Glow effect behind card */}
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 via-indigo-600/20 to-teal-500/20 blur-2xl rounded-3xl transform scale-105" />
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="absolute inset-0 bg-gradient-to-r from-purple-600/20 via-indigo-600/20 to-teal-500/20 blur-2xl rounded-3xl transform scale-105" 
+            />
             
             <div className="relative rounded-3xl bg-gradient-to-r from-indigo-600 via-purple-600 to-teal-500 p-8 text-white shadow-2xl overflow-hidden">
               {/* Subtle pattern overlay */}
@@ -241,19 +251,24 @@ export default function LessonDetail({ language }) {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Premium Main Content Container */}
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="relative"
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="relative group"
+            whileHover={{ y: -2 }}
           >
-            {/* Outer glow */}
-            <div className="absolute inset-0 bg-gradient-to-b from-gray-200/50 to-transparent blur-xl rounded-[28px] transform translate-y-4" />
+            {/* Outer glow with animated opacity on hover */}
+            <div className="absolute inset-0 bg-gradient-to-b from-gray-200/50 to-transparent blur-xl rounded-[28px] transform translate-y-4 transition-opacity duration-500 group-hover:opacity-80" />
             
-            <div className="relative rounded-[28px] bg-white p-6 sm:p-8 md:p-10 shadow-xl border border-gray-100/80">
+            <motion.div 
+              className="relative rounded-[28px] bg-white p-6 sm:p-8 md:p-10 shadow-xl border border-gray-100/80 transition-shadow duration-500 group-hover:shadow-2xl"
+              whileHover={{ scale: 1.002 }}
+              transition={{ type: "spring", stiffness: 400, damping: 30 }}
+            >
               <SimpleLessonStep
                 key={`${id}-step-${currentStepIndex}`}
                 step={currentStep}
@@ -263,7 +278,7 @@ export default function LessonDetail({ language }) {
                 totalSteps={totalSteps}
                 lessonId={id}
               />
-            </div>
+            </motion.div>
           </motion.div>
         </motion.div>
       </>

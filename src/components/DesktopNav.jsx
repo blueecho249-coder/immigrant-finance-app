@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import LanguageSelector from './LanguageSelector.jsx'
 
 const navItems = [
@@ -34,13 +35,42 @@ export default function DesktopNav({ onLanguageChange }) {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`text-base font-semibold transition-all duration-300 hover:scale-105 px-6 py-3 rounded-xl tracking-wide ${
-                    isActive 
-                      ? 'text-indigo-600 bg-indigo-50/80 shadow-lg border border-indigo-200 transform scale-105' 
-                      : 'text-gray-600 hover:text-indigo-600 hover:bg-gray-50/60 border border-transparent'
-                  }`}
+                  className="relative text-base font-semibold transition-all duration-300 px-6 py-3 rounded-xl tracking-wide group"
                 >
-                  {item.label}
+                  <motion.span 
+                    className={`relative z-10 transition-colors duration-300 ${
+                      isActive ? 'text-indigo-600' : 'text-gray-600 group-hover:text-indigo-600'
+                    }`}
+                  >
+                    {item.label}
+                  </motion.span>
+                  
+                  {/* Hover background */}
+                  <motion.div
+                    className={`absolute inset-0 rounded-xl ${isActive ? 'bg-indigo-50/80' : 'bg-gray-50/60'}`}
+                    initial={{ opacity: isActive ? 1 : 0, scale: isActive ? 1 : 0.8 }}
+                    animate={{ opacity: isActive ? 1 : 0, scale: isActive ? 1 : 0.8 }}
+                    whileHover={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.2 }}
+                  />
+                  
+                  {/* Active indicator line */}
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeTab"
+                      className="absolute bottom-1 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-gradient-to-r from-purple-500 to-teal-500 rounded-full"
+                      transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                    />
+                  )}
+                  
+                  {/* Subtle shadow on active */}
+                  {isActive && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      className="absolute inset-0 rounded-xl shadow-lg shadow-indigo-500/10 -z-10"
+                    />
+                  )}
                 </Link>
               )
             })}
