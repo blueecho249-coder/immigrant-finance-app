@@ -343,31 +343,63 @@ export default function LandingPage({ language, onLanguageChange }) {
             <main className="flex-1 overflow-y-auto">
               <div className="px-4 py-8 sm:px-5">
                 {/* Hero Section */}
-                <div className="text-center mb-12 bg-gradient-to-br from-purple-600 to-teal-500 -mx-4 sm:mx-0 px-4 py-12 sm:px-5 sm:py-16">
+                <div className="text-center mb-12 bg-gradient-to-br from-purple-600 to-teal-500 -mx-4 sm:mx-0 px-4 sm:px-5">
+                  {/* Announcement Bar */}
                   <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-                    className="mb-8"
+                    transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+                    className="relative overflow-hidden"
                   >
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-teal-500/20 to-purple-500/20" />
+                    <div className="relative py-2.5 px-4">
+                      <p className="text-sm sm:text-base text-white/95 font-medium tracking-wide">
+                        🎉 Now available in 8 languages — <span className="font-semibold text-white">Free for newcomers</span>
+                      </p>
+                    </div>
+                    {/* Glow effect */}
+                    <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+                  </motion.div>
+
+                  <div className="py-10 sm:py-14">
                     <motion.div
-                      initial={{ scale: 0.8, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-                      className="mx-auto h-24 w-24 rounded-3xl gradient-header flex items-center justify-center mb-8 shadow-2xl"
-                    >
-                      <svg className="h-12 w-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </motion.div>
-                    <motion.h1
-                      initial={{ opacity: 0, y: 20 }}
+                      initial={{ opacity: 0, y: 30 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-                      className="mb-6 text-5xl sm:text-6xl font-extrabold text-white leading-[1.1] tracking-tight"
+                      transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+                      className="mb-8"
                     >
-                      Build Your <span className="text-yellow-300">Financial</span> Future in North America
-                    </motion.h1>
+                      <motion.div
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+                        className="mx-auto h-24 w-24 rounded-3xl gradient-header flex items-center justify-center mb-6 shadow-2xl"
+                      >
+                        <svg className="h-12 w-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </motion.div>
+
+                      {/* Social Proof Badge */}
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.4, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+                        className="mb-6"
+                      >
+                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm font-medium">
+                          <span className="text-yellow-300">✦</span>
+                          #1 Financial App for Newcomers to Canada & the US
+                        </span>
+                      </motion.div>
+
+                      <motion.h1
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+                        className="mb-6 text-5xl sm:text-6xl font-extrabold text-white leading-[1.1] tracking-tight"
+                      >
+                        Build Your <span className="text-yellow-300">Financial</span> Future in North America
+                      </motion.h1>
                     <motion.p
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -443,6 +475,21 @@ export default function LandingPage({ language, onLanguageChange }) {
                           {t.secondaryCta}
                         </Link>
                       </motion.div>
+                    </motion.div>
+
+                    {/* Trust Logos Bar */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+                      className="mt-6"
+                    >
+                      <p className="text-sm text-white/70 font-medium tracking-wide">
+                        Trusted by newcomers from:{' '}
+                        <span className="text-lg tracking-wider ml-1">
+                          🇮🇳 🇵🇭 🇳🇬 🇲🇽 🇨🇳 🇧🇷 🇵🇰 🇺🇦
+                        </span>
+                      </p>
                     </motion.div>
                   </div>
 
