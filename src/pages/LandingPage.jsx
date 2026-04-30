@@ -638,16 +638,41 @@ export default function LandingPage({ language, onLanguageChange }) {
 
       {/* Desktop Layout */}
       <div className="hidden md:block">
-        <div className="min-h-screen flex items-center bg-gradient-to-br from-indigo-50/80 via-purple-50/50 to-teal-50/80">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        {/* Announcement Bar - Above Navbar */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-purple-600 to-teal-500 h-10 flex items-center justify-center"
+        >
+          <p className="text-sm text-white font-medium">
+            🎉 Now available in 8 languages — <span className="font-semibold">100% Free for newcomers</span>
+          </p>
+        </motion.div>
+
+        <div className="min-h-screen pt-20 flex items-center bg-gradient-to-br from-indigo-50/80 via-purple-50/50 to-teal-50/80">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
               {/* Left Content */}
-              <div className="text-center lg:text-left mb-8 lg:mb-0">
+              <div className="text-center lg:text-left">
+                {/* Trust Badge Pill */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: 0.1 }}
+                  className="inline-flex items-center gap-2 mb-6"
+                >
+                  <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-purple-50 border border-purple-200 text-purple-700 text-sm font-medium">
+                    <span>✦</span>
+                    #1 Financial literacy app for newcomers
+                  </span>
+                </motion.div>
+
                 <motion.h1
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0, ease: [0.25, 0.46, 0.45, 0.94] }}
-                  className="mb-8 text-6xl lg:text-7xl xl:text-8xl font-extrabold text-gray-900 leading-[1.1] tracking-tight"
+                  transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  className="mb-6 font-extrabold text-gray-900 leading-[1.1] tracking-tight"
+                  style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}
                 >
                   Build Your <span className="bg-gradient-to-r from-purple-600 to-teal-500 bg-clip-text text-transparent">Financial</span> Future in North America
                 </motion.h1>
