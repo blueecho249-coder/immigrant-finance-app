@@ -1022,6 +1022,7 @@ export default function LandingPage({ language, onLanguageChange }) {
         </div>
       )}
     </div>
-    </>
+  </div>
+</>
   )
 }
