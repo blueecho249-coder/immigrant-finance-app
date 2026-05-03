@@ -630,9 +630,8 @@ export default function LandingPage({ language, onLanguageChange }) {
                     </Link>
                   </div>
                 </div>
-              </div>
-            </main>
-          </div>
+            </div>
+          </main>
         </div>
       </div>
 
@@ -1024,3 +1023,4 @@ export default function LandingPage({ language, onLanguageChange }) {
     </div>
   </>
 )
+}
